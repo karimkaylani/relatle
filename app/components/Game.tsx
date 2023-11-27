@@ -3,6 +3,7 @@
 import React, { createContext, useState } from 'react'
 import ArtistCard from './ArtistCard'
 import GameOver from './GameOver'
+import Reset from './Reset'
 
 export interface Artist {
     name: string,
@@ -64,7 +65,7 @@ const Game = (props: GameProps) => {
             <h2>{`${currArtist.name} => ${end}`}</h2>
                 {currArtist.related.map(artist_name => 
                 <ArtistCard artist={web[artist_name]} updateArtistHandler={updateArtistHandler}/>)}
-            <button onClick={resetHandler}>Reset</button>
+            <Reset resetHandler={resetHandler}/>
         </div>
     )
 }
