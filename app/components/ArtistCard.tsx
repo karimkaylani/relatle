@@ -1,5 +1,6 @@
 import React from 'react'
 import { Artist } from './Game'
+import { Button } from '@mantine/core';
 
 interface ArtistCardProps {
     artist: Artist,
@@ -10,7 +11,7 @@ const ArtistCard = (props: ArtistCardProps) => {
     const {artist, updateArtistHandler} = props
   return (
     <div>
-        <button onClick={() => updateArtistHandler(artist)}>{artist.name}</button>
+        <Button className="mt-2" onClick={() => updateArtistHandler(artist)}>{artist.name}</Button>
     </div>
   )
 }
