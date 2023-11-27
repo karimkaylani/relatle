@@ -1,5 +1,5 @@
-import React, { useContext } from 'react'
-import Game, { Artist, GameContext } from './Game'
+import React from 'react'
+import { Artist } from './Game'
 
 interface ArtistCardProps {
     artist: Artist,
@@ -7,11 +7,6 @@ interface ArtistCardProps {
 }
 
 const ArtistCard = (props: ArtistCardProps) => {
-    let context = useContext(GameContext)
-    if (!context) {
-        return
-    }
-    let {web, matchup, currArtist} = context
     const {artist, updateArtistHandler} = props
   return (
     <div>

@@ -28,16 +28,17 @@ const Game = (props: GameProps) => {
     const {web, matchup} = props
     const [start, end] = matchup
     const [currArtist, setCurrArtist] = useState(web[start])
-    const [path, setPath] = useState([currArtist])
+    const [path, setPath] = useState([currArtist.name])
     const [won, setWon] = useState(false)
+    const [guesses, setGuesses] = useState(0)
+    const [resets, setResets] = useState(0)
     
-    let guesses = 0
     const updateArtistHandler = (artist: Artist): void => {
         if (won === true) {
             return
         }
-        setPath([...path, artist])
-        guesses += 1
+        setPath([...path, artist.name])
+        setGuesses(guesses + 1)
         if (artist.name === end) {
             setWon(true)
             return
@@ -45,13 +46,25 @@ const Game = (props: GameProps) => {
         setCurrArtist(artist)
     }
 
+    const resetHandler = (): void => {
+        if (won === true) {
+            return
+        }
+        setPath([...path, "RESET", start])
+        setResets(resets + 1)
+        setCurrArtist(web[start])
+    }
+
+    if (won) {
+        return <GameOver path={path} guesses={guesses} matchup={matchup} resets={resets}/>    
+    }
+
     return (
         <div className="Game">
             <h2>{`${currArtist.name} => ${end}`}</h2>
-            <GameContext.Provider value={{web, matchup, currArtist}}>
                 {currArtist.related.map(artist_name => 
                 <ArtistCard artist={web[artist_name]} updateArtistHandler={updateArtistHandler}/>)}
-            </GameContext.Provider>
+            <button onClick={resetHandler}>Reset</button>
         </div>
     )
 }
