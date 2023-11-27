@@ -2,6 +2,7 @@
 
 import React, { createContext, useState } from 'react'
 import ArtistCard from './ArtistCard'
+import GameOver from './GameOver'
 
 export interface Artist {
     name: string,
@@ -11,21 +12,45 @@ export interface Artist {
 }
 
 export interface GameContextType {
-    artists: string[],
-    setArtists: (artists: string[]) => void
+    web: {[key: string]: Artist},
+    matchup: string[],
+    currArtist: Artist,
+}
+
+interface GameProps {
+    web: {[key: string]: Artist},
+    matchup: string[]
 }
 
 export const GameContext = createContext<GameContextType|null>(null)
 
-const Game = (props:
-        {web: {[key: string]: Artist}, matchup: string[]}) => {
+const Game = (props: GameProps) => {
     const {web, matchup} = props
     const [start, end] = matchup
-    const [artists, setArtists] = useState(web[start]['related'])
+    const [currArtist, setCurrArtist] = useState(web[start])
+    const [path, setPath] = useState([currArtist])
+    const [won, setWon] = useState(false)
+    
+    let guesses = 0
+    const updateArtistHandler = (artist: Artist): void => {
+        if (won === true) {
+            return
+        }
+        setPath([...path, artist])
+        guesses += 1
+        if (artist.name === end) {
+            setWon(true)
+            return
+        }
+        setCurrArtist(artist)
+    }
+
     return (
         <div className="Game">
-            <GameContext.Provider value={{artists, setArtists}}>
-                <ArtistCard/>
+            <h2>{`${currArtist.name} => ${end}`}</h2>
+            <GameContext.Provider value={{web, matchup, currArtist}}>
+                {currArtist.related.map(artist_name => 
+                <ArtistCard artist={web[artist_name]} updateArtistHandler={updateArtistHandler}/>)}
             </GameContext.Provider>
         </div>
     )

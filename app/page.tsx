@@ -8,9 +8,7 @@ export default async function Home() {
   return (
     <main>
       <h1>relatle</h1>
-      <h2>{`${start} => ${end}`}</h2>
-      <Game
-      web={web} matchup={matchup}/>
+      <Game web={web} matchup={matchup}/>
     </main>
   )
 }
