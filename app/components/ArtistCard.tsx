@@ -1,6 +1,7 @@
 import React from 'react'
 import { Artist } from './Game'
-import { Button } from '@mantine/core';
+import { Button, Card, Image, Text, Center } from '@mantine/core';
+import { motion } from "framer-motion"
 
 interface ArtistCardProps {
     artist: Artist,
@@ -8,11 +9,25 @@ interface ArtistCardProps {
 }
 
 const ArtistCard = (props: ArtistCardProps) => {
-    const {artist, updateArtistHandler} = props
+  const {artist, updateArtistHandler} = props
   return (
-    <div>
-        <Button className="mt-2" onClick={() => updateArtistHandler(artist)}>{artist.name}</Button>
-    </div>
+    <motion.button
+    whileHover={{ scale: 1.1 }}
+    whileTap={{ scale: 0.9 }}
+    onTap={() => updateArtistHandler(artist)}>
+      <Card
+        shadow="sm"
+        radius="md" withBorder
+        padding="xs"
+        component="a">
+          <Card.Section inheritPadding>
+            <Image radius="md" src={artist.image} w={175} h={175} alt={artist.name} />
+          </Card.Section>
+          <Text fw={500} size="lg" mt="md" ta="center">
+            {artist.name}
+          </Text>
+      </Card>
+    </motion.button>
   )
 }
 

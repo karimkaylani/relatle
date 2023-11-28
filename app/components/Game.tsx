@@ -4,6 +4,7 @@ import React, { createContext, useState } from 'react'
 import ArtistCard from './ArtistCard'
 import GameOver from './GameOver'
 import Reset from './Reset'
+import { Flex, SimpleGrid, Text } from '@mantine/core'
 
 export interface Artist {
     name: string,
@@ -56,18 +57,24 @@ const Game = (props: GameProps) => {
         setCurrArtist(web[start])
     }
 
-    if (won) {
-        return <GameOver path={path} guesses={guesses} matchup={matchup} resets={resets}/>    
-    }
-
     return (
-        <div className="Game">
-            <h2>{`${currArtist.name} => ${end}`}</h2>
-                {currArtist.related.map(artist_name => 
-                    <ArtistCard key={web[artist_name].id} artist={web[artist_name]}
-                    updateArtistHandler={updateArtistHandler}/>)}
+        <Flex 
+        align="center"
+        direction="column"
+        gap="xl">
+            <Text size="45px">relatle</Text>
+            <Text size="25px">{`${currArtist.name} => ${end}`}</Text>
+            <Text size="20px">Guesses:{guesses} Resets:{resets}</Text>
+            {won ? <GameOver won={won} path={path} guesses={guesses} matchup={matchup} resets={resets}/> :
+            <SimpleGrid className='mt-5' 
+            cols={{ base: 2, sm: 3, lg: 5 }}
+            spacing={{ base: 10, sm: 'xl' }}>
+            {currArtist.related.map(artist_name => 
+                <ArtistCard key={web[artist_name].id} artist={web[artist_name]}
+                updateArtistHandler={updateArtistHandler}/>)}
+            </SimpleGrid>}
             <Reset resetHandler={resetHandler}/>
-        </div>
+        </Flex>
     )
 }
 

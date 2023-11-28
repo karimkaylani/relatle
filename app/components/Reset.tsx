@@ -7,7 +7,7 @@ export interface ResetProps {
 const Reset = (props: ResetProps) => {
     const {resetHandler} = props
   return (
-    <div className="mt-5">
+    <div>
         <button onClick={resetHandler}>Reset</button>
     </div>
     
