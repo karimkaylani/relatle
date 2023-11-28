@@ -48,7 +48,7 @@ const Game = (props: GameProps) => {
     }
 
     const resetHandler = (): void => {
-        if (won === true) {
+        if (won === true || currArtist.name == start) {
             return
         }
         setPath([...path, "RESET", start])
@@ -64,7 +64,8 @@ const Game = (props: GameProps) => {
         <div className="Game">
             <h2>{`${currArtist.name} => ${end}`}</h2>
                 {currArtist.related.map(artist_name => 
-                <ArtistCard artist={web[artist_name]} updateArtistHandler={updateArtistHandler}/>)}
+                    <ArtistCard key={web[artist_name].id} artist={web[artist_name]}
+                    updateArtistHandler={updateArtistHandler}/>)}
             <Reset resetHandler={resetHandler}/>
         </div>
     )
