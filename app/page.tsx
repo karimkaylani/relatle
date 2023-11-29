@@ -16,12 +16,12 @@ export default async function Home() {
   )
 }
 
-export async function getWeb(): Promise<{[key: string]: Artist}> {
+async function getWeb(): Promise<{[key: string]: Artist}> {
   const web = await fs.readFile(process.cwd() + "/public/web.json", "utf8")
   return JSON.parse(web)
 }
 
-export async function getMatchup(): Promise<string[]> {
+async function getMatchup(): Promise<string[]> {
   const matchups = await fs.readFile(process.cwd() + "/public/matchups.json", "utf8")
   const data = JSON.parse(matchups)
   

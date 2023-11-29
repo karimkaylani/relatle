@@ -35,9 +35,13 @@ interface SaveProps {
 }
 
 const readLocalStroage = (matchup: string[]): SaveProps|null => {
+    // Ensure page is mounted to client before trying to read localStorage
+    if (typeof window == 'undefined') {
+        return null
+    }
     const item = localStorage.getItem("props");
     if (item === null) {
-        return null;
+        return null
     }
     const saveData = JSON.parse(item) as SaveProps;
     return JSON.stringify(saveData.matchup) == JSON.stringify(matchup) ? saveData : null
