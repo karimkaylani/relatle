@@ -91,6 +91,8 @@ const Game = (props: GameProps) => {
         }
     }
 
+    // When component first mounts, load in localStorage
+    // use loading so that nothing renders until localStorage is checked
     const [loading, setLoading] = useState(true)
     useEffect(() => {
         loadLocalStorageIntoState()
@@ -106,20 +108,18 @@ const Game = (props: GameProps) => {
         setGuesses(guesses + 1)
         if (artist.name === end) {
             setWon(true)
-            const curr: SaveProps = {
+            save({
                 currArtist, path: newPath, won:true,
                 guesses: guesses+1, resets, matchup
-            }
-            save(curr) 
+            })
             open()
             return
         }
         setCurrArtist(artist)
-        const curr: SaveProps = {
+        save({
             currArtist: artist, path: newPath, won,
             guesses: guesses+1, resets, matchup
-        }
-        save(curr)
+        })
     }
 
     const resetHandler = (): void => {
@@ -130,11 +130,10 @@ const Game = (props: GameProps) => {
         setPath(newPath)
         setResets(resets + 1)
         setCurrArtist(web[start])
-        const curr: SaveProps = {
+        save({
             currArtist: web[start], path: newPath, won,
             guesses, resets: resets+1, matchup
-        }
-        save(curr)
+        })
     }
 
     if (loading) {
