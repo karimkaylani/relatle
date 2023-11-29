@@ -25,7 +25,7 @@ const GameOver = (props: GameOverProps) => {
         <Text ta="center" size="lg">You win!</Text>
         <Text ta="center" size="md">You got from {start} to {end} in {guesses} guesses with {resets} resets</Text>
         <Text ta="center" size="sm">Your path: <br></br>{path.join("→")}</Text>
-        <Button>Share</Button>
+        <Button size="md" variant="filled" color="teal">Share</Button>
         <Text ta="center" size="sm">Time until next game: </Text>
       </Flex>
     </Modal>
