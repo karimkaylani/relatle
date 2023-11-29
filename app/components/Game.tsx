@@ -39,7 +39,7 @@ const readLocalStroage = (matchup: string[]): SaveProps|null => {
         return null;
     }
     const saveData = JSON.parse(item) as SaveProps;
-    return saveData.matchup === matchup ? saveData : null
+    return JSON.stringify(saveData.matchup) == JSON.stringify(matchup) ? saveData : null
 }
 
 export const GameContext = createContext<GameContextType|null>(null)
@@ -56,7 +56,6 @@ const Game = (props: GameProps) => {
     const [resets, setResets] = useState<number>(localSave?.resets ?? 0)
     
     const save = (): void => {
-        console.log('here')
         const curr: SaveProps = {
             currArtist, path, won, guesses, resets, matchup
         } 
@@ -105,7 +104,7 @@ const Game = (props: GameProps) => {
                 <ArtistCard key={web[artist_name].id} artist={web[artist_name]}
                 updateArtistHandler={updateArtistHandler}/>)}
             </SimpleGrid>}
-            <Reset resetHandler={resetHandler}/>
+            {!won ? <Reset resetHandler={resetHandler}/> : null}
         </Flex>
     )
 }
