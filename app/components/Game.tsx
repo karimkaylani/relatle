@@ -100,7 +100,7 @@ const Game = (props: GameProps) => {
             <Text ta="center" size="45px">relatle</Text>
             <Text ta="center" size="25px">{`${start} => ${end}`}</Text>
             <Text ta="center" size="20px">Guesses:{guesses}<br/><br/>Resets:{resets}</Text>
-            <Text ta="center" size="lg"><b>{currArtist.name}'s</b> Related Artists:</Text>
+            <Text ta="center" size="lg"><b>{currArtist.name}&apos;s</b> Related Artists:</Text>
             <GameOver opened={modalOpened} close={close} path={path} guesses={guesses} matchup={matchup} resets={resets}/>
             <SimpleGrid 
             cols={{ base: 2, sm: 3, lg: 5 }}>
