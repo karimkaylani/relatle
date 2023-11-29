@@ -29,15 +29,17 @@ interface SaveProps {
     path: string[],
     won: boolean,
     guesses: number,
-    resets: number
+    resets: number,
+    matchup: string[]
 }
 
-const readLocalStroage = (): SaveProps|null => {
+const readLocalStroage = (matchup: string[]): SaveProps|null => {
     const item = localStorage.getItem("props");
     if (item === null) {
         return null;
     }
-    return JSON.parse(item) as SaveProps;
+    const saveData = JSON.parse(item) as SaveProps;
+    return saveData.matchup === matchup ? saveData : null
 }
 
 export const GameContext = createContext<GameContextType|null>(null)
@@ -46,7 +48,7 @@ const Game = (props: GameProps) => {
     // localStorage.clear()
     const {web, matchup} = props
     const [start, end] = matchup
-    const localSave = readLocalStroage();
+    const localSave = readLocalStroage(matchup);
     const [currArtist, setCurrArtist] = useState<Artist>(localSave?.currArtist ?? web[start])
     const [path, setPath] = useState<string[]>(localSave?.path ?? [currArtist.name])
     const [won, setWon] = useState<boolean>(localSave?.won ?? false)
@@ -56,7 +58,7 @@ const Game = (props: GameProps) => {
     const save = (): void => {
         console.log('here')
         const curr: SaveProps = {
-            currArtist, path, won, guesses, resets
+            currArtist, path, won, guesses, resets, matchup
         } 
         localStorage.setItem("props", JSON.stringify(curr));
     }
@@ -98,8 +100,7 @@ const Game = (props: GameProps) => {
             <Text size="20px">Guesses:{guesses} Resets:{resets}</Text>
             {won ? <GameOver won={won} path={path} guesses={guesses} matchup={matchup} resets={resets}/> :
             <SimpleGrid className='mt-5' 
-            cols={{ base: 2, sm: 3, lg: 5 }}
-            spacing={{ base: 10, sm: 'xl' }}>
+            cols={{ base: 2, sm: 3, lg: 5 }}>
             {currArtist.related.map(artist_name => 
                 <ArtistCard key={web[artist_name].id} artist={web[artist_name]}
                 updateArtistHandler={updateArtistHandler}/>)}
