@@ -1,6 +1,6 @@
 'use client'
 
-import React, { createContext, useEffect, useState } from 'react'
+import React, { Component, createContext, useEffect, useRef, useState } from 'react'
 import ArtistCard from './ArtistCard'
 import GameOver from './GameOver'
 import Reset from './Reset'
@@ -36,9 +36,6 @@ interface SaveProps {
 
 const readLocalStroage = (matchup: string[]): SaveProps|null => {
     // Ensure page is mounted to client before trying to read localStorage
-    if (typeof window == 'undefined') {
-        return null
-    }
     const item = localStorage.getItem("props");
     if (item === null) {
         return null
@@ -50,16 +47,14 @@ const readLocalStroage = (matchup: string[]): SaveProps|null => {
 export const GameContext = createContext<GameContextType|null>(null)
 
 const Game = (props: GameProps) => {
-    // localStorage.clear()
     const {web, matchup} = props
     const [start, end] = matchup
-    const localSave = readLocalStroage(matchup);
-    const [currArtist, setCurrArtist] = useState<Artist>(localSave?.currArtist ?? web[start])
-    const [path, setPath] = useState<string[]>(localSave?.path ?? [currArtist.name])
-    const [won, setWon] = useState<boolean>(localSave?.won ?? false)
-    const [guesses, setGuesses] = useState<number>(localSave?.guesses ?? 0)
-    const [resets, setResets] = useState<number>(localSave?.resets ?? 0)
-    const [modalOpened, { open, close }] = useDisclosure(won)
+    const [currArtist, setCurrArtist] = useState<Artist>(web[start])
+    const [path, setPath] = useState<string[]>([currArtist.name])
+    const [won, setWon] = useState<boolean>(false)
+    const [guesses, setGuesses] = useState<number>(0)
+    const [resets, setResets] = useState<number>(0)
+    const [modalOpened, { open, close }] = useDisclosure(false)
     
     const save = (): void => {
         const curr: SaveProps = {
@@ -68,10 +63,34 @@ const Game = (props: GameProps) => {
         localStorage.setItem("props", JSON.stringify(curr));
     }
 
+    const loadLocalStorageIntoState = ():void => {
+        const localSave = readLocalStroage(matchup);
+        if (localSave == null) {
+            return
+        }
+        setCurrArtist(localSave.currArtist)
+        setPath(localSave.path)
+        setWon(localSave.won)
+        setGuesses(localSave.guesses)
+        setResets(localSave.resets)
+        if (localSave.won) {
+            open()
+        }
+    }
+
+    // Ensure it only attempts to load localStorage when mounting
+    const initialized = useRef(false)
     useEffect(() => {
-        save()
+        if (!initialized.current) {
+            initialized.current = true 
+            loadLocalStorageIntoState()
+        }
+    }, [])
+
+    useEffect(() => {
+        save()  
     })
-    
+
     const updateArtistHandler = (artist: Artist): void => {
         if (won === true) {
             return
@@ -93,6 +112,11 @@ const Game = (props: GameProps) => {
         setPath([...path, "RESET", start])
         setResets(resets + 1)
         setCurrArtist(web[start])
+    }
+
+    // Don't render if not initialized yet
+    if (!initialized.current) {
+        return null
     }
 
     return (
