@@ -1,12 +1,11 @@
 'use client'
 
-import React, { Component, createContext, useEffect, useRef, useState } from 'react'
+import React, { createContext, useEffect, useState } from 'react'
 import ArtistCard from './ArtistCard'
 import GameOver from './GameOver'
 import Reset from './Reset'
 import { Flex, SimpleGrid, Text } from '@mantine/core'
 import { useDisclosure } from '@mantine/hooks'
-import { match } from 'assert'
 
 export interface Artist {
     name: string,
@@ -127,7 +126,7 @@ const Game = (props: GameProps) => {
         if (won === true || currArtist.name == start) {
             return
         }
-        const newPath = [...path, "RESET", start]
+        const newPath = [...path, "RESET"]
         setPath(newPath)
         setResets(resets + 1)
         setCurrArtist(web[start])

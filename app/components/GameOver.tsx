@@ -1,7 +1,6 @@
 import React from 'react'
-import { Artist } from './Game'
 import { Modal, Text, Flex, Button } from '@mantine/core'
-import { useDisclosure } from '@mantine/hooks'
+import Share from './Share'
 
 export interface GameOverProps {
     opened: boolean,
@@ -17,16 +16,15 @@ const GameOver = (props: GameOverProps) => {
     const [start, end] = matchup
   return (
     <Modal opened={opened} 
-    onClose={close} centered>
+    onClose={close} title="You win!" centered
+    styles={{ title: { fontSize: "20px", fontWeight: "bold" } }}>
       <Flex 
           align="center"
           direction="column"
-          gap="xl">
-        <Text ta="center" size="lg">You win!</Text>
+          gap="lg">
         <Text ta="center" size="md">You got from {start} to {end} in {guesses} guesses with {resets} resets</Text>
         <Text ta="center" size="sm">Your path: <br></br>{path.join("→")}</Text>
-        <Button size="md" variant="filled" color="teal">Share</Button>
-        <Text ta="center" size="sm">Time until next game: </Text>
+        <Share path={path} guesses={guesses} matchup={matchup} resets={resets}/>
       </Flex>
     </Modal>
   )
