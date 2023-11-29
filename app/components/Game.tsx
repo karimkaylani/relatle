@@ -1,6 +1,6 @@
 'use client'
 
-import React, { createContext, useState } from 'react'
+import React, { createContext, useEffect, useState } from 'react'
 import ArtistCard from './ArtistCard'
 import GameOver from './GameOver'
 import Reset from './Reset'
@@ -24,16 +24,46 @@ interface GameProps {
     matchup: string[]
 }
 
+interface SaveProps {
+    currArtist: Artist,
+    path: string[],
+    won: boolean,
+    guesses: number,
+    resets: number
+}
+
+const readLocalStroage = (): SaveProps|null => {
+    const item = localStorage.getItem("props");
+    if (item === null) {
+        return null;
+    }
+    return JSON.parse(item) as SaveProps;
+}
+
 export const GameContext = createContext<GameContextType|null>(null)
 
 const Game = (props: GameProps) => {
+    // localStorage.clear()
     const {web, matchup} = props
     const [start, end] = matchup
-    const [currArtist, setCurrArtist] = useState(web[start])
-    const [path, setPath] = useState([currArtist.name])
-    const [won, setWon] = useState(false)
-    const [guesses, setGuesses] = useState(0)
-    const [resets, setResets] = useState(0)
+    const localSave = readLocalStroage();
+    const [currArtist, setCurrArtist] = useState<Artist>(localSave?.currArtist ?? web[start])
+    const [path, setPath] = useState<string[]>(localSave?.path ?? [currArtist.name])
+    const [won, setWon] = useState<boolean>(localSave?.won ?? false)
+    const [guesses, setGuesses] = useState<number>(localSave?.guesses ?? 0)
+    const [resets, setResets] = useState<number>(localSave?.resets ?? 0)
+    
+    const save = (): void => {
+        console.log('here')
+        const curr: SaveProps = {
+            currArtist, path, won, guesses, resets
+        } 
+        localStorage.setItem("props", JSON.stringify(curr));
+    }
+
+    useEffect(() => {
+        save()
+    })
     
     const updateArtistHandler = (artist: Artist): void => {
         if (won === true) {
@@ -61,7 +91,8 @@ const Game = (props: GameProps) => {
         <Flex 
         align="center"
         direction="column"
-        gap="xl">
+        gap="xl"
+        className="mt-5">
             <Text size="45px">relatle</Text>
             <Text size="25px">{`${currArtist.name} => ${end}`}</Text>
             <Text size="20px">Guesses:{guesses} Resets:{resets}</Text>
