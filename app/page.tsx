@@ -8,10 +8,10 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default async function Home() {
   const web = await getWeb()
-  const matchup = await getMatchup()
+  const matchups = await getMatchups()
   return (
     <main className={inter.className}>
-      <Game web={web} matchup={matchup}/>
+      <Game web={web} matchups={matchups}/>
     </main>
   )
 }
@@ -21,24 +21,8 @@ async function getWeb(): Promise<{[key: string]: Artist}> {
   return JSON.parse(web)
 }
 
-async function getMatchup(): Promise<string[]> {
+async function getMatchups(): Promise<string[][]> {
   const matchups = await fs.readFile(process.cwd() + "/public/matchups.json", "utf8")
   const data = JSON.parse(matchups)
-  
-  // return data[getRandomInt(0, data.length - 1)]
-  const startDate = new Date("2023-11-27")
-  const index = getNumDaysDifferenceFromToday(startDate) % data.length
-  return data[index]  
-}
-
-function getNumDaysDifferenceFromToday(startDate: Date) {
-  const today = new Date();
-  const oneDay = (1000 * 3600 * 24);
-  const diff = Math.round((today.getTime() - startDate.getTime()) / oneDay);
-  return diff
-}
-
-// For testing purposes
-function getRandomInt(min: number, max: number) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
+  return data
 }
