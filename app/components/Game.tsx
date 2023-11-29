@@ -56,11 +56,8 @@ const Game = (props: GameProps) => {
     const [resets, setResets] = useState<number>(0)
     const [modalOpened, { open, close }] = useDisclosure(false)
     
-    const save = (): void => {
-        const curr: SaveProps = {
-            currArtist, path, won, guesses, resets, matchup
-        } 
-        localStorage.setItem("props", JSON.stringify(curr));
+    const save = (saveData: SaveProps): void => { 
+        localStorage.setItem("props", JSON.stringify(saveData));
     }
 
     const loadLocalStorageIntoState = ():void => {
@@ -78,45 +75,54 @@ const Game = (props: GameProps) => {
         }
     }
 
-    // Ensure it only attempts to load localStorage when mounting
-    const initialized = useRef(false)
+    const [loading, setLoading] = useState(true)
     useEffect(() => {
-        if (!initialized.current) {
-            initialized.current = true 
-            loadLocalStorageIntoState()
-        }
+        loadLocalStorageIntoState()
+        setLoading(false)
     }, [])
-
-    useEffect(() => {
-        save()  
-    })
 
     const updateArtistHandler = (artist: Artist): void => {
         if (won === true) {
             return
         }
-        setPath([...path, artist.name])
+        const newPath = [...path, artist.name]
+        setPath(newPath)
         setGuesses(guesses + 1)
         if (artist.name === end) {
             setWon(true)
+            const curr: SaveProps = {
+                currArtist, path: newPath, won:true,
+                guesses: guesses+1, resets, matchup
+            }
+            save(curr) 
             open()
             return
         }
         setCurrArtist(artist)
+        const curr: SaveProps = {
+            currArtist: artist, path: newPath, won,
+            guesses: guesses+1, resets, matchup
+        }
+        save(curr)
     }
 
     const resetHandler = (): void => {
         if (won === true || currArtist.name == start) {
             return
         }
-        setPath([...path, "RESET", start])
+        const newPath = [...path, "RESET", start]
+        setPath(newPath)
         setResets(resets + 1)
         setCurrArtist(web[start])
+        const curr: SaveProps = {
+            currArtist: web[start], path: newPath, won,
+            guesses, resets: resets+1, matchup
+        }
+        save(curr)
     }
 
-    // Don't render if not initialized yet
-    if (!initialized.current) {
-        return null
+    if (loading) {
+        return null;
     }
 
     return (
