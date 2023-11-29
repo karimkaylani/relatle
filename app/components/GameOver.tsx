@@ -4,7 +4,8 @@ import { Modal, Text, Flex, Button } from '@mantine/core'
 import { useDisclosure } from '@mantine/hooks'
 
 export interface GameOverProps {
-    won: boolean,
+    opened: boolean,
+    close: () => void,
     path: string[],
     guesses: number,
     matchup: string[],
@@ -12,9 +13,8 @@ export interface GameOverProps {
 }
 
 const GameOver = (props: GameOverProps) => {
-    const {won, path, guesses, matchup, resets} = props
+    const {opened, close, path, guesses, matchup, resets} = props
     const [start, end] = matchup
-    const [opened, { open, close }] = useDisclosure(true)
   return (
     <Modal opened={opened} 
     onClose={close} centered>
@@ -24,7 +24,7 @@ const GameOver = (props: GameOverProps) => {
           gap="xl">
         <Text ta="center" size="lg">You win!</Text>
         <Text ta="center" size="md">You got from {start} to {end} in {guesses} guesses with {resets} resets</Text>
-        <Text ta="center" size="sm">Your path: {path.join("→")}</Text>
+        <Text ta="center" size="sm">Your path: <br></br>{path.join("→")}</Text>
         <Button>Share</Button>
         <Text ta="center" size="sm">Time until next game: </Text>
       </Flex>

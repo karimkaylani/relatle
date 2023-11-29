@@ -5,6 +5,7 @@ import ArtistCard from './ArtistCard'
 import GameOver from './GameOver'
 import Reset from './Reset'
 import { Flex, SimpleGrid, Text } from '@mantine/core'
+import { useDisclosure } from '@mantine/hooks'
 
 export interface Artist {
     name: string,
@@ -54,6 +55,7 @@ const Game = (props: GameProps) => {
     const [won, setWon] = useState<boolean>(localSave?.won ?? false)
     const [guesses, setGuesses] = useState<number>(localSave?.guesses ?? 0)
     const [resets, setResets] = useState<number>(localSave?.resets ?? 0)
+    const [modalOpened, { open, close }] = useDisclosure(won)
     
     const save = (): void => {
         const curr: SaveProps = {
@@ -74,6 +76,7 @@ const Game = (props: GameProps) => {
         setGuesses(guesses + 1)
         if (artist.name === end) {
             setWon(true)
+            open()
             return
         }
         setCurrArtist(artist)
@@ -94,16 +97,17 @@ const Game = (props: GameProps) => {
         direction="column"
         gap="xl"
         className="mt-5">
-            <Text size="45px">relatle</Text>
-            <Text size="25px">{`${currArtist.name} => ${end}`}</Text>
-            <Text size="20px">Guesses:{guesses} Resets:{resets}</Text>
-            {won ? <GameOver won={won} path={path} guesses={guesses} matchup={matchup} resets={resets}/> :
-            <SimpleGrid className='mt-5' 
+            <Text ta="center" size="45px">relatle</Text>
+            <Text ta="center" size="25px">{`${start} => ${end}`}</Text>
+            <Text ta="center" size="20px">Guesses:{guesses}<br/><br/>Resets:{resets}</Text>
+            <Text ta="center" size="lg"><b>{currArtist.name}'s</b> Related Artists:</Text>
+            <GameOver opened={modalOpened} close={close} path={path} guesses={guesses} matchup={matchup} resets={resets}/>
+            <SimpleGrid 
             cols={{ base: 2, sm: 3, lg: 5 }}>
             {currArtist.related.map(artist_name => 
                 <ArtistCard key={web[artist_name].id} artist={web[artist_name]}
                 updateArtistHandler={updateArtistHandler}/>)}
-            </SimpleGrid>}
+            </SimpleGrid>
             {!won ? <Reset resetHandler={resetHandler}/> : null}
         </Flex>
     )
