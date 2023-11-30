@@ -148,14 +148,13 @@ const Game = (props: GameProps) => {
         align="center"
         direction="column"
         gap="xl"
-        className="mt-5">
+        className="mt-5 pb-10 pl-5 pr-5">
             <Image w={250} src="logo.png"></Image>
             <Matchup start={web[start]} end={web[end]}></Matchup>
             <GuessesResets guesses={guesses} resets={resets}></GuessesResets>
             <RelatedArtistsTitle artist={currArtist}></RelatedArtistsTitle>
-            {/* <Text ta="center" size="lg"><b>{currArtist.name}&apos;s</b> Related Artists:</Text> */}
             <GameOver opened={modalOpened} close={close} path={path} guesses={guesses} matchup={matchup} resets={resets} web={web}/>
-            <SimpleGrid 
+            <SimpleGrid
             cols={{ base: 2, sm: 3, lg: 5 }}>
             {currArtist.related.map(artist_name => 
                 <ArtistCard key={web[artist_name].id} artist={web[artist_name]}

@@ -10,16 +10,17 @@ interface ArtistCardProps {
 
 const ArtistCard = (props: ArtistCardProps) => {
   const {artist, updateArtistHandler} = props
+  const phoneMaxWidth = 500
   return (
     <motion.button
-    whileHover={{ scale: 1.05 }}
+    whileHover={window.innerWidth > phoneMaxWidth ? { scale: 1.05 } : {}}
     whileTap={{ scale: 0.95 }}
     onTap={() => updateArtistHandler(artist)}>
       <Card
         shadow="sm"
         radius="md" withBorder
         padding="xs"
-        className="w-48"
+        className={window.innerWidth > phoneMaxWidth ? "w-48" : ""}
         >
           <Flex 
             align="center"

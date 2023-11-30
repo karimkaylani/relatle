@@ -1,10 +1,12 @@
 import React from 'react'
 import { Modal, Text, Flex, Button, Group } from '@mantine/core'
-import Share from './Share'
+import ShareResults from './ShareResults'
 import { Artist } from './Game'
 import Matchup from './Matchup'
 import ScrollablePath from './ScrollablePath'
 import ArtistInfo from './ArtistInfo'
+import GuessesResets from './GuessesResets'
+import SharePath from './SharePath'
 
 export interface GameOverProps {
     opened: boolean,
@@ -22,6 +24,7 @@ const GameOver = (props: GameOverProps) => {
   return (
     <Modal opened={opened} 
     onClose={close} withCloseButton={false} centered
+    padding="lg" radius="lg"
     styles={{ title: { fontSize: "20px", fontWeight: "bold" } }}>
       <Flex 
           align="center"
@@ -33,9 +36,13 @@ const GameOver = (props: GameOverProps) => {
           <Text fw={500} c="gray.1" size="25px">→</Text>
           <ArtistInfo artist={web[end]} small={true} is_green={true}></ArtistInfo>
         </Group>
+        <GuessesResets guesses={guesses} resets={resets}/>
         <Text ta="center" size="sm">Your Path</Text>
         <ScrollablePath matchup={matchup} web={web} path={path}></ScrollablePath>
-        <Share path={path} guesses={guesses} matchup={matchup} resets={resets}/>
+        <Group justify="center">
+          <SharePath path={path}/>
+          <ShareResults path={path} guesses={guesses} matchup={matchup} resets={resets}/>
+        </Group>
       </Flex>
     </Modal>
   )

@@ -2,14 +2,14 @@ import React from 'react'
 import { GameOverProps } from './GameOver'
 import { Button, CopyButton } from '@mantine/core'
 
-export interface ShareProps {
+export interface ShareResultsProps {
     path: string[],
     guesses: number,
     matchup: string[],
     resets: number
 }
 
-const Share = (props: ShareProps) => {
+const ShareResults = (props: ShareResultsProps) => {
     const {path, guesses, matchup, resets} = props
     const [start, end] = matchup
 
@@ -17,7 +17,7 @@ const Share = (props: ShareProps) => {
         let res = ""
         path.slice(1).forEach(curr => {
             if (curr == "RESET") {
-                res += "⏮️"
+                res += "🟨"
             } else {
                 res += "⬜"
             }
@@ -40,19 +40,19 @@ https://relatle.vercel.app/`
         return (
             <Button onClick={() => navigator.share({
                 text: generateShareText()
-            })} size="md" variant="filled" color="teal">Share</Button>
+            })} color="green.6">SHARE RESULTS</Button>
         )
     }
 
     return (
         <CopyButton value={generateShareText()}>
         {({ copied, copy }) => (
-            <Button color={copied ? 'blue' : 'teal'} onClick={copy}>
-            {copied ? 'Copied!' : 'Share'}
+            <Button color={copied ? 'green.9' : 'green.6'} onClick={copy}>
+            {copied ? 'COPIED RESULTS' : 'SHARE RESULTS'}
             </Button>
         )}
         </CopyButton>
     )
 }
 
-export default Share
+export default ShareResults

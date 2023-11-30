@@ -6,5 +6,18 @@
 
 @font-face {
   font-family: 'RelativePro';
+  src: url('/fonts/RelativePro-Book.otf');
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'RelativePro';
   src: url('/fonts/RelativePro-Medium.otf');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'RelativePro';
+  src: url('/fonts/RelativePro-Bold.otf');
+  font-weight: 700;
 }
