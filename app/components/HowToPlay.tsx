@@ -21,13 +21,14 @@ const HowToPlay = (props: HowToPlayProps) => {
             <Image w={30} src="question.svg" alt="How To Play"/>
         </HoverButton>
         <Modal opened={opened} 
-        onClose={close} withCloseButton={false} centered
-        padding="xl" radius="lg">
+        onClose={close} withCloseButton={true} centered
+        padding="xl" radius="lg"
+        title="How to Play"
+        styles={{ title: { fontSize: "25px", color: "#f1f3f5" } }}>
             <Flex 
             align="left"
             direction="column"
             gap="lg">
-                <Text ta="center" c="gray.1" size="25px">How to Play</Text>
                 <Group wrap="nowrap">
                     <Card
                         shadow="sm"
