@@ -1,5 +1,5 @@
-import { Button, Flex, Text } from '@mantine/core'
-import React from 'react'
+import { Button, Divider, Flex, Text } from '@mantine/core'
+import React, { Fragment } from 'react'
 
 export interface ResetProps {
     resetHandler: () => void
@@ -11,11 +11,11 @@ const Reset = (props: ResetProps) => {
     <Flex
     align="center"
     direction="column"
-    gap="5px">
+    gap="xs"
+    className='pt-10'>
+      <Button onClick={resetHandler} size="md" color="yellow.7" variant="filled">RESET</Button>
       <Text ta="center" size="md">Feeling stuck?</Text>
-      <Button onClick={resetHandler} size="md" color="yellow.7" variant="filled">Reset</Button>
     </Flex>
-    
   )
 }
 
