@@ -32,7 +32,7 @@ ${start} → ${end}
 ${generateEmojiLine()}
 Guesses: ${guesses}
 Resets: ${resets}
-https://relatle.vercel.app/`
+relatle.io/`
         return text
     }
 
