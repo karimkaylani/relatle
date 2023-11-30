@@ -5,11 +5,13 @@ import { motion } from "framer-motion"
 
 interface ArtistCardProps {
     artist: Artist,
-    updateArtistHandler: (artist: Artist) => void
+    updateArtistHandler: (artist: Artist) => void,
+    won: boolean,
+    end: string
 }
 
 const ArtistCard = (props: ArtistCardProps) => {
-  const {artist, updateArtistHandler} = props
+  const {artist, updateArtistHandler, won, end} = props
   return (
     <motion.button
     whileHover={window.innerWidth > phoneMaxWidth ? { scale: 1.05 } : {}}
@@ -19,6 +21,7 @@ const ArtistCard = (props: ArtistCardProps) => {
         shadow="sm"
         radius="md" withBorder
         padding="xs"
+        opacity={won && artist.name !== end ? 0.25 : 1}
         className={window.innerWidth > phoneMaxWidth ? "w-48" : ""}
         >
           <Flex 

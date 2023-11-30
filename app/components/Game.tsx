@@ -169,7 +169,7 @@ const Game = (props: GameProps) => {
             <SimpleGrid
             cols={{ base: 2, sm: 3, lg: 5 }}>
             {currArtist.related.map(artist_name => 
-                <ArtistCard key={web[artist_name].id} artist={web[artist_name]}
+                <ArtistCard key={web[artist_name].id} artist={web[artist_name]} won={won} end={end}
                 updateArtistHandler={updateArtistHandler}/>)}
             </SimpleGrid>
             {!won ? <Reset resetHandler={resetHandler}/> : null}
