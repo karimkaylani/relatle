@@ -9,6 +9,7 @@ import { useDisclosure } from '@mantine/hooks'
 import Matchup from './Matchup'
 import GuessesResets from './GuessesResets'
 import RelatedArtistsTitle from './RelatedArtistsTitle'
+import { motion } from 'framer-motion'
 
 export interface Artist {
     name: string,
@@ -46,6 +47,8 @@ const readLocalStroage = (matchup: string[]): SaveProps|null => {
     const saveData = JSON.parse(item) as SaveProps;
     return JSON.stringify(saveData.matchup) == JSON.stringify(matchup) ? saveData : null
 }
+
+export const phoneMaxWidth = 500;
 
 // For testing purposes
 function getRandomInt(min: number, max: number) {
@@ -151,7 +154,12 @@ const Game = (props: GameProps) => {
         className="mt-5 pb-10 pl-5 pr-5">
             <Image w={250} src="logo.png"></Image>
             <Matchup start={web[start]} end={web[end]}></Matchup>
-            <GuessesResets guesses={guesses} resets={resets} greenBorder={won}/>
+            <motion.button
+            whileHover={window.innerWidth > phoneMaxWidth && won ? { scale: 1.05 } : {}}
+            whileTap={won ? { scale: 0.95 } : {}}
+            onTap={won ? () => open() : () => console.log("")}>
+                <GuessesResets guesses={guesses} resets={resets} greenBorder={won}/>
+            </motion.button>
             <RelatedArtistsTitle artist={currArtist}></RelatedArtistsTitle>
             <GameOver opened={modalOpened} close={close} path={path} guesses={guesses} matchup={matchup} resets={resets} web={web}/>
             <SimpleGrid

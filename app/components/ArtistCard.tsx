@@ -1,5 +1,5 @@
 import React from 'react'
-import { Artist } from './Game'
+import { Artist, phoneMaxWidth } from './Game'
 import { Button, Card, Image, Text, Center, Flex } from '@mantine/core';
 import { motion } from "framer-motion"
 
@@ -10,7 +10,6 @@ interface ArtistCardProps {
 
 const ArtistCard = (props: ArtistCardProps) => {
   const {artist, updateArtistHandler} = props
-  const phoneMaxWidth = 500
   return (
     <motion.button
     whileHover={window.innerWidth > phoneMaxWidth ? { scale: 1.05 } : {}}
