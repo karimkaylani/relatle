@@ -31,7 +31,7 @@ const ArtistCard = (props: ArtistCardProps) => {
             gap="0px">
             <Card.Section inheritPadding>
               <Image radius="md" src={artist.image} w={175} h={175} alt={artist.name} />
-            <Text c={path.includes(artist.name) ? "gray.5" : "gray.1"} fw={700} size="lg" mt="md" ta="center">
+            <Text c={path.includes(artist.name) && artist.name !== end ? "gray.5" : "gray.1"} fw={700} size="lg" mt="md" ta="center">
               {artist.name}
             </Text>
             </Card.Section>
