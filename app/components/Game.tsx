@@ -46,7 +46,7 @@ const readLocalStroage = (matchup: string[]): SaveProps|null => {
         return null
     }
     const saveData = JSON.parse(item) as SaveProps;
-    return JSON.stringify(saveData.matchup) == JSON.stringify(matchup) ? saveData : null
+    return saveData
 }
 
 export const phoneMaxWidth = 500;
@@ -84,6 +84,8 @@ const Game = (props: GameProps) => {
     const [resets, setResets] = useState<number>(0)
     const [winModalOpened, winModalHandlers] = useDisclosure(false)
     const {open: winModalOpen, close: winModalClose} = winModalHandlers
+    const [htpModalOpened, htpModalHandlers] = useDisclosure(false);
+    const {open: htpModalOpen} = htpModalHandlers
     
     const save = (saveData: SaveProps): void => { 
         localStorage.setItem("props", JSON.stringify(saveData));
@@ -92,6 +94,10 @@ const Game = (props: GameProps) => {
     const loadLocalStorageIntoState = ():void => {
         const localSave = readLocalStroage(matchup);
         if (localSave == null) {
+            htpModalOpen()
+            return
+        }
+        if (JSON.stringify(localSave.matchup) !== JSON.stringify(matchup)) {
             return
         }
         setCurrArtist(localSave.currArtist)
@@ -182,7 +188,7 @@ const Game = (props: GameProps) => {
                 updateArtistHandler={updateArtistHandler}/>)}
             </SimpleGrid>
             {!won ? <Reset resetHandler={resetHandler}/> : null}
-            <HowToPlay start={web[start]} end={web[end]}/>
+            <HowToPlay start={web[start]} end={web[end]} opened={htpModalOpened} handlers={htpModalHandlers}/>
             <Text>Built by <Anchor c="green.8" href="https://karimkaylani.com/" target="_blank">Karim Kaylani</Anchor>. 
             Designed by <Anchor c="green.8" href="https://zade.design/" target="_blank">Zade Kaylani</Anchor>.</Text>
         </Flex>

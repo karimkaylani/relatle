@@ -7,12 +7,14 @@ import ArtistInfo from './ArtistInfo';
 
 export interface HowToPlayProps {
     start: Artist,
-    end: Artist
+    end: Artist,
+    opened: boolean,
+    handlers: any
 }
 
 const HowToPlay = (props: HowToPlayProps) => {
-    const [opened, { open, close }] = useDisclosure(false);
-    const {start, end} = props
+    const {start, end, opened, handlers} = props
+    const {open, close} = handlers
   return (
     <Group justify="flex-end">
         <HoverButton onTap={open}>
