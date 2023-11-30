@@ -1,4 +1,3 @@
-'use client'
 import { Card, Divider, Flex, Group, Paper, Text } from '@mantine/core'
 import React from 'react'
 
