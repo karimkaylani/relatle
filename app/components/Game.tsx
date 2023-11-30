@@ -154,7 +154,7 @@ const Game = (props: GameProps) => {
             <GuessesResets guesses={guesses} resets={resets}></GuessesResets>
             <RelatedArtistsTitle artist={currArtist}></RelatedArtistsTitle>
             {/* <Text ta="center" size="lg"><b>{currArtist.name}&apos;s</b> Related Artists:</Text> */}
-            <GameOver opened={modalOpened} close={close} path={path} guesses={guesses} matchup={matchup} resets={resets}/>
+            <GameOver opened={modalOpened} close={close} path={path} guesses={guesses} matchup={matchup} resets={resets} web={web}/>
             <SimpleGrid 
             cols={{ base: 2, sm: 3, lg: 5 }}>
             {currArtist.related.map(artist_name => 
