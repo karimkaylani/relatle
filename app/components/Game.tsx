@@ -4,7 +4,7 @@ import React, { createContext, useEffect, useState } from 'react'
 import ArtistCard from './ArtistCard'
 import GameOver from './GameOver'
 import Reset from './Reset'
-import { Flex, SimpleGrid, Text } from '@mantine/core'
+import { Flex, SimpleGrid, Text, Image } from '@mantine/core'
 import { useDisclosure } from '@mantine/hooks'
 import Matchup from './Matchup'
 import GuessesResets from './GuessesResets'
@@ -148,7 +148,8 @@ const Game = (props: GameProps) => {
         direction="column"
         gap="xl"
         className="mt-5">
-            <Text ta="center" size="45px">relatle</Text>
+            {/* <Text ta="center" size="45px">relatle</Text> */}
+            <Image w={250} src="logo.png"></Image>
             <Matchup start={start} end={end} end_img={web[end].image}></Matchup>
             <GuessesResets guesses={resets} resets={resets}></GuessesResets>
             <Text ta="center" size="lg"><b>{currArtist.name}&apos;s</b> Related Artists:</Text>
