@@ -166,7 +166,7 @@ const Game = (props: GameProps) => {
         direction="column"
         gap="xl"
         className="mt-5 pb-10 pl-5 pr-5">
-            <Image w={250} src="logo.png"></Image>
+            <Image w={250} src="logo.png" alt="logo"></Image>
             
             <Stack gap="xs">
                 <Text ta="center">In as few guesses as you can,<br></br>use related artists to get from</Text>

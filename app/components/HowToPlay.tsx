@@ -18,7 +18,7 @@ const HowToPlay = (props: HowToPlayProps) => {
   return (
     <Group justify="flex-end">
         <HoverButton onTap={open}>
-            <Image w={30} src="question.svg"/>
+            <Image w={30} src="question.svg" alt="How To Play"/>
         </HoverButton>
         <Modal opened={opened} 
         onClose={close} withCloseButton={false} centered
@@ -58,7 +58,7 @@ const HowToPlay = (props: HowToPlayProps) => {
                 </Group>
 
                 <Group justify='center'>
-                    <Image w={300} src="how-to-play.png"/>
+                    <Image w={300} src="how-to-play.png" alt="Clicking an artist box"/>
                 </Group>
 
                 <Group wrap="nowrap">
@@ -70,7 +70,7 @@ const HowToPlay = (props: HowToPlayProps) => {
                         <Text ta="center">3</Text>
                     </Card>
                     <Text fw={300}>To win, make sure to select the target artist
-                    when they pop up or you'll miss it! Have fun!</Text>
+                    when they pop up or you&apos;ll miss it! Have fun!</Text>
                 </Group>
 
 
