@@ -169,7 +169,7 @@ const Game = (props: GameProps) => {
             <Image w={250} src="logo.png"></Image>
             
             <Stack gap="xs">
-                <Text ta="center">In as few guesses as you can,<br></br>use the related artists to get from</Text>
+                <Text ta="center">In as few guesses as you can,<br></br>use related artists to get from</Text>
                 <Matchup start={web[start]} end={web[end]}></Matchup>
             </Stack>
             {won ? 
