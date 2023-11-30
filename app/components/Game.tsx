@@ -179,7 +179,7 @@ const Game = (props: GameProps) => {
             </SimpleGrid>
             {!won ? <Reset resetHandler={resetHandler}/> : null}
             <Text>Built by <Anchor c="green.8" href="https://karimkaylani.com/" target="_blank">Karim Kaylani</Anchor>. 
-            Designed by <Anchor c="green.8" href="https://zade.design/" target="_blank">Zade Kaylani</Anchor></Text>
+            Designed by <Anchor c="green.8" href="https://zade.design/" target="_blank">Zade Kaylani</Anchor>.</Text>
         </Flex>
     )
 }
