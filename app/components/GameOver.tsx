@@ -30,7 +30,7 @@ const GameOver = (props: GameOverProps) => {
           align="center"
           direction="column"
           gap="lg">
-        <Text c="gray.1" size="25px" fw={700}>You Win!</Text>
+        <Text c="gray.1" size="25px" fw={700}>You Won!</Text>
         <Group justify="center">
           <ArtistInfo artist={web[start]} small={true} is_green={false}></ArtistInfo>
           <Text fw={500} c="gray.1" size="25px">→</Text>

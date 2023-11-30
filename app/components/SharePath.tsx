@@ -13,7 +13,7 @@ const SharePath = (props: SharePathProps) => {
         return (
             <Button onClick={() => navigator.share({
                 text: pathString
-            })} variant="filled" color="gray.7">SHARE RESULTS</Button>
+            })} variant="filled" color="gray.7">SHARE PATH</Button>
         )
     }
 
