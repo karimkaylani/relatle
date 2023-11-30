@@ -7,7 +7,7 @@ import { Analytics } from "@vercel/analytics/react";
 
 export const metadata = {
   title: 'relatle',
-  description: 'A wordle-type game where you go from one music artist to another through their related artists',
+  description: 'In as few guesses as you can, use related artists to complete the artist path of the day! Like WikiRaces but with musicians.',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
