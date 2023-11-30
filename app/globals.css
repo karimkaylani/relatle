@@ -3,3 +3,8 @@
 @layer {
   @tailwind base; 
 }
+
+@font-face {
+  font-family: 'RelativePro';
+  src: url('/fonts/RelativePro-Medium.otf');
+}

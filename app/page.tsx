@@ -10,7 +10,7 @@ export default async function Home() {
   const web = await getWeb()
   const matchups = await getMatchups()
   return (
-    <main className={inter.className}>
+    <main>
       <Game web={web} matchups={matchups}/>
     </main>
   )

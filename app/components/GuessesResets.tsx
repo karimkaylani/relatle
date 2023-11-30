@@ -1,3 +1,4 @@
+'use client'
 import { Card, Divider, Flex, Group, Paper, Text } from '@mantine/core'
 import React from 'react'
 
@@ -11,10 +12,9 @@ const GuessesResets = (props: GuessesResetsProps) => {
 
   return (
     <Card shadow="md" radius="md" p="xs" withBorder>
-        <Group justify="center">
-            
+        <Group justify="center" className="pb-2">
             <Flex
-            gap="xs"
+            gap="3px"
             justify="center"
             align="center"
             direction="column"
@@ -26,7 +26,7 @@ const GuessesResets = (props: GuessesResetsProps) => {
             </Flex>
             <Divider orientation="vertical" />
             <Flex
-            gap="xs"
+            gap="3px"
             justify="center"
             align="center"
             direction="column"

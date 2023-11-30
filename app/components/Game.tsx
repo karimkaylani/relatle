@@ -8,6 +8,7 @@ import { Flex, SimpleGrid, Text, Image } from '@mantine/core'
 import { useDisclosure } from '@mantine/hooks'
 import Matchup from './Matchup'
 import GuessesResets from './GuessesResets'
+import RelatedArtistsTitle from './RelatedArtistsTitle'
 
 export interface Artist {
     name: string,
@@ -148,11 +149,11 @@ const Game = (props: GameProps) => {
         direction="column"
         gap="xl"
         className="mt-5">
-            {/* <Text ta="center" size="45px">relatle</Text> */}
             <Image w={250} src="logo.png"></Image>
-            <Matchup start={start} end={end} end_img={web[end].image}></Matchup>
-            <GuessesResets guesses={resets} resets={resets}></GuessesResets>
-            <Text ta="center" size="lg"><b>{currArtist.name}&apos;s</b> Related Artists:</Text>
+            <Matchup start={start} start_img={web[start].image} end={end} end_img={web[end].image}></Matchup>
+            <GuessesResets guesses={guesses} resets={resets}></GuessesResets>
+            <RelatedArtistsTitle artist={currArtist}></RelatedArtistsTitle>
+            {/* <Text ta="center" size="lg"><b>{currArtist.name}&apos;s</b> Related Artists:</Text> */}
             <GameOver opened={modalOpened} close={close} path={path} guesses={guesses} matchup={matchup} resets={resets}/>
             <SimpleGrid 
             cols={{ base: 2, sm: 3, lg: 5 }}>
