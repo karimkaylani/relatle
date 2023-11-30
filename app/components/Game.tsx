@@ -6,6 +6,8 @@ import GameOver from './GameOver'
 import Reset from './Reset'
 import { Flex, SimpleGrid, Text } from '@mantine/core'
 import { useDisclosure } from '@mantine/hooks'
+import Matchup from './Matchup'
+import GuessesResets from './GuessesResets'
 
 export interface Artist {
     name: string,
@@ -147,8 +149,8 @@ const Game = (props: GameProps) => {
         gap="xl"
         className="mt-5">
             <Text ta="center" size="45px">relatle</Text>
-            <Text ta="center" size="25px">{`${start} => ${end}`}</Text>
-            <Text ta="center" size="20px">Guesses: {guesses}<br/><br/>Resets: {resets}</Text>
+            <Matchup start={start} end={end} end_img={web[end].image}></Matchup>
+            <GuessesResets guesses={resets} resets={resets}></GuessesResets>
             <Text ta="center" size="lg"><b>{currArtist.name}&apos;s</b> Related Artists:</Text>
             <GameOver opened={modalOpened} close={close} path={path} guesses={guesses} matchup={matchup} resets={resets}/>
             <SimpleGrid 

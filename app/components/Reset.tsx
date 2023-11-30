@@ -14,7 +14,7 @@ const Reset = (props: ResetProps) => {
     gap="5px"
     className="pb-10">
       <Text ta="center" size="md">Feeling stuck?</Text>
-      <Button onClick={resetHandler} size="md" variant="filled" color="teal">Reset</Button>
+      <Button onClick={resetHandler} size="md" variant="filled">Reset</Button>
     </Flex>
     
   )
