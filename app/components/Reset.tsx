@@ -1,5 +1,5 @@
-import { Button, Divider, Flex, Text } from '@mantine/core'
-import React, { Fragment } from 'react'
+import { Button, Flex, Text } from '@mantine/core'
+import React from 'react'
 
 export interface ResetProps {
     resetHandler: () => void

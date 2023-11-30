@@ -1,6 +1,5 @@
-import { Modal, Text, Image, Group, Flex, List, Stack, Paper, Card } from '@mantine/core'
-import { useDisclosure } from '@mantine/hooks';
-import React, { Fragment } from 'react'
+import { Modal, Text, Image, Group, Flex, Card } from '@mantine/core'
+import React from 'react'
 import HoverButton from './HoverButton';
 import { Artist } from './Game';
 import ArtistInfo from './ArtistInfo';

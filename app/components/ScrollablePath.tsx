@@ -1,4 +1,4 @@
-import { Avatar, Group, ScrollArea, Text } from '@mantine/core'
+import { Group, ScrollArea, Text } from '@mantine/core'
 import React, { Fragment } from 'react'
 import { Artist } from './Game'
 import ArtistInfo from './ArtistInfo'
@@ -13,7 +13,7 @@ const ScrollablePath = (props: ScrollablePathProps) => {
     const {matchup, web, path} = props
     const [start, end] = matchup
   return (
-    <ScrollArea h={160} className="pl-5 pr-5" type="auto" offsetScrollbars scrollbarSize={6}>
+    <ScrollArea h={125} className="pl-5 pr-5" type="auto" offsetScrollbars scrollbarSize={6}>
         <Group justify="flex-start" gap="xs">
         {path.slice(0, -1).map(artist_name => (
             artist_name !== "RESET" ?

@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import { Artist } from './Game'
 import { Avatar, Group, Stack, Text } from '@mantine/core'
 import ArtistInfo from './ArtistInfo'

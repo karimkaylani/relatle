@@ -1,10 +1,10 @@
 'use client'
 
-import React, { Fragment, createContext, useEffect, useState } from 'react'
+import React, { createContext, useEffect, useState } from 'react'
 import ArtistCard from './ArtistCard'
 import GameOver from './GameOver'
 import Reset from './Reset'
-import { Flex, SimpleGrid, Text, Image, Divider, Anchor, Group, Stack } from '@mantine/core'
+import { Flex, SimpleGrid, Text, Image, Anchor, Stack } from '@mantine/core'
 import { useDisclosure } from '@mantine/hooks'
 import Matchup from './Matchup'
 import Scoreboard from './Scoreboard'

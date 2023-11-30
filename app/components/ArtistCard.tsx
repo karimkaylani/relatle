@@ -1,7 +1,6 @@
 import React from 'react'
 import { Artist, phoneMaxWidth } from './Game'
-import { Button, Card, Image, Text, Center, Flex } from '@mantine/core';
-import { motion } from "framer-motion"
+import { Card, Image, Text, Flex } from '@mantine/core';
 import HoverButton from './HoverButton';
 
 interface ArtistCardProps {

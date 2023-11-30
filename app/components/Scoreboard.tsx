@@ -1,4 +1,4 @@
-import { Card, Divider, Flex, Group, Paper, Text } from '@mantine/core'
+import { Card, Divider, Flex, Group, Text } from '@mantine/core'
 import React from 'react'
 
 export interface ScoreboardProps {
@@ -7,24 +7,24 @@ export interface ScoreboardProps {
     greenBorder: boolean
 }
 
+const ScoreDisplay = (text: string, value: string) => {
+  return (
+      <Flex
+      gap="3px"
+      justify="center"
+      align="center"
+      direction="column"
+      wrap="wrap"
+      className="w-20 mb-1"
+      >
+          <Text size="sm" fw={500}>{text}</Text>
+          <Text c="gray.1" size="36px" fw={700}>{value}</Text>
+      </Flex>
+  )
+}
+
 const Scoreboard = (props: ScoreboardProps) => {
     const {guesses, resets, greenBorder} = props
-
-    const ScoreDisplay = (text: string, value: number) => {
-        return (
-            <Flex
-            gap="3px"
-            justify="center"
-            align="center"
-            direction="column"
-            wrap="wrap"
-            className="w-20 mb-1"
-            >
-                <Text size="sm" fw={500}>{text}</Text>
-                <Text c="gray.1" size="36px" fw={700}>{value}</Text>
-            </Flex>
-        )
-    }
   return (
     <Card shadow="md" radius="lg" p="xs" withBorder
     styles={{
@@ -34,9 +34,9 @@ const Scoreboard = (props: ScoreboardProps) => {
       }}
     >
         <Group justify="center">
-            {ScoreDisplay("Guesses", guesses)}
+            {ScoreDisplay("Guesses", guesses.toString())}
             <Divider orientation="vertical" />
-            {ScoreDisplay("Resets", resets)}
+            {ScoreDisplay("Resets", resets.toString())}
         </Group>
     </Card>
   )

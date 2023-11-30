@@ -1,5 +1,4 @@
 import React from 'react'
-import { GameOverProps } from './GameOver'
 import { Button, CopyButton } from '@mantine/core'
 import { getDiffInDays } from './Game'
 
@@ -18,7 +17,7 @@ const ShareResults = (props: ShareResultsProps) => {
         let res = ""
         path.slice(1).forEach(curr => {
             if (curr == "RESET") {
-                res += "🟨"
+                res += "🟨\n"
             } else {
                 res += "⬜"
             }

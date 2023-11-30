@@ -1,4 +1,4 @@
-import { Avatar, Button, Group, Text } from '@mantine/core'
+import { Group, Text } from '@mantine/core'
 import React from 'react'
 import ArtistInfo from './ArtistInfo'
 import { Artist } from './Game'
