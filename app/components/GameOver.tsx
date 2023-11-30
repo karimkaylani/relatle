@@ -16,12 +16,13 @@ const GameOver = (props: GameOverProps) => {
     const [start, end] = matchup
   return (
     <Modal opened={opened} 
-    onClose={close} title="You win!" centered
+    onClose={close} withCloseButton={false} centered
     styles={{ title: { fontSize: "20px", fontWeight: "bold" } }}>
       <Flex 
           align="center"
           direction="column"
           gap="lg">
+        <Text c="green.5" size="25px" fw={700}>You Win!</Text>
         <Text ta="center" size="md">You got from {start} to {end} in {guesses} guesses with {resets} resets</Text>
         <Text ta="center" size="sm">Your path: <br></br>{path.join("→")}</Text>
         <Share path={path} guesses={guesses} matchup={matchup} resets={resets}/>
