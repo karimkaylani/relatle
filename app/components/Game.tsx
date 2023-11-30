@@ -58,14 +58,14 @@ function getRandomInt(min: number, max: number) {
 const getTodaysMatchup = (startDate: Date, matchups: string[][]): string[] => {
     const today = new Date();
     const oneDay = (1000 * 3600 * 24);
-    const diff = Math.round((today.getTime() - startDate.getTime()) / oneDay);
+    const diff = Math.floor((today.getTime() - startDate.getTime()) / oneDay);
     const index = Math.max(diff, 0) % matchups.length
     // return matchups[getRandomInt(0, matchups.length-1)]
     return matchups[index]
 }
 
 export const GameContext = createContext<GameContextType|null>(null)
-const startDate = new Date("2023-11-27")
+const startDate = new Date("2023-11-29")
 
 const Game = (props: GameProps) => {
     const {web, matchups} = props
