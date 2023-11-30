@@ -2,6 +2,7 @@ import React from 'react'
 import { Artist, phoneMaxWidth } from './Game'
 import { Button, Card, Image, Text, Center, Flex } from '@mantine/core';
 import { motion } from "framer-motion"
+import HoverButton from './HoverButton';
 
 interface ArtistCardProps {
     artist: Artist,
@@ -14,10 +15,7 @@ interface ArtistCardProps {
 const ArtistCard = (props: ArtistCardProps) => {
   const {artist, updateArtistHandler, path, won, end} = props
   return (
-    <motion.button
-    whileHover={window.innerWidth > phoneMaxWidth ? { scale: 1.05 } : {}}
-    whileTap={{ scale: 0.95 }}
-    onTap={() => updateArtistHandler(artist)}>
+    <HoverButton onTap={() => updateArtistHandler(artist)}>
       <Card
         shadow="sm"
         radius="md" withBorder
@@ -37,7 +35,7 @@ const ArtistCard = (props: ArtistCardProps) => {
             </Card.Section>
           </Flex>
       </Card>
-    </motion.button>
+    </HoverButton>
   )
 }
 

@@ -1,15 +1,16 @@
 'use client'
 
-import React, { createContext, useEffect, useState } from 'react'
+import React, { Fragment, createContext, useEffect, useState } from 'react'
 import ArtistCard from './ArtistCard'
 import GameOver from './GameOver'
 import Reset from './Reset'
-import { Flex, SimpleGrid, Text, Image, Divider, Anchor } from '@mantine/core'
+import { Flex, SimpleGrid, Text, Image, Divider, Anchor, Group, Stack } from '@mantine/core'
 import { useDisclosure } from '@mantine/hooks'
 import Matchup from './Matchup'
 import Scoreboard from './Scoreboard'
 import RelatedArtistsTitle from './RelatedArtistsTitle'
-import { motion } from 'framer-motion'
+import HowToPlay from './HowToPlay'
+import HoverButton from './HoverButton'
 
 export interface Artist {
     name: string,
@@ -81,7 +82,8 @@ const Game = (props: GameProps) => {
     const [won, setWon] = useState<boolean>(false)
     const [guesses, setGuesses] = useState<number>(0)
     const [resets, setResets] = useState<number>(0)
-    const [modalOpened, { open, close }] = useDisclosure(false)
+    const [winModalOpened, winModalHandlers] = useDisclosure(false)
+    const {open: winModalOpen, close: winModalClose} = winModalHandlers
     
     const save = (saveData: SaveProps): void => { 
         localStorage.setItem("props", JSON.stringify(saveData));
@@ -98,7 +100,7 @@ const Game = (props: GameProps) => {
         setGuesses(localSave.guesses)
         setResets(localSave.resets)
         if (localSave.won) {
-            open()
+            winModalOpen()
         }
     }
 
@@ -112,7 +114,7 @@ const Game = (props: GameProps) => {
 
     const updateArtistHandler = (artist: Artist): void => {
         if (won === true) {
-            if (artist.name === end) { open() }
+            if (artist.name === end) { winModalOpen() }
             return
         }
         const newPath = [...path, artist.name]
@@ -124,7 +126,7 @@ const Game = (props: GameProps) => {
                 currArtist, path: newPath, won:true,
                 guesses: guesses+1, resets, matchup
             })
-            open()
+            winModalOpen()
             return
         }
         setCurrArtist(artist)
@@ -159,19 +161,20 @@ const Game = (props: GameProps) => {
         gap="xl"
         className="mt-5 pb-10 pl-5 pr-5">
             <Image w={250} src="logo.png"></Image>
-            <Matchup start={web[start]} end={web[end]}></Matchup>
+            
+            <Stack gap="xs">
+                <Text ta="center">In as few guesses as you can,<br></br>use the related artists to get from</Text>
+                <Matchup start={web[start]} end={web[end]}></Matchup>
+            </Stack>
             {won ? 
-                <motion.button
-                whileHover={window.innerWidth > phoneMaxWidth? { scale: 1.05 } : {}}
-                whileTap={{ scale: 0.95 }}
-                onTap={() => open()}>
+                <HoverButton onTap={winModalOpen}>
                     <Scoreboard guesses={guesses} resets={resets} greenBorder={won}/>
-                </motion.button> 
+                </HoverButton>
                 :
                 <Scoreboard guesses={guesses} resets={resets} greenBorder={won}/>
             }
             <RelatedArtistsTitle artist={currArtist} won={won} endArtist={web[end]}/>
-            <GameOver opened={modalOpened} close={close} path={path} guesses={guesses} matchup={matchup} resets={resets} web={web}/>
+            <GameOver opened={winModalOpened} close={winModalClose} path={path} guesses={guesses} matchup={matchup} resets={resets} web={web}/>
             <SimpleGrid
             cols={{ base: 2, sm: 3, lg: 5 }}>
             {currArtist.related.map(artist_name => 
@@ -179,6 +182,7 @@ const Game = (props: GameProps) => {
                 updateArtistHandler={updateArtistHandler}/>)}
             </SimpleGrid>
             {!won ? <Reset resetHandler={resetHandler}/> : null}
+            <HowToPlay start={web[start]} end={web[end]}/>
             <Text>Built by <Anchor c="green.8" href="https://karimkaylani.com/" target="_blank">Karim Kaylani</Anchor>. 
             Designed by <Anchor c="green.8" href="https://zade.design/" target="_blank">Zade Kaylani</Anchor>.</Text>
         </Flex>
