@@ -6,12 +6,13 @@ import { motion } from "framer-motion"
 interface ArtistCardProps {
     artist: Artist,
     updateArtistHandler: (artist: Artist) => void,
+    path: string[],
     won: boolean,
     end: string
 }
 
 const ArtistCard = (props: ArtistCardProps) => {
-  const {artist, updateArtistHandler, won, end} = props
+  const {artist, updateArtistHandler, path, won, end} = props
   return (
     <motion.button
     whileHover={window.innerWidth > phoneMaxWidth ? { scale: 1.05 } : {}}
@@ -30,7 +31,7 @@ const ArtistCard = (props: ArtistCardProps) => {
             gap="0px">
             <Card.Section inheritPadding>
               <Image radius="md" src={artist.image} w={175} h={175} alt={artist.name} />
-            <Text c="gray.1" fw={700} size="lg" mt="md" ta="center">
+            <Text c={path.includes(artist.name) ? "gray.5" : "gray.1"} fw={700} size="lg" mt="md" ta="center">
               {artist.name}
             </Text>
             </Card.Section>
