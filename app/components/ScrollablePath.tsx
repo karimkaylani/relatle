@@ -1,6 +1,7 @@
 import { Avatar, Group, ScrollArea, Text } from '@mantine/core'
 import React, { Fragment } from 'react'
 import { Artist } from './Game'
+import ArtistInfo from './ArtistInfo'
 
 export interface ScrollablePathProps {
     matchup: string[],
@@ -17,10 +18,7 @@ const ScrollablePath = (props: ScrollablePathProps) => {
         {path.slice(0, -1).map(artist_name => (
             artist_name !== "RESET" ?
             <Fragment>
-                <Group justify="flex-start" gap="xs">
-                    <Avatar size="sm" src={web[artist_name].image} alt={web[artist_name].name}/>
-                    <Text c="gray.1" size="14px" fw={500}>{web[artist_name].name}</Text>
-                </Group>
+                <ArtistInfo artist={web[artist_name]} small={true} is_green={false}></ArtistInfo>
                 <Text fw={500} c="gray.1" size="14px">→</Text>
             </Fragment> 
             :
@@ -30,11 +28,7 @@ const ScrollablePath = (props: ScrollablePathProps) => {
             </Fragment>
         ))}
             <Group justify="flex-start" gap="xs">
-                <Avatar size="sm" src={web[end].image} alt={end}
-                styles={{
-                    image: { border: '1.5px solid #51cf66', borderRadius: "100%"  }
-                }}/>
-                <Text c="green.5" size="14px" fw={700}>{end}</Text>
+            <ArtistInfo artist={web[end]} small={true} is_green={true}></ArtistInfo>
             </Group>
         </Group>
 

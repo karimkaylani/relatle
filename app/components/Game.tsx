@@ -150,7 +150,7 @@ const Game = (props: GameProps) => {
         gap="xl"
         className="mt-5">
             <Image w={250} src="logo.png"></Image>
-            <Matchup start={start} start_img={web[start].image} end={end} end_img={web[end].image}></Matchup>
+            <Matchup start={web[start]} end={web[end]}></Matchup>
             <GuessesResets guesses={guesses} resets={resets}></GuessesResets>
             <RelatedArtistsTitle artist={currArtist}></RelatedArtistsTitle>
             {/* <Text ta="center" size="lg"><b>{currArtist.name}&apos;s</b> Related Artists:</Text> */}
