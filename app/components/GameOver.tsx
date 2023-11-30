@@ -5,7 +5,7 @@ import { Artist } from './Game'
 import Matchup from './Matchup'
 import ScrollablePath from './ScrollablePath'
 import ArtistInfo from './ArtistInfo'
-import GuessesResets from './GuessesResets'
+import Scoreboard from './Scoreboard'
 import SharePath from './SharePath'
 
 export interface GameOverProps {
@@ -36,7 +36,7 @@ const GameOver = (props: GameOverProps) => {
           <Text fw={500} c="gray.1" size="25px">→</Text>
           <ArtistInfo artist={web[end]} small={true} is_green={true}></ArtistInfo>
         </Group>
-        <GuessesResets guesses={guesses} resets={resets} greenBorder={true}/>
+        <Scoreboard guesses={guesses} resets={resets} greenBorder={true}/>
         <Text ta="center" size="sm">Your Path</Text>
         <ScrollablePath matchup={matchup} web={web} path={path}></ScrollablePath>
         <Group justify="center">

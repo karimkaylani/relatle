@@ -2,13 +2,13 @@
 import { Card, Divider, Flex, Group, Paper, Text } from '@mantine/core'
 import React from 'react'
 
-export interface GuessesResetsProps {
+export interface ScoreboardProps {
     guesses: number,
     resets: number
     greenBorder: boolean
 }
 
-const GuessesResets = (props: GuessesResetsProps) => {
+const Scoreboard = (props: ScoreboardProps) => {
     const {guesses, resets, greenBorder} = props
 
     const ScoreDisplay = (text: string, value: number) => {
@@ -43,4 +43,4 @@ const GuessesResets = (props: GuessesResetsProps) => {
   )
 }
 
-export default GuessesResets
+export default Scoreboard

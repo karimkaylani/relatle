@@ -7,7 +7,7 @@ import Reset from './Reset'
 import { Flex, SimpleGrid, Text, Image, Divider } from '@mantine/core'
 import { useDisclosure } from '@mantine/hooks'
 import Matchup from './Matchup'
-import GuessesResets from './GuessesResets'
+import Scoreboard from './Scoreboard'
 import RelatedArtistsTitle from './RelatedArtistsTitle'
 import { motion } from 'framer-motion'
 
@@ -154,13 +154,17 @@ const Game = (props: GameProps) => {
         className="mt-5 pb-10 pl-5 pr-5">
             <Image w={250} src="logo.png"></Image>
             <Matchup start={web[start]} end={web[end]}></Matchup>
-            <motion.button
-            whileHover={window.innerWidth > phoneMaxWidth && won ? { scale: 1.05 } : {}}
-            whileTap={won ? { scale: 0.95 } : {}}
-            onTap={won ? () => open() : () => console.log("")}>
-                <GuessesResets guesses={guesses} resets={resets} greenBorder={won}/>
-            </motion.button>
-            <RelatedArtistsTitle artist={currArtist}></RelatedArtistsTitle>
+            {won ? 
+                <motion.button
+                whileHover={window.innerWidth > phoneMaxWidth? { scale: 1.05 } : {}}
+                whileTap={{ scale: 0.95 }}
+                onTap={() => open()}>
+                    <Scoreboard guesses={guesses} resets={resets} greenBorder={won}/>
+                </motion.button> 
+                :
+                <Scoreboard guesses={guesses} resets={resets} greenBorder={won}/>
+            }
+            <RelatedArtistsTitle artist={currArtist} won={won} endArtist={web[end]}/>
             <GameOver opened={modalOpened} close={close} path={path} guesses={guesses} matchup={matchup} resets={resets} web={web}/>
             <SimpleGrid
             cols={{ base: 2, sm: 3, lg: 5 }}>
