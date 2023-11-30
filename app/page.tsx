@@ -2,6 +2,7 @@ import { promises as fs } from 'fs';
 import Game, { Artist } from './components/Game';
 
 import { Inter } from 'next/font/google'
+import Script from 'next/script';
  
 // If loading a variable font, you don't need to specify the font weight
 const inter = Inter({ subsets: ['latin'] })
@@ -11,6 +12,18 @@ export default async function Home() {
   const matchups = await getMatchups()
   return (
     <main>
+      <div className="container">
+      <Script async src="https://www.googletagmanager.com/gtag/js?id=G-J23EFVPLCJ"/>
+      <Script id="google-analytics">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+        
+          gtag('config', 'G-J23EFVPLCJ');
+        `}
+      </Script>
+    </div>
       <Game web={web} matchups={matchups}/>
     </main>
   )
