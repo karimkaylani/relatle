@@ -53,23 +53,28 @@ export const phoneMaxWidth = 500;
 // For testing purposes
 function getRandomInt(min: number, max: number) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
-  }
+}
 
-const getTodaysMatchup = (startDate: Date, matchups: string[][]): string[] => {
+const startDate: Date = new Date("2023-11-29")
+export const getDiffInDays = (): number => {
     const today = new Date();
     const oneDay = (1000 * 3600 * 24);
     const diff = Math.floor((today.getTime() - startDate.getTime()) / oneDay);
+    return diff
+}
+
+const getTodaysMatchup = (matchups: string[][]): string[] => {
+    const diff = getDiffInDays()
     const index = Math.max(diff, 0) % matchups.length
     // return matchups[getRandomInt(0, matchups.length-1)]
     return matchups[index]
 }
 
 export const GameContext = createContext<GameContextType|null>(null)
-const startDate = new Date("2023-11-29")
 
 const Game = (props: GameProps) => {
     const {web, matchups} = props
-    const matchup = getTodaysMatchup(startDate, matchups)
+    const matchup = getTodaysMatchup(matchups)
     const [start, end] = matchup
     const [currArtist, setCurrArtist] = useState<Artist>(web[start])
     const [path, setPath] = useState<string[]>([currArtist.name])

@@ -1,6 +1,7 @@
 import React from 'react'
 import { GameOverProps } from './GameOver'
 import { Button, CopyButton } from '@mantine/core'
+import { getDiffInDays } from './Game'
 
 export interface ShareResultsProps {
     path: string[],
@@ -26,13 +27,13 @@ const ShareResults = (props: ShareResultsProps) => {
         return res
     }
     const generateShareText = (): string => { 
-        const today = new Date().toLocaleDateString('en-US', { month: '2-digit', day: '2-digit' })
-        let text = `Relatle ${today}
+        const today = getDiffInDays()
+        let text = `Relatle #${today}
 ${start} → ${end}
 ${generateEmojiLine()}
 Guesses: ${guesses}
 Resets: ${resets}
-relatle.io/`
+https://relatle.io`
         return text
     }
 
