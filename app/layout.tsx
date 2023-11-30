@@ -18,8 +18,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body>
         <MantineProvider theme={{
-        fontFamily: 'RelativePro',
-      }} defaultColorScheme="dark">{children}</MantineProvider>
+          fontFamily: 'RelativePro',
+        }} defaultColorScheme="dark">{children}</MantineProvider>
         <Analytics/>
       </body>
     </html>

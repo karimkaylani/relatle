@@ -112,6 +112,7 @@ const Game = (props: GameProps) => {
 
     const updateArtistHandler = (artist: Artist): void => {
         if (won === true) {
+            if (artist.name === end) { open() }
             return
         }
         const newPath = [...path, artist.name]
