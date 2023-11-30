@@ -4,7 +4,7 @@ import React, { createContext, useEffect, useState } from 'react'
 import ArtistCard from './ArtistCard'
 import GameOver from './GameOver'
 import Reset from './Reset'
-import { Flex, SimpleGrid, Text, Image, Divider } from '@mantine/core'
+import { Flex, SimpleGrid, Text, Image, Divider, Anchor } from '@mantine/core'
 import { useDisclosure } from '@mantine/hooks'
 import Matchup from './Matchup'
 import Scoreboard from './Scoreboard'
@@ -178,6 +178,8 @@ const Game = (props: GameProps) => {
                 updateArtistHandler={updateArtistHandler}/>)}
             </SimpleGrid>
             {!won ? <Reset resetHandler={resetHandler}/> : null}
+            <Text>Built by <Anchor c="green.8" href="https://karimkaylani.com/" target="_blank">Karim Kaylani</Anchor>. 
+            Designed by <Anchor c="green.8" href="https://zade.design/" target="_blank">Zade Kaylani</Anchor></Text>
         </Flex>
     )
 }
