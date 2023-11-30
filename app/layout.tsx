@@ -5,8 +5,8 @@ import '@mantine/core/styles.css';
 import { MantineProvider, ColorSchemeScript, createTheme, Button } from '@mantine/core';
 
 export const metadata = {
-  title: 'Relatle',
-  description: 'Relatle Description',
+  title: 'relatle',
+  description: 'A wordle-type game where you go from one music artist to another through their related artists',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
