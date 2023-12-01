@@ -1,4 +1,5 @@
 from collections import deque
+from datetime import datetime, timedelta
 import json
 import random
 
@@ -13,8 +14,15 @@ def main():
     write_matchups_to_disk(matchups)
 
 def write_matchups_to_disk(matchups):
+    start_date = datetime(2023, 11, 29)
+    curr = start_date
+    new_matchups = {}
+    for matchup in matchups:
+        date_str = curr.strftime("%m/%d/%Y")
+        new_matchups[date_str] = matchup
+        curr += timedelta(days=1)
     with open("public/matchups.json", "w") as outfile:
-        json.dump(matchups, outfile, indent=2)
+        json.dump(new_matchups, outfile, indent=2)
     
 
 def generate_matchups(m, amount, artists, with_replacement=False):
