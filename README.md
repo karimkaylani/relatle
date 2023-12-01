@@ -4,17 +4,17 @@
 
 ### <a href="https://relatle.io/">relatle.io</a>
 
-<img src="https://github.com/karimkaylani/relatle/assets/19757304/d9f0d6ac-25b6-4e04-a2ca-94ef108874ae" alt="home" width="500"/>
-<img src="https://github.com/karimkaylani/relatle/assets/19757304/c2fd3abf-ebf8-45a0-9ea0-08e2e88d4a28" alt="win" width="500"/>
+<img src="https://github.com/karimkaylani/relatle/assets/19757304/3c13e045-4907-4ca1-a5ca-80e35f443f8e" alt="home" width="500"/>
+<img src="https://github.com/karimkaylani/relatle/assets/19757304/963cc223-d099-4822-a4f7-3aac9506166a" alt="win" width="500"/>
 
 
 ### Technologies used:
-- Next.js
-- React
-- Typescript
-- Python
-- Tailwind CSS
-- Maintine
-- Vercel
+- <a href="https://nextjs.org/">Next.js</a>
+- <a href="https://react.dev/">React</a>
+- <a href="https://www.typescriptlang.org/">Typescript</a>
+- <a href="https://www.python.org/">Python</a>
+- <a href="https://tailwindcss.com/">Tailwind CSS</a>
+- <a href="https://mantine.dev/">Maintine</a>
+- <a href="https://vercel.com/">Vercel</a>
 
 Built by <a href="https://karimkaylani.com/" target="_blank">Karim Kaylani</a>. Designed by <a href="https://zade.design/" target="_blank">Zade Kaylani</a>.
