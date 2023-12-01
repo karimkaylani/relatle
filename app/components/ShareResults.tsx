@@ -26,7 +26,7 @@ const ShareResults = (props: ShareResultsProps) => {
     }
     const generateShareText = (): string => { 
         const today = new Date().toLocaleDateString('en-US', { month: '2-digit', day: '2-digit' })
-        let text = `Relatle #${today}
+        let text = `Relatle ${today}
 ${start} → ${end}
 ${generateEmojiLine()}
 Guesses: ${guesses}
