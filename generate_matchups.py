@@ -9,7 +9,7 @@ def main():
         web = json.load(outfile)
     with open("public/matchup_artists.json", "r") as outfile:
         matchup_artists = json.load(outfile)
-    matchups = generate_matchups(web, 70, matchup_artists)
+    matchups = generate_matchups(web, 73, matchup_artists)
     write_matchups_to_disk(matchups)
 
 def write_matchups_to_disk(matchups):
@@ -25,12 +25,11 @@ def generate_matchups(m, amount, artists, with_replacement=False):
             vals = random.choices(artists, k=2)
         res.append((vals[0], vals[1]))
         if not with_replacement:
-            artists.remove(vals[0])
             artists.remove(vals[1])
     return res
 
 def is_good_matchup(m, matchup):
-    min_deg_of_separation, max_deg_of_separation = 2, 6
+    min_deg_of_separation, max_deg_of_separation = 3, 6
     # Range of num paths for a good matchup at max_deg of sep > deg of sep > min deg of sep
     min_allowed_num_paths, max_allowed_num_paths = 8, 20
     start, end = matchup
