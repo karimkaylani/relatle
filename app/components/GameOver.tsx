@@ -57,14 +57,14 @@ const GameOver = (props: GameOverProps) => {
     onClose={close} withCloseButton={true} centered
     padding="lg" radius="lg"
     title="You Won!"
-    styles={{ title: { fontSize: "25px", color: "#f1f3f5", fontWeight: 700 } }}>
+    styles={{ title: { fontSize: "24px", color: "#f1f3f5", fontWeight: 700 } }}>
       <Flex 
           align="center"
           direction="column"
           gap="lg">
         <Group justify="center">
           <ArtistInfo artist={web[start]} small={true} is_green={false}></ArtistInfo>
-          <Text fw={500} c="gray.1" size="25px">→</Text>
+          <Text fw={500} c="gray.1" size="24px">→</Text>
           <ArtistInfo artist={web[end]} small={true} is_green={true}></ArtistInfo>
         </Group>
         <Scoreboard guesses={guesses} resets={resets} greenBorder={true}/>

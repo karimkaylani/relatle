@@ -5,19 +5,19 @@
 }
 
 @font-face {
-  font-family: 'RelativePro';
-  src: url('/fonts/RelativePro-Book.otf');
+  font-family: 'OpenSauceOne';
+  src: url('/fonts/OpenSauceOne-Regular.ttf');
   font-weight: 300;
 }
 
 @font-face {
-  font-family: 'RelativePro';
-  src: url('/fonts/RelativePro-Medium.otf');
+  font-family: 'OpenSauceOne';
+  src: url('/fonts/OpenSauceOne-Medium.ttf');
   font-weight: 500;
 }
 
 @font-face {
-  font-family: 'RelativePro';
-  src: url('/fonts/RelativePro-Bold.otf');
+  font-family: 'OpenSauceOne';
+  src: url('/fonts/OpenSauceOne-Bold.ttf');
   font-weight: 700;
 }

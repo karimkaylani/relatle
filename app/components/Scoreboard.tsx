@@ -18,7 +18,7 @@ const ScoreDisplay = (text: string, value: string) => {
       className="w-20 mb-1"
       >
           <Text size="sm" fw={500}>{text}</Text>
-          <Text c="gray.1" size="36px" fw={700}>{value}</Text>
+          <Text c="gray.1" size="35px" fw={700}>{value}</Text>
       </Flex>
   )
 }

@@ -23,7 +23,7 @@ const HowToPlay = (props: HowToPlayProps) => {
         onClose={close} withCloseButton={true} centered
         padding="xl" radius="lg"
         title="How to Play"
-        styles={{ title: { fontSize: "25px", color: "#f1f3f5" } }}>
+        styles={{ title: { fontSize: "24px", color: "#f1f3f5" } }}>
             <Flex 
             align="left"
             direction="column"
@@ -41,7 +41,7 @@ const HowToPlay = (props: HowToPlayProps) => {
 
                 <Group justify="center">
                     <ArtistInfo artist={start} small={true} is_green={false}></ArtistInfo>
-                    <Text fw={500} c="gray.1" size="25px">→</Text>
+                    <Text fw={500} c="gray.1" size="24px">→</Text>
                     <ArtistInfo artist={end} small={true} is_green={true}></ArtistInfo>
                 </Group>
 

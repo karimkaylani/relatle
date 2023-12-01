@@ -19,12 +19,12 @@ const ScrollablePath = (props: ScrollablePathProps) => {
             artist_name !== "RESET" ?
             <Fragment key={artist_name}>
                 <ArtistInfo artist={web[artist_name]} small={true} is_green={false}></ArtistInfo>
-                <Text fw={500} c="gray.1" size="14px">→</Text>
+                <Text fw={500} c="gray.1" size="13px">→</Text>
             </Fragment> 
             :
             <Fragment key={artist_name}>
-                <Text c="yellow.5" size="14px" fw={500}>RESET</Text>
-                <Text fw={500} c="gray.1" size="14px">→</Text>
+                <Text c="yellow.5" size="13px" fw={500}>RESET</Text>
+                <Text fw={500} c="gray.1" size="13px">→</Text>
             </Fragment>
         ))}
             <Group justify="flex-start" gap="xs">
