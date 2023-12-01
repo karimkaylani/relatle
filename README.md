@@ -14,7 +14,7 @@
 - <a href="https://www.typescriptlang.org/">Typescript</a>
 - <a href="https://www.python.org/">Python</a>
 - <a href="https://tailwindcss.com/">Tailwind CSS</a>
-- <a href="https://mantine.dev/">Maintine</a>
+- <a href="https://mantine.dev/">Mantine</a>
 - <a href="https://vercel.com/">Vercel</a>
 
 Built by <a href="https://karimkaylani.com/" target="_blank">Karim Kaylani</a>. Designed by <a href="https://zade.design/" target="_blank">Zade Kaylani</a>.
