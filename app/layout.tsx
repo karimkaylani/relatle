@@ -2,7 +2,7 @@
 // All packages except `@mantine/hooks` require styles imports
 import "./globals.css"
 import '@mantine/core/styles.css';
-import { MantineProvider, ColorSchemeScript, createTheme, Button } from '@mantine/core';
+import { MantineProvider, ColorSchemeScript } from '@mantine/core';
 import { Analytics } from "@vercel/analytics/react";
 
 export const metadata = {
@@ -19,7 +19,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <MantineProvider theme={{
           fontFamily: 'OpenSauceOne',
-        }} defaultColorScheme="dark">{children}</MantineProvider>
+          fontSizes: {
+            xs: "0.625rem",
+            sm: "0.75rem",
+            md: "0.875rem",
+            lg: "1.125rem",
+            xl: "1.25rem",
+          },
+        }} defaultColorScheme="dark">
+          {children}
+        </MantineProvider>
         <Analytics/>
       </body>
     </html>
