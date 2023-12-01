@@ -1,11 +1,7 @@
 import { promises as fs } from 'fs';
 import Game, { Artist } from './components/Game';
 
-import { Inter } from 'next/font/google'
 import Script from 'next/script';
- 
-// If loading a variable font, you don't need to specify the font weight
-const inter = Inter({ subsets: ['latin'] })
 
 export default async function Home() {
   const web = await getWeb()
