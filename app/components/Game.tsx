@@ -33,7 +33,7 @@ interface SaveProps {
     matchup: string[]
 }
 
-const readLocalStroage = (matchup: string[]): SaveProps|null => {
+const readLocalStroage = (): SaveProps|null => {
     // Ensure page is mounted to client before trying to read localStorage
     const item = localStorage.getItem("props");
     if (item === null) {
@@ -78,7 +78,7 @@ const Game = (props: GameProps) => {
     }
 
     const loadLocalStorageIntoState = (todayMatchup: string[]):void => {
-        const localSave = readLocalStroage(matchup);
+        const localSave = readLocalStroage();
         if (localSave == null) {
             htpModalOpen()
             return
@@ -107,8 +107,8 @@ const Game = (props: GameProps) => {
         setMatchup(todayMatchup)
         setCurrArtist(web[todayMatchup[0]])
         setPath([todayMatchup[0]])
-        setLoading(false)
         loadLocalStorageIntoState(todayMatchup)
+        setLoading(false)
     }, [])
 
     if (loading) {
