@@ -19,15 +19,9 @@ export interface Artist {
     related: string[]
 }
 
-export interface GameContextType {
-    web: {[key: string]: Artist},
-    matchup: string[],
-    currArtist: Artist,
-}
-
 interface GameProps {
     web: {[key: string]: Artist},
-    matchups: string[][]
+    matchups: {[key: string]: string[]}
 }
 
 interface SaveProps {
@@ -56,29 +50,21 @@ function getRandomInt(min: number, max: number) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-const startDate: Date = new Date("2023-11-29")
-export const getDiffInDays = (): number => {
-    const today = new Date();
-    const oneDay = (1000 * 3600 * 24);
-    const diff = Math.floor((today.getTime() - startDate.getTime()) / oneDay);
-    return 1
+const getTodaysMatchup = (matchups: {[key: string]: string[]}): string[] => {
+    const defaultDate = "11/29/2023"
+    const today = new Date()
+    const month = (today.getMonth() + 1).toString().padStart(2, '0');
+    const day = today.getDate().toString().padStart(2, '0');
+    const year = today.getFullYear();
+    const formattedDate = `${month}/${day}/${year}`;
+    return matchups[formattedDate] ?? matchups[defaultDate]
 }
-
-const getTodaysMatchup = (matchups: string[][]): string[] => {
-    const diff = getDiffInDays()
-    const index = Math.max(diff, 0) % matchups.length
-    // return matchups[getRandomInt(0, matchups.length-1)]
-    return matchups[index]
-}
-
-export const GameContext = createContext<GameContextType|null>(null)
 
 const Game = (props: GameProps) => {
     const {web, matchups} = props
-    const matchup = getTodaysMatchup(matchups)
-    const [start, end] = matchup
-    const [currArtist, setCurrArtist] = useState<Artist>(web[start])
-    const [path, setPath] = useState<string[]>([currArtist.name])
+    const [matchup, setMatchup] = useState<any>(null)
+    const [currArtist, setCurrArtist] = useState<any>(null)
+    const [path, setPath] = useState<any>(null)
     const [won, setWon] = useState<boolean>(false)
     const [guesses, setGuesses] = useState<number>(0)
     const [resets, setResets] = useState<number>(0)
@@ -91,13 +77,13 @@ const Game = (props: GameProps) => {
         localStorage.setItem("props", JSON.stringify(saveData));
     }
 
-    const loadLocalStorageIntoState = ():void => {
+    const loadLocalStorageIntoState = (todayMatchup: string[]):void => {
         const localSave = readLocalStroage(matchup);
         if (localSave == null) {
             htpModalOpen()
             return
         }
-        if (JSON.stringify(localSave.matchup) !== JSON.stringify(matchup)) {
+        if (JSON.stringify(localSave.matchup) !== JSON.stringify(todayMatchup)) {
             return
         }
         setCurrArtist(localSave.currArtist)
@@ -114,9 +100,22 @@ const Game = (props: GameProps) => {
     // use loading so that nothing renders until localStorage is checked
     const [loading, setLoading] = useState(true)
     useEffect(() => {
-        loadLocalStorageIntoState()
+        // Put in here to ensure we're getting client time,
+        // as well as all other state variables that rely
+        // on our matchup
+        let todayMatchup = getTodaysMatchup(matchups)
+        setMatchup(todayMatchup)
+        setCurrArtist(web[todayMatchup[0]])
+        setPath([todayMatchup[0]])
         setLoading(false)
+        loadLocalStorageIntoState(todayMatchup)
     }, [])
+
+    if (loading) {
+        return null;
+    }
+
+    const [start, end] = matchup
 
     const updateArtistHandler = (artist: Artist): void => {
         if (won === true) {
@@ -156,10 +155,6 @@ const Game = (props: GameProps) => {
         })
     }
 
-    if (loading) {
-        return null;
-    }
-
     return (
         <Flex 
         align="center"
@@ -183,7 +178,7 @@ const Game = (props: GameProps) => {
             <GameOver opened={winModalOpened} close={winModalClose} path={path} guesses={guesses} matchup={matchup} resets={resets} web={web}/>
             <SimpleGrid
             cols={{ base: 2, sm: 3, lg: 5 }}>
-            {currArtist.related.map(artist_name => 
+            {currArtist.related.map((artist_name: string) => 
                 <ArtistCard key={web[artist_name].id} artist={web[artist_name]} path={path} won={won} end={end}
                 updateArtistHandler={updateArtistHandler}/>)}
             </SimpleGrid>
