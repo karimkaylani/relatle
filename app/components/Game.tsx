@@ -61,7 +61,7 @@ export const getDiffInDays = (): number => {
     const today = new Date();
     const oneDay = (1000 * 3600 * 24);
     const diff = Math.floor((today.getTime() - startDate.getTime()) / oneDay);
-    return diff
+    return 1
 }
 
 const getTodaysMatchup = (matchups: string[][]): string[] => {
