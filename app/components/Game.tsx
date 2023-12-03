@@ -80,7 +80,9 @@ const Game = (props: GameProps) => {
     const loadLocalStorageIntoState = (todayMatchup: string[]):void => {
         const localSave = readLocalStroage();
         if (localSave == null) {
-            if (!is_custom) { htpModalOpen() }
+            if (localStorage.getItem("props") == null && localStorage.getItem("props_custom") == null) {
+                 htpModalOpen() 
+            }
             return
         }
         if (JSON.stringify(localSave.matchup) !== JSON.stringify(todayMatchup)) {
