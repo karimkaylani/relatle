@@ -16,11 +16,12 @@ export interface GameOverProps {
     guesses: number,
     matchup: string[],
     resets: number,
-    web: {[key: string]: Artist}
+    web: {[key: string]: Artist},
+    is_custom: boolean
 }
 
 const GameOver = (props: GameOverProps) => {
-    const {opened, close, path, guesses, matchup, resets, web} = props
+    const {opened, close, path, guesses, matchup, resets, web, is_custom} = props
     const [start, end] = matchup
 
     const calculateTimeLeft = (): { hrs: string; mins: string; secs: string } => {
@@ -70,6 +71,7 @@ const GameOver = (props: GameOverProps) => {
         <Scoreboard guesses={guesses} resets={resets} greenBorder={true}/>
         <Text ta="center" size="sm">Your Path</Text>
         <ScrollablePath matchup={matchup} web={web} path={path}></ScrollablePath>
+        {!is_custom ?
         <Card shadow="md" radius="lg" p="sm" withBorder>
           <Flex
             gap="0px" justify="center"
@@ -77,13 +79,13 @@ const GameOver = (props: GameOverProps) => {
             wrap="wrap"
           >
             <Text size="sm" ta="center" fw={500}>Time until next matchup</Text>
-            <Text c="gray.1" size="lg" fw={700}>{`${timeLeft.hrs}:${timeLeft.mins}:${timeLeft.secs}`}</Text>
-
+             <Text c="gray.1" size="lg" fw={700}>{`${timeLeft.hrs}:${timeLeft.mins}:${timeLeft.secs}`}</Text>
           </Flex>
         </Card>
+        : null}
         <Group justify="center">
           <SharePath path={path}/>
-          <ShareResults path={path} guesses={guesses} matchup={matchup} resets={resets}/>
+          <ShareResults path={path} guesses={guesses} matchup={matchup} resets={resets} is_custom={is_custom}/>
         </Group>
       </Flex>
     </Modal>

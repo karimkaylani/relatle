@@ -20,12 +20,13 @@ export default async function Home() {
         `}
       </Script>
     </div>
-      <Game web={web} matchups={matchups}/>
+      <Game web={web} matchups={matchups} 
+      is_custom={false}/>
     </main>
   )
 }
 
-async function getWeb(): Promise<{[key: string]: Artist}> {
+export async function getWeb(): Promise<{[key: string]: Artist}> {
   const web = await fs.readFile(process.cwd() + "/public/web.json", "utf8")
   return JSON.parse(web)
 }

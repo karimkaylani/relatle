@@ -11,6 +11,7 @@ import Scoreboard from './Scoreboard'
 import RelatedArtistsTitle from './RelatedArtistsTitle'
 import HowToPlay from './HowToPlay'
 import HoverButton from './HoverButton'
+import { useSearchParams } from 'next/navigation'
 
 export interface Artist {
     name: string,
@@ -21,7 +22,8 @@ export interface Artist {
 
 interface GameProps {
     web: {[key: string]: Artist},
-    matchups: {[key: string]: string[]}
+    matchups: {[key: string]: string[]}|null,
+    is_custom: boolean
 }
 
 interface SaveProps {
@@ -33,24 +35,10 @@ interface SaveProps {
     matchup: string[]
 }
 
-const readLocalStroage = (): SaveProps|null => {
-    // Ensure page is mounted to client before trying to read localStorage
-    const item = localStorage.getItem("props");
-    if (item === null) {
-        return null
-    }
-    const saveData = JSON.parse(item) as SaveProps;
-    return saveData
-}
-
 export const phoneMaxWidth = 500;
 
-// For testing purposes
-function getRandomInt(min: number, max: number) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
-const getTodaysMatchup = (matchups: {[key: string]: string[]}): string[] => {
+const getTodaysMatchup = (matchups: {[key: string]: string[]}|null): any => {
+    if (matchups == null) { return }
     const defaultDate = "11/29/2023"
     const today = new Date()
     const month = (today.getMonth() + 1).toString().padStart(2, '0');
@@ -61,7 +49,7 @@ const getTodaysMatchup = (matchups: {[key: string]: string[]}): string[] => {
 }
 
 const Game = (props: GameProps) => {
-    const {web, matchups} = props
+    const {web, matchups, is_custom} = props
     const [matchup, setMatchup] = useState<any>(null)
     const [currArtist, setCurrArtist] = useState<any>(null)
     const [path, setPath] = useState<any>(null)
@@ -72,15 +60,27 @@ const Game = (props: GameProps) => {
     const {open: winModalOpen, close: winModalClose} = winModalHandlers
     const [htpModalOpened, htpModalHandlers] = useDisclosure(false);
     const {open: htpModalOpen} = htpModalHandlers
+
+    const searchParams = useSearchParams()
     
     const save = (saveData: SaveProps): void => { 
-        localStorage.setItem("props", JSON.stringify(saveData));
+        localStorage.setItem(is_custom ? "props_custom" : "props", JSON.stringify(saveData));
+    }
+
+    const readLocalStroage = (): SaveProps|null => {
+        // Ensure page is mounted to client before trying to read localStorage
+        const item = localStorage.getItem(is_custom ? "props_custom" : "props");
+        if (item === null) {
+            return null
+        }
+        const saveData = JSON.parse(item) as SaveProps;
+        return saveData
     }
 
     const loadLocalStorageIntoState = (todayMatchup: string[]):void => {
         const localSave = readLocalStroage();
         if (localSave == null) {
-            htpModalOpen()
+            if (!is_custom) { htpModalOpen() }
             return
         }
         if (JSON.stringify(localSave.matchup) !== JSON.stringify(todayMatchup)) {
@@ -103,7 +103,11 @@ const Game = (props: GameProps) => {
         // Put in here to ensure we're getting client time,
         // as well as all other state variables that rely
         // on our matchup
-        let todayMatchup = getTodaysMatchup(matchups)
+        const start = searchParams.get("start")
+        const end = searchParams.get("end")
+        let custom_matchup = [start, end]
+        let todayMatchup = is_custom ? custom_matchup : getTodaysMatchup(matchups)
+        if (todayMatchup == null) { return }
         setMatchup(todayMatchup)
         setCurrArtist(web[todayMatchup[0]])
         setPath([todayMatchup[0]])
@@ -116,6 +120,12 @@ const Game = (props: GameProps) => {
     }
 
     const [start, end] = matchup
+
+    if (!(start in web) || !(end in web)) { 
+        return (
+            <Text>Invalid custom match</Text>
+        )
+    }
 
     const updateArtistHandler = (artist: Artist): void => {
         if (won === true) {
@@ -175,7 +185,7 @@ const Game = (props: GameProps) => {
                 <Scoreboard guesses={guesses} resets={resets} greenBorder={won}/>
             }
             <RelatedArtistsTitle artist={currArtist} won={won} endArtist={web[end]}/>
-            <GameOver opened={winModalOpened} close={winModalClose} path={path} guesses={guesses} matchup={matchup} resets={resets} web={web}/>
+            <GameOver opened={winModalOpened} close={winModalClose} path={path} guesses={guesses} matchup={matchup} resets={resets} web={web} is_custom={is_custom}/>
             <SimpleGrid
             cols={{ base: 2, sm: 3, lg: 5 }}>
             {currArtist.related.map((artist_name: string) => 
