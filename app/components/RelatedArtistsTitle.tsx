@@ -28,8 +28,8 @@ const RelatedArtistsTitle = (props: RelatedArtistsTitleProps) => {
     <Group justify="center" gap="xs">
         <Avatar src={artist.image} alt={artist.name}/>
         <Group justify="center" gap="6px">
-            <Text size="xl" c="gray.1" fw={700}>{artist.name}</Text>
-            <Text size="xl">related artists</Text>
+            <Text size="lg" c="gray.1" fw={700}>{artist.name}</Text>
+            <Text size="lg">related artists</Text>
         </Group>
     </Group>
   )

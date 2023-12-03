@@ -3,6 +3,7 @@ import React from 'react'
 import HoverButton from './HoverButton';
 import { Artist } from './Game';
 import ArtistInfo from './ArtistInfo';
+import Arrow from './Arrow';
 
 export interface HowToPlayProps {
     start: Artist,
@@ -41,7 +42,7 @@ const HowToPlay = (props: HowToPlayProps) => {
 
                 <Group justify="center">
                     <ArtistInfo artist={start} small={true} is_green={false}></ArtistInfo>
-                    <Text fw={500} c="gray.1" size="24px">→</Text>
+                    <Arrow small={false}/>
                     <ArtistInfo artist={end} small={true} is_green={true}></ArtistInfo>
                 </Group>
 

@@ -2,6 +2,7 @@ import { Group, ScrollArea, Text } from '@mantine/core'
 import React, { Fragment } from 'react'
 import { Artist } from './Game'
 import ArtistInfo from './ArtistInfo'
+import Arrow from './Arrow'
 
 export interface ScrollablePathProps {
     matchup: string[],
@@ -19,12 +20,12 @@ const ScrollablePath = (props: ScrollablePathProps) => {
             artist_name !== "RESET" ?
             <Fragment key={artist_name}>
                 <ArtistInfo artist={web[artist_name]} small={true} is_green={false}></ArtistInfo>
-                <Text fw={500} c="gray.1" size="13px">→</Text>
+                <Arrow small={true}/>
             </Fragment> 
             :
             <Fragment key={artist_name}>
                 <Text c="yellow.5" size="13px" fw={500}>RESET</Text>
-                <Text fw={500} c="gray.1" size="13px">→</Text>
+                <Arrow small={true}/>
             </Fragment>
         ))}
             <Group justify="flex-start" gap="xs">
