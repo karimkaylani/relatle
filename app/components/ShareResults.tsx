@@ -3,6 +3,7 @@ import React from 'react'
 import { Button, CopyButton } from '@mantine/core'
 import { usePathname, useSearchParams } from 'next/navigation'
 import { generateCustomGameURL } from './ShareCustomGame'
+import ShareButton from './ShareButton'
 
 export interface ShareResultsProps {
     path: string[],
@@ -46,23 +47,7 @@ ${url}`
         return text
     }
 
-    if (navigator.share) {
-        return (
-            <Button onClick={() => navigator.share({
-                text: generateShareText()
-            })} color="green.6">SHARE RESULTS</Button>
-        )
-    }
-
-    return (
-        <CopyButton value={generateShareText()}>
-        {({ copied, copy }) => (
-            <Button color={copied ? 'green.9' : 'green.6'} onClick={copy}>
-            {copied ? 'COPIED RESULTS' : 'SHARE RESULTS'}
-            </Button>
-        )}
-        </CopyButton>
-    )
+    return <ShareButton shareText={generateShareText()} buttonText="RESULTS" defaultColor="green.6" clickedColor="green.9"/>
 }
 
 export default ShareResults

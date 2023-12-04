@@ -4,11 +4,10 @@ import { Inter } from 'next/font/google'
 
 interface ArrowProps {
     small: boolean,
-    down: boolean
+    down?: boolean
 }
 
-const Arrow = (props: ArrowProps) => {
-    const {small, down} = props
+const Arrow = ({small, down = false}: ArrowProps) => {
   return (
     <Text fw={500} c="gray.1" ta="center" className={down ? "rotate-90" : ""} size={small ? "13px" : "24px"} 
     styles={{

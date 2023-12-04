@@ -5,11 +5,10 @@ import { Group, Avatar, Text } from '@mantine/core'
 export interface ArtistInfoProps {
     artist: Artist,
     small: boolean,
-    is_green: boolean
+    is_green?: boolean
 }
 
-const ArtistInfo = (props: ArtistInfoProps) => {
-    const {artist, small, is_green} = props
+const ArtistInfo = ({artist, small, is_green=false}: ArtistInfoProps) => {
   return (
     <Group justify="flex-start" gap="xs">
         {!is_green ?

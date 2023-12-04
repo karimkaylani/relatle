@@ -1,5 +1,6 @@
 import { Button, CopyButton } from '@mantine/core'
 import React from 'react'
+import ShareButton from './ShareButton'
 
 export interface SharePathProps {
     path: string[]
@@ -9,23 +10,7 @@ const SharePath = (props: SharePathProps) => {
     const {path} = props
     const pathString = path.join("→")
 
-    if (navigator.share) {
-        return (
-            <Button onClick={() => navigator.share({
-                text: pathString
-            })} variant="filled" color="gray.7">SHARE PATH</Button>
-        )
-    }
-
-    return (
-        <CopyButton value={pathString}>
-        {({ copied, copy }) => (
-            <Button color={copied ? 'gray.9' : 'gray.7'} onClick={copy}>
-            {copied ? 'COPIED PATH' : 'SHARE PATH'}
-            </Button>
-        )}
-        </CopyButton>
-    )
+    return <ShareButton shareText={pathString} buttonText="PATH" defaultColor="gray.7" clickedColor="gray.9"/>
 }
 
 export default SharePath

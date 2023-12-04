@@ -4,6 +4,7 @@ import HoverButton from './HoverButton';
 import { Artist } from './Game';
 import ArtistInfo from './ArtistInfo';
 import Arrow from './Arrow';
+import { IconHelp } from '@tabler/icons-react'
 
 export interface HowToPlayProps {
     start: Artist,
@@ -18,7 +19,7 @@ const HowToPlay = (props: HowToPlayProps) => {
   return (
     <Group justify="flex-end">
         <HoverButton onTap={open}>
-            <Image w={30} src="question.svg" alt="How To Play"/>
+            <IconHelp size={40}/>
         </HoverButton>
         <Modal opened={opened} 
         onClose={close} withCloseButton={true} centered
@@ -41,8 +42,8 @@ const HowToPlay = (props: HowToPlayProps) => {
                 </Group>
 
                 <Group justify="center">
-                    <ArtistInfo artist={start} small={true} is_green={false}></ArtistInfo>
-                    <Arrow small={false} down={false}/>
+                    <ArtistInfo artist={start} small={true}></ArtistInfo>
+                    <Arrow small={false}/>
                     <ArtistInfo artist={end} small={true} is_green={true}></ArtistInfo>
                 </Group>
 

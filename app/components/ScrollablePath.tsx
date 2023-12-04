@@ -19,7 +19,7 @@ const ScrollablePath = (props: ScrollablePathProps) => {
         {path.slice(0, -1).map(artist_name => (
             artist_name !== "RESET" ?
             <Fragment key={artist_name}>
-                <ArtistInfo artist={web[artist_name]} small={true} is_green={false}></ArtistInfo>
+                <ArtistInfo artist={web[artist_name]} small={true}></ArtistInfo>
                 <Arrow small={true}/>
             </Fragment> 
             :

@@ -14,7 +14,7 @@ const Matchup = (props: MatchupProps) => {
 
   return (
     <Group justify="center">
-        <ArtistInfo artist={start} small={false} is_green={false}></ArtistInfo>
+        <ArtistInfo artist={start} small={false}></ArtistInfo>
         <Arrow small={false}/>
         <ArtistInfo artist={end} small={false} is_green={true}></ArtistInfo>
     </Group>

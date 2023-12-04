@@ -106,7 +106,7 @@ const CustomGameModal = (props: CustomGameModalProps) => {
   return (
     <Modal opened={customModalOpened} 
     onClose={closeModal} withCloseButton={true} centered
-    padding="xl" radius="lg"
+    padding="xl" radius="lg" lockScroll={false}
     title="Create a Custom Game"
     styles={{ title: { fontSize: "24px", color: "#f1f3f5", fontWeight: 700 } }}>
         <Stack>
@@ -117,7 +117,7 @@ const CustomGameModal = (props: CustomGameModalProps) => {
             <Stack gap="xs">
                 <Autocomplete key={key} size="md" radius="md" placeholder="Target artist" disabled={matchupsFound.length == 0}
                 data={matchupsFound} onChange={setEndArtist} selectFirstOptionOnChange={true}/>
-                <Text pl="5" ta="left" size="xs">If you don’t see your desired target artist, then the path from your starting artist is impossible within 25 guesses.</Text>
+                <Text pl="5" ta="left" size="xs">If you don&apos;t see your desired target artist, then the path from your starting artist is impossible.</Text>
             </Stack>
 
             {artistsList.includes(startArtist) && matchupsFound.includes(endArtist) && getMinPath(web, startArtist, endArtist).length > maxDegsAwayForWarning && 

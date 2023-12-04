@@ -17,7 +17,7 @@ const RelatedArtistsTitle = (props: RelatedArtistsTitleProps) => {
         <Stack align="center" gap="xs">
           <Group justify="center" gap="xs">
             <Text size="xl">You found</Text>
-            <ArtistInfo artist={endArtist} small={false} is_green={false}/>
+            <ArtistInfo artist={endArtist} small={false}/>
           </Group>
           {won ? <Text>Tap the scoreboard to view your results</Text> : null}
         </Stack>
