@@ -109,7 +109,7 @@ const CustomGameModal = (props: CustomGameModalProps) => {
     padding="xl" radius="lg"
     title="Create a Custom Game"
     styles={{ title: { fontSize: "24px", color: "#f1f3f5", fontWeight: 700 } }}>
-        <Stack justify='center'>
+        <Stack>
             <Text>Create your custom matchup and send the link to challenge you and your friends.</Text>
             <Autocomplete size="md" radius="md" placeholder="Starting artist" data={artistsList}
             onOptionSubmit={selectStartArtist} onDropdownClose={() => selectStartArtist(startArtist)} onChange={setStartArtist} selectFirstOptionOnChange={true}/>
@@ -121,7 +121,8 @@ const CustomGameModal = (props: CustomGameModalProps) => {
             </Stack>
 
             {artistsList.includes(startArtist) && matchupsFound.includes(endArtist) && getMinPath(web, startArtist, endArtist).length > maxDegsAwayForWarning && 
-            <Alert variant="light" color="yellow" radius="md" title="This matchup may be very difficult" icon={<IconInfoCircle />}/>
+            <Alert variant="light" color="yellow" radius="md" title="This matchup may be very difficult" icon={<IconInfoCircle />}
+            styles={{ title: {paddingTop: "1.5px"}}}/>
             }
 
             <ShareCustomGame start={startArtist} end={endArtist} 
