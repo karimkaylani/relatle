@@ -1,6 +1,5 @@
 'use client'
 import React from 'react'
-import { Button, CopyButton } from '@mantine/core'
 import { usePathname, useSearchParams } from 'next/navigation'
 import { generateCustomGameURL } from './ShareCustomGame'
 import ShareButton from './ShareButton'

@@ -29,7 +29,7 @@ const ShareButton = ({disabled = false, shareText, buttonText, defaultColor, cli
             <Button disabled={disabled} color={copied ? clickedColor : defaultColor} onClick={copy} leftSection={<IconCopy size={20}
             />} styles={{ section: {marginRight: "4px"}}}
             >
-            {copied ? `COPIED ${buttonText.toLocaleUpperCase()}` : `SHARE ${buttonText.toLocaleUpperCase()}`}
+            {copied ? `COPIED ${buttonText.toLocaleUpperCase()}` : `COPY ${buttonText.toLocaleUpperCase()}`}
             </Button>
         )}
         </CopyButton>

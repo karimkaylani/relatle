@@ -4,7 +4,7 @@ import HoverButton from './HoverButton';
 import { Artist } from './Game';
 import ArtistInfo from './ArtistInfo';
 import Arrow from './Arrow';
-import { IconHelp } from '@tabler/icons-react'
+import { IconHelpCircle } from '@tabler/icons-react'
 
 export interface HowToPlayProps {
     start: Artist,
@@ -19,7 +19,7 @@ const HowToPlay = (props: HowToPlayProps) => {
   return (
     <Group justify="flex-end">
         <HoverButton onTap={open}>
-            <IconHelp size={40}/>
+            <IconHelpCircle size={40}/>
         </HoverButton>
         <Modal opened={opened} 
         onClose={close} withCloseButton={true} centered

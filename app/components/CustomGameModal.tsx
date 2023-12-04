@@ -1,10 +1,11 @@
-import { Text, Modal, Stack, Autocomplete, Alert } from '@mantine/core'
+import { Text, Modal, Stack, Autocomplete, Alert, Card, Group } from '@mantine/core'
 import React, { useState } from 'react'
 import { Artist } from './Game'
 import Arrow from './Arrow'
 import * as Collections from 'typescript-collections';
 import ShareCustomGame from './ShareCustomGame'
-import { IconInfoCircle } from '@tabler/icons-react';
+import { IconInfoCircle, IconArrowsShuffle } from '@tabler/icons-react';
+import HoverButton from './HoverButton';
 
 interface CustomGameModalProps {
     web: {[key: string]: Artist},
@@ -81,19 +82,23 @@ const maxDegsAwayForWarning = 10
 
 const CustomGameModal = (props: CustomGameModalProps) => {
     const {web, customModalOpened, customModalHandlers} = props
-    const {open: customModalOpen, close: customModalClose} = customModalHandlers
+    const {close: customModalClose} = customModalHandlers
     const artistsList: string[] = [...Object.keys(web)];
     const [matchupsFound, setMatchupsFound] = useState<string[]>([])
     const [startArtist, setStartArtist] = useState<string>("")
     const [endArtist, setEndArtist] = useState<string>("")
-    const [key, setKey] = useState<number>(0)
+
+    const changeStartArtist = (start: string) => {
+        setStartArtist(start)
+        setEndArtist("")
+    }
 
     const selectStartArtist = (start: string) => {
         if (!artistsList.includes(start)) { return }
         const validEndArtsits = getConnectedNodes(web, start)
         setMatchupsFound(validEndArtsits)
         setStartArtist(start)
-        setKey(key + 1)
+        setEndArtist("")
     }
     
     const closeModal = () => {
@@ -101,6 +106,15 @@ const CustomGameModal = (props: CustomGameModalProps) => {
         setStartArtist("")
         setEndArtist("")
         setMatchupsFound([])
+    }
+
+    const getRandomMatchup = () => {
+        const start = artistsList[Math.floor(Math.random() * artistsList.length)]
+        const validEndArtsits = getConnectedNodes(web, start)
+        const end = validEndArtsits[Math.floor(Math.random() * validEndArtsits.length)]
+        setStartArtist(start)
+        setEndArtist(end)
+        setMatchupsFound(validEndArtsits)
     }
    
   return (
@@ -112,13 +126,24 @@ const CustomGameModal = (props: CustomGameModalProps) => {
         <Stack>
             <Text>Create your custom matchup and send the link to challenge you and your friends.</Text>
             <Autocomplete size="md" radius="md" placeholder="Starting artist" data={artistsList}
-            onOptionSubmit={selectStartArtist} onDropdownClose={() => selectStartArtist(startArtist)} onChange={setStartArtist} selectFirstOptionOnChange={true}/>
+            onOptionSubmit={selectStartArtist} onDropdownClose={() => selectStartArtist(startArtist)} onChange={changeStartArtist} selectFirstOptionOnChange={true}
+            value={startArtist}/>
             <Arrow small={false} down={true}/>
             <Stack gap="xs">
-                <Autocomplete key={key} size="md" radius="md" placeholder="Target artist" disabled={matchupsFound.length == 0}
-                data={matchupsFound} onChange={setEndArtist} selectFirstOptionOnChange={true}/>
+                <Autocomplete size="md" radius="md" placeholder="Target artist" disabled={!artistsList.includes(startArtist) || matchupsFound.length == 0}
+                data={matchupsFound} onChange={setEndArtist} selectFirstOptionOnChange={true} value={endArtist}/>
                 <Text pl="5" ta="left" size="xs">If you don&apos;t see your desired target artist, then the path from your starting artist is impossible.</Text>
             </Stack>
+
+            <HoverButton onTap={() => getRandomMatchup()}>
+                <Card shadow="md" radius="lg"
+                p="xs">
+                    <Group gap="4px" justify='center'>
+                        <IconArrowsShuffle size={16}/>
+                        <Text size="sm" c="gray.1">RANDOM</Text>
+                    </Group>
+                </Card>
+            </HoverButton>
 
             {artistsList.includes(startArtist) && matchupsFound.includes(endArtist) && getMinPath(web, startArtist, endArtist).length > maxDegsAwayForWarning && 
             <Alert variant="light" color="yellow" radius="md" title="This matchup may be very difficult" icon={<IconInfoCircle />}
