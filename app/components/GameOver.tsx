@@ -66,7 +66,7 @@ const GameOver = (props: GameOverProps) => {
           gap="lg">
         <Group justify="center">
           <ArtistInfo artist={web[start]} small={true} is_green={false}></ArtistInfo>
-          <Arrow small={false}/>
+          <Arrow small={false} down={false}/>
           <ArtistInfo artist={web[end]} small={true} is_green={true}></ArtistInfo>
         </Group>
         <Scoreboard guesses={guesses} resets={resets} greenBorder={true}/>

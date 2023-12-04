@@ -3,22 +3,23 @@ import React from 'react'
 import HoverButton from './HoverButton'
 import { phoneMaxWidth } from './Game'
 
-interface CustomGameButtonProps {
-    visible: boolean
+export interface CustomGameModalProps { 
+    customModalOpen: () => void
 }
 
-const CustomGameButton = (props: CustomGameButtonProps) => {
-    const visible = props.visible
+const CustomGameButton = (props: CustomGameModalProps) => {
+    const {customModalOpen} = props
+   
   return (
-    // <HoverButton>
+    <HoverButton onTap={() => customModalOpen()}>
         <Card shadow="md" radius="lg"
-        p="sm" styles={{root: {opacity: visible ? 100 : 0}}}>
+        p="sm">
             <Group gap="sm" justify='center'>
                 <Image src={"custom-icon.svg"}/>
                 <Text size={window.innerWidth > phoneMaxWidth ? "md" : "sm"} c="gray.1">CUSTOM GAME</Text>
             </Group>
         </Card>
-    // </HoverButton>
+    </HoverButton>
   )
 }
 

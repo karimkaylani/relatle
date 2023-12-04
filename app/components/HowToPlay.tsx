@@ -42,7 +42,7 @@ const HowToPlay = (props: HowToPlayProps) => {
 
                 <Group justify="center">
                     <ArtistInfo artist={start} small={true} is_green={false}></ArtistInfo>
-                    <Arrow small={false}/>
+                    <Arrow small={false} down={false}/>
                     <ArtistInfo artist={end} small={true} is_green={true}></ArtistInfo>
                 </Group>
 

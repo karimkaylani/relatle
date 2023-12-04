@@ -4,7 +4,7 @@ import React, { Fragment, createContext, useEffect, useState } from 'react'
 import ArtistCard from './ArtistCard'
 import GameOver from './GameOver'
 import Reset from './Reset'
-import { Flex, SimpleGrid, Text, Image, Anchor, Stack, Group, Card } from '@mantine/core'
+import { Flex, SimpleGrid, Text, Image, Anchor, Stack, Group, Card, Space, Modal } from '@mantine/core'
 import { useDisclosure } from '@mantine/hooks'
 import Matchup from './Matchup'
 import Scoreboard from './Scoreboard'
@@ -14,6 +14,7 @@ import HoverButton from './HoverButton'
 import { useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import CustomGameButton from './CustomGameButton'
+import CustomGameModal from './CustomGameModal'
 
 export interface Artist {
     name: string,
@@ -58,10 +59,15 @@ const Game = (props: GameProps) => {
     const [won, setWon] = useState<boolean>(false)
     const [guesses, setGuesses] = useState<number>(0)
     const [resets, setResets] = useState<number>(0)
+
     const [winModalOpened, winModalHandlers] = useDisclosure(false)
     const {open: winModalOpen, close: winModalClose} = winModalHandlers
+
     const [htpModalOpened, htpModalHandlers] = useDisclosure(false);
     const {open: htpModalOpen} = htpModalHandlers
+
+    const [customModalOpened, customModalHandlers] = useDisclosure(false);
+    const {open: customModalOpen, close: customModalClose} = customModalHandlers
 
     const searchParams = useSearchParams()
     
@@ -185,12 +191,14 @@ const Game = (props: GameProps) => {
         className="mt-5 pb-10 pl-5 pr-5">
             <Group justify="space-between" align="center" wrap='nowrap'
             styles={{ root: {width: "100%"} }}>
-                {width > phoneMaxWidth ? <CustomGameButton visible={false}/> : null}
+                {/* 159.11 is the width of of the CustomGameButton so that the logo is centered */}
+                {width > phoneMaxWidth ? <Space w={159.11}/> : null}
                 <Stack gap="0px">
                     <Link href="/"><Image w={width > phoneMaxWidth ? 250 : 175} src="logo.png" alt="logo"></Image></Link>
                     {is_custom ? <Text p="0px" c="gray.1" ta="center">Custom Game</Text> : null}
                 </Stack>
-                {is_custom ? null : <CustomGameButton visible={true}/>}
+                <CustomGameButton customModalOpen={customModalOpen}/>
+                <CustomGameModal customModalOpened={customModalOpened} customModalHandlers={customModalHandlers} web={web}/>
             </Group>
             <Stack gap="xs">
                 <Text ta="center">In as few guesses as you can,<br></br>use related artists to get from</Text>
