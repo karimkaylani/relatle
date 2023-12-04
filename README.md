@@ -1,4 +1,4 @@
-<a href="https://relatle.io/"><img src="./public/logo.png" alt="logo" width="300"/></a>
+<a href="https://relatle.io/"><img src="https://github.com/karimkaylani/relatle/assets/19757304/de331539-ced5-4881-bf65-588562eca5b4" alt="logo" width="300"/></a>
 
 ## In as few guesses as you can, use related artists to complete the artist path of the day!
 
