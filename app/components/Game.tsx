@@ -1,10 +1,10 @@
 'use client'
 
-import React, { createContext, useEffect, useState } from 'react'
+import React, { Fragment, createContext, useEffect, useState } from 'react'
 import ArtistCard from './ArtistCard'
 import GameOver from './GameOver'
 import Reset from './Reset'
-import { Flex, SimpleGrid, Text, Image, Anchor, Stack } from '@mantine/core'
+import { Flex, SimpleGrid, Text, Image, Anchor, Stack, Group, Card } from '@mantine/core'
 import { useDisclosure } from '@mantine/hooks'
 import Matchup from './Matchup'
 import Scoreboard from './Scoreboard'
@@ -12,6 +12,8 @@ import RelatedArtistsTitle from './RelatedArtistsTitle'
 import HowToPlay from './HowToPlay'
 import HoverButton from './HoverButton'
 import { useSearchParams } from 'next/navigation'
+import Link from 'next/link'
+import CustomGameButton from './CustomGameButton'
 
 export interface Artist {
     name: string,
@@ -35,7 +37,7 @@ interface SaveProps {
     matchup: string[]
 }
 
-export const phoneMaxWidth = 500;
+export const phoneMaxWidth = 768;
 
 const getTodaysMatchup = (matchups: {[key: string]: string[]}|null): any => {
     if (matchups == null) { return }
@@ -117,6 +119,14 @@ const Game = (props: GameProps) => {
         setLoading(false)
     }, [])
 
+    const [width, setWidth] = useState(0)
+    const handleResize = () => setWidth(window.innerWidth)
+    useEffect(() => {
+        handleResize()
+        window.addEventListener('resize', handleResize)
+        return () => window.removeEventListener('resize', handleResize)
+    }, [])
+
     if (loading) {
         return null;
     }
@@ -173,8 +183,15 @@ const Game = (props: GameProps) => {
         direction="column"
         gap="xl"
         className="mt-5 pb-10 pl-5 pr-5">
-            <Image w={250} src="logo.png" alt="logo"></Image>
-            
+            <Group justify="space-between" align="center" wrap='nowrap'
+            styles={{ root: {width: "100%"} }}>
+                {width > phoneMaxWidth ? <CustomGameButton visible={false}/> : null}
+                <Stack gap="0px">
+                    <Link href="/"><Image w={width > phoneMaxWidth ? 250 : 175} src="logo.png" alt="logo"></Image></Link>
+                    {is_custom ? <Text p="0px" c="gray.1" ta="center">Custom Game</Text> : null}
+                </Stack>
+                {is_custom ? null : <CustomGameButton visible={true}/>}
+            </Group>
             <Stack gap="xs">
                 <Text ta="center">In as few guesses as you can,<br></br>use related artists to get from</Text>
                 <Matchup start={web[start]} end={web[end]}></Matchup>
