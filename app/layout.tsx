@@ -7,9 +7,10 @@ import { Analytics } from "@vercel/analytics/react";
 
 export const metadata = {
   title: 'relatle',
-  description: 'In as few guesses as you can, use related artists to complete the artist path of the day! Like WikiRaces but with musicians.',
+  description: 'Get from one musician to another using their related artists!',
   url: "https://relatle.io",
   siteName: "relatle",
+  metadataBase: new URL('https://relatle.io')
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
