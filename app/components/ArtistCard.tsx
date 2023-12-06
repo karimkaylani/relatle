@@ -13,6 +13,7 @@ interface ArtistCardProps {
 
 const ArtistCard = (props: ArtistCardProps) => {
   const {artist, updateArtistHandler, path, won, end} = props
+  let img_size = window.innerWidth > phoneMaxWidth ? 175 : 145
   return (
     <HoverButton onTap={() => updateArtistHandler(artist)}>
       <Card
@@ -20,18 +21,23 @@ const ArtistCard = (props: ArtistCardProps) => {
         radius="md" withBorder
         padding="xs"
         opacity={won && artist.name !== end ? 0.25 : 1}
-        className={window.innerWidth > phoneMaxWidth ? "w-48" : ""}
+        styles={{
+          root: {
+            maxWidth: "192px"
+          }
+        }}
         >
           <Flex 
             align="center"
             direction="column"
+            justify="center"
             gap="0px">
-            <Card.Section inheritPadding>
-              <Image radius="md" src={artist.image} w={175} h={175} alt={artist.name} />
-            <Text c={path.includes(artist.name) && artist.name !== end ? "gray.5" : "gray.1"} fw={700} size="lg" mt="md" ta="center">
-              {artist.name}
-            </Text>
-            </Card.Section>
+              <Card.Section>
+                <Image radius="md" src={artist.image} w={img_size} h={img_size} alt={artist.name} />
+              </Card.Section>
+              <Text c={path.includes(artist.name) && artist.name !== end ? "gray.5" : "gray.1"} fw={700} size="lg" mt="md" ta="center">
+                {artist.name}
+              </Text>
           </Flex>
       </Card>
     </HoverButton>

@@ -214,7 +214,7 @@ const Game = (props: GameProps) => {
             <RelatedArtistsTitle artist={currArtist} won={won} endArtist={web[end]}/>
             <GameOver opened={winModalOpened} close={winModalClose} path={path} guesses={guesses} matchup={matchup} resets={resets} web={web} is_custom={is_custom}/>
             <SimpleGrid
-            cols={{ base: 2, sm: 3, lg: 5 }}>
+            cols={{ base: 2, sm: 3, md: 4, lg: 5 }}>
             {currArtist.related.map((artist_name: string) => 
                 <ArtistCard key={web[artist_name].id} artist={web[artist_name]} path={path} won={won} end={end}
                 updateArtistHandler={updateArtistHandler}/>)}
