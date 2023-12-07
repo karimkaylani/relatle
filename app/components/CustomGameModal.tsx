@@ -88,6 +88,7 @@ const getConnectedNodes = (graph: {[key: string]: Artist}, start: string): strin
 }
 
 const minDegOfSepReccomended = 3
+const maxDegOfSepReccomended = 10
 const maxDegOfSepWarning = 10
 const maxNumPathsForWarning = 4
 const minNumPathsForReccomended = 7
@@ -108,10 +109,11 @@ const CustomGameModal = (props: CustomGameModalProps) => {
 
     const selectStartArtist = (start: string) => {
         if (!artistsList.includes(start)) { return }
-        const endArtists = getNumPathsEndArtists(web, start)
-        setMatchupsFound(Object.keys(endArtists))
+        const endArtists = getConnectedNodes(web, start)
+        setMatchupsFound(endArtists)
         const closeEndArtists = Object.keys(getNumPathsEndArtists(web, start, minDegOfSepReccomended))
-        const reccomendedEndArtists = Object.keys(endArtists).filter((artist) => endArtists[artist] > minNumPathsForReccomended && !closeEndArtists.includes(artist))
+        const endArtistsWithMinDegOfSep = getNumPathsEndArtists(web, start, maxDegOfSepReccomended)
+        const reccomendedEndArtists = Object.keys(endArtistsWithMinDegOfSep).filter((artist) => endArtistsWithMinDegOfSep[artist] > minNumPathsForReccomended && !closeEndArtists.includes(artist))
         setReccomendedEndArtists(reccomendedEndArtists)
         setStartArtist(start)
         setEndArtist("")
@@ -165,7 +167,7 @@ const CustomGameModal = (props: CustomGameModalProps) => {
             </HoverButton>
 
             {artistsList.includes(startArtist) && matchupsFound.includes(endArtist) && getValidPaths(web, startArtist, endArtist, maxDegOfSepWarning).length < maxNumPathsForWarning && 
-            <Alert variant="light" color="yellow" radius="md" title="This matchup may be very difficult" icon={<IconInfoCircle />}
+            <Alert variant="light" color="yellow" radius="md" title="This matchup may be difficult" icon={<IconInfoCircle />}
             styles={{ title: {paddingTop: "1.5px"}}}/>
             }
 
