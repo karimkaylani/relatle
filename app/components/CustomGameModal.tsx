@@ -13,6 +13,38 @@ interface CustomGameModalProps {
     customModalHandlers: any
 }
 
+
+const getNumPathsEndArtists = (web: {[key: string]: Artist}, start: string, maxSteps: number=Infinity): {[key: string]: number} => {
+    const visited: Set<string> = new Set();
+    const queue: Collections.Queue<[string, number]> = new Collections.Queue();
+    queue.enqueue([start, 0]);
+    const endArtists: {[key: string]: number} = {};
+
+    while (!queue.isEmpty()) {
+        const item = queue.dequeue();
+        if (item === undefined) {
+            return endArtists;
+        }
+        const [node, steps] = item
+        if (steps <= maxSteps) {
+            if (node !== start) {
+                if (endArtists[node] === undefined) {
+                    endArtists[node] = 1
+                } else {
+                    endArtists[node] += 1
+                }
+            }
+            if (!visited.has(node)) {
+                visited.add(node);
+                for (const neighbor of web[node].related || []) {
+                    queue.enqueue([neighbor, steps + 1]);
+                }
+            }
+        }
+    }
+    return endArtists
+}
+
 function getValidPaths(web: {[key: string]: Artist}, start: string, end: string, maxSteps: number): string[][] {
     const visited: Set<string> = new Set();
     const queue: Collections.Queue<[string, number, string[]]> = new Collections.Queue();
@@ -38,29 +70,6 @@ function getValidPaths(web: {[key: string]: Artist}, start: string, end: string,
     return paths;
 }
 
-const getMinPath = (web: {[key: string]: Artist}, start: string, end: string): string[] => {
-    const visited: Set<string> = new Set();
-    const queue: Collections.Queue<[string, string[]]> = new Collections.Queue();
-    queue.enqueue([start, []]);
-
-    while (!queue.isEmpty()) {
-        const item = queue.dequeue();
-        if (item === undefined) {
-            return [];
-        }
-        const [node, path] = item
-        if (node === end) {
-            return path
-        }
-        if (!visited.has(node)) {
-            visited.add(node);
-            for (const neighbor of web[node].related || []) {
-                queue.enqueue([neighbor, path.concat(neighbor)]);
-            }
-        }
-    }
-    return [];
-}
 const getConnectedNodes = (graph: {[key: string]: Artist}, start: string): string[] => {
     const visited: Set<string> = new Set();
     const result: string[] = [];
@@ -78,7 +87,10 @@ const getConnectedNodes = (graph: {[key: string]: Artist}, start: string): strin
     return result
 }
 
-const maxDegsAwayForWarning = 10
+const minDegOfSepReccomended = 3
+const maxDegOfSepWarning = 10
+const maxNumPathsForWarning = 4
+const minNumPathsForReccomended = 7
 
 const CustomGameModal = (props: CustomGameModalProps) => {
     const {web, customModalOpened, customModalHandlers} = props
@@ -87,6 +99,7 @@ const CustomGameModal = (props: CustomGameModalProps) => {
     const [matchupsFound, setMatchupsFound] = useState<string[]>([])
     const [startArtist, setStartArtist] = useState<string>("")
     const [endArtist, setEndArtist] = useState<string>("")
+    const [reccomendedEndArtists, setReccomendedEndArtists] = useState<string[]>([])
 
     const changeStartArtist = (start: string) => {
         setStartArtist(start)
@@ -95,8 +108,11 @@ const CustomGameModal = (props: CustomGameModalProps) => {
 
     const selectStartArtist = (start: string) => {
         if (!artistsList.includes(start)) { return }
-        const validEndArtsits = getConnectedNodes(web, start)
-        setMatchupsFound(validEndArtsits)
+        const endArtists = getNumPathsEndArtists(web, start)
+        setMatchupsFound(Object.keys(endArtists))
+        const closeEndArtists = Object.keys(getNumPathsEndArtists(web, start, minDegOfSepReccomended))
+        const reccomendedEndArtists = Object.keys(endArtists).filter((artist) => endArtists[artist] > minNumPathsForReccomended && !closeEndArtists.includes(artist))
+        setReccomendedEndArtists(reccomendedEndArtists)
         setStartArtist(start)
         setEndArtist("")
     }
@@ -131,7 +147,10 @@ const CustomGameModal = (props: CustomGameModalProps) => {
             <Arrow small={false} down={true}/>
             <Stack gap="xs">
                 <Autocomplete size="md" radius="md" placeholder="Target artist" disabled={!artistsList.includes(startArtist) || matchupsFound.length == 0}
-                data={matchupsFound} onChange={setEndArtist} selectFirstOptionOnChange={true} value={endArtist}/>
+                data={[
+                    {group: 'Recommended', items: reccomendedEndArtists},
+                    {group: 'Other', items: matchupsFound.filter((artist)=> !reccomendedEndArtists.includes(artist))}
+                ]} onChange={setEndArtist} selectFirstOptionOnChange={true} value={endArtist}/>
                 <Text pl="5" ta="left" size="xs">If you don&apos;t see your desired target artist, then the path from your starting artist is impossible.</Text>
             </Stack>
 
@@ -145,7 +164,7 @@ const CustomGameModal = (props: CustomGameModalProps) => {
                 </Card>
             </HoverButton>
 
-            {artistsList.includes(startArtist) && matchupsFound.includes(endArtist) && getMinPath(web, startArtist, endArtist).length > maxDegsAwayForWarning && 
+            {artistsList.includes(startArtist) && matchupsFound.includes(endArtist) && getValidPaths(web, startArtist, endArtist, maxDegOfSepWarning).length < maxNumPathsForWarning && 
             <Alert variant="light" color="yellow" radius="md" title="This matchup may be very difficult" icon={<IconInfoCircle />}
             styles={{ title: {paddingTop: "1.5px"}}}/>
             }
