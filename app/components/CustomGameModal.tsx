@@ -145,14 +145,15 @@ const CustomGameModal = (props: CustomGameModalProps) => {
             <Text>Create your custom matchup and send the link to challenge you and your friends.</Text>
             <Autocomplete size="md" radius="md" placeholder="Starting artist" data={artistsList}
             onOptionSubmit={selectStartArtist} onDropdownClose={() => selectStartArtist(startArtist)} onChange={changeStartArtist} selectFirstOptionOnChange={true}
+            styles={{input: {color: "#f1f3f5"}}}
             value={startArtist}/>
             <Arrow small={false} down={true}/>
             <Stack gap="xs">
                 <Autocomplete size="md" radius="md" placeholder="Target artist" disabled={!artistsList.includes(startArtist) || matchupsFound.length == 0}
                 data={[
                     {group: 'Recommended', items: reccomendedEndArtists},
-                    {group: 'Other', items: matchupsFound.filter((artist)=> !reccomendedEndArtists.includes(artist))}
-                ]} onChange={setEndArtist} selectFirstOptionOnChange={true} value={endArtist}/>
+                    {group: 'Other', items: matchupsFound.filter((artist)=> !reccomendedEndArtists.includes(artist))}]}
+                styles={{input: {color: "#f1f3f5"}}} onChange={setEndArtist} selectFirstOptionOnChange={true} value={endArtist}/>
                 <Text pl="5" ta="left" size="xs">If you don&apos;t see your desired target artist, then the path from your starting artist is impossible.</Text>
             </Stack>
 
