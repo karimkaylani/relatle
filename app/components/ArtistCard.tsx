@@ -23,7 +23,7 @@ const ArtistCard = (props: ArtistCardProps) => {
         opacity={won && artist.name !== end ? 0.25 : 1}
         styles={{
           root: {
-            width: window.innerWidth > phoneMaxWidth ? "192px" : "160px"
+            width: window.innerWidth > phoneMaxWidth ? "192px" : window.innerWidth > 345 ? "160px" : ""
           }
         }}
         >
