@@ -137,22 +137,22 @@ const CustomGameModal = (props: CustomGameModalProps) => {
    
   return (
     <Modal opened={customModalOpened} 
-    onClose={closeModal} withCloseButton={true} centered
-    padding="xl" radius="lg" lockScroll={false}
-    title="Create a Custom Game"
-    styles={{ title: { fontSize: "24px", color: "#f1f3f5", fontWeight: 700 } }}>
+        onClose={closeModal} withCloseButton={true} centered
+        padding="xl" radius="lg" lockScroll={false}
+        title="Create a Custom Game"
+        styles={{ title: { fontSize: "24px", color: "#f1f3f5", fontWeight: 700 } }}>
         <Stack>
             <Text>Create your custom matchup and send the link to challenge you and your friends.</Text>
             <Autocomplete size="md" radius="md" placeholder="Starting artist" data={artistsList}
-            onOptionSubmit={selectStartArtist} onDropdownClose={() => selectStartArtist(startArtist)} onChange={changeStartArtist} selectFirstOptionOnChange={true}
-            styles={{input: {color: "#f1f3f5"}}} value={startArtist}/>
+                onOptionSubmit={selectStartArtist} onDropdownClose={() => selectStartArtist(startArtist)} onChange={changeStartArtist} selectFirstOptionOnChange={true}
+                styles={{input: {color: "#f1f3f5"}}} value={startArtist}/>
             <Arrow small={false} down={true}/>
             <Stack gap="xs">
                 <Autocomplete size="md" radius="md" placeholder="Target artist" disabled={!artistsList.includes(startArtist) || matchupsFound.length == 0}
-                data={[
-                    {group: 'Recommended', items: reccomendedEndArtists},
-                    {group: 'Other', items: matchupsFound.filter((artist)=> !reccomendedEndArtists.includes(artist))}]}
-                styles={{input: {color: "#f1f3f5"}}} onChange={setEndArtist} selectFirstOptionOnChange={true} value={endArtist}/>
+                    data={[
+                        {group: 'Recommended', items: reccomendedEndArtists},
+                        {group: 'Other', items: matchupsFound.filter((artist)=> !reccomendedEndArtists.includes(artist))}]}
+                    styles={{input: {color: "#f1f3f5"}}} onChange={setEndArtist} selectFirstOptionOnChange={true} value={endArtist}/>
                 <Text pl="5" ta="left" size="xs">If you don&apos;t see your desired target artist, then the path from your starting artist is impossible.</Text>
             </Stack>
 
