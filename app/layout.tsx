@@ -4,6 +4,7 @@ import "./globals.css"
 import '@mantine/core/styles.css';
 import { MantineProvider, ColorSchemeScript } from '@mantine/core';
 import { Analytics } from "@vercel/analytics/react";
+import Script from "next/script";
 
 export const metadata = {
   title: 'relatle',
@@ -18,6 +19,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <head>
         <ColorSchemeScript />
+        <div className="container">
+          <Script async src="https://www.googletagmanager.com/gtag/js?id=G-J23EFVPLCJ"/>
+          <Script id="google-analytics">
+            {`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+            
+              gtag('config', 'G-J23EFVPLCJ');
+            `}
+          </Script>
+        </div>
       </head>
       <body>
         <MantineProvider theme={{

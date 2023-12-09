@@ -19,7 +19,7 @@ const RelatedArtistsTitle = (props: RelatedArtistsTitleProps) => {
             <Text size="xl">You found</Text>
             <ArtistInfo artist={endArtist} small={false}/>
           </Group>
-          {won ? <Text>Tap the scoreboard to view your results</Text> : null}
+          {won && <Text>Tap the scoreboard to view your results</Text>}
         </Stack>
       )
     }

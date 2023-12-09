@@ -10,13 +10,9 @@ export interface ScoreboardProps {
 const ScoreDisplay = (text: string, value: string) => {
   return (
       <Flex
-      gap="3px"
-      justify="center"
-      align="center"
-      direction="column"
-      wrap="wrap"
-      className="w-20 mb-1"
-      >
+        gap="3px" justify="center"
+        align="center" direction="column"
+        wrap="wrap" className="w-20 mb-1">
           <Text size="sm" fw={500}>{text}</Text>
           <Text c="gray.1" size="35px" fw={700}>{value}</Text>
       </Flex>

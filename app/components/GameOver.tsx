@@ -72,18 +72,16 @@ const GameOver = (props: GameOverProps) => {
         <Scoreboard guesses={guesses} resets={resets} greenBorder={true}/>
         <Text ta="center" size="sm">Your Path</Text>
         <ScrollablePath matchup={matchup} web={web} path={path}></ScrollablePath>
-        {!is_custom ?
-        <Card shadow="md" radius="lg" p="sm" withBorder>
-          <Flex
-            gap="0px" justify="center"
-            align="center" direction="column"
-            wrap="wrap"
-          >
-            <Text size="sm" ta="center" fw={500}>Time until next matchup</Text>
-             <Text c="gray.1" size="lg" fw={700}>{`${timeLeft.hrs}:${timeLeft.mins}:${timeLeft.secs}`}</Text>
-          </Flex>
-        </Card>
-        : null}
+        {!is_custom &&
+          <Card shadow="md" radius="lg" p="sm" withBorder>
+            <Flex
+              gap="0px" justify="center"
+              align="center" direction="column" wrap="wrap">
+              <Text size="sm" ta="center" fw={500}>Time until next matchup</Text>
+              <Text c="gray.1" size="lg" fw={700}>{`${timeLeft.hrs}:${timeLeft.mins}:${timeLeft.secs}`}</Text>
+            </Flex>
+          </Card>
+        }
         <Group justify="center">
           <SharePath path={path}/>
           <ShareResults path={path} guesses={guesses} matchup={matchup} resets={resets} is_custom={is_custom}/>

@@ -145,8 +145,7 @@ const CustomGameModal = (props: CustomGameModalProps) => {
             <Text>Create your custom matchup and send the link to challenge you and your friends.</Text>
             <Autocomplete size="md" radius="md" placeholder="Starting artist" data={artistsList}
             onOptionSubmit={selectStartArtist} onDropdownClose={() => selectStartArtist(startArtist)} onChange={changeStartArtist} selectFirstOptionOnChange={true}
-            styles={{input: {color: "#f1f3f5"}}}
-            value={startArtist}/>
+            styles={{input: {color: "#f1f3f5"}}} value={startArtist}/>
             <Arrow small={false} down={true}/>
             <Stack gap="xs">
                 <Autocomplete size="md" radius="md" placeholder="Target artist" disabled={!artistsList.includes(startArtist) || matchupsFound.length == 0}
@@ -169,8 +168,7 @@ const CustomGameModal = (props: CustomGameModalProps) => {
 
             {artistsList.includes(startArtist) && matchupsFound.includes(endArtist) && getValidPaths(web, startArtist, endArtist, maxDegOfSepWarning).length < maxNumPathsForWarning && 
             <Alert variant="light" color="yellow" radius="md" title="This matchup may be difficult" icon={<IconInfoCircle />}
-            styles={{ title: {paddingTop: "1.5px"}}}/>
-            }
+            styles={{ title: {paddingTop: "1.5px"}}}/>}
 
             <ShareCustomGame start={startArtist} end={endArtist} 
             disabled={!(artistsList.includes(startArtist) && matchupsFound.includes(endArtist))}/> 

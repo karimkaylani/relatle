@@ -22,20 +22,15 @@ const HowToPlay = (props: HowToPlayProps) => {
             <IconHelpCircle size={40}/>
         </HoverButton>
         <Modal opened={opened} 
-        onClose={close} withCloseButton={true} centered
-        padding="xl" radius="lg"
-        title="How to Play"
-        styles={{ title: { fontSize: "24px", color: "#f1f3f5" } }}>
+            onClose={close} withCloseButton={true} centered
+            padding="xl" radius="lg" title="How to Play"
+            styles={{ title: { fontSize: "24px", color: "#f1f3f5" } }}>
             <Flex 
-            align="left"
-            direction="column"
-            gap="lg">
+            align="left" direction="column" gap="lg">
                 <Group wrap="nowrap">
                     <Card
-                        shadow="sm"
-                        radius="md"
-                        padding="5px"
-                        w={30}>
+                        shadow="sm" radius="md"
+                        padding="5px" w={30}>
                         <Text ta="center">1</Text>
                     </Card>
                     <Text fw={300}>Identify the artist matchup of the day</Text>
@@ -48,11 +43,7 @@ const HowToPlay = (props: HowToPlayProps) => {
                 </Group>
 
                 <Group wrap="nowrap">
-                    <Card
-                        shadow="sm"
-                        radius="md"
-                        padding="5px"
-                        w={50}>
+                    <Card shadow="sm" radius="md" padding="5px" w={50}>
                         <Text ta="center">2</Text>
                     </Card>
                     <Text fw={300}>Continue to choose related artists that would get
@@ -64,22 +55,14 @@ const HowToPlay = (props: HowToPlayProps) => {
                 </Group>
 
                 <Group wrap="nowrap">
-                    <Card
-                        shadow="sm"
-                        radius="md"
-                        padding="5px"
+                    <Card shadow="sm" radius="md" padding="5px"
                         w={50}>
                         <Text ta="center">3</Text>
                     </Card>
                     <Text fw={300}>To win, make sure to select the target artist
                     when they pop up or you&apos;ll miss it! Have fun!</Text>
                 </Group>
-
-
-
             </Flex>
-
-            
         </Modal>
     </Group>
   )

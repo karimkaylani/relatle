@@ -67,7 +67,7 @@ const Game = (props: GameProps) => {
     const {open: htpModalOpen} = htpModalHandlers
 
     const [customModalOpened, customModalHandlers] = useDisclosure(false);
-    const {open: customModalOpen, close: customModalClose} = customModalHandlers
+    const {open: customModalOpen} = customModalHandlers
 
     const searchParams = useSearchParams()
     
@@ -184,18 +184,15 @@ const Game = (props: GameProps) => {
     }
 
     return (
-        <Flex 
-        align="center"
-        direction="column"
-        gap="xl"
-        className="mt-5 pb-10 pl-5 pr-5">
+        <Flex align="center" direction="column"
+            gap="xl" className="mt-5 pb-10 pl-5 pr-5">
             <Group justify="space-between" align="center" wrap='nowrap'
-            styles={{ root: {width: "100%"} }}>
+                styles={{ root: {width: "100%"} }}>
                 {/* 159.11 is the width of of the CustomGameButton so that the logo is centered */}
-                {width > phoneMaxWidth ? <Space w={159.11}/> : null}
+                {width > phoneMaxWidth && <Space w={159.11}/>}
                 <Stack gap="0px">
                     <Link href="/"><Image w={width > phoneMaxWidth ? 250 : 175} src="logo.png" alt="logo"></Image></Link>
-                    {is_custom ? <Text p="0px" c="gray.1" ta="center">Custom Game</Text> : null}
+                    {is_custom && <Text p="0px" c="gray.1" ta="center">Custom Game</Text>}
                 </Stack>
                 <CustomGameButton customModalOpen={customModalOpen}/>
                 <CustomGameModal customModalOpened={customModalOpened} customModalHandlers={customModalHandlers} web={web}/>
@@ -213,13 +210,12 @@ const Game = (props: GameProps) => {
             }
             <RelatedArtistsTitle artist={currArtist} won={won} endArtist={web[end]}/>
             <GameOver opened={winModalOpened} close={winModalClose} path={path} guesses={guesses} matchup={matchup} resets={resets} web={web} is_custom={is_custom}/>
-            <SimpleGrid
-            cols={{ base: 2, sm: 3, md: 4, lg: 5 }}>
+            <SimpleGrid cols={{ base: 2, sm: 3, md: 4, lg: 5 }}>
             {currArtist.related.map((artist_name: string) => 
                 <ArtistCard key={web[artist_name].id} artist={web[artist_name]} path={path} won={won} end={end}
                 updateArtistHandler={updateArtistHandler}/>)}
             </SimpleGrid>
-            {!won ? <Reset resetHandler={resetHandler}/> : null}
+            {!won && <Reset resetHandler={resetHandler}/>}
             <HowToPlay start={web[start]} end={web[end]} opened={htpModalOpened} handlers={htpModalHandlers}/>
             <Text>Built by <Anchor c="green.8" href="https://karimkaylani.com/" target="_blank">Karim Kaylani</Anchor>. 
             Designed by <Anchor c="green.8" href="https://zade.design/" target="_blank">Zade Kaylani</Anchor>.</Text>

@@ -1,27 +1,12 @@
 import { promises as fs } from 'fs';
 import Game, { Artist } from './components/Game';
 
-import Script from 'next/script';
-
 export default async function Home() {
   const web = await getWeb()
   const matchups = await getMatchups()
   return (
     <main>
-      <div className="container">
-      <Script async src="https://www.googletagmanager.com/gtag/js?id=G-J23EFVPLCJ"/>
-      <Script id="google-analytics">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-        
-          gtag('config', 'G-J23EFVPLCJ');
-        `}
-      </Script>
-    </div>
-      <Game web={web} matchups={matchups} 
-      is_custom={false}/>
+      <Game web={web} matchups={matchups} is_custom={false}/>
     </main>
   )
 }

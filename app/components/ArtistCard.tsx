@@ -17,10 +17,8 @@ const ArtistCard = (props: ArtistCardProps) => {
   return (
     <HoverButton onTap={() => updateArtistHandler(artist)}>
       <Card
-        shadow="sm"
-        radius="md" withBorder
-        padding="xs"
-        opacity={won && artist.name !== end ? 0.25 : 1}
+        shadow="sm" radius="md" withBorder
+        padding="xs" opacity={won && artist.name !== end ? 0.25 : 1}
         styles={{
           root: {
             width: window.innerWidth > phoneMaxWidth ? "192px" : window.innerWidth > 345 ? "160px" : ""
@@ -28,10 +26,8 @@ const ArtistCard = (props: ArtistCardProps) => {
         }}
         >
           <Flex 
-            align="center"
-            direction="column"
-            justify="center"
-            gap="0px">
+            align="center" direction="column"
+            justify="center" gap="0px">
               <Card.Section>
                 <Image radius="md" src={artist.image} w={img_size} h={img_size} alt={artist.name} />
               </Card.Section>
