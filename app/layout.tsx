@@ -10,7 +10,11 @@ export const metadata = {
   description: 'Get from one musician to another using their related artists!',
   url: "https://relatle.io",
   siteName: "relatle",
-  metadataBase: new URL('https://relatle.io')
+  metadataBase: new URL('https://relatle.io'),
+  robots: {
+    index: true,
+    follow: true,
+  }
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
