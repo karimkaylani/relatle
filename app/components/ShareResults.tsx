@@ -1,6 +1,5 @@
 'use client'
 import React from 'react'
-import { usePathname, useSearchParams } from 'next/navigation'
 import { generateCustomGameURL } from './ShareCustomGame'
 import ShareButton from './ShareButton'
 
@@ -15,8 +14,6 @@ export interface ShareResultsProps {
 const ShareResults = (props: ShareResultsProps) => {
     const {path, guesses, matchup, resets, is_custom} = props
     const [start, end] = matchup
-    const pathname = usePathname()
-    const searchParams = useSearchParams()
 
     const generateEmojiLine = (): string => {
         let res = ""

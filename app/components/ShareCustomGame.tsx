@@ -16,7 +16,7 @@ const ShareCustomGame = (props: ShareCustomGameProps) => {
     const {start, end, disabled} = props
     const url = generateCustomGameURL(start, end)
 
-    return <ShareButton disabled={disabled} shareText={url} buttonText="GAME LINK" defaultColor="green.6" clickedColor="green.9"/>
+    return <ShareButton disabled={disabled} shareText={url} buttonText="CUSTOM GAME LINK" defaultColor="gray.7" clickedColor="gray.9"/>
 }
 
 export default ShareCustomGame

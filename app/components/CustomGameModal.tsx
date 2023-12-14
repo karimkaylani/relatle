@@ -1,10 +1,10 @@
-import { Text, Modal, Stack, Autocomplete, Alert, Card, Group } from '@mantine/core'
+import { Text, Modal, Stack, Autocomplete, Alert, Card, Group, Button, Anchor } from '@mantine/core'
 import React, { useState } from 'react'
 import { Artist } from './Game'
 import Arrow from './Arrow'
 import * as Collections from 'typescript-collections';
-import ShareCustomGame from './ShareCustomGame'
-import { IconInfoCircle, IconArrowsShuffle } from '@tabler/icons-react';
+import ShareCustomGame, { generateCustomGameURL } from './ShareCustomGame'
+import { IconInfoCircle, IconArrowsShuffle, IconPlayerPlayFilled } from '@tabler/icons-react';
 import HoverButton from './HoverButton';
 
 interface CustomGameModalProps {
@@ -169,6 +169,13 @@ const CustomGameModal = (props: CustomGameModalProps) => {
             {artistsList.includes(startArtist) && matchupsFound.includes(endArtist) && getValidPaths(web, startArtist, endArtist, maxDegOfSepWarning).length < maxNumPathsForWarning && 
             <Alert variant="light" color="yellow" radius="md" title="This matchup may be difficult" icon={<IconInfoCircle />}
             styles={{ title: {paddingTop: "1.5px"}}}/>}
+
+            <Button leftSection={<IconPlayerPlayFilled size={20}/>}
+            onClick={() => window.open(generateCustomGameURL(startArtist, endArtist))}
+            disabled={!(artistsList.includes(startArtist) && matchupsFound.includes(endArtist))}
+            color="green.6" styles={{ section: {marginRight: "4px"}}}>
+                START CUSTOM GAME
+            </Button>
 
             <ShareCustomGame start={startArtist} end={endArtist} 
             disabled={!(artistsList.includes(startArtist) && matchupsFound.includes(endArtist))}/> 
