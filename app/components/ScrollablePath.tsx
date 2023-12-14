@@ -14,7 +14,10 @@ const ScrollablePath = (props: ScrollablePathProps) => {
     const {matchup, web, path} = props
     const [start, end] = matchup
   return (
-    <ScrollArea h={125} className="pl-5 pr-5" type="auto" offsetScrollbars scrollbarSize={6}>
+    <ScrollArea className="pl-5 pr-5" type="auto" offsetScrollbars scrollbarSize={6}
+    styles={{
+        viewport: {maxHeight: 160}
+    }}>
         <Group justify="flex-start" gap="xs">
         {path.slice(0, -1).map(artist_name => (
             artist_name !== "RESET" ?

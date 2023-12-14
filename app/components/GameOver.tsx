@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useEffect, useState } from 'react'
-import { Modal, Text, Flex, Group, Card } from '@mantine/core'
+import { Modal, Text, Flex, Group, Card, Collapse, Button } from '@mantine/core'
 import ShareResults from './ShareResults'
 import { Artist } from './Game'
 import ScrollablePath from './ScrollablePath'
@@ -9,6 +9,8 @@ import ArtistInfo from './ArtistInfo'
 import Scoreboard from './Scoreboard'
 import SharePath from './SharePath'
 import Arrow from './Arrow'
+import * as Collections from 'typescript-collections';
+import { useDisclosure } from '@mantine/hooks'
 
 export interface GameOverProps {
     opened: boolean,
@@ -21,9 +23,34 @@ export interface GameOverProps {
     is_custom: boolean
 }
 
+const getMinPath = (web: {[key: string]: Artist}, start: string, end: string): string[] => {
+  const visited: Set<string> = new Set();
+  const queue: Collections.Queue<[string, string[]]> = new Collections.Queue();
+  queue.enqueue([start, []]);
+
+  while (!queue.isEmpty()) {
+      const item = queue.dequeue();
+      if (item === undefined) {
+          return [];
+      }
+      const [node, path] = item
+      if (node === end) {
+          return path
+      }
+      if (!visited.has(node)) {
+          visited.add(node);
+          for (const neighbor of web[node].related || []) {
+              queue.enqueue([neighbor, path.concat(neighbor)]);
+          }
+      }
+  }
+  return [];
+}
+
 const GameOver = (props: GameOverProps) => {
     const {opened, close, path, guesses, matchup, resets, web, is_custom} = props
     const [start, end] = matchup
+    const [minPathOpened, { toggle: toggleMinPath }] = useDisclosure(false);
 
     const calculateTimeLeft = (): { hrs: string; mins: string; secs: string } => {
       const now = new Date()
@@ -53,6 +80,8 @@ const GameOver = (props: GameOverProps) => {
     return () => clearInterval(interval);
     }, []);
 
+    const minPath = getMinPath(web, start, end)
+    minPath.unshift(start)
   
   return (
     <Modal opened={opened} 
@@ -69,23 +98,31 @@ const GameOver = (props: GameOverProps) => {
           <Arrow small={false}/>
           <ArtistInfo artist={web[end]} small={true} is_green={true}></ArtistInfo>
         </Group>
-        <Scoreboard guesses={guesses} resets={resets} greenBorder={true}/>
+        <Scoreboard guesses={guesses} resets={resets} greenBorder={true} small={true}/>
         <Text ta="center" size="sm">Your Path</Text>
         <ScrollablePath matchup={matchup} web={web} path={path}></ScrollablePath>
+        <Group justify="center">
+          <SharePath path={path}/>
+          <ShareResults path={path} guesses={guesses} matchup={matchup} resets={resets} is_custom={is_custom}/>
+        </Group>
+        <Group justify="center" gap="sm">
+          <Text fw={600} c="gray.1" size="sm" ta="center">The shortest possible path was {minPath.length} guesses{guesses == minPath.length ? ". Nice job!" : ""}</Text> 
+          <Button color="gray.7" size="xs" onClick={toggleMinPath}>
+            {minPathOpened ? "HIDE SHORTEST PATH" : "SHOW SHORTEST PATH"}</Button>
+          <Collapse in={minPathOpened}>
+            <ScrollablePath matchup={matchup} web={web} path={minPath}></ScrollablePath>
+          </Collapse>
+        </Group>
         {!is_custom &&
           <Card shadow="md" radius="lg" p="sm" withBorder>
             <Flex
               gap="0px" justify="center"
               align="center" direction="column" wrap="wrap">
-              <Text size="sm" ta="center" fw={500}>Time until next matchup</Text>
-              <Text c="gray.1" size="lg" fw={700}>{`${timeLeft.hrs}:${timeLeft.mins}:${timeLeft.secs}`}</Text>
+              <Text size="xs" ta="center" fw={500}>Time until next matchup</Text>
+              <Text c="gray.1" size="md" fw={700}>{`${timeLeft.hrs}:${timeLeft.mins}:${timeLeft.secs}`}</Text>
             </Flex>
           </Card>
         }
-        <Group justify="center">
-          <SharePath path={path}/>
-          <ShareResults path={path} guesses={guesses} matchup={matchup} resets={resets} is_custom={is_custom}/>
-        </Group>
       </Flex>
     </Modal>
   )
