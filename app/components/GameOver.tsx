@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useEffect, useState } from 'react'
-import { Modal, Text, Flex, Group, Card, Collapse, Button } from '@mantine/core'
+import { Modal, Text, Flex, Group, Card, Collapse, Button, Stack } from '@mantine/core'
 import ShareResults from './ShareResults'
 import { Artist } from './Game'
 import ScrollablePath from './ScrollablePath'
@@ -108,18 +108,18 @@ const GameOver = (props: GameOverProps) => {
           <SharePath path={path}/>
           <ShareResults path={path} guesses={guesses} matchup={matchup} resets={resets} is_custom={is_custom}/>
         </Group>
-        <Group justify="center" gap="sm">
-            <Text fw={600} c="gray.1" size="sm" ta="center">
-            The shortest possible path was {minPathLength} guesses{guesses === minPathLength ? ". Congrats!" : ""}
-            </Text><br></br> 
-            <Button leftSection={minPathOpened ? <IconArrowUp size={15}/> : <IconArrowDown size={15}/>}
-            color="gray.7" size="xs" styles={{ section: {marginRight: "4px"}}} onClick={toggleMinPath}>
-                SHORTEST PATH
-            </Button>
-            <Collapse in={minPathOpened}>
-              <ScrollablePath matchup={matchup} web={web} path={minPath}></ScrollablePath>
-            </Collapse>
-        </Group>
+        <Stack align='center' gap="7px">
+          <Text fw={600} c="gray.1" size="sm" ta="center">
+          The shortest possible path was {minPathLength} guesses{guesses === minPathLength ? ". Congrats!" : ""}
+          </Text>
+          <Button leftSection={minPathOpened ? <IconArrowUp size={15}/> : <IconArrowDown size={15}/>}
+          color="gray.7" size="xs" styles={{ section: {marginRight: "4px"}}} onClick={toggleMinPath}>
+              SHORTEST PATH
+          </Button>
+        </Stack>
+        <Collapse in={minPathOpened}>
+          <ScrollablePath matchup={matchup} web={web} path={minPath}></ScrollablePath>
+        </Collapse>
         {!is_custom &&
           <Card shadow="md" radius="lg" p="sm" withBorder>
             <Flex
