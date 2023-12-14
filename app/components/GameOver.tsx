@@ -10,6 +10,7 @@ import Scoreboard from './Scoreboard'
 import SharePath from './SharePath'
 import Arrow from './Arrow'
 import * as Collections from 'typescript-collections';
+import { IconArrowDown, IconArrowUp } from '@tabler/icons-react'
 import { useDisclosure } from '@mantine/hooks'
 
 export interface GameOverProps {
@@ -81,7 +82,9 @@ const GameOver = (props: GameOverProps) => {
     }, []);
 
     const minPath = getMinPath(web, start, end)
+    const minPathLength = minPath.length
     minPath.unshift(start)
+
   
   return (
     <Modal opened={opened} 
@@ -106,12 +109,16 @@ const GameOver = (props: GameOverProps) => {
           <ShareResults path={path} guesses={guesses} matchup={matchup} resets={resets} is_custom={is_custom}/>
         </Group>
         <Group justify="center" gap="sm">
-          <Text fw={600} c="gray.1" size="sm" ta="center">The shortest possible path was {minPath.length} guesses{guesses == minPath.length ? ". Nice job!" : ""}</Text> 
-          <Button color="gray.7" size="xs" onClick={toggleMinPath}>
-            {minPathOpened ? "HIDE SHORTEST PATH" : "SHOW SHORTEST PATH"}</Button>
-          <Collapse in={minPathOpened}>
-            <ScrollablePath matchup={matchup} web={web} path={minPath}></ScrollablePath>
-          </Collapse>
+            <Text fw={600} c="gray.1" size="sm" ta="center">
+            The shortest possible path was {minPathLength} guesses{guesses === minPathLength ? ". Congrats!" : ""}
+            </Text><br></br> 
+            <Button leftSection={minPathOpened ? <IconArrowUp size={15}/> : <IconArrowDown size={15}/>}
+            color="gray.7" size="xs" styles={{ section: {marginRight: "4px"}}} onClick={toggleMinPath}>
+                SHORTEST PATH
+            </Button>
+            <Collapse in={minPathOpened}>
+              <ScrollablePath matchup={matchup} web={web} path={minPath}></ScrollablePath>
+            </Collapse>
         </Group>
         {!is_custom &&
           <Card shadow="md" radius="lg" p="sm" withBorder>
