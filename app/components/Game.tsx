@@ -1,6 +1,6 @@
 'use client'
 
-import React, { Fragment, createContext, useEffect, useState } from 'react'
+import React, { Fragment, createContext, useEffect, useRef, useState } from 'react'
 import ArtistCard from './ArtistCard'
 import GameOver from './GameOver'
 import Reset from './Reset'
@@ -70,6 +70,7 @@ const Game = (props: GameProps) => {
     const {open: customModalOpen} = customModalHandlers
 
     const searchParams = useSearchParams()
+    const matchupRef = useRef<HTMLDivElement>(null)
     
     const save = (saveData: SaveProps): void => { 
         localStorage.setItem(is_custom ? "props_custom" : "props", JSON.stringify(saveData));
@@ -145,6 +146,10 @@ const Game = (props: GameProps) => {
         )
     }
 
+    const scrollToTop = () => {
+        matchupRef.current?.scrollIntoView({ behavior: 'smooth' })
+    }
+
     const updateArtistHandler = (artist: Artist): void => {
         if (won === true) {
             if (artist.name === end) { winModalOpen() }
@@ -163,6 +168,7 @@ const Game = (props: GameProps) => {
             return
         }
         setCurrArtist(artist)
+        scrollToTop()
         save({
             currArtist: artist, path: newPath, won,
             guesses: guesses+1, resets, matchup
@@ -177,6 +183,7 @@ const Game = (props: GameProps) => {
         setPath(newPath)
         setResets(resets + 1)
         setCurrArtist(web[start])
+        scrollToTop()
         save({
             currArtist: web[start], path: newPath, won,
             guesses, resets: resets+1, matchup
@@ -199,7 +206,7 @@ const Game = (props: GameProps) => {
             </Group>
             <Stack gap="xs">
                 <Text ta="center">In as few guesses as you can,<br></br>use related artists to get from</Text>
-                <Matchup start={web[start]} end={web[end]}></Matchup>
+                <Matchup ref={matchupRef} start={web[start]} end={web[end]}></Matchup>
             </Stack>
             {won ? 
                 <HoverButton onTap={winModalOpen}>
