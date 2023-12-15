@@ -105,7 +105,7 @@ const GameOver = (props: GameOverProps) => {
           <SharePath path={path}/>
           <ShareResults path={path} guesses={guesses} matchup={matchup} resets={resets} is_custom={is_custom}/>
         </Group>
-        <Group align='center' gap="sm">
+        <Group align='center' justify='center' gap="sm">
           <Text c="gray.1" size="sm" ta="center">
           The shortest path was {minPathLength} guesses.{guesses === minPathLength ? <b> Congrats!</b> : ""}
           </Text>
