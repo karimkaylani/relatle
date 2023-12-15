@@ -105,15 +105,15 @@ const GameOver = (props: GameOverProps) => {
           <SharePath path={path}/>
           <ShareResults path={path} guesses={guesses} matchup={matchup} resets={resets} is_custom={is_custom}/>
         </Group>
-        <Stack align='center' gap="7px">
-          <Text fw={600} c="gray.1" size="sm" ta="center">
-          The shortest possible path was {minPathLength} guesses{guesses === minPathLength ? ". Congrats!" : ""}
+        <Group align='center' gap="sm">
+          <Text c="gray.1" size="sm" ta="center">
+          The shortest path was {minPathLength} guesses.{guesses === minPathLength ? <b> Congrats!</b> : ""}
           </Text>
-          <Button leftSection={minPathOpened ? <IconArrowUp size={15}/> : <IconArrowDown size={15}/>}
-          color="gray.7" size="xs" styles={{ section: {marginRight: "4px"}}} onClick={toggleMinPath}>
-              SHORTEST PATH
-          </Button>
-        </Stack>
+          {guesses !== minPathLength && <Button leftSection={minPathOpened ? <IconArrowUp size={15}/> : <IconArrowDown size={15}/>}
+          color="gray.9" size="xs" styles={{ section: {marginRight: "4px"}}} onClick={toggleMinPath}>
+              {minPathOpened ? "HIDE" : "VIEW"}
+          </Button>}
+        </Group>
         <Collapse in={minPathOpened}>
           <ScrollablePath matchup={matchup} web={web} path={minPath}></ScrollablePath>
         </Collapse>

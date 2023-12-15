@@ -24,8 +24,7 @@ const ArtistCard = (props: ArtistCardProps) => {
           root: {
             width: window.innerWidth > phoneMaxWidth ? "192px" : window.innerWidth > 345 ? "160px" : ""
           }
-        }}
-        >
+        }}>
           <Flex 
             align="center" direction="column"
             justify="center" gap="0px">

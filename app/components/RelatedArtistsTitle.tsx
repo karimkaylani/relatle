@@ -16,11 +16,11 @@ const RelatedArtistsTitle = (props: RelatedArtistsTitleProps) => {
     if (won) {
       return (
         <Stack align="center" gap="xs">
+          {won && <Text size={small ? "sm" : "md"}>Tap the scoreboard to view your results</Text>}
           <Group justify="center" gap="xs">
             <Text size={small ? "md" : "lg"}>You found</Text>
             <ArtistInfo artist={endArtist} small={small}/>
           </Group>
-          {won && <Text size={small ? "sm" : "md"}>Tap the scoreboard to view your results</Text>}
         </Stack>
       )
     }

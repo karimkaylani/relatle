@@ -208,7 +208,7 @@ const Game = (props: GameProps) => {
                 <CustomGameModal customModalOpened={customModalOpened} customModalHandlers={customModalHandlers} web={web}/>
             </Group>
             <Stack gap="xs">
-                <Text size={width > phoneMaxWidth ? "md" : "xs"} ta="center">In as few guesses as you can, use related artists to get from</Text>
+                <Text size={width > phoneMaxWidth ? "md" : "sm"} ta="center">Use related artists to get from</Text>
                 <Matchup ref={targetRef} start={web[start]} end={web[end]} small={width <= phoneMaxWidth}/>
             </Stack>
             {won ? 
