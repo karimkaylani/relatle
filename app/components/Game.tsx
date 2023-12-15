@@ -167,8 +167,8 @@ const Game = (props: GameProps) => {
             winModalOpen()
             return
         }
-        setCurrArtist(artist)
         scrollToTop()
+        setCurrArtist(artist)
         save({
             currArtist: artist, path: newPath, won,
             guesses: guesses+1, resets, matchup
@@ -179,11 +179,11 @@ const Game = (props: GameProps) => {
         if (won === true || currArtist.name == start) {
             return
         }
+        scrollToTop()
         const newPath = [...path, "RESET"]
         setPath(newPath)
         setResets(resets + 1)
         setCurrArtist(web[start])
-        scrollToTop()
         save({
             currArtist: web[start], path: newPath, won,
             guesses, resets: resets+1, matchup
