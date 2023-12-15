@@ -5,6 +5,7 @@ import { Artist } from './Game';
 import ArtistInfo from './ArtistInfo';
 import Arrow from './Arrow';
 import { IconHelpCircle } from '@tabler/icons-react'
+import Matchup from './Matchup';
 
 export interface HowToPlayProps {
     start: Artist,
@@ -35,12 +36,8 @@ const HowToPlay = (props: HowToPlayProps) => {
                     </Card>
                     <Text fw={300}>Identify the artist matchup of the day</Text>
                 </Group>
-
-                <Group justify="center">
-                    <ArtistInfo artist={start} small={true}></ArtistInfo>
-                    <Arrow small={false}/>
-                    <ArtistInfo artist={end} small={true} is_green={true}></ArtistInfo>
-                </Group>
+                
+                <Matchup start={start} end={end} small={true}/>
 
                 <Group wrap="nowrap">
                     <Card shadow="sm" radius="md" padding="5px" w={50}>

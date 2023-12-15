@@ -195,7 +195,7 @@ const Game = (props: GameProps) => {
 
     return (
         <Flex align="center" direction="column"
-            gap="xl" className="mt-5 pb-10 pl-5 pr-5">
+            gap="lg" className="mt-5 pb-10 pl-5 pr-5">
             <Group justify="space-between" align="center" wrap='nowrap'
                 styles={{ root: {width: "100%"} }}>
                 {/* 159.11 is the width of of the CustomGameButton so that the logo is centered */}
@@ -208,8 +208,8 @@ const Game = (props: GameProps) => {
                 <CustomGameModal customModalOpened={customModalOpened} customModalHandlers={customModalHandlers} web={web}/>
             </Group>
             <Stack gap="xs">
-                <Text ta="center">In as few guesses as you can,<br></br>use related artists to get from</Text>
-                <Matchup ref={targetRef} start={web[start]} end={web[end]}></Matchup>
+                <Text size={width > phoneMaxWidth ? "md" : "xs"} ta="center">In as few guesses as you can, use related artists to get from</Text>
+                <Matchup ref={targetRef} start={web[start]} end={web[end]} small={width <= phoneMaxWidth}/>
             </Stack>
             {won ? 
                 <HoverButton onTap={winModalOpen}>

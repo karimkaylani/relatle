@@ -12,6 +12,7 @@ import Arrow from './Arrow'
 import * as Collections from 'typescript-collections';
 import { IconArrowDown, IconArrowUp } from '@tabler/icons-react'
 import { useDisclosure } from '@mantine/hooks'
+import Matchup from './Matchup'
 
 export interface GameOverProps {
     opened: boolean,
@@ -96,11 +97,7 @@ const GameOver = (props: GameOverProps) => {
           align="center"
           direction="column"
           gap="lg">
-        <Group justify="center" gap="xs">
-          <ArtistInfo artist={web[start]} small={true}></ArtistInfo>
-          <Arrow small={false}/>
-          <ArtistInfo artist={web[end]} small={true} is_green={true}></ArtistInfo>
-        </Group>
+        <Matchup start={web[start]} end={web[end]} small={true} />
         <Scoreboard guesses={guesses} resets={resets} greenBorder={true} small={true}/>
         <Text ta="center" size="sm">Your Path</Text>
         <ScrollablePath matchup={matchup} web={web} path={path}></ScrollablePath>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Artist } from './Game'
+import { Artist, phoneMaxWidth } from './Game'
 import { Avatar, Group, Stack, Text } from '@mantine/core'
 import ArtistInfo from './ArtistInfo'
 
@@ -11,26 +11,24 @@ export interface RelatedArtistsTitleProps {
 
 const RelatedArtistsTitle = (props: RelatedArtistsTitleProps) => {
     const {artist, won, endArtist} = props
+    let small = window.innerWidth <= phoneMaxWidth
 
     if (won) {
       return (
         <Stack align="center" gap="xs">
           <Group justify="center" gap="xs">
-            <Text size="xl">You found</Text>
-            <ArtistInfo artist={endArtist} small={false}/>
+            <Text size={small ? "md" : "lg"}>You found</Text>
+            <ArtistInfo artist={endArtist} small={small}/>
           </Group>
-          {won && <Text>Tap the scoreboard to view your results</Text>}
+          {won && <Text size={small ? "sm" : "md"}>Tap the scoreboard to view your results</Text>}
         </Stack>
       )
     }
 
   return (
-    <Group justify="center" gap="xs">
-        <Avatar src={artist.image} alt={artist.name}/>
-        <Group justify="center" gap="6px">
-            <Text size="lg" c="gray.1" fw={700}>{artist.name}</Text>
-            <Text size="lg">related artists</Text>
-        </Group>
+    <Group justify="center" gap="6px">
+        <ArtistInfo artist={artist} small={small}/>
+        <Text size={small ? "md" : "lg"}>related artists</Text>
     </Group>
   )
 }
