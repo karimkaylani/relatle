@@ -96,7 +96,7 @@ const GameOver = (props: GameOverProps) => {
           align="center"
           direction="column"
           gap="lg">
-        <Group justify="center">
+        <Group justify="center" gap="xs">
           <ArtistInfo artist={web[start]} small={true}></ArtistInfo>
           <Arrow small={false}/>
           <ArtistInfo artist={web[end]} small={true} is_green={true}></ArtistInfo>

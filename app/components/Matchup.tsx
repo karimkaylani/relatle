@@ -13,7 +13,7 @@ const Matchup = (props: MatchupProps) => {
     const {start, end} = props
 
   return (
-    <Group justify="center">
+    <Group justify="center" gap="xs">
         <ArtistInfo artist={start} small={false}></ArtistInfo>
         <Arrow small={false}/>
         <ArtistInfo artist={end} small={false} is_green={true}></ArtistInfo>

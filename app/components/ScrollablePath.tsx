@@ -16,7 +16,7 @@ const ScrollablePath = (props: ScrollablePathProps) => {
   return (
     <ScrollArea className="pl-5 pr-5" type="auto" offsetScrollbars scrollbarSize={6}
     styles={{
-        viewport: {maxHeight: 160}
+        viewport: {maxHeight: 155}
     }}>
         <Group justify="flex-start" gap="xs">
         {path.slice(0, -1).map(artist_name => (
