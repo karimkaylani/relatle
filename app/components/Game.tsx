@@ -5,7 +5,7 @@ import ArtistCard from './ArtistCard'
 import GameOver from './GameOver'
 import Reset from './Reset'
 import { Flex, SimpleGrid, Text, Image, Anchor, Stack, Group, Card, Space, Modal } from '@mantine/core'
-import { useDisclosure } from '@mantine/hooks'
+import { useDisclosure, useScrollIntoView } from '@mantine/hooks'
 import Matchup from './Matchup'
 import Scoreboard from './Scoreboard'
 import RelatedArtistsTitle from './RelatedArtistsTitle'
@@ -70,7 +70,10 @@ const Game = (props: GameProps) => {
     const {open: customModalOpen} = customModalHandlers
 
     const searchParams = useSearchParams()
-    const matchupRef = useRef<HTMLDivElement>(null)
+    const { scrollIntoView, targetRef } = useScrollIntoView<HTMLDivElement>({
+        duration: 500,
+        offset: -10
+    });
     
     const save = (saveData: SaveProps): void => { 
         localStorage.setItem(is_custom ? "props_custom" : "props", JSON.stringify(saveData));
@@ -147,7 +150,7 @@ const Game = (props: GameProps) => {
     }
 
     const scrollToTop = () => {
-        matchupRef.current?.scrollIntoView({ behavior: 'smooth' })
+        scrollIntoView()
     }
 
     const updateArtistHandler = (artist: Artist): void => {
@@ -206,7 +209,7 @@ const Game = (props: GameProps) => {
             </Group>
             <Stack gap="xs">
                 <Text ta="center">In as few guesses as you can,<br></br>use related artists to get from</Text>
-                <Matchup ref={matchupRef} start={web[start]} end={web[end]}></Matchup>
+                <Matchup ref={targetRef} start={web[start]} end={web[end]}></Matchup>
             </Stack>
             {won ? 
                 <HoverButton onTap={winModalOpen}>
