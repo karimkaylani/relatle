@@ -20,5 +20,6 @@ const Matchup = React.forwardRef<HTMLDivElement, MatchupProps>((props, ref) => {
     </Group>
   )
 })
+Matchup.displayName = "Matchup"
 
 export default Matchup
