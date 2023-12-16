@@ -9,7 +9,7 @@ export interface RelatedArtistsTitleProps {
     endArtist: Artist
 }
 
-const RelatedArtistsTitle = (props: RelatedArtistsTitleProps) => {
+const RelatedArtistsTitle = React.forwardRef<HTMLDivElement, RelatedArtistsTitleProps>((props, ref) => {
     const {artist, won, endArtist} = props
     let small = window.innerWidth <= phoneMaxWidth
 
@@ -26,11 +26,12 @@ const RelatedArtistsTitle = (props: RelatedArtistsTitleProps) => {
     }
 
   return (
-    <Group justify="center" gap="6px">
+    <Group ref={ref} justify="center" gap="6px">
         <ArtistInfo artist={artist} small={small}/>
         <Text size={small ? "md" : "lg"}>related artists</Text>
     </Group>
   )
-}
+})
+RelatedArtistsTitle.displayName = "RelatedArtistsTitle"
 
 export default RelatedArtistsTitle

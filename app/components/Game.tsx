@@ -4,8 +4,8 @@ import React, { Fragment, createContext, useEffect, useRef, useState } from 'rea
 import ArtistCard from './ArtistCard'
 import GameOver from './GameOver'
 import Reset from './Reset'
-import { Flex, SimpleGrid, Text, Image, Anchor, Stack, Group, Card, Space, Modal } from '@mantine/core'
-import { useDisclosure, useScrollIntoView } from '@mantine/hooks'
+import { Flex, SimpleGrid, Text, Image, Anchor, Stack, Group, Card, Space, Modal, Affix } from '@mantine/core'
+import { useDisclosure, useIntersection, useScrollIntoView } from '@mantine/hooks'
 import Matchup from './Matchup'
 import Scoreboard from './Scoreboard'
 import RelatedArtistsTitle from './RelatedArtistsTitle'
@@ -15,6 +15,7 @@ import { useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import CustomGameButton from './CustomGameButton'
 import CustomGameModal from './CustomGameModal'
+import AffixStatus from './AffixStatus'
 
 export interface Artist {
     name: string,
@@ -70,10 +71,15 @@ const Game = (props: GameProps) => {
     const {open: customModalOpen} = customModalHandlers
 
     const searchParams = useSearchParams()
-    const { scrollIntoView, targetRef } = useScrollIntoView<HTMLDivElement>({
+    const { scrollIntoView, targetRef: scrollViewRef } = useScrollIntoView<HTMLDivElement>({
         duration: 500,
         offset: -10
     });
+    const containerRef = useRef<HTMLDivElement>(null);
+    const { ref: affixRef, entry: entryAffix } = useIntersection({
+        root: containerRef.current,
+        threshold: 1,
+      });
     
     const save = (saveData: SaveProps): void => { 
         localStorage.setItem(is_custom ? "props_custom" : "props", JSON.stringify(saveData));
@@ -149,7 +155,9 @@ const Game = (props: GameProps) => {
     }
 
     const scrollToTop = () => {
-        scrollIntoView()
+        if (!entryAffix?.isIntersecting) {
+            scrollIntoView()
+        }
     }
 
     const updateArtistHandler = (artist: Artist): void => {
@@ -191,14 +199,13 @@ const Game = (props: GameProps) => {
             guesses, resets: resets+1, matchup
         })
     }
-
     return (
         <Flex align="center" direction="column"
             gap="lg" className="mt-5 pb-10 pl-5 pr-5">
             <Group justify="space-between" align="center" wrap='nowrap'
                 styles={{ root: {width: "100%"} }}>
-                {/* 159.11 is the width of of the CustomGameButton so that the logo is centered */}
-                {width > phoneMaxWidth && <Space w={159.11}/>}
+                {/* 160.46 is the width of of the CustomGameButton so that the logo is centered */}
+                {width > phoneMaxWidth && <Space w={160.46}/>}
                 <Stack gap="0px">
                     <Link href="/"><Image w={width > phoneMaxWidth ? 250 : 175} src="logo.png" alt="logo"></Image></Link>
                     {is_custom && <Text p="0px" c="gray.1" ta="center">Custom Game</Text>}
@@ -208,7 +215,7 @@ const Game = (props: GameProps) => {
             </Group>
             <Stack gap="xs">
                 <Text size={width > phoneMaxWidth ? "md" : "sm"} ta="center">Use related artists to get from</Text>
-                <Matchup ref={targetRef} start={web[start]} end={web[end]} small={width <= phoneMaxWidth}/>
+                <Matchup ref={scrollViewRef} start={web[start]} end={web[end]} small={width <= phoneMaxWidth}/>
             </Stack>
             {won ? 
                 <HoverButton onTap={winModalOpen}>
@@ -217,8 +224,9 @@ const Game = (props: GameProps) => {
                 :
                 <Scoreboard guesses={guesses} resets={resets} greenBorder={won}/>
             }
-            <RelatedArtistsTitle artist={currArtist} won={won} endArtist={web[end]}/>
+            <RelatedArtistsTitle ref={affixRef} artist={currArtist} won={won} endArtist={web[end]}/>
             <GameOver opened={winModalOpened} close={winModalClose} path={path} guesses={guesses} matchup={matchup} resets={resets} web={web} is_custom={is_custom}/>
+            <AffixStatus currArtist={currArtist} endArtist={web[end]} path={path} guesses={guesses} resets={resets} mounted={!won && !entryAffix?.isIntersecting}/>
             <SimpleGrid cols={{ base: 2, xs: 3, sm: 3, md: 4, lg: 5 }}>
             {currArtist.related.map((artist_name: string) => 
                 <ArtistCard key={web[artist_name].id} artist={web[artist_name]} path={path} won={won} end={end}
