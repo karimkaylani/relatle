@@ -1,6 +1,7 @@
 import { Text } from '@mantine/core'
 import React from 'react'
 import { Inter } from 'next/font/google'
+import { IconArrowRight, IconArrowDown } from '@tabler/icons-react'
 
 interface ArrowProps {
     small: boolean,
@@ -8,11 +9,9 @@ interface ArrowProps {
 }
 
 const Arrow = ({small, down = false}: ArrowProps) => {
+  let size = small ? "16px" : "25px"
   return (
-    <Text fw={500} c="gray.1" ta="center" className={down ? "rotate-90" : ""} size={small ? "13px" : "24px"} 
-    styles={{
-        root: { fontFamily: "Inter"}
-    }}>→</Text>
+    down ? <IconArrowDown className="self-center" size={size} /> : <IconArrowRight size={size} />
   )
 }
 
