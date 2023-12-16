@@ -16,6 +16,7 @@ import Link from 'next/link'
 import CustomGameButton from './CustomGameButton'
 import CustomGameModal from './CustomGameModal'
 import AffixStatus from './AffixStatus'
+import CoffeeButton from './CoffeeButton'
 
 export interface Artist {
     name: string,
@@ -78,7 +79,7 @@ const Game = (props: GameProps) => {
     const containerRef = useRef<HTMLDivElement>(null);
     const { ref: affixRef, entry: entryAffix } = useIntersection({
         root: containerRef.current,
-        threshold: 1,
+        threshold: 0,
     });
 
     const matchupRef = useMergedRef(scrollViewRef, affixRef)
@@ -239,6 +240,7 @@ const Game = (props: GameProps) => {
             <HowToPlay start={web[start]} end={web[end]} opened={htpModalOpened} handlers={htpModalHandlers}/>
             <Text>Built by <Anchor c="green.8" href="https://karimkaylani.com/" target="_blank">Karim Kaylani</Anchor>. 
             Designed by <Anchor c="green.8" href="https://zade.design/" target="_blank">Zade Kaylani</Anchor>.</Text>
+            <CoffeeButton/>
         </Flex>
     )
 }
