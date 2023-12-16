@@ -11,11 +11,12 @@ export interface AffixStatusProps {
     path: string[],
     guesses: number,
     resets: number,
-    mounted: boolean|undefined
+    mounted: boolean|undefined,
+    onTap: () => void
 }
 
 const AffixStatus = (props: AffixStatusProps) => {
-    const {currArtist, endArtist, path, guesses, resets, mounted} = props
+    const {currArtist, endArtist, path, guesses, resets, mounted, onTap} = props
     const groupRef = React.useRef<HTMLDivElement>(null)
     const [isWrapped, setIsWrapped] = useState(false)
     const singleLineHeight = 46
@@ -39,7 +40,7 @@ const AffixStatus = (props: AffixStatusProps) => {
     <Affix w="100%" h={0} top={0}>
         <Transition transition="slide-down" mounted={mounted === true}>
         {(transitionStyles) => (
-            <Card ref={groupRef} p="xs" withBorder style={transitionStyles}>
+            <Card onClick={onTap} ref={groupRef} p="xs" withBorder style={transitionStyles}>
                 <Group align='center' justify={isWrapped ? "center" : "space-between"} wrap='nowrap'>
                     <Group align='center' justify="center" gap="xs" wrap='nowrap'>
                         <ArtistInfo artist={currArtist} small={true} />
