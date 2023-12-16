@@ -8,7 +8,6 @@ import Arrow from './Arrow'
 export interface AffixStatusProps {
     currArtist: Artist,
     endArtist: Artist,
-    path: string[],
     guesses: number,
     resets: number,
     mounted: boolean|undefined,
@@ -16,7 +15,7 @@ export interface AffixStatusProps {
 }
 
 const AffixStatus = (props: AffixStatusProps) => {
-    const {currArtist, endArtist, path, guesses, resets, mounted, onTap} = props
+    const {currArtist, endArtist, guesses, resets, mounted, onTap} = props
     const groupRef = React.useRef<HTMLDivElement>(null)
     const [isWrapped, setIsWrapped] = useState(false)
     const singleLineHeight = 46

@@ -228,7 +228,7 @@ const Game = (props: GameProps) => {
             }
             <RelatedArtistsTitle artist={currArtist} won={won} endArtist={web[end]}/>
             <GameOver opened={winModalOpened} close={winModalClose} path={path} guesses={guesses} matchup={matchup} resets={resets} web={web} is_custom={is_custom}/>
-            <AffixStatus currArtist={currArtist} endArtist={web[end]} path={path} guesses={guesses} 
+            <AffixStatus currArtist={currArtist} endArtist={web[end]} guesses={guesses} 
             resets={resets} onTap={scrollToTop} mounted={!won && !entryAffix?.isIntersecting}/>
             <SimpleGrid cols={{ base: 2, xs: 3, sm: 3, md: 4, lg: 5 }}>
             {currArtist.related.map((artist_name: string) => 
