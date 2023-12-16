@@ -3,6 +3,9 @@ import Game from '../components/Game';
 import { getWeb } from '../page';
 import { Suspense } from 'react';
 
+export const metadata = {
+  title: 'relatle (custom game)'
+};
 
 export default async function Home() {
     const web = await getWeb()
