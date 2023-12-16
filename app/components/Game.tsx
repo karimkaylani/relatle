@@ -143,10 +143,9 @@ const Game = (props: GameProps) => {
 
     const [start, end] = matchup
 
-    if (!(start in web) || !(end in web)) { 
-        return (
-            <Text>Invalid custom match</Text>
-        )
+    if (!(start in web) || !(end in web) || (start === end)) { 
+        window.open("/", "_self")
+        return
     }
 
     const scrollToTop = () => {
