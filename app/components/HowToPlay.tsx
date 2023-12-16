@@ -18,7 +18,7 @@ const HowToPlay = (props: HowToPlayProps) => {
   return (
     <Group justify="flex-end">
         <HoverButton onTap={open}>
-            <IconHelpCircle size={40}/>
+            <IconHelpCircle size={24}/>
         </HoverButton>
         <Modal opened={opened} 
             onClose={close} withCloseButton={true} centered

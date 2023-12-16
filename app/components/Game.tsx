@@ -237,10 +237,15 @@ const Game = (props: GameProps) => {
                 updateArtistHandler={updateArtistHandler}/>)}
             </SimpleGrid>
             {!won && <Reset resetHandler={resetHandler}/>}
-            <HowToPlay start={web[start]} end={web[end]} opened={htpModalOpened} handlers={htpModalHandlers}/>
+            <Space h={5}/>
             <Text>Built by <Anchor c="green.8" href="https://karimkaylani.com/" target="_blank">Karim Kaylani</Anchor>. 
             Designed by <Anchor c="green.8" href="https://zade.design/" target="_blank">Zade Kaylani</Anchor>.</Text>
-            <CoffeeButton/>
+            <Group justify='center' align='center'>
+                <CoffeeButton/>
+                <Text c='gray.7'>|</Text>
+                <HowToPlay start={web[start]} end={web[end]} opened={htpModalOpened} handlers={htpModalHandlers}/>
+            </Group>
+            
         </Flex>
     )
 }

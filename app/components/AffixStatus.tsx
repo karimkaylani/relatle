@@ -34,7 +34,7 @@ const AffixStatus = (props: AffixStatusProps) => {
         return () => {
             window.removeEventListener('resize', checkIfWrapped);
         }
-    }, [mounted, guesses])
+    }, [mounted, currArtist])
   return (
     <Affix w="100%" h={0} top={0}>
         <Transition transition="slide-down" mounted={mounted === true}>
@@ -46,7 +46,7 @@ const AffixStatus = (props: AffixStatusProps) => {
                         <Arrow small={true}/>
                         <ArtistInfo artist={endArtist} small={true} is_green={true}/>
                     </Group>
-                    <Text>{guesses} {!isWrapped ? "|" : ""} {resets}</Text>
+                    <Text>{guesses} {!isWrapped ? "|" : "\n"} {resets}</Text>
                 </Group>
             </Card> 
         )}
