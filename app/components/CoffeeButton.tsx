@@ -1,11 +1,12 @@
 import React from 'react'
 import HoverButton from './HoverButton'
-import { Card, Group, Text } from '@mantine/core'
+import { Anchor, Card, Group, Text } from '@mantine/core'
 import { IconCoffee } from '@tabler/icons-react'
 
 const CoffeeButton = () => {
   return (
-    <HoverButton onTap={() => window.open('https://www.buymeacoffee.com/karimk', '_blank')}>
+    <Anchor href="https://www.buymeacoffee.com/karimk" target="_blank">
+    <HoverButton onTap={() => {return}}>
         <Card shadow="md" radius="lg"
         p="xs">
             <Group gap="4px" justify='center'>
@@ -14,6 +15,7 @@ const CoffeeButton = () => {
             </Group>
         </Card>
     </HoverButton>
+    </Anchor>
   )
 }
 
