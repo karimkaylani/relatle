@@ -1,6 +1,4 @@
-import { Text } from '@mantine/core'
 import React from 'react'
-import { Inter } from 'next/font/google'
 import { IconArrowRight, IconArrowDown } from '@tabler/icons-react'
 
 interface ArrowProps {
