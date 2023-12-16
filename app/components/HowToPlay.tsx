@@ -2,8 +2,6 @@ import { Modal, Text, Image, Group, Flex, Card } from '@mantine/core'
 import React from 'react'
 import HoverButton from './HoverButton';
 import { Artist } from './Game';
-import ArtistInfo from './ArtistInfo';
-import Arrow from './Arrow';
 import { IconHelpCircle } from '@tabler/icons-react'
 import Matchup from './Matchup';
 
