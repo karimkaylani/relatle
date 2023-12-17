@@ -93,7 +93,7 @@ const GameOver = (props: GameOverProps) => {
     onClose={close} withCloseButton={true} centered
     padding="lg" radius="lg"
     title="You Won!"
-    styles={{ title: { fontSize: "24px", color: "#f1f3f5", fontWeight: 700 } }}>
+    styles={{ title: { fontSize: "24px", color: "#f1f3f5", fontWeight: 700, lineHeight: "32px" } }}>
       <Flex 
           align="center"
           direction="column"
