@@ -17,30 +17,13 @@ export interface AffixStatusProps {
 const AffixStatus = (props: AffixStatusProps) => {
     const {currArtist, endArtist, guesses, resets, mounted, onTap} = props
     const groupRef = React.useRef<HTMLDivElement>(null)
-    const [isWrapped, setIsWrapped] = useState(false)
-    const singleLineHeight = 50
 
-    const checkIfWrapped = () => { 
-        const current = groupRef.current
-        if (current) {
-            setIsWrapped(current.clientHeight !== undefined && current.clientHeight > singleLineHeight)
-        }
-    }
-
-    useEffect(() => {
-        window.addEventListener('resize', checkIfWrapped);
-        checkIfWrapped()
-
-        return () => {
-            window.removeEventListener('resize', checkIfWrapped);
-        }
-    }, [mounted, currArtist])
   return (
     <Affix w="100%" h={0} top={0}>
         <Transition transition="slide-down" mounted={mounted === true}>
         {(transitionStyles) => (
             <Card onClick={onTap} ref={groupRef} p="xs" withBorder style={transitionStyles}>
-                <Group align='center' justify={isWrapped ? "center" : "space-between"} wrap='nowrap'>
+                <Group align='center' justify='space-between' wrap='nowrap'>
                     <Group align='center' justify="center" gap="xs" wrap='nowrap'>
                         <ArtistInfo artist={currArtist} small={true} />
                         <Arrow small={true}/>
