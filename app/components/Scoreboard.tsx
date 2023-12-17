@@ -18,7 +18,7 @@ const ScoreDisplay = (text: string, value: string, small:boolean|undefined) => {
         wrap="wrap" className="w-20 mb-1">
           <Text size="sm" fw={500}>{text}</Text>
           <Space h={2}/>
-          <FlipNumbers height={numberSize} width={numberSize} color="white" background="gray.9" 
+          <FlipNumbers height={numberSize} width={numberSize-3} color="white" background="gray.9" 
               play perspective={100} numbers={value}
               numberStyle={{
                 fontFamily: "OpenSauceOne",

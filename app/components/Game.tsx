@@ -4,7 +4,7 @@ import React, { Fragment, createContext, useEffect, useRef, useState } from 'rea
 import ArtistCard from './ArtistCard'
 import GameOver from './GameOver'
 import Reset from './Reset'
-import { Flex, SimpleGrid, Text, Image, Anchor, Stack, Group, Card, Space, Modal, Affix } from '@mantine/core'
+import { Flex, SimpleGrid, Text, Image, Anchor, Stack, Group, Space } from '@mantine/core'
 import { useDisclosure, useIntersection, useMergedRef, useScrollIntoView } from '@mantine/hooks'
 import Matchup from './Matchup'
 import Scoreboard from './Scoreboard'
