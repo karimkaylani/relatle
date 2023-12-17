@@ -140,7 +140,7 @@ const CustomGameModal = (props: CustomGameModalProps) => {
         onClose={closeModal} withCloseButton={true} centered
         padding="xl" radius="lg" lockScroll={false}
         title="Create a Custom Game"
-        styles={{ title: { fontSize: "24px", color: "#f1f3f5", fontWeight: 700 } }}>
+        styles={{ title: { fontSize: "24px", color: "#f1f3f5", fontWeight: 700, lineHeight: "32px" } }}>
         <Stack>
             <Text>Create your custom matchup and send the link to challenge you and your friends.</Text>
             <Autocomplete size="md" radius="md" placeholder="Starting artist" data={artistsList}
