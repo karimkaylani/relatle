@@ -10,7 +10,7 @@ export interface ScoreboardProps {
 }
 
 const ScoreDisplay = (text: string, value: string, small:boolean|undefined) => {
-  const numberSize = small ? 16 : 18
+  const numberSize = small ? 20 : 22
   return (
       <Flex
         gap="3px" justify="center"

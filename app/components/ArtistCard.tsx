@@ -28,11 +28,13 @@ const ArtistCard = (props: ArtistCardProps) => {
     const borderColor = artist.name === end ? "#51cf66" : "#f1f3f5"
     animate([
       [scope.current, {border: `${borderSize} solid ${borderColor}`}],
-      [scope.current, {border: `${borderSize} solid ${borderColor}`}],
-      artist.name === end ? [scope.current, {border: `0px solid ${borderColor}`}] : [],
+      [scope.current, {border: `${borderSize} solid ${borderColor}`}]
     ], {
       ease: "linear",
-      onComplete: () => updateArtistHandler(artist)
+      onComplete: () => {
+        updateArtistHandler(artist)
+        animate([[scope.current, {border: `0px solid ${borderColor}`}]])
+      }
     })
   }
 
