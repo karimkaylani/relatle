@@ -1,5 +1,6 @@
-import { Card, Divider, Flex, Group, Text } from '@mantine/core'
+import { Card, Divider, Flex, Group, Space, Text } from '@mantine/core'
 import React from 'react'
+import FlipNumbers from 'react-flip-numbers'
 
 export interface ScoreboardProps {
     guesses: number,
@@ -9,14 +10,20 @@ export interface ScoreboardProps {
 }
 
 const ScoreDisplay = (text: string, value: string, small:boolean|undefined) => {
-  const fontSize = small ? "25px": "35px"
+  const numberSize = small ? 16 : 18
   return (
       <Flex
         gap="3px" justify="center"
         align="center" direction="column"
         wrap="wrap" className="w-20 mb-1">
           <Text size="sm" fw={500}>{text}</Text>
-          <Text c="gray.1" size={fontSize} fw={700}>{value}</Text>
+          <Space h={2}/>
+          <FlipNumbers height={numberSize} width={numberSize} color="white" background="gray.9" 
+              play perspective={100} numbers={value}
+              numberStyle={{
+                fontFamily: "OpenSauceOne",
+                fontWeight: 700,
+              }} />
       </Flex>
   )
 }

@@ -13,6 +13,7 @@ import * as Collections from 'typescript-collections';
 import { IconArrowDown, IconArrowUp } from '@tabler/icons-react'
 import { useDisclosure } from '@mantine/hooks'
 import Matchup from './Matchup'
+import FlipNumbers from 'react-flip-numbers'
 
 export interface GameOverProps {
     opened: boolean,
@@ -123,7 +124,13 @@ const GameOver = (props: GameOverProps) => {
               gap="0px" justify="center"
               align="center" direction="column" wrap="wrap">
               <Text size="xs" ta="center" fw={500}>Time until next matchup</Text>
-              <Text c="gray.1" size="md" fw={700}>{`${timeLeft.hrs}:${timeLeft.mins}:${timeLeft.secs}`}</Text>
+              <FlipNumbers height={14} width={14} color="white" background="gray.9" 
+              play perspective={100} numbers={`${timeLeft.hrs}:${timeLeft.mins}:${timeLeft.secs}`}
+              numberStyle={{
+                fontFamily: "OpenSauceOne",
+                fontWeight: 700
+              }} />
+              {/* <Text c="gray.1" size="md" fw={700}>{`${timeLeft.hrs}:${timeLeft.mins}:${timeLeft.secs}`}</Text> */}
             </Flex>
           </Card>
         }
