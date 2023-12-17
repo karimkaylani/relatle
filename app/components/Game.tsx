@@ -17,6 +17,7 @@ import CustomGameButton from './CustomGameButton'
 import CustomGameModal from './CustomGameModal'
 import AffixStatus from './AffixStatus'
 import CoffeeButton from './CoffeeButton'
+import { useAnimate } from 'framer-motion'
 
 export interface Artist {
     name: string,
@@ -83,6 +84,11 @@ const Game = (props: GameProps) => {
     });
 
     const matchupRef = useMergedRef(scrollViewRef, affixRef)
+
+    const [scope, animate] = useAnimate()
+    // To prevent user from clicking on multiple artists at once
+    // or reseting while executing artist click animation
+    const [artistClicked, setArtistClicked] = useState(false)
     
     const save = (saveData: SaveProps): void => { 
         localStorage.setItem(is_custom ? "props_custom" : "props", JSON.stringify(saveData));
@@ -164,6 +170,7 @@ const Game = (props: GameProps) => {
     }
 
     const updateArtistHandler = (artist: Artist): void => {
+        setArtistClicked(false)
         if (won === true) {
             if (artist.name === end) { winModalOpen() }
             return
@@ -202,6 +209,28 @@ const Game = (props: GameProps) => {
             guesses, resets: resets+1, matchup
         })
     }
+
+    const clickArtistHandler = (artist: Artist) => {
+        animate([[scope.current, { scale: 0.95 }, { duration: 0.125}]], 
+        {onComplete: () => {
+            animate([[scope.current, {scale: 1}, {duration: 0.125}]], 
+            {ease: "linear"})
+            updateArtistHandler(artist)
+        }},
+        { ease: "linear" })
+    }
+
+    const clickResetHandler = () => {
+        if (artistClicked) { return }
+        animate([[scope.current, { opacity: 0 }, { duration: 0.25}]], 
+            {onComplete: () => {
+                animate([[scope.current, {opacity: 1}, {duration: 0.25}]], 
+                {ease: "linear"})
+                resetHandler()
+            }},
+            { ease: "linear" })
+    }
+
     return (
         <Flex align="center" direction="column"
             gap="lg" className="mt-5 pb-10 pl-5 pr-5">
@@ -231,12 +260,13 @@ const Game = (props: GameProps) => {
             <GameOver opened={winModalOpened} close={winModalClose} path={path} guesses={guesses} matchup={matchup} resets={resets} web={web} is_custom={is_custom}/>
             <AffixStatus currArtist={currArtist} endArtist={web[end]} guesses={guesses} 
             resets={resets} onTap={scrollToTop} mounted={!won && !entryAffix?.isIntersecting}/>
-            <SimpleGrid cols={{ base: 2, xs: 3, sm: 3, md: 4, lg: 5 }}>
+            <SimpleGrid ref={scope} cols={{ base: 2, xs: 3, sm: 3, md: 4, lg: 5 }}>
             {currArtist.related.map((artist_name: string) => 
-                <ArtistCard key={web[artist_name].id} artist={web[artist_name]} path={path} won={won} end={end}
-                updateArtistHandler={updateArtistHandler}/>)}
+                <ArtistCard key={web[artist_name].id} artist={web[artist_name]} path={path}
+                 won={won} end={end} click={[artistClicked, setArtistClicked]}
+                updateArtistHandler={(won || artist_name === end) ? updateArtistHandler : clickArtistHandler}/>)}
             </SimpleGrid>
-            {!won && <Reset resetHandler={resetHandler}/>}
+            {!won && <Reset resetHandler={(won || currArtist.name === start) ? resetHandler : clickResetHandler}/>}
             <Space h={5}/>
             <Text>Built by <Anchor c="green.8" href="https://karimkaylani.com/" target="_blank">Karim Kaylani</Anchor>. 
             Designed by <Anchor c="green.8" href="https://zade.design/" target="_blank">Zade Kaylani</Anchor>.</Text>
@@ -245,7 +275,6 @@ const Game = (props: GameProps) => {
                 <Text c='gray.7'>|</Text>
                 <HowToPlay start={web[start]} end={web[end]} opened={htpModalOpened} handlers={htpModalHandlers}/>
             </Group>
-            
         </Flex>
     )
 }

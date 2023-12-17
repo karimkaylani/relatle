@@ -9,27 +9,31 @@ interface ArtistCardProps {
     updateArtistHandler: (artist: Artist) => void,
     path: string[],
     won: boolean,
-    end: string
+    end: string,
+    click: [clicked: boolean, setClicked: (clicked: boolean) => void]
+  
 }
 
 const ArtistCard = (props: ArtistCardProps) => {
-  const {artist, updateArtistHandler, path, won, end} = props
+  const {artist, updateArtistHandler, path, won, end, click: [clicked, setClicked]} = props
   let img_size = window.innerWidth > phoneMaxWidth ? 175 : 140
   let text_size = window.innerWidth > phoneMaxWidth ? "md" : "sm"
 
   const [scope, animate] = useAnimate()
 
   const clickArtistHandler = (artist: Artist) => {
+    if (clicked) { return }
+    setClicked(true)
+    const borderSize = artist.name === end ? "4px" : "2px"
     const borderColor = artist.name === end ? "#51cf66" : "#f1f3f5"
     animate([
-      [scope.current, {border: `2px solid ${borderColor}`}],
-      [scope.current, {border: `2px solid ${borderColor}`}],
+      [scope.current, {border: `${borderSize} solid ${borderColor}`}],
+      [scope.current, {border: `${borderSize} solid ${borderColor}`}],
       artist.name === end ? [scope.current, {border: `0px solid ${borderColor}`}] : [],
     ], {
       ease: "linear",
       onComplete: () => updateArtistHandler(artist)
     })
-
   }
 
   return (
