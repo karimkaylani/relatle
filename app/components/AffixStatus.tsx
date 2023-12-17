@@ -46,7 +46,7 @@ const AffixStatus = (props: AffixStatusProps) => {
                         <Arrow small={true}/>
                         <ArtistInfo artist={endArtist} small={true} is_green={true}/>
                     </Group>
-                    <Text>{guesses} {!isWrapped ? "|" : "\n"} {resets}</Text>
+                    <Text>{guesses} | {resets}</Text>
                 </Group>
             </Card> 
         )}
