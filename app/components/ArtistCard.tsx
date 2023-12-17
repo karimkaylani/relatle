@@ -24,16 +24,17 @@ const ArtistCard = (props: ArtistCardProps) => {
   const clickArtistHandler = (artist: Artist) => {
     if (clicked) { return }
     setClicked(true)
-    const borderSize = artist.name === end ? "4px" : "2px"
-    const borderColor = artist.name === end ? "#51cf66" : "#f1f3f5"
+    const winningGuess = artist.name === end
+    const borderSize = winningGuess ? "4px" : "2px"
+    const borderColor = winningGuess ? "#51cf66" : "#f1f3f5"
     animate([
-      [scope.current, {border: `${borderSize} solid ${borderColor}`}],
-      [scope.current, {border: `${borderSize} solid ${borderColor}`}]
+      [scope.current, {border: `${borderSize} solid ${borderColor}`}, {duration: 0.3}],
+      [scope.current, {border: `${borderSize} solid ${borderColor}`}, {duration: winningGuess ? 0.6 : 0.3}]
     ], {
       ease: "linear",
       onComplete: () => {
         updateArtistHandler(artist)
-        animate([[scope.current, {border: `0px solid ${borderColor}`}]])
+        animate([[scope.current, {border: `0px solid ${borderColor}`}, {duration: 0.3}]])
       }
     })
   }
