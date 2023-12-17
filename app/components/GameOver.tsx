@@ -125,7 +125,7 @@ const GameOver = (props: GameOverProps) => {
               align="center" direction="column" wrap="wrap">
               <Text size="xs" ta="center" fw={500}>Time until next matchup</Text>
               <FlipNumbers height={14} width={11} color="white" background="gray.9" 
-              play perspective={100} numbers={`${timeLeft.hrs}:${timeLeft.mins}:${timeLeft.secs}`}
+              play perspective={150} numbers={`${timeLeft.hrs}:${timeLeft.mins}:${timeLeft.secs}`}
               numberStyle={{
                 fontFamily: "OpenSauceOne",
                 fontWeight: 700
