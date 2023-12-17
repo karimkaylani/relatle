@@ -18,7 +18,7 @@ const AffixStatus = (props: AffixStatusProps) => {
     const {currArtist, endArtist, guesses, resets, mounted, onTap} = props
     const groupRef = React.useRef<HTMLDivElement>(null)
     const [isWrapped, setIsWrapped] = useState(false)
-    const singleLineHeight = 46
+    const singleLineHeight = 50
 
     const checkIfWrapped = () => { 
         const current = groupRef.current
