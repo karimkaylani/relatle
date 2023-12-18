@@ -13,8 +13,20 @@ def main():
     # get_distribution_of_degrees_of_separation(web)
     with open("public/matchup_artists.json", "r") as outfile:
         matchup_artists = json.load(outfile)
-    matchups = generate_matchups(web, 70, matchup_artists)
-    write_matchups_to_disk(matchups)
+    print(verify_matchups(web))
+    # matchups = generate_matchups(web, 70, matchup_artists)
+    # write_matchups_to_disk(matchups)
+
+def verify_matchups(web):
+    with open("public/matchups.json", "r") as outfile:
+        matchups = json.load(outfile)
+    for date in matchups:
+        matchup = matchups[date]
+        start, end = matchup
+        if start not in web or end not in web or not is_good_matchup(web, matchup):
+            print(date, matchup)
+            return False
+    return True
 
 def write_matchups_to_disk(matchups):
     start_date = datetime(2023, 11, 29)
@@ -42,7 +54,7 @@ def generate_matchups(m, amount, artists, with_replacement=False):
 def is_good_matchup(m, matchup):
     min_deg_of_separation, max_deg_of_separation = 3, 7
     # Range of num paths for a good matchup at max_deg of sep > deg of sep > min deg of sep
-    min_allowed_num_paths, max_allowed_num_paths = 8, 25
+    min_allowed_num_paths, max_allowed_num_paths = 7, 25
     start, end = matchup
     if start == end:
         return False

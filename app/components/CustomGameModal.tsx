@@ -14,30 +14,30 @@ interface CustomGameModalProps {
 }
 
 
-const getNumPathsEndArtists = (web: {[key: string]: Artist}, start: string, maxSteps: number=Infinity): {[key: string]: number} => {
+const getNumPathsEndArtists = (web: {[key: string]: Artist}, start: string, maxSteps: number=Infinity): {[key: string]: string[][]} => {
     const visited: Set<string> = new Set();
-    const queue: Collections.Queue<[string, number]> = new Collections.Queue();
-    queue.enqueue([start, 0]);
-    const endArtists: {[key: string]: number} = {};
+    const queue: Collections.Queue<[string, string[]]> = new Collections.Queue();
+    queue.enqueue([start, []]);
+    const endArtists: {[key: string]: string[][]} = {};
 
     while (!queue.isEmpty()) {
         const item = queue.dequeue();
         if (item === undefined) {
             return endArtists;
         }
-        const [node, steps] = item
-        if (steps <= maxSteps) {
+        const [node, path] = item
+        if (path.length <= maxSteps) {
             if (node !== start) {
                 if (endArtists[node] === undefined) {
-                    endArtists[node] = 1
+                    endArtists[node] = [path]
                 } else {
-                    endArtists[node] += 1
+                    endArtists[node].push(path)
                 }
             }
             if (!visited.has(node)) {
                 visited.add(node);
                 for (const neighbor of web[node].related || []) {
-                    queue.enqueue([neighbor, steps + 1]);
+                    queue.enqueue([neighbor, [...path, neighbor]]);
                 }
             }
         }
@@ -92,6 +92,7 @@ const maxDegOfSepReccomended = 10
 const maxDegOfSepWarning = 10
 const maxNumPathsForWarning = 4
 const minNumPathsForReccomended = 7
+const maxNumPathsForReccomended = 25
 
 const CustomGameModal = (props: CustomGameModalProps) => {
     const {web, customModalOpened, customModalHandlers} = props
@@ -105,7 +106,7 @@ const CustomGameModal = (props: CustomGameModalProps) => {
     const changeStartArtist = (start: string) => {
         setStartArtist(start)
         setEndArtist("")
-    }
+    }    
 
     const selectStartArtist = (start: string) => {
         if (!artistsList.includes(start)) { return }
@@ -113,7 +114,13 @@ const CustomGameModal = (props: CustomGameModalProps) => {
         setMatchupsFound(endArtists)
         const closeEndArtists = Object.keys(getNumPathsEndArtists(web, start, minDegOfSepReccomended))
         const endArtistsWithMinDegOfSep = getNumPathsEndArtists(web, start, maxDegOfSepReccomended)
-        const reccomendedEndArtists = Object.keys(endArtistsWithMinDegOfSep).filter((artist) => endArtistsWithMinDegOfSep[artist] > minNumPathsForReccomended && !closeEndArtists.includes(artist))
+        const reccomendedEndArtists = Object.keys(endArtistsWithMinDegOfSep).filter((artist) => {
+            return endArtistsWithMinDegOfSep[artist].length >= minNumPathsForReccomended &&
+            endArtistsWithMinDegOfSep[artist].length <= maxNumPathsForReccomended &&
+            !closeEndArtists.includes(artist) &&
+            // paths don't all start with the same artist
+            new Set(endArtistsWithMinDegOfSep[artist].map((path) => path[0])).size > 1
+        })
         setReccomendedEndArtists(reccomendedEndArtists)
         setStartArtist(start)
         setEndArtist("")
@@ -150,9 +157,9 @@ const CustomGameModal = (props: CustomGameModalProps) => {
             <Stack gap="xs">
                 <Autocomplete size="md" radius="md" placeholder="Target artist" disabled={!artistsList.includes(startArtist) || matchupsFound.length == 0}
                     data={[
-                        {group: 'Recommended', items: reccomendedEndArtists},
-                        {group: 'Other', items: matchupsFound.filter((artist)=> !reccomendedEndArtists.includes(artist))}]}
-                    styles={{input: {color: "#f1f3f5"}}} onChange={setEndArtist} selectFirstOptionOnChange={true} value={endArtist}/>
+                        {group: 'Recommended End Artists', items: reccomendedEndArtists},
+                        {group: 'End Artists', items: matchupsFound.filter((artist)=> !reccomendedEndArtists.includes(artist))}]}
+                    styles={{input: {color: "#f1f3f5"}, groupLabel: {color: "#51cf66"}}} onChange={setEndArtist} selectFirstOptionOnChange={true} value={endArtist}/>
                 <Text pl="5" ta="left" size="xs">If you don&apos;t see your desired target artist, then the path from your starting artist is impossible.</Text>
             </Stack>
 
