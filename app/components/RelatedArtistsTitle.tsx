@@ -26,8 +26,8 @@ const RelatedArtistsTitle = React.forwardRef<HTMLDivElement, RelatedArtistsTitle
     }
 
   return (
-    <Group ref={ref} justify="center" gap="6px">
-        <ArtistInfo artist={artist} small={small}/>
+    <Group align='center' ref={ref} justify="center" gap="6px">
+        <ArtistInfo artist={artist} small={small} is_green={artist.name === endArtist.name}/>
         <Text size={small ? "md" : "lg"}>related artists</Text>
     </Group>
   )

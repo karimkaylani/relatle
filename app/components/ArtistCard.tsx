@@ -10,12 +10,14 @@ interface ArtistCardProps {
     path: string[],
     won: boolean,
     end: string,
-    click: [clicked: boolean, setClicked: (clicked: boolean) => void]
+    clicked: boolean,
+    setClicked: (clicked: boolean) => void,
+    clickable?: boolean
   
 }
 
-const ArtistCard = (props: ArtistCardProps) => {
-  const {artist, updateArtistHandler, path, won, end, click: [clicked, setClicked]} = props
+const ArtistCard = ({artist, updateArtistHandler, path, won,
+  end, clicked, setClicked, clickable=true}:ArtistCardProps) => {
   let img_size = window.innerWidth > phoneMaxWidth ? 175 : 140
   let text_size = window.innerWidth > phoneMaxWidth ? "md" : "sm"
 
@@ -39,8 +41,8 @@ const ArtistCard = (props: ArtistCardProps) => {
     })
   }
 
-  return (
-      <HoverButton onTap={() => won ? updateArtistHandler(artist) : clickArtistHandler(artist)}>
+  const artistCardContent = () => {
+    return (
         <Card ref={scope}
           shadow="sm" radius="md" withBorder
           padding="xs" opacity={won && artist.name !== end ? 0.25 : 1}
@@ -60,7 +62,16 @@ const ArtistCard = (props: ArtistCardProps) => {
                 </Text>
             </Flex>
         </Card>
-      </HoverButton>
+    ) 
+  }
+
+  return (
+    clickable ?
+    <HoverButton onTap={() => won ? updateArtistHandler(artist) : clickArtistHandler(artist)}>
+      {artistCardContent()}
+    </HoverButton>
+    :
+    artistCardContent()
   )
 }
 

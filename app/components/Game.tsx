@@ -19,6 +19,7 @@ import AffixStatus from './AffixStatus'
 import CoffeeButton from './CoffeeButton'
 import { useAnimate } from 'framer-motion'
 import ArtistInfo from './ArtistInfo'
+import Hint from './Hint'
 
 export interface Artist {
     name: string,
@@ -287,10 +288,11 @@ const Game = (props: GameProps) => {
             <SimpleGrid ref={scope} cols={{ base: 2, xs: 3, sm: 3, md: 4, lg: 5 }}>
             {currArtist.related.map((artist_name: string) => 
                 <ArtistCard key={web[artist_name].id} artist={web[artist_name]} path={path}
-                 won={won} end={end} click={[artistClicked, setArtistClicked]}
+                 won={won} end={end} clicked={artistClicked} setClicked={setArtistClicked}
                 updateArtistHandler={(won || artist_name === end) ? updateArtistHandler : clickArtistHandler}/>)}
             </SimpleGrid>
             {!won && <Reset resetHandler={(won || currArtist.name === start) ? resetHandler : clickResetHandler}/>}
+            {!won && <Hint web={web} endArtist={web[end]} path={path}/>}
             <Space h={5}/>
             <Text>Built by <Anchor c="green.8" href="https://karimkaylani.com/" target="_blank">Karim Kaylani</Anchor>. 
             Designed by <Anchor c="green.8" href="https://zade.design/" target="_blank">Zade Kaylani</Anchor>.</Text>
