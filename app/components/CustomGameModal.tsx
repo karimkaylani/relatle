@@ -152,14 +152,15 @@ const CustomGameModal = (props: CustomGameModalProps) => {
             <Text>Create your custom matchup and send the link to challenge you and your friends.</Text>
             <Autocomplete size="md" radius="md" placeholder="Starting artist" data={artistsList}
                 onOptionSubmit={selectStartArtist} onDropdownClose={() => selectStartArtist(startArtist)} onChange={changeStartArtist} selectFirstOptionOnChange={true}
-                styles={{input: {color: "#f1f3f5"}}} value={startArtist}/>
+                styles={{input: {color: "#f1f3f5"}, dropdown: {color: "#f1f3f5"}}} value={startArtist}/>
             <Arrow small={false} down={true}/>
             <Stack gap="xs">
                 <Autocomplete size="md" radius="md" placeholder="Target artist" disabled={!artistsList.includes(startArtist) || matchupsFound.length == 0}
                     data={[
-                        {group: 'Recommended End Artists', items: reccomendedEndArtists},
-                        {group: 'End Artists', items: matchupsFound.filter((artist)=> !reccomendedEndArtists.includes(artist))}]}
-                    styles={{input: {color: "#f1f3f5"}, groupLabel: {color: "#51cf66"}}} onChange={setEndArtist} selectFirstOptionOnChange={true} value={endArtist}/>
+                        {group: 'Recommended Target Artists', items: reccomendedEndArtists},
+                        {group: 'Target Artists', items: matchupsFound.filter((artist)=> !reccomendedEndArtists.includes(artist))}]}
+                    styles={{input: {color: "#f1f3f5"}, groupLabel: {color: "#37b24d", fontWeight: 700}, dropdown: {color: "#f1f3f5"}}}
+                     onChange={setEndArtist} selectFirstOptionOnChange={true} value={endArtist}/>
                 <Text pl="5" ta="left" size="xs">If you don&apos;t see your desired target artist, then the path from your starting artist is impossible.</Text>
             </Stack>
 

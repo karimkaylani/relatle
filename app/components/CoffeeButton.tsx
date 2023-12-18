@@ -11,7 +11,7 @@ const CoffeeButton = () => {
         p="xs">
             <Group gap="4px" justify='center'>
                 <IconCoffee size={16}/>
-                <Text size="sm" c="gray.1">BUY US A COFFEE</Text>
+                <Text size="sm" fw={700} c="gray.1">BUY US A COFFEE</Text>
             </Group>
         </Card>
     </HoverButton>

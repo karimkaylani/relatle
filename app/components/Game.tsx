@@ -270,16 +270,17 @@ const Game = (props: GameProps) => {
                 :
                 <Scoreboard guesses={guesses} resets={resets} greenBorder={won}/>
             }
-            <Popover position="bottom" shadow="md" opened={endMissed}>
+            <Popover position="bottom" opened={endMissed}
+            styles={{dropdown: {backgroundColor: "#e9ecef", border: 'none'}}}>
                 <Popover.Target>
                     <RelatedArtistsTitle artist={currArtist} won={won} endArtist={web[end]}/>
                 </Popover.Target>
 
                 <Popover.Dropdown>
-                    <Group justify="center" align="center" gap='8px'>
-                        <Text c='gray.1' size="md" ta="center">You missed</Text>
-                        <ArtistInfo artist={web[end]} small={true} is_green={true}/>
-                    </Group>
+                    {/* <Group justify="center" align="center" gap='8px'> */}
+                        <Text c='gray.8' fw={700} size="md" ta="center">You missed {end}!</Text>
+                        {/* <ArtistInfo artist={web[end]} small={true} is_green={true}/> */}
+                    {/* </Group> */}
                 </Popover.Dropdown>
             </Popover>
             <GameOver opened={winModalOpened} close={winModalClose} path={path} guesses={guesses} matchup={matchup} resets={resets} web={web} is_custom={is_custom}/>
@@ -291,11 +292,17 @@ const Game = (props: GameProps) => {
                  won={won} end={end} clicked={artistClicked} setClicked={setArtistClicked}
                 updateArtistHandler={(won || artist_name === end) ? updateArtistHandler : clickArtistHandler}/>)}
             </SimpleGrid>
-            {!won && <Reset resetHandler={(won || currArtist.name === start) ? resetHandler : clickResetHandler}/>}
-            {!won && <Hint web={web} endArtist={web[end]} path={path}/>}
-            <Space h={5}/>
-            <Text>Built by <Anchor c="green.8" href="https://karimkaylani.com/" target="_blank">Karim Kaylani</Anchor>. 
-            Designed by <Anchor c="green.8" href="https://zade.design/" target="_blank">Zade Kaylani</Anchor>.</Text>
+            {!won && <Stack align='center' justify='center'>
+                <Text ta="center" c='gray.1' size="md">Feeling stuck?</Text>
+                <Group justify='center' align='center'>
+                    <Reset resetHandler={(won || currArtist.name === start) ? resetHandler : clickResetHandler}/>
+                    <Hint web={web} endArtist={web[end]} path={path}/>
+                </Group>
+            </Stack>}
+            
+            <Space h={24}/>
+            <Text size={width > phoneMaxWidth ? "md" : "sm"}>Built by <Anchor c="green.6" href="https://karimkaylani.com/" target="_blank">Karim Kaylani</Anchor>. 
+            Designed by <Anchor c="green.6" href="https://zade.design/" target="_blank">Zade Kaylani</Anchor>.</Text>
             <Group justify='center' align='center'>
                 <CoffeeButton/>
                 <Text c='gray.7'>|</Text>
