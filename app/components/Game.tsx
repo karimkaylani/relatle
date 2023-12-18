@@ -4,7 +4,7 @@ import React, { Fragment, createContext, useEffect, useRef, useState } from 'rea
 import ArtistCard from './ArtistCard'
 import GameOver from './GameOver'
 import Reset from './Reset'
-import { Flex, SimpleGrid, Text, Image, Anchor, Stack, Group, Space } from '@mantine/core'
+import { Flex, SimpleGrid, Text, Image, Anchor, Stack, Group, Space, Popover } from '@mantine/core'
 import { useDisclosure, useIntersection, useMergedRef, useScrollIntoView } from '@mantine/hooks'
 import Matchup from './Matchup'
 import Scoreboard from './Scoreboard'
@@ -18,6 +18,7 @@ import CustomGameModal from './CustomGameModal'
 import AffixStatus from './AffixStatus'
 import CoffeeButton from './CoffeeButton'
 import { useAnimate } from 'framer-motion'
+import ArtistInfo from './ArtistInfo'
 
 export interface Artist {
     name: string,
@@ -89,6 +90,8 @@ const Game = (props: GameProps) => {
     // To prevent user from clicking on multiple artists at once
     // or reseting while executing artist click animation
     const [artistClicked, setArtistClicked] = useState(false)
+    
+    const [endMissed, setEndMissed] = useState(false)
     
     const save = (saveData: SaveProps): void => { 
         localStorage.setItem(is_custom ? "props_custom" : "props", JSON.stringify(saveData));
@@ -188,6 +191,10 @@ const Game = (props: GameProps) => {
             return
         }
         scrollToTop()
+        const prevCurrArtist = currArtist
+        if (prevCurrArtist.related.includes(end)) {
+            missedArtistHandler()
+        }
         setCurrArtist(artist)
         save({
             currArtist: artist, path: newPath, won,
@@ -198,6 +205,9 @@ const Game = (props: GameProps) => {
     const resetHandler = (): void => {
         if (won === true || currArtist.name == start) {
             return
+        }
+        if (currArtist.related.includes(end)) {
+            missedArtistHandler()
         }
         scrollToTop()
         const newPath = [...path, "RESET"]
@@ -210,11 +220,15 @@ const Game = (props: GameProps) => {
         })
     }
 
+    const missedArtistHandler = (): void => {
+        setEndMissed(true)
+        setTimeout(() => setEndMissed(false), 2000)
+    }
+
     const clickArtistHandler = (artist: Artist) => {
         animate([[scope.current, { scale: 0.95 }, { duration: 0.125}]], 
         {onComplete: () => {
-            animate([[scope.current, {scale: 1}, {duration: 0.125}]], 
-            {ease: "linear"})
+            animate([[scope.current, {scale: 1}, {duration: 0.125}]], {ease: "linear"})
             updateArtistHandler(artist)
         }},
         { ease: "linear" })
@@ -224,8 +238,7 @@ const Game = (props: GameProps) => {
         if (artistClicked) { return }
         animate([[scope.current, { opacity: 0 }, { duration: 0.25}]], 
             {onComplete: () => {
-                animate([[scope.current, {opacity: 1}, {duration: 0.25}]], 
-                {ease: "linear"})
+                animate([[scope.current, {opacity: 1}, {duration: 0.25}]], {ease: "linear"})
                 resetHandler()
             }},
             { ease: "linear" })
@@ -256,7 +269,18 @@ const Game = (props: GameProps) => {
                 :
                 <Scoreboard guesses={guesses} resets={resets} greenBorder={won}/>
             }
-            <RelatedArtistsTitle artist={currArtist} won={won} endArtist={web[end]}/>
+            <Popover position="bottom" shadow="md" opened={endMissed}>
+                <Popover.Target>
+                    <RelatedArtistsTitle artist={currArtist} won={won} endArtist={web[end]}/>
+                </Popover.Target>
+
+                <Popover.Dropdown>
+                    <Group justify="center" align="center" gap='8px'>
+                        <Text c='gray.1' size="md" ta="center">You missed</Text>
+                        <ArtistInfo artist={web[end]} small={true} is_green={true}/>
+                    </Group>
+                </Popover.Dropdown>
+            </Popover>
             <GameOver opened={winModalOpened} close={winModalClose} path={path} guesses={guesses} matchup={matchup} resets={resets} web={web} is_custom={is_custom}/>
             <AffixStatus currArtist={currArtist} endArtist={web[end]} guesses={guesses} 
             resets={resets} onTap={scrollToTop} mounted={!won && !entryAffix?.isIntersecting}/>
