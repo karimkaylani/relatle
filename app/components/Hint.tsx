@@ -24,9 +24,9 @@ const Hint = (props: HintProps) => {
   return (
     <Fragment>
 
-    <Drawer {...swipeHandlers} size={window.innerWidth > phoneMaxWidth ? '600' : '75%'} padding='sm' position={'bottom'} opened={opened} onClose={close} 
+    <Drawer size={window.innerWidth > phoneMaxWidth ? '600' : '75%'} padding='sm' position={'bottom'} opened={opened} onClose={close} 
     withCloseButton={window.innerWidth > phoneMaxWidth} title={
-      <Stack align='center' justify='center'>
+      <Stack {...swipeHandlers} align='center' justify='center'>
         {window.innerWidth > phoneMaxWidth || true && <Divider w={40} size='lg' styles={{root: {borderRadius: 8}}}/>}
         <RelatedArtistsTitle artist={endArtist} won={false} endArtist={endArtist}/>
       </Stack>
