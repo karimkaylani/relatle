@@ -1,6 +1,6 @@
 'use client'
 
-import { Button, Divider, Drawer, SimpleGrid, Stack, Text } from '@mantine/core'
+import { Button, Divider, Drawer, SimpleGrid, Stack } from '@mantine/core'
 import { useDisclosure } from '@mantine/hooks'
 import { IconBulb } from '@tabler/icons-react'
 import React, { Fragment } from 'react'
@@ -19,27 +19,35 @@ const Hint = (props: HintProps) => {
     const {endArtist, web, path} = props
     const [opened, { open, close }] = useDisclosure(false);
     const swipeHandlers = useSwipeable({
-        onSwipedDown: () => close()
+        onSwipedDown: close
     });
   return (
     <Fragment>
 
-    <Drawer size={window.innerWidth > phoneMaxWidth ? '600' : '75%'} padding='sm' position={'bottom'} opened={opened} onClose={close} 
-    withCloseButton={window.innerWidth > phoneMaxWidth} title={
-      <Stack {...swipeHandlers} align='center' justify='center'>
-        {window.innerWidth > phoneMaxWidth || true && <Divider w={40} size='lg' styles={{root: {borderRadius: 8}}}/>}
-        <RelatedArtistsTitle artist={endArtist} won={false} endArtist={endArtist}/>
-      </Stack>
-  }
-    styles={{title: {width: '100%'}}}>
-        <Stack align='center'>
-            <SimpleGrid cols={{ base: 2, xs: 3, sm: 3, md: 4, lg: 5 }}>
-            {endArtist.related.map((artist_name: string) => 
-                <ArtistCard key={web[artist_name].id} artist={web[artist_name]} path={path} clickable={false}
-                 won={false} end={endArtist.name} clicked={false} setClicked={(_) => {}} updateArtistHandler={() => {}}/>)} 
-            </SimpleGrid>
-        </Stack>
-    </Drawer>
+    <Drawer.Root opened={opened} onClose={close} size={window.innerWidth > phoneMaxWidth ? '575' : '75%'}
+    style={{borderRadius: '20px'}}padding='sm' position={'bottom'}>
+      <Drawer.Overlay />
+      <Drawer.Content>
+        <Drawer.Header {...swipeHandlers} style={{top: -1}} onClick={close}>
+          <Drawer.Title style={{width: '100%'}}>
+            <Stack align='center' justify='center'>
+              {window.innerWidth > phoneMaxWidth || true && <Divider w={40} size='lg' styles={{root: {borderRadius: 8}}}/>}
+              <RelatedArtistsTitle artist={endArtist} won={false} endArtist={endArtist}/>
+            </Stack>
+          </Drawer.Title>
+          {window.innerWidth > phoneMaxWidth && <Drawer.CloseButton />}
+        </Drawer.Header>
+        <Drawer.Body>
+          <Stack align='center'>
+              <SimpleGrid cols={{ base: 2, xs: 3, sm: 3, md: 4, lg: 5 }} >
+              {endArtist.related.map((artist_name: string) => 
+                  <ArtistCard key={web[artist_name].id} artist={web[artist_name]} path={path} clickable={false}
+                  won={false} end={endArtist.name} clicked={false} setClicked={(_) => {}} updateArtistHandler={() => {}}/>)} 
+              </SimpleGrid>
+          </Stack>
+        </Drawer.Body>
+      </Drawer.Content>
+    </Drawer.Root>
 
     <Button leftSection={<IconBulb size={25}/>}
     color="gray.9" size="md" styles={{ section: {marginRight: "4px"}}} onClick={open}>HINT</Button>
