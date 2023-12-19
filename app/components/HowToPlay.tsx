@@ -42,7 +42,8 @@ const HowToPlay = (props: HowToPlayProps) => {
                         <Text ta="center">2</Text>
                     </Card>
                     <Text fw={300}>Continue to choose related artists that would get
-                    you closer to the target artist. You can <Text fw={800} c="yellow.5" span>RESET</Text> if you get stuck</Text>
+                    you closer to the target artist. If you get stuck, you can <Text fw={700} c="yellow.5" span>RESET</Text> back to the starting 
+                    artist or use the <Text fw={700} c='gray.1' span>HINT</Text> to see the target artist{"'"}s related artists.</Text>
                 </Group>
 
                 <Group justify='center'>

@@ -270,7 +270,7 @@ const Game = (props: GameProps) => {
                 :
                 <Scoreboard guesses={guesses} resets={resets} greenBorder={won}/>
             }
-            <Popover position="bottom" opened={endMissed}
+            <Popover position="bottom" opened={endMissed} transitionProps={{duration: 500, transition: 'pop' }}
             styles={{dropdown: {backgroundColor: "#e9ecef", border: 'none'}}}>
                 <Popover.Target>
                     <RelatedArtistsTitle artist={currArtist} won={won} endArtist={web[end]}/>
