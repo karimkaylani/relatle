@@ -25,17 +25,14 @@ const Hint = (props: HintProps) => {
     <Fragment>
 
     <Drawer.Root opened={opened} onClose={close} size={window.innerWidth > phoneMaxWidth ? '575' : '75%'}
-    style={{borderRadius: '20px'}}padding='sm' position={'bottom'}>
+    style={{borderRadius: '20px'}} padding='sm' position={'bottom'}>
       <Drawer.Overlay />
       <Drawer.Content>
         <Drawer.Header {...swipeHandlers} style={{top: -1}} onClick={close}>
           <Drawer.Title style={{width: '100%'}}>
-            <Stack align='center' justify='center'>
-              {window.innerWidth > phoneMaxWidth || true && <Divider w={40} size='lg' styles={{root: {borderRadius: 8}}}/>}
               <RelatedArtistsTitle artist={endArtist} won={false} endArtist={endArtist}/>
-            </Stack>
           </Drawer.Title>
-          {window.innerWidth > phoneMaxWidth && <Drawer.CloseButton />}
+           <Drawer.CloseButton />
         </Drawer.Header>
         <Drawer.Body>
           <Stack align='center'>
