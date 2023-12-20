@@ -13,7 +13,6 @@ interface ArtistCardProps {
     clicked: boolean,
     setClicked: (clicked: boolean) => void,
     clickable?: boolean
-  
 }
 
 const ArtistCard = ({artist, updateArtistHandler, path, won,
@@ -51,8 +50,7 @@ const ArtistCard = ({artist, updateArtistHandler, path, won,
               width: window.innerWidth > phoneMaxWidth ? "192px" : window.innerWidth > 345 ? "160px" : ""
             }
           }}>
-            <Flex 
-              align="center" direction="column"
+            <Flex align="center" direction="column"
               justify="center" gap="0px">
                 <Card.Section inheritPadding>
                   <Image radius="sm" src={artist.image} w={img_size} h={img_size} alt={artist.name} />
