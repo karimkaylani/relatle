@@ -53,7 +53,7 @@ const ArtistCard = ({artist, updateArtistHandler, path, won,
             <Flex align="center" direction="column"
               justify="center" gap="0px">
                 <Card.Section inheritPadding>
-                  <Image radius="sm" src={artist.image} w={img_size} h={img_size} alt={artist.name} />
+                  <Image fallbackSrc={`https://ui-avatars.com/api/?background=212529&color=f1f3f5&name=${encodeURIComponent(artist.name)}`} radius="sm" src={artist.image} w={img_size} h={img_size} alt={artist.name} />
                 </Card.Section>
                 <Text c={path.includes(artist.name) && artist.name !== end ? "gray.5" : "gray.1"} fw={700} size={text_size} mt="md" ta="center">
                   {artist.name}

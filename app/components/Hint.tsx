@@ -18,7 +18,6 @@ export interface HintProps {
 const Hint = (props: HintProps) => {
     const {endArtist, web, path} = props
     const [opened, { open, close }] = useDisclosure(false);
-    const [scrollPos, setScrollPos] = useState(0)
     const headerSwipeHandlers = useSwipeable({
         onSwipedDown: close
     })

@@ -23,7 +23,8 @@ const HowToPlay = (props: HowToPlayProps) => {
         <Modal opened={opened} 
             onClose={close} withCloseButton={true} centered
             padding="xl" radius="lg" title="How to Play"
-            styles={{ title: { fontSize: "24px", color: "#f1f3f5", fontWeight: 700, lineHeight: "32px" } }}>
+            styles={{ title: { fontSize: "24px", color: "#f1f3f5", fontWeight: 700, lineHeight: "32px" },
+            header: {top: -1} }}>
             <Flex 
             align="left" direction="column" gap="lg">
                 <Group wrap="nowrap">

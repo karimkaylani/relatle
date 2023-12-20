@@ -1,14 +1,12 @@
 'use client'
 
 import React, { useEffect, useState } from 'react'
-import { Modal, Text, Flex, Group, Card, Collapse, Button, Stack } from '@mantine/core'
+import { Modal, Text, Flex, Group, Card, Collapse, Button } from '@mantine/core'
 import ShareResults from './ShareResults'
 import { Artist } from './Game'
 import ScrollablePath from './ScrollablePath'
-import ArtistInfo from './ArtistInfo'
 import Scoreboard from './Scoreboard'
 import SharePath from './SharePath'
-import Arrow from './Arrow'
 import * as Collections from 'typescript-collections';
 import { IconArrowDown, IconArrowUp } from '@tabler/icons-react'
 import { useDisclosure } from '@mantine/hooks'
@@ -93,7 +91,8 @@ const GameOver = (props: GameOverProps) => {
     onClose={close} withCloseButton={true} centered
     padding="lg" radius="lg"
     title="You Won!"
-    styles={{ title: { fontSize: "24px", color: "#f1f3f5", fontWeight: 700, lineHeight: "32px" } }}>
+    styles={{ title: { fontSize: "24px", color: "#f1f3f5", fontWeight: 700, lineHeight: "32px" }, 
+    header: {top: -1} }}>
       <Flex 
           align="center"
           direction="column"
