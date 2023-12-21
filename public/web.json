@@ -11,9 +11,9 @@
             "Travis Scott",
             "Kanye West",
             "Kendrick Lamar",
-            "Big Sean",
+            "Metro Boomin",
             "Lil Baby",
-            "Metro Boomin"
+            "Big Sean"
         ]
     },
     "Bad Bunny": {
@@ -22,14 +22,14 @@
         "image": "https://i.scdn.co/image/ab6761610000e5eb9ad50e478a469448c6f369df",
         "related": [
             "Rauw Alejandro",
-            "Anuel AA",
-            "Myke Towers",
             "Feid",
+            "Myke Towers",
+            "Anuel AA",
             "Jhayco",
             "Ozuna",
+            "Mora",
             "KAROL G",
             "J Balvin",
-            "Mora",
             "Arc\u00e1ngel"
         ]
     },
@@ -40,14 +40,14 @@
         "related": [
             "SZA",
             "The Neighbourhood",
-            "Drake",
             "Lana Del Rey",
+            "Drake",
             "Kendrick Lamar",
-            "Post Malone",
             "Doja Cat",
+            "Post Malone",
             "Chase Atlantic",
-            "Childish Gambino",
-            "Frank Ocean"
+            "Frank Ocean",
+            "Childish Gambino"
         ]
     },
     "Justin Bieber": {
@@ -75,8 +75,8 @@
             "Dr. Dre",
             "50 Cent",
             "Snoop Dogg",
-            "DMX",
             "2Pac",
+            "DMX",
             "Ice Cube",
             "Post Malone",
             "The Notorious B.I.G.",
@@ -95,8 +95,8 @@
             "Maroon 5",
             "James Arthur",
             "Adele",
-            "Bruno Mars",
             "OneRepublic",
+            "Bruno Mars",
             "Camila Cabello",
             "Imagine Dragons"
         ]
@@ -110,12 +110,12 @@
             "Kid Cudi",
             "Kendrick Lamar",
             "A$AP Rocky",
-            "Baby Keem",
             "Tyler, The Creator",
-            "Frank Ocean",
+            "Baby Keem",
             "Playboi Carti",
+            "Frank Ocean",
             "J. Cole",
-            "Childish Gambino"
+            "Metro Boomin"
         ]
     },
     "Post Malone": {
@@ -128,8 +128,8 @@
             "Juice WRLD",
             "Migos",
             "Travis Scott",
-            "Lil Uzi Vert",
             "Kendrick Lamar",
+            "Lil Uzi Vert",
             "J. Cole",
             "Logic",
             "A$AP Rocky"
@@ -141,8 +141,8 @@
         "image": "https://i.scdn.co/image/ab6761610000e5eb859e4c14fa59296c8649e0e4",
         "related": [
             "Selena Gomez",
-            "Katy Perry",
             "Olivia Rodrigo",
+            "Katy Perry",
             "Ariana Grande",
             "Harry Styles",
             "Camila Cabello",
@@ -231,7 +231,7 @@
             "Zion & Lennox",
             "Manuel Turizo",
             "Daddy Yankee",
-            "Anuel AA"
+            "Arc\u00e1ngel"
         ]
     },
     "Nicki Minaj": {
@@ -240,15 +240,15 @@
         "image": "https://i.scdn.co/image/ab6761610000e5eb6a8e5e8752d1dc2dafa63f20",
         "related": [
             "Cardi B",
-            "Iggy Azalea",
             "Megan Thee Stallion",
+            "Iggy Azalea",
             "Ciara",
             "Beyonc\u00e9",
             "Rihanna",
             "Saweetie",
             "Normani",
-            "Kehlani",
-            "Kesha"
+            "Ice Spice",
+            "Kehlani"
         ]
     },
     "Lil Wayne": {
@@ -265,7 +265,7 @@
             "Meek Mill",
             "T-Pain",
             "Ludacris",
-            "Waka Flocka Flame"
+            "Ty Dolla $ign"
         ]
     },
     "Travis Scott": {
@@ -277,11 +277,11 @@
             "21 Savage",
             "Playboi Carti",
             "Lil Uzi Vert",
-            "Young Thug",
             "Future",
+            "Young Thug",
             "Don Toliver",
-            "A$AP Rocky",
             "Gunna",
+            "A$AP Rocky",
             "Baby Keem"
         ]
     },
@@ -292,8 +292,8 @@
         "related": [
             "A$AP Rocky",
             "J. Cole",
-            "Tyler, The Creator",
             "Baby Keem",
+            "Tyler, The Creator",
             "Childish Gambino",
             "Joey Bada$$",
             "Kanye West",
@@ -327,12 +327,12 @@
             "Young Thug",
             "Gunna",
             "Metro Boomin",
-            "Gucci Mane",
             "21 Savage",
-            "Lil Durk",
+            "Gucci Mane",
             "Offset",
-            "Quavo",
+            "Lil Durk",
             "Lil Baby",
+            "Quavo",
             "Migos"
         ]
     },
@@ -345,9 +345,9 @@
             "Jason Mraz",
             "Train",
             "The Script",
+            "The Chainsmokers",
             "Flo Rida",
             "Bruno Mars",
-            "The Chainsmokers",
             "Jason Derulo",
             "Charlie Puth",
             "Justin Timberlake"
@@ -366,8 +366,8 @@
             "Guns N' Roses",
             "AC/DC",
             "Pink Floyd",
-            "The Who",
-            "The Rolling Stones"
+            "The Rolling Stones",
+            "The Who"
         ]
     },
     "Chris Brown": {
@@ -381,8 +381,8 @@
             "Jeremih",
             "Ty Dolla $ign",
             "Tyga",
-            "DJ Khaled",
             "Ella Mai",
+            "DJ Khaled",
             "Tory Lanez",
             "Bryson Tiller"
         ]
@@ -397,8 +397,8 @@
             "Trippie Redd",
             "Lil Pump",
             "Lil Peep",
-            "Lil Uzi Vert",
             "YNW Melly",
+            "Lil Uzi Vert",
             "Lil Skies",
             "Lil Tecca",
             "Lil Yachty"
@@ -412,8 +412,8 @@
             "Bazzi",
             "Kehlani",
             "Ella Mai",
-            "H.E.R.",
             "6LACK",
+            "H.E.R.",
             "benny blanco",
             "Russ",
             "blackbear",
@@ -451,8 +451,8 @@
             "Harry Styles",
             "Dua Lipa",
             "Lana Del Rey",
-            "Selena Gomez",
-            "Conan Gray"
+            "Conan Gray",
+            "Selena Gomez"
         ]
     },
     "Dua Lipa": {
@@ -465,8 +465,8 @@
             "Anne-Marie",
             "Selena Gomez",
             "Ava Max",
-            "Katy Perry",
             "Sia",
+            "Katy Perry",
             "Rita Ora",
             "Zara Larsson",
             "Demi Lovato"
@@ -495,10 +495,10 @@
         "image": "https://i.scdn.co/image/ab6761610000e5eb1234d2f516796badbdf16a89",
         "related": [
             "Lil Yachty",
-            "Playboi Carti",
             "Trippie Redd",
-            "Gunna",
+            "Playboi Carti",
             "Young Thug",
+            "Gunna",
             "Ski Mask The Slump God",
             "Lil Tecca",
             "Kodak Black",
@@ -513,8 +513,8 @@
         "related": [
             "OneRepublic",
             "Oasis",
-            "Keane",
             "Maroon 5",
+            "Keane",
             "U2",
             "Imagine Dragons",
             "Snow Patrol",
@@ -533,8 +533,8 @@
             "Ne-Yo",
             "Justin Timberlake",
             "Sam Smith",
-            "Katy Perry",
             "Charlie Puth",
+            "Katy Perry",
             "Alicia Keys",
             "Shawn Mendes",
             "Rihanna"
@@ -567,10 +567,10 @@
             "Charlie Puth",
             "Ellie Goulding",
             "Lewis Capaldi",
-            "Jessie J",
             "John Legend",
-            "Rita Ora",
+            "Jessie J",
             "Shawn Mendes",
+            "Rita Ora",
             "Bebe Rexha"
         ]
     },
@@ -580,8 +580,8 @@
         "image": "https://i.scdn.co/image/ab6761610000e5eb46e7a06fa6dfefaed6a3f0db",
         "related": [
             "Camila Cabello",
-            "ZAYN",
             "Charlie Puth",
+            "ZAYN",
             "Nick Jonas",
             "Jonas Brothers",
             "Niall Horan",
@@ -633,11 +633,11 @@
             "Metro Boomin",
             "Gunna",
             "Young Thug",
-            "Quavo",
             "Future",
-            "Kodak Black",
+            "Quavo",
             "Offset",
             "Lil Yachty",
+            "Kodak Black",
             "Lil Uzi Vert",
             "Playboi Carti"
         ]
@@ -685,8 +685,8 @@
             "Nicky Jam",
             "Piso 21",
             "Farruko",
-            "Wisin",
             "Manuel Turizo",
+            "Wisin",
             "Yandel",
             "Sebastian Yatra",
             "Ozuna",
@@ -723,8 +723,8 @@
             "Roddy Ricch",
             "Lil Tjay",
             "Kodak Black",
-            "Quavo",
-            "Young Thug"
+            "Young Thug",
+            "Quavo"
         ]
     },
     "J. Cole": {
@@ -736,12 +736,12 @@
             "A$AP Rocky",
             "Big Sean",
             "Joey Bada$$",
-            "ScHoolboy Q",
             "Meek Mill",
+            "ScHoolboy Q",
             "Chance the Rapper",
-            "Kid Cudi",
             "Future",
-            "Bryson Tiller"
+            "21 Savage",
+            "Kid Cudi"
         ]
     },
     "Sia": {
@@ -790,8 +790,8 @@
             "Migos",
             "Lil Yachty",
             "Kodak Black",
-            "Gucci Mane",
             "Don Toliver",
+            "Gucci Mane",
             "Takeoff"
         ]
     },
@@ -804,8 +804,8 @@
             "Myke Towers",
             "Noriel",
             "Arc\u00e1ngel",
-            "Eladio Carrion",
             "\u00d1engo Flow",
+            "Eladio Carrion",
             "Jhayco",
             "Jon Z",
             "Lunay",
@@ -842,7 +842,7 @@
             "French Montana",
             "Tyga",
             "2 Chainz",
-            "Tory Lanez",
+            "Wale",
             "Gucci Mane"
         ]
     },
@@ -871,8 +871,8 @@
             "Dr. Dre",
             "Ice Cube",
             "The Notorious B.I.G.",
-            "Busta Rhymes",
             "50 Cent",
+            "Busta Rhymes",
             "2Pac",
             "DMX",
             "Ludacris",
@@ -927,8 +927,8 @@
             "Lil Wayne",
             "Ludacris",
             "Busta Rhymes",
-            "Kanye West",
-            "Outkast"
+            "Outkast",
+            "The Game"
         ]
     },
     "Pitbull": {
@@ -972,14 +972,14 @@
         "related": [
             "Myke Towers",
             "Jhayco",
-            "Sech",
             "Mora",
+            "Sech",
             "Feid",
             "Dalex",
             "Lunay",
             "Tainy",
             "Justin Quiles",
-            "Jay Wheeler"
+            "Quevedo"
         ]
     },
     "Avicii": {
@@ -993,8 +993,8 @@
             "Calvin Harris",
             "David Guetta",
             "Hardwell",
-            "Axwell /\\ Ingrosso",
             "Kygo",
+            "Axwell /\\ Ingrosso",
             "Zedd",
             "Ti\u00ebsto"
         ]
@@ -1040,8 +1040,8 @@
             "Anne-Marie",
             "Selena Gomez",
             "Demi Lovato",
-            "Zara Larsson",
             "Shawn Mendes",
+            "Zara Larsson",
             "Nick Jonas",
             "Halsey",
             "Hailee Steinfeld"
@@ -1073,8 +1073,8 @@
             "Iron Maiden",
             "Black Sabbath",
             "Ozzy Osbourne",
-            "Slipknot",
             "Korn",
+            "Slipknot",
             "System Of A Down",
             "AC/DC",
             "Guns N' Roses",
@@ -1128,8 +1128,8 @@
             "Avril Lavigne",
             "Jessie J",
             "Selena Gomez",
-            "Kelly Clarkson",
-            "Miley Cyrus"
+            "Miley Cyrus",
+            "Kelly Clarkson"
         ]
     },
     "Gunna": {
@@ -1158,8 +1158,8 @@
             "Niall Horan",
             "Liam Payne",
             "One Direction",
-            "5 Seconds of Summer",
             "ZAYN",
+            "5 Seconds of Summer",
             "Conan Gray",
             "Shawn Mendes",
             "Jonas Brothers",
@@ -1197,7 +1197,7 @@
             "Young Thug",
             "Chief Keef",
             "Lil Yachty",
-            "Playboi Carti"
+            "Baby Keem"
         ]
     },
     "Linkin Park": {
@@ -1225,13 +1225,13 @@
             "Jhayco",
             "Mora",
             "Eladio Carrion",
-            "Sech",
             "Bryant Myers",
-            "Dalex",
+            "Sech",
             "Quevedo",
             "Rauw Alejandro",
+            "Dalex",
             "Jay Wheeler",
-            "Justin Quiles"
+            "Feid"
         ]
     },
     "DJ Snake": {
@@ -1244,8 +1244,8 @@
             "Steve Aoki",
             "Galantis",
             "Alesso",
-            "Don Diablo",
             "Martin Garrix",
+            "Don Diablo",
             "Zedd",
             "R3HAB",
             "Axwell /\\ Ingrosso"
@@ -1281,8 +1281,8 @@
             "Juicy J",
             "2 Chainz",
             "Mustard",
-            "T-Pain",
-            "Fetty Wap"
+            "Fetty Wap",
+            "T-Pain"
         ]
     },
     "Quavo": {
@@ -1297,9 +1297,9 @@
             "Migos",
             "Young Thug",
             "Gucci Mane",
+            "Desiigner",
             "Lil Yachty",
-            "Gunna",
-            "Desiigner"
+            "Gunna"
         ]
     },
     "2 Chainz": {
@@ -1333,7 +1333,7 @@
             "Jessie J",
             "Camila Cabello",
             "Little Mix",
-            "Zara Larsson"
+            "Rita Ora"
         ]
     },
     "Kygo": {
@@ -1361,13 +1361,13 @@
             "Thalia",
             "Ricky Martin",
             "Juanes",
+            "Jesse & Joy",
             "Enrique Iglesias",
             "Maluma",
-            "Jesse & Joy",
             "KAROL G",
             "Ha*Ash",
-            "Luis Fonsi",
-            "Becky G"
+            "Becky G",
+            "Luis Fonsi"
         ]
     },
     "Twenty One Pilots": {
@@ -1412,7 +1412,6 @@
             "Eagles",
             "Billy Joel",
             "Van Morrison",
-            "Foreigner",
             "David Bowie",
             "Electric Light Orchestra"
         ]
@@ -1430,8 +1429,8 @@
             "Gucci Mane",
             "Young Thug",
             "Desiigner",
-            "Lil Yachty",
-            "Kodak Black"
+            "A$AP Ferg",
+            "Lil Yachty"
         ]
     },
     "Pop Smoke": {
@@ -1479,8 +1478,8 @@
             "Jay Wheeler",
             "Lunay",
             "Darell",
-            "Myke Towers",
             "Alex Rose",
+            "Myke Towers",
             "Jhayco",
             "Farruko"
         ]
@@ -1496,8 +1495,8 @@
             "Led Zeppelin",
             "Bob Dylan",
             "John Lennon",
-            "George Harrison",
             "Deep Purple",
+            "George Harrison",
             "Eric Clapton",
             "Paul McCartney"
         ]
@@ -1516,7 +1515,7 @@
             "ZAYN",
             "Jonas Blue",
             "Justin Bieber",
-            "Mike Perry"
+            "Charlie Puth"
         ]
     },
     "Arctic Monkeys": {
@@ -1533,7 +1532,7 @@
             "Tame Impala",
             "The Smiths",
             "girl in red",
-            "Lana Del Rey"
+            "Mitski"
         ]
     },
     "50 Cent": {
@@ -1547,9 +1546,9 @@
             "Snoop Dogg",
             "DMX",
             "The Notorious B.I.G.",
-            "Ja Rule",
-            "Ludacris",
             "2Pac",
+            "Ludacris",
+            "Ja Rule",
             "Busta Rhymes"
         ]
     },
@@ -1561,13 +1560,13 @@
             "Logic",
             "Joyner Lucas",
             "Kid Ink",
-            "Ty Dolla $ign",
             "Tyga",
+            "Ty Dolla $ign",
             "Wiz Khalifa",
             "YG",
             "Machine Gun Kelly",
             "Rae Sremmurd",
-            "Fetty Wap"
+            "blackbear"
         ]
     },
     "A Boogie Wit da Hoodie": {
@@ -1578,10 +1577,10 @@
             "PnB Rock",
             "Lil Tjay",
             "Kodak Black",
-            "Tee Grizzley",
             "Sleepy Hallow",
-            "YNW Melly",
+            "Tee Grizzley",
             "Polo G",
+            "YNW Melly",
             "Lil Durk",
             "Rich The Kid",
             "NAV"
@@ -1613,8 +1612,8 @@
             "Anne-Marie",
             "Rita Ora",
             "Clean Bandit",
-            "Daya",
             "Hailee Steinfeld",
+            "Daya",
             "Ellie Goulding",
             "Ava Max",
             "Fifth Harmony",
@@ -1626,8 +1625,8 @@
         "id": "26dSoYclwsYLMAKD3tpOr4",
         "image": "https://i.scdn.co/image/ab6761610000e5eb3a49b0a3954e460a8a76ed90",
         "related": [
-            "Christina Aguilera",
             "Spice Girls",
+            "Christina Aguilera",
             "Gwen Stefani",
             "Jennifer Lopez",
             "The Pussycat Dolls",
@@ -1718,7 +1717,7 @@
             "Bebe Rexha",
             "Selena Gomez",
             "Meghan Trainor",
-            "Katy Perry"
+            "Kelly Clarkson"
         ]
     },
     "SZA": {
@@ -1729,8 +1728,8 @@
             "Summer Walker",
             "H.E.R.",
             "Jhen\u00e9 Aiko",
-            "Kehlani",
             "Brent Faiyaz",
+            "Kehlani",
             "Kali Uchis",
             "Daniel Caesar",
             "Bryson Tiller",
@@ -1761,15 +1760,15 @@
         "image": "https://i.scdn.co/image/ab6761610000e5ebf1be22786da29b0a1284c0a5",
         "related": [
             "Rae Sremmurd",
-            "Offset",
             "Rich The Kid",
+            "Offset",
             "Mike WiLL Made-It",
             "Quavo",
             "Mustard",
             "NAV",
             "Ty Dolla $ign",
             "Takeoff",
-            "Quality Control"
+            "Desiigner"
         ]
     },
     "Red Hot Chili Peppers": {
@@ -1820,7 +1819,7 @@
             "Waka Flocka Flame",
             "Mike WiLL Made-It",
             "Offset",
-            "Ty Dolla $ign"
+            "Quavo"
         ]
     },
     "Flo Rida": {
@@ -1830,8 +1829,8 @@
         "related": [
             "Taio Cruz",
             "LMFAO",
-            "Pitbull",
             "will.i.am",
+            "Pitbull",
             "Timbaland",
             "Far East Movement",
             "B.o.B",
@@ -1903,9 +1902,9 @@
             "Swae Lee",
             "Gucci Mane",
             "Gunna",
-            "Mustard",
             "Migos",
-            "Young Thug"
+            "Young Thug",
+            "Mustard"
         ]
     },
     "Arc\u00e1ngel": {
@@ -1920,9 +1919,9 @@
             "\u00d1engo Flow",
             "Zion",
             "Farruko",
-            "Zion & Lennox",
             "Noriel",
-            "Wisin"
+            "Zion & Lennox",
+            "Bryant Myers"
         ]
     },
     "Pharrell Williams": {
@@ -1970,8 +1969,8 @@
             "B.o.B",
             "G-Eazy",
             "Bastille",
-            "Logic",
             "X Ambassadors",
+            "Logic",
             "Rudimental",
             "Gym Class Heroes"
         ]
@@ -2067,15 +2066,15 @@
         "image": "https://i.scdn.co/image/ab6761610000e5ebbedf3bdf589da06d1567196c",
         "related": [
             "Lil Tjay",
-            "NLE Choppa",
             "King Von",
+            "NLE Choppa",
             "Lil Durk",
             "YNW Melly",
             "Sleepy Hallow",
             "Lil Tecca",
             "YoungBoy Never Broke Again",
-            "Lil Baby",
-            "Roddy Ricch"
+            "Roddy Ricch",
+            "Lil Baby"
         ]
     },
     "Usher": {
@@ -2083,8 +2082,8 @@
         "id": "23zg3TcAtWQy7J6upgbUnj",
         "image": "https://i.scdn.co/image/ab6761610000e5eb84813d8e6a3154717e618140",
         "related": [
-            "Trey Songz",
             "Ne-Yo",
+            "Trey Songz",
             "T-Pain",
             "Nelly",
             "Ciara",
@@ -2121,8 +2120,8 @@
             "Young Thug",
             "Future",
             "Playboi Carti",
-            "Quavo",
-            "Lil Uzi Vert"
+            "Lil Uzi Vert",
+            "Quavo"
         ]
     },
     "Elton John": {
@@ -2131,7 +2130,6 @@
         "image": "https://i.scdn.co/image/ab6761610000e5eb0a7388b95df960b5c0da8970",
         "related": [
             "Billy Joel",
-            "Chicago",
             "Paul McCartney",
             "Eagles",
             "Rod Stewart",
@@ -2149,13 +2147,13 @@
         "related": [
             "Wisin & Yandel",
             "Yandel",
-            "Zion",
             "Wisin",
+            "Zion",
             "Zion & Lennox",
             "De La Ghetto",
             "Jowell & Randy",
-            "Cosculluela",
             "Farruko",
+            "Cosculluela",
             "Plan B"
         ]
     },
@@ -2216,8 +2214,8 @@
             "Ice Cube",
             "Snoop Dogg",
             "DMX",
-            "50 Cent",
             "The Notorious B.I.G.",
+            "50 Cent",
             "Busta Rhymes",
             "The Game",
             "2Pac"
@@ -2269,8 +2267,8 @@
             "Don Diablo",
             "Axwell /\\ Ingrosso",
             "Steve Aoki",
-            "Galantis",
-            "Swedish House Mafia"
+            "Swedish House Mafia",
+            "Galantis"
         ]
     },
     "Panic! At The Disco": {
@@ -2296,8 +2294,8 @@
             "Shaggy",
             "Timbaland",
             "Taio Cruz",
-            "Pitbull",
             "will.i.am",
+            "Pitbull",
             "Flo Rida",
             "Sean Kingston",
             "LMFAO",
@@ -2314,8 +2312,8 @@
             "Luis Fonsi",
             "Pitbull",
             "Juanes",
-            "Jennifer Lopez",
             "Chayanne",
+            "Jennifer Lopez",
             "Thalia",
             "Shakira",
             "Camila",
@@ -2334,9 +2332,9 @@
             "Doja Cat",
             "Harry Styles",
             "Ariana Grande",
+            "Gracie Abrams",
             "Billie Eilish",
-            "Melanie Martinez",
-            "Taylor Swift"
+            "Melanie Martinez"
         ]
     },
     "Ellie Goulding": {
@@ -2380,13 +2378,13 @@
             "Ty Dolla $ign",
             "Bryson Tiller",
             "PARTYNEXTDOOR",
-            "PnB Rock",
             "6LACK",
+            "PnB Rock",
             "Meek Mill",
             "Jeremih",
             "French Montana",
-            "Mustard",
-            "YG"
+            "Don Toliver",
+            "Mustard"
         ]
     },
     "Oasis": {
@@ -2397,10 +2395,11 @@
             "Blur",
             "The Killers",
             "Keane",
-            "Radiohead",
             "Franz Ferdinand",
+            "Radiohead",
             "Snow Patrol",
-            "R.E.M."
+            "R.E.M.",
+            "The Strokes"
         ]
     },
     "Romeo Santos": {
@@ -2434,7 +2433,7 @@
             "Lyanno",
             "Sech",
             "Jay Wheeler",
-            "Yandel"
+            "Jowell & Randy"
         ]
     },
     "Lauv": {
@@ -2465,8 +2464,8 @@
             "Trippie Redd",
             "Young Thug",
             "Ski Mask The Slump God",
-            "Offset",
             "Chief Keef",
+            "Offset",
             "Lil Uzi Vert",
             "Migos"
         ]
@@ -2517,8 +2516,8 @@
             "Avril Lavigne",
             "Jessie J",
             "Kesha",
-            "Britney Spears",
             "Lady Gaga",
+            "Britney Spears",
             "Spice Girls"
         ]
     },
@@ -2535,8 +2534,8 @@
             "R.E.M.",
             "Deep Purple",
             "Pink Floyd",
-            "U2",
-            "The Who"
+            "The Who",
+            "U2"
         ]
     },
     "Black Eyed Peas": {
@@ -2634,8 +2633,8 @@
             "Sebastian Yatra",
             "Danny Ocean",
             "Cali Y El Dandee",
-            "Yandel",
             "Zion & Lennox",
+            "Yandel",
             "CNCO",
             "Greeicy",
             "Wisin"
@@ -2712,10 +2711,10 @@
         "related": [
             "Cordae",
             "Internet Money",
-            "Don Toliver",
-            "Baby Keem",
             "The Kid LAROI",
+            "Don Toliver",
             "iann dior",
+            "Baby Keem",
             "24kGoldn",
             "DaBaby",
             "JID",
@@ -2817,8 +2816,8 @@
             "Black Sabbath",
             "Alice Cooper",
             "Iron Maiden",
-            "Scorpions",
-            "ZZ Top"
+            "ZZ Top",
+            "Scorpions"
         ]
     },
     "James Arthur": {
@@ -2878,9 +2877,9 @@
             "Mac DeMarco",
             "Tyler, The Creator",
             "Daniel Caesar",
-            "Jaden",
             "Steve Lacy",
-            "Wallows"
+            "Wallows",
+            "Jaden"
         ]
     },
     "ZAYN": {
@@ -2894,8 +2893,8 @@
             "Nick Jonas",
             "The Vamps",
             "Zara Larsson",
-            "5 Seconds of Summer",
             "Shawn Mendes",
+            "5 Seconds of Summer",
             "One Direction",
             "Bebe Rexha"
         ]
@@ -2913,8 +2912,8 @@
             "Zedd",
             "Jess Glynne",
             "Mabel",
-            "Jax Jones",
-            "Ellie Goulding"
+            "Ellie Goulding",
+            "Jax Jones"
         ]
     },
     "Nirvana": {
@@ -2944,8 +2943,8 @@
             "Dean Martin",
             "Norah Jones",
             "John Mayer",
-            "Robbie Williams",
             "Jason Mraz",
+            "Robbie Williams",
             "Whitney Houston",
             "John Legend",
             "Andrea Bocelli"
@@ -2998,8 +2997,8 @@
             "Lil Durk",
             "King Von",
             "A Boogie Wit da Hoodie",
-            "Lil Mosey",
-            "Roddy Ricch"
+            "Roddy Ricch",
+            "Lil Mosey"
         ]
     },
     "Jeremih": {
@@ -3010,8 +3009,8 @@
             "Trey Songz",
             "Ty Dolla $ign",
             "T-Pain",
-            "Bryson Tiller",
             "Wale",
+            "Bryson Tiller",
             "Kid Ink"
         ]
     },
@@ -3035,10 +3034,10 @@
             "Christina Aguilera",
             "John Legend",
             "Fergie",
-            "Gwen Stefani",
             "Leona Lewis",
-            "Beyonc\u00e9",
-            "Ne-Yo"
+            "Gwen Stefani",
+            "Ne-Yo",
+            "Beyonc\u00e9"
         ]
     },
     "Felix Jaehn": {
@@ -3116,7 +3115,7 @@
             "Iggy Azalea",
             "Lorde",
             "Ellie Goulding",
-            "Years & Years",
+            "Kim Petras",
             "Zara Larsson",
             "Kesha"
         ]
@@ -3128,14 +3127,14 @@
         "related": [
             "King Von",
             "Moneybagg Yo",
-            "Gunna",
             "YoungBoy Never Broke Again",
             "Lil Baby",
+            "Gunna",
             "Polo G",
             "Tee Grizzley",
-            "Chief Keef",
             "Lil Tjay",
-            "Rod Wave"
+            "Rod Wave",
+            "Chief Keef"
         ]
     },
     "Meek Mill": {
@@ -3251,8 +3250,8 @@
             "Tears For Fears",
             "Dire Straits",
             "Bruce Springsteen",
-            "Billy Idol",
-            "Genesis"
+            "Genesis",
+            "Billy Idol"
         ]
     },
     "Becky G": {
@@ -3264,8 +3263,8 @@
             "Danna Paola",
             "Piso 21",
             "CNCO",
-            "Mau y Ricky",
             "Greeicy",
+            "Mau y Ricky",
             "Cazzu",
             "Sebastian Yatra",
             "Prince Royce",
@@ -3297,8 +3296,8 @@
             "Fergie",
             "Iggy Azalea",
             "Christina Aguilera",
-            "Britney Spears",
             "Carly Rae Jepsen",
+            "Britney Spears",
             "Avril Lavigne",
             "The Pussycat Dolls",
             "Gwen Stefani",
@@ -3314,8 +3313,8 @@
             "Vance Joy",
             "The Lumineers",
             "James Bay",
-            "Lord Huron",
             "Noah Kahan",
+            "Lord Huron",
             "Of Monsters and Men",
             "Florence + The Machine",
             "Bon Iver",
@@ -3333,8 +3332,8 @@
             "Mike WiLL Made-It",
             "A$AP Ferg",
             "Rich The Kid",
-            "Gucci Mane",
             "Nipsey Hussle",
+            "Gucci Mane",
             "Juicy J",
             "Yo Gotti",
             "Kid Ink"
@@ -3347,8 +3346,8 @@
         "related": [
             "Hailee Steinfeld",
             "Julia Michaels",
-            "Zara Larsson",
             "Daya",
+            "Zara Larsson",
             "Bebe Rexha",
             "Fifth Harmony",
             "Rita Ora",
@@ -3412,8 +3411,8 @@
             "Snow Patrol",
             "Muse",
             "The White Stripes",
-            "MGMT",
             "Two Door Cinema Club",
+            "MGMT",
             "Blur"
         ]
     },
@@ -3442,8 +3441,8 @@
             "Maiara & Maraisa",
             "Wesley Safad\u00e3o",
             "Luan Santana",
-            "Israel & Rodolffo",
             "Gustavo Mioto",
+            "Israel & Rodolffo",
             "Gusttavo Lima"
         ]
     },
@@ -3470,8 +3469,8 @@
         "image": "https://i.scdn.co/image/ab6761610000e5eb9e7c05016af970bb9bf76cc1",
         "related": [
             "Mora",
-            "Quevedo",
             "Ryan Castro",
+            "Quevedo",
             "Jhayco",
             "Myke Towers",
             "Eladio Carrion",
@@ -3491,8 +3490,8 @@
             "AC/DC",
             "M\u00f6tley Cr\u00fce",
             "Bon Jovi",
-            "Van Halen",
             "Scorpions",
+            "Van Halen",
             "Metallica",
             "Ozzy Osbourne",
             "Black Sabbath"
@@ -3548,15 +3547,14 @@
         "id": "1TtXnWcUs0FCkaZDPGYHdf",
         "image": "https://i.scdn.co/image/ab6761610000e5ebe95edd8934df121c88d48d01",
         "related": [
-            "Noriel",
             "Casper Magico",
+            "Noriel",
             "Alex Rose",
             "Brytiago",
             "DJ Luian",
             "Lyanno",
             "\u00d1engo Flow",
-            "Dalex",
-            "Lenny Tav\u00e1rez"
+            "Dalex"
         ]
     },
     "Reik": {
@@ -3635,8 +3633,8 @@
             "Jimi Hendrix",
             "Deep Purple",
             "The Who",
-            "Genesis",
             "The Rolling Stones",
+            "Genesis",
             "Black Sabbath",
             "David Bowie",
             "The Police"
@@ -3648,11 +3646,11 @@
         "image": "https://i.scdn.co/image/ab6761610000e5eb4d8f97058ff993df0f4eb9ee",
         "related": [
             "Fifth Harmony",
-            "Bebe Rexha",
             "Little Mix",
+            "Bebe Rexha",
             "Jessie J",
-            "Nick Jonas",
             "Demi Lovato",
+            "Nick Jonas",
             "Kelly Clarkson",
             "Kesha",
             "Hailee Steinfeld",
@@ -3681,10 +3679,10 @@
         "image": "https://i.scdn.co/image/ab6761610000e5eba3b3ebe56d755fe64c2bbdd0",
         "related": [
             "Soulja Boy",
-            "Sean Kingston",
             "T.I.",
-            "Trey Songz",
-            "Ludacris"
+            "Sean Kingston",
+            "Ludacris",
+            "Trey Songz"
         ]
     },
     "Charli XCX": {
@@ -3692,6 +3690,7 @@
         "id": "25uiPmTg16RbhZWAqwLBy5",
         "image": "https://i.scdn.co/image/ab6761610000e5ebd1c0e4894fa3c5bafa785838",
         "related": [
+            "Kim Petras",
             "Tove Lo",
             "M\u00d8",
             "Iggy Azalea",
@@ -3707,8 +3706,8 @@
         "related": [
             "David Bisbal",
             "Chayanne",
-            "Camila",
             "Ricky Martin",
+            "Camila",
             "Sin Bandera",
             "Reik",
             "Juanes",
@@ -3729,8 +3728,7 @@
             "Marvin Gaye",
             "Nina Simone",
             "Stevie Wonder",
-            "Ella Fitzgerald",
-            "The Jackson 5"
+            "Ella Fitzgerald"
         ]
     },
     "Bryson Tiller": {
@@ -3742,9 +3740,9 @@
             "Tory Lanez",
             "Jhen\u00e9 Aiko",
             "6LACK",
+            "Summer Walker",
             "Jeremih",
             "Brent Faiyaz",
-            "Summer Walker",
             "Miguel",
             "Ty Dolla $ign",
             "H.E.R."
@@ -3759,8 +3757,8 @@
             "G-Eazy",
             "Joyner Lucas",
             "Logic",
-            "Amin\u00e9",
             "blackbear",
+            "Amin\u00e9",
             "Chance the Rapper",
             "Khalid",
             "Ty Dolla $ign",
@@ -3773,8 +3771,8 @@
         "image": "https://i.scdn.co/image/ab6761610000e5ebb713c619cc12ca1866136419",
         "related": [
             "Matheus & Kauan",
-            "Jorge & Mateus",
             "Z\u00e9 Neto & Cristiano",
+            "Jorge & Mateus",
             "Maiara & Maraisa",
             "Israel & Rodolffo",
             "Gusttavo Lima",
@@ -3827,9 +3825,9 @@
             "Kane Brown",
             "Jason Aldean",
             "Thomas Rhett",
+            "Luke Bryan",
             "Old Dominion",
-            "Florida Georgia Line",
-            "Luke Bryan"
+            "Florida Georgia Line"
         ]
     },
     "ROSAL\u00cdA": {
@@ -3857,11 +3855,11 @@
             "Dominic Fike",
             "The Neighbourhood",
             "Lorde",
-            "Frank Ocean",
             "Hozier",
+            "Frank Ocean",
             "Wallows",
             "girl in red",
-            "Conan Gray"
+            "Childish Gambino"
         ]
     },
     "Luke Combs": {
@@ -3948,8 +3946,8 @@
             "Ludacris",
             "T-Pain",
             "Sean Kingston",
-            "Akon",
             "T.I.",
+            "Akon",
             "Soulja Boy",
             "Timbaland"
         ]
@@ -3994,7 +3992,6 @@
             "Grey",
             "Goodboys",
             "A7S",
-            "OMI",
             "MNEK"
         ]
     },
@@ -4042,7 +4039,8 @@
             "The Offspring",
             "Green Day",
             "Rise Against",
-            "My Chemical Romance"
+            "My Chemical Romance",
+            "Papa Roach"
         ]
     },
     "Rita Ora": {
@@ -4121,12 +4119,12 @@
             "Lil Pump",
             "Rich The Kid",
             "Lil Skies",
-            "Offset",
             "Desiigner",
-            "Lil Yachty",
+            "Offset",
             "Trippie Redd",
-            "Quavo",
             "Lil Mosey",
+            "Lil Yachty",
+            "Quavo",
             "Migos"
         ]
     },
@@ -4158,8 +4156,8 @@
             "Cali Y El Dandee",
             "Danny Ocean",
             "Ha*Ash",
-            "Danna Paola",
-            "Manuel Turizo"
+            "Manuel Turizo",
+            "Danna Paola"
         ]
     },
     "Johnny Cash": {
@@ -4185,8 +4183,8 @@
             "Christina Aguilera",
             "The Pussycat Dolls",
             "Nelly Furtado",
-            "Britney Spears",
             "Fergie",
+            "Britney Spears",
             "Spice Girls",
             "Gwen Stefani",
             "Destiny's Child",
@@ -4224,7 +4222,7 @@
             "Zedd",
             "Cheat Codes",
             "Sam Feldt",
-            "Diplo"
+            "Hardwell"
         ]
     },
     "ABBA": {
@@ -4378,14 +4376,14 @@
         "related": [
             "6ix9ine",
             "Rich The Kid",
-            "Lil Yachty",
             "Lil Skies",
+            "Lil Yachty",
             "Desiigner",
-            "Quavo",
             "Rae Sremmurd",
+            "Quavo",
             "Migos",
             "Lil Mosey",
-            "Trippie Redd"
+            "Ski Mask The Slump God"
         ]
     },
     "Natti Natasha": {
@@ -4400,8 +4398,8 @@
             "Greeicy",
             "Wisin",
             "Piso 21",
-            "Justin Quiles",
             "Yandel",
+            "Justin Quiles",
             "Danna Paola"
         ]
     },
@@ -4452,8 +4450,8 @@
             "Paramore",
             "Cigarettes After Sex",
             "Two Door Cinema Club",
-            "Hozier",
-            "Lorde"
+            "Lorde",
+            "Hozier"
         ]
     },
     "Tame Impala": {
@@ -4461,8 +4459,8 @@
         "id": "5INjqkS1o8h1imAzPqGZBb",
         "image": "https://i.scdn.co/image/ab6761610000e5eb90357ef28b3a012a1d1b2fa2",
         "related": [
-            "Mac DeMarco",
             "MGMT",
+            "Mac DeMarco",
             "The Strokes",
             "Cage The Elephant",
             "The Smiths",
@@ -4514,8 +4512,8 @@
             "System Of A Down",
             "Bullet For My Valentine",
             "Marilyn Manson",
-            "Disturbed",
             "Limp Bizkit",
+            "Disturbed",
             "Megadeth",
             "Avenged Sevenfold"
         ]
@@ -4549,8 +4547,8 @@
             "Mike WiLL Made-It",
             "Mustard",
             "YG",
-            "Rich The Kid",
             "Soulja Boy",
+            "Rich The Kid",
             "Gucci Mane"
         ]
     },
@@ -4565,10 +4563,10 @@
             "Olly Murs",
             "Clean Bandit",
             "Rudimental",
-            "Years & Years",
-            "Mabel",
             "Sigala",
-            "Paloma Faith"
+            "Mabel",
+            "Paloma Faith",
+            "Becky Hill"
         ]
     },
     "Jul": {
@@ -4597,7 +4595,7 @@
             "Pierce The Veil",
             "Simple Plan",
             "blink-182",
-            "Plain White T's"
+            "Avril Lavigne"
         ]
     },
     "Nat King Cole": {
@@ -4645,8 +4643,7 @@
             "Atif Aslam",
             "KK",
             "Arijit Singh",
-            "Shreya Ghoshal",
-            "Jubin Nautiyal"
+            "Shreya Ghoshal"
         ]
     },
     "Fifth Harmony": {
@@ -4659,8 +4656,8 @@
             "Demi Lovato",
             "Hailee Steinfeld",
             "Zara Larsson",
-            "Meghan Trainor",
             "Nick Jonas",
+            "Meghan Trainor",
             "Rita Ora",
             "Alessia Cara",
             "Camila Cabello"
@@ -4776,8 +4773,8 @@
             "Florida Georgia Line",
             "Eric Church",
             "Thomas Rhett",
-            "Rascal Flatts",
-            "Tim McGraw"
+            "Tim McGraw",
+            "Rascal Flatts"
         ]
     },
     "Alok": {
@@ -4871,8 +4868,8 @@
             "Frank Ocean",
             "Steve Lacy",
             "Summer Walker",
-            "Miguel",
             "Bryson Tiller",
+            "Miguel",
             "Jhen\u00e9 Aiko"
         ]
     },
@@ -4890,7 +4887,7 @@
             "Kodaline",
             "Passenger",
             "James Bay",
-            "Ben Howard"
+            "Noah Kahan"
         ]
     },
     "Niall Horan": {
@@ -4920,8 +4917,8 @@
             "Mumford & Sons",
             "Lily Allen",
             "Bon Iver",
-            "Hozier",
             "Lykke Li",
+            "Hozier",
             "alt-J",
             "Lorde",
             "Kings of Leon"
@@ -4970,9 +4967,9 @@
             "Daniel Caesar",
             "Tyler, The Creator",
             "SZA",
-            "Brent Faiyaz",
             "Mac DeMarco",
-            "TV Girl"
+            "Brent Faiyaz",
+            "Frank Ocean"
         ]
     },
     "Jax Jones": {
@@ -4981,15 +4978,15 @@
         "image": "https://i.scdn.co/image/ab6761610000e5eb09b06c6e39518619ecd56ec5",
         "related": [
             "Joel Corry",
-            "MNEK",
             "Sigala",
+            "MNEK",
             "Becky Hill",
             "Topic",
             "A7S",
             "Felix Jaehn",
-            "Jonas Blue",
             "Mabel",
-            "Sam Feldt"
+            "Jonas Blue",
+            "Loud Luxury"
         ]
     },
     "Jack Johnson": {
@@ -5016,14 +5013,13 @@
         "related": [
             "Jhayco",
             "Mora",
-            "Lyanno",
             "Chencho Corleone",
             "Eladio Carrion",
+            "Lyanno",
             "Arc\u00e1ngel",
-            "Myke Towers",
-            "Yandel",
             "Feid",
-            "Jowell & Randy"
+            "Myke Towers",
+            "Yandel"
         ]
     },
     "Jonas Brothers": {
@@ -5062,8 +5058,8 @@
             "Wisin",
             "Yandel",
             "Piso 21",
-            "Wisin & Yandel",
-            "Cali Y El Dandee"
+            "Cali Y El Dandee",
+            "Wisin & Yandel"
         ]
     },
     "Amy Winehouse": {
@@ -5095,9 +5091,9 @@
             "Polo G",
             "NLE Choppa",
             "Sleepy Hallow",
-            "Roddy Ricch",
             "Trippie Redd",
-            "DaBaby"
+            "Roddy Ricch",
+            "Lil Yachty"
         ]
     },
     "Alesso": {
@@ -5124,8 +5120,8 @@
             "Panic! At The Disco",
             "Paramore",
             "Simple Plan",
-            "blink-182",
             "Sum 41",
+            "blink-182",
             "Green Day",
             "Falling In Reverse"
         ]
@@ -5180,8 +5176,8 @@
             "Plan B",
             "Lenny Tav\u00e1rez",
             "Tainy",
-            "Justin Quiles",
             "\u00d1engo Flow",
+            "Justin Quiles",
             "Jhayco",
             "Yandel",
             "DJ Luian"
@@ -5224,10 +5220,10 @@
             "Guns N' Roses",
             "KISS",
             "Bryan Adams",
-            "Journey",
             "M\u00f6tley Cr\u00fce",
             "Alice Cooper",
-            "Foreigner"
+            "U2",
+            "Ozzy Osbourne"
         ]
     },
     "Bryant Myers": {
@@ -5287,8 +5283,7 @@
             "Rudimental",
             "Lily Allen",
             "Paloma Faith",
-            "John Newman",
-            "Years & Years"
+            "John Newman"
         ]
     },
     "Kings of Leon": {
@@ -5313,9 +5308,7 @@
         "id": "6zFYqv1mOsgBRQbae3JJ9e",
         "image": "https://i.scdn.co/image/ab6761610000e5eb712c7643e8aa18a4aca6c811",
         "related": [
-            "Chicago",
             "Elton John",
-            "Foreigner",
             "Eagles",
             "Paul Simon"
         ]
@@ -5388,15 +5381,15 @@
         "image": "https://i.scdn.co/image/ab6761610000e5ebc55d162af83a11f10a9691d9",
         "related": [
             "Israel & Rodolffo",
-            "Guilherme & Benuto",
             "Gustavo Mioto",
+            "Guilherme & Benuto",
             "Jorge & Mateus",
             "Z\u00e9 Neto & Cristiano",
             "Luan Santana",
             "Hugo & Guilherme",
             "Maiara & Maraisa",
-            "Henrique & Juliano",
-            "Diego & Victor Hugo"
+            "Diego & Victor Hugo",
+            "Henrique & Juliano"
         ]
     },
     "Whitney Houston": {
@@ -5422,10 +5415,10 @@
             "La Adictiva",
             "Banda MS de Sergio Liz\u00e1rraga",
             "Juli\u00f3n \u00c1lvarez y su Norte\u00f1o Banda",
+            "Grupo Frontera",
             "Gerardo Ortiz",
             "Alfredo Olivas",
-            "Grupo Frontera",
-            "Luis R Conriquez"
+            "La Arrolladora Banda El Lim\u00f3n De Rene Camacho"
         ]
     },
     "Disclosure": {
@@ -5447,8 +5440,8 @@
             "Breaking Benjamin",
             "Three Days Grace",
             "3 Doors Down",
-            "Limp Bizkit",
-            "Shinedown"
+            "Shinedown",
+            "Limp Bizkit"
         ]
     },
     "Alejandro Fernandez": {
@@ -5474,8 +5467,8 @@
             "Gym Class Heroes",
             "T.I.",
             "Mike Posner",
-            "Ludacris",
             "Jay Sean",
+            "Ludacris",
             "Sean Kingston",
             "Far East Movement",
             "Taio Cruz",
@@ -5529,8 +5522,8 @@
         "id": "5dHt1vcEm9qb8fCyLcB3HL",
         "image": "https://i.scdn.co/image/ab6761610000e5ebf1122f644f19ba22750d2bd8",
         "related": [
-            "Mike WiLL Made-It",
             "ScHoolboy Q",
+            "Mike WiLL Made-It",
             "YG",
             "Rich The Kid",
             "Juicy J",
@@ -5594,7 +5587,7 @@
             "Mar\u00edlia Mendon\u00e7a",
             "Wesley Safad\u00e3o",
             "Z\u00e9 Neto & Cristiano",
-            "Henrique & Juliano"
+            "Israel & Rodolffo"
         ]
     },
     "Aventura": {
@@ -5634,8 +5627,7 @@
             "Ty Dolla $ign",
             "Rich The Kid",
             "Takeoff",
-            "Internet Money",
-            "Offset"
+            "Internet Money"
         ]
     },
     "Vance Joy": {
@@ -5663,21 +5655,13 @@
             "Blueface",
             "NLE Choppa",
             "Lil Mosey",
-            "Lil Tecca",
             "Polo G",
+            "Lil Tecca",
             "Roddy Ricch",
             "DaBaby",
             "Lil Tjay",
             "King Von",
             "YoungBoy Never Broke Again"
-        ]
-    },
-    "Journey": {
-        "name": "Journey",
-        "id": "0rvjqX7ttXeg3mTy8Xscbt",
-        "image": "https://i.scdn.co/image/ab6761610000e5ebe848dfb35ea4969099662dfd",
-        "related": [
-            "Foreigner"
         ]
     },
     "Johann Sebastian Bach": {
@@ -5729,10 +5713,7 @@
         "id": "0ECwFtbIWEVNwjlrfc6xoL",
         "image": "https://i.scdn.co/image/ab6761610000e5eb0767e116a2307495e37cd7fb",
         "related": [
-            "Chicago",
-            "Foreigner",
-            "Lynyrd Skynyrd",
-            "Journey"
+            "Lynyrd Skynyrd"
         ]
     },
     "will.i.am": {
@@ -5741,15 +5722,15 @@
         "image": "https://i.scdn.co/image/ab6761610000e5ebc9ab8da6f7a3ce02f0b16fd8",
         "related": [
             "Timbaland",
-            "Taio Cruz",
             "LMFAO",
+            "Taio Cruz",
             "Fergie",
             "Flo Rida",
             "Black Eyed Peas",
             "Sean Kingston",
             "Far East Movement",
             "Jay Sean",
-            "Pitbull"
+            "B.o.B"
         ]
     },
     "Train": {
@@ -5807,8 +5788,7 @@
             "Mac DeMarco",
             "Steve Lacy",
             "NIKI",
-            "The 1975",
-            "Dominic Fike"
+            "The 1975"
         ]
     },
     "M\u00e5neskin": {
@@ -5852,7 +5832,7 @@
             "La Arrolladora Banda El Lim\u00f3n De Rene Camacho",
             "Banda MS de Sergio Liz\u00e1rraga",
             "El Fantasma",
-            "Alfredo Olivas"
+            "Grupo Firme"
         ]
     },
     "Bruce Springsteen": {
@@ -5907,8 +5887,8 @@
             "YNW Melly",
             "Polo G",
             "Lil Tecca",
-            "YoungBoy Never Broke Again",
             "DaBaby",
+            "YoungBoy Never Broke Again",
             "Lil Tjay",
             "Lil Mosey",
             "Roddy Ricch"
@@ -5923,7 +5903,7 @@
             "Eladio Carrion",
             "Nicki Nicole",
             "KHEA",
-            "Duki"
+            "Jhayco"
         ]
     },
     "Annie Lennox": {
@@ -5964,13 +5944,13 @@
             "Cavetown",
             "girl in red",
             "Clairo",
+            "Gracie Abrams",
             "Wallows",
             "Mitski",
             "Beach Bunny",
             "The Neighbourhood",
-            "Chase Atlantic",
             "Alec Benjamin",
-            "Ashe"
+            "Sabrina Carpenter"
         ]
     },
     "Talking Heads": {
@@ -5998,11 +5978,11 @@
         "id": "4fxd5Ee7UefO4CUXgwJ7IP",
         "image": "https://i.scdn.co/image/ab6761610000e5eb0219b6643b1ec449b0951bfe",
         "related": [
-            "Daniel Caesar",
             "Summer Walker",
+            "Daniel Caesar",
             "Brent Faiyaz",
-            "H.E.R.",
             "Bryson Tiller",
+            "H.E.R.",
             "Jhen\u00e9 Aiko",
             "PARTYNEXTDOOR",
             "Ella Mai",
@@ -6079,8 +6059,8 @@
         "related": [
             "Piso 21",
             "Manuel Turizo",
-            "Zion & Lennox",
             "Mau y Ricky",
+            "Zion & Lennox",
             "Cali Y El Dandee",
             "Justin Quiles",
             "CNCO",
@@ -6101,8 +6081,8 @@
             "Kodaline",
             "James TW",
             "Tom Walker",
-            "Hozier",
             "Birdy",
+            "Hozier",
             "Dean Lewis"
         ]
     },
@@ -6116,7 +6096,8 @@
             "Papa Roach",
             "Breaking Benjamin",
             "Shinedown",
-            "Bullet For My Valentine"
+            "Bullet For My Valentine",
+            "Three Days Grace"
         ]
     },
     "Noriel": {
@@ -6180,8 +6161,8 @@
             "alt-J",
             "Vance Joy",
             "Portugal. The Man",
-            "Cage The Elephant",
             "The Kooks",
+            "Cage The Elephant",
             "Two Door Cinema Club",
             "MGMT",
             "Of Monsters and Men",
@@ -6207,8 +6188,9 @@
         "image": "https://i.scdn.co/image/ab6761610000e5eb7afd1dcf8bc34612f16ee39c",
         "related": [
             "Madison Beer",
-            "Alec Benjamin",
             "Sabrina Carpenter",
+            "Alec Benjamin",
+            "Gracie Abrams",
             "Sasha Alex Sloan",
             "Ruth B.",
             "Julia Michaels",
@@ -6227,8 +6209,8 @@
             "Alejandro Sanz",
             "Juanes",
             "Cristian Castro",
-            "Reik",
             "Carlos Vives",
+            "Reik",
             "La Oreja de Van Gogh",
             "Ha*Ash"
         ]
@@ -6242,12 +6224,12 @@
             "Mabel",
             "Clean Bandit",
             "Lewis Capaldi",
-            "Bebe Rexha",
             "Sia",
+            "Bebe Rexha",
             "P!nk",
             "Zara Larsson",
-            "Anne-Marie",
-            "Marshmello"
+            "Lizzo",
+            "Anne-Marie"
         ]
     },
     "Scorpions": {
@@ -6277,7 +6259,7 @@
             "Luke Combs",
             "Dierks Bentley",
             "Blake Shelton",
-            "Miranda Lambert"
+            "Jon Pardi"
         ]
     },
     "Rod Stewart": {
@@ -6285,7 +6267,6 @@
         "id": "2y8Jo9CKhJvtfeKOsYzRdT",
         "image": "https://i.scdn.co/image/ab6761610000e5eb1d3e6633d1da408fc103a9ec",
         "related": [
-            "Chicago",
             "Bee Gees",
             "Eric Clapton",
             "Tina Turner",
@@ -6336,11 +6317,11 @@
             "Vance Joy",
             "Tom Walker",
             "Passenger",
-            "Hozier",
             "Jess Glynne",
+            "Hozier",
             "The Lumineers",
-            "Bastille",
             "Mumford & Sons",
+            "Bastille",
             "Olly Murs"
         ]
     },
@@ -6386,7 +6367,8 @@
             "Matoma",
             "Seeb",
             "Martin Jensen",
-            "Mike Perry"
+            "Mike Perry",
+            "Gryffin"
         ]
     },
     "M\u00f6tley Cr\u00fce": {
@@ -6402,11 +6384,11 @@
     "Sean Kingston": {
         "name": "Sean Kingston",
         "id": "6S0dmVVn4udvppDhZIWxCr",
-        "image": "https://i.scdn.co/image/ab6761610000e5ebee205e5029a04bd0460e16e4",
+        "image": "https://i.scdn.co/image/ab67616100005174ee205e5029a04bd0460e16e4",
         "related": [
             "Jay Sean",
-            "T-Pain",
             "Soulja Boy",
+            "T-Pain",
             "Taio Cruz",
             "Akon",
             "Timbaland",
@@ -6424,8 +6406,7 @@
             "M\u00f6tley Cr\u00fce",
             "ZZ Top",
             "Alice Cooper",
-            "Ozzy Osbourne",
-            "Foreigner"
+            "Ozzy Osbourne"
         ]
     },
     "Cage The Elephant": {
@@ -6455,11 +6436,11 @@
             "Charli XCX",
             "Ciara",
             "will.i.am",
-            "Christina Aguilera",
             "The Pussycat Dolls",
+            "Christina Aguilera",
             "Rita Ora",
-            "Gwen Stefani",
-            "Normani"
+            "Normani",
+            "Gwen Stefani"
         ]
     },
     "La Arrolladora Banda El Lim\u00f3n": {
@@ -6507,12 +6488,12 @@
         "id": "1DxLCyH42yaHKGK3cl5bvG",
         "image": "https://i.scdn.co/image/ab6761610000e5ebb6cfa517b8f5a152d63c4ffb",
         "related": [
-            "Tiago PZK",
             "TINI",
+            "Tiago PZK",
             "Nicki Nicole",
             "LIT killah",
-            "Duki",
-            "Cazzu"
+            "Cazzu",
+            "Duki"
         ]
     },
     "Jessie J": {
@@ -6576,8 +6557,8 @@
             "Queens of the Stone Age",
             "Arcade Fire",
             "Franz Ferdinand",
-            "Cage The Elephant",
-            "Vampire Weekend"
+            "Vampire Weekend",
+            "Cage The Elephant"
         ]
     },
     "Calum Scott": {
@@ -6636,8 +6617,8 @@
             "Vance Joy",
             "Tom Odell",
             "George Ezra",
-            "The Lumineers",
             "James Blunt",
+            "The Lumineers",
             "Bastille",
             "Birdy",
             "Of Monsters and Men"
@@ -6674,8 +6655,8 @@
         "image": "https://i.scdn.co/image/ab6761610000e5ebbca0db94109312da70aca8e4",
         "related": [
             "Joel Corry",
-            "MNEK",
             "Jax Jones",
+            "MNEK",
             "A7S",
             "Goodboys",
             "Ella Henderson",
@@ -6698,8 +6679,8 @@
             "Dean Lewis",
             "Conan Gray",
             "blackbear",
-            "5 Seconds of Summer",
-            "Ruth B."
+            "Ruth B.",
+            "5 Seconds of Summer"
         ]
     },
     "JID": {
@@ -6709,7 +6690,8 @@
         "related": [
             "Denzel Curry",
             "Cordae",
-            "Joey Bada$$"
+            "Joey Bada$$",
+            "Baby Keem"
         ]
     },
     "Nas": {
@@ -6760,8 +6742,8 @@
         "related": [
             "Chencho Corleone",
             "\u00d1engo Flow",
-            "Cosculluela",
             "Wisin & Yandel",
+            "Cosculluela",
             "Don Omar",
             "De La Ghetto",
             "Jowell & Randy",
@@ -6782,8 +6764,8 @@
             "Wisin",
             "Sebastian Yatra",
             "Manuel Turizo",
-            "Yandel",
             "Greeicy",
+            "Yandel",
             "Zion & Lennox"
         ]
     },
@@ -6797,8 +6779,8 @@
             "Noriel",
             "Alex Rose",
             "Brytiago",
-            "Lyanno",
-            "Rvssian"
+            "Rvssian",
+            "Lyanno"
         ]
     },
     "Bryan Adams": {
@@ -6808,12 +6790,9 @@
         "related": [
             "Roxette",
             "Phil Collins",
-            "TOTO",
-            "Foreigner",
             "Cyndi Lauper",
             "Tina Turner",
-            "a-ha",
-            "Chicago"
+            "a-ha"
         ]
     },
     "Sigala": {
@@ -6827,8 +6806,8 @@
             "Jonas Blue",
             "Joel Corry",
             "Galantis",
-            "MNEK",
             "Felix Jaehn",
+            "MNEK",
             "Cheat Codes",
             "Martin Jensen"
         ]
@@ -6840,14 +6819,14 @@
         "related": [
             "Jon Bellion",
             "Panic! At The Disco",
-            "Quinn XCII",
             "Alec Benjamin",
+            "Quinn XCII",
             "American Authors",
             "Fall Out Boy",
             "blackbear",
-            "Cavetown",
             "BoyWithUke",
-            "X Ambassadors"
+            "Cavetown",
+            "Twenty One Pilots"
         ]
     },
     "Skillet": {
@@ -6888,8 +6867,8 @@
         "related": [
             "Tori Kelly",
             "Glee Cast",
-            "Panic! At The Disco",
             "Michael Bubl\u00e9",
+            "Panic! At The Disco",
             "Sara Bareilles"
         ]
     },
@@ -6912,8 +6891,8 @@
         "related": [
             "Stevie Wonder",
             "Marvin Gaye",
-            "Wham!",
             "George Michael",
+            "Wham!",
             "Earth, Wind & Fire"
         ]
     },
@@ -6953,12 +6932,10 @@
         "id": "1LZEQNv7sE11VDY3SdxQeN",
         "image": "https://i.scdn.co/image/1d5a05673975ba0c378cd280344e000b0b865620",
         "related": [
-            "Chicago",
             "Rod Stewart",
             "ABBA",
             "Earth, Wind & Fire",
-            "Eagles",
-            "TOTO"
+            "Eagles"
         ]
     },
     "Nelly Furtado": {
@@ -6988,11 +6965,11 @@
             "gnash",
             "Sasha Alex Sloan",
             "Quinn XCII",
-            "JP Saxe",
             "LANY",
+            "JP Saxe",
             "Pink Sweat$",
             "Bazzi",
-            "blackbear"
+            "Why Don't We"
         ]
     },
     "The Kooks": {
@@ -7033,7 +7010,7 @@
             "Mac DeMarco",
             "Mitski",
             "Cavetown",
-            "TV Girl",
+            "Steve Lacy",
             "PinkPantheress"
         ]
     },
@@ -7138,9 +7115,9 @@
             "Keith Urban",
             "Jason Aldean",
             "Rascal Flatts",
+            "Toby Keith",
             "Luke Bryan",
-            "Eric Church",
-            "Toby Keith"
+            "Eric Church"
         ]
     },
     "Sam Hunt": {
@@ -7195,9 +7172,7 @@
             "Tiago PZK",
             "Nicki Nicole",
             "Mau y Ricky",
-            "Cazzu",
-            "Duki",
-            "Sof\u00eda Reyes"
+            "Cazzu"
         ]
     },
     "Eladio Carrion": {
@@ -7210,8 +7185,8 @@
             "Myke Towers",
             "Tainy",
             "Arc\u00e1ngel",
-            "Quevedo",
             "Bryant Myers",
+            "Quevedo",
             "Feid",
             "\u00d1engo Flow",
             "Jon Z"
@@ -7244,8 +7219,7 @@
             "Genesis",
             "Supertramp",
             "Sting",
-            "U2",
-            "TOTO"
+            "U2"
         ]
     },
     "Iron Maiden": {
@@ -7312,11 +7286,10 @@
         "image": "https://i.scdn.co/image/ab6761610000e5ebe0a1e4d232f422c8db0ed3f7",
         "related": [
             "Ella Eyre",
-            "John Newman",
             "Jess Glynne",
+            "John Newman",
             "Disclosure",
             "Sigala",
-            "Years & Years",
             "Clean Bandit",
             "Jax Jones"
         ]
@@ -7340,14 +7313,14 @@
         "related": [
             "Becky Hill",
             "Jax Jones",
-            "RAYE",
             "Ella Eyre",
+            "RAYE",
             "Rita Ora",
             "Ava Max",
             "Anne-Marie",
             "Zara Larsson",
-            "Bebe Rexha",
-            "Ella Henderson"
+            "Ella Henderson",
+            "Bebe Rexha"
         ]
     },
     "Zac Brown Band": {
@@ -7371,8 +7344,8 @@
             "PinkPantheress",
             "Mac DeMarco",
             "Brent Faiyaz",
-            "TV Girl",
             "Tyler, The Creator",
+            "TV Girl",
             "Kali Uchis",
             "Frank Ocean",
             "Clairo",
@@ -7388,8 +7361,8 @@
             "Natanael Cano",
             "Fuerza Regida",
             "Luis R Conriquez",
-            "Peso Pluma",
             "Grupo Marca Registrada",
+            "Peso Pluma",
             "Eslabon Armado",
             "Alfredo Olivas"
         ]
@@ -7481,7 +7454,8 @@
             "Marilyn Manson",
             "System Of A Down",
             "Disturbed",
-            "Papa Roach"
+            "Papa Roach",
+            "Deftones"
         ]
     },
     "Wolfgang Amadeus Mozart": {
@@ -7513,8 +7487,8 @@
         "image": "https://i.scdn.co/image/ab6761610000e5eb37634d409e58d0ab0babfdc9",
         "related": [
             "Piso 21",
-            "Zion & Lennox",
-            "CNCO"
+            "CNCO",
+            "Zion & Lennox"
         ]
     },
     "Simon & Garfunkel": {
@@ -7546,8 +7520,8 @@
         "image": "https://i.scdn.co/image/ab6761610000e5eb600884ffa8406449e13fbfc3",
         "related": [
             "La Adictiva",
-            "Alfredo Olivas",
-            "Calibre 50"
+            "Calibre 50",
+            "Alfredo Olivas"
         ]
     },
     "R.E.M.": {
@@ -7587,8 +7561,8 @@
         "image": "https://i.scdn.co/image/ab6761610000e5ebbe5806798d93a407f1f21cfe",
         "related": [
             "A7S",
-            "Topic",
             "Becky Hill",
+            "Topic",
             "MNEK",
             "Goodboys",
             "Jax Jones",
@@ -7619,8 +7593,8 @@
         "id": "4YXycRbyyAE0wozTk7QMEq",
         "image": "https://i.scdn.co/image/ab6761610000e5eb9e89c8d25b3f4b4be014f2a8",
         "related": [
-            "Sam Feldt",
             "Seeb",
+            "Sam Feldt",
             "Mike Perry",
             "Gryffin",
             "Martin Jensen",
@@ -7735,8 +7709,8 @@
             "Niall Horan",
             "DNCE",
             "Hailee Steinfeld",
-            "Nick Jonas",
             "Little Mix",
+            "Nick Jonas",
             "MKTO"
         ]
     },
@@ -7748,8 +7722,8 @@
             "James Bay",
             "Kodaline",
             "Sleeping At Last",
-            "Passenger",
             "Tom Odell",
+            "Passenger",
             "Florence + The Machine",
             "Christina Perri",
             "Lorde",
@@ -7763,8 +7737,8 @@
         "image": "https://i.scdn.co/image/ab6761610000e5eb2a1356370e5fce1b25df0ac9",
         "related": [
             "6LACK",
-            "Swae Lee",
             "NAV",
+            "Swae Lee",
             "Internet Money",
             "Mustard",
             "A$AP Ferg"
@@ -7801,12 +7775,12 @@
         "id": "15iVAtD3s3FsQR4w1v6M0P",
         "image": "https://i.scdn.co/image/ab6761610000e5eba09a58010871b4458e11fa1b",
         "related": [
-            "Rich The Kid",
             "King Von",
-            "A$AP Ferg",
             "Lil Yachty",
+            "Rich The Kid",
+            "A$AP Ferg",
             "Gucci Mane",
-            "Tee Grizzley"
+            "Kodak Black"
         ]
     },
     "bbno$": {
@@ -7860,8 +7834,8 @@
             "Beastie Boys",
             "Incubus",
             "Cage The Elephant",
-            "The Strokes",
-            "Blur"
+            "Blur",
+            "The Strokes"
         ]
     },
     "Rise Against": {
@@ -7930,9 +7904,9 @@
             "JP Saxe",
             "Labrinth",
             "WILLOW",
-            "Tove Lo",
             "Ashe",
-            "Tate McRae"
+            "Tove Lo",
+            "Jessie Reyez"
         ]
     },
     "Limp Bizkit": {
@@ -7943,8 +7917,8 @@
             "Korn",
             "Papa Roach",
             "Rage Against The Machine",
-            "Disturbed",
             "Marilyn Manson",
+            "Disturbed",
             "System Of A Down",
             "Slipknot"
         ]
@@ -8049,8 +8023,8 @@
             "Dierks Bentley",
             "Eric Church",
             "Keith Urban",
-            "Zac Brown Band",
-            "Blake Shelton"
+            "Blake Shelton",
+            "Zac Brown Band"
         ]
     },
     "Sum 41": {
@@ -8161,15 +8135,15 @@
         "image": "https://i.scdn.co/image/ab6761610000e5eb00e540b760b56d02cc415c47",
         "related": [
             "Madison Beer",
+            "Gracie Abrams",
             "Tate McRae",
             "Hailee Steinfeld",
-            "Bebe Rexha",
             "Conan Gray",
+            "Bebe Rexha",
             "Little Mix",
             "Alessia Cara",
-            "Bea Miller",
-            "Daya",
-            "Julia Michaels"
+            "Olivia Rodrigo",
+            "Bea Miller"
         ]
     },
     "Cigarettes After Sex": {
@@ -8223,15 +8197,13 @@
         "image": "https://i.scdn.co/image/ab6761610000e5ebd4e38c4e3e5c82774740e28d",
         "related": [
             "Genesis",
-            "TOTO",
             "Bryan Adams",
             "Supertramp",
-            "Foreigner",
-            "Chicago",
             "The Police",
             "Duran Duran",
             "Tina Turner",
-            "George Michael"
+            "George Michael",
+            "Sting"
         ]
     },
     "Rascal Flatts": {
@@ -8264,8 +8236,8 @@
         "related": [
             "Cheat Codes",
             "Sam Feldt",
-            "Matoma",
-            "Seeb"
+            "Seeb",
+            "Matoma"
         ]
     },
     "MNEK": {
@@ -8277,8 +8249,8 @@
             "Joel Corry",
             "Goodboys",
             "Jax Jones",
-            "Topic",
             "Becky Hill",
+            "Topic",
             "Ella Eyre"
         ]
     },
@@ -8363,8 +8335,8 @@
             "Zara Larsson",
             "Daya",
             "MKTO",
-            "Rita Ora",
             "Liam Payne",
+            "Rita Ora",
             "Bebe Rexha"
         ]
     },
@@ -8374,8 +8346,8 @@
         "image": "https://i.scdn.co/image/ab6761610000e5eb1f98760ed5b47b21eaf56e8f",
         "related": [
             "Jaden",
-            "JID",
-            "Denzel Curry"
+            "Denzel Curry",
+            "JID"
         ]
     },
     "Saweetie": {
@@ -8420,8 +8392,8 @@
             "Leona Lewis",
             "Christina Perri",
             "Kelly Clarkson",
-            "Plain White T's",
-            "Train"
+            "Train",
+            "Plain White T's"
         ]
     },
     "Astrid S": {
@@ -8432,9 +8404,9 @@
             "Daya",
             "Sasha Alex Sloan",
             "Julia Michaels",
-            "Chelsea Cutler",
+            "Bea Miller",
             "Zara Larsson",
-            "Bea Miller"
+            "Chelsea Cutler"
         ]
     },
     "Ella Mai": {
@@ -8478,8 +8450,8 @@
             "Vance Joy",
             "Hozier",
             "George Ezra",
-            "Ben Howard",
             "Bastille",
+            "Ben Howard",
             "Jaymes Young"
         ]
     },
@@ -8516,8 +8488,7 @@
             "Wallows",
             "Clairo",
             "Kali Uchis",
-            "PinkPantheress",
-            "Dominic Fike"
+            "PinkPantheress"
         ]
     },
     "Normani": {
@@ -8592,7 +8563,8 @@
         "image": "https://i.scdn.co/image/ab6761610000e5eb5885f6c2d3ecf8e08bdfa472",
         "related": [
             "Paul Simon",
-            "Neil Young"
+            "Neil Young",
+            "Yusuf / Cat Stevens"
         ]
     },
     "Chase Atlantic": {
@@ -8601,12 +8573,12 @@
         "image": "https://i.scdn.co/image/ab6761610000e5eb559c24d0f169d3fc107e3932",
         "related": [
             "The Neighbourhood",
-            "Conan Gray",
             "Cigarettes After Sex",
+            "Conan Gray",
             "girl in red",
             "Arctic Monkeys",
-            "TV Girl",
             "Melanie Martinez",
+            "TV Girl",
             "Mitski",
             "Lana Del Rey",
             "Clairo"
@@ -8659,7 +8631,8 @@
         "image": "https://i.scdn.co/image/ab6761610000e5eb6f0ae12d361fa6a480cbf5a0",
         "related": [
             "Maren Morris",
-            "Zedd"
+            "Zedd",
+            "Seeb"
         ]
     },
     "Ice Cube": {
@@ -8721,8 +8694,7 @@
         "image": "https://i.scdn.co/image/ab6761610000e5ebdfb2b3c69199bc2dfbf3e5b9",
         "related": [
             "Supertramp",
-            "Phil Collins",
-            "TOTO"
+            "Phil Collins"
         ]
     },
     "The Pussycat Dolls": {
@@ -8764,11 +8736,11 @@
         "related": [
             "Justin Quiles",
             "Noriel",
-            "Darell",
             "Alex Rose",
+            "Darell",
             "Brytiago",
-            "Cosculluela",
             "De La Ghetto",
+            "Cosculluela",
             "Lenny Tav\u00e1rez",
             "DJ Luian"
         ]
@@ -8801,8 +8773,8 @@
             "Lenny Tav\u00e1rez",
             "Dalex",
             "Brytiago",
-            "Noriel",
             "Casper Magico",
+            "Noriel",
             "DJ Luian",
             "Nio Garcia",
             "Lunay"
@@ -8882,14 +8854,6 @@
             "Julieta Venegas",
             "Carla Morrison",
             "Mon Laferte"
-        ]
-    },
-    "Foreigner": {
-        "name": "Foreigner",
-        "id": "6IRouO5mvvfcyxtPDKMYFN",
-        "image": "https://i.scdn.co/image/ab6761610000e5ebb338d6964565206f741d5ad1",
-        "related": [
-            "Journey"
         ]
     },
     "Bill Withers": {
@@ -8977,8 +8941,7 @@
             "Supertramp",
             "George Michael",
             "Dire Straits",
-            "R.E.M.",
-            "TOTO"
+            "R.E.M."
         ]
     },
     "The White Stripes": {
@@ -9041,8 +9004,8 @@
         "id": "7y97mc3bZRFXzT2szRM4L4",
         "image": "https://i.scdn.co/image/ab6761610000e5ebe55372097569b7b56b439365",
         "related": [
-            "Johann Sebastian Bach",
             "Ludwig van Beethoven",
+            "Johann Sebastian Bach",
             "Wolfgang Amadeus Mozart"
         ]
     },
@@ -9054,15 +9017,6 @@
             "Lynyrd Skynyrd",
             "Van Halen",
             "Alice Cooper"
-        ]
-    },
-    "Chicago": {
-        "name": "Chicago",
-        "id": "3iDD7bnsjL9J4fO298r0L0",
-        "image": "https://i.scdn.co/image/ab6761610000e5ebbab088e2157b02848dfcbc1e",
-        "related": [
-            "TOTO",
-            "Foreigner"
         ]
     },
     "Dolly Parton": {
@@ -9155,10 +9109,11 @@
         "related": [
             "Sof\u00eda Reyes",
             "Mau y Ricky",
-            "Piso 21",
             "Luis Fonsi",
+            "Piso 21",
             "Cali Y El Dandee",
-            "CNCO"
+            "CNCO",
+            "Carlos Vives"
         ]
     },
     "Ms. Lauryn Hill": {
@@ -9236,8 +9191,8 @@
         "image": "https://i.scdn.co/image/ab6761610000e5eb2394e996716534bc2c937a1a",
         "related": [
             "Mora",
-            "Feid",
             "Myke Towers",
+            "Feid",
             "Jhayco",
             "Eladio Carrion",
             "Duki",
@@ -9258,10 +9213,10 @@
             "Bazzi",
             "Russ",
             "Lauv",
-            "Tate McRae",
             "Khalid",
             "gnash",
-            "Pink Sweat$"
+            "Pink Sweat$",
+            "Tate McRae"
         ]
     },
     "Nina Simone": {
@@ -9306,8 +9261,8 @@
             "Becky G",
             "Yuridia",
             "Reik",
-            "Thalia",
             "Mau y Ricky",
+            "Thalia",
             "Greeicy"
         ]
     },
@@ -9344,8 +9299,8 @@
             "Chelsea Cutler",
             "Julia Michaels",
             "JP Cooper",
-            "Sasha Alex Sloan",
             "Jeremy Zucker",
+            "Sasha Alex Sloan",
             "Lennon Stella",
             "James TW",
             "Dean Lewis"
@@ -9431,14 +9386,14 @@
         "related": [
             "Rudimental",
             "Capital Cities",
-            "Years & Years",
             "Icona Pop",
             "Macklemore & Ryan Lewis",
             "Ella Eyre",
             "Sigala",
             "Mike Posner",
             "Bastille",
-            "Mark Ronson"
+            "Mark Ronson",
+            "Galantis"
         ]
     },
     "Bing Crosby": {
@@ -9514,8 +9469,8 @@
             "will.i.am",
             "Taio Cruz",
             "Flo Rida",
-            "Pitbull",
             "Far East Movement",
+            "Pitbull",
             "Timbaland",
             "Gym Class Heroes",
             "Black Eyed Peas",
@@ -9653,9 +9608,9 @@
         "related": [
             "Noriel",
             "Darell",
+            "Brytiago",
             "\u00d1engo Flow",
             "Bryant Myers",
-            "Brytiago",
             "Alex Rose",
             "Casper Magico",
             "Cosculluela",
@@ -9690,7 +9645,8 @@
         "image": "https://i.scdn.co/image/ab6761610000e5eb7fda8adcbe0cd99ec83a3bcf",
         "related": [
             "Paul McCartney",
-            "John Lennon"
+            "John Lennon",
+            "The Beach Boys"
         ]
     },
     "Jay Sean": {
@@ -9702,8 +9658,9 @@
             "Taio Cruz",
             "Timbaland",
             "T-Pain",
+            "B.o.B",
             "Soulja Boy",
-            "B.o.B"
+            "Far East Movement"
         ]
     },
     "Chayanne": {
@@ -9730,8 +9687,8 @@
             "Rage Against The Machine",
             "Audioslave",
             "Incubus",
-            "Queens of the Stone Age",
             "Weezer",
+            "Queens of the Stone Age",
             "Pearl Jam"
         ]
     },
@@ -9781,8 +9738,7 @@
             "Junior H",
             "Natanael Cano",
             "Fuerza Regida",
-            "Gabito Ballesteros",
-            "Luis R Conriquez"
+            "Gabito Ballesteros"
         ]
     },
     "American Authors": {
@@ -9798,8 +9754,7 @@
             "Plain White T's",
             "Train",
             "MKTO",
-            "Owl City",
-            "OneRepublic"
+            "Owl City"
         ]
     },
     "Electric Light Orchestra": {
@@ -9809,8 +9764,7 @@
         "related": [
             "Supertramp",
             "Genesis",
-            "George Harrison",
-            "Foreigner"
+            "George Harrison"
         ]
     },
     "Leona Lewis": {
@@ -9878,7 +9832,7 @@
             "Alice In Chains",
             "The Smashing Pumpkins",
             "Slipknot",
-            "TV Girl"
+            "Pierce The Veil"
         ]
     },
     "Ella Henderson": {
@@ -9894,7 +9848,6 @@
             "Jax Jones",
             "Sigala",
             "A7S",
-            "Topic",
             "Mabel"
         ]
     },
@@ -9906,7 +9859,8 @@
             "Waka Flocka Flame",
             "T-Pain",
             "Sean Kingston",
-            "Ludacris"
+            "Ludacris",
+            "Juicy J"
         ]
     },
     "Alice In Chains": {
@@ -9937,8 +9891,8 @@
             "Clairo",
             "PinkPantheress",
             "Mitski",
-            "TV Girl",
             "Beach Bunny",
+            "TV Girl",
             "Cavetown"
         ]
     },
@@ -10013,10 +9967,11 @@
             "The Police",
             "Duran Duran",
             "U2",
-            "Billy Idol",
             "Alanis Morissette",
+            "Billy Idol",
             "No Doubt",
-            "Annie Lennox"
+            "Annie Lennox",
+            "The Cranberries"
         ]
     },
     "Two Feet": {
@@ -10031,7 +9986,8 @@
             "Jaymes Young",
             "blackbear",
             "alt-J",
-            "Flume"
+            "Flume",
+            "Milky Chance"
         ]
     },
     "Beastie Boys": {
@@ -10052,7 +10008,8 @@
         "image": "https://i.scdn.co/image/45025bd1014527e8f113b22fa647da7a142c3d6c",
         "related": [
             "Chayanne",
-            "Sin Bandera"
+            "Sin Bandera",
+            "David Bisbal"
         ]
     },
     "Tori Kelly": {
@@ -10135,8 +10092,7 @@
             "Sigala",
             "Mabel",
             "Rudimental",
-            "Jax Jones",
-            "Paloma Faith"
+            "Jax Jones"
         ]
     },
     "A7S": {
@@ -10168,7 +10124,8 @@
             "Noah Cyrus",
             "JP Saxe",
             "Sasha Alex Sloan",
-            "Kacey Musgraves"
+            "Kacey Musgraves",
+            "Maren Morris"
         ]
     },
     "Beret": {
@@ -10176,7 +10133,8 @@
         "id": "0ZHPrnImGh4re3TbSNkoZl",
         "image": "https://i.scdn.co/image/ab6761610000e5eb358d0cb7bf7e241430d44308",
         "related": [
-            "Cali Y El Dandee"
+            "Cali Y El Dandee",
+            "Morat"
         ]
     },
     "Dominic Fike": {
@@ -10210,9 +10168,9 @@
             "LMFAO",
             "Taio Cruz",
             "Plain White T's",
-            "Timbaland",
             "Sean Kingston",
             "Jay Sean",
+            "Timbaland",
             "Flo Rida"
         ]
     },
@@ -10341,7 +10299,7 @@
             "The Wanted",
             "Zedd",
             "John Newman",
-            "Clean Bandit"
+            "American Authors"
         ]
     },
     "Yusuf / Cat Stevens": {
@@ -10411,7 +10369,8 @@
             "Junior H",
             "Peso Pluma",
             "Grupo Frontera",
-            "Eslabon Armado"
+            "Eslabon Armado",
+            "Alfredo Olivas"
         ]
     },
     "Dynoro": {
@@ -10423,7 +10382,8 @@
             "A7S",
             "Imanbek",
             "Topic",
-            "Regard"
+            "Regard",
+            "MEDUZA"
         ]
     },
     "Far East Movement": {
@@ -10448,8 +10408,8 @@
         "id": "6PvvGcCY2XtUcSRld1Wilr",
         "image": "https://i.scdn.co/image/ab6772690000c46ca3ebb27ba9a55044f32af6e1",
         "related": [
-            "Daniel Caesar",
             "Amin\u00e9",
+            "Daniel Caesar",
             "JID"
         ]
     },
@@ -10460,7 +10420,8 @@
         "related": [
             "Vicente Fern\u00e1ndez",
             "Joan Sebastian",
-            "Banda El Recodo"
+            "Banda El Recodo",
+            "Marco Antonio Sol\u00eds"
         ]
     },
     "Kina": {
@@ -10530,8 +10491,8 @@
             "Dermot Kennedy",
             "JP Cooper",
             "James Bay",
-            "George Ezra",
             "Rag'n'Bone Man",
+            "George Ezra",
             "Passenger",
             "James TW",
             "Jess Glynne",
@@ -10567,8 +10528,8 @@
             "Hozier",
             "Melanie Martinez",
             "Sufjan Stevens",
-            "Mitski",
-            "Mother Mother"
+            "Mother Mother",
+            "Mitski"
         ]
     },
     "Wallows": {
@@ -10600,7 +10561,8 @@
             "Playboi Carti",
             "Baby Keem",
             "Chief Keef",
-            "Lil Uzi Vert"
+            "Lil Uzi Vert",
+            "Lil Tecca"
         ]
     },
     "Ofenbach": {
@@ -10624,8 +10586,8 @@
         "related": [
             "Paulo Londra",
             "Eslabon Armado",
-            "Junior H",
             "Rels B",
+            "Junior H",
             "Mon Laferte",
             "Cartel De Santa"
         ]
@@ -10645,10 +10607,11 @@
         "id": "3k68C6mNMJL6OaAdWeW2ZF",
         "image": "https://i.scdn.co/image/ab6761610000e5eb63d729775735eba2cf382b27",
         "related": [
-            "Israel & Rodolffo",
             "Guilherme & Benuto",
+            "Israel & Rodolffo",
             "Hugo & Guilherme",
-            "Gustavo Mioto"
+            "Gustavo Mioto",
+            "Matheus & Kauan"
         ]
     },
     "Gnarls Barkley": {
@@ -10698,8 +10661,8 @@
             "Anne-Marie",
             "Selena Gomez",
             "Demi Lovato",
-            "Zara Larsson",
             "Shawn Mendes",
+            "Zara Larsson",
             "Nick Jonas",
             "Halsey",
             "Hailee Steinfeld"
@@ -10803,7 +10766,8 @@
         "related": [
             "Cage The Elephant",
             "Vance Joy",
-            "Lord Huron"
+            "Lord Huron",
+            "Wallows"
         ]
     },
     "Billy Ray Cyrus": {
@@ -10898,10 +10862,11 @@
         "id": "6P5NO5hzJbuOqSdyPB7SJM",
         "image": "https://i.scdn.co/image/ab6761610000e5eb6e2c026d1776ca2b30b328f5",
         "related": [
+            "Gracie Abrams",
             "Conan Gray",
             "Louis Tomlinson",
-            "Tate McRae",
             "Niall Horan",
+            "Tate McRae",
             "Sasha Alex Sloan",
             "Noah Cyrus",
             "Julia Michaels",
@@ -10919,10 +10884,10 @@
             "Wallows",
             "Noah Cyrus",
             "Conan Gray",
+            "Gracie Abrams",
             "JP Saxe",
             "Troye Sivan",
-            "Alec Benjamin",
-            "WILLOW"
+            "Alec Benjamin"
         ]
     },
     "Purple Disco Machine": {
@@ -10933,8 +10898,7 @@
             "Kungs",
             "Topic",
             "Ofenbach",
-            "MEDUZA",
-            "Joel Corry"
+            "MEDUZA"
         ]
     },
     "ENHYPEN": {
@@ -10990,7 +10954,8 @@
             "Duran Duran",
             "INXS",
             "The Police",
-            "Tears For Fears"
+            "Tears For Fears",
+            "a-ha"
         ]
     },
     "No Doubt": {
@@ -11029,8 +10994,8 @@
             "Outkast",
             "Busta Rhymes",
             "Shaggy",
-            "Timbaland",
             "Missy Elliott",
+            "Timbaland",
             "will.i.am"
         ]
     },
@@ -11088,10 +11053,11 @@
         "image": "https://i.scdn.co/image/ab6761610000e5ebd986fb8037e0b8e2f9f4f37d",
         "related": [
             "Offset",
-            "Quality Control",
             "Quavo",
+            "Quality Control",
             "Rich The Kid",
             "Mustard",
+            "Gucci Mane",
             "NAV",
             "Mike WiLL Made-It"
         ]
@@ -11116,8 +11082,7 @@
         "related": [
             "Maren Morris",
             "Miranda Lambert",
-            "Kacey Musgraves",
-            "Kelsea Ballerini"
+            "Kacey Musgraves"
         ]
     },
     "Beach Bunny": {
@@ -11248,12 +11213,12 @@
             "Breaking Benjamin",
             "Papa Roach",
             "Rise Against",
-            "Three Days Grace",
             "Sum 41",
+            "Three Days Grace",
             "Muse",
             "Evanescence",
-            "Fall Out Boy",
-            "Simple Plan"
+            "Simple Plan",
+            "Fall Out Boy"
         ]
     },
     "Waka Flocka Flame": {
@@ -11444,7 +11409,7 @@
         "related": [
             "The Cure",
             "Pixies",
-            "The Smiths"
+            "The Clash"
         ]
     },
     "Neil Young": {
@@ -11465,8 +11430,8 @@
         "related": [
             "Destiny's Child",
             "Alicia Keys",
-            "Rihanna",
             "Jennifer Lopez",
+            "Rihanna",
             "Nicki Minaj",
             "Ciara",
             "Britney Spears",
@@ -11486,10 +11451,10 @@
             "Rauw Alejandro",
             "Sebastian Yatra",
             "Ozuna",
-            "Camilo",
             "Maluma",
+            "Camilo",
             "J Balvin",
-            "Cazzu"
+            "Feid"
         ]
     },
     "Tyler, The Creator": {
@@ -11643,8 +11608,8 @@
             "Slipknot",
             "Limp Bizkit",
             "Disturbed",
-            "Rage Against The Machine",
             "Marilyn Manson",
+            "Rage Against The Machine",
             "Papa Roach",
             "Bullet For My Valentine",
             "Megadeth",
@@ -11677,9 +11642,9 @@
             "\u00d1engo Flow",
             "Zion",
             "Farruko",
-            "Zion & Lennox",
             "Noriel",
-            "Wisin"
+            "Zion & Lennox",
+            "Bryant Myers"
         ]
     },
     "Jhayco": {
@@ -11692,8 +11657,8 @@
             "Myke Towers",
             "Eladio Carrion",
             "Lyanno",
-            "Alex Rose",
             "Bryant Myers",
+            "Alex Rose",
             "Darell",
             "Dalex",
             "Brytiago"
@@ -11718,11 +11683,11 @@
             "Quality Control",
             "PnB Rock",
             "Takeoff",
-            "Offset",
             "Quavo",
+            "Offset",
+            "Lil Skies",
             "Don Toliver",
             "Gunna",
-            "Lil Skies",
             "Mustard"
         ]
     },
@@ -11759,8 +11724,8 @@
         "image": "https://i.scdn.co/image/ab6761610000e5ebfade412170364e8067c9df7a",
         "related": [
             "Ella Mai",
-            "H.E.R.",
             "Jhen\u00e9 Aiko",
+            "H.E.R.",
             "Kehlani",
             "Bryson Tiller",
             "PARTYNEXTDOOR",
@@ -11807,7 +11772,8 @@
             "Tame Impala",
             "The Smiths",
             "Mitski",
-            "MF DOOM"
+            "MF DOOM",
+            "Tyler, The Creator"
         ]
     },
     "R3HAB": {
@@ -11839,7 +11805,8 @@
         "related": [
             "Bonez MC",
             "RAF Camora",
-            "Gzuz"
+            "Gzuz",
+            "Ufo361"
         ]
     },
     "Dean Lewis": {
@@ -11877,10 +11844,10 @@
             "Bazzi",
             "Trevor Daniel",
             "Arizona Zervas",
-            "Normani",
             "Internet Money",
-            "Daya",
+            "Normani",
             "iann dior",
+            "Daya",
             "Swae Lee",
             "Jonas Blue"
         ]
@@ -11952,8 +11919,8 @@
             "Kid Cudi",
             "Pusha T",
             "Ty Dolla $ign",
-            "Childish Gambino",
-            "Big Sean"
+            "Big Sean",
+            "Childish Gambino"
         ]
     },
     "Pablo Albor\u00e1n": {
@@ -11973,8 +11940,8 @@
             "Fuerza Regida",
             "Carin Leon",
             "Gabito Ballesteros",
-            "Peso Pluma",
             "Grupo Marca Registrada",
+            "Peso Pluma",
             "Luis R Conriquez",
             "Grupo Firme",
             "Junior H",
@@ -12003,8 +11970,7 @@
             "iann dior",
             "NAV",
             "Cordae",
-            "Lil Pump",
-            "Lil Yachty"
+            "Lil Pump"
         ]
     },
     "MEDUZA": {
@@ -12087,8 +12053,8 @@
         "image": "https://i.scdn.co/image/ab6761610000e5eb61d3cbf72ef1f9480b1c5bf0",
         "related": [
             "LIT killah",
-            "Trueno",
             "Tiago PZK",
+            "Trueno",
             "Duki",
             "Nicki Nicole",
             "Cazzu"
@@ -12103,21 +12069,12 @@
             "Alex Rose",
             "Darell",
             "Brytiago",
-            "Noriel",
             "Lyanno",
+            "Noriel",
             "Nio Garcia",
             "Lenny Tav\u00e1rez",
             "DJ Luian",
             "Justin Quiles"
-        ]
-    },
-    "TOTO": {
-        "name": "TOTO",
-        "id": "0PFtn5NtBbbUNbU9EAmIWF",
-        "image": "https://i.scdn.co/image/ab6761610000e5eba59a5bcab211f964fe9bfb06",
-        "related": [
-            "Foreigner",
-            "Chicago"
         ]
     },
     "girl in red": {
@@ -12129,8 +12086,8 @@
             "Clairo",
             "Beach Bunny",
             "Mother Mother",
-            "Mitski",
             "Conan Gray",
+            "Mitski",
             "Wallows",
             "TV Girl",
             "The Neighbourhood",
@@ -12154,8 +12111,8 @@
             "Wesley Safad\u00e3o",
             "Diego & Victor Hugo",
             "Gusttavo Lima",
-            "Z\u00e9 Neto & Cristiano",
-            "Israel & Rodolffo"
+            "Israel & Rodolffo",
+            "Z\u00e9 Neto & Cristiano"
         ]
     },
     "TKKG": {
@@ -12227,8 +12184,7 @@
         "image": "https://i.scdn.co/image/ab6761610000e5eb5da361915b1fa48895d4f23f",
         "related": [
             "ENHYPEN",
-            "TOMORROW X TOGETHER",
-            "TWICE"
+            "TOMORROW X TOGETHER"
         ]
     },
     "Ufo361": {
@@ -12259,6 +12215,8 @@
             "Zach Bryan",
             "Hozier",
             "The Lumineers",
+            "boygenius",
+            "Gracie Abrams",
             "Quinn XCII"
         ]
     },
@@ -12277,8 +12235,8 @@
         "image": "https://i.scdn.co/image/ab6761610000e5eb982cd0568dc2bb9e2f813092",
         "related": [
             "Capital Bra",
-            "RAF Camora",
             "Kontra K",
+            "RAF Camora",
             "Sido",
             "Bonez MC",
             "Ufo361",
@@ -12314,14 +12272,14 @@
         "related": [
             "Mabel",
             "Becky Hill",
-            "MNEK",
             "Jax Jones",
+            "MNEK",
             "Ella Eyre",
             "Joel Corry",
             "Regard",
             "Charli XCX",
-            "Ella Henderson",
-            "Tinashe"
+            "Kim Petras",
+            "Ella Henderson"
         ]
     },
     "The xx": {
@@ -12369,13 +12327,13 @@
             "Tom Walker",
             "KALEO",
             "George Ezra",
-            "Paloma Faith",
             "John Newman",
+            "Paloma Faith",
             "Rudimental",
             "James Bay",
             "Dermot Kennedy",
-            "Bastille",
-            "X Ambassadors"
+            "X Ambassadors",
+            "Bastille"
         ]
     },
     "Elevation Worship": {
@@ -12411,8 +12369,7 @@
             "Wallows",
             "Clairo",
             "Kali Uchis",
-            "PinkPantheress",
-            "Dominic Fike"
+            "PinkPantheress"
         ]
     },
     "Rich The Kid": {
@@ -12422,8 +12379,8 @@
         "related": [
             "Quality Control",
             "Takeoff",
-            "Offset",
             "Mustard",
+            "Offset",
             "Quavo",
             "Mike WiLL Made-It",
             "YG"
@@ -12475,7 +12432,8 @@
         "image": "https://i.scdn.co/image/ab6761610000e5ebacad48182c5778b5a0ec77ed",
         "related": [
             "Kontra K",
-            "Apache 207"
+            "Apache 207",
+            "Capital Bra"
         ]
     },
     "Joyner Lucas": {
@@ -12542,8 +12500,7 @@
             "RAF Camora",
             "Bonez MC",
             "Capital Bra",
-            "Gzuz",
-            "Apache 207"
+            "Gzuz"
         ]
     },
     "Lofi Fruits Music": {
@@ -12575,11 +12532,11 @@
             "24kGoldn",
             "Internet Money",
             "Lil Mosey",
-            "The Kid LAROI",
             "Arizona Zervas",
+            "The Kid LAROI",
             "Lil Skies",
-            "Lil Tecca",
             "Trippie Redd",
+            "Lil Tecca",
             "Cordae",
             "Ski Mask The Slump God"
         ]
@@ -12608,7 +12565,7 @@
             "Harry Styles",
             "Nick Jonas",
             "Jonas Brothers",
-            "Ashe"
+            "Little Mix"
         ]
     },
     "Axwell /\\ Ingrosso": {
@@ -12663,8 +12620,8 @@
             "Diego & Victor Hugo",
             "Luan Santana",
             "Maiara & Maraisa",
-            "Mari Fernandez",
             "Hugo & Guilherme",
+            "Mari Fernandez",
             "Z\u00e9 Neto & Cristiano"
         ]
     },
@@ -12699,8 +12656,8 @@
         "image": "https://i.scdn.co/image/ab6761610000e5eb92883b0e094a36d2f43ad284",
         "related": [
             "Ms. Lauryn Hill",
-            "Annie Lennox",
             "George Michael",
+            "Annie Lennox",
             "Marvin Gaye",
             "Aretha Franklin",
             "Stevie Wonder"
@@ -12712,12 +12669,12 @@
         "image": "https://i.scdn.co/image/ab6761610000e5eb90ddbcd825c7b6142d269e26",
         "related": [
             "Steve Lacy",
-            "TV Girl",
+            "Ice Spice",
             "Kali Uchis",
+            "TV Girl",
             "Clairo",
             "Mitski",
-            "Mac DeMarco",
-            "WILLOW"
+            "Mac DeMarco"
         ]
     },
     "Conor Maynard": {
@@ -12845,8 +12802,7 @@
             "benny blanco",
             "Lil Mosey",
             "blackbear",
-            "Mustard",
-            "The Kid LAROI"
+            "Mustard"
         ]
     },
     "Loud Luxury": {
@@ -12888,7 +12844,8 @@
             "Conan Gray",
             "AJR",
             "Tate McRae",
-            "Ruth B."
+            "Ruth B.",
+            "Sabrina Carpenter"
         ]
     },
     "Niska": {
@@ -12896,8 +12853,8 @@
         "id": "7CUFPNi1TU8RowpnFRSsZV",
         "image": "https://i.scdn.co/image/ab6761610000e5eb536e207c626c48b3c2419212",
         "related": [
-            "Gazo",
-            "Ninho"
+            "Ninho",
+            "Gazo"
         ]
     },
     "Jaden": {
@@ -12984,7 +12941,7 @@
             "\u00d1engo Flow",
             "Arc\u00e1ngel",
             "Plan B",
-            "Lenny Tav\u00e1rez",
+            "Jhayco",
             "Justin Quiles"
         ]
     },
@@ -13022,7 +12979,8 @@
         "id": "4iJLPqClelZOBCBifm8Fzv",
         "image": "https://i.scdn.co/image/ab6761610000e5eb4aac0b9741ad24457ebfee48",
         "related": [
-            "Falling In Reverse"
+            "Falling In Reverse",
+            "Bring Me The Horizon"
         ]
     },
     "Mari Fernandez": {
@@ -13032,9 +12990,8 @@
         "related": [
             "Guilherme & Benuto",
             "Israel & Rodolffo",
-            "Hugo & Guilherme",
             "Gustavo Mioto",
-            "Ana Castela"
+            "Hugo & Guilherme"
         ]
     },
     "Seether": {
@@ -13059,8 +13016,7 @@
             "YG",
             "Yo Gotti",
             "A$AP Ferg",
-            "Rich The Kid",
-            "Ty Dolla $ign"
+            "Rich The Kid"
         ]
     },
     "James TW": {
@@ -13073,8 +13029,7 @@
             "JP Saxe",
             "Dean Lewis",
             "Calum Scott",
-            "Tom Walker",
-            "James Arthur"
+            "Tom Walker"
         ]
     },
     "Thalia": {
@@ -13149,7 +13104,6 @@
         "related": [
             "Tove Lo",
             "Charli XCX",
-            "Years & Years",
             "Major Lazer",
             "Diplo",
             "Lykke Li",
@@ -13212,8 +13166,8 @@
             "Amin\u00e9",
             "bbno$",
             "Joji",
-            "NIKI",
-            "Denzel Curry"
+            "Denzel Curry",
+            "NIKI"
         ]
     },
     "d4vd": {
@@ -13311,8 +13265,8 @@
             "Rich The Kid",
             "Mike WiLL Made-It",
             "Mustard",
-            "Offset",
-            "Quavo"
+            "Quavo",
+            "Offset"
         ]
     },
     "Jordan Davis": {
@@ -13341,7 +13295,8 @@
         "related": [
             "Cage The Elephant",
             "Vance Joy",
-            "Lord Huron"
+            "Lord Huron",
+            "Wallows"
         ]
     },
     "Nipsey Hussle": {
@@ -13355,8 +13310,8 @@
             "Wale",
             "Mustard",
             "Yo Gotti",
-            "Gucci Mane",
             "Pusha T",
+            "Gucci Mane",
             "2 Chainz"
         ]
     },
@@ -13367,7 +13322,8 @@
         "related": [
             "Natalia Lafourcade",
             "Mon Laferte",
-            "Julieta Venegas"
+            "Julieta Venegas",
+            "Jesse & Joy"
         ]
     },
     "Toby Keith": {
@@ -13417,8 +13373,8 @@
             "YNW Melly",
             "NLE Choppa",
             "DaBaby",
-            "Lil Tecca",
             "Roddy Ricch",
+            "Lil Tecca",
             "Rich The Kid",
             "Lil Yachty",
             "Polo G",
@@ -13453,7 +13409,60 @@
             "Piso 21",
             "Sof\u00eda Reyes",
             "Cali Y El Dandee",
-            "Manuel Turizo"
+            "Manuel Turizo",
+            "CNCO"
+        ]
+    },
+    "Fred again..": {
+        "name": "Fred again..",
+        "id": "4oLeXFyACqeem2VImYeBFe",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb69eea22d7189af21794f3043",
+        "related": [
+            "Flume"
+        ]
+    },
+    "Ice Spice": {
+        "name": "Ice Spice",
+        "id": "3LZZPxNDGDFVSIPqf4JuEf",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb03578c92e15089c645b794f5",
+        "related": [
+            "PinkPantheress",
+            "Megan Thee Stallion",
+            "Nicki Minaj",
+            "SZA",
+            "Kali Uchis",
+            "Saweetie",
+            "Steve Lacy"
+        ]
+    },
+    "Gracie Abrams": {
+        "name": "Gracie Abrams",
+        "id": "4tuJ0bMpJh08umKkEXKUI5",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb416bd8a66bfcbc545c2009ac",
+        "related": [
+            "boygenius",
+            "Sabrina Carpenter",
+            "Conan Gray",
+            "Ashe",
+            "Tate McRae",
+            "Clairo",
+            "Sasha Alex Sloan"
+        ]
+    },
+    "Kim Petras": {
+        "name": "Kim Petras",
+        "id": "3Xt3RrJMFv5SZkCfUE8C1J",
+        "image": "https://i.scdn.co/image/ab6761610000e5ebd0aa135d864bdcf4eb112112",
+        "related": [
+            "Charli XCX"
+        ]
+    },
+    "boygenius": {
+        "name": "boygenius",
+        "id": "1hLiboQ98IQWhpKeP9vRFw",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb1a6373c01e8b86e289859f57",
+        "related": [
+            "Gracie Abrams"
         ]
     }
 }

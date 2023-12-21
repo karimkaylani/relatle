@@ -88,7 +88,7 @@ const getConnectedNodes = (graph: {[key: string]: Artist}, start: string): strin
 }
 
 const minDegOfSepReccomended = 3
-const maxDegOfSepReccomended = 10
+const maxDegOfSepReccomended = 7
 const maxDegOfSepWarning = 10
 const maxNumPathsForWarning = 4
 const minNumPathsForReccomended = 7
