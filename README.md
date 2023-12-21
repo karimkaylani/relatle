@@ -8,10 +8,13 @@
 <img src="https://github.com/karimkaylani/relatle/assets/19757304/3c13e045-4907-4ca1-a5ca-80e35f443f8e" alt="home" width="500"/>
 
 ### Path summary and integrated sharing features
-<img src="https://github.com/karimkaylani/relatle/assets/19757304/963cc223-d099-4822-a4f7-3aac9506166a" alt="win" width="500"/>
+<img src="https://github.com/karimkaylani/relatle/assets/19757304/1e79197c-e64f-4500-b4f5-de178aa76259" alt="win" width="500"/>
+
+
+
 
 ### Create custom games to send to your friends
-Utilize graph algorithms to ensure only possible matchups are shown and to issue warnings for difficult matchups
+Utilize graph algorithms to recommend matchups and ensure only possible matchups are shown
 
 
 
@@ -25,6 +28,7 @@ Utilize graph algorithms to ensure only possible matchups are shown and to issue
 
 - Saved progress on device so players can revisit their match at anytime
 - Reset functionality in case players get stuck
+- Hint that allows players to see the related artists of the target artist for a better idea of how to navigate there
 
 ### Technologies used:
 - <a href="https://nextjs.org/">Next.js</a>
