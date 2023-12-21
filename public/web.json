@@ -2852,20 +2852,6 @@
             "Wisin & Yandel"
         ]
     },
-    "Bob Marley": {
-        "name": "Bob Marley",
-        "id": "2QsynagSdAqZj3U9HgDzjD",
-        "image": "https://i.scdn.co/image/b5aae2067db80f694a980e596e7f49618c1206c9",
-        "related": [
-            "Jimi Hendrix",
-            "The Doors",
-            "Bob Dylan",
-            "Marvin Gaye",
-            "Stevie Wonder",
-            "The Rolling Stones",
-            "Led Zeppelin"
-        ]
-    },
     "Joji": {
         "name": "Joji",
         "id": "3MZsBdqDrRTJihTHQrO6Dq",
@@ -8489,18 +8475,6 @@
             "Jaymes Young",
             "Birdy",
             "Lord Huron"
-        ]
-    },
-    "Willow Smith": {
-        "name": "Willow Smith",
-        "id": "3rWZHrfrsPBxVy692yAIxF",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb19d0f58755eaf68afbf677f2",
-        "related": [
-            "Jaden",
-            "Wallows",
-            "Clairo",
-            "Kali Uchis",
-            "PinkPantheress"
         ]
     },
     "Normani": {
