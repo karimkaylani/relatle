@@ -45,17 +45,6 @@ interface SaveProps {
 
 export const phoneMaxWidth = 768;
 
-const getTodaysMatchup = (matchups: {[key: string]: string[]}|null): any => {
-    if (matchups == null) { return }
-    const defaultDate = "11/29/2023"
-    const today = new Date()
-    const month = (today.getMonth() + 1).toString().padStart(2, '0');
-    const day = today.getDate().toString().padStart(2, '0');
-    const year = today.getFullYear();
-    const formattedDate = `${month}/${day}/${year}`;
-    return matchups[formattedDate] ?? matchups[defaultDate]
-}
-
 const Game = (props: GameProps) => {
     const {web, matchups, is_custom} = props
     const [matchup, setMatchup] = useState<any>(null)
@@ -64,6 +53,8 @@ const Game = (props: GameProps) => {
     const [won, setWon] = useState<boolean>(false)
     const [guesses, setGuesses] = useState<number>(0)
     const [resets, setResets] = useState<number>(0)
+
+    const [matchupID, setMatchupID] = useState<number>(-1)
 
     const [winModalOpened, winModalHandlers] = useDisclosure(false)
     const {open: winModalOpen, close: winModalClose} = winModalHandlers
@@ -127,6 +118,20 @@ const Game = (props: GameProps) => {
         if (localSave.won) {
             winModalOpen()
         }
+    }
+
+    const getTodaysMatchup = (matchups: {[key: string]: string[]}|null): any => {
+        if (matchups == null) { return }
+        const defaultDate = "11/29/2023"
+        const today = new Date()
+        const month = (today.getMonth() + 1).toString().padStart(2, '0');
+        const day = today.getDate().toString().padStart(2, '0');
+        const year = today.getFullYear();
+        const formattedDate = `${month}/${day}/${year}`;
+        const matchup = matchups[formattedDate] ?? matchups[defaultDate]
+        const matchupID = Object.keys(matchups).indexOf(formattedDate) + 1
+        setMatchupID(matchupID)
+        return matchup
     }
 
     // When component first mounts, load in localStorage
@@ -277,13 +282,11 @@ const Game = (props: GameProps) => {
                 </Popover.Target>
 
                 <Popover.Dropdown>
-                    {/* <Group justify="center" align="center" gap='8px'> */}
-                        <Text c='gray.8' fw={700} size="md" ta="center">You missed {end}!</Text>
-                        {/* <ArtistInfo artist={web[end]} small={true} is_green={true}/> */}
-                    {/* </Group> */}
+                    <Text c='gray.8' fw={700} size="md" ta="center">You missed {end}!</Text>
                 </Popover.Dropdown>
             </Popover>
-            <GameOver opened={winModalOpened} close={winModalClose} path={path} guesses={guesses} matchup={matchup} resets={resets} web={web} is_custom={is_custom}/>
+            <GameOver opened={winModalOpened} close={winModalClose} path={path} guesses={guesses}
+             matchup={matchup} resets={resets} web={web} is_custom={is_custom} matchupID={matchupID}/>
             <AffixStatus currArtist={currArtist} endArtist={web[end]} guesses={guesses} 
             resets={resets} onTap={scrollToTop} mounted={!won && !entryAffix?.isIntersecting}/>
             <SimpleGrid ref={scope} cols={{ base: 2, xs: 3, sm: 3, md: 4, lg: 5 }}>
@@ -295,7 +298,7 @@ const Game = (props: GameProps) => {
             {!won && <Stack align='center' justify='center'>
                 <Text ta="center" c='gray.1' size="md">Feeling stuck?</Text>
                 <Group justify='center' align='center'>
-                    <Reset resetHandler={(won || currArtist.name === start) ? resetHandler : clickResetHandler}/>
+                    {start !== currArtist.name && <Reset resetHandler={(won || currArtist.name === start) ? resetHandler : clickResetHandler}/>}
                     <Hint web={web} endArtist={web[end]} path={path}/>
                 </Group>
             </Stack>}

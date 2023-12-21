@@ -8,11 +8,12 @@ export interface ShareResultsProps {
     guesses: number,
     matchup: string[],
     resets: number,
-    is_custom: boolean
+    is_custom: boolean,
+    matchupID: number
 }
 
 const ShareResults = (props: ShareResultsProps) => {
-    const {path, guesses, matchup, resets, is_custom} = props
+    const {path, guesses, matchup, resets, is_custom, matchupID} = props
     const [start, end] = matchup
 
     const generateEmojiLine = (): string => {
@@ -28,13 +29,13 @@ const ShareResults = (props: ShareResultsProps) => {
         return res
     }
     const generateShareText = (): string => { 
-        const today = !is_custom ? new Date().toLocaleDateString('en-US', { month: '2-digit', day: '2-digit' }) : "(Custom)"
+        const today = !is_custom ? `#${matchupID}` : "(custom)"
         let url = "https://relatle.io"
         if (is_custom) {
             url = generateCustomGameURL(start, end)
         }
     
-        let text = `Relatle ${today}
+        let text = `relatle ${today}
 ${start} → ${end}
 ${generateEmojiLine()}
 Guesses: ${guesses}

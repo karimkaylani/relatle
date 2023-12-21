@@ -21,7 +21,8 @@ export interface GameOverProps {
     matchup: string[],
     resets: number,
     web: {[key: string]: Artist},
-    is_custom: boolean
+    is_custom: boolean,
+    matchupID: number
 }
 
 const getMinPath = (web: {[key: string]: Artist}, start: string, end: string): string[] => {
@@ -49,7 +50,7 @@ const getMinPath = (web: {[key: string]: Artist}, start: string, end: string): s
 }
 
 const GameOver = (props: GameOverProps) => {
-    const {opened, close, path, guesses, matchup, resets, web, is_custom} = props
+    const {opened, close, path, guesses, matchup, resets, web, is_custom, matchupID} = props
     const [start, end] = matchup
     const [minPathOpened, { toggle: toggleMinPath }] = useDisclosure(false);
 
@@ -103,7 +104,8 @@ const GameOver = (props: GameOverProps) => {
         <ScrollablePath matchup={matchup} web={web} path={path}></ScrollablePath>
         <Group justify="center">
           <SharePath path={path}/>
-          <ShareResults path={path} guesses={guesses} matchup={matchup} resets={resets} is_custom={is_custom}/>
+          <ShareResults path={path} guesses={guesses} matchup={matchup}
+          matchupID={matchupID} resets={resets} is_custom={is_custom}/>
         </Group>
         <Group align='center' justify='center' gap="sm">
           <Text c="gray.1" size="sm" ta="center">
