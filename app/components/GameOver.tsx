@@ -22,7 +22,8 @@ export interface GameOverProps {
     resets: number,
     web: {[key: string]: Artist},
     is_custom: boolean,
-    matchupID: number
+    matchupID: number,
+    todayData?: [string, number][]|null
 }
 
 const getMinPath = (web: {[key: string]: Artist}, start: string, end: string): string[] => {
@@ -49,8 +50,8 @@ const getMinPath = (web: {[key: string]: Artist}, start: string, end: string): s
   return [];
 }
 
-const GameOver = (props: GameOverProps) => {
-    const {opened, close, path, guesses, matchup, resets, web, is_custom, matchupID} = props
+const GameOver = ({opened, close, path, guesses, matchup,
+                 resets, web, is_custom, matchupID, todayData=null}: GameOverProps) => {
     const [start, end] = matchup
     const [minPathOpened, { toggle: toggleMinPath }] = useDisclosure(false);
 

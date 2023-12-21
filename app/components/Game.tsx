@@ -18,7 +18,6 @@ import CustomGameModal from './CustomGameModal'
 import AffixStatus from './AffixStatus'
 import CoffeeButton from './CoffeeButton'
 import { useAnimate } from 'framer-motion'
-import ArtistInfo from './ArtistInfo'
 import Hint from './Hint'
 
 export interface Artist {
