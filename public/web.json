@@ -10,8 +10,8 @@
             "DJ Khaled",
             "Travis Scott",
             "Kanye West",
-            "Kendrick Lamar",
             "Metro Boomin",
+            "Kendrick Lamar",
             "Lil Baby",
             "Big Sean"
         ]
@@ -992,8 +992,8 @@
             "Alesso",
             "Calvin Harris",
             "David Guetta",
-            "Hardwell",
             "Kygo",
+            "Hardwell",
             "Axwell /\\ Ingrosso",
             "Zedd",
             "Ti\u00ebsto"
@@ -1226,8 +1226,8 @@
             "Mora",
             "Eladio Carrion",
             "Bryant Myers",
-            "Sech",
             "Quevedo",
+            "Sech",
             "Rauw Alejandro",
             "Dalex",
             "Jay Wheeler",
@@ -1708,8 +1708,8 @@
         "id": "5YGY8feqx7naU7z4HrwZM6",
         "image": "https://i.scdn.co/image/ab6761610000e5ebb5af3b38f053486ab0784dee",
         "related": [
-            "Kesha",
             "Demi Lovato",
+            "Kesha",
             "Britney Spears",
             "Avril Lavigne",
             "Christina Aguilera",
@@ -2137,7 +2137,8 @@
             "John Lennon",
             "David Bowie",
             "Bee Gees",
-            "Fleetwood Mac"
+            "Fleetwood Mac",
+            "Phil Collins"
         ]
     },
     "Don Omar": {
@@ -3315,11 +3316,11 @@
             "James Bay",
             "Noah Kahan",
             "Lord Huron",
+            "Phoebe Bridgers",
             "Of Monsters and Men",
             "Florence + The Machine",
             "Bon Iver",
-            "Lorde",
-            "Mumford & Sons"
+            "Lorde"
         ]
     },
     "YG": {
@@ -3838,8 +3839,8 @@
             "Becky G",
             "Rauw Alejandro",
             "KAROL G",
-            "Quevedo",
             "TINI",
+            "Quevedo",
             "J Balvin",
             "Nicki Nicole",
             "Manuel Turizo"
@@ -4023,8 +4024,8 @@
             "La Adictiva",
             "Carin Leon",
             "Banda El Recodo",
-            "Gerardo Ortiz",
             "La Arrolladora Banda El Lim\u00f3n De Rene Camacho",
+            "Gerardo Ortiz",
             "Grupo Firme",
             "Vicente Fern\u00e1ndez"
         ]
@@ -4067,14 +4068,14 @@
         "related": [
             "Charli XCX",
             "Tove Lo",
+            "Phoebe Bridgers",
             "Florence + The Machine",
             "Troye Sivan",
             "Hozier",
             "Kesha",
             "WILLOW",
             "M\u00d8",
-            "MARINA",
-            "Lily Allen"
+            "MARINA"
         ]
     },
     "Don Toliver": {
@@ -4123,8 +4124,8 @@
             "Offset",
             "Trippie Redd",
             "Lil Mosey",
-            "Lil Yachty",
             "Quavo",
+            "Lil Yachty",
             "Migos"
         ]
     },
@@ -4443,6 +4444,7 @@
         "image": "https://i.scdn.co/image/ab6761610000e5eb89348336354096fd4e36ca73",
         "related": [
             "Wallows",
+            "Phoebe Bridgers",
             "Troye Sivan",
             "Clairo",
             "LANY",
@@ -4450,8 +4452,7 @@
             "Paramore",
             "Cigarettes After Sex",
             "Two Door Cinema Club",
-            "Lorde",
-            "Hozier"
+            "Lorde"
         ]
     },
     "Tame Impala": {
@@ -4463,12 +4464,12 @@
             "Mac DeMarco",
             "The Strokes",
             "Cage The Elephant",
+            "Men I Trust",
             "The Smiths",
             "alt-J",
             "Steve Lacy",
             "Radiohead",
-            "Clairo",
-            "Childish Gambino"
+            "Clairo"
         ]
     },
     "Wisin & Yandel": {
@@ -4578,8 +4579,8 @@
             "La Arrolladora Banda El Lim\u00f3n De Rene Camacho",
             "La Adictiva",
             "Gerardo Ortiz",
-            "Carin Leon",
             "Banda El Recodo",
+            "Carin Leon",
             "Calibre 50",
             "Grupo Firme"
         ]
@@ -4801,9 +4802,9 @@
             "Florence + The Machine",
             "Bon Iver",
             "Kings of Leon",
+            "Young the Giant",
             "fun.",
-            "The Black Keys",
-            "Bastille"
+            "The Black Keys"
         ]
     },
     "Timbaland": {
@@ -4883,11 +4884,11 @@
             "Mumford & Sons",
             "Hozier",
             "Lord Huron",
+            "Young the Giant",
             "Bon Iver",
             "Kodaline",
             "Passenger",
-            "James Bay",
-            "Noah Kahan"
+            "GROUPLOVE"
         ]
     },
     "Niall Horan": {
@@ -5149,7 +5150,9 @@
             "Flume",
             "MGMT",
             "B\u00d8RNS",
-            "Tame Impala"
+            "GROUPLOVE",
+            "Tame Impala",
+            "Young the Giant"
         ]
     },
     "Rammstein": {
@@ -5266,8 +5269,8 @@
             "Juanes",
             "Sin Bandera",
             "La Oreja de Van Gogh",
-            "Chayanne",
             "Pablo Albor\u00e1n",
+            "Chayanne",
             "Camila",
             "Cristian Castro"
         ]
@@ -5343,8 +5346,8 @@
             "WILLOW",
             "Charli XCX",
             "Iggy Azalea",
-            "Kesha",
-            "Lorde"
+            "Lorde",
+            "Kesha"
         ]
     },
     "Afrojack": {
@@ -5370,6 +5373,7 @@
             "Vampire Weekend",
             "Arcade Fire",
             "Two Door Cinema Club",
+            "GROUPLOVE",
             "Franz Ferdinand",
             "The Strokes",
             "Cage The Elephant"
@@ -5586,8 +5590,8 @@
             "Luan Santana",
             "Mar\u00edlia Mendon\u00e7a",
             "Wesley Safad\u00e3o",
-            "Z\u00e9 Neto & Cristiano",
-            "Israel & Rodolffo"
+            "Israel & Rodolffo",
+            "Z\u00e9 Neto & Cristiano"
         ]
     },
     "Aventura": {
@@ -5644,7 +5648,7 @@
             "Kodaline",
             "Passenger",
             "Lord Huron",
-            "Milky Chance"
+            "Young the Giant"
         ]
     },
     "YNW Melly": {
@@ -5903,7 +5907,8 @@
             "Eladio Carrion",
             "Nicki Nicole",
             "KHEA",
-            "Jhayco"
+            "Jhayco",
+            "Feid"
         ]
     },
     "Annie Lennox": {
@@ -6165,9 +6170,9 @@
             "Cage The Elephant",
             "Two Door Cinema Club",
             "MGMT",
+            "GROUPLOVE",
             "Of Monsters and Men",
-            "Flume",
-            "Angus & Julia Stone"
+            "Flume"
         ]
     },
     "C\u00e9line Dion": {
@@ -6415,15 +6420,15 @@
         "image": "https://i.scdn.co/image/ab6761610000e5eb7d994f7e137c10249de19455",
         "related": [
             "MGMT",
+            "GROUPLOVE",
             "The Strokes",
+            "Young the Giant",
             "The Black Keys",
             "Two Door Cinema Club",
             "Wallows",
             "The White Stripes",
             "The Kooks",
-            "Vampire Weekend",
-            "Tame Impala",
-            "alt-J"
+            "Vampire Weekend"
         ]
     },
     "Iggy Azalea": {
@@ -6990,13 +6995,13 @@
             "Two Door Cinema Club",
             "MGMT",
             "Capital Cities",
+            "GROUPLOVE",
+            "Young the Giant",
             "Empire of the Sun",
             "Cage The Elephant",
             "Vampire Weekend",
             "The Kooks",
-            "The Strokes",
-            "Of Monsters and Men",
-            "The Black Keys"
+            "The Strokes"
         ]
     },
     "Clairo": {
@@ -7005,7 +7010,9 @@
         "image": "https://i.scdn.co/image/ab6761610000e5eb370f4e30deba6da178db36fe",
         "related": [
             "Wallows",
+            "Men I Trust",
             "girl in red",
+            "Phoebe Bridgers",
             "Beach Bunny",
             "Mac DeMarco",
             "Mitski",
@@ -7219,7 +7226,8 @@
             "Genesis",
             "Supertramp",
             "Sting",
-            "U2"
+            "U2",
+            "The Who"
         ]
     },
     "Iron Maiden": {
@@ -7349,6 +7357,7 @@
             "Kali Uchis",
             "Frank Ocean",
             "Clairo",
+            "Men I Trust",
             "Daniel Caesar"
         ]
     },
@@ -7561,8 +7570,8 @@
         "image": "https://i.scdn.co/image/ab6761610000e5ebbe5806798d93a407f1f21cfe",
         "related": [
             "A7S",
-            "Becky Hill",
             "Topic",
+            "Becky Hill",
             "MNEK",
             "Goodboys",
             "Jax Jones",
@@ -7819,7 +7828,7 @@
             "Ti\u00ebsto",
             "Dimitri Vegas & Like Mike",
             "deadmau5",
-            "Galantis"
+            "Don Diablo"
         ]
     },
     "Weezer": {
@@ -7959,8 +7968,8 @@
         "image": "https://i.scdn.co/image/ab6761610000e5eb4a61c7615c8125e832ffc32c",
         "related": [
             "MAGIC!",
-            "DNCE",
             "OMI",
+            "DNCE",
             "Jason Mraz",
             "Pharrell Williams",
             "John Legend",
@@ -8082,7 +8091,9 @@
             "Cavetown",
             "Clairo",
             "MARINA",
+            "Laufey",
             "girl in red",
+            "Phoebe Bridgers",
             "Beach Bunny"
         ]
     },
@@ -8158,9 +8169,9 @@
             "Mitski",
             "girl in red",
             "Chase Atlantic",
+            "Men I Trust",
             "The Smiths",
-            "Conan Gray",
-            "Steve Lacy"
+            "Conan Gray"
         ]
     },
     "Jos\u00e9 Jos\u00e9": {
@@ -8203,7 +8214,8 @@
             "Duran Duran",
             "Tina Turner",
             "George Michael",
-            "Sting"
+            "Sting",
+            "Rod Stewart"
         ]
     },
     "Rascal Flatts": {
@@ -8941,7 +8953,8 @@
             "Supertramp",
             "George Michael",
             "Dire Straits",
-            "R.E.M."
+            "R.E.M.",
+            "U2"
         ]
     },
     "The White Stripes": {
@@ -9180,6 +9193,8 @@
         "related": [
             "Neon Trees",
             "American Authors",
+            "Young the Giant",
+            "GROUPLOVE",
             "X Ambassadors",
             "Bastille",
             "Of Monsters and Men"
@@ -9242,12 +9257,13 @@
             "Mumford & Sons",
             "The Lumineers",
             "Vance Joy",
+            "Young the Giant",
+            "GROUPLOVE",
             "Bastille",
             "Florence + The Machine",
             "WALK THE MOON",
             "Two Door Cinema Club",
-            "Ben Howard",
-            "Neon Trees"
+            "Ben Howard"
         ]
     },
     "Danna Paola": {
@@ -9375,6 +9391,7 @@
             "The Lumineers",
             "Vance Joy",
             "Bon Iver",
+            "Young the Giant",
             "Hozier",
             "Sufjan Stevens"
         ]
@@ -9392,8 +9409,8 @@
             "Sigala",
             "Mike Posner",
             "Bastille",
-            "Mark Ronson",
-            "Galantis"
+            "Galantis",
+            "Mark Ronson"
         ]
     },
     "Bing Crosby": {
@@ -9512,7 +9529,7 @@
             "Joey Bada$$",
             "Playboi Carti",
             "Metro Boomin",
-            "Cordae"
+            "MF DOOM"
         ]
     },
     "Kacey Musgraves": {
@@ -9521,6 +9538,7 @@
         "image": "https://i.scdn.co/image/ab6761610000e5ebd123e4c884d1a5e2edff1895",
         "related": [
             "Maren Morris",
+            "Maggie Rogers",
             "Kelsea Ballerini",
             "Miranda Lambert",
             "Lennon Stella"
@@ -9888,11 +9906,14 @@
         "id": "35l9BRT7MXmM8bv2WDQiyB",
         "image": "https://i.scdn.co/image/ab6761610000e5eb9d6d0ba276987f19641c27de",
         "related": [
+            "Laufey",
             "Clairo",
             "PinkPantheress",
+            "Men I Trust",
             "Mitski",
             "Beach Bunny",
             "TV Girl",
+            "Phoebe Bridgers",
             "Cavetown"
         ]
     },
@@ -10125,6 +10146,7 @@
             "JP Saxe",
             "Sasha Alex Sloan",
             "Kacey Musgraves",
+            "Lizzy McAlpine",
             "Maren Morris"
         ]
     },
@@ -10220,7 +10242,8 @@
         "id": "4MXUO7sVCaFgFjoTI5ox5c",
         "image": "https://i.scdn.co/image/ab6761610000e5ebb80dd6b23c5c04d62d9aa0c6",
         "related": [
-            "Bon Iver"
+            "Bon Iver",
+            "Phoebe Bridgers"
         ]
     },
     "Surfaces": {
@@ -10727,8 +10750,8 @@
             "Yusuf / Cat Stevens",
             "Aretha Franklin",
             "Annie Lennox",
-            "The Cranberries",
             "Otis Redding",
+            "The Cranberries",
             "Bill Withers",
             "Bob Dylan"
         ]
@@ -10764,6 +10787,8 @@
         "id": "1KP6TWI40m7p3QBTU6u2xo",
         "image": "https://i.scdn.co/image/ab6761610000e5ebd7958f2550c9fa80ad9028e2",
         "related": [
+            "GROUPLOVE",
+            "Young the Giant",
             "Cage The Elephant",
             "Vance Joy",
             "Lord Huron",
@@ -10865,6 +10890,7 @@
             "Gracie Abrams",
             "Conan Gray",
             "Louis Tomlinson",
+            "Lizzy McAlpine",
             "Niall Horan",
             "Tate McRae",
             "Sasha Alex Sloan",
@@ -10879,6 +10905,7 @@
         "image": "https://i.scdn.co/image/ab6761610000e5eb0c56e1a2c14efda30c57b98e",
         "related": [
             "Ashe",
+            "Lizzy McAlpine",
             "Jeremy Zucker",
             "Sasha Alex Sloan",
             "Wallows",
@@ -10886,8 +10913,7 @@
             "Conan Gray",
             "Gracie Abrams",
             "JP Saxe",
-            "Troye Sivan",
-            "Alec Benjamin"
+            "Troye Sivan"
         ]
     },
     "Purple Disco Machine": {
@@ -11007,9 +11033,11 @@
             "Empire of the Sun",
             "Two Door Cinema Club",
             "John Newman",
+            "GROUPLOVE",
             "MGMT",
             "WALK THE MOON",
-            "Icona Pop"
+            "Icona Pop",
+            "Young the Giant"
         ]
     },
     "Neon Trees": {
@@ -11019,7 +11047,9 @@
         "related": [
             "Plain White T's",
             "WALK THE MOON",
+            "GROUPLOVE",
             "American Authors",
+            "Young the Giant",
             "fun.",
             "The Fray"
         ]
@@ -11113,6 +11143,7 @@
         "related": [
             "d4vd",
             "JVKE",
+            "Lizzy McAlpine",
             "Conan Gray",
             "Ruth B.",
             "Ashe",
@@ -11211,8 +11242,8 @@
         "related": [
             "Bullet For My Valentine",
             "Breaking Benjamin",
-            "Papa Roach",
             "Rise Against",
+            "Papa Roach",
             "Sum 41",
             "Three Days Grace",
             "Muse",
@@ -11238,7 +11269,9 @@
         "related": [
             "The Kooks",
             "Vampire Weekend",
+            "GROUPLOVE",
             "MGMT",
+            "Young the Giant",
             "Empire of the Sun",
             "Franz Ferdinand"
         ]
@@ -11301,6 +11334,7 @@
         "related": [
             "Two Door Cinema Club",
             "Arcade Fire",
+            "GROUPLOVE",
             "MGMT"
         ]
     },
@@ -11321,6 +11355,8 @@
         "image": "https://i.scdn.co/image/ab6761610000e5ebe20c61457ea3c2fdef20c326",
         "related": [
             "alt-J",
+            "GROUPLOVE",
+            "Young the Giant",
             "Arcade Fire",
             "The Black Keys"
         ]
@@ -11343,11 +11379,12 @@
             "M\u00f6tley Cr\u00fce"
         ]
     },
-    "Grouplove": {
-        "name": "Grouplove",
+    "GROUPLOVE": {
+        "name": "GROUPLOVE",
         "id": "3kVUvbeRdcrqQ3oHk5hPdx",
         "image": "https://i.scdn.co/image/ab6761610000e5eb212e97916d72380d77a9db17",
         "related": [
+            "Young the Giant",
             "Vampire Weekend",
             "Neon Trees",
             "Two Door Cinema Club"
@@ -11420,7 +11457,8 @@
             "Bob Dylan",
             "Paul Simon",
             "Van Morrison",
-            "George Harrison"
+            "George Harrison",
+            "Yusuf / Cat Stevens"
         ]
     },
     "Beyonc\u00e9": {
@@ -11611,8 +11649,8 @@
             "Marilyn Manson",
             "Rage Against The Machine",
             "Papa Roach",
-            "Bullet For My Valentine",
             "Megadeth",
+            "Bullet For My Valentine",
             "Audioslave"
         ]
     },
@@ -11768,6 +11806,7 @@
         "related": [
             "TV Girl",
             "Steve Lacy",
+            "Men I Trust",
             "Clairo",
             "Tame Impala",
             "The Smiths",
@@ -12091,7 +12130,7 @@
             "Wallows",
             "TV Girl",
             "The Neighbourhood",
-            "MARINA"
+            "Phoebe Bridgers"
         ]
     },
     "Hillsong UNITED": {
@@ -12213,9 +12252,11 @@
         "image": "https://i.scdn.co/image/ab6761610000e5eb7bfba04955b666b8b8219541",
         "related": [
             "Zach Bryan",
+            "Lizzy McAlpine",
             "Hozier",
             "The Lumineers",
             "boygenius",
+            "Phoebe Bridgers",
             "Gracie Abrams",
             "Quinn XCII"
         ]
@@ -12236,8 +12277,8 @@
         "related": [
             "Capital Bra",
             "Kontra K",
-            "RAF Camora",
             "Sido",
+            "RAF Camora",
             "Bonez MC",
             "Ufo361",
             "Gzuz"
@@ -12354,8 +12395,8 @@
             "La Arrolladora Banda El Lim\u00f3n De Rene Camacho",
             "La Adictiva",
             "Gerardo Ortiz",
-            "Carin Leon",
             "Banda El Recodo",
+            "Carin Leon",
             "Calibre 50",
             "Grupo Firme"
         ]
@@ -12673,8 +12714,10 @@
             "Kali Uchis",
             "TV Girl",
             "Clairo",
+            "Men I Trust",
             "Mitski",
-            "Mac DeMarco"
+            "Mac DeMarco",
+            "Laufey"
         ]
     },
     "Conor Maynard": {
@@ -12816,8 +12859,8 @@
             "Goodboys",
             "Gryffin",
             "Cheat Codes",
-            "Sigala",
             "Topic",
+            "Sigala",
             "Joel Corry",
             "MEDUZA"
         ]
@@ -12928,7 +12971,8 @@
             "MGMT",
             "Capital Cities",
             "Two Door Cinema Club",
-            "M83"
+            "M83",
+            "GROUPLOVE"
         ]
     },
     "Ryan Castro": {
@@ -13176,6 +13220,7 @@
         "image": "https://i.scdn.co/image/ab6761610000e5ebad447187a35f422307e88ad3",
         "related": [
             "Steve Lacy",
+            "Laufey",
             "TV Girl",
             "PinkPantheress",
             "Mac DeMarco",
@@ -13293,6 +13338,8 @@
         "id": "1KP6TWI40m7p3QBTU6u2xo",
         "image": "https://i.scdn.co/image/ab6761610000e5ebd7958f2550c9fa80ad9028e2",
         "related": [
+            "GROUPLOVE",
+            "Young the Giant",
             "Cage The Elephant",
             "Vance Joy",
             "Lord Huron",
@@ -13311,8 +13358,7 @@
             "Mustard",
             "Yo Gotti",
             "Pusha T",
-            "Gucci Mane",
-            "2 Chainz"
+            "Gucci Mane"
         ]
     },
     "Carla Morrison": {
@@ -13432,7 +13478,8 @@
             "SZA",
             "Kali Uchis",
             "Saweetie",
-            "Steve Lacy"
+            "Steve Lacy",
+            "Cardi B"
         ]
     },
     "Gracie Abrams": {
@@ -13440,6 +13487,8 @@
         "id": "4tuJ0bMpJh08umKkEXKUI5",
         "image": "https://i.scdn.co/image/ab6761610000e5eb416bd8a66bfcbc545c2009ac",
         "related": [
+            "Lizzy McAlpine",
+            "Phoebe Bridgers",
             "boygenius",
             "Sabrina Carpenter",
             "Conan Gray",
@@ -13462,7 +13511,77 @@
         "id": "1hLiboQ98IQWhpKeP9vRFw",
         "image": "https://i.scdn.co/image/ab6761610000e5eb1a6373c01e8b86e289859f57",
         "related": [
+            "Phoebe Bridgers",
+            "Lizzy McAlpine",
             "Gracie Abrams"
+        ]
+    },
+    "Laufey": {
+        "name": "Laufey",
+        "id": "7gW0r5CkdEUMm42w9XpyZO",
+        "image": "https://i.scdn.co/image/ab6761610000e5eba1d45585ab07d4bd7fe53351",
+        "related": [
+            "Mitski",
+            "Clairo",
+            "TV Girl",
+            "PinkPantheress",
+            "Men I Trust",
+            "d4vd",
+            "Mac DeMarco",
+            "Steve Lacy"
+        ]
+    },
+    "Phoebe Bridgers": {
+        "name": "Phoebe Bridgers",
+        "id": "1r1uxoy19fzMxunt3ONAkG",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb626686e362d30246e816cc5b",
+        "related": [
+            "boygenius",
+            "Lizzy McAlpine",
+            "Gracie Abrams",
+            "Clairo"
+        ]
+    },
+    "Lizzy McAlpine": {
+        "name": "Lizzy McAlpine",
+        "id": "1GmsPCcpKgF9OhlNXjOsbS",
+        "image": "https://i.scdn.co/image/ab6761610000e5ebb10e2b618880f429a3967185",
+        "related": [
+            "Gracie Abrams",
+            "boygenius",
+            "Phoebe Bridgers",
+            "Noah Kahan"
+        ]
+    },
+    "Men I Trust": {
+        "name": "Men I Trust",
+        "id": "3zmfs9cQwzJl575W1ZYXeT",
+        "image": "https://i.scdn.co/image/ab6761610000e5ebfd30ebd7e80dad6b2383aab0",
+        "related": [
+            "Clairo",
+            "Mac DeMarco"
+        ]
+    },
+    "Maggie Rogers": {
+        "name": "Maggie Rogers",
+        "id": "4NZvixzsSefsNiIqXn0NDe",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb2bb7d974821e5448d65842d9",
+        "related": [
+            "Kacey Musgraves",
+            "Phoebe Bridgers",
+            "boygenius"
+        ]
+    },
+    "Young the Giant": {
+        "name": "Young the Giant",
+        "id": "4j56EQDQu5XnL7R3E9iFJT",
+        "image": "https://i.scdn.co/image/ab6761610000e5ebf29db93f7f6a72cbf5f96b59",
+        "related": [
+            "GROUPLOVE",
+            "WALK THE MOON",
+            "Neon Trees",
+            "Of Monsters and Men",
+            "Vampire Weekend"
         ]
     }
 }
