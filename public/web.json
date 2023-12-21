@@ -3349,11 +3349,8 @@
         "image": "https://i.scdn.co/image/ab6761610000e5ebaa2d9bd207a62adc3edf6631",
         "related": [
             "Thomas Rhett",
-            "Dierks Bentley",
             "Luke Bryan",
-            "Old Dominion",
-            "Jason Aldean",
-            "Jon Pardi"
+            "Jason Aldean"
         ]
     },
     "Green Day": {
@@ -3806,14 +3803,11 @@
         "image": "https://i.scdn.co/image/ab6761610000e5eb21ed0100a3a4e5aa3c57f6dd",
         "related": [
             "Luke Combs",
-            "Jordan Davis",
-            "Jon Pardi",
             "Zach Bryan",
             "Kane Brown",
             "Jason Aldean",
             "Thomas Rhett",
             "Luke Bryan",
-            "Old Dominion",
             "Florida Georgia Line"
         ]
     },
@@ -3856,13 +3850,10 @@
         "related": [
             "Kane Brown",
             "Morgan Wallen",
-            "Jordan Davis",
-            "Jon Pardi",
             "Luke Bryan",
             "Thomas Rhett",
             "Jason Aldean",
             "Florida Georgia Line",
-            "Old Dominion",
             "Dan + Shay"
         ]
     },
@@ -4754,11 +4745,9 @@
         "id": "0BvkDsjIUla7X0k6CSWh1I",
         "image": "https://i.scdn.co/image/ab6761610000e5ebbda852a1b1ed76e2e731955f",
         "related": [
-            "Dierks Bentley",
             "Jason Aldean",
             "Blake Shelton",
             "Florida Georgia Line",
-            "Eric Church",
             "Thomas Rhett",
             "Tim McGraw",
             "Rascal Flatts"
@@ -5486,10 +5475,7 @@
         "id": "6x2LnllRG5uGarZMsD4iO8",
         "image": "https://i.scdn.co/image/ab6761610000e5eb0096cad96e445e8adc22f5e7",
         "related": [
-            "Old Dominion",
             "Florida Georgia Line",
-            "Dierks Bentley",
-            "Jon Pardi",
             "Dan + Shay"
         ]
     },
@@ -5531,10 +5517,8 @@
         "related": [
             "Dan + Shay",
             "Thomas Rhett",
-            "Old Dominion",
             "Florida Georgia Line",
             "Brett Young",
-            "Jordan Davis",
             "Luke Bryan"
         ]
     },
@@ -5919,8 +5903,6 @@
         "id": "3FfvYsEGaIb52QPXhg4DcH",
         "image": "https://i.scdn.co/image/ab6761610000e5ebf21a9cd8f7d9c8203ad8c370",
         "related": [
-            "Dierks Bentley",
-            "Eric Church",
             "Blake Shelton",
             "Luke Bryan",
             "Tim McGraw",
@@ -6123,7 +6105,6 @@
         "id": "7z5WFjZAIYejWy0NI5lv4T",
         "image": "https://i.scdn.co/image/ab6761610000e5eb2447af13925471ebb858bfe1",
         "related": [
-            "Old Dominion",
             "Brett Young",
             "Thomas Rhett",
             "Kane Brown",
@@ -6243,14 +6224,11 @@
         "id": "4YLtscXsxbVgi031ovDDdh",
         "image": "https://i.scdn.co/image/ab6761610000e5eba0c87c8f329b436eac8b9784",
         "related": [
-            "Eric Church",
             "Zac Brown Band",
             "Jason Aldean",
             "Kenny Chesney",
             "Luke Combs",
-            "Dierks Bentley",
-            "Blake Shelton",
-            "Jon Pardi"
+            "Blake Shelton"
         ]
     },
     "Rod Stewart": {
@@ -6722,8 +6700,7 @@
         "related": [
             "Kelsea Ballerini",
             "Kacey Musgraves",
-            "Miranda Lambert",
-            "Old Dominion"
+            "Miranda Lambert"
         ]
     },
     "Plan B": {
@@ -7103,14 +7080,12 @@
         "id": "1UTPBmNbXNTittyMJrNkvw",
         "image": "https://i.scdn.co/image/ab6761610000e5ebe2cff2190102be30cfb8bfe5",
         "related": [
-            "Dierks Bentley",
             "Tim McGraw",
             "Keith Urban",
             "Jason Aldean",
             "Rascal Flatts",
             "Toby Keith",
-            "Luke Bryan",
-            "Eric Church"
+            "Luke Bryan"
         ]
     },
     "Sam Hunt": {
@@ -7118,15 +7093,12 @@
         "id": "2kucQ9jQwuD8jWdtR9Ef38",
         "image": "https://i.scdn.co/image/ab6761610000e5ebcf3c2fdcf8db021111d6da29",
         "related": [
-            "Old Dominion",
             "Brett Young",
             "Thomas Rhett",
             "Florida Georgia Line",
             "Kelsea Ballerini",
             "Dan + Shay",
-            "Dierks Bentley",
-            "Kane Brown",
-            "Jordan Davis"
+            "Kane Brown"
         ]
     },
     "Dimitri Vegas & Like Mike": {
@@ -7322,9 +7294,7 @@
         "id": "6yJCxee7QumYr820xdIsjo",
         "image": "https://i.scdn.co/image/ab6761610000e5eb8b236b26cb2d93cfc9f1ada1",
         "related": [
-            "Dierks Bentley",
             "Kenny Chesney",
-            "Eric Church",
             "Toby Keith",
             "Rascal Flatts",
             "Tim McGraw"
@@ -7573,14 +7543,6 @@
         "related": [
             "Missy Elliott",
             "Destiny's Child"
-        ]
-    },
-    "Eric Church": {
-        "name": "Eric Church",
-        "id": "2IvkS5MXK0vPGnwyJsrEyV",
-        "image": "https://i.scdn.co/image/ab6761610000e5ebd34bf268bd88477f7f192100",
-        "related": [
-            "Dierks Bentley"
         ]
     },
     "Matoma": {
@@ -7851,7 +7813,6 @@
         "related": [
             "Toby Keith",
             "Kenny Chesney",
-            "Dierks Bentley",
             "Keith Urban",
             "Rascal Flatts"
         ]
@@ -8015,8 +7976,6 @@
         "related": [
             "Toby Keith",
             "Tim McGraw",
-            "Dierks Bentley",
-            "Eric Church",
             "Keith Urban",
             "Blake Shelton",
             "Zac Brown Band"
@@ -8210,8 +8169,7 @@
         "image": "https://i.scdn.co/image/ab6761610000e5ebb2423171f56fa27d89e26207",
         "related": [
             "Lady A",
-            "Keith Urban",
-            "Dierks Bentley"
+            "Keith Urban"
         ]
     },
     "Luan Santana": {
@@ -8258,7 +8216,6 @@
         "image": "https://i.scdn.co/image/ab6761610000e5ebc164f5c7bc7d9e4a5d0fdd6e",
         "related": [
             "Rascal Flatts",
-            "Dierks Bentley",
             "Tim McGraw",
             "Lady A",
             "Blake Shelton",
@@ -8274,8 +8231,7 @@
             "Lady A",
             "Rascal Flatts",
             "Keith Urban",
-            "Tim McGraw",
-            "Dierks Bentley"
+            "Tim McGraw"
         ]
     },
     "Fergie": {
@@ -9569,8 +9525,7 @@
         "image": "https://i.scdn.co/image/ab6761610000e5eb65a893418ccd0bd69f06cfef",
         "related": [
             "Carrie Underwood",
-            "Lady A",
-            "Dierks Bentley"
+            "Lady A"
         ]
     },
     "La Adictiva": {
@@ -9607,14 +9562,6 @@
             "Casper Magico",
             "Cosculluela",
             "DJ Luian"
-        ]
-    },
-    "Dierks Bentley": {
-        "name": "Dierks Bentley",
-        "id": "7x8nK0m0cP2ksQf0mjWdPS",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb188cca58cb49cd4cb849d48b",
-        "related": [
-            "Eric Church"
         ]
     },
     "3 Doors Down": {
@@ -9811,7 +9758,6 @@
         "image": "https://i.scdn.co/image/ab6761610000e5eb36ae8a2a4ffc94337a2d3b7b",
         "related": [
             "Maren Morris",
-            "Old Dominion",
             "Sam Hunt"
         ]
     },
@@ -9889,15 +9835,6 @@
             "TV Girl",
             "Phoebe Bridgers",
             "Cavetown"
-        ]
-    },
-    "Jon Pardi": {
-        "name": "Jon Pardi",
-        "id": "4MoAOfV4ROWofLG3a3hhBN",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb9ab434ef1b8d8aff5fce625d",
-        "related": [
-            "Old Dominion",
-            "Dierks Bentley"
         ]
     },
     "Owl City": {
@@ -10735,7 +10672,6 @@
         "id": "0fiWOxhsBsQQvFDtxUQWo0",
         "image": "https://i.scdn.co/image/ab6761610000e5ebe515e1e8974c5d7a6be2be33",
         "related": [
-            "Old Dominion",
             "Dan + Shay"
         ]
     },
@@ -11262,14 +11198,6 @@
             "Plain White T's",
             "Leona Lewis",
             "Train"
-        ]
-    },
-    "Old Dominion": {
-        "name": "Old Dominion",
-        "id": "6y8XlgIV8BLlIg1tT1R10i",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb0262697c427bdb4509c58c68",
-        "related": [
-            "Jon Pardi"
         ]
     },
     "Cordae": {
@@ -12422,14 +12350,6 @@
             "Chelsea Cutler"
         ]
     },
-    "Matu\u00ea": {
-        "name": "Matu\u00ea",
-        "id": "5nP8x4uEFjAAmDzwOEc9b8",
-        "image": "https://i.scdn.co/image/ab6761610000e5ebf1866b2284e5dbdae69f523e",
-        "related": [
-            "Pineapple StormTv"
-        ]
-    },
     "Cavetown": {
         "name": "Cavetown",
         "id": "2hR4h1Cao2ueuI7Cx9c7V8",
@@ -12614,14 +12534,6 @@
             "Gzuz",
             "Capital Bra",
             "Ufo361"
-        ]
-    },
-    "Pineapple StormTv": {
-        "name": "Pineapple StormTv",
-        "id": "09U6hmCerKcIJrixubiBjm",
-        "image": "https://i.scdn.co/image/ab6761610000e5ebe915b03e0d384550b452d024",
-        "related": [
-            "Matu\u00ea"
         ]
     },
     "Gustavo Mioto": {
@@ -13288,15 +13200,6 @@
             "Offset"
         ]
     },
-    "Jordan Davis": {
-        "name": "Jordan Davis",
-        "id": "77kULmXAQ6vWer7IIHdGzI",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb6ee38187e5f2f3281a283546",
-        "related": [
-            "Old Dominion",
-            "Jon Pardi"
-        ]
-    },
     "Megadeth": {
         "name": "Megadeth",
         "id": "1Yox196W7bzVNZI7RBaPnf",
@@ -13352,8 +13255,7 @@
         "image": "https://i.scdn.co/image/ab6761610000e5eb1b6b9d83cfd806b328496207",
         "related": [
             "Kenny Chesney",
-            "Tim McGraw",
-            "Dierks Bentley"
+            "Tim McGraw"
         ]
     },
     "Angus & Julia Stone": {

@@ -13,7 +13,7 @@ def main():
     # get_distribution_of_degrees_of_separation(web)
     with open("public/matchup_artists.json", "r") as outfile:
         matchup_artists = json.load(outfile)
-    print(verify_matchups(web))
+    verify_matchups(web)
     # matchups = generate_matchups(web, 70, matchup_artists)
     # write_matchups_to_disk(matchups)
 
@@ -25,8 +25,6 @@ def verify_matchups(web):
         start, end = matchup
         if start not in web or end not in web or not is_good_matchup(web, matchup):
             print(date, matchup)
-            return False
-    return True
 
 def write_matchups_to_disk(matchups):
     start_date = datetime(2023, 11, 29)
