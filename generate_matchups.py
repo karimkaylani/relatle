@@ -65,9 +65,11 @@ def is_good_matchup(m, matchup):
     # Must be within allowed range of paths at 
     if not (max_allowed_num_paths >= len(valid_paths) >= min_allowed_num_paths):
         return False
-    # Don't want all winning paths to select the same first related artist, want a better spread
-    if len(set([x[0] for x in valid_paths])) == 1:
-        return False
+    # Don't want any single artist to be in every valid path
+    all_artists_in_paths = set([x for path in valid_paths for x in path])
+    for artist in all_artists_in_paths:
+        if len(list(filter(lambda x: artist in x[:-1], valid_paths))) == len(valid_paths):
+            return False
     return True
 
 def get_valid_paths(graph, start, end, max_steps):

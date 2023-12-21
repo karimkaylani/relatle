@@ -106,7 +106,17 @@ const CustomGameModal = (props: CustomGameModalProps) => {
     const changeStartArtist = (start: string) => {
         setStartArtist(start)
         setEndArtist("")
-    }    
+    }
+
+    const noRepeatingArtistInAllPaths = (paths: string[][]): boolean => {
+        let all_artists_in_paths = new Set(paths.flat())
+        all_artists_in_paths.forEach((artist) => {
+            if (paths.every((path) => path.slice(0, -1).includes(artist))) {
+                return false
+            }
+        })
+        return true
+    }
 
     const selectStartArtist = (start: string) => {
         if (!artistsList.includes(start)) { return }
@@ -118,8 +128,8 @@ const CustomGameModal = (props: CustomGameModalProps) => {
             return endArtistsWithMinDegOfSep[artist].length >= minNumPathsForReccomended &&
             endArtistsWithMinDegOfSep[artist].length <= maxNumPathsForReccomended &&
             !closeEndArtists.includes(artist) &&
-            // paths don't all start with the same artist
-            new Set(endArtistsWithMinDegOfSep[artist].map((path) => path[0])).size > 1
+            // there isn't any single artist that appears in all paths
+            noRepeatingArtistInAllPaths(endArtistsWithMinDegOfSep[artist])
         })
         setReccomendedEndArtists(reccomendedEndArtists)
         setStartArtist(start)
