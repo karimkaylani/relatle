@@ -1,11 +1,11 @@
 'use client'
 
 import React, { useEffect, useRef, useState } from 'react'
-import { Modal, Text, Flex, Group, Collapse, Button, Drawer, Affix, Card, Transition, Space, Stack } from '@mantine/core'
+import { Modal, Text, Flex, Group, Collapse, Button, Drawer, Affix, Card, Transition, Space, Stack, Divider } from '@mantine/core'
 import ShareResults from './ShareResults'
 import { Artist, phoneMaxWidth } from './Game'
 import ScrollablePath from './ScrollablePath'
-import Scoreboard from './Scoreboard'
+import Scoreboard, { ScoreDisplay } from './Scoreboard'
 import SharePath from './SharePath'
 import * as Collections from 'typescript-collections';
 import { IconArrowDown, IconArrowUp } from '@tabler/icons-react'
@@ -25,7 +25,10 @@ export interface GameOverProps {
     resets: number,
     web: {[key: string]: Artist},
     is_custom: boolean,
-    matchupID: number
+    matchupID: number,
+    streak: number,
+    longest_streak: number,
+    days_played: number
 }
 
 const getMinPath = (web: {[key: string]: Artist}, start: string, end: string): string[] => {
@@ -53,7 +56,8 @@ const getMinPath = (web: {[key: string]: Artist}, start: string, end: string): s
 }
 
 const GameOver = ({opened, close, path, guesses, matchup,
-                 resets, web, is_custom, matchupID}: GameOverProps) => {
+                resets, web, is_custom, matchupID, streak,
+                longest_streak, days_played}: GameOverProps) => {
   const [start, end] = matchup
   const [minPathOpened, { toggle: toggleMinPath }] = useDisclosure(false);
 
@@ -119,6 +123,15 @@ const GameOver = ({opened, close, path, guesses, matchup,
             <ScrollablePath matchup={matchup} web={web} path={minPath}></ScrollablePath>
           </Collapse>
           <GlobalScoreSlider guesses={guesses} avgGuesses={avgGuesses ?? -1} minGuesses={minGuesses ?? -1}/>
+          <Card shadow="md" radius="lg" p="xs" withBorder>
+              <Group align='center' justify="center">
+                  {ScoreDisplay("Streak", streak.toString(), true)}
+                  <Divider orientation="vertical" />
+                  {ScoreDisplay("Longest Streak", longest_streak.toString(), true)}
+                  <Divider orientation="vertical" />
+                  {ScoreDisplay("# Days Played", days_played.toString(), true)}
+              </Group>
+          </Card>
           {!is_custom && <CountdownClock/>}
           <Affix w="100%" position={{bottom: 0}}>
           <Transition transition="slide-up" mounted={opened} timingFunction='ease'>
