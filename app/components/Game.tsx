@@ -19,6 +19,7 @@ import AffixStatus from './AffixStatus'
 import CoffeeButton from './CoffeeButton'
 import { useAnimate } from 'framer-motion'
 import Hint from './Hint'
+import { addScoreToDB, getAverageScore } from '../page'
 
 export interface Artist {
     name: string,
@@ -39,7 +40,13 @@ interface SaveProps {
     won: boolean,
     guesses: number,
     resets: number,
-    matchup: string[]
+    matchup: string[],
+    prevMatchupID?: number,
+    numDaysPlayed?: number,
+    streak?: number,
+    longestStreak?: number,
+    sumScores?: number,
+    averageScore?: number
 }
 
 export const phoneMaxWidth = 768;
@@ -53,6 +60,13 @@ const Game = (props: GameProps) => {
     const [guesses, setGuesses] = useState<number>(0)
     const [resets, setResets] = useState<number>(0)
 
+    const [prevMatchupID, setPrevMatchupID] = useState<number>(-1)
+    const [numDaysPlayed, setNumDaysPlayed] = useState<number>(0)
+    const [streak, setStreak] = useState<number>(0)
+    const [longestStreak, setLongestStreak] = useState<number>(0)
+    const [sumScores, setSumScores] = useState<number>(0)
+    const [averageScore, setAverageScore] = useState<number>(0)
+
     const [matchupID, setMatchupID] = useState<number>(-1)
 
     const [winModalOpened, winModalHandlers] = useDisclosure(false)
@@ -63,6 +77,8 @@ const Game = (props: GameProps) => {
 
     const [customModalOpened, customModalHandlers] = useDisclosure(false);
     const {open: customModalOpen} = customModalHandlers
+
+    const [usedHint, setUsedHint] = useState<boolean>(false)
 
     const searchParams = useSearchParams()
     const { scrollIntoView, targetRef: scrollViewRef } = useScrollIntoView<HTMLDivElement>({
@@ -84,7 +100,15 @@ const Game = (props: GameProps) => {
     
     const [endMissed, setEndMissed] = useState(false)
     
-    const save = (saveData: SaveProps): void => { 
+    const save = (saveData: SaveProps): void => {
+        if (!is_custom && saveData.prevMatchupID === undefined) {
+            saveData.prevMatchupID = prevMatchupID
+            saveData.numDaysPlayed = numDaysPlayed
+            saveData.streak = streak
+            saveData.longestStreak = longestStreak
+            saveData.sumScores = sumScores
+            saveData.averageScore = averageScore
+        }
         localStorage.setItem(is_custom ? "props_custom" : "props", JSON.stringify(saveData));
     }
 
@@ -106,6 +130,13 @@ const Game = (props: GameProps) => {
             }
             return
         }
+        setPrevMatchupID(localSave.prevMatchupID ?? -1)
+        setNumDaysPlayed(localSave.numDaysPlayed ?? 0)
+        setStreak(localSave.streak ?? 0)
+        setLongestStreak(localSave.longestStreak ?? 0)
+        setSumScores(localSave.sumScores ?? 0)
+        setAverageScore(localSave.averageScore ?? 0)
+
         if (JSON.stringify(localSave.matchup) !== JSON.stringify(todayMatchup)) {
             return
         }
@@ -177,7 +208,7 @@ const Game = (props: GameProps) => {
         }
     }
 
-    const updateArtistHandler = (artist: Artist): void => {
+    const updateArtistHandler = async (artist: Artist) => {
         setArtistClicked(false)
         if (won === true) {
             if (artist.name === end) { winModalOpen() }
@@ -187,10 +218,37 @@ const Game = (props: GameProps) => {
         setPath(newPath)
         setGuesses(guesses + 1)
         if (artist.name === end) {
+            await addScoreToDB(matchupID, guesses+1, resets, newPath, usedHint)
             setWon(true)
-            save({
+            let new_streak = 1
+            let new_longest_streak = 1
+            if (prevMatchupID === -1 || prevMatchupID !== matchupID - 1) {
+                if (streak > longestStreak) {
+                    new_longest_streak = streak
+                }
+            } else {
+                new_streak = streak + 1
+                new_longest_streak = streak + 1
+            }
+            setPrevMatchupID(matchupID)
+            setNumDaysPlayed(numDaysPlayed + 1)
+            setStreak(new_streak)
+            setLongestStreak(new_longest_streak)
+            const new_sum_scores = sumScores + guesses + 1
+            setSumScores(new_sum_scores)
+            const new_average_score = new_sum_scores / (numDaysPlayed + 1)
+            setAverageScore(new_average_score)
+            save(is_custom ? 
+                {
+                    currArtist, path: newPath, won:true,
+                    guesses: guesses+1, resets, matchup,
+                } :
+                {
                 currArtist, path: newPath, won:true,
-                guesses: guesses+1, resets, matchup
+                guesses: guesses+1, resets, matchup,
+                prevMatchupID: matchupID, numDaysPlayed: numDaysPlayed+1,
+                streak: new_streak, longestStreak: new_longest_streak,
+                sumScores: new_sum_scores, averageScore: new_average_score
             })
             winModalOpen()
             return
@@ -298,7 +356,7 @@ const Game = (props: GameProps) => {
                 <Text ta="center" c='gray.1' size="md">Feeling stuck?</Text>
                 <Group justify='center' align='center'>
                     {start !== currArtist.name && <Reset resetHandler={(won || currArtist.name === start) ? resetHandler : clickResetHandler}/>}
-                    <Hint web={web} endArtist={web[end]} path={path}/>
+                    <Hint web={web} endArtist={web[end]} path={path} setUsedHint={setUsedHint}/>
                 </Group>
             </Stack>}
             

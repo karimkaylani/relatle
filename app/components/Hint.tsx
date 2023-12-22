@@ -12,11 +12,12 @@ import { useSwipeable } from 'react-swipeable'
 export interface HintProps {
     endArtist: Artist,
     web: {[key: string]: Artist},
-    path: string[]
+    path: string[],
+    setUsedHint: (usedHint: boolean) => void
 }
 
 const Hint = (props: HintProps) => {
-    const {endArtist, web, path} = props
+    const {endArtist, web, path, setUsedHint} = props
     const [opened, { open, close }] = useDisclosure(false);
     const headerSwipeHandlers = useSwipeable({
         onSwipedDown: close
@@ -61,7 +62,10 @@ const Hint = (props: HintProps) => {
     </Drawer.Root>
 
     <Button leftSection={<IconBulb size={25}/>}
-    color="gray.9" size="md" styles={{ section: {marginRight: "4px"}}} onClick={open}>HINT</Button>
+    color="gray.9" size="md" styles={{ section: {marginRight: "4px"}}} onClick={() => {
+        open()
+        setUsedHint(true)
+    }}>HINT</Button>
 
     </Fragment>
   )

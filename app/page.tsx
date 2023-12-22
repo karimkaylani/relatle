@@ -1,7 +1,9 @@
+'use server'
 import { promises as fs } from 'fs';
 import Game, { Artist } from './components/Game';
 import Script from 'next/script';
 import { Suspense } from 'react';
+import { sql } from '@vercel/postgres';
 
 export default async function Home() {
   const web = await getWeb()
@@ -25,6 +27,29 @@ export default async function Home() {
       </Suspense>
     </main>
   )
+}
+
+export async function addScoreToDB(matchupID: number, guesses: number, resets:number, path: string[], usedHint: boolean) {
+  const date = new Date().toISOString()
+  try {
+    await sql`INSERT INTO scores (date, matchup_id, guesses, resets, path, used_hint) VALUES
+     (${date}, ${matchupID}, ${guesses}, ${resets}, ${JSON.stringify(path)}, ${usedHint})`
+  }
+  catch {
+    console.error("Error adding score to DB")
+  }
+}
+
+export async function getAverageScore(matchupID: number) {
+  try {
+    const res = await sql`SELECT AVG(guesses) AS avg_guesses, AVG(resets) AS avg_resets FROM scores WHERE matchup_id=${matchupID}`
+    return res
+  }
+  catch {
+    console.error("Error getting average score")
+    return null
+  }
+  
 }
 
 export async function getWeb(): Promise<{[key: string]: Artist}> {
