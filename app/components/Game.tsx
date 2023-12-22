@@ -264,7 +264,7 @@ const Game = (props: GameProps) => {
             })
             winModalOpen()
             if (!is_custom) {
-                await addScoreToDB(matchupID, guesses+1, resets, newPath, usedHint)
+                await addScoreToDB(matchup, matchupID, guesses+1, resets, newPath, usedHint)
             }
             return
         }
