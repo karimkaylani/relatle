@@ -41,12 +41,15 @@ interface SaveProps {
     guesses: number,
     resets: number,
     matchup: string[],
+    usedHint?: boolean,
     prevMatchupID?: number,
     numDaysPlayed?: number,
     streak?: number,
     longestStreak?: number,
     sumScores?: number,
-    averageScore?: number
+    averageScore?: number,
+    sumResets?: number,
+    averageResets?: number
 }
 
 export const phoneMaxWidth = 768;
@@ -66,6 +69,8 @@ const Game = (props: GameProps) => {
     const [longestStreak, setLongestStreak] = useState<number>(0)
     const [sumScores, setSumScores] = useState<number>(0)
     const [averageScore, setAverageScore] = useState<number>(0)
+    const [sumResets, setSumResets] = useState<number>(0)
+    const [averageResets, setAverageResets] = useState<number>(0)
 
     const [matchupID, setMatchupID] = useState<number>(-1)
 
@@ -101,6 +106,8 @@ const Game = (props: GameProps) => {
     const [endMissed, setEndMissed] = useState(false)
     
     const save = (saveData: SaveProps): void => {
+        // if this is a save for a non-winning state, wanna make sure we 
+        // don't lose streak data, avg score, etc. so we pull from state variables
         if (!is_custom && saveData.prevMatchupID === undefined) {
             saveData.prevMatchupID = prevMatchupID
             saveData.numDaysPlayed = numDaysPlayed
@@ -108,6 +115,8 @@ const Game = (props: GameProps) => {
             saveData.longestStreak = longestStreak
             saveData.sumScores = sumScores
             saveData.averageScore = averageScore
+            saveData.sumResets = sumResets
+            saveData.averageResets = averageResets
         }
         localStorage.setItem(is_custom ? "props_custom" : "props", JSON.stringify(saveData));
     }
@@ -145,6 +154,7 @@ const Game = (props: GameProps) => {
         setWon(localSave.won)
         setGuesses(localSave.guesses)
         setResets(localSave.resets)
+        setUsedHint(localSave.usedHint ?? false)
         if (localSave.won) {
             winModalOpen()
         }
@@ -218,7 +228,9 @@ const Game = (props: GameProps) => {
         setPath(newPath)
         setGuesses(guesses + 1)
         if (artist.name === end) {
-            await addScoreToDB(matchupID, guesses+1, resets, newPath, usedHint)
+            if (!is_custom) {
+                await addScoreToDB(matchupID, guesses+1, resets, newPath, usedHint)
+            }
             setWon(true)
             let new_streak = 1
             let new_longest_streak = 1
@@ -234,21 +246,27 @@ const Game = (props: GameProps) => {
             setNumDaysPlayed(numDaysPlayed + 1)
             setStreak(new_streak)
             setLongestStreak(new_longest_streak)
+
             const new_sum_scores = sumScores + guesses + 1
             setSumScores(new_sum_scores)
             const new_average_score = new_sum_scores / (numDaysPlayed + 1)
             setAverageScore(new_average_score)
+
+            const new_sum_resets = sumResets + resets
+            setSumResets(new_sum_resets)
+            const new_average_resets = sumResets / (numDaysPlayed + 1)
             save(is_custom ? 
                 {
                     currArtist, path: newPath, won:true,
-                    guesses: guesses+1, resets, matchup,
+                    guesses: guesses+1, resets, matchup, usedHint
                 } :
                 {
                 currArtist, path: newPath, won:true,
-                guesses: guesses+1, resets, matchup,
+                guesses: guesses+1, resets, matchup, usedHint,
                 prevMatchupID: matchupID, numDaysPlayed: numDaysPlayed+1,
                 streak: new_streak, longestStreak: new_longest_streak,
-                sumScores: new_sum_scores, averageScore: new_average_score
+                sumScores: new_sum_scores, averageScore: new_average_score,
+                sumResets: new_sum_resets, averageResets: new_average_resets
             })
             winModalOpen()
             return
@@ -261,7 +279,7 @@ const Game = (props: GameProps) => {
         setCurrArtist(artist)
         save({
             currArtist: artist, path: newPath, won,
-            guesses: guesses+1, resets, matchup
+            guesses: guesses+1, resets, matchup, usedHint
         })
     }
 
@@ -279,7 +297,16 @@ const Game = (props: GameProps) => {
         setCurrArtist(web[start])
         save({
             currArtist: web[start], path: newPath, won,
-            guesses, resets: resets+1, matchup
+            guesses, resets: resets+1, matchup, usedHint
+        })
+    }
+
+    const useHintHandler = (): void => {
+        if (usedHint) { return }
+        setUsedHint(true)
+        save({
+            currArtist, path, won,
+            guesses, resets, matchup, usedHint: true
         })
     }
 
@@ -356,7 +383,7 @@ const Game = (props: GameProps) => {
                 <Text ta="center" c='gray.1' size="md">Feeling stuck?</Text>
                 <Group justify='center' align='center'>
                     {start !== currArtist.name && <Reset resetHandler={(won || currArtist.name === start) ? resetHandler : clickResetHandler}/>}
-                    <Hint web={web} endArtist={web[end]} path={path} setUsedHint={setUsedHint}/>
+                    <Hint web={web} endArtist={web[end]} path={path} setUsedHint={useHintHandler}/>
                 </Group>
             </Stack>}
             
