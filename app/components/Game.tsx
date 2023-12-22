@@ -248,6 +248,7 @@ const Game = (props: GameProps) => {
             const new_sum_resets = sumResets + resets
             setSumResets(new_sum_resets)
             const new_average_resets = new_sum_resets / (numDaysPlayed + 1)
+            setAverageResets(new_average_resets)
             save(is_custom ? 
                 {
                     currArtist, path: newPath, won:true,
