@@ -14,9 +14,9 @@ const ScrollablePath = (props: ScrollablePathProps) => {
     const {matchup, web, path} = props
     const [start, end] = matchup
   return (
-    <ScrollArea className="pl-5 pr-5" type="auto" offsetScrollbars scrollbarSize={6}
+    <ScrollArea className="pl-5 pr-5" type="scroll" offsetScrollbars scrollbarSize={6}
     styles={{
-        viewport: {maxHeight: 155}
+        viewport: {maxHeight: 155, maxWidth: 500}
     }}>
         <Group justify="flex-start" gap="xs">
         {path.slice(0, -1).map((artist_name, index) => (

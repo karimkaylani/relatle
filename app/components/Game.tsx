@@ -263,7 +263,7 @@ const Game = (props: GameProps) => {
                 sumResets: new_sum_resets, averageResets: new_average_resets
             })
             winModalOpen()
-            if (!is_custom) {
+            if (!is_custom && process.env.NODE_ENV !== "development") {
                 await addScoreToDB(matchup, matchupID, guesses+1, resets, newPath, usedHint)
             }
             return

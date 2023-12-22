@@ -39,7 +39,7 @@ const Hint = (props: HintProps) => {
     <Fragment>
 
     <Drawer.Root{...drawerSwipeHandlers} opened={opened} onClose={close} size={window.innerWidth > phoneMaxWidth ? '575' : '75%'}
-    style={{borderRadius: '20px'}} padding='sm' position={'bottom'} scrollAreaComponent={undefined}>
+    style={{borderRadius: '20px'}} padding='sm' position={'bottom'}>
       <Drawer.Overlay/>
       <Drawer.Content>
         <Drawer.Header {...headerSwipeHandlers} style={{top: -1}} onClick={close}>

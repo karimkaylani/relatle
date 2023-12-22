@@ -2,7 +2,7 @@
 import { promises as fs } from 'fs';
 import Game, { Artist } from './components/Game';
 import Script from 'next/script';
-import { Suspense } from 'react';
+import { Suspense, cache } from 'react';
 import { sql } from '@vercel/postgres';
 
 export default async function Home() {
@@ -40,17 +40,16 @@ export async function addScoreToDB(matchup: string[], matchupID: number, guesses
   }
 }
 
-export async function getAverageScore(matchupID: number) {
+export const getAverageScore =  cache(async (matchupID: number) => {
   try {
-    const res = await sql`SELECT AVG(guesses) AS avg_guesses, AVG(resets) AS avg_resets FROM scores WHERE matchup_id=${matchupID}`
-    return res
+    const { rows } = await sql`SELECT AVG(guesses) AS avg_guesses, AVG(resets) AS avg_resets FROM scores WHERE matchup_id=${matchupID}`
+    return [rows[0].avg_guesses, rows[0].avg_resets]
   }
   catch {
     console.error("Error getting average score")
     return null
   }
-  
-}
+})
 
 export async function getWeb(): Promise<{[key: string]: Artist}> {
   const web = await fs.readFile(process.cwd() + "/public/web.json", "utf8")
