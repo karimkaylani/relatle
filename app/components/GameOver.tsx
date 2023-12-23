@@ -106,7 +106,7 @@ const GameOver = ({opened, close, path, guesses, matchup,
           <Scoreboard guesses={guesses} resets={resets} greenBorder={false} small={window.innerWidth > phoneMaxWidth ? false : true}/>
           <Text ta="center" fw={700} size="sm">Your Path</Text>
           <ScrollablePath matchup={matchup} web={web} path={path}></ScrollablePath>
-          <Stack align='center' justify='center' gap="sm">
+          <Group align='center' justify='center' gap="sm">
             <Text fw={700} size="sm" ta="center">
             {guesses === minPathLength ? `Congrats! The shortest path was ${minPathLength} guesses long`: `Shortest Path: ${minPathLength}`}
             </Text>
@@ -114,7 +114,7 @@ const GameOver = ({opened, close, path, guesses, matchup,
             color="gray.9" size="xs" styles={{ section: {marginRight: "4px"}}} onClick={toggleMinPath}>
                 {minPathOpened ? "HIDE" : "VIEW"}
             </Button>}
-          </Stack>
+          </Group>
           <Collapse in={minPathOpened}>
             <ScrollablePath matchup={matchup} web={web} path={minPath}></ScrollablePath>
           </Collapse>
