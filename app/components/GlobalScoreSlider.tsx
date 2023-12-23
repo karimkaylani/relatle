@@ -14,7 +14,7 @@ export interface GlobalScoreSliderProps {
 }
 
 const GlobalScoreSlider = (props: GlobalScoreSliderProps) => {
-    const {avgGuesses, minGuesses, guesses} = props
+    let {avgGuesses, minGuesses, guesses} = props
     const range = [Math.min(avgGuesses, minGuesses, guesses), Math.max(avgGuesses, minGuesses, guesses)]
 
     const [width, setWidth] = useState(0)
@@ -39,6 +39,9 @@ const GlobalScoreSlider = (props: GlobalScoreSliderProps) => {
                     <Space h={circleSize}></Space>
                 </Paper>
         )
+    }
+    if (guesses < minGuesses) {
+        minGuesses = guesses
     }
     let scores: [string, number, string][] = 
     [['Minimum', minGuesses, 'gray.1'], ['Average', avgGuesses, 'yellow.5'], ['Your Score', guesses, 'green.6']]

@@ -31,7 +31,7 @@ const CountdownClock = () => {
     return () => clearInterval(interval);
     }, []);
   return (
-    <Card shadow="md" radius="lg" p="sm" withBorder>
+    <Card shadow="md" radius="lg" p="sm">
         <Flex
         gap="0px" justify="center"
         align="center" direction="column" wrap="wrap">

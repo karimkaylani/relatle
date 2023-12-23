@@ -123,13 +123,13 @@ const GameOver = ({opened, close, path, guesses, matchup,
             <ScrollablePath matchup={matchup} web={web} path={minPath}></ScrollablePath>
           </Collapse>
           <GlobalScoreSlider guesses={guesses} avgGuesses={avgGuesses ?? -1} minGuesses={minGuesses ?? -1}/>
-          <Card shadow="md" radius="lg" p="xs" withBorder>
+          <Card shadow="lg" radius="lg" p="xs">
               <Group align='center' justify="center">
                   {ScoreDisplay("Streak", streak.toString(), true)}
                   <Divider orientation="vertical" />
                   {ScoreDisplay("Longest Streak", longest_streak.toString(), true)}
                   <Divider orientation="vertical" />
-                  {ScoreDisplay("# Days Played", days_played.toString(), true)}
+                  {ScoreDisplay("Days Played", days_played.toString(), true)}
               </Group>
           </Card>
           {!is_custom && <CountdownClock/>}
