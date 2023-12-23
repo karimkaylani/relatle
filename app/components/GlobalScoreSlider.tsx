@@ -50,7 +50,7 @@ const GlobalScoreSlider = (props: GlobalScoreSliderProps) => {
     if (avgGuesses === -1) {
         return (
             <Stack>
-                <Text ta='center' size='sm'>Today's Global Results</Text>
+                <Text ta='center' size='sm'>{"Today's Global Results"}</Text>
                 <Text ta='center' size='sm' c='gray.1'>Come back soon for global results</Text>
             </Stack>
         )
@@ -58,7 +58,7 @@ const GlobalScoreSlider = (props: GlobalScoreSliderProps) => {
     
   return (
     <Stack gap='xl' align='center' justify='center'>
-        <Text fw={700} ta='center' size='sm'>Today's Global Results</Text>
+        <Text fw={700} ta='center' size='sm'>{"Today's Global Results"}</Text>
         <div style={{margin: 0, padding: 0}}>
                 <Paper bg='gray.7' w={width} radius='xl' className='-mb-5'>
                     <Space h={10}/>
