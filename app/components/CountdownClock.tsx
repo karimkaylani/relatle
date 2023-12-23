@@ -1,4 +1,4 @@
-import { Card, Flex, Text } from '@mantine/core';
+import { Card, Flex, Stack, Text } from '@mantine/core';
 import React, { useEffect, useState } from 'react'
 import FlipNumbers from 'react-flip-numbers';
 
@@ -31,18 +31,19 @@ const CountdownClock = () => {
     return () => clearInterval(interval);
     }, []);
   return (
-    <Card shadow="md" radius="lg" p="sm">
-        <Flex
-        gap="0px" justify="center"
-        align="center" direction="column" wrap="wrap">
-        <Text size="xs" ta="center" fw={500}>Time until next matchup</Text>
+    <Card shadow="md" radius="lg" p="xs">
+        <Stack
+        gap="3px" justify="center"
+        align="center" className="mb-1"
+        styles={{root: {minWidth: '80px'}}}>
+        <Text size="sm" ta="center" fw={500}>Time until next matchup</Text>
         <FlipNumbers height={14} width={11} color="white" background="gray.9" 
         play perspective={150} numbers={`${timeLeft.hrs}:${timeLeft.mins}:${timeLeft.secs}`}
         numberStyle={{
             fontFamily: "OpenSauceOne",
             fontWeight: 700
         }} />
-        </Flex>
+        </Stack>
     </Card>
   )
 }

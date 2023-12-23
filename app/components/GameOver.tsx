@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useEffect, useRef, useState } from 'react'
-import { Modal, Text, Flex, Group, Collapse, Button, Drawer, Affix, Card, Transition, Space, Stack, Divider } from '@mantine/core'
+import { Modal, Text, Flex, Group, Collapse, Button, Drawer, Affix, Card, Transition, Space, Stack, Divider, ScrollArea } from '@mantine/core'
 import ShareResults from './ShareResults'
 import { Artist, phoneMaxWidth } from './Game'
 import ScrollablePath from './ScrollablePath'
@@ -83,16 +83,16 @@ const GameOver = ({opened, close, path, guesses, matchup,
     })
   }, [])
 
-  const [height, setHeight] = useState(64)
+  const [height, setHeight] = useState(77)
   const ref = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    setHeight(ref.current?.clientHeight ?? 64)
+    setHeight(ref.current?.clientHeight ?? 77)
   })
 
   return (
     <Drawer.Root opened={opened} onClose={close} size='85%'
-    style={{borderRadius: '20px'}} padding='sm' position={'bottom'} scrollAreaComponent={undefined}>
+    style={{borderRadius: '20px'}} padding='sm' position={'bottom'}>
       <Drawer.Overlay/>
       <Drawer.Content>
         <Drawer.Header {...headerSwipeHandlers} style={{top: -1}} onClick={close}>
@@ -110,19 +110,14 @@ const GameOver = ({opened, close, path, guesses, matchup,
           <Scoreboard guesses={guesses} resets={resets} greenBorder={false} small={window.innerWidth > phoneMaxWidth ? false : true}/>
           <Text ta="center" fw={700} size="sm">Your Path</Text>
           <ScrollablePath matchup={matchup} web={web} path={path}></ScrollablePath>
-          <Group align='center' justify='center' gap="sm">
+          <Stack align='center' justify='center'>
             <Text fw={700} size="sm" ta="center">
-            {guesses === minPathLength ? `Congrats! The shortest path was ${minPathLength} guesses long`: `Shortest Path: ${minPathLength}`}
+            {guesses === minPathLength ? `Congrats! The shortest path was ${minPathLength} guesses long`: `Shortest Path: ${minPathLength} guesses`}
             </Text>
-            {guesses !== minPathLength && <Button leftSection={minPathOpened ? <IconArrowUp size={15}/> : <IconArrowDown size={15}/>}
-            color="gray.9" size="xs" styles={{ section: {marginRight: "4px"}}} onClick={toggleMinPath}>
-                {minPathOpened ? "HIDE" : "VIEW"}
-            </Button>}
-          </Group>
-          <Collapse in={minPathOpened}>
-            <ScrollablePath matchup={matchup} web={web} path={minPath}></ScrollablePath>
-          </Collapse>
+            {guesses !== minPathLength && <ScrollablePath matchup={matchup} web={web} path={minPath}></ScrollablePath>}
+          </Stack>
           <GlobalScoreSlider guesses={guesses} avgGuesses={avgGuesses ?? -1} minGuesses={minGuesses ?? -1}/>
+          <Text ta="center" fw={700} size="sm">Your Stats</Text>
           <Card shadow="lg" radius="lg" p="xs">
               <Group align='center' justify="center">
                   {ScoreDisplay("Streak", streak.toString(), true)}
@@ -136,7 +131,8 @@ const GameOver = ({opened, close, path, guesses, matchup,
           <Affix w="100%" position={{bottom: 0}}>
           <Transition transition="slide-up" mounted={opened} timingFunction='ease'>
           {(transitionStyles) => (
-            <Card ref={ref} p="lg" bg='#1a1b1e' radius='0px' style={transitionStyles}>
+            <Card ref={ref} p="lg" bg='#1a1b1e' radius='0px' style={transitionStyles} withBorder
+            styles={{root: {borderLeft: '0px', borderBottom: '0px', borderRight: '0px'}}}>
               <Group justify="center" align='center'>
                 <SharePath path={path}/>
                 <ShareResults path={path} guesses={guesses} matchup={matchup}

@@ -44,7 +44,7 @@ const GlobalScoreSlider = (props: GlobalScoreSliderProps) => {
         minGuesses = guesses
     }
     let scores: [string, number, string][] = 
-    [['Minimum', minGuesses, 'gray.1'], ['Average', avgGuesses, 'yellow.5'], ['Your Score', guesses, 'green.6']]
+    [['Min. Guesses', minGuesses, 'gray.1'], ['Avg. Guesses', avgGuesses, 'yellow.5'], ['Your Score', guesses, 'green.6']]
     scores.sort((a, b) => a[1] - b[1]);
 
     if (avgGuesses === -1) {
@@ -76,7 +76,7 @@ const GlobalScoreSlider = (props: GlobalScoreSliderProps) => {
                     </Fragment> 
                 )}
             </Group>
-            <Text ta='center' size='sm'>These values will update as the day progresses</Text>
+            <Text ta='center' size='sm'>These values will update as more games are completed</Text>
         </Stack>
     </Stack>
   )
