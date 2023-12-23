@@ -116,7 +116,7 @@ const GameOver = ({opened, close, path, guesses, matchup,
             </Text>
             {guesses !== minPathLength && <ScrollablePath matchup={matchup} web={web} path={minPath}></ScrollablePath>}
           </Stack>
-          <GlobalScoreSlider guesses={guesses} avgGuesses={avgGuesses ?? -1} minGuesses={minGuesses ?? -1}/>
+          {!is_custom && <GlobalScoreSlider guesses={guesses} avgGuesses={avgGuesses ?? -1} minGuesses={minGuesses ?? -1}/>}
           <Text ta="center" fw={700} size="sm">Your Stats</Text>
           <Card shadow="lg" radius="lg" p="xs">
               <Group align='center' justify="center">
