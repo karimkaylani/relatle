@@ -7,7 +7,7 @@ interface ArrowProps {
 }
 
 const Arrow = ({small, down = false}: ArrowProps) => {
-  let size = small ? "16px" : "25px"
+  let size = small ? "12px" : "21px"
   return (
     down ? <IconArrowDown className="self-center" size={size} /> : <IconArrowRight size={size} />
   )

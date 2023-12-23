@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useEffect, useRef, useState } from 'react'
-import { Modal, Text, Flex, Group, Card, Collapse, Button, Space, Drawer } from '@mantine/core'
+import { Modal, Text, Flex, Group, Collapse, Button, Drawer, Affix, Card, Transition, Space, Stack } from '@mantine/core'
 import ShareResults from './ShareResults'
 import { Artist, phoneMaxWidth } from './Game'
 import ScrollablePath from './ScrollablePath'
@@ -12,8 +12,9 @@ import { IconArrowDown, IconArrowUp } from '@tabler/icons-react'
 import { useDisclosure, useIntersection } from '@mantine/hooks'
 import Matchup from './Matchup'
 import { useSwipeable } from 'react-swipeable'
-import { getAverageScore } from '../page'
+import { getAverageMinGuesses } from '../page'
 import CountdownClock from './CountdownClock'
+import GlobalScoreSlider from './GlobalScoreSlider'
 
 export interface GameOverProps {
     opened: boolean,
@@ -59,35 +60,31 @@ const GameOver = ({opened, close, path, guesses, matchup,
   const headerSwipeHandlers = useSwipeable({
       onSwipedDown: close
   })
-  const drawerSwipeHandlers = useSwipeable({
-      onSwipedDown: () => {
-          if (entry?.isIntersecting) {
-              close()
-          }
-      }
-  })
-  // Allow swipe down to close drawer from top of drawer
-  const containerRef = useRef<HTMLDivElement>(null);
-  const { ref, entry } = useIntersection({
-    root: containerRef.current,
-    threshold: 0,
-  });
 
   const minPath = getMinPath(web, start, end)
   const minPathLength = minPath.length
   minPath.unshift(start)
 
-  const [avgGuesses, setAvgGuesses] = useState<number | null>(null)
-  const [avgResets, setAvgResets] = useState<number | null>(null)
+  const [avgGuesses, setAvgGuesses] = useState<number|null>(null)
+  const [minGuesses, setMinGuesses] = useState<number|null>(null)
 
   useEffect(() => {
-    getAverageScore(matchupID).then((res) => {
+    getAverageMinGuesses(matchupID).then((res) => {
       if (res !== null) {
-        const [avgGuesses, avgResets] = res
-        setAvgGuesses(Math.round(avgGuesses))
+        const [avgGuesses, minGuesses] = res
+        const roundedAvgGuesses = Math.round(avgGuesses)
+        setAvgGuesses(roundedAvgGuesses !== 0 ? roundedAvgGuesses : null)
+        setMinGuesses(minGuesses !== 0 ? minGuesses : null)
       }
     })
   }, [])
+
+  const [height, setHeight] = useState(64)
+  const ref = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    setHeight(ref.current?.clientHeight ?? 64)
+  })
 
   return (
     <Drawer.Root opened={opened} onClose={close} size='85%'
@@ -96,7 +93,7 @@ const GameOver = ({opened, close, path, guesses, matchup,
       <Drawer.Content>
         <Drawer.Header {...headerSwipeHandlers} style={{top: -1}} onClick={close}>
           <Drawer.Title style={{width: '100%'}}>
-              <Text ta='center' c='gray.1' size='xl' fw={700}>You Win!</Text>
+              <Text ta='center' c='gray.1' size='xl' fw={700}>You Won!</Text>
           </Drawer.Title>
             <Drawer.CloseButton />
         </Drawer.Header>
@@ -104,31 +101,38 @@ const GameOver = ({opened, close, path, guesses, matchup,
           <Flex 
             align="center"
             direction="column"
-            gap="lg">
+            gap="lg" styles={{root: {marginBottom: height}}}>
           <Matchup start={web[start]} end={web[end]} small={window.innerWidth > phoneMaxWidth ? false : true} />
-          <Scoreboard guesses={guesses} resets={resets} greenBorder={true} small={window.innerWidth > phoneMaxWidth ? false : true}/>
-          <Text ta="center" size="sm">Your Path</Text>
+          <Scoreboard guesses={guesses} resets={resets} greenBorder={false} small={window.innerWidth > phoneMaxWidth ? false : true}/>
+          <Text ta="center" fw={700} size="sm">Your Path</Text>
           <ScrollablePath matchup={matchup} web={web} path={path}></ScrollablePath>
-          <Group justify="center">
-            <SharePath path={path}/>
-            <ShareResults path={path} guesses={guesses} matchup={matchup}
-            matchupID={matchupID} resets={resets} is_custom={is_custom}/>
-          </Group>
-          <Group align='center' justify='center' gap="sm">
-            <Text c="gray.1" size="sm" ta="center">
-            The shortest path was {minPathLength} guesses.{guesses === minPathLength ? <b> Congrats!</b> : ""}
+          <Stack align='center' justify='center' gap="sm">
+            <Text fw={700} size="sm" ta="center">
+            {guesses === minPathLength ? `Congrats! The shortest path was ${minPathLength} guesses long`: `Shortest Path: ${minPathLength}`}
             </Text>
             {guesses !== minPathLength && <Button leftSection={minPathOpened ? <IconArrowUp size={15}/> : <IconArrowDown size={15}/>}
             color="gray.9" size="xs" styles={{ section: {marginRight: "4px"}}} onClick={toggleMinPath}>
                 {minPathOpened ? "HIDE" : "VIEW"}
             </Button>}
-          </Group>
+          </Stack>
           <Collapse in={minPathOpened}>
             <ScrollablePath matchup={matchup} web={web} path={minPath}></ScrollablePath>
           </Collapse>
+          <GlobalScoreSlider guesses={guesses} avgGuesses={avgGuesses ?? -1} minGuesses={minGuesses ?? -1}/>
           {!is_custom && <CountdownClock/>}
-          <Text>{avgGuesses ?? ""}</Text>
-          <Text>{avgResets ?? ""}</Text>
+          <Affix w="100%" position={{bottom: 0}}>
+          <Transition transition="slide-up" mounted={opened} timingFunction='ease'>
+          {(transitionStyles) => (
+            <Card ref={ref} p="lg" bg='#1a1b1e' radius='0px' style={transitionStyles}>
+              <Group justify="center" align='center'>
+                <SharePath path={path}/>
+                <ShareResults path={path} guesses={guesses} matchup={matchup}
+                matchupID={matchupID} resets={resets} is_custom={is_custom}/>
+              </Group>
+            </Card>
+          )}
+          </Transition>
+          </Affix>
           </Flex>
         </Drawer.Body>
       </Drawer.Content>

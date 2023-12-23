@@ -40,10 +40,11 @@ export async function addScoreToDB(matchup: string[], matchupID: number, guesses
   }
 }
 
-export const getAverageScore =  cache(async (matchupID: number) => {
+export const getAverageMinGuesses =  cache(async (matchupID: number): Promise<number[]|null> => {
   try {
-    const { rows } = await sql`SELECT AVG(guesses) AS avg_guesses, AVG(resets) AS avg_resets FROM scores WHERE matchup_id=${matchupID}`
-    return [rows[0].avg_guesses, rows[0].avg_resets]
+    const { rows } = await sql`SELECT AVG(guesses) AS avg_guesses, MIN(guesses) AS min_guesses,
+    COUNT(guesses) AS count_guesses FROM scores WHERE matchup_id=${matchupID}`
+    return rows[0].count_guesses > 2 ? [rows[0].avg_guesses, rows[0].min_guesses] : null
   }
   catch {
     console.error("Error getting average score")

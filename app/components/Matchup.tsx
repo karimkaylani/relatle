@@ -16,7 +16,7 @@ const Matchup = React.forwardRef<HTMLDivElement, MatchupProps>((props, ref) => {
   return (
     <Group ref={ref} justify="center" gap="xs">
         <ArtistInfo artist={start} small={small}></ArtistInfo>
-        <Arrow small={true}/>
+        <Arrow small={small}/>
         <ArtistInfo artist={end} small={small} is_green={true}></ArtistInfo>
     </Group>
   )
