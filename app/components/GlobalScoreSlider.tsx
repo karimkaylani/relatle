@@ -54,7 +54,7 @@ const GlobalScoreSlider = (props: GlobalScoreSliderProps) => {
     }
     
   return (
-    <Stack gap='xl'>
+    <Stack gap='xl' align='center' justify='center'>
         <Text fw={700} ta='center' size='sm'>Today's Global Results</Text>
         <div style={{margin: 0, padding: 0}}>
                 <Paper bg='gray.7' w={width} radius='xl' className='-mb-5'>

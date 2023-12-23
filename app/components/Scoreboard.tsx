@@ -14,7 +14,8 @@ export const ScoreDisplay = (text: string, value: string, small:boolean|undefine
   return (
       <Stack
         gap="3px" justify="center"
-        align="center" className="w-20 mb-1">
+        align="center" className="mb-1"
+        styles={{root: {minWidth: '80px'}}}>
           <Text ta='center' size="sm" fw={500}>{text}</Text>
           <Space h={2}/>
           <FlipNumbers height={numberSize} width={numberSize-4} color="white" background="gray.9" 
