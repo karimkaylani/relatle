@@ -228,9 +228,6 @@ const Game = (props: GameProps) => {
         setPath(newPath)
         setGuesses(guesses + 1)
         if (artist.name === end) {
-            if (!is_custom) {
-                await addScoreToDB(matchupID, guesses+1, resets, newPath, usedHint)
-            }
             setWon(true)
             let new_streak = 1
             let new_longest_streak = 1
@@ -254,7 +251,7 @@ const Game = (props: GameProps) => {
 
             const new_sum_resets = sumResets + resets
             setSumResets(new_sum_resets)
-            const new_average_resets = sumResets / (numDaysPlayed + 1)
+            const new_average_resets = new_sum_resets / (numDaysPlayed + 1)
             save(is_custom ? 
                 {
                     currArtist, path: newPath, won:true,
@@ -269,6 +266,9 @@ const Game = (props: GameProps) => {
                 sumResets: new_sum_resets, averageResets: new_average_resets
             })
             winModalOpen()
+            if (!is_custom) {
+                await addScoreToDB(matchupID, guesses+1, resets, newPath, usedHint)
+            }
             return
         }
         scrollToTop()
