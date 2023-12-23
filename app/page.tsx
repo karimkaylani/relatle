@@ -30,9 +30,9 @@ export default async function Home() {
 }
 
 export async function addScoreToDB(matchup: string[], matchupID: number, guesses: number, resets:number, path: string[], usedHint: boolean) {
-  const date = new Date().toISOString()
+  const date = new Date().toLocaleDateString("en-US", {timeZone: "America/Los_Angeles"})
   try {
-    await sql`INSERT INTO scores (date, matchup, matchup_id, guesses, resets, path, used_hint) VALUES
+    await sql`INSERT INTO scores (timestamp, matchup, matchup_id, guesses, resets, path, used_hint) VALUES
      (${date}, ${JSON.stringify(matchup)}, ${matchupID}, ${guesses}, ${resets}, ${JSON.stringify(path)}, ${usedHint})`
   }
   catch {
