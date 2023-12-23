@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useEffect, useRef, useState } from 'react'
+import React, { Fragment, useEffect, useRef, useState } from 'react'
 import { Modal, Text, Flex, Group, Collapse, Button, Drawer, Affix, Card, Transition, Space, Stack, Divider, ScrollArea } from '@mantine/core'
 import ShareResults from './ShareResults'
 import { Artist, phoneMaxWidth } from './Game'
@@ -117,16 +117,18 @@ const GameOver = ({opened, close, path, guesses, matchup,
             {guesses !== minPathLength && <ScrollablePath matchup={matchup} web={web} path={minPath}></ScrollablePath>}
           </Stack>
           {!is_custom && <GlobalScoreSlider guesses={guesses} avgGuesses={avgGuesses ?? -1} minGuesses={minGuesses ?? -1}/>}
-          <Text ta="center" fw={700} size="sm">Your Stats</Text>
-          <Card shadow="lg" radius="lg" p="xs">
-              <Group align='center' justify="center">
-                  {ScoreDisplay("Streak", streak.toString(), true)}
-                  <Divider orientation="vertical" />
-                  {ScoreDisplay("Longest Streak", longest_streak.toString(), true)}
-                  <Divider orientation="vertical" />
-                  {ScoreDisplay("Days Played", days_played.toString(), true)}
-              </Group>
-          </Card>
+          {!is_custom && <Fragment>
+            <Text ta="center" fw={700} size="sm">Your Stats</Text>
+            <Card shadow="lg" radius="lg" p="xs">
+                <Group align='center' justify="center">
+                    {ScoreDisplay("Streak", streak.toString(), true)}
+                    <Divider orientation="vertical" />
+                    {ScoreDisplay("Longest Streak", longest_streak.toString(), true)}
+                    <Divider orientation="vertical" />
+                    {ScoreDisplay("Days Played", days_played.toString(), true)}
+                </Group>
+            </Card>
+          </Fragment>}
           {!is_custom && <CountdownClock/>}
           <Affix w="100%" position={{bottom: 0}}>
           <Transition transition="slide-up" mounted={opened} timingFunction='ease'>
