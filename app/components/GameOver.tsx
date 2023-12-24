@@ -116,7 +116,7 @@ const GameOver = ({opened, close, path, guesses, matchup,
 
           <Group align='center' justify='center' gap="sm">
             <Text fw={700} size="sm" ta="center">
-            {guesses === minPathLength ? `Congrats! The shortest path was ${minPathLength} guesses long`: `Shortest Path: ${minPathLength}`}
+            {guesses === minPathLength ? `Congrats! The shortest path was ${minPathLength} guesses long`: `Shortest Path: ${minPathLength} guesses`}
             </Text>
             {guesses !== minPathLength && <Button leftSection={minPathOpened ? <IconArrowUp size={15}/> : <IconArrowDown size={15}/>}
             color="gray.9" size="xs" styles={{ section: {marginRight: "4px"}}} onClick={toggleMinPath}>
