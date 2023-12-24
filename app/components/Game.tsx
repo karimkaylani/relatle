@@ -19,7 +19,7 @@ import AffixStatus from './AffixStatus'
 import CoffeeButton from './CoffeeButton'
 import { useAnimate } from 'framer-motion'
 import Hint from './Hint'
-import { addScoreToDB } from '../page'
+import { addScoreToDB } from '../db'
 
 export interface Artist {
     name: string,

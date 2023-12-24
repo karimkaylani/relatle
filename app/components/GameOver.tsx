@@ -12,9 +12,9 @@ import { IconArrowDown, IconArrowUp } from '@tabler/icons-react'
 import { useDisclosure, useIntersection } from '@mantine/hooks'
 import Matchup from './Matchup'
 import { useSwipeable } from 'react-swipeable'
-import { getAverageMinGuesses } from '../page'
 import CountdownClock from './CountdownClock'
 import GlobalScoreSlider from './GlobalScoreSlider'
+import { getAverageMinGuesses } from '../db'
 
 export interface GameOverProps {
     opened: boolean,
@@ -112,13 +112,20 @@ const GameOver = ({opened, close, path, guesses, matchup,
           <Matchup start={web[start]} end={web[end]} small={window.innerWidth > phoneMaxWidth ? false : true} />
           <Scoreboard guesses={guesses} resets={resets} greenBorder={false} small={window.innerWidth > phoneMaxWidth ? false : true}/>
           <Text ta="center" fw={700} size="sm">Your Path</Text>
-          <ScrollablePath matchup={matchup} web={web} path={path}></ScrollablePath>
-          <Stack align='center' justify='center'>
+          <ScrollablePath matchup={matchup} web={web} path={path}/>
+
+          <Group align='center' justify='center' gap="sm">
             <Text fw={700} size="sm" ta="center">
-            {guesses === minPathLength ? `Congrats! The shortest path was ${minPathLength} guesses long`: `Shortest Path: ${minPathLength} guesses`}
+            {guesses === minPathLength ? `Congrats! The shortest path was ${minPathLength} guesses long`: `Shortest Path: ${minPathLength}`}
             </Text>
-            {guesses !== minPathLength && <ScrollablePath matchup={matchup} web={web} path={minPath}></ScrollablePath>}
-          </Stack>
+            {guesses !== minPathLength && <Button leftSection={minPathOpened ? <IconArrowUp size={15}/> : <IconArrowDown size={15}/>}
+            color="gray.9" size="xs" styles={{ section: {marginRight: "4px"}}} onClick={toggleMinPath}>
+                {minPathOpened ? "HIDE" : "VIEW"}
+            </Button>}
+          </Group>
+          <Collapse in={minPathOpened}>
+            <ScrollablePath matchup={matchup} web={web} path={minPath}></ScrollablePath>
+          </Collapse>
           {(!is_custom && avgGuesses !== -1) && <GlobalScoreSlider guesses={guesses} avgGuesses={avgGuesses ?? -1} minGuesses={minGuesses ?? -1}/>}
           {!is_custom && <Fragment>
             <Text ta="center" fw={700} size="sm">Your Stats</Text>

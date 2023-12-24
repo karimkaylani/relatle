@@ -3,7 +3,6 @@ import { promises as fs } from 'fs';
 import Game, { Artist } from './components/Game';
 import Script from 'next/script';
 import { Suspense, cache } from 'react';
-import { sql } from '@vercel/postgres';
 
 export default async function Home() {
   const web = await getWeb()
@@ -27,29 +26,6 @@ export default async function Home() {
       </Suspense>
     </main>
   )
-}
-
-export async function addScoreToDB(matchup: string[], matchupID: number, guesses: number, resets:number, path: string[], usedHint: boolean) {
-  const date = new Date().toLocaleString("en-US", {timeZone: "America/Los_Angeles"})
-  try {
-    await sql`INSERT INTO scores (timestamp, matchup, matchup_id, guesses, resets, path, used_hint) VALUES
-     (${date}, ${JSON.stringify(matchup)}, ${matchupID}, ${guesses}, ${resets}, ${JSON.stringify(path)}, ${usedHint})`
-  }
-  catch {
-    console.error("Error adding score to DB")
-  }
-}
-
-export const getAverageMinGuesses =  async(matchupID: number): Promise<number[]|null> => {
-  try {
-    const { rows } = await sql`SELECT AVG(guesses) AS avg_guesses, MIN(guesses) AS min_guesses,
-    COUNT(guesses) AS count_guesses FROM scores WHERE matchup_id=${matchupID}`
-    return rows[0].count_guesses > 2 ? [rows[0].avg_guesses, rows[0].min_guesses] : null
-  }
-  catch {
-    console.error("Error getting average score")
-    return null
-  }
 }
 
 export async function getWeb(): Promise<{[key: string]: Artist}> {
