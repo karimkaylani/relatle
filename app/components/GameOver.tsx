@@ -69,19 +69,22 @@ const GameOver = ({opened, close, path, guesses, matchup,
   const minPathLength = minPath.length
   minPath.unshift(start)
 
-  const [avgGuesses, setAvgGuesses] = useState<number|null>(null)
-  const [minGuesses, setMinGuesses] = useState<number|null>(null)
+  const [avgGuesses, setAvgGuesses] = useState<number>(-1)
+  const [minGuesses, setMinGuesses] = useState<number>(-1)
 
   useEffect(() => {
+    if (!opened) {
+      return
+    }
     getAverageMinGuesses(matchupID).then((res) => {
       if (res !== null) {
         const [avgGuesses, minGuesses] = res
         const roundedAvgGuesses = Math.round(avgGuesses)
-        setAvgGuesses(roundedAvgGuesses !== 0 ? roundedAvgGuesses : null)
-        setMinGuesses(minGuesses !== 0 ? minGuesses : null)
+        setAvgGuesses(roundedAvgGuesses !== 0 ? roundedAvgGuesses : -1)
+        setMinGuesses(minGuesses !== 0 ? minGuesses : -1)
       }
     })
-  }, [])
+  }, [opened])
 
   const [height, setHeight] = useState(77)
   const ref = useRef<HTMLDivElement>(null)
@@ -116,7 +119,7 @@ const GameOver = ({opened, close, path, guesses, matchup,
             </Text>
             {guesses !== minPathLength && <ScrollablePath matchup={matchup} web={web} path={minPath}></ScrollablePath>}
           </Stack>
-          {!is_custom && <GlobalScoreSlider guesses={guesses} avgGuesses={avgGuesses ?? -1} minGuesses={minGuesses ?? -1}/>}
+          {(!is_custom && avgGuesses !== -1) && <GlobalScoreSlider guesses={guesses} avgGuesses={avgGuesses ?? -1} minGuesses={minGuesses ?? -1}/>}
           {!is_custom && <Fragment>
             <Text ta="center" fw={700} size="sm">Your Stats</Text>
             <Card shadow="lg" radius="lg" p="xs">
