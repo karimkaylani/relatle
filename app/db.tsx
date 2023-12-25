@@ -1,5 +1,6 @@
 'use server'
 import { sql } from '@vercel/postgres';
+import { unstable_noStore as noStore } from 'next/cache';
 
 
 export async function addScoreToDB(matchup: string[], matchupID: number, guesses: number, resets:number, path: string[], usedHint: boolean) {
@@ -14,6 +15,7 @@ export async function addScoreToDB(matchup: string[], matchupID: number, guesses
   }
   
   export async function getAverageMinGuesses(matchupID: number): Promise<number[]|null> {
+    noStore()
     try {
       const { rows } = await sql`SELECT AVG(guesses) AS avg_guesses, MIN(guesses) AS min_guesses,
       COUNT(guesses) AS count_guesses FROM scores WHERE matchup_id=${matchupID}`
