@@ -225,8 +225,9 @@ const Game = (props: GameProps) => {
             return
         }
         const newPath = [...path, artist.name]
+        const newGuesses = guesses + 1
         setPath(newPath)
-        setGuesses(guesses + 1)
+        setGuesses(newGuesses)
         if (artist.name === end) {
             setWon(true)
             
@@ -236,35 +237,36 @@ const Game = (props: GameProps) => {
             }
             let new_longest_streak = new_streak > longestStreak ? new_streak : longestStreak
             setPrevMatchupID(matchupID)
-            setNumDaysPlayed(numDaysPlayed + 1)
+            const newNumDaysPlayed = numDaysPlayed + 1
+            setNumDaysPlayed(newNumDaysPlayed)
             setStreak(new_streak)
             setLongestStreak(new_longest_streak)
 
-            const new_sum_scores = sumScores + guesses + 1
+            const new_sum_scores = sumScores + newGuesses
             setSumScores(new_sum_scores)
-            const new_average_score = new_sum_scores / (numDaysPlayed + 1)
+            const new_average_score = new_sum_scores / (newNumDaysPlayed)
             setAverageScore(new_average_score)
 
             const new_sum_resets = sumResets + resets
             setSumResets(new_sum_resets)
-            const new_average_resets = new_sum_resets / (numDaysPlayed + 1)
+            const new_average_resets = new_sum_resets / (newNumDaysPlayed)
             setAverageResets(new_average_resets)
             save(is_custom ? 
                 {
                     currArtist, path: newPath, won:true,
-                    guesses: guesses+1, resets, matchup, usedHint
+                    guesses: newGuesses, resets, matchup, usedHint
                 } :
                 {
                 currArtist, path: newPath, won:true,
-                guesses: guesses+1, resets, matchup, usedHint,
-                prevMatchupID: matchupID, numDaysPlayed: numDaysPlayed+1,
+                guesses: newGuesses, resets, matchup, usedHint,
+                prevMatchupID: matchupID, numDaysPlayed: newNumDaysPlayed,
                 streak: new_streak, longestStreak: new_longest_streak,
                 sumScores: new_sum_scores, averageScore: new_average_score,
                 sumResets: new_sum_resets, averageResets: new_average_resets
             })
             winModalOpen()
             if (!is_custom && process.env.NODE_ENV !== "development") {
-                await addScoreToDB(matchup, matchupID, guesses+1, resets, newPath, usedHint)
+                await addScoreToDB(matchup, matchupID, newGuesses, resets, newPath, usedHint)
             }
             return
         }
@@ -276,7 +278,7 @@ const Game = (props: GameProps) => {
         setCurrArtist(artist)
         save({
             currArtist: artist, path: newPath, won,
-            guesses: guesses+1, resets, matchup, usedHint
+            guesses: newGuesses, resets, matchup, usedHint
         })
     }
 
@@ -290,11 +292,12 @@ const Game = (props: GameProps) => {
         scrollToTop()
         const newPath = [...path, "RESET"]
         setPath(newPath)
-        setResets(resets + 1)
+        const newResets = resets + 1
+        setResets(newResets)
         setCurrArtist(web[start])
         save({
             currArtist: web[start], path: newPath, won,
-            guesses, resets: resets+1, matchup, usedHint
+            guesses, resets: newResets, matchup, usedHint
         })
     }
 
