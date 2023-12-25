@@ -229,16 +229,12 @@ const Game = (props: GameProps) => {
         setGuesses(guesses + 1)
         if (artist.name === end) {
             setWon(true)
+            
             let new_streak = 1
-            let new_longest_streak = 1
-            if (prevMatchupID === -1 || prevMatchupID !== matchupID - 1) {
-                if (streak > longestStreak) {
-                    new_longest_streak = streak
-                }
-            } else {
+            if (prevMatchupID !== -1 && prevMatchupID === matchupID - 1) {
                 new_streak = streak + 1
-                new_longest_streak = streak + 1
             }
+            let new_longest_streak = new_streak > longestStreak ? new_streak : longestStreak
             setPrevMatchupID(matchupID)
             setNumDaysPlayed(numDaysPlayed + 1)
             setStreak(new_streak)
