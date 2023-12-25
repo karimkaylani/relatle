@@ -17,7 +17,6 @@ export const metadata = {
   }
 };
 
-export const revalidate = 300
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
