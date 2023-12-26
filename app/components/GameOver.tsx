@@ -72,6 +72,8 @@ const GameOver = ({opened, close, path, guesses, matchup,
   const [avgGuesses, setAvgGuesses] = useState<number>(-1)
   const [minGuesses, setMinGuesses] = useState<number>(-1)
 
+  const [loadingGlobalScore, setLoadingGlobalScore] = useState<boolean>(true)
+
   useEffect(() => {
     if (!opened) {
       return
@@ -83,6 +85,7 @@ const GameOver = ({opened, close, path, guesses, matchup,
         setAvgGuesses(roundedAvgGuesses !== 0 ? roundedAvgGuesses : -1)
         setMinGuesses(minGuesses !== 0 ? minGuesses : -1)
       }
+      setLoadingGlobalScore(false)
     })
   }, [opened])
 
@@ -126,7 +129,7 @@ const GameOver = ({opened, close, path, guesses, matchup,
           <Collapse in={minPathOpened}>
             <ScrollablePath matchup={matchup} web={web} path={minPath}></ScrollablePath>
           </Collapse>
-          {(!is_custom && avgGuesses !== -1) && <GlobalScoreSlider guesses={guesses} avgGuesses={avgGuesses ?? -1} minGuesses={minGuesses ?? -1}/>}
+          {!is_custom && <GlobalScoreSlider loading={loadingGlobalScore} guesses={guesses} avgGuesses={avgGuesses ?? -1} minGuesses={minGuesses ?? -1}/>}
           {!is_custom && <Fragment>
             <Text ta="center" fw={700} size="sm">Your Stats</Text>
             <Card shadow="lg" radius="lg" p="xs">
