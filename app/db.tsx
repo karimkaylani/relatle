@@ -1,6 +1,7 @@
 'use server'
 import { sql } from '@vercel/postgres';
-import { unstable_noStore as noStore } from 'next/cache';
+import { unstable_cache, revalidateTag } from 'next/cache';
+
 
 
 export async function addScoreToDB(matchup: string[], matchupID: number, guesses: number, resets:number, path: string[], usedHint: boolean) {
@@ -8,14 +9,18 @@ export async function addScoreToDB(matchup: string[], matchupID: number, guesses
     try {
       await sql`INSERT INTO scores (timestamp, matchup, matchup_id, guesses, resets, path, used_hint) VALUES
        (${date}, ${JSON.stringify(matchup)}, ${matchupID}, ${guesses}, ${resets}, ${JSON.stringify(path)}, ${usedHint})`
+       revalidateTag('scores')
     }
     catch {
       console.error("Error adding score to DB")
     }
   }
-  
+
+export const getCachedAverageMinGuesses = unstable_cache(
+  async (matchupID: number): Promise<number[]|null> => getAverageMinGuesses(matchupID),
+  undefined, {tags: ['scores'], revalidate: 600})
+
   export async function getAverageMinGuesses(matchupID: number): Promise<number[]|null> {
-    noStore()
     try {
       const { rows } = await sql`SELECT AVG(guesses) AS avg_guesses, MIN(guesses) AS min_guesses,
       COUNT(guesses) AS count_guesses FROM scores WHERE matchup_id=${matchupID}`

@@ -14,7 +14,7 @@ import Matchup from './Matchup'
 import { useSwipeable } from 'react-swipeable'
 import CountdownClock from './CountdownClock'
 import GlobalScoreSlider from './GlobalScoreSlider'
-import { getAverageMinGuesses } from '../db'
+import { getCachedAverageMinGuesses } from '../db'
 
 export interface GameOverProps {
     opened: boolean,
@@ -78,7 +78,7 @@ const GameOver = ({opened, close, path, guesses, matchup,
     if (!opened) {
       return
     }
-    getAverageMinGuesses(matchupID).then((res) => {
+    getCachedAverageMinGuesses(matchupID).then((res) => {
       if (res !== null) {
         const [avgGuesses, minGuesses] = res
         const roundedAvgGuesses = Math.round(avgGuesses)
