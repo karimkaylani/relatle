@@ -9,7 +9,7 @@ export async function addScoreToDB(matchup: string[], matchupID: number, guesses
     try {
       await sql`INSERT INTO scores (timestamp, matchup, matchup_id, guesses, resets, path, used_hint) VALUES
        (${date}, ${JSON.stringify(matchup)}, ${matchupID}, ${guesses}, ${resets}, ${JSON.stringify(path)}, ${usedHint})`
-       revalidateTag('scores')
+      //  revalidateTag('scores')
     }
     catch {
       console.error("Error adding score to DB")
