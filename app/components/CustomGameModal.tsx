@@ -105,7 +105,9 @@ const CustomGameModal = (props: CustomGameModalProps) => {
 
     const changeStartArtist = (start: string) => {
         setStartArtist(start)
-        setEndArtist("")
+        if (artistsList.includes(start)) {
+             selectStartArtist(start) 
+        }
     }
 
     const noRepeatingArtistInAllPaths = (paths: string[][]): boolean => {
@@ -133,7 +135,9 @@ const CustomGameModal = (props: CustomGameModalProps) => {
         })
         setReccomendedEndArtists(reccomendedEndArtists)
         setStartArtist(start)
-        setEndArtist("")
+        if (!endArtists.includes(endArtist)) {
+            setEndArtist("")
+        }
     }
     
     const closeModal = () => {
@@ -161,7 +165,7 @@ const CustomGameModal = (props: CustomGameModalProps) => {
         <Stack>
             <Text>Create your custom matchup and send the link to challenge you and your friends.</Text>
             <Autocomplete size="md" radius="md" placeholder="Starting artist" data={artistsList}
-                onOptionSubmit={selectStartArtist} onDropdownClose={() => selectStartArtist(startArtist)} onChange={changeStartArtist} selectFirstOptionOnChange={true}
+                onChange={changeStartArtist} selectFirstOptionOnChange={true}
                 styles={{input: {color: "#f1f3f5"}, dropdown: {color: "#f1f3f5"}}} value={startArtist}/>
             <Arrow small={false} down={true}/>
             <Stack gap="xs">

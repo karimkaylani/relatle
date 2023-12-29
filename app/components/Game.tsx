@@ -371,7 +371,7 @@ const Game = (props: GameProps) => {
             </Popover>
             <GameOver opened={winModalOpened} close={winModalClose} path={path} guesses={guesses}
              matchup={matchup} resets={resets} web={web} is_custom={is_custom} matchupID={matchupID}
-             streak={streak} longest_streak={longestStreak} days_played={numDaysPlayed}/>
+             streak={streak} longest_streak={longestStreak} days_played={numDaysPlayed} customModalOpen={customModalOpen}/>
             <AffixStatus currArtist={currArtist} endArtist={web[end]} guesses={guesses} 
             resets={resets} onTap={scrollToTop} mounted={!won && !entryAffix?.isIntersecting}/>
             <SimpleGrid ref={scope} cols={{ base: 2, xs: 3, sm: 3, md: 4, lg: 5 }}>

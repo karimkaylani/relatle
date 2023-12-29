@@ -15,6 +15,7 @@ import { useSwipeable } from 'react-swipeable'
 import CountdownClock from './CountdownClock'
 import GlobalScoreSlider from './GlobalScoreSlider'
 import { getCachedAverageMinGuesses } from '../db'
+import CustomGameButton from './CustomGameButton'
 
 export interface GameOverProps {
     opened: boolean,
@@ -26,6 +27,7 @@ export interface GameOverProps {
     web: {[key: string]: Artist},
     is_custom: boolean,
     matchupID: number,
+    customModalOpen: () => void,
     streak: number,
     longest_streak: number,
     days_played: number
@@ -56,7 +58,7 @@ const getMinPath = (web: {[key: string]: Artist}, start: string, end: string): s
 }
 
 const GameOver = ({opened, close, path, guesses, matchup,
-                resets, web, is_custom, matchupID, streak,
+                resets, web, is_custom, matchupID, customModalOpen, streak,
                 longest_streak, days_played}: GameOverProps) => {
   const [start, end] = matchup
   const [minPathOpened, { toggle: toggleMinPath }] = useDisclosure(false);
@@ -143,6 +145,14 @@ const GameOver = ({opened, close, path, guesses, matchup,
             </Card>
           </Fragment>}
           {!is_custom && <CountdownClock/>}
+          {/* {!is_custom && 
+          <Stack align='center'>
+            <Text size='md'>Want more?</Text>
+            <CustomGameButton customModalOpen={() => {
+              close()
+              customModalOpen()
+            }}/>
+          </Stack>} */}
           <Affix w="100%" position={{bottom: 0}}>
           <Transition transition="slide-up" mounted={opened} timingFunction='ease'>
           {(transitionStyles) => (

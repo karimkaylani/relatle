@@ -7,7 +7,7 @@ import { Analytics } from "@vercel/analytics/react";
 
 export const metadata = {
   title: 'relatle',
-  description: 'Get from one musician to another using their related artists!',
+  description: 'Connect two artists together using their related artists!',
   url: "https://relatle.io",
   siteName: "relatle",
   metadataBase: new URL('https://relatle.io'),
