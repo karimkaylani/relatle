@@ -108,6 +108,9 @@ const CustomGameModal = (props: CustomGameModalProps) => {
         if (artistsList.includes(start)) {
              selectStartArtist(start) 
         }
+        if (!artistsList.includes(endArtist)) {
+            setEndArtist("")
+        }
     }
 
     const noRepeatingArtistInAllPaths = (paths: string[][]): boolean => {
@@ -135,7 +138,7 @@ const CustomGameModal = (props: CustomGameModalProps) => {
         })
         setReccomendedEndArtists(reccomendedEndArtists)
         setStartArtist(start)
-        if (!endArtists.includes(endArtist)) {
+        if (!endArtists.includes(endArtist) || !artistsList.includes(endArtist)) {
             setEndArtist("")
         }
     }
@@ -159,17 +162,17 @@ const CustomGameModal = (props: CustomGameModalProps) => {
   return (
     <Modal opened={customModalOpened} 
         onClose={closeModal} withCloseButton={true} centered
-        padding="xl" radius="lg" lockScroll={false}
+        padding="xl" radius="lg"
         title="Create a Custom Game"
-        styles={{ title: { fontSize: "24px", color: "#f1f3f5", fontWeight: 700, lineHeight: "32px" } }}>
+        styles={{ title: { fontSize: "20px", color: "#f1f3f5", fontWeight: 700, lineHeight: "32px" } }}>
         <Stack>
             <Text>Create your custom matchup and send the link to challenge you and your friends.</Text>
-            <Autocomplete size="md" radius="md" placeholder="Starting artist" data={artistsList}
+            <Autocomplete size='lg' radius="md" placeholder="Starting artist" data={artistsList}
                 onChange={changeStartArtist} selectFirstOptionOnChange={true}
                 styles={{input: {color: "#f1f3f5"}, dropdown: {color: "#f1f3f5"}}} value={startArtist}/>
             <Arrow small={false} down={true}/>
             <Stack gap="xs">
-                <Autocomplete size="md" radius="md" placeholder="Target artist" disabled={!artistsList.includes(startArtist) || matchupsFound.length == 0}
+                <Autocomplete size="lg" radius="md" placeholder="Target artist" disabled={!artistsList.includes(startArtist) || matchupsFound.length == 0}
                     data={[
                         {group: 'Recommended Target Artists', items: reccomendedEndArtists},
                         {group: 'Target Artists', items: matchupsFound.filter((artist)=> !reccomendedEndArtists.includes(artist))}]}
