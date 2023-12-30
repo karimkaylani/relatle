@@ -6,16 +6,17 @@ export interface ArtistInfoProps {
     artist: Artist,
     small: boolean,
     is_green?: boolean,
+    show_name?: boolean
 }
 
-const ArtistInfo = ({artist, small, is_green=false}: ArtistInfoProps) => {
+const ArtistInfo = ({artist, small, is_green=false, show_name=true}: ArtistInfoProps) => {
   return (
     <Group justify="center" gap="xs">
-        <Avatar size={small ? "sm" : ""} src={artist.image} alt={artist.name}
+        <Avatar size={small ? "sm" : "md"} src={artist.image} alt={artist.name}
             styles={is_green ? {
             image: { border: '2.5px solid #51cf66', borderRadius: "100%"  }
         } : {}}/>
-        <Text c={is_green ? "green.5" : "gray.1"} size={small ? "12.5px" : "lg"} fw={700}>{artist.name}</Text>
+        {show_name && <Text c={is_green ? "green.5" : "gray.1"} size={small ? "12.5px" : "lg"} fw={700}>{artist.name}</Text>}
     </Group>
   )
 }
