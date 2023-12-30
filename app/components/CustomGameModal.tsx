@@ -221,7 +221,7 @@ const CustomGameModal = (props: CustomGameModalProps) => {
                     p="sm">
                         <Group gap="6px" justify='center'>
                             <Image src={"custom-icon.svg"}/>
-                            <Text size="sm" fw={700} c="gray.1">RECOMMENDED MATCHUP</Text>
+                            <Text size="sm" fw={700} c="gray.1">RECOMMENDED</Text>
                         </Group>
                     </Card>
                 </HoverButton>
