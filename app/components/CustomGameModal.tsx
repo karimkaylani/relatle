@@ -210,9 +210,9 @@ const CustomGameModal = (props: CustomGameModalProps) => {
                         <ArtistInfo artist={web[endArtist]} small={true} is_green={true} show_name={false}/>}/>
 
                 {isMatchupDifficult() ? 
-                    <Text pl="5" ta="left" fw={700} c='yellow.3' size="sm">This matchup may be difficult!</Text>
+                    <Text pl="5" pb='12' ta="left" fw={700} c='yellow.3' size="md">This matchup may be difficult!</Text>
                     :
-                    <Text pl="5" ta="left" fw={700} size="xs">If you don&apos;t see your desired target artist, the path is impossible.</Text>
+                    <Text pl="5" ta="left" fw={700} size="sm">If you don&apos;t see your desired target artist, the path is impossible.</Text>
                 }
             </Stack>
             <Group align='center' justify='center'>
