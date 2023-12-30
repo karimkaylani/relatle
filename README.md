@@ -8,12 +8,12 @@
 <img src="https://github.com/karimkaylani/relatle/assets/19757304/fa520a02-b58d-4c73-8b46-19332a0bd70c" alt="home" width="800"/>
 
 
-### Path summary, global statistics, and integrated sharing features
+### Winning screen contains path summary, global score results, player stats, and integrated sharing features
 <img src="https://github.com/karimkaylani/relatle/assets/19757304/7a342bab-c6fd-4d35-87f7-7b157b23491f" alt="win" width="500"/>
 
 
 ### Create custom games to send to your friends
-Utilize graph algorithms to recommend matchups and ensure only possible matchups are shown
+Utilized graph algorithms to recommend matchups and ensure only possible matchups are shown
 
 <img width="437" alt="image" src="https://github.com/karimkaylani/relatle/assets/19757304/0676a8e8-010a-406c-a9fa-614f539409d8">
 <img width="600" alt="image" src="https://github.com/karimkaylani/relatle/assets/19757304/52cfadb5-4f11-480a-8854-43f415e832da">
