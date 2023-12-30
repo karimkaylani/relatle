@@ -14,7 +14,8 @@ interface CustomGameModalProps {
     customModalHandlers: any
 }
 
-
+/* From a starting artist, return a hashmap where the keys are endArtists
+ and the values are the paths from the starting artist to the end artist */
 const getNumPathsEndArtists = (web: {[key: string]: Artist}, start: string, maxSteps: number=Infinity): {[key: string]: string[][]} => {
     const visited: Set<string> = new Set();
     const queue: Collections.Queue<[string, string[]]> = new Collections.Queue();
@@ -191,7 +192,7 @@ const CustomGameModal = (props: CustomGameModalProps) => {
         title="Create a Custom Game"
         styles={{ title: { fontSize: "20px", color: "#f1f3f5", fontWeight: 700, lineHeight: "32px" } }}>
         <Stack>
-            <Text>Create your custom matchup and send the link to challenge you and your friends.</Text>
+            <Text>Play your own custom matchup and send the link to challenge your friends.</Text>
             <Autocomplete size='lg' radius="md" placeholder="Starting artist" data={artistsList}
                 onChange={changeStartArtist} selectFirstOptionOnChange={true}
                 styles={{input: {color: "#f1f3f5"}, dropdown: {color: "#f1f3f5"}}} value={startArtist}
@@ -206,13 +207,13 @@ const CustomGameModal = (props: CustomGameModalProps) => {
                     styles={{input: {color: "#f1f3f5", outline: isMatchupDifficult() ? '2px solid #fcc419' : ''}, 
                     groupLabel: {color: "#37b24d", fontWeight: 700}, dropdown: {color: "#f1f3f5"}}}
                     onChange={setEndArtist} selectFirstOptionOnChange={true} value={endArtist}
-                    leftSection={web[endArtist] !== undefined && 
+                    leftSection={web[endArtist] !== undefined && matchupsFound.includes(endArtist) &&
                         <ArtistInfo artist={web[endArtist]} small={true} is_green={true} show_name={false}/>}/>
 
                 {isMatchupDifficult() ? 
                     <Text pl="5" pb='14' ta="left" fw={700} c='yellow.3' size="md">This matchup may be difficult!</Text>
                     :
-                    <Text pl="5" ta="left" fw={700} size="sm">If you don&apos;t see your desired target artist, the path is impossible.</Text>
+                    <Text pl="5" ta="left" fw={700} size="sm">If you don&apos;t see your desired target artist, the matchup is impossible.</Text>
                 }
             </Stack>
             <Group align='center' justify='center'>
