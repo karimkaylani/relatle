@@ -99,7 +99,7 @@ const GameOver = ({opened, close, path, guesses, matchup,
   })
 
   return (
-    <Drawer.Root opened={opened} onClose={close} size={is_custom ? '75%' : '85%'}
+    <Drawer.Root opened={opened} onClose={close} size='85%'
     style={{borderRadius: '20px'}} padding='sm' position={'bottom'}>
       <Drawer.Overlay/>
       <Drawer.Content>
