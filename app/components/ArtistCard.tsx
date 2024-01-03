@@ -85,7 +85,7 @@ const ArtistCard = ({artist, updateArtistHandler, path, won,
                   {artist.name}
                 </Text>
             </Flex>
-            <audio ref={audioRef} src={artist.top_song_preview_url} />
+            <audio loop ref={audioRef} src={artist.top_song_preview_url} />
         </Card>
     ) 
   }
