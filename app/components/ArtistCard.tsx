@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Artist, phoneMaxWidth } from './Game'
 import { Card, Image, Text, Flex } from '@mantine/core';
 import HoverButton from './HoverButton';
 import { motion, useAnimate, useAnimationControls } from 'framer-motion'
+import { useLongPress } from 'use-long-press';
 
 interface ArtistCardProps {
     artist: Artist,
@@ -16,14 +17,36 @@ interface ArtistCardProps {
 }
 
 const ArtistCard = ({artist, updateArtistHandler, path, won,
-  end, clicked, setClicked, clickable=true}:ArtistCardProps) => {
+  end, clicked, setClicked, clickable=true}: ArtistCardProps) => {
   let img_size = window.innerWidth > phoneMaxWidth ? 175 : 140
   let text_size = window.innerWidth > phoneMaxWidth ? "md" : "sm"
 
   const [scope, animate] = useAnimate()
+  const audioRef = React.useRef<HTMLAudioElement>(null);
+  const [isLongPress, setLongPress] = useState(false);
 
-  const clickArtistHandler = (artist: Artist) => {
-    if (clicked) { return }
+  const stopMusic = () => {
+    if (audioRef.current) {
+      audioRef.current.pause();
+      audioRef.current.currentTime = 0;
+    }
+  }
+
+  const bind = useLongPress(() => {
+    audioRef.current?.play()
+    setLongPress(true)
+  }, {
+    onFinish: () => {
+      stopMusic()
+    },
+    onCancel: () => {
+      stopMusic()
+      setLongPress(false)
+    }
+  })
+
+  const clickArtistHandler = () => {
+    if (clicked || isLongPress) { return }
     setClicked(true)
     const winningGuess = artist.name === end
     const borderSize = winningGuess ? "4px" : "2px"
@@ -53,21 +76,31 @@ const ArtistCard = ({artist, updateArtistHandler, path, won,
             <Flex align="center" direction="column"
               justify="center" gap="0px">
                 <Card.Section inheritPadding>
-                  <Image fallbackSrc={`https://ui-avatars.com/api/?background=212529&color=f1f3f5&name=${encodeURIComponent(artist.name)}`} radius="sm" src={artist.image} w={img_size} h={img_size} alt={artist.name} />
+                  <Image draggable={false} fallbackSrc={`https://ui-avatars.com/api/?background=212529&color=f1f3f5&name=${encodeURIComponent(artist.name)}`}
+                  radius="sm" src={artist.image} w={img_size} h={img_size} alt={artist.name}
+                  styles={{root: {userSelect: 'none', WebkitUserSelect: 'none', WebkitTouchCallout: 'none'}}}/>
                 </Card.Section>
-                <Text c={path.includes(artist.name) && artist.name !== end ? "gray.5" : "gray.1"} fw={700} size={text_size} mt="md" ta="center">
+                <Text c={path.includes(artist.name) && artist.name !== end ? "gray.5" : "gray.1"} fw={700} size={text_size} mt="md" ta="center"
+                styles={{root: {userSelect: 'none', WebkitUserSelect: 'none'}}}>
                   {artist.name}
                 </Text>
             </Flex>
+            <audio ref={audioRef} src={artist.top_song_preview_url} />
         </Card>
     ) 
   }
 
   return (
     clickable ?
-    <HoverButton onTap={() => won ? updateArtistHandler(artist) : clickArtistHandler(artist)}>
-      {artistCardContent()}
-    </HoverButton>
+    <motion.button {...bind()}
+        whileHover={window.innerWidth > phoneMaxWidth ? { scale: 1.05 } : {scale: 1.03}}
+        whileTap={{ scale: 0.95 }}
+        onTap={() => won ? updateArtistHandler(artist) : clickArtistHandler()}
+        onTouchEnd={() => setLongPress(false)}
+        onMouseUp={() => setLongPress(false)}>
+
+        {artistCardContent()}
+    </motion.button>
     :
     artistCardContent()
   )

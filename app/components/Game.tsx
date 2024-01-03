@@ -25,7 +25,10 @@ export interface Artist {
     name: string,
     id: string,
     image: string,
-    related: string[]
+    related: string[],
+    top_song_name: string,
+    top_song_preview_url: string,
+    top_song_art: string
 }
 
 interface GameProps {
