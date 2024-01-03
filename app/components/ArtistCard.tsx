@@ -1,8 +1,7 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Artist, phoneMaxWidth } from './Game'
-import { Card, Image, Text, Flex } from '@mantine/core';
-import HoverButton from './HoverButton';
-import { motion, useAnimate, useAnimationControls } from 'framer-motion'
+import { Card, Image, Text, Flex, BackgroundImage, RingProgress, Center, Transition, Overlay } from '@mantine/core';
+import { motion, useAnimate } from 'framer-motion'
 import { useLongPress } from 'use-long-press';
 
 interface ArtistCardProps {
@@ -24,16 +23,56 @@ const ArtistCard = ({artist, updateArtistHandler, path, won,
   const [scope, animate] = useAnimate()
   const audioRef = React.useRef<HTMLAudioElement>(null);
   const [isLongPress, setLongPress] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [progress, setProgress] = useState(0);
+
+  const [resetAudioTimer, setResetAudioTimer] = useState<NodeJS.Timeout | null>(null);
+  // To get up-to-date value of isPlaying in resetAudioTimer
+  const isPlayingRef = useRef(isPlaying);
+
+  useEffect(() => {
+    isPlayingRef.current = isPlaying;
+  }, [isPlaying]);
+
+
+  const startMusic = () => {
+    audioRef.current?.play()
+    setIsPlaying(true)
+    resetAudioTimer && clearTimeout(resetAudioTimer)
+    setResetAudioTimer(null)
+  }
+
 
   const stopMusic = () => {
     if (audioRef.current) {
       audioRef.current.pause();
-      audioRef.current.currentTime = 0;
+      setIsPlaying(false)
+      // Reset audio after set time if audio hasn't been played again
+      setResetAudioTimer(setTimeout(() => {
+        if (audioRef.current && !isPlayingRef.current) {
+          audioRef.current.currentTime = 0;
+          setProgress(0)
+        }
+      }, 5000))
     }
   }
 
+  // Clear timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (resetAudioTimer) {
+        clearTimeout(resetAudioTimer);
+      }
+    }
+  }, [resetAudioTimer])
+
+  const onTimeUpdate = () => {
+    requestAnimationFrame(onTimeUpdate);
+    setProgress(((audioRef.current?.currentTime ?? 0) / 30) * 100)
+  }
+
   const bind = useLongPress(() => {
-    audioRef.current?.play()
+    startMusic()
     setLongPress(true)
   }, {
     onFinish: () => {
@@ -76,16 +115,31 @@ const ArtistCard = ({artist, updateArtistHandler, path, won,
             <Flex align="center" direction="column"
               justify="center" gap="0px">
                 <Card.Section inheritPadding>
-                  <Image draggable={false} fallbackSrc={`https://ui-avatars.com/api/?background=212529&color=f1f3f5&name=${encodeURIComponent(artist.name)}`}
-                  radius="sm" src={artist.image} w={img_size} h={img_size} alt={artist.name}
-                  styles={{root: {userSelect: 'none', WebkitUserSelect: 'none', WebkitTouchCallout: 'none'}}}/>
+                  <BackgroundImage className='pt-5' draggable={false}
+                  radius="sm" src={artist.image} w={img_size} h={img_size}
+                  styles={{root: {userSelect: 'none', WebkitUserSelect: 'none', WebkitTouchCallout: 'none'}}}>
+                    {isPlaying && <Overlay backgroundOpacity={0.5}/>}
+                    <Center>
+                    <Transition
+                      mounted={isPlaying}
+                      transition="fade"
+                      duration={400}
+                      timingFunction="ease">
+                      {(styles) => 
+                      <RingProgress thickness={5} style={styles} styles={{root: {zIndex: 1000}}}
+                      sections={[{ value: progress, color: 'green.5' }]}/>}
+                    </Transition>
+                    </Center>
+                  </BackgroundImage>
+                
                 </Card.Section>
                 <Text c={path.includes(artist.name) && artist.name !== end ? "gray.5" : "gray.1"} fw={700} size={text_size} mt="md" ta="center"
                 styles={{root: {userSelect: 'none', WebkitUserSelect: 'none'}}}>
                   {artist.name}
                 </Text>
             </Flex>
-            <audio loop ref={audioRef} src={artist.top_song_preview_url} />
+            <audio loop ref={audioRef} src={artist.top_song_preview_url}
+            onTimeUpdate={onTimeUpdate}/>
         </Card>
     ) 
   }
