@@ -3,6 +3,9 @@ import { Artist, phoneMaxWidth } from './Game'
 import { Card, Image, Text, Flex, BackgroundImage, RingProgress, Center, Transition, Overlay } from '@mantine/core';
 import { motion, useAnimate } from 'framer-motion'
 import { useLongPress } from 'use-long-press';
+import Lottie from 'lottie-react'
+import waveAnimation from '../audioWave.json'
+
 
 interface ArtistCardProps {
     artist: Artist,
@@ -36,7 +39,9 @@ const ArtistCard = ({artist, updateArtistHandler, path, won,
 
 
   const startMusic = () => {
-    audioRef.current?.play()
+    if (!audioRef.current) { return }
+    audioRef.current.play()
+    audioRef.current.volume = 0.5
     setIsPlaying(true)
     resetAudioTimer && clearTimeout(resetAudioTimer)
     setResetAudioTimer(null)
@@ -44,17 +49,16 @@ const ArtistCard = ({artist, updateArtistHandler, path, won,
 
 
   const stopMusic = () => {
-    if (audioRef.current) {
-      audioRef.current.pause();
-      setIsPlaying(false)
-      // Reset audio after set time if audio hasn't been played again
-      setResetAudioTimer(setTimeout(() => {
-        if (audioRef.current && !isPlayingRef.current) {
-          audioRef.current.currentTime = 0;
-          setProgress(0)
-        }
-      }, 5000))
-    }
+    if (!audioRef.current) { return }
+    audioRef.current.pause();
+    setIsPlaying(false)
+    // Reset audio after set time if audio hasn't been played again
+    setResetAudioTimer(setTimeout(() => {
+      if (audioRef.current && !isPlayingRef.current) {
+        audioRef.current.currentTime = 0;
+        setProgress(0)
+      }
+    }, 5000))
   }
 
   // Clear timeout on unmount
@@ -67,8 +71,9 @@ const ArtistCard = ({artist, updateArtistHandler, path, won,
   }, [resetAudioTimer])
 
   const onTimeUpdate = () => {
+    if (!audioRef.current) { return }
     requestAnimationFrame(onTimeUpdate);
-    setProgress(((audioRef.current?.currentTime ?? 0) / 30) * 100)
+    setProgress(((audioRef.current.currentTime ?? 0) / audioRef.current.duration) * 100)
   }
 
   const bind = useLongPress(() => {
@@ -109,7 +114,8 @@ const ArtistCard = ({artist, updateArtistHandler, path, won,
           padding="xs" opacity={won && artist.name !== end ? 0.25 : 1}
           styles={{
             root: {
-              width: window.innerWidth > phoneMaxWidth ? "192px" : window.innerWidth > 345 ? "160px" : ""
+              width: window.innerWidth > phoneMaxWidth ? "192px" : window.innerWidth > 345 ? "160px" : "",
+              userSelect: 'none', WebkitUserSelect: 'none', WebkitTouchCallout: 'none'
             }
           }}>
             <Flex align="center" direction="column"
@@ -127,7 +133,13 @@ const ArtistCard = ({artist, updateArtistHandler, path, won,
                       timingFunction="ease">
                       {(styles) => 
                       <RingProgress thickness={5} style={styles} styles={{root: {zIndex: 1000}}}
-                      sections={[{ value: progress, color: 'green.5' }]}/>}
+                      sections={[{ value: progress, color: 'gray.1' }]}
+                      label={
+                        <Center>
+                          <Lottie animationData={waveAnimation}
+                          style={{width: 50}}/>
+                        </Center>
+                      }/>}
                     </Transition>
                     </Center>
                   </BackgroundImage>

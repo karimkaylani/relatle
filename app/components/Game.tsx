@@ -365,7 +365,7 @@ const Game = (props: GameProps) => {
             <Popover position="bottom" opened={endMissed} transitionProps={{duration: 500, transition: 'pop' }}
             styles={{dropdown: {backgroundColor: "#e9ecef", border: 'none'}}}>
                 <Popover.Target>
-                    <RelatedArtistsTitle artist={currArtist} won={won} endArtist={web[end]}/>
+                    <RelatedArtistsTitle showLongPressText={true} artist={currArtist} won={won} endArtist={web[end]}/>
                 </Popover.Target>
 
                 <Popover.Dropdown>

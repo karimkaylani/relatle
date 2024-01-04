@@ -6,11 +6,12 @@ import ArtistInfo from './ArtistInfo'
 export interface RelatedArtistsTitleProps {
     artist: Artist,
     won: boolean,
-    endArtist: Artist
+    endArtist: Artist,
+    showLongPressText?: boolean
 }
 
 const RelatedArtistsTitle = React.forwardRef<HTMLDivElement, RelatedArtistsTitleProps>((props, ref) => {
-    const {artist, won, endArtist} = props
+    const {artist, won, endArtist, showLongPressText=false} = props
     let small = window.innerWidth <= phoneMaxWidth
 
     if (won) {
@@ -26,10 +27,13 @@ const RelatedArtistsTitle = React.forwardRef<HTMLDivElement, RelatedArtistsTitle
     }
 
   return (
-    <Group align='center' ref={ref} justify="center" gap="6px">
-        <ArtistInfo artist={artist} small={small} is_green={artist.name === endArtist.name}/>
-        <Text size={small ? "md" : "lg"}>related artists</Text>
-    </Group>
+    <Stack gap='5px' align='center' justify='center'>
+      <Group align='center' ref={ref} justify="center" gap="6px">
+          <ArtistInfo artist={artist} small={small} is_green={artist.name === endArtist.name}/>
+          <Text size={small ? "md" : "lg"}>related artists</Text>
+      </Group>
+      {showLongPressText && <Text ta='center' size={small ? "sm" : "md"}>Press & hold on an artist to hear a preview of their music</Text>}
+    </Stack>
   )
 })
 RelatedArtistsTitle.displayName = "RelatedArtistsTitle"

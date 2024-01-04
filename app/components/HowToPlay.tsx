@@ -1,4 +1,4 @@
-import { Modal, Text, Image, Group, Flex, Card } from '@mantine/core'
+import { Modal, Text, Image, Group, Flex, Card, Stack } from '@mantine/core'
 import React from 'react'
 import HoverButton from './HoverButton';
 import { Artist } from './Game';
@@ -42,9 +42,13 @@ const HowToPlay = (props: HowToPlayProps) => {
                     <Card shadow="sm" radius="md" padding="5px" w={50}>
                         <Text ta="center">2</Text>
                     </Card>
+                    <Stack align='center' justify='center'>
                     <Text fw={300}>Continue to choose related artists that would get
                     you closer to the target artist. If you get stuck, you can <Text fw={700} c="yellow.5" span>RESET</Text> back to the starting 
                     artist or use the <Text fw={700} c='gray.1' span>HINT</Text> to see the target artist{"'"}s related artists.</Text>
+
+                    <Text fw={300}>If you want to hear a preview of an artist{"'"}s music, press and hold on their card.</Text>
+                    </Stack>
                 </Group>
 
                 <Group justify='center'>
