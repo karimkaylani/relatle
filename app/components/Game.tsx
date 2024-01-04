@@ -138,7 +138,7 @@ const Game = (props: GameProps) => {
         const localSave = readLocalStroage();
         if (localSave == null) {
             if (localStorage.getItem("props") == null && localStorage.getItem("props_custom") == null) {
-                 htpModalOpen() 
+                htpModalOpen() 
             }
             return
         }

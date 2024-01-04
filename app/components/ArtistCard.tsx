@@ -121,11 +121,11 @@ const ArtistCard = ({artist, updateArtistHandler, path, won,
             <Flex align="center" direction="column"
               justify="center" gap="0px">
                 <Card.Section inheritPadding>
-                  <BackgroundImage className='pt-5' draggable={false}
+                  <BackgroundImage draggable={false}
                   radius="sm" src={artist.image} w={img_size} h={img_size}
                   styles={{root: {userSelect: 'none', WebkitUserSelect: 'none', WebkitTouchCallout: 'none'}}}>
                     {isPlaying && <Overlay backgroundOpacity={0.5}/>}
-                    <Center>
+                    <Center className={window.innerWidth > phoneMaxWidth ? 'pt-8' : 'pt-3'}>
                     <Transition
                       mounted={isPlaying}
                       transition="fade"
@@ -157,18 +157,14 @@ const ArtistCard = ({artist, updateArtistHandler, path, won,
   }
 
   return (
-    clickable ?
     <motion.button {...bind()}
-        whileHover={window.innerWidth > phoneMaxWidth ? { scale: 1.05 } : {scale: 1.03}}
+        whileHover={!clickable ? {} : window.innerWidth > phoneMaxWidth ? { scale: 1.05 } : {scale: 1.03}}
         whileTap={{ scale: 0.95 }}
-        onTap={() => won ? updateArtistHandler(artist) : clickArtistHandler()}
+        onTap={!clickable ? () => null : (() => won ? updateArtistHandler(artist) : clickArtistHandler())}
         onTouchEnd={() => setLongPress(false)}
         onMouseUp={() => setLongPress(false)}>
-
         {artistCardContent()}
     </motion.button>
-    :
-    artistCardContent()
   )
 }
 
