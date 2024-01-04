@@ -1,6 +1,6 @@
 import React from 'react'
 import { Artist, phoneMaxWidth } from './Game'
-import { Avatar, Group, Stack, Text } from '@mantine/core'
+import { Avatar, Group, Space, Stack, Text } from '@mantine/core'
 import ArtistInfo from './ArtistInfo'
 
 export interface RelatedArtistsTitleProps {
@@ -28,7 +28,10 @@ const RelatedArtistsTitle = React.forwardRef<HTMLDivElement, RelatedArtistsTitle
   return (
     <Group align='center' ref={ref} justify="center" gap="6px">
         <ArtistInfo artist={artist} small={small} is_green={artist.name === endArtist.name}/>
-        <Text size={small ? "md" : "lg"}>related artists</Text>
+        <Stack gap='0px'>
+          {small && <Space h={1}/>}
+          <Text className='' size={small ? "md" : "lg"}>related artists</Text>
+        </Stack>
     </Group>
   )
 })
