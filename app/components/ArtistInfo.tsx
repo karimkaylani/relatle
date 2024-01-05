@@ -16,7 +16,7 @@ const ArtistInfo = ({artist, small, is_green=false, show_name=true}: ArtistInfoP
             styles={is_green ? {
             image: { border: '2.5px solid #51cf66', borderRadius: "100%"  }
         } : {}}/>
-        {show_name && <Text c={is_green ? "green.5" : "gray.1"} size={small ? "12.5px" : "lg"} fw={700}>{artist.name}</Text>}
+        {show_name && <Text ta='center' c={is_green ? "green.5" : "gray.1"} size={small ? "12.5px" : "lg"} fw={700}>{artist.name}</Text>}
     </Group>
   )
 }
