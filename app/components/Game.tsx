@@ -20,6 +20,7 @@ import CoffeeButton from './CoffeeButton'
 import { useAnimate } from 'framer-motion'
 import Hint from './Hint'
 import { addScoreToDB } from '../db'
+import NewFeatureModal from './NewFeatureModal'
 
 export interface Artist {
     name: string,
@@ -86,7 +87,13 @@ const Game = (props: GameProps) => {
     const [customModalOpened, customModalHandlers] = useDisclosure(false);
     const {open: customModalOpen} = customModalHandlers
 
+    const [newFeatureModalOpened, newFeatureModalHandlers] = useDisclosure(false);
+    const {open: newFeatureModalOpen} = newFeatureModalHandlers
+
     const [usedHint, setUsedHint] = useState<boolean>(false)
+
+    // For new feature modal pop-up
+    const latestFeatureId = 0
 
     const searchParams = useSearchParams()
     const { scrollIntoView, targetRef: scrollViewRef } = useScrollIntoView<HTMLDivElement>({
@@ -124,6 +131,13 @@ const Game = (props: GameProps) => {
         localStorage.setItem(is_custom ? "props_custom" : "props", JSON.stringify(saveData));
     }
 
+    const tryShowNewFeature = () => {
+        if (JSON.parse(localStorage.getItem('newFeatureId') ?? "-1") < latestFeatureId) {
+            localStorage.setItem('newFeatureId', JSON.stringify(latestFeatureId))
+            newFeatureModalOpen()
+        }
+    }
+
     const readLocalStroage = (): SaveProps|null => {
         // Ensure page is mounted to client before trying to read localStorage
         const item = localStorage.getItem(is_custom ? "props_custom" : "props");
@@ -138,7 +152,11 @@ const Game = (props: GameProps) => {
         const localSave = readLocalStroage();
         if (localSave == null) {
             if (localStorage.getItem("props") == null && localStorage.getItem("props_custom") == null) {
+                // If first time playing, don't wanna show new feature modal
+                localStorage.setItem('newFeatureId', JSON.stringify(latestFeatureId))
                 htpModalOpen() 
+            } else {
+                tryShowNewFeature()
             }
             return
         }
@@ -150,6 +168,8 @@ const Game = (props: GameProps) => {
         setAverageScore(localSave.averageScore ?? 0)
 
         if (JSON.stringify(localSave.matchup) !== JSON.stringify(todayMatchup)) {
+            // See if need to serve newFeature modal
+            tryShowNewFeature()
             return
         }
         setCurrArtist(localSave.currArtist)
@@ -365,7 +385,7 @@ const Game = (props: GameProps) => {
             <Popover position="bottom" opened={endMissed} transitionProps={{duration: 500, transition: 'pop' }}
             styles={{dropdown: {backgroundColor: "#e9ecef", border: 'none'}}}>
                 <Popover.Target>
-                    <RelatedArtistsTitle showLongPressText={true} artist={currArtist} won={won} endArtist={web[end]}/>
+                    <RelatedArtistsTitle artist={currArtist} won={won} endArtist={web[end]}/>
                 </Popover.Target>
 
                 <Popover.Dropdown>
@@ -383,6 +403,7 @@ const Game = (props: GameProps) => {
                  won={won} end={end} clicked={artistClicked} setClicked={setArtistClicked}
                 updateArtistHandler={(won || artist_name === end) ? updateArtistHandler : clickArtistHandler}/>)}
             </SimpleGrid>
+            <Text ta='center' size={window.innerWidth <= phoneMaxWidth ? "sm" : "md"}>Press and hold on an artist to hear a preview of their music</Text>
             {!won && <Stack align='center' justify='center'>
                 <Text ta="center" c='gray.1' size="md">Feeling stuck?</Text>
                 <Group justify='center' align='center'>
@@ -399,6 +420,7 @@ const Game = (props: GameProps) => {
                 <Text c='gray.7'>|</Text>
                 <HowToPlay start={web[start]} end={web[end]} opened={htpModalOpened} handlers={htpModalHandlers}/>
             </Group>
+            <NewFeatureModal newFeatureModalOpened={newFeatureModalOpened} newFeatureModalHandlers={newFeatureModalHandlers}/>
         </Flex>
     )
 }
