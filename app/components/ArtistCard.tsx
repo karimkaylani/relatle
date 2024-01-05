@@ -91,6 +91,7 @@ const ArtistCard = ({artist, updateArtistHandler, path, won,
 
   const clickArtistHandler = () => {
     if (clicked || isLongPress) { return }
+    if (won) { return updateArtistHandler(artist) }
     setClicked(true)
     const winningGuess = artist.name === end
     const borderSize = winningGuess ? "4px" : "2px"
@@ -109,9 +110,9 @@ const ArtistCard = ({artist, updateArtistHandler, path, won,
 
   return (
     <motion.button {...bind()}
-      whileHover={!clickable ? {} : window.innerWidth > phoneMaxWidth ? { scale: 1.05 } : {scale: 1.03}}
+      whileHover={clickable ? window.innerWidth > phoneMaxWidth ? { scale: 1.05 } : {scale: 1.03} : {}}
       whileTap={{ scale: 0.95 }}
-      onTap={!clickable ? () => null : (() => won ? updateArtistHandler(artist) : clickArtistHandler())}
+      onTap={clickable ? clickArtistHandler : () => null}
       onTouchEnd={() => setLongPress(false)}
       onMouseUp={() => setLongPress(false)}>
       <Card ref={scope}

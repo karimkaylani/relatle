@@ -243,7 +243,7 @@ const Game = (props: GameProps) => {
 
     const updateArtistHandler = async (artist: Artist) => {
         setArtistClicked(false)
-        if (won === true) {
+        if (won) {
             if (artist.name === end) { winModalOpen() }
             return
         }
