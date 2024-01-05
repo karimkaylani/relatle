@@ -30,7 +30,7 @@ const RelatedArtistsTitle = React.forwardRef<HTMLDivElement, RelatedArtistsTitle
         <ArtistInfo artist={artist} small={small} is_green={artist.name === endArtist.name}/>
         <Stack gap='0px'>
           {small && <Space h={1}/>}
-          <Text className='' size={small ? "md" : "lg"}>related artists</Text>
+          <Text size={small ? "md" : "lg"}>related artists</Text>
         </Stack>
     </Group>
   )
