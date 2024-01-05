@@ -11,7 +11,8 @@ import ArtistInfo from './ArtistInfo';
 interface CustomGameModalProps {
     web: {[key: string]: Artist},
     customModalOpened: boolean,
-    customModalHandlers: any
+    customModalHandlers: any,
+    matchups: string[][]
 }
 
 /* From a starting artist, return a hashmap where the keys are endArtists
@@ -97,7 +98,7 @@ const minNumPathsForRecommended = 7
 const maxNumPathsForRecommended = 25
 
 const CustomGameModal = (props: CustomGameModalProps) => {
-    const {web, customModalOpened, customModalHandlers} = props
+    const {web, customModalOpened, customModalHandlers, matchups} = props
     const {close: customModalClose} = customModalHandlers
     const artistsList: string[] = [...Object.keys(web)];
     const [matchupsFound, setMatchupsFound] = useState<string[]>([])
@@ -115,26 +116,33 @@ const CustomGameModal = (props: CustomGameModalProps) => {
         }
     }
 
-    const noRepeatingArtistInAllPaths = (paths: string[][]): boolean => {
+    const repeatingArtistInAllPaths = (paths: string[][]): boolean => {
         let all_artists_in_paths = new Set(paths.flat())
-        all_artists_in_paths.forEach((artist) => {
-            if (paths.every((path) => path.slice(0, -1).includes(artist))) {
-                return false
+        for (const artist of all_artists_in_paths) {
+            if (paths.filter((path) => path.slice(0,-1).includes(artist)).length === paths.length) {
+                return true
             }
-        })
-        return true
+        }
+        return false
     }
 
     const getRecommendedArtists = (start: string) => {
         const closeEndArtists = Object.keys(getNumPathsEndArtists(web, start, minDegOfSepRecommended))
-        const endArtistsWithMinDegOfSep = getNumPathsEndArtists(web, start, maxDegOfSepRecommended)
-        const recommendedEndArtists = Object.keys(endArtistsWithMinDegOfSep).filter((artist) => {
-            return endArtistsWithMinDegOfSep[artist].length >= minNumPathsForRecommended &&
-            endArtistsWithMinDegOfSep[artist].length <= maxNumPathsForRecommended &&
+        const endArtistsWithMaxDegOfSep = getNumPathsEndArtists(web, start, maxDegOfSepRecommended)
+        let recommendedEndArtists = Object.keys(endArtistsWithMaxDegOfSep).filter((artist) => {
+            return endArtistsWithMaxDegOfSep[artist].length >= minNumPathsForRecommended &&
+            endArtistsWithMaxDegOfSep[artist].length <= maxNumPathsForRecommended &&
             !closeEndArtists.includes(artist) &&
             // there isn't any single artist that appears in all paths
-            noRepeatingArtistInAllPaths(endArtistsWithMinDegOfSep[artist])
+            !repeatingArtistInAllPaths(endArtistsWithMaxDegOfSep[artist])
         })
+        // For daily matchup curating: don't want to reuse target artists
+        if (process.env.NODE_ENV === 'development') {
+            // Get list of second artist of all matchups
+           const secondArtists = matchups.map((matchup) => matchup[1])
+           // Filter out artists that are second artists in any matchup
+           recommendedEndArtists = recommendedEndArtists.filter((artist) => !secondArtists.includes(artist))
+       }
         return recommendedEndArtists
     }
 

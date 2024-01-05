@@ -369,7 +369,7 @@ const Game = (props: GameProps) => {
                     {is_custom && <Text p="0px" c="gray.1" ta="center">Custom Game</Text>}
                 </Stack>
                 <CustomGameButton customModalOpen={customModalOpen}/>
-                <CustomGameModal customModalOpened={customModalOpened} customModalHandlers={customModalHandlers} web={web}/>
+                <CustomGameModal customModalOpened={customModalOpened} customModalHandlers={customModalHandlers} web={web} matchups={Object.values(matchups ?? {})}/>
             </Group>
             <Stack gap="xs">
                 <Text size={width > phoneMaxWidth ? "md" : "sm"} ta="center">Use related artists to get from</Text>

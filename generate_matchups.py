@@ -23,8 +23,10 @@ def verify_matchups(web):
     for date in matchups:
         matchup = matchups[date]
         start, end = matchup
-        if start not in web or end not in web or not is_good_matchup(web, matchup):
-            print(date, matchup)
+        if start not in web or end not in web:
+            print("Not in web:", date, matchup)
+        elif not is_good_matchup(web, matchup):
+            print("Not good matchup:", date, matchup)
 
 def write_matchups_to_disk(matchups):
     start_date = datetime(2023, 11, 29)
