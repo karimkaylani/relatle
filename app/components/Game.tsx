@@ -373,7 +373,7 @@ const Game = (props: GameProps) => {
             </Group>
             <Stack gap="xs">
                 <Text size={width > phoneMaxWidth ? "md" : "sm"} ta="center">Use related artists to get from</Text>
-                <Matchup ref={matchupRef} start={web[start]} end={web[end]} small={width <= phoneMaxWidth}/>
+                <Matchup ref={matchupRef} start={web[start]} end={web[end]} small={width <= phoneMaxWidth} showPreviews={true}/>
             </Stack>
             {won ? 
                 <HoverButton onTap={winModalOpen}>
