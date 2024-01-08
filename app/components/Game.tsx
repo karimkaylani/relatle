@@ -58,6 +58,15 @@ interface SaveProps {
 
 export const phoneMaxWidth = 768;
 
+export interface iPlayingAudioContext {
+    playingAudio: HTMLAudioElement|null,
+    setPlayingAudio: (playingAudio: HTMLAudioElement) => void
+}
+export const PlayingAudioContext = React.createContext<iPlayingAudioContext>({
+    playingAudio: null,
+    setPlayingAudio: () => {}
+})
+
 const Game = (props: GameProps) => {
     const {web, matchups, is_custom} = props
     const [matchup, setMatchup] = useState<any>(null)
@@ -91,6 +100,8 @@ const Game = (props: GameProps) => {
     const {open: newFeatureModalOpen} = newFeatureModalHandlers
 
     const [usedHint, setUsedHint] = useState<boolean>(false)
+
+    const [playingAudio, setPlayingAudio] = useState<HTMLAudioElement|null>(null)
 
     // For new feature modal pop-up
     const latestFeatureId = 0
@@ -373,7 +384,9 @@ const Game = (props: GameProps) => {
             </Group>
             <Stack gap="xs">
                 <Text size={width > phoneMaxWidth ? "md" : "sm"} ta="center">Use related artists to get from</Text>
-                <Matchup ref={matchupRef} start={web[start]} end={web[end]} small={width <= phoneMaxWidth} showPreviews={true}/>
+                <PlayingAudioContext.Provider value={{playingAudio, setPlayingAudio}}>
+                    <Matchup ref={matchupRef} start={web[start]} end={web[end]} small={width <= phoneMaxWidth} showPreviews={true}/>
+                </PlayingAudioContext.Provider>
             </Stack>
             {won ? 
                 <HoverButton onTap={winModalOpen}>
@@ -397,12 +410,14 @@ const Game = (props: GameProps) => {
              streak={streak} longest_streak={longestStreak} days_played={numDaysPlayed} customModalOpen={customModalOpen}/>
             <AffixStatus currArtist={currArtist} endArtist={web[end]} guesses={guesses} 
             resets={resets} onTap={scrollToTop} mounted={!won && !entryAffix?.isIntersecting}/>
-            <SimpleGrid ref={scope} cols={{ base: 2, xs: 3, sm: 3, md: 4, lg: 5 }}>
-            {currArtist.related.map((artist_name: string) => 
-                <ArtistCard key={web[artist_name].id} artist={web[artist_name]} path={path}
-                 won={won} end={end} clicked={artistClicked} setClicked={setArtistClicked}
-                updateArtistHandler={(won || artist_name === end) ? updateArtistHandler : clickArtistHandler}/>)}
-            </SimpleGrid>
+            <PlayingAudioContext.Provider value={{playingAudio, setPlayingAudio}}>
+                <SimpleGrid ref={scope} cols={{ base: 2, xs: 3, sm: 3, md: 4, lg: 5 }}>
+                {currArtist.related.map((artist_name: string) => 
+                    <ArtistCard key={web[artist_name].id} artist={web[artist_name]} path={path}
+                    won={won} end={end} clicked={artistClicked} setClicked={setArtistClicked}
+                    updateArtistHandler={(won || artist_name === end) ? updateArtistHandler : clickArtistHandler}/>)}
+                </SimpleGrid>
+            </PlayingAudioContext.Provider>
             <Text ta='center' size={window.innerWidth <= phoneMaxWidth ? "sm" : "md"}>Press and hold on an artist to hear a preview of their music</Text>
             {!won && <Stack align='center' justify='center'>
                 <Text ta="center" c='gray.1' size="md">Feeling stuck?</Text>

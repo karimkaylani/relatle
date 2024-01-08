@@ -2,7 +2,7 @@ import { IconPlayerPlayFilled, IconPlayerStopFilled } from '@tabler/icons-react'
 import React, { Fragment } from 'react'
 import HoverButton from './HoverButton'
 import { Center, RingProgress } from '@mantine/core'
-import { phoneMaxWidth } from './Game'
+import { PlayingAudioContext, phoneMaxWidth } from './Game'
 
 export interface PlayButtonProps {
     audioUrl: string
@@ -14,10 +14,14 @@ const PlayButton = (props: PlayButtonProps) => {
     const [isPlaying, setIsPlaying] = React.useState(false)
     const [progress, setProgress] = React.useState(0)
 
+    const {playingAudio, setPlayingAudio} = React.useContext(PlayingAudioContext)
+
     let isPhone = window.innerWidth < phoneMaxWidth
 
     const startMusic = () => {
         if (!audioRef.current) { return }
+        playingAudio?.pause()
+        setPlayingAudio(audioRef.current)
         audioRef.current.play()
         audioRef.current.volume = 0.5
         setIsPlaying(true)
@@ -51,7 +55,7 @@ const PlayButton = (props: PlayButtonProps) => {
             }>
             </RingProgress>
         </HoverButton>
-        <audio ref={audioRef} src={audioUrl} onTimeUpdate={onTimeUpdate} onEnded={stopMusic}/>
+        <audio ref={audioRef} src={audioUrl} onTimeUpdate={onTimeUpdate} onEnded={stopMusic} onPause={stopMusic}/>
     </Fragment>
   )
 }

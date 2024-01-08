@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect, useRef, useState } from 'react'
-import { Artist, phoneMaxWidth } from './Game'
+import { Artist, PlayingAudioContext, phoneMaxWidth } from './Game'
 import { Card, Image, Text, Flex, BackgroundImage, RingProgress, Center, Transition, Overlay } from '@mantine/core';
 import { motion, useAnimate } from 'framer-motion'
 import { useLongPress } from 'use-long-press';
@@ -30,9 +30,12 @@ const ArtistCard = ({artist, updateArtistHandler, path, won,
   const [progress, setProgress] = useState(0);
 
   const [resetAudioTimer, setResetAudioTimer] = useState<NodeJS.Timeout | null>(null);
-  // To get up-to-date value of isPlaying in resetAudioTimer
+  
   const isPlayingRef = useRef(isPlaying);
 
+  const {playingAudio, setPlayingAudio} = React.useContext(PlayingAudioContext)
+
+  // To get up-to-date value of isPlaying in resetAudioTimer
   useEffect(() => {
     isPlayingRef.current = isPlaying;
   }, [isPlaying]);
@@ -40,6 +43,8 @@ const ArtistCard = ({artist, updateArtistHandler, path, won,
 
   const startMusic = () => {
     if (!audioRef.current) { return }
+    playingAudio?.pause()
+    setPlayingAudio(audioRef.current)
     audioRef.current.play()
     audioRef.current.volume = 0.5
     setIsPlaying(true)
@@ -158,7 +163,7 @@ const ArtistCard = ({artist, updateArtistHandler, path, won,
               </Text>
           </Flex>
           <audio loop ref={audioRef} src={artist.top_song_preview_url}
-          onTimeUpdate={onTimeUpdate}/>
+          onTimeUpdate={onTimeUpdate} onPause={stopMusic}/>
       </Card>
     </motion.button>
   ) 
