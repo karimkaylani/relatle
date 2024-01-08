@@ -4,8 +4,10 @@
 
 ## A daily game where you connect two musicians together using their related artists
 
-### Features a responsive UI with animations and artist photos
-<img src="https://github.com/karimkaylani/relatle/assets/19757304/fa520a02-b58d-4c73-8b46-19332a0bd70c" alt="home" width="800"/>
+### Features a responsive UI with animations, artist photos, and song previews
+Long press on an artist to hear a preview of one of their songs
+
+<img src="https://github.com/karimkaylani/relatle/assets/19757304/0a518ded-d64b-46c5-9fc4-b803ff4192ef" alt="home" width="800"/>
 
 
 ### Winning screen contains path summary, global score results, player stats, and integrated sharing features
@@ -13,7 +15,7 @@
 
 
 ### Create custom games to send to your friends
-Utilized graph algorithms to recommend matchups and ensure only possible matchups are shown
+Utilize graph algorithms to recommend matchups and ensure only possible matchups are shown
 
 <img width="437" alt="image" src="https://github.com/karimkaylani/relatle/assets/19757304/0676a8e8-010a-406c-a9fa-614f539409d8">
 <img width="600" alt="image" src="https://github.com/karimkaylani/relatle/assets/19757304/52cfadb5-4f11-480a-8854-43f415e832da">
