@@ -18,9 +18,10 @@ def main():
     # write_matchups_to_disk(matchups)
 
 def verify_matchups(web):
+    todayIndex = 41
     with open("public/matchups.json", "r") as outfile:
         matchups = json.load(outfile)
-    for date in matchups:
+    for date in list(matchups)[todayIndex:]:
         matchup = matchups[date]
         start, end = matchup
         if start not in web or end not in web:
