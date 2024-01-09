@@ -48,7 +48,7 @@ const getNumPathsEndArtists = (web: {[key: string]: Artist}, start: string, maxS
     return endArtists
 }
 
-function getValidPaths(web: {[key: string]: Artist}, start: string, end: string, maxSteps: number): string[][] {
+export function getValidPaths(web: {[key: string]: Artist}, start: string, end: string, maxSteps: number): string[][] {
     const visited: Set<string> = new Set();
     const queue: Collections.Queue<[string, number, string[]]> = new Collections.Queue();
     queue.enqueue([start, 0, []]);

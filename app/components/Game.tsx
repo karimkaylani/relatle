@@ -14,7 +14,7 @@ import HoverButton from './HoverButton'
 import { useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import CustomGameButton from './CustomGameButton'
-import CustomGameModal from './CustomGameModal'
+import CustomGameModal, { getValidPaths } from './CustomGameModal'
 import AffixStatus from './AffixStatus'
 import CoffeeButton from './CoffeeButton'
 import { useAnimate } from 'framer-motion'
@@ -241,7 +241,8 @@ const Game = (props: GameProps) => {
 
     const [start, end] = matchup
 
-    if (!(start in web) || !(end in web) || (start === end)) { 
+    if (!(start in web) || !(end in web) || (start === end) ||
+        getValidPaths(web, start, end, Infinity).length === 0) { 
         window.open("/", "_self")
         return
     }
