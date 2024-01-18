@@ -99,7 +99,7 @@ const GameOver = ({opened, close, path, guesses, matchup,
   })
 
   return (
-    <Drawer.Root opened={opened} onClose={close} size='85%'
+    <Drawer.Root opened={opened} onClose={close} size={window.innerWidth > phoneMaxWidth ? '80%' : '85%'}
     style={{borderRadius: '20px'}} padding='sm' position={'bottom'}>
       <Drawer.Overlay/>
       <Drawer.Content>
@@ -145,9 +145,9 @@ const GameOver = ({opened, close, path, guesses, matchup,
             </Card>
           </Fragment>}
           {!is_custom && <CountdownClock/>}
-          {/* {!is_custom && 
-          <Stack align='center'>
-            <Text size='md'>Want more?</Text>
+          {/* {is_custom && 
+          <Stack gap='xs' align='center' className='pt-5'>
+            <Text fw={700} size='md'>Play another!</Text>
             <CustomGameButton customModalOpen={() => {
               close()
               customModalOpen()
