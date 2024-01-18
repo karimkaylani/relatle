@@ -55,7 +55,7 @@ def generate_matchups(m, amount, artists, with_replacement=False):
 def is_good_matchup(m, matchup):
     min_deg_of_separation, max_deg_of_separation = 3, 7
     # Range of num paths for a good matchup at max_deg of sep > deg of sep > min deg of sep
-    min_allowed_num_paths, max_allowed_num_paths = 7, 25
+    min_allowed_num_paths, max_allowed_num_paths = 7, 1000
     start, end = matchup
     if start == end:
         return False
@@ -71,6 +71,11 @@ def is_good_matchup(m, matchup):
     for artist in all_artists_in_paths:
         if len(list(filter(lambda x: artist in x[:-1], valid_paths))) == len(valid_paths):
             return False
+    # If only 2 first artists, then must be at least 2 paths for each
+    if (len(set([x[0] for x in valid_paths])) == 2):
+        for artist in set([x[0] for x in valid_paths]):
+            if len(list(filter(lambda x: x[0] == artist, valid_paths))) < 2:
+                return False
     return True
 
 def get_valid_paths(graph, start, end, max_steps):
@@ -82,12 +87,13 @@ def get_valid_paths(graph, start, end, max_steps):
     
     while queue:
         node, steps, path = queue.popleft()
+        visited.add(node)
         if node == end and steps <= max_steps:
             paths.append(path)
-        if node not in visited and steps <= max_steps:
-            visited.add(node)
+        if steps <= max_steps:
             for neighbor in graph.get(node, []).get('related', []):
-                queue.append((neighbor, steps+1, path + [neighbor]))
+                if neighbor not in visited:  
+                    queue.append((neighbor, steps+1, path + [neighbor]))
     return paths
 
 def get_connected_nodes(web, start):

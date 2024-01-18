@@ -29,6 +29,7 @@ const getNumPathsEndArtists = (web: {[key: string]: Artist}, start: string, maxS
             return endArtists;
         }
         const [node, path] = item
+        visited.add(node)
         if (path.length <= maxSteps) {
             if (node !== start) {
                 if (endArtists[node] === undefined) {
@@ -37,12 +38,12 @@ const getNumPathsEndArtists = (web: {[key: string]: Artist}, start: string, maxS
                     endArtists[node].push(path)
                 }
             }
-            if (!visited.has(node)) {
-                visited.add(node);
-                for (const neighbor of web[node].related || []) {
+            for (const neighbor of web[node].related || []) {
+                if (!visited.has(neighbor)) {
                     queue.enqueue([neighbor, [...path, neighbor]]);
                 }
             }
+            
         }
     }
     return endArtists
@@ -60,14 +61,16 @@ export function getValidPaths(web: {[key: string]: Artist}, start: string, end: 
             return paths;
         }
         const [node, steps, path] = item
-        if (node === end && steps <= maxSteps) {
-            paths.push(path);
-        }
-        if (!visited.has(node) && steps <= maxSteps) {
-            visited.add(node);
-            for (const neighbor of web[node].related || []) {
-                queue.enqueue([neighbor, steps + 1, path.concat(neighbor)]);
+        visited.add(node)
+        if (steps <= maxSteps) {
+            if (node === end) {
+                paths.push(path);
             }
+        }
+        for (const neighbor of web[node].related || []) {
+            if (!visited.has(neighbor)) {
+                queue.enqueue([neighbor, steps + 1, path.concat(neighbor)]);
+            }   
         }
     }
     return paths;
@@ -95,7 +98,7 @@ const maxDegOfSepRecommended = 7
 const maxDegOfSepWarning = 10
 const maxNumPathsForWarning = 4
 const minNumPathsForRecommended = 7
-const maxNumPathsForRecommended = 25
+const maxNumPathsForRecommended = 1000
 
 const CustomGameModal = (props: CustomGameModalProps) => {
     const {web, customModalOpened, customModalHandlers, matchups} = props
