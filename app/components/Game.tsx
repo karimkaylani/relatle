@@ -424,7 +424,9 @@ const Game = (props: GameProps) => {
                 <Text ta="center" c='gray.1' size="md">Feeling stuck?</Text>
                 <Group justify='center' align='center'>
                     {start !== currArtist.name && <Reset resetHandler={(won || currArtist.name === start) ? resetHandler : clickResetHandler}/>}
+                    <PlayingAudioContext.Provider value={{playingAudio, setPlayingAudio}}>
                     <Hint web={web} endArtist={web[end]} path={path} setUsedHint={useHintHandler}/>
+                    </PlayingAudioContext.Provider>
                 </Group>
             </Stack>}
             
