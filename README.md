@@ -17,8 +17,8 @@ Long press on an artist to hear a preview of one of their songs
 ### Create custom games to send to your friends
 Utilize graph algorithms to recommend matchups and ensure only possible matchups are shown
 
-<img width="437" alt="image" src="https://github.com/karimkaylani/relatle/assets/19757304/0676a8e8-010a-406c-a9fa-614f539409d8">
-<img width="600" alt="image" src="https://github.com/karimkaylani/relatle/assets/19757304/52cfadb5-4f11-480a-8854-43f415e832da">
+<img width="437" alt="image" src="https://github.com/karimkaylani/relatle/assets/19757304/9d4b32bd-23d9-4967-b9ee-211e1de7a258">
+<img width="600" alt="image" src="https://github.com/karimkaylani/relatle/assets/19757304/afccfd4e-cbc4-4fae-a63d-005038b0672b">
 
 
 ### Other Features
