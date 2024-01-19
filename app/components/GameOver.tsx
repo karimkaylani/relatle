@@ -145,14 +145,14 @@ const GameOver = ({opened, close, path, guesses, matchup,
             </Card>
           </Fragment>}
           {!is_custom && <CountdownClock/>}
-          {/* {is_custom && 
+          {is_custom && 
           <Stack gap='xs' align='center' className='pt-5'>
             <Text fw={700} size='md'>Play another!</Text>
             <CustomGameButton customModalOpen={() => {
               close()
               customModalOpen()
             }}/>
-          </Stack>} */}
+          </Stack>}
           <Affix w="100%" position={{bottom: 0}}>
           <Transition transition="slide-up" mounted={opened} timingFunction='ease'>
           {(transitionStyles) => (
