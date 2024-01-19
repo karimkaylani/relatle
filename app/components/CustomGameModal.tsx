@@ -98,7 +98,7 @@ const maxDegOfSepRecommended = 7
 const maxDegOfSepWarning = 10
 const maxNumPathsForWarning = 4
 const minNumPathsForRecommended = 7
-const maxNumPathsForRecommended = 1000
+const maxNumPathsForRecommended = Infinity
 
 const CustomGameModal = (props: CustomGameModalProps) => {
     const {web, customModalOpened, customModalHandlers, matchups} = props
@@ -129,16 +129,40 @@ const CustomGameModal = (props: CustomGameModalProps) => {
         return false
     }
 
+    const atLeastTwoPathsIfTwoFirstClicked = (paths: string[][]): boolean => {
+        const startingArtists = new Set(paths.map(x => x[0]))
+        if (startingArtists.size === 2) {
+            for (const artist of startingArtists) {
+                if (paths.filter((path) => path[0] === artist).length < 2) {
+                    return false
+                }
+            }
+        }
+        return true
+    }
+
+    const isRecommendedMatchup  = (end: string,
+        closeEndArtists: string[], endArtistsWithMaxDegOfSep: {[key: string]: string[][]}): boolean => {
+        /* Conditions:
+        1. Must have at least minNumPathsForRecommended paths
+        2. Must have at most maxNumPathsForRecommended paths
+        3. Must not be a close end artist (path length within minDegOfSepRecommended)
+        4. There isn't any single artist that appears in all paths
+        5. If there are only 2 first clicked artists, then must be at least 2 paths for each
+        */
+        return endArtistsWithMaxDegOfSep[end].length >= minNumPathsForRecommended &&
+        endArtistsWithMaxDegOfSep[end].length <= maxNumPathsForRecommended &&
+        !closeEndArtists.includes(end) &&
+        !repeatingArtistInAllPaths(endArtistsWithMaxDegOfSep[end]) &&
+        atLeastTwoPathsIfTwoFirstClicked(endArtistsWithMaxDegOfSep[end])
+    }
+
     const getRecommendedArtists = (start: string) => {
         const closeEndArtists = Object.keys(getNumPathsEndArtists(web, start, minDegOfSepRecommended))
         const endArtistsWithMaxDegOfSep = getNumPathsEndArtists(web, start, maxDegOfSepRecommended)
-        let recommendedEndArtists = Object.keys(endArtistsWithMaxDegOfSep).filter((artist) => {
-            return endArtistsWithMaxDegOfSep[artist].length >= minNumPathsForRecommended &&
-            endArtistsWithMaxDegOfSep[artist].length <= maxNumPathsForRecommended &&
-            !closeEndArtists.includes(artist) &&
-            // there isn't any single artist that appears in all paths
-            !repeatingArtistInAllPaths(endArtistsWithMaxDegOfSep[artist])
-        })
+        let recommendedEndArtists = Object.keys(endArtistsWithMaxDegOfSep).filter(
+            (artist) => isRecommendedMatchup(artist, closeEndArtists, endArtistsWithMaxDegOfSep))
+
         // For daily matchup curating: don't want to reuse target artists
         if (process.env.NODE_ENV === 'development') {
             // Get list of second artist of all matchups
