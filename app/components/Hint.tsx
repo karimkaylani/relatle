@@ -46,14 +46,13 @@ const Hint = (props: HintProps) => {
           <Drawer.Title style={{width: '100%'}}>
               <Stack gap='xs'>
               <RelatedArtistsTitle artist={endArtist} won={false} endArtist={endArtist}/>
-              <Text ta='center'><b>Note:</b> {"These artists aren't guaranteed to be related in both directions"}</Text>
               </Stack>
           </Drawer.Title>
            <Drawer.CloseButton />
         </Drawer.Header>
         <Drawer.Body>
             <Stack align='center'>
-                <Space h={0} ref={ref}/>
+                <Text ref={ref} ta='center'><b>Note:</b> {"These artists aren't guaranteed to be related in both directions"}</Text>
                 <SimpleGrid cols={{ base: 2, xs: 3, sm: 3, md: 4, lg: 5 }}>
                 {endArtist.related.map((artist_name: string) => 
                     <ArtistCard key={web[artist_name].id} artist={web[artist_name]} path={path} clickable={false}
