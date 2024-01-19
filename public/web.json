@@ -2730,22 +2730,23 @@
     },
     "Wisin": {
         "name": "Wisin",
-        "id": "1wZtkThiXbVNtj6hee6dz9",
-        "image": "https://i.scdn.co/image/ab6761610000e5ebb5496c4b788e181679069ee8",
+        "id": "3E6xrwgnVfYCrCs0ePERDz",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb5a6d0670b0a094e631f88cac",
         "related": [
             "Yandel",
-            "Wisin",
             "Zion & Lennox",
-            "Don Omar",
             "Zion",
             "Jowell & Randy",
             "De La Ghetto",
-            "Cosculluela"
+            "Wisin & Yandel",
+            "Nicky Jam",
+            "Cosculluela",
+            "Farruko"
         ],
-        "top_song_name": "Besos Moja2",
-        "top_song_id": "6OzUIp8KjuwxJnCWkXp1uL",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2739f05bb270f81880fd844aae8",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/8b17c9ae5706f7f2e41a6ec3470631b3094017b6"
+        "top_song_name": "Se\u00f1orita",
+        "top_song_id": "0FmIDOVz1wI7F8axO6elnu",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273ee781e600fd53549334a860b",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/967c15b185884ec03f679590b22e6d02dbc93533"
     },
     "Dr. Dre": {
         "name": "Dr. Dre",
@@ -4224,23 +4225,6 @@
         "top_song_id": "6L89mwZXSOwYl76YXfX13s",
         "top_song_art": "https://i.scdn.co/image/ab67616d0000b273db89b08034de626ebee6823d",
         "top_song_preview_url": "https://p.scdn.co/mp3-preview/f055a866d726bac8593f15953d772c631505df7e"
-    },
-    "Banda MS": {
-        "name": "Banda MS",
-        "id": "2C6i0I5RiGzDKN9IAF8reh",
-        "image": "https://i.scdn.co/image/ab6761610000e5ebf04e0939e5d6b727bd750af3",
-        "related": [
-            "La Adictiva",
-            "La Arrolladora Banda El Lim\u00f3n De Rene Camacho",
-            "Banda El Recodo",
-            "Gerardo Ortiz",
-            "Calibre 50",
-            "Grupo Firme"
-        ],
-        "top_song_name": "Ojos Cerrados",
-        "top_song_id": "4OVpyR6yhYyVoRj9D7CERz",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273aac2dec00208d9b597a6a10f",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/99e8d69f9fff33af22ba612ba5d113625f7ec3b4"
     },
     "The Killers": {
         "name": "The Killers",
@@ -5761,22 +5745,18 @@
     },
     "Jul": {
         "name": "Jul",
-        "id": "1bfl0AU8SqmLkElptOprhC",
-        "image": "https://i.scdn.co/image/ab6761610000e5ebd67a054187edc32f174c450c",
+        "id": "3IW7ScrzXmPvZhB27hmfgy",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb94eca61a3f464768ac1be748",
         "related": [
-            "Alfredo Olivas",
-            "La Arrolladora Banda El Lim\u00f3n De Rene Camacho",
-            "La Adictiva",
-            "Gerardo Ortiz",
-            "Banda El Recodo",
-            "Carin Leon",
-            "Calibre 50",
-            "Grupo Firme"
+            "Ninho",
+            "PNL",
+            "Gazo",
+            "Niska"
         ],
-        "top_song_name": "Lo Tienes Todo",
-        "top_song_id": "29vIEdxgMT9H1fnBMecWjA",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b27301b15b3f93799c1823cde7bd",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/240f6d3c764726183c958e46aebe5caa0b7de696"
+        "top_song_name": "J'fais plaisir \u00e0 la zone",
+        "top_song_id": "26Anqi86HCCG57L5CE0gTr",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2734967a6d7e47e5da99c4c2400",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/2f6aaacfa119870d7110881af77d872e02ef82ad"
     },
     "Paramore": {
         "name": "Paramore",
@@ -8344,20 +8324,6 @@
         "top_song_art": "https://i.scdn.co/image/ab67616d0000b273b1c6cf12c9fb4f9014b711ba",
         "top_song_preview_url": "https://p.scdn.co/mp3-preview/077ffd490b5c65dfdcdc9d77b2a4cb607a8563b9"
     },
-    "La Arrolladora Banda El Lim\u00f3n": {
-        "name": "La Arrolladora Banda El Lim\u00f3n",
-        "id": "5bSfBBCxY8QAk4Pifveisz",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb9d58237c4edd1740931a32ea",
-        "related": [
-            "Banda El Recodo",
-            "La Adictiva",
-            "Banda MS de Sergio Liz\u00e1rraga"
-        ],
-        "top_song_name": "El Final De Nuestra Historia",
-        "top_song_id": "7kofJygFUxxmag4EAYcCG3",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2732619bdb15ad1bc5d1016457a",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/16c61f4db8522c73244103808c31baa0e54fbf21"
-    },
     "The Clash": {
         "name": "The Clash",
         "id": "3RGLhK1IP9jnYFH4BRFJBS",
@@ -8552,24 +8518,6 @@
         "top_song_art": "https://i.scdn.co/image/ab67616d0000b2730ea1ecb2d5271c2db402b0c2",
         "top_song_preview_url": "https://p.scdn.co/mp3-preview/658f53ebe57308e7fdfb755ff9ad30c99696eb6f"
     },
-    "Vicente Fernandez": {
-        "name": "Vicente Fernandez",
-        "id": "4PPoI9LuYeFX8V674Z1R6l",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb124d1d79d7838c9dd095f9e6",
-        "related": [
-            "Pepe Aguilar",
-            "Los Tigres Del Norte",
-            "Joan Sebastian",
-            "Los Bukis",
-            "Marco Antonio Sol\u00eds",
-            "Juan Gabriel",
-            "Alejandro Fern\u00e1ndez"
-        ],
-        "top_song_name": "Un Mill\u00f3n de Primaveras",
-        "top_song_id": "6j5LtifAnuTjTYvml61yFZ",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2736007f6cc186f038776e7a410",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/ea74681e6afd274ebbd3132095c319884593bebe"
-    },
     "Passenger": {
         "name": "Passenger",
         "id": "0gadJ2b9A4SKsB1RFkBb66",
@@ -8703,20 +8651,6 @@
         "top_song_id": "0trHOzAhNpGCsGBEu7dOJo",
         "top_song_art": "https://i.scdn.co/image/ab67616d0000b273045fc920ecf4f8094888ec26",
         "top_song_preview_url": "https://p.scdn.co/mp3-preview/f27225424bca80900ee9a32f4a494c900a012200"
-    },
-    "Pablo Alboran": {
-        "name": "Pablo Alboran",
-        "id": "5M9Bb4adKAgrOFOhc05Y50",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb603fdedea1dab4c77d7d8bcc",
-        "related": [
-            "David Bisbal",
-            "Alejandro Sanz",
-            "Juan Mag\u00e1n"
-        ],
-        "top_song_name": "Saturno",
-        "top_song_id": "2f0Ft2XdvNSMSY5TUlZgEz",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b27395d478cd83459546759f7293",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/e45c6656cfb2871a663c3f8235abd969ed61b5f9"
     },
     "Hardwell": {
         "name": "Hardwell",
@@ -10525,21 +10459,6 @@
         "top_song_art": "https://i.scdn.co/image/ab67616d0000b273373a46efca570f83dd78313f",
         "top_song_preview_url": "https://p.scdn.co/mp3-preview/4b1ba75b9456797946d8c89556204bd4719a86bf"
     },
-    "Los Angeles Azules": {
-        "name": "Los Angeles Azules",
-        "id": "0ZCO8oVkMj897cKgFH7fRW",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb8d751eb2c4670d689d23734e",
-        "related": [
-            "Juan Gabriel",
-            "Los Bukis",
-            "Joan Sebastian",
-            "Pepe Aguilar"
-        ],
-        "top_song_name": "El Amor De Mi Vida",
-        "top_song_id": "04sktg3deiYUweHfbFUZTM",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2730fbfe75fb58c2e07def46917",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/3934d6ff86eeaba8103d7d00535c138d2d02dcb8"
-    },
     "MARINA": {
         "name": "MARINA",
         "id": "6CwfuxIqcltXDGjfZsMd9A",
@@ -11360,22 +11279,6 @@
         "top_song_id": "3M0lSi5WW79CXQamgSBIjx",
         "top_song_art": "https://i.scdn.co/image/ab67616d0000b2735a0c2870f4f309e382d1fad6",
         "top_song_preview_url": "https://p.scdn.co/mp3-preview/e201f50b9d4426569bcc1a46acee0c4d5fa2e91c"
-    },
-    "Marco Antonio Solis": {
-        "name": "Marco Antonio Solis",
-        "id": "3tJnB0s6c3oXPq1SCCavnd",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb9d818606c2582549402ca755",
-        "related": [
-            "Los Bukis",
-            "Juan Gabriel",
-            "Joan Sebastian",
-            "Pepe Aguilar",
-            "Alejandro Fern\u00e1ndez"
-        ],
-        "top_song_name": "Si No Te Hubieras Ido",
-        "top_song_id": "3l1ZanpJ3jFQZMqATizqfE",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2737c7d5a10f6ed144c432be709",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/7b696562595ea46866fcbd78ac3ecbe286fb9368"
     },
     "Young Dolph": {
         "name": "Young Dolph",
@@ -12214,27 +12117,6 @@
         "top_song_art": "https://i.scdn.co/image/ab67616d0000b273d58b36bb17622ecadaecfe96",
         "top_song_preview_url": "https://p.scdn.co/mp3-preview/12e7572ac24522eb616a39177d5e47e436ecbf79"
     },
-    "Ruth B": {
-        "name": "Ruth B",
-        "id": "2WzaAvm2bBCf4pEhyuDgCY",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb1da7ba1c178ab9f68d065197",
-        "related": [
-            "Tate McRae",
-            "gnash",
-            "Alec Benjamin",
-            "Ashe",
-            "Madison Beer",
-            "Olivia O'Brien",
-            "Alessia Cara",
-            "Daya",
-            "Sasha Alex Sloan",
-            "Julia Michaels"
-        ],
-        "top_song_name": "Dandelions",
-        "top_song_id": "2eAvDnpXP5W0cVtiI0PUxV",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b27397e971f3e53475091dc8d707",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/3e55602bc286bc1fad9347931327e649ff9adfa1"
-    },
     "Sleepy Hallow": {
         "name": "Sleepy Hallow",
         "id": "6EPlBSH2RSiettczlz7ihV",
@@ -12499,27 +12381,6 @@
         "top_song_id": "4skuEIloXWuxxgekKupkEH",
         "top_song_art": "https://i.scdn.co/image/ab67616d0000b2735eebf3f8ec6e9807105f3151",
         "top_song_preview_url": "https://p.scdn.co/mp3-preview/641ca8985050596967dd6ae1d98a92268de09849"
-    },
-    "Axwell \u039b Ingrosso": {
-        "name": "Axwell \u039b Ingrosso",
-        "id": "2XnBwblw31dfGnspMIwgWz",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb9f6e5d736809c4cb40d59a7e",
-        "related": [
-            "Sebastian Ingrosso",
-            "Nicky Romero",
-            "Alesso",
-            "Don Diablo",
-            "AFROJACK",
-            "Hardwell",
-            "KSHMR",
-            "Dimitri Vegas & Like Mike",
-            "Galantis",
-            "R3HAB"
-        ],
-        "top_song_name": "More Than You Know",
-        "top_song_id": "6h5PAsRni4IRlxWr6uDPTP",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273fba6de0b38b0168d480b1a27",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/5630a95a43cdbf5380f0590b26b6d6e3670101c0"
     },
     "KISS": {
         "name": "KISS",
@@ -12829,19 +12690,6 @@
         "top_song_art": "https://i.scdn.co/image/ab67616d0000b2735d6121285c42ea4535e59048",
         "top_song_preview_url": "https://p.scdn.co/mp3-preview/80a42bfd505424a41c3e43b66b4e64571e36d49c"
     },
-    "Thal\u00eda": {
-        "name": "Thal\u00eda",
-        "id": "23wEWD21D4TPYiJugoXmYb",
-        "image": "https://i.scdn.co/image/ab6761610000e5ebada3773282adf9b0452d2cf9",
-        "related": [
-            "Ricky Martin",
-            "Chayanne"
-        ],
-        "top_song_name": "El Ultimo Adi\u00f3s - Varios Artistas Version",
-        "top_song_id": "0tzixmHNQfE6S6SirSToxW",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2734e19f670ace532c6c2202094",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/33af5b5bba9f9ca792c115e4051220acf1a62ee9"
-    },
     "Miranda Lambert": {
         "name": "Miranda Lambert",
         "id": "66lH4jAE7pqPlOlzUKbwA0",
@@ -13057,23 +12905,6 @@
         "top_song_id": "1JCrXIeI6a9qRIkfAEz7J1",
         "top_song_art": "https://i.scdn.co/image/ab67616d0000b2734684ae99ac25a39d60e0a23b",
         "top_song_preview_url": "https://p.scdn.co/mp3-preview/66d23936071f95382d4755cbd611052dae0f63ae"
-    },
-    "Sofia Reyes": {
-        "name": "Sofia Reyes",
-        "id": "0haZhu4fFKt0Ag94kZDiz2",
-        "image": "https://i.scdn.co/image/ab6761610000e5ebe1ccf31dc48382a8ba0d74e4",
-        "related": [
-            "NATTI NATASHA",
-            "Mau y Ricky",
-            "Danna Paola",
-            "Becky G",
-            "CNCO",
-            "Greeicy"
-        ],
-        "top_song_name": "1, 2, 3 (feat. Jason Derulo & De La Ghetto)",
-        "top_song_id": "737gzPI5VAmgUGWiJ9yXuu",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273ef8ed069d19e60c2ee7249af",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/f9d21a545882a8d3167759bb130639bb0d0a598e"
     },
     "Eslabon Armado": {
         "name": "Eslabon Armado",
@@ -14595,26 +14426,6 @@
         "top_song_art": "https://i.scdn.co/image/ab67616d0000b273c26a4f2195b3ecf63d2a30ae",
         "top_song_preview_url": "https://p.scdn.co/mp3-preview/9974ee04ca0832acf62abb36f26bf5ccde17d08f"
     },
-    "BORNS": {
-        "name": "BORNS",
-        "id": "1KP6TWI40m7p3QBTU6u2xo",
-        "image": "https://i.scdn.co/image/ab6761610000e5ebd7958f2550c9fa80ad9028e2",
-        "related": [
-            "GROUPLOVE",
-            "Young the Giant",
-            "Declan McKenna",
-            "Cage The Elephant",
-            "Passion Pit",
-            "Vance Joy",
-            "Foster The People",
-            "Oh Wonder",
-            "Wallows"
-        ],
-        "top_song_name": "Electric Love",
-        "top_song_id": "2GiJYvgVaD2HtM8GqD9EgQ",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273cc2cf912462d8ae4ef856434",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/9e25bcbff5c6e56abf6370656d6255fd7a766d9a"
-    },
     "Billy Ray Cyrus": {
         "name": "Billy Ray Cyrus",
         "id": "60rpJ9SgigSd16DOAG7GSa",
@@ -15181,7 +14992,6 @@
         "id": "5gqmbbfjcikQBzPB5Hv13I",
         "image": "https://i.scdn.co/image/ab6761610000e5ebbbbe37f0550a982d8519da6c",
         "related": [
-            "PLK",
             "Niska",
             "Ninho"
         ],
@@ -15576,24 +15386,28 @@
     },
     "Creed": {
         "name": "Creed",
-        "id": "3IYUhFvPQItj6xySrBmZkd",
-        "image": "https://i.scdn.co/image/ab6761610000e5ebd2e2b04b7ba5d60b72f54506",
+        "id": "43sZBwHjahUvgbx1WNIkIz",
+        "image": "https://i.scdn.co/image/a8e1ecca8c64abce46d504284424b6e910fc0f40",
         "related": [
-            "Steppenwolf",
-            "Lynyrd Skynyrd",
-            "Cream",
-            "ZZ Top",
-            "Steve Miller Band",
-            "Bob Seger",
-            "Allman Brothers Band",
-            "The Animals",
-            "The Who",
-            "The Doors"
+            "Puddle Of Mudd",
+            "Hinder",
+            "3 Doors Down",
+            "Staind",
+            "Daughtry",
+            "Hoobastank",
+            "Seether",
+            "Trapt",
+            "Theory of a Deadman",
+            "Nickelback",
+            "P.O.D.",
+            "Lifehouse",
+            "Godsmack",
+            "Shinedown"
         ],
-        "top_song_name": "Have You Ever Seen The Rain",
-        "top_song_id": "2LawezPeJhN4AWuSB0GtAU",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b27351f311c2fb06ad2789e3ff91",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/9b5348b8d7c6bb14b63998903a46348657f70c2e"
+        "top_song_name": "One Last Breath",
+        "top_song_id": "42T2QQv3xgBlpQxaSP7lnK",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273a32f2ae4dade83e0d7a294f4",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/20dd8d3794a1715078dd9c7767ad8aa53f9c8260"
     },
     "Joy Division": {
         "name": "Joy Division",
@@ -15901,27 +15715,6 @@
         "top_song_art": "https://i.scdn.co/image/ab67616d0000b27338c5b1d6170ff3120bbbaf42",
         "top_song_preview_url": "https://p.scdn.co/mp3-preview/4a4499704c13379258f1b0e983fe658f2bccf0b5"
     },
-    "Arcangel": {
-        "name": "Arcangel",
-        "id": "4SsVbpTthjScTS7U2hmr1X",
-        "image": "https://i.scdn.co/image/ab6761610000e5ebafdf17286a0d7a23ad388587",
-        "related": [
-            "Cosculluela",
-            "De La Ghetto",
-            "Jowell & Randy",
-            "Yandel",
-            "\u00d1engo Flow",
-            "Zion",
-            "Farruko",
-            "Noriel",
-            "Zion & Lennox",
-            "Bryant Myers"
-        ],
-        "top_song_name": "ALV",
-        "top_song_id": "32hCeeK3ayPux4UauNPsgA",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2735947e677a3370208d0ba491d",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/81ef55df937988b280f88e902bdee1c1fa8a0ed8"
-    },
     "Jhayco": {
         "name": "Jhayco",
         "id": "6nVcHLIgY5pE2YCl8ubca1",
@@ -16068,9 +15861,7 @@
         "related": [
             "Niska",
             "Gazo",
-            "PLK",
             "Damso",
-            "SCH",
             "Jul"
         ],
         "top_song_name": "No love",
@@ -16423,11 +16214,9 @@
         "id": "3NH8t45zOTqzlZgBvZRjvB",
         "image": "https://i.scdn.co/image/ab6761610000e5eb51767bb5e3e3add66699344b",
         "related": [
-            "SCH",
             "Jul",
             "Ninho",
             "Damso",
-            "PLK",
             "Niska"
         ],
         "top_song_name": "J\u2019comprends pas",
@@ -16594,9 +16383,7 @@
         "id": "2UwqpfQtNuhBwviIC0f2ie",
         "image": "https://i.scdn.co/image/ab6761610000e5eb227d59c8f521171ca1f50486",
         "related": [
-            "PLK",
             "Niska",
-            "SCH",
             "Gazo"
         ],
         "top_song_name": "LA RUE",
@@ -17177,20 +16964,6 @@
         "top_song_id": "4jPy3l0RUwlUI9T5XHBW2m",
         "top_song_art": "https://i.scdn.co/image/ab67616d0000b27384c53fa832dfa265192419c5",
         "top_song_preview_url": "https://p.scdn.co/mp3-preview/c425299d5996843fc24308b896f7ce60fd262c99"
-    },
-    "La Adictiva Banda San Jos\u00e9 de Mesillas": {
-        "name": "La Adictiva Banda San Jos\u00e9 de Mesillas",
-        "id": "49EE6lVLgU8sp7dFgPshgM",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb18129b218ae9c07848ddc759",
-        "related": [
-            "Banda El Recodo",
-            "La Arrolladora Banda El Lim\u00f3n De Rene Camacho",
-            "Gerardo Ortiz"
-        ],
-        "top_song_name": "JGL",
-        "top_song_id": "5kpxVMDvYGRmNqawPqDTYR",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273deb46423294da327d2246acd",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/d7072ac1bcc959b82c0ea78924cca8cfeaf2e06c"
     },
     "Louis Tomlinson": {
         "name": "Louis Tomlinson",
@@ -18191,39 +17964,6 @@
         "top_song_id": "5iItYl3Q6wCnKVfpK1uNVf",
         "top_song_art": "https://i.scdn.co/image/ab67616d0000b2731d6b4b0418200b6324734062",
         "top_song_preview_url": "https://p.scdn.co/mp3-preview/812db000cb6ea780208e3218c546e338686cc3a5"
-    },
-    "SCH": {
-        "name": "SCH",
-        "id": "5IcR3N7QB1j6KBL8eImZ8m",
-        "image": "https://i.scdn.co/image/ab6761610000e5ebe697a7ddf7af3a306428fa73",
-        "related": [
-            "Ab-Soul",
-            "Jay Rock",
-            "A$AP Ferg",
-            "Pusha T",
-            "A$AP Mob",
-            "Flatbush Zombies",
-            "Vince Staples",
-            "Isaiah Rashad",
-            "YG",
-            "Freddie Gibbs"
-        ],
-        "top_song_name": "Collard Greens",
-        "top_song_id": "0zO8ctW0UiuOefR87OeJOZ",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b27336977e237a8f70ec6c990636",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/4a19ec418966837d86c62eb4ba3c96fd62a796f0"
-    },
-    "PLK": {
-        "name": "PLK",
-        "id": "3DCWeG2J1fZeu0Oe6i5Q6m",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb7807ff8b003a33822c40d28c",
-        "related": [
-            "SCH"
-        ],
-        "top_song_name": "Postich\u00e9",
-        "top_song_id": "0kRqUc4abZtAdGjIVjTjnp",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273972c75a7bd176ce4318ce36a",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/4b99ff8e340be5f8651b778534739480b92c10ff"
     },
     "LIT killah": {
         "name": "LIT killah",

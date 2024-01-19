@@ -38,13 +38,16 @@ const Hint = (props: HintProps) => {
   return (
     <Fragment>
 
-    <Drawer.Root{...drawerSwipeHandlers} opened={opened} onClose={close} size={window.innerWidth > phoneMaxWidth ? '575' : '75%'}
+    <Drawer.Root{...drawerSwipeHandlers} opened={opened} onClose={close} size={window.innerWidth > phoneMaxWidth ? '610' : '75%'}
     style={{borderRadius: '20px'}} padding='sm' position={'bottom'}>
       <Drawer.Overlay/>
       <Drawer.Content>
         <Drawer.Header {...headerSwipeHandlers} style={{top: -1}} onClick={close}>
           <Drawer.Title style={{width: '100%'}}>
+              <Stack gap='xs'>
               <RelatedArtistsTitle artist={endArtist} won={false} endArtist={endArtist}/>
+              <Text ta='center'><b>Note:</b> These artists aren't guaranteed to be related in both directions</Text>
+              </Stack>
           </Drawer.Title>
            <Drawer.CloseButton />
         </Drawer.Header>

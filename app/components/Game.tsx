@@ -196,7 +196,7 @@ const Game = (props: GameProps) => {
 
     const getTodaysMatchup = (matchups: {[key: string]: string[]}|null): any => {
         if (matchups == null) { return }
-        const defaultDate = "11/29/2023"
+        const defaultDate = "01/15/2024"
         const today = new Date()
         const month = (today.getMonth() + 1).toString().padStart(2, '0');
         const day = today.getDate().toString().padStart(2, '0');
@@ -411,6 +411,7 @@ const Game = (props: GameProps) => {
              streak={streak} longest_streak={longestStreak} days_played={numDaysPlayed} customModalOpen={customModalOpen}/>
             <AffixStatus currArtist={currArtist} endArtist={web[end]} guesses={guesses} 
             resets={resets} onTap={scrollToTop} mounted={!won && !entryAffix?.isIntersecting}/>
+            <Text ta='center' size={window.innerWidth <= phoneMaxWidth ? "sm" : "md"}>Press and hold on an artist to hear a preview of their music</Text>
             <PlayingAudioContext.Provider value={{playingAudio, setPlayingAudio}}>
                 <SimpleGrid ref={scope} cols={{ base: 2, xs: 3, sm: 3, md: 4, lg: 5 }}>
                 {currArtist.related.map((artist_name: string) => 
@@ -419,7 +420,6 @@ const Game = (props: GameProps) => {
                     updateArtistHandler={(won || artist_name === end) ? updateArtistHandler : clickArtistHandler}/>)}
                 </SimpleGrid>
             </PlayingAudioContext.Provider>
-            <Text ta='center' size={window.innerWidth <= phoneMaxWidth ? "sm" : "md"}>Press and hold on an artist to hear a preview of their music</Text>
             {!won && <Stack align='center' justify='center'>
                 <Text ta="center" c='gray.1' size="md">Feeling stuck?</Text>
                 <Group justify='center' align='center'>
