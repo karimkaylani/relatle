@@ -46,7 +46,7 @@ const Hint = (props: HintProps) => {
           <Drawer.Title style={{width: '100%'}}>
               <Stack gap='xs'>
               <RelatedArtistsTitle artist={endArtist} won={false} endArtist={endArtist}/>
-              <Text ta='center'><b>Note:</b> These artists aren't guaranteed to be related in both directions</Text>
+              <Text ta='center'><b>Note:</b> {"These artists aren't guaranteed to be related in both directions"}</Text>
               </Stack>
           </Drawer.Title>
            <Drawer.CloseButton />
