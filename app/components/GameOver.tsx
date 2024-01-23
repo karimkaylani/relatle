@@ -1,7 +1,7 @@
 'use client'
 
 import React, { Fragment, useEffect, useRef, useState } from 'react'
-import { Modal, Text, Flex, Group, Collapse, Button, Drawer, Affix, Card, Transition, Space, Stack, Divider, ScrollArea } from '@mantine/core'
+import { Modal, Text, Flex, Group, Collapse, Button, Drawer, Affix, Card, Transition, Space, Stack, Divider, ScrollArea, Loader } from '@mantine/core'
 import ShareResults from './ShareResults'
 import { Artist, phoneMaxWidth } from './Game'
 import ScrollablePath from './ScrollablePath'
@@ -14,8 +14,10 @@ import Matchup from './Matchup'
 import { useSwipeable } from 'react-swipeable'
 import CountdownClock from './CountdownClock'
 import GlobalScoreSlider from './GlobalScoreSlider'
-import { getCachedAverageMinGuesses } from '../db'
+import { getCachedGuesses } from '../db'
 import CustomGameButton from './CustomGameButton'
+import ScoreHistogram from './ScoreHistogram'
+import GlobalScoreStats from './GlobalScoreStats'
 
 export interface GameOverProps {
     opened: boolean,
@@ -71,8 +73,8 @@ const GameOver = ({opened, close, path, guesses, matchup,
   const minPathLength = minPath.length
   minPath.unshift(start)
 
-  const [avgGuesses, setAvgGuesses] = useState<number>(-1)
-  const [minGuesses, setMinGuesses] = useState<number>(-1)
+
+  const [allGuesses, setAllGuesses] = useState<number[]>([])
 
   const [loadingGlobalScore, setLoadingGlobalScore] = useState<boolean>(true)
 
@@ -80,12 +82,9 @@ const GameOver = ({opened, close, path, guesses, matchup,
     if (!opened) {
       return
     }
-    getCachedAverageMinGuesses(matchupID).then((res) => {
+    getCachedGuesses(matchupID).then((res) => {
       if (res !== null) {
-        const [avgGuesses, minGuesses] = res
-        const roundedAvgGuesses = Math.round(avgGuesses)
-        setAvgGuesses(roundedAvgGuesses !== 0 ? roundedAvgGuesses : -1)
-        setMinGuesses(minGuesses !== 0 ? minGuesses : -1)
+        setAllGuesses(res)
       }
       setLoadingGlobalScore(false)
     })
@@ -131,7 +130,9 @@ const GameOver = ({opened, close, path, guesses, matchup,
           <Collapse in={minPathOpened}>
             <ScrollablePath matchup={matchup} web={web} path={minPath}></ScrollablePath>
           </Collapse>
-          {!is_custom && <GlobalScoreSlider loading={loadingGlobalScore} guesses={guesses} avgGuesses={avgGuesses ?? -1} minGuesses={minGuesses ?? -1}/>}
+
+          {loadingGlobalScore ? <Loader color="green.6" size='sm' /> : <GlobalScoreStats guesses={guesses} allGuesses={allGuesses}/>}
+
           {!is_custom && <Fragment>
             <Text ta="center" fw={700} size="sm">Your Stats</Text>
             <Card shadow="lg" radius="lg" p="xs">

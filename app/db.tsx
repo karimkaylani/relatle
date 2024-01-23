@@ -15,18 +15,19 @@ export async function addScoreToDB(matchup: string[], matchupID: number, guesses
     }
   }
 
-export const getCachedAverageMinGuesses = unstable_cache(
-  async (matchupID: number): Promise<number[]|null> => getAverageMinGuesses(matchupID),
-  undefined, {tags: ['scores'], revalidate: 300})
+export const getCachedGuesses = unstable_cache(
+  async (matchupID: number): Promise<number[]|null> => getAllGuesses(matchupID),
+  undefined, {tags: ['guesses'], revalidate: 300}
+)
 
-  export async function getAverageMinGuesses(matchupID: number): Promise<number[]|null> {
-    try {
-      const { rows } = await sql`SELECT AVG(guesses) AS avg_guesses, MIN(guesses) AS min_guesses,
-      COUNT(guesses) AS count_guesses FROM scores WHERE matchup_id=${matchupID}`
-      return rows[0].count_guesses > 2 ? [rows[0].avg_guesses, rows[0].min_guesses] : null
-    }
-    catch {
-      console.error("Error getting average score")
-      return null
-    }
+export async function getAllGuesses(matchupID: number): Promise<number[]|null> {
+  try {
+    const { rows } = await sql`SELECT guesses FROM scores WHERE matchup_id=${matchupID}`
+    const guesses = rows.map(row => row.guesses)
+    return guesses
   }
+  catch {
+    console.error("Error getting all guesses")
+    return null
+  }
+}

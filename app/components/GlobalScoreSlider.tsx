@@ -10,12 +10,11 @@ interface CircleProps {
 export interface GlobalScoreSliderProps {
     avgGuesses: number,
     minGuesses: number,
-    guesses: number,
-    loading: boolean
+    guesses: number
 }
 
 const GlobalScoreSlider = (props: GlobalScoreSliderProps) => {
-    let {avgGuesses, minGuesses, guesses, loading} = props
+    let {avgGuesses, minGuesses, guesses} = props
     const range = [Math.min(avgGuesses, minGuesses, guesses), Math.max(avgGuesses, minGuesses, guesses)]
 
     const [width, setWidth] = useState(0)
@@ -48,14 +47,6 @@ const GlobalScoreSlider = (props: GlobalScoreSliderProps) => {
     [['Min. Guesses', minGuesses, 'gray.1'], ['Your Score', guesses, 'green.6'], ['Avg. Guesses', avgGuesses, 'yellow.5']]
     scores.sort((a, b) => a[1] - b[1]);
 
-    if (!loading && avgGuesses === -1) {
-        return (
-            <Stack>
-                <Text ta='center' size='sm'>{"Today's Global Results"}</Text>
-                <Text ta='center' size='sm' c='gray.1'>Come back soon for global results</Text>
-            </Stack>
-        )
-    }
     let yourScoreColor = 'green.6'
     if (guesses === minGuesses) {
         yourScoreColor = 'linear-gradient(to right, #f1f3f5 10px, #40c057 10px'
@@ -64,34 +55,26 @@ const GlobalScoreSlider = (props: GlobalScoreSliderProps) => {
         yourScoreColor = 'linear-gradient(to right, #40c057 10px, #fcc419 10px'
     }
   return (
-    <Stack gap='xl' align='center' justify='center'>
-        <Text fw={700} ta='center' size='sm'>{"Today's Global Results"}</Text>
-        {loading && <Loader color="green.6" size='sm' />}
-
-        {!loading &&  
-            <Fragment>
-                <div style={{margin: 0, padding: 0}}>
-                        <Paper bg='gray.7' w={width} radius='xl' className='-mb-5'>
-                            <Space h={10}/>
-                        </Paper>
-                        <Circle color='gray.1' value={minGuesses} showValue={false}/>
-                        <Circle color='yellow.5' value={avgGuesses} showValue={false}/>
-                        <Circle color={yourScoreColor} value={guesses} showValue={true}/>
-                </div>
-                <Stack>
-                    <Group justify='center' align='center' gap='xs'>
-                        {scores.map(([label, score, color], index) =>
-                            <Fragment key={label}>
-                            <Text fw={700} size='sm' c={color} >{label}: {score}</Text>
-                            {index !== scores.length - 1 && <Text fw={700} size='sm' c='gray.7' >|</Text>}
-                            </Fragment> 
-                        )}
-                    </Group>
-                    <Text ta='center' size='sm'>These values will update as more games are completed</Text>
-                </Stack>
-            </Fragment>
-        }
+    <Fragment>
+    <div style={{margin: 0, padding: 0}}>
+            <Paper bg='gray.7' w={width} radius='xl' className='-mb-5'>
+                <Space h={10}/>
+            </Paper>
+            <Circle color='gray.1' value={minGuesses} showValue={false}/>
+            <Circle color='yellow.5' value={avgGuesses} showValue={false}/>
+            <Circle color={yourScoreColor} value={guesses} showValue={true}/>
+    </div>
+    <Stack>
+        <Group justify='center' align='center' gap='xs'>
+            {scores.map(([label, score, color], index) =>
+                <Fragment key={label}>
+                <Text fw={700} size='sm' c={color} >{label}: {score}</Text>
+                {index !== scores.length - 1 && <Text fw={700} size='sm' c='gray.7' >|</Text>}
+                </Fragment> 
+            )}
+        </Group>
     </Stack>
+    </Fragment>
   )
 }
 
