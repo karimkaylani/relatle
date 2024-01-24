@@ -1,7 +1,6 @@
 import { Stack, Text } from '@mantine/core'
 import React, { Fragment } from 'react'
 import GlobalScoreSlider from './GlobalScoreSlider'
-import ScoreHistogram from './ScoreHistogram'
 
 export interface GlobalScoreStatsProps {
     guesses: number,
@@ -21,7 +20,6 @@ const GlobalScoreStats = (props: GlobalScoreStatsProps) => {
         <Text ta='center' size='sm' c='gray.1'>Come back soon for global results</Text> : 
         <Fragment>
             <GlobalScoreSlider guesses={guesses} avgGuesses={roundedAvgGuesses} minGuesses={minGuesses}/>
-            <ScoreHistogram guesses={guesses} allGuesses={allGuesses}/>
             <Text ta='center' size='sm'>These values will update as more games are completed</Text>
         </Fragment>
         }

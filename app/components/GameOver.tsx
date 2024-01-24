@@ -16,7 +16,6 @@ import CountdownClock from './CountdownClock'
 import GlobalScoreSlider from './GlobalScoreSlider'
 import { getCachedGuesses } from '../db'
 import CustomGameButton from './CustomGameButton'
-import ScoreHistogram from './ScoreHistogram'
 import GlobalScoreStats from './GlobalScoreStats'
 
 export interface GameOverProps {
