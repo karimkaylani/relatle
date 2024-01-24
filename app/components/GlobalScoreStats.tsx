@@ -5,7 +5,6 @@ import GlobalScoreSlider from './GlobalScoreSlider'
 export interface GlobalScoreStatsProps {
     guesses: number,
     allGuesses: number[]
-    
 }
 
 const GlobalScoreStats = (props: GlobalScoreStatsProps) => {
