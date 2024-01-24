@@ -131,8 +131,8 @@ const GameOver = ({opened, close, path, guesses, matchup,
           </Collapse>
 
           {!is_custom && 
-          loadingGlobalScore ? <Loader color="green.6" size='sm'/> :
-          <GlobalScoreStats guesses={guesses} allGuesses={allGuesses}/>}
+          (loadingGlobalScore ? <Loader color="green.6" size='sm'/> :
+          <GlobalScoreStats guesses={guesses} allGuesses={allGuesses}/>)}
 
           {!is_custom && <Fragment>
             <Text ta="center" fw={700} size="sm">Your Stats</Text>
