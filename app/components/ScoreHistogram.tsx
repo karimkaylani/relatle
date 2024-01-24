@@ -1,5 +1,5 @@
 import { Center, Stack, Text } from '@mantine/core';
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Chart, ReactGoogleChartContext, ReactGoogleChartEvent } from "react-google-charts";
 
 export interface ScoreHistogramProps {
@@ -8,18 +8,53 @@ export interface ScoreHistogramProps {
 }
 
 const Histogram = (props: ScoreHistogramProps) => {
-  const {allGuesses, guesses} = props
-  let data = [['id', 'Guesses'],
-   ...allGuesses.map((guess, i) => [i, guess])]
+  let {allGuesses, guesses} = props
+  const [chartReady, setChartReady] = React.useState(false);
+  if (!allGuesses.includes(guesses)) {
+    allGuesses.push(guesses)
+  }
+
+  let rawData: any = [['Name', '# Guesses'],
+   ...allGuesses.map((guess) => [guess === guesses ? "Your Guess" : "", guess])]
+   rawData.sort((a: any, b: any) => a[1] - b[1])
 
   const options = {
-    legend: { position: "none" },
+    legend: { position: 'none' },
     backgroundColor: 'transparent',
-    histogram: { hideBucketItems: true, lastBucketPercentile: 5 },
-    colors: ['51cf66'],
-    hAxis: {textStyle: {color: 'white'}, gridlines: {count: 0}},
-    vAxis: {textStyle: {color: 'white'}, gridlines: {count: 0}},
+    histogram: { hideBucketItems:false, lastBucketPercentile: 5 },
+    hAxis: {title: "# Guesses", titleTextStyle: {color: 'white'}, textStyle: {color: 'white'}, gridlines: {count: 0}},
+    vAxis: {title: "Count", titleTextStyle: {color: 'white'}, textStyle: {color: 'white'}, gridlines: {count: 0}},
+    colors: ['51cf66']
   }
+
+  useEffect(() => {
+    let desiredIndex = rawData.findIndex((row: any) => row[0] === "Your Guess") + 1
+    let container = document.getElementById('reactgooglegraph-1');
+    if (container) {
+      const rects = container.getElementsByTagName('rect')
+      rects[desiredIndex].setAttribute('fill', '#51cf66')
+    }
+  }, [setChartReady])
+
+  const readyEvent: ReactGoogleChartEvent = {
+    eventName: "ready",
+    callback: ({ chartWrapper, google }) => {
+      setChartReady(true);
+      let desiredIndex = rawData.findIndex((row: any) => row[0] === "Your Guess") + 1
+
+      let container = document.getElementById('reactgooglegraph-1');
+      let observer = new MutationObserver(function () {
+        const rects = container?.getElementsByTagName('rect') ?? []
+        rects[desiredIndex].setAttribute('fill', '#51cf66')
+      })
+      if (container) {
+        observer.observe(container, {
+          childList: true,
+          subtree: true,
+        });
+      }
+    },  
+  };
 
   return (
     <Center>
@@ -27,7 +62,8 @@ const Histogram = (props: ScoreHistogramProps) => {
         chartType="Histogram"
         width="600px"
         height="300px"
-        data={data}
+        data={rawData}
+        // chartEvents={[readyEvent]}
         options={options}
       />
    </Center>
