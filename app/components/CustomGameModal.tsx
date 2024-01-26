@@ -1,4 +1,4 @@
-import { Text, Modal, Stack, Autocomplete, Alert, Card, Group, Button, Image } from '@mantine/core'
+import { Text, Modal, Stack, Autocomplete, Alert, Card, Group, Button, Image, CloseButton } from '@mantine/core'
 import React, { useState } from 'react'
 import { Artist } from './Game'
 import Arrow from './Arrow'
@@ -232,7 +232,14 @@ const CustomGameModal = (props: CustomGameModalProps) => {
                 onChange={changeStartArtist} selectFirstOptionOnChange={true}
                 styles={{input: {color: "#f1f3f5"}, dropdown: {color: "#f1f3f5"}}} value={startArtist}
                 leftSection={web[startArtist] !== undefined && 
-                <ArtistInfo artist={web[startArtist]} small={true} show_name={false}/>}/>
+                <ArtistInfo artist={web[startArtist]} small={true} show_name={false}/>}
+                rightSection={
+                    <CloseButton
+                    aria-label="Clear input"
+                    onClick={() => setStartArtist('')}
+                    style={{ display: startArtist ? undefined : 'none' }}/>
+                } 
+                />
             <Arrow small={false} down={true}/>
             <Stack gap="xs">
                 <Autocomplete size="lg" radius="md" placeholder="Target artist" disabled={!artistsList.includes(startArtist) || matchupsFound.length == 0}
@@ -243,7 +250,14 @@ const CustomGameModal = (props: CustomGameModalProps) => {
                     groupLabel: {color: "#37b24d", fontWeight: 700}, dropdown: {color: "#f1f3f5"}}}
                     onChange={setEndArtist} selectFirstOptionOnChange={true} value={endArtist}
                     leftSection={web[endArtist] !== undefined && matchupsFound.includes(endArtist) &&
-                        <ArtistInfo artist={web[endArtist]} small={true} is_green={true} show_name={false}/>}/>
+                        <ArtistInfo artist={web[endArtist]} small={true} is_green={true} show_name={false}/>}
+                    rightSection={
+                        <CloseButton
+                        aria-label="Clear input"
+                        onClick={() => setEndArtist('')}
+                        style={{ display: endArtist ? undefined : 'none' }}/>
+                    }
+                    />
 
                 {isMatchupDifficult() ? 
                     <Text pl="5" pb='14' ta="left" fw={700} c='yellow.3' size="md">This matchup may be difficult!</Text>
