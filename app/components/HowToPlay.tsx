@@ -25,8 +25,7 @@ const HowToPlay = (props: HowToPlayProps) => {
             padding="xl" radius="lg" title="How to Play"
             styles={{ title: { fontSize: "24px", color: "#f1f3f5", fontWeight: 700, lineHeight: "32px" },
             header: {top: -1} }}>
-            <Flex 
-            align="left" direction="column" gap="lg">
+            <Stack align="left" gap="lg">
                 <Group wrap="nowrap">
                     <Card
                         shadow="sm" radius="md"
@@ -38,8 +37,8 @@ const HowToPlay = (props: HowToPlayProps) => {
                 
                 <Matchup start={start} end={end} small={true}/>
 
-                <Group wrap="nowrap">
-                    <Card shadow="sm" radius="md" padding="5px" w={50}>
+                <Group wrap="nowrap" align='left'>
+                    <Card shadow="sm" radius="md" padding="5px" w={85} h={33}>
                         <Text ta="center">2</Text>
                     </Card>
                     <Stack align='center' justify='center'>
@@ -63,7 +62,7 @@ const HowToPlay = (props: HowToPlayProps) => {
                     <Text fw={300}>To win, make sure to select the target artist
                     when they pop up or you&apos;ll miss it! Have fun!</Text>
                 </Group>
-            </Flex>
+            </Stack>
         </Modal>
     </Group>
   )
