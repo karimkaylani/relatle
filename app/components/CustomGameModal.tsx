@@ -97,7 +97,7 @@ const minDegOfSepRecommended = 3
 const maxDegOfSepRecommended = 7
 const maxDegOfSepWarning = 10
 const maxNumPathsForWarning = 4
-const minNumPathsForRecommended = 7
+const minNumPathsForRecommended = 10
 const maxNumPathsForRecommended = Infinity
 
 const CustomGameModal = (props: CustomGameModalProps) => {
@@ -129,16 +129,21 @@ const CustomGameModal = (props: CustomGameModalProps) => {
         return false
     }
 
-    const atLeastTwoPathsIfTwoFirstClicked = (paths: string[][]): boolean => {
+    const atLeastTwoPathsIfNumFirstClicked = (paths: string[][], amount: number): boolean => {
         const startingArtists = new Set(paths.map(x => x[0]))
-        if (startingArtists.size === 2) {
+        if (startingArtists.size === amount) {
             for (const artist of startingArtists) {
-                if (paths.filter((path) => path[0] === artist).length < 2) {
+                if (paths.filter((path) => path[0] === artist).length < amount) {
                     return false
                 }
             }
         }
         return true
+    }
+
+    const targetArtistRelatedBothDirections = (end: string, min: number): boolean  => {
+        return web[end].related.filter((artist) =>
+            web[end].related.includes(artist) && web[artist].related.includes(end)).length >= min
     }
 
     const isRecommendedMatchup  = (end: string,
@@ -149,12 +154,14 @@ const CustomGameModal = (props: CustomGameModalProps) => {
         3. Must not be a close end artist (path length within minDegOfSepRecommended)
         4. There isn't any single artist that appears in all paths
         5. If there are only 2 first clicked artists, then must be at least 2 paths for each
+        6. Target artist must be related in both directions to at least 2 other artists
         */
         return endArtistsWithMaxDegOfSep[end].length >= minNumPathsForRecommended &&
         endArtistsWithMaxDegOfSep[end].length <= maxNumPathsForRecommended &&
         !closeEndArtists.includes(end) &&
         !repeatingArtistInAllPaths(endArtistsWithMaxDegOfSep[end]) &&
-        atLeastTwoPathsIfTwoFirstClicked(endArtistsWithMaxDegOfSep[end])
+        atLeastTwoPathsIfNumFirstClicked(endArtistsWithMaxDegOfSep[end], 2) &&
+        targetArtistRelatedBothDirections(end, 2)
     }
 
     const getRecommendedArtists = (start: string) => {
