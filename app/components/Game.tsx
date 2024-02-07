@@ -34,7 +34,7 @@ export interface Artist {
 
 interface GameProps {
     web: {[key: string]: Artist},
-    matchups: {[key: string]: string[]}|null,
+    matchups: string[][],
     is_custom: boolean
 }
 
@@ -194,17 +194,23 @@ const Game = (props: GameProps) => {
         }
     }
 
-    const getTodaysMatchup = (matchups: {[key: string]: string[]}|null): any => {
+    const getTodaysMatchup = (matchups: string[][]|null): any => {
         if (matchups == null) { return }
-        const defaultDate = "01/15/2024"
-        const today = new Date()
-        const month = (today.getMonth() + 1).toString().padStart(2, '0');
-        const day = today.getDate().toString().padStart(2, '0');
-        const year = today.getFullYear();
-        const formattedDate = `${month}/${day}/${year}`;
-        const matchup = matchups[formattedDate] ?? matchups[defaultDate]
-        const matchupID = Object.keys(matchups).indexOf(formattedDate) + 1
-        setMatchupID(matchupID)
+        /* to preserve correct matchupID -> matchup mapping, since some matchups were deleted
+        as they are no longer recommended matchups
+        If deleting a matchup that has already passed: enumerate this by 1 */
+        const matchupIndexPadding = 25
+        // Launch of relatle, matchupID is # of days (matchups) since 11/29/2023
+        const startingDate = new Date(2023, 10, 29);
+
+        const oneDay = 24 * 60 * 60 * 1000; // hours * minutes * seconds * milliseconds
+        const now = new Date()
+        const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+        const diffDays = Math.round(Math.abs((today.getTime() - startingDate.getTime()) / (oneDay)));
+        
+        const matchupIndex = (diffDays - matchupIndexPadding) % matchups.length
+        const matchup = matchups[matchupIndex]
+        setMatchupID(diffDays)
         return matchup
     }
 

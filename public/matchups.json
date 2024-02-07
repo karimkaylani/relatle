@@ -1,398 +1,298 @@
-{
-  "11/29/2023": [
-    "J. Cole",
-    "Clairo"
-  ],
-  "11/30/2023": [
+[
+  [
     "Shawn Mendes",
     "Mumford & Sons"
   ],
-  "12/01/2023": [
+  [
     "Coldplay",
     "Avril Lavigne"
   ],
-  "12/02/2023": [
-    "Lana Del Rey",
-    "A$AP Rocky"
-  ],
-  "12/03/2023": [
+  [
     "Owl City",
     "The Strokes"
   ],
-  "12/04/2023": [
-    "Beyonc\u00e9",
-    "Of Monsters and Men"
-  ],
-  "12/05/2023": [
+  [
     "Radiohead",
     "Charli XCX"
   ],
-  "12/06/2023": [
+  [
     "Lizzo",
     "Demi Lovato"
   ],
-  "12/07/2023": [
+  [
     "Lady Gaga",
     "T-Pain"
   ],
-  "12/08/2023": [
+  [
     "Twenty One Pilots",
     "Soulja Boy"
   ],
-  "12/09/2023": [
+  [
     "fun.",
     "Bullet For My Valentine"
   ],
-  "12/10/2023": [
+  [
     "Cardi B",
     "2 Chainz"
   ],
-  "12/11/2023": [
-    "Lil Nas X",
-    "Kelly Clarkson"
-  ],
-  "12/12/2023": [
-    "Coldplay",
-    "Mac DeMarco"
-  ],
-  "12/13/2023": [
+  [
     "One Direction",
     "Gwen Stefani"
   ],
-  "12/14/2023": [
+  [
     "Beyonc\u00e9",
     "5 Seconds of Summer"
   ],
-  "12/15/2023": [
-    "Lana Del Rey",
-    "Britney Spears"
-  ],
-  "12/16/2023": [
+  [
     "Rihanna",
     "Jonas Brothers"
   ],
-  "12/17/2023": [
-    "Adele",
-    "Daniel Caesar"
-  ],
-  "12/18/2023": [
+  [
     "Evanescence",
     "will.i.am"
   ],
-  "12/19/2023": [
+  [
     "Madonna",
     "Zedd"
   ],
-  "12/20/2023": [
-    "Mitski",
-    "Gucci Mane"
-  ],
-  "12/21/2023": [
-    "Olivia Rodrigo",
-    "blink-182"
-  ],
-  "12/22/2023": [
+  [
     "Billie Eilish",
     "WALK THE MOON"
   ],
-  "12/23/2023": [
+  [
     "Ice Spice",
     "Conan Gray"
   ],
-  "12/24/2023": [
+  [
     "blackbear",
     "Tyler, The Creator"
   ],
-  "12/25/2023": [
-    "Mariah Carey",
-    "Sabrina Carpenter"
-  ],
-  "12/26/2023": [
+  [
     "The Killers",
     "Hozier"
   ],
-  "12/27/2023": [
-    "Green Day",
-    "Flo Rida"
-  ],
-  "12/28/2023": [
-    "Britney Spears",
-    "The Smashing Pumpkins"
-  ],
-  "12/29/2023": [
-    "Foster the People",
+  [
+    "Foster The People",
     "Phoebe Bridgers"
   ],
-  "12/30/2023": [
+  [
     "Halsey",
     "Simple Plan"
   ],
-  "12/31/2023": [
+  [
     "Sia",
     "Mitski"
   ],
-  "01/01/2024": [
-    "Arctic Monkeys",
-    "Fifth Harmony"
-  ],
-  "01/02/2024": [
-    "Gotye",
-    "Florida Georgia Line"
-  ],
-  "01/03/2024": [
+  [
     "Sabrina Carpenter",
     "Lil Yachty"
   ],
-  "01/04/2024": [
+  [
     "DNCE",
     "Spice Girls"
   ],
-  "01/05/2024": [
+  [
     "Shawn Mendes",
     "Bon Iver"
   ],
-  "01/06/2024": [
-    "Skrillex",
-    "Christina Aguilera"
-  ],
-  "01/07/2024": [
-    "Miley Cyrus",
-    "Rage Against The Machine"
-  ],
-  "01/08/2024": [
-    "Frank Ocean",
-    "GROUPLOVE"
-  ],
-  "01/09/2024": [
+  [
     "Glass Animals",
     "Taio Cruz"
   ],
-  "01/10/2024": [
+  [
     "Billy Ray Cyrus",
     "Fergie"
   ],
-  "01/11/2024": [
+  [
     "Sia",
     "Ty Dolla $ign"
   ],
-  "01/12/2024": [
+  [
     "Justin Bieber",
     "Destiny's Child"
   ],
-  "01/13/2024": [
-    "Kacey Musgraves",
-    "Kesha"
-  ],
-  "01/14/2024": [
-    "Lorde",
-    "Fall Out Boy"
-  ],
-  "01/15/2024": [
-    "Jason Mraz",
-    "Justin Timberlake"
-  ],
-  "01/16/2024": [
-    "Niall Horan",
-    "Steve Lacy"
-  ],
-  "01/17/2024": [
+  [
     "USHER",
     "The Pussycat Dolls"
   ],
-  "01/18/2024": [
+  [
     "My Chemical Romance",
     "Natasha Bedingfield"
   ],
-  "01/19/2024": [
-    "Nicki Minaj",
-    "Olivia Rodrigo"
-  ],
-  "01/20/2024": [
+  [
     "Rihanna",
     "Pitbull"
   ],
-  "01/21/2024": [
+  [
     "P!nk",
     "ZAYN"
   ],
-  "01/22/2024": [
+  [
     "Imagine Dragons",
     "Carly Rae Jepsen"
   ],
-  "01/23/2024": [
+  [
     "Halsey",
     "Neon Trees"
   ],
-  "01/24/2024": [
+  [
     "Travis Scott",
     "Sean Kingston"
   ],
-  "01/25/2024": [
+  [
     "Two Door Cinema Club",
     "Ellie Goulding"
   ],
-  "01/26/2024": [
-    "Michael Jackson",
-    "Ludacris"
-  ],
-  "01/27/2024": [
+  [
     "Cardi B",
     "Beach House"
   ],
-  "01/28/2024": [
+  [
     "Neon Trees",
     "Gracie Abrams"
   ],
-  "01/29/2024": [
+  [
     "5 Seconds of Summer",
     "Baby Keem"
   ],
-  "01/30/2024": [
+  [
     "Pentatonix",
     "Black Eyed Peas"
   ],
-  "01/31/2024": [
+  [
     "Olivia Rodrigo",
     "Quavo"
   ],
-  "02/01/2024": [
-    "Tate McRae",
-    "Tame Impala"
-  ],
-  "02/02/2024": [
-    "fun.",
-    "Madonna"
-  ],
-  "02/03/2024": [
+  [
     "Ariana Grande",
     "All Time Low"
   ],
-  "02/04/2024": [
+  [
     "M\u00e5neskin",
     "Dua Lipa"
   ],
-  "02/05/2024": [
+  [
     "The 1975",
     "Megan Thee Stallion"
   ],
-  "02/06/2024": [
+  [
     "The Cranberries",
     "Owl City"
   ],
-  "02/07/2024": [
+  [
     "Jessie J",
     "Bastille"
   ],
-  "02/08/2024": [
+  [
     "ABBA",
     "The Cranberries"
   ],
-  "02/09/2024": [
+  [
     "Lil Pump",
     "Troye Sivan"
   ],
-  "02/10/2024": [
+  [
     "Maroon 5",
     "Iggy Azalea"
   ],
-  "02/11/2024": [
+  [
     "Gorillaz",
     "Wham!"
   ],
-  "02/12/2024": [
+  [
     "Mark Ronson",
     "Liam Payne"
   ],
-  "02/13/2024": [
+  [
     "Selena Gomez & The Scene",
     "The Goo Goo Dolls"
   ],
-  "02/14/2024": [
+  [
     "Lizzo",
     "DNCE"
   ],
-  "02/15/2024": [
+  [
     "Megan Thee Stallion",
     "Ava Max"
   ],
-  "02/16/2024": [
+  [
     "Florence + The Machine",
     "LMFAO"
   ],
-  "02/17/2024": [
+  [
     "Metallica",
     "Plain White T's"
   ],
-  "02/18/2024": [
+  [
     "Mitski",
     "Harry Styles"
   ],
-  "02/19/2024": [
+  [
     "Foo Fighters",
     "MGMT"
   ],
-  "02/20/2024": [
+  [
     "Ice Spice",
     "Grimes"
   ],
-  "02/21/2024": [
+  [
     "David Bowie",
     "Vampire Weekend"
   ],
-  "02/22/2024": [
+  [
     "Justin Timberlake",
     "Aretha Franklin"
   ],
-  "02/23/2024": [
+  [
     "Whitney Houston",
     "3OH!3"
   ],
-  "02/24/2024": [
+  [
     "Vampire Weekend",
     "PinkPantheress"
   ],
-  "02/25/2024": [
+  [
     "Charli XCX",
     "One Direction"
   ],
-  "02/26/2024": [
+  [
     "Gwen Stefani",
     "fun."
   ],
-  "02/27/2024": [
+  [
     "Billie Eilish",
     "Fetty Wap"
   ],
-  "02/28/2024": [
+  [
     "Katy Perry",
     "Lewis Capaldi"
   ],
-  "02/29/2024": [
+  [
     "Dominic Fike",
     "21 Savage"
   ],
-  "03/01/2024": [
+  [
     "Melanie Martinez",
     "The Lumineers"
   ],
-  "03/02/2024": [
+  [
     "blink-182",
     "Jason Mraz"
   ],
-  "03/03/2024": [
+  [
     "Santana",
     "a-ha"
   ],
-  "03/04/2024": [
+  [
     "Hozier",
     "The Neighbourhood"
   ],
-  "03/05/2024": [
+  [
     "Skrillex",
     "Little Mix"
   ],
-  "03/06/2024": [
+  [
     "Melanie Martinez",
     "The Lumineers"
   ]
-}
+]

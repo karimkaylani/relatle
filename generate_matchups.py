@@ -13,27 +13,14 @@ def main():
     verify_matchups(web)
 
 def verify_matchups(web):
-    todayIndex = 66
     with open("public/matchups.json", "r") as outfile:
         matchups = json.load(outfile)
-    for date in list(matchups)[todayIndex:]:
-        matchup = matchups[date]
+    for matchup in matchups:
         start, end = matchup
         if start not in web or end not in web:
-            print("Not in web:", date, matchup)
+            print("Not in web:", matchup)
         elif not is_good_matchup(web, matchup):
-            print("Not good matchup:", date, matchup)
-
-def write_matchups_to_disk(matchups):
-    start_date = datetime(2023, 11, 29)
-    curr = start_date
-    new_matchups = {}
-    for matchup in matchups:
-        date_str = curr.strftime("%m/%d/%Y")
-        new_matchups[date_str] = matchup
-        curr += timedelta(days=1)
-    with open("public/matchups_new.json", "w") as outfile:
-        json.dump(new_matchups, outfile, indent=2)
+            print("Not good matchup:", matchup)
     
 
 def generate_matchups(m, amount, artists, with_replacement=False):

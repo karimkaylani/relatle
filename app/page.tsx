@@ -33,7 +33,7 @@ export async function getWeb(): Promise<{[key: string]: Artist}> {
   return JSON.parse(web)
 }
 
-async function getMatchups(): Promise<{[key: string]: string[]}> {
+async function getMatchups(): Promise<string[][]> {
   const matchups = await fs.readFile(process.cwd() + "/public/matchups.json", "utf8")
   const data = JSON.parse(matchups)
   return data
