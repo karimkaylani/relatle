@@ -210,7 +210,7 @@ const Game = (props: GameProps) => {
         
         const matchupIndex = (diffDays - matchupIndexPadding) % matchups.length
         const matchup = matchups[matchupIndex]
-        setMatchupID(diffDays)
+        setMatchupID(diffDays + 1)
         return matchup
     }
 
