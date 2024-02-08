@@ -34,7 +34,7 @@ export interface Artist {
 
 interface GameProps {
     web: {[key: string]: Artist},
-    matchups: string[][],
+    matchups: string[][]|null,
     is_custom: boolean
 }
 
