@@ -15,12 +15,18 @@ def main():
 def verify_matchups(web):
     with open("public/matchups.json", "r") as outfile:
         matchups = json.load(outfile)
+    # 25 is padding for removed matchups that have already occurred
+    num_days = 25
     for matchup in matchups:
+        num_days += 1
         start, end = matchup
         if start not in web or end not in web:
             print("Not in web:", matchup)
         elif not is_good_matchup(web, matchup):
             print("Not good matchup:", matchup)
+    start = datetime(2023, 10, 29)
+    start += timedelta(days=num_days)
+    print("Matchups completed until", start.strftime("%m/%d/%Y"))
     
 
 def generate_matchups(m, amount, artists, with_replacement=False):
