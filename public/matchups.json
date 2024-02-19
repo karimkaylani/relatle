@@ -244,20 +244,12 @@
     "Aretha Franklin"
   ],
   [
-    "Whitney Houston",
-    "3OH!3"
-  ],
-  [
     "Vampire Weekend",
     "PinkPantheress"
   ],
   [
     "Charli XCX",
     "One Direction"
-  ],
-  [
-    "Selena Gomez & The Scene",
-    "The Goo Goo Dolls"
   ],
   [
     "Billie Eilish",
@@ -278,10 +270,6 @@
   [
     "blink-182",
     "Jason Mraz"
-  ],
-  [
-    "Santana",
-    "a-ha"
   ],
   [
     "Hozier",
@@ -346,5 +334,17 @@
   [
     "Lil Dicky",
     "Frank Ocean"
+  ],
+  [
+    "Whitney Houston",
+    "3OH!3"
+  ],
+  [
+    "Selena Gomez & The Scene",
+    "The Goo Goo Dolls"
+  ],
+  [
+    "Santana",
+    "a-ha"
   ]
 ]
