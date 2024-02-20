@@ -251,8 +251,8 @@ const CustomGameModal = (props: CustomGameModalProps) => {
             <Stack gap="xs">
                 <Autocomplete size="lg" radius="md" placeholder="Target artist" disabled={!artistsList.includes(startArtist) || matchupsFound.length == 0}
                     data={[
-                        {group: 'Recommended Target Artists', items: recommendedEndArtists.sort()},
-                        {group: 'Target Artists', items: matchupsFound.filter((artist)=> !recommendedEndArtists.includes(artist)).sort()}]}
+                        {group: 'Recommended Target Artists', items: recommendedEndArtists.sort((a, b)=> a.localeCompare(b))},
+                        {group: 'Target Artists', items: matchupsFound.filter((artist)=> !recommendedEndArtists.includes(artist)).sort((a,b)=> a.localeCompare(b))}]}
                     styles={{input: {color: "#f1f3f5", outline: isMatchupDifficult() ? '2px solid #fcc419' : ''}, 
                     groupLabel: {color: "#37b24d", fontWeight: 700}, dropdown: {color: "#f1f3f5"}}}
                     onChange={setEndArtist} selectFirstOptionOnChange={true} value={endArtist}
