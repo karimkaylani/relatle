@@ -43,9 +43,8 @@ const HowToPlay = (props: HowToPlayProps) => {
                     </Card>
                     <Stack align='center' justify='center'>
 
-                    <Text fw={300}>Identify the grid of the starting artist's related artists on the page</Text>
-                    <Text fw={300}>You can select one by pressing on their card and the grid will update to show the related artists of the artist you selected.      
-                    Continue to choose related artists that you think would get you closer to the target artist</Text>
+                    <Text fw={300}>Tap on the related artists that you think will get you closer to the target artist.      
+                    The less steps it takes you, the better your score!</Text>
 
                     <Text fw={300}>If you get stuck, you can <Text fw={700} c="yellow.5" span>RESET</Text> back to the starting 
                     artist or use the <Text fw={700} c='gray.1' span>HINT</Text> to see the target artist{"'"}s related artists</Text>
@@ -64,9 +63,9 @@ const HowToPlay = (props: HowToPlayProps) => {
                 <Center>
                     <Image w={250} src="how-to-play.png" alt="Clicking an artist box"/>
                 </Center>
-                <Stack className='mr-7 ml-7' align='center'>
+                <Stack className='mr-5 ml-5' align='center'>
                     <Title c='gray.1' order={4}>Related Artists?</Title>
-                    <Text fw={300}>Related artists for a particular artist are the other artists their fans are likely listen to. It's based on the "Fans Also Like" or "Similar Artists" sections you'll find on music services</Text>
+                    <Text fw={300}>Related artists are based on the "Fans Also Like" section you'll find on music streaming services</Text>
                 </Stack>
             </Stack>
         </Modal>
