@@ -65,8 +65,8 @@ const HowToPlay = (props: HowToPlayProps) => {
                 </Center>
                 <Stack className='mr-5 ml-5' align='center'>
                     <Title c='gray.1' order={4}>Related Artists?</Title>
-                    <Text fw={300}>Related artists are based on the &quot;Fans Also Like&quot; section {"you'll"} 
-                    find on music streaming services which take user listening habits into account</Text>
+                    <Text fw={300}>Related artists are based on the &quot;Fans Also Like&quot; 
+                    section {"you'll"} find on music streaming services which take user listening habits into account</Text>
                 </Stack>
             </Stack>
         </Modal>
