@@ -9,6 +9,7 @@ export async function addScoreToDB(matchup: string[], matchupID: number, guesses
     try {
       await sql`INSERT INTO scores (timestamp, matchup, matchup_id, guesses, resets, path, used_hint) VALUES
        (${date}, ${JSON.stringify(matchup)}, ${matchupID}, ${guesses}, ${resets}, ${JSON.stringify(path)}, ${usedHint})`
+      // revalidateTag('guesses')
     }
     catch {
       console.error("Error adding score to DB")
@@ -17,7 +18,7 @@ export async function addScoreToDB(matchup: string[], matchupID: number, guesses
 
 export const getCachedGuesses = unstable_cache(
   async (matchupID: number): Promise<number[]|null> => getAllGuesses(matchupID),
-  undefined, {tags: ['guesses'], revalidate: 300}
+  ['guesses'], {tags: ['guesses'], revalidate: 300}
 )
 
 export async function getAllGuesses(matchupID: number): Promise<number[]|null> {
