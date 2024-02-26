@@ -49,6 +49,7 @@ const HowToPlay = (props: HowToPlayProps) => {
                     <Text fw={300}>If you get stuck, you can <Text fw={700} c="yellow.5" span>RESET</Text> back to the starting 
                     artist or use the <Text fw={700} c='gray.1' span>HINT</Text> to see the target artist{"'"}s related artists</Text>
 
+                    <Text ta='left' fw={300}><Text fw={700} span>Tip: </Text>Press and hold on an artist to hear a preview of their music!</Text>
                     </Stack>
                 </Group>
 
