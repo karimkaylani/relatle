@@ -42,6 +42,7 @@ const getAllGuesses = async (matchupID: number): Promise<any | null> => {
     console.error(error)
     return null
   }
+  // Convert to list of guesses
   return data?.map((d: any) => d.guesses)
 }
 
