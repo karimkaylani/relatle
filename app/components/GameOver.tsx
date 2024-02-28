@@ -14,9 +14,9 @@ import Matchup from './Matchup'
 import { useSwipeable } from 'react-swipeable'
 import CountdownClock from './CountdownClock'
 import GlobalScoreSlider from './GlobalScoreSlider'
-import { getAllGuesses } from '../db'
 import CustomGameButton from './CustomGameButton'
 import GlobalScoreStats from './GlobalScoreStats'
+import { createClient } from '@/utils/supabase/client'
 
 export interface GameOverProps {
     opened: boolean,
@@ -32,6 +32,17 @@ export interface GameOverProps {
     streak: number,
     longest_streak: number,
     days_played: number
+}
+
+
+const getAllGuesses = async (matchupID: number): Promise<any | null> => {
+  const supabase = createClient();
+  const { data, error } = await supabase.from('scores').select('guesses').eq('matchup_id', matchupID)
+  if (error) {
+    console.error(error)
+    return null
+  }
+  return data?.map((d: any) => d.guesses)
 }
 
 const getMinPath = (web: {[key: string]: Artist}, start: string, end: string): string[] => {

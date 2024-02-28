@@ -3,8 +3,9 @@ import { Artist, PlayingAudioContext, phoneMaxWidth } from './Game'
 import { Card, Image, Text, Flex, BackgroundImage, RingProgress, Center, Transition, Overlay } from '@mantine/core';
 import { motion, useAnimate } from 'framer-motion'
 import { useLongPress } from 'use-long-press';
-import Lottie from 'lottie-react'
 import waveAnimation from '../audioWave.json'
+import dynamic from 'next/dynamic';
+const Lottie = dynamic(() => import('lottie-react'), { ssr: false });
 
 
 interface ArtistCardProps {

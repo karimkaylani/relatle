@@ -19,8 +19,8 @@ import AffixStatus from './AffixStatus'
 import CoffeeButton from './CoffeeButton'
 import { useAnimate } from 'framer-motion'
 import Hint from './Hint'
-import { addScoreToDB } from '../db'
 import NewFeatureModal from './NewFeatureModal'
+import { createClient } from '@/utils/supabase/client'
 
 export interface Artist {
     name: string,
@@ -66,6 +66,13 @@ export const PlayingAudioContext = React.createContext<iPlayingAudioContext>({
     playingAudio: null,
     setPlayingAudio: () => {}
 })
+
+const addScoreToDB = async(matchup: string[], matchupID: number, guesses: number, resets: number, path: string[], usedHint: boolean): Promise<any> => {
+    const supabase = createClient();
+    return supabase.from('scores').insert([
+        {matchup_id: matchupID, matchup: JSON.stringify(matchup), guesses, resets, path: JSON.stringify(path), used_hint: usedHint}
+    ])
+}
 
 const Game = (props: GameProps) => {
     const {web, matchups, is_custom} = props
