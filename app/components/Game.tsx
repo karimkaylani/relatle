@@ -68,10 +68,11 @@ export const PlayingAudioContext = React.createContext<iPlayingAudioContext>({
 })
 
 const addScoreToDB = async(matchup: string[], matchupID: number, guesses: number, resets: number, path: string[], usedHint: boolean): Promise<any> => {
+    const date = new Date().toLocaleString("en-US", {timeZone: "America/Los_Angeles"})
     const supabase = createClient();
-    return supabase.from('scores').insert([
-        {matchup_id: matchupID, matchup: JSON.stringify(matchup), guesses, resets, path: JSON.stringify(path), used_hint: usedHint}
-    ])
+    return supabase.from('scores').insert(
+        {timestamp: date, matchup_id: matchupID, matchup: JSON.stringify(matchup), guesses, resets, path: JSON.stringify(path), used_hint: usedHint}
+    )
 }
 
 const Game = (props: GameProps) => {
@@ -314,7 +315,7 @@ const Game = (props: GameProps) => {
                 sumResets: new_sum_resets, averageResets: new_average_resets
             })
             winModalOpen()
-            if (!is_custom && process.env.NODE_ENV !== "development") {
+            if (!is_custom) {
                 await addScoreToDB(matchup, matchupID, newGuesses, resets, newPath, usedHint)
             }
             return
