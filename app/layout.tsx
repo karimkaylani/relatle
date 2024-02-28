@@ -3,7 +3,6 @@
 import "./globals.css"
 import '@mantine/core/styles.css';
 import { MantineProvider, ColorSchemeScript } from '@mantine/core';
-import { Analytics } from "@vercel/analytics/react";
 
 export const metadata = {
   title: 'relatle',
@@ -37,7 +36,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         }} defaultColorScheme="dark">
           {children}
         </MantineProvider>
-        <Analytics/>
       </body>
     </html>
   );
