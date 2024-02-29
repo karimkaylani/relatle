@@ -343,7 +343,11 @@ const Game = (props: GameProps) => {
         if (currArtist.related.includes(end)) {
             missedArtistHandler()
         }
-        scrollToTop()
+        try {
+            scrollToTop()
+        } catch (e) {
+            console.error(e)
+        }
         const newPath = [...path, "RESET"]
         setPath(newPath)
         const newResets = resets + 1
