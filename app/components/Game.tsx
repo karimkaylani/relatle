@@ -440,7 +440,7 @@ const Game = (props: GameProps) => {
                 {currArtist.related.map((artist_name: string) => 
                     <ArtistCard key={web[artist_name].id} artist={web[artist_name]} path={path}
                     won={won} end={end} clicked={artistClicked} setClicked={setArtistClicked}
-                    updateArtistHandler={(won || artist_name === end) ? updateArtistHandler : clickArtistHandler}/>)}
+                    updateArtistHandler={updateArtistHandler}/>)}
                 </SimpleGrid>
             </PlayingAudioContext.Provider>
             {!won && <Stack align='center' justify='center'>
