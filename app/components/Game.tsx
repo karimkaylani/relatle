@@ -320,7 +320,11 @@ const Game = (props: GameProps) => {
             }
             return
         }
-        scrollToTop()
+        try {
+            scrollToTop()
+        } catch (e) {
+            console.error(e)
+        }
         const prevCurrArtist = currArtist
         if (prevCurrArtist.related.includes(end)) {
             missedArtistHandler()
