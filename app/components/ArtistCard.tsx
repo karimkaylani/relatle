@@ -99,6 +99,7 @@ const ArtistCard = ({artist, updateArtistHandler, path, won,
     if (clicked || isLongPress) { return }
     if (won) { return updateArtistHandler(artist) }
     setClicked(true)
+    setLongPress(false)
     const winningGuess = artist.name === end
     const borderSize = winningGuess ? "4px" : "2px"
     const borderColor = winningGuess ? "#51cf66" : "#f1f3f5"
@@ -120,7 +121,9 @@ const ArtistCard = ({artist, updateArtistHandler, path, won,
       whileTap={{ scale: 0.95 }}
       onTap={clickable ? clickArtistHandler : () => null}
       onTouchEnd={() => setLongPress(false)}
-      onMouseUp={() => setLongPress(false)}>
+      onMouseUp={() => setLongPress(false)}
+      onTouchCancel={() => setLongPress(false)}
+      onTapCancel={() => setLongPress(false)}>
       <Card ref={scope}
         shadow="sm" radius="md" withBorder
         padding="xs" opacity={won && artist.name !== end ? 0.25 : 1}

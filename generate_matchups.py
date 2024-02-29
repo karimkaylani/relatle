@@ -7,7 +7,7 @@ from collections import Counter
 
 def main():
     web = {}
-    with open("public/web.json", "r") as outfile:
+    with open("app/web.json", "r") as outfile:
         web = json.load(outfile)
     # get_distribution_of_degrees_of_separation(web)
     verify_matchups(web)
