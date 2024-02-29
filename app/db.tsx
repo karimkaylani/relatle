@@ -16,5 +16,5 @@ const getAllGuesses = async (matchupID: number): Promise<any | null> => {
 
 export const getCachedGuesses = unstable_cache(
     async (matchupID: number): Promise<number[]|null> => getAllGuesses(matchupID),
-    undefined, {tags: ['guesses'], revalidate: 500}
+    undefined, {tags: ['guesses'], revalidate: 300}
 )
