@@ -277,7 +277,7 @@ const CustomGameModal = (props: CustomGameModalProps) => {
                     <Card shadow="md" radius="lg"
                     p="sm">
                         <Group gap="6px" justify='center'>
-                            <Image src={"custom-icon.svg"}/>
+                            <Image src={"images/custom-icon.svg"}/>
                             <Text size="sm" fw={700} c="gray.1">RECOMMENDED</Text>
                         </Group>
                     </Card>

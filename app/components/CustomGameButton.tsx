@@ -14,7 +14,7 @@ const CustomGameButton = (props: CustomGameModalProps) => {
     <HoverButton onTap={() => customModalOpen()}>
         <Card shadow="md" radius="lg" p="sm">
             <Group gap="sm" justify='center'>
-                <Image src={"custom-icon.svg"}/>
+                <Image src={"images/custom-icon.svg"}/>
                 <Text fw={700} size={window.innerWidth > phoneMaxWidth ? "md" : "sm"} c="gray.1">CUSTOM GAME</Text>
             </Group>
         </Card>

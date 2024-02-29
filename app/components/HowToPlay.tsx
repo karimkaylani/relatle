@@ -62,7 +62,7 @@ const HowToPlay = (props: HowToPlayProps) => {
                     once they pop up or you&apos;ll miss it! Have fun!</Text>
                 </Group>
                 <Center>
-                    <Image w={250} src="how-to-play.png" alt="Clicking an artist box"/>
+                    <Image w={250} src="images/how-to-play.png" alt="Clicking an artist box"/>
                 </Center>
                 <Stack className='mr-5 ml-5' align='center'>
                     <Title c='gray.1' order={4}>Related Artists?</Title>

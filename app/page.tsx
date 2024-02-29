@@ -3,7 +3,7 @@ import Game from './components/Game';
 import Script from 'next/script';
 import { Suspense } from 'react';
 import Web from './web.json';
-import Matchups from '../public/matchups.json';
+import Matchups from './matchups.json';
 
 
 export default async function Home() {
