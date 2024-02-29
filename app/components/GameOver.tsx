@@ -79,6 +79,10 @@ const GameOver = ({opened, close, path, guesses, matchup,
     if (!opened) {
       return
     }
+    if (is_custom) {
+      setLoadingGlobalScore(false)
+      return
+    }
     getCachedGuesses(matchupID).then((res) => {
       if (res !== null) {
         setAllGuesses(res)
