@@ -1,7 +1,7 @@
 'use client'
 
 import React, { Fragment, useEffect, useRef, useState } from 'react'
-import { Modal, Text, Flex, Group, Collapse, Button, Drawer, Affix, Card, Transition, Space, Stack, Divider, ScrollArea, Loader } from '@mantine/core'
+import { Text, Flex, Group, Collapse, Button, Drawer, Affix, Card, Transition, Stack, Divider, Loader } from '@mantine/core'
 import ShareResults from './ShareResults'
 import { Artist, phoneMaxWidth } from './Game'
 import ScrollablePath from './ScrollablePath'
@@ -9,14 +9,13 @@ import Scoreboard, { ScoreDisplay } from './Scoreboard'
 import SharePath from './SharePath'
 import * as Collections from 'typescript-collections';
 import { IconArrowDown, IconArrowUp } from '@tabler/icons-react'
-import { useDisclosure, useIntersection } from '@mantine/hooks'
+import { useDisclosure } from '@mantine/hooks'
 import Matchup from './Matchup'
 import { useSwipeable } from 'react-swipeable'
 import CountdownClock from './CountdownClock'
-import GlobalScoreSlider from './GlobalScoreSlider'
 import CustomGameButton from './CustomGameButton'
 import GlobalScoreStats from './GlobalScoreStats'
-import { createClient } from '@/utils/supabase/client'
+import { getCachedGuesses } from '../db'
 
 export interface GameOverProps {
     opened: boolean,
@@ -32,18 +31,6 @@ export interface GameOverProps {
     streak: number,
     longest_streak: number,
     days_played: number
-}
-
-
-const getAllGuesses = async (matchupID: number): Promise<any | null> => {
-  const supabase = createClient();
-  const { data, error } = await supabase.from('scores').select('guesses').eq('matchup_id', matchupID)
-  if (error) {
-    console.error(error)
-    return null
-  }
-  // Convert to list of guesses
-  return data?.map((d: any) => d.guesses)
 }
 
 const getMinPath = (web: {[key: string]: Artist}, start: string, end: string): string[] => {
@@ -84,7 +71,6 @@ const GameOver = ({opened, close, path, guesses, matchup,
   const minPathLength = minPath.length
   minPath.unshift(start)
 
-
   const [allGuesses, setAllGuesses] = useState<number[]>([])
 
   const [loadingGlobalScore, setLoadingGlobalScore] = useState<boolean>(true)
@@ -93,7 +79,7 @@ const GameOver = ({opened, close, path, guesses, matchup,
     if (!opened) {
       return
     }
-    getAllGuesses(matchupID).then((res) => {
+    getCachedGuesses(matchupID).then((res) => {
       if (res !== null) {
         setAllGuesses(res)
       }
