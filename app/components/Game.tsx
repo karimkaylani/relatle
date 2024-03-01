@@ -409,7 +409,7 @@ const Game = (props: GameProps) => {
                 {/* 160.46 is the width of of the CustomGameButton so that the logo is centered */}
                 {width > phoneMaxWidth && <Space w={160.46}/>}
                 <Stack gap="0px">
-                    <Link prefetch={false} href="/"><Image w={width > phoneMaxWidth ? 250 : 175} src="images/logo.png" alt="logo"></Image></Link>
+                    <a href={is_custom ? "/" : "javascript:void(0)"}><Image w={width > phoneMaxWidth ? 250 : 175} src="images/logo.png" alt="logo"></Image></a>
                     {is_custom && <Text p="0px" c="gray.1" ta="center">Custom Game</Text>}
                 </Stack>
                 <CustomGameButton customModalOpen={customModalOpen}/>
