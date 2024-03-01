@@ -15,7 +15,7 @@ import { useSwipeable } from 'react-swipeable'
 import CountdownClock from './CountdownClock'
 import CustomGameButton from './CustomGameButton'
 import GlobalScoreStats from './GlobalScoreStats'
-import { getAllGuesses } from '../db'
+import { getCachedGuesses } from '../db'
 
 export interface GameOverProps {
     opened: boolean,
@@ -83,7 +83,7 @@ const GameOver = ({opened, close, path, guesses, matchup,
       setLoadingGlobalScore(false)
       return
     }
-    getAllGuesses(matchupID).then((res) => {
+    getCachedGuesses(matchupID).then((res) => {
       if (res !== null) {
         setAllGuesses(res)
       }

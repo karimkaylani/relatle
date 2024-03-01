@@ -1,5 +1,6 @@
 'use server'
 import { createClient } from "@/utils/supabase/server";
+import { unstable_cache } from "next/cache";
 
 export const getAllGuesses = async (matchupID: number): Promise<any | null> => {
     const supabase = createClient();
@@ -12,3 +13,8 @@ export const getAllGuesses = async (matchupID: number): Promise<any | null> => {
     // Convert to list of guesses
     return data?.map((d: any) => d.guesses)
 }
+
+export const getCachedGuesses = unstable_cache(
+  async (matchupID: number): Promise<number[]|null> => getAllGuesses(matchupID),
+  undefined, {tags: ['guesses'], revalidate: 300}
+)
