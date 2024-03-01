@@ -374,12 +374,18 @@ const Game = (props: GameProps) => {
     }
 
     const clickArtistHandler = (artist: Artist) => {
-        animate([[scope.current, { scale: 0.95 }, { duration: 0.125}]], 
-        {onComplete: () => {
-            animate([[scope.current, {scale: 1}, {duration: 0.125}]], {ease: "linear"})
+        try {
+            animate([[scope.current, { scale: 0.95 }, { duration: 0.125}]], 
+                {onComplete: () => {
+                    animate([[scope.current, {scale: 1}, {duration: 0.125}]], {ease: "linear"})
+                    updateArtistHandler(artist)
+                }},
+                { ease: "linear" })
+        } catch (e) {
+            console.error("Failed to do grid pop animation: " + e)
             updateArtistHandler(artist)
-        }},
-        { ease: "linear" })
+        }
+        
     }
 
     const clickResetHandler = () => {
@@ -440,7 +446,7 @@ const Game = (props: GameProps) => {
                 {currArtist.related.map((artist_name: string) => 
                     <ArtistCard key={web[artist_name].id} artist={web[artist_name]} path={path}
                     won={won} end={end} clicked={artistClicked} setClicked={setArtistClicked}
-                    updateArtistHandler={updateArtistHandler}/>)}
+                    updateArtistHandler={(won || artist_name === end) ? updateArtistHandler : clickArtistHandler}/>)}
                 </SimpleGrid>
             </PlayingAudioContext.Provider>
             {!won && <Stack align='center' justify='center'>
