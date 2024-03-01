@@ -17,7 +17,7 @@ import CustomGameButton from './CustomGameButton'
 import CustomGameModal, { getValidPaths } from './CustomGameModal'
 import AffixStatus from './AffixStatus'
 import CoffeeButton from './CoffeeButton'
-import { useAnimate } from 'framer-motion'
+import { useAnimate, useReducedMotion } from 'framer-motion'
 import Hint from './Hint'
 import NewFeatureModal from './NewFeatureModal'
 import { createClient } from '@/utils/supabase/client'
@@ -133,6 +133,7 @@ const Game = (props: GameProps) => {
     const [artistClicked, setArtistClicked] = useState(false)
     
     const [endMissed, setEndMissed] = useState(false)
+    const shouldReduceMotion = useReducedMotion()
     
     const save = (saveData: SaveProps): void => {
         // if this is a save for a non-winning state, wanna make sure we 
@@ -374,6 +375,10 @@ const Game = (props: GameProps) => {
     }
 
     const clickArtistHandler = (artist: Artist) => {
+        if (shouldReduceMotion) {
+            updateArtistHandler(artist)
+            return
+        }
         animate([[scope.current, { scale: 0.95 }, { duration: 0.125}]], 
             {onComplete: () => {
                 animate([[scope.current, {scale: 1}, {duration: 0.125}]], {ease: "linear"})
@@ -384,6 +389,10 @@ const Game = (props: GameProps) => {
 
     const clickResetHandler = () => {
         if (artistClicked) { return }
+        if (shouldReduceMotion) {
+            resetHandler()
+            return
+        }
         animate([[scope.current, { opacity: 0 }, { duration: 0.25}]], 
             {onComplete: () => {
                 animate([[scope.current, {opacity: 1}, {duration: 0.25}]], {ease: "linear"})
@@ -440,7 +449,7 @@ const Game = (props: GameProps) => {
                 {currArtist.related.map((artist_name: string) => 
                     <ArtistCard key={web[artist_name].id} artist={web[artist_name]} path={path}
                     won={won} end={end} clicked={artistClicked} setClicked={setArtistClicked}
-                    updateArtistHandler={updateArtistHandler}/>)}
+                    updateArtistHandler={(won || artist_name === end) ? updateArtistHandler : clickArtistHandler}/>)}
                 </SimpleGrid>
             </PlayingAudioContext.Provider>
             {!won && <Stack align='center' justify='center'>
