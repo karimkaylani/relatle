@@ -60,11 +60,15 @@ export const phoneMaxWidth = 768;
 
 export interface iPlayingAudioContext {
     playingAudio: HTMLAudioElement|null,
-    setPlayingAudio: (playingAudio: HTMLAudioElement) => void
+    setPlayingAudio: (playingAudio: HTMLAudioElement|null) => void,
+    playingArtist: Artist|null,
+    setPlayingArtist: (playingArtist: Artist|null) => void
 }
 export const PlayingAudioContext = React.createContext<iPlayingAudioContext>({
     playingAudio: null,
-    setPlayingAudio: () => {}
+    setPlayingAudio: () => {},
+    playingArtist: null,
+    setPlayingArtist: () => {}
 })
 
 const addScoreToDB = async(matchup: string[], matchupID: number, guesses: number, resets: number, path: string[], usedHint: boolean): Promise<any> => {
@@ -110,6 +114,7 @@ const Game = (props: GameProps) => {
     const [usedHint, setUsedHint] = useState<boolean>(false)
 
     const [playingAudio, setPlayingAudio] = useState<HTMLAudioElement|null>(null)
+    const [playingArtist, setPlayingArtist] = useState<Artist|null>(null)
 
     // For new feature modal pop-up
     const latestFeatureId = 0
@@ -417,7 +422,7 @@ const Game = (props: GameProps) => {
             </Group>
             <Stack gap="xs">
                 <Text size={width > phoneMaxWidth ? "md" : "sm"} ta="center">Use related artists to get from</Text>
-                <PlayingAudioContext.Provider value={{playingAudio, setPlayingAudio}}>
+                <PlayingAudioContext.Provider value={{playingAudio, setPlayingAudio, playingArtist, setPlayingArtist}}>
                     <Matchup ref={matchupRef} start={web[start]} end={web[end]} small={width <= phoneMaxWidth} showPreviews={true}/>
                 </PlayingAudioContext.Provider>
             </Stack>
@@ -441,10 +446,12 @@ const Game = (props: GameProps) => {
             <GameOver opened={winModalOpened} close={winModalClose} path={path} guesses={guesses}
              matchup={matchup} resets={resets} web={web} is_custom={is_custom} matchupID={matchupID}
              streak={streak} longest_streak={longestStreak} days_played={numDaysPlayed} customModalOpen={customModalOpen}/>
-            <AffixStatus currArtist={currArtist} endArtist={web[end]} guesses={guesses} 
-            resets={resets} onTap={scrollToTop} mounted={!won && !entryAffix?.isIntersecting}/>
+            <PlayingAudioContext.Provider value={{playingAudio, setPlayingAudio, playingArtist, setPlayingArtist}}>
+                <AffixStatus currArtist={currArtist} endArtist={web[end]} guesses={guesses} 
+                resets={resets} onTap={scrollToTop} scrolled={(!entryAffix?.isIntersecting)}/>
+            </PlayingAudioContext.Provider>
             <Text ta='center' size={window.innerWidth <= phoneMaxWidth ? "sm" : "md"}>Press and hold on an artist to hear a preview of their music</Text>
-            <PlayingAudioContext.Provider value={{playingAudio, setPlayingAudio}}>
+            <PlayingAudioContext.Provider value={{playingAudio, setPlayingAudio, playingArtist, setPlayingArtist}}>
                 <SimpleGrid ref={scope} cols={{ base: 2, xs: 3, sm: 3, md: 4, lg: 5 }}>
                 {currArtist.related.map((artist_name: string) => 
                     <ArtistCard key={web[artist_name].id} artist={web[artist_name]} path={path}
@@ -456,7 +463,7 @@ const Game = (props: GameProps) => {
                 <Text ta="center" c='gray.1' size="md">Feeling stuck?</Text>
                 <Group justify='center' align='center'>
                     {start !== currArtist.name && <Reset resetHandler={(won || currArtist.name === start) ? resetHandler : clickResetHandler}/>}
-                    <PlayingAudioContext.Provider value={{playingAudio, setPlayingAudio}}>
+                    <PlayingAudioContext.Provider value={{playingAudio, setPlayingAudio, playingArtist, setPlayingArtist}}>
                     <Hint web={web} endArtist={web[end]} path={path} setUsedHint={useHintHandler}/>
                     </PlayingAudioContext.Provider>
                 </Group>

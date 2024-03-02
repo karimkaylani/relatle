@@ -34,7 +34,7 @@ const ArtistCard = ({artist, updateArtistHandler, path, won,
   
   const isPlayingRef = useRef(isPlaying);
 
-  const {playingAudio, setPlayingAudio} = React.useContext(PlayingAudioContext)
+  const {playingAudio, setPlayingAudio, playingArtist, setPlayingArtist} = React.useContext(PlayingAudioContext)
 
   // To get up-to-date value of isPlaying in resetAudioTimer
   useEffect(() => {
@@ -46,6 +46,7 @@ const ArtistCard = ({artist, updateArtistHandler, path, won,
     if (!audioRef.current) { return }
     playingAudio?.pause()
     setPlayingAudio(audioRef.current)
+    setPlayingArtist(artist)
     audioRef.current.play()
     audioRef.current.volume = 0.5
     setIsPlaying(true)
@@ -54,10 +55,14 @@ const ArtistCard = ({artist, updateArtistHandler, path, won,
   }
 
 
-  const stopMusic = () => {
+  const stopMusic = (fromNewAudio=false) => {
     if (!audioRef.current) { return }
     audioRef.current.pause();
     setIsPlaying(false)
+    if (!fromNewAudio) {
+      setPlayingAudio(null)
+      setPlayingArtist(null)
+    }
     // Reset audio after set time if audio hasn't been played again
     setResetAudioTimer(setTimeout(() => {
       if (audioRef.current && !isPlayingRef.current) {
@@ -167,7 +172,7 @@ const ArtistCard = ({artist, updateArtistHandler, path, won,
               </Text>
           </Flex>
           <audio loop ref={audioRef} src={artist.top_song_preview_url}
-          onTimeUpdate={onTimeUpdate} onPause={stopMusic}/>
+          onTimeUpdate={onTimeUpdate} onPause={() => stopMusic(true)}/>
       </Card>
     </motion.button>
   ) 

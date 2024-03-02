@@ -2,19 +2,20 @@ import { IconPlayerPlayFilled, IconPlayerStopFilled } from '@tabler/icons-react'
 import React, { Fragment } from 'react'
 import HoverButton from './HoverButton'
 import { Center, RingProgress } from '@mantine/core'
-import { PlayingAudioContext, phoneMaxWidth } from './Game'
+import { Artist, PlayingAudioContext, phoneMaxWidth } from './Game'
 
 export interface PlayButtonProps {
-    audioUrl: string
+    audioUrl: string,
+    artist: Artist
 }
 
 const PlayButton = (props: PlayButtonProps) => {
-    const {audioUrl} = props
+    const {audioUrl, artist} = props
     const audioRef = React.useRef<HTMLAudioElement>(null)
     const [isPlaying, setIsPlaying] = React.useState(false)
     const [progress, setProgress] = React.useState(0)
 
-    const {playingAudio, setPlayingAudio} = React.useContext(PlayingAudioContext)
+    const {playingAudio, setPlayingAudio, playingArtist, setPlayingArtist} = React.useContext(PlayingAudioContext)
 
     let isPhone = window.innerWidth < phoneMaxWidth
 
@@ -22,15 +23,23 @@ const PlayButton = (props: PlayButtonProps) => {
         if (!audioRef.current) { return }
         playingAudio?.pause()
         setPlayingAudio(audioRef.current)
+        setPlayingArtist(artist)
         audioRef.current.play()
         audioRef.current.volume = 0.5
         setIsPlaying(true)
     }
 
-    const stopMusic = () => {
+    const stopMusic = (fromNewAudio=false) => {
         if (!audioRef.current) { return }
-        audioRef.current.pause()
         setIsPlaying(false)
+        // only set playing audio to null if 
+        // audio wasn't stopped because of another audio playing
+        // i.e. manually stopped the music
+        if (!fromNewAudio) {
+            setPlayingAudio(null)
+            setPlayingArtist(null)
+        }
+        audioRef.current.pause()
         audioRef.current.currentTime = 0
         setProgress(0)
     }
@@ -43,7 +52,7 @@ const PlayButton = (props: PlayButtonProps) => {
 
   return (
     <Fragment>
-        <HoverButton onTap={isPlaying ? stopMusic : startMusic}>
+        <HoverButton onTap={isPlaying ? () => stopMusic(false) : startMusic}>
             <RingProgress thickness={2} size={isPhone ? 30 : 35} 
             sections={[{ value: progress, color: 'gray.1' }]}
             label={
@@ -55,7 +64,7 @@ const PlayButton = (props: PlayButtonProps) => {
             }>
             </RingProgress>
         </HoverButton>
-        <audio ref={audioRef} src={audioUrl} onTimeUpdate={onTimeUpdate} onEnded={stopMusic} onPause={stopMusic}/>
+        <audio ref={audioRef} src={audioUrl} onTimeUpdate={onTimeUpdate} onEnded={() => stopMusic()} onPause={() => stopMusic(true)}/>
     </Fragment>
   )
 }
