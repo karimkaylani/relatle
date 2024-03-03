@@ -1,10 +1,12 @@
 "use client";
-import React from "react";
+import React, { Fragment } from "react";
 import { Artist, PlayingAudioContext } from "./Game";
 import {
   Affix,
   Avatar,
+  Box,
   Card,
+  Center,
   Group,
   Text,
   Transition,
@@ -25,8 +27,7 @@ const AffixStatus = (props: AffixStatusProps) => {
   const { currArtist, endArtist, guesses, resets, scrolled, onTap } = props;
   const groupRef = React.useRef<HTMLDivElement>(null);
 
-  const { playingAudio, playingArtist } =
-    React.useContext(PlayingAudioContext);
+  const { playingAudio, playingArtist } = React.useContext(PlayingAudioContext);
   const mounted = scrolled === true || playingAudio !== null;
 
   return (
@@ -42,20 +43,45 @@ const AffixStatus = (props: AffixStatusProps) => {
             style={transitionStyles}
           >
             {playingAudio && playingArtist && (
-              <Group justify="center" align="center" gap="5px">
-                <Text ta="center">Playing</Text>
+              <Text ta="center" fw={700} className='m-0 p-0 top-0'>
+                Playing{" "}
                 <Avatar
                   radius="sm"
                   size={"sm"}
                   src={playingArtist.top_song_art}
                   alt={playingArtist.top_song_name + "art"}
+                  style={{
+                    marginLeft: "5px",
+                    marginRight: "5px",
+                    display: "inline-block",
+                    top: "7px",
+                  }}
                 />
-                <Text ta="center" c="green.6" fw={700}>
+                <Text fw={700} c="green.6" span>
                   {playingArtist.top_song_name}
+                </Text>{" "}
+                by{" "}
+                <Avatar
+                  size={"sm"}
+                  src={playingArtist?.image}
+                  alt={playingArtist?.name}
+                  style={{
+                    display: "inline-block",
+                    top: "7px",
+                    marginLeft: "5px",
+                    marginRight: "5px",
+                  }}
+                />
+                <Text
+                  ta="center"
+                  size={"12.5px"}
+                  fw={700}
+                  c="gray.1"
+                  style={{ display: "inline-block" }}
+                >
+                  {playingArtist?.name}
                 </Text>
-                <Text ta="center">by</Text>
-                <ArtistInfo artist={playingArtist} small={true} />
-              </Group>
+              </Text>
             )}
 
             {!playingAudio && scrolled && (
