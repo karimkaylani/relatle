@@ -10,7 +10,6 @@ import React, { Fragment, useEffect, useState } from "react";
 interface CircleProps {
   color: string;
   value: number;
-  showValue: boolean;
 }
 
 export interface GlobalScoreSliderProps {
@@ -42,7 +41,7 @@ const GlobalScoreSlider = (props: GlobalScoreSliderProps) => {
   }, []);
 
   const Circle = (props: CircleProps) => {
-    const { color, value, showValue } = props;
+    const { color, value } = props;
     const rangeSize = range[1] - range[0];
     const circleSize = 20;
     const padding = ((value - range[0]) / rangeSize) * width;
@@ -57,7 +56,6 @@ const GlobalScoreSlider = (props: GlobalScoreSliderProps) => {
             marginLeft: -15,
             left: padding,
             position: "relative",
-            zIndex: showValue ? 1000 : 1,
             border: "6px solid #495057",
             borderRadius: "70%",
           },
@@ -89,9 +87,9 @@ const GlobalScoreSlider = (props: GlobalScoreSliderProps) => {
         <Paper bg="gray.7" w={width} radius="xl" className="-mb-5">
           <Space h={10} />
         </Paper>
-        <Circle color="gray.1" value={minGuesses} showValue={false} />
-        <Circle color="yellow.5" value={avgGuesses} showValue={false} />
-        <Circle color={yourScoreColor} value={guesses} showValue={true} />
+        <Circle color="gray.1" value={minGuesses} />
+        <Circle color="yellow.5" value={avgGuesses} />
+        <Circle color={yourScoreColor} value={guesses} />
       </div>
       <Stack>
         <Group justify="center" align="center" gap="xs">
