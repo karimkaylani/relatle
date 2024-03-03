@@ -1,7 +1,7 @@
 'use client'
 import React, { useEffect, useState } from 'react'
-import { Artist } from './Game'
-import { Affix, Card, Group, ScrollArea, Text, Transition } from '@mantine/core'
+import { Artist, PlayingAudioContext } from './Game'
+import { Affix, Avatar, Card, Group, ScrollArea, Text, Transition } from '@mantine/core'
 import ArtistInfo from './ArtistInfo'
 import Arrow from './Arrow'
 
@@ -10,27 +10,41 @@ export interface AffixStatusProps {
     endArtist: Artist,
     guesses: number,
     resets: number,
-    mounted: boolean|undefined,
+    scrolled: boolean|undefined,
     onTap: () => void
 }
 
 const AffixStatus = (props: AffixStatusProps) => {
-    const {currArtist, endArtist, guesses, resets, mounted, onTap} = props
+    const {currArtist, endArtist, guesses, resets, scrolled, onTap} = props
     const groupRef = React.useRef<HTMLDivElement>(null)
+
+    const {playingAudio, setPlayingAudio, playingArtist, setPlayingArtist} = React.useContext(PlayingAudioContext)
+    const mounted = scrolled === true || playingAudio !== null
 
   return (
     <Affix w="100%" h={0} top={0}>
-        <Transition transition="slide-down" mounted={mounted === true}>
+        <Transition transition="slide-down" mounted={mounted}>
         {(transitionStyles) => (
-            <Card onClick={onTap} ref={groupRef} p="xs" withBorder style={transitionStyles}>
+            <Card onClick={onTap} ref={groupRef} p="xs" withBorder styles={{root: {maxHeight: '100px'}}} style={transitionStyles}>
+
+                {playingAudio && playingArtist && 
+                <Group justify='center' align='center' gap='5px'>
+                    <Text ta='center'>Playing by</Text>
+                    <Avatar radius='sm' size={'sm'} src={playingArtist.top_song_art} alt={playingArtist.top_song_name + "art"}/>
+                    <Text c='green.6' fw={700}>{playingArtist.top_song_name}</Text>
+                    <Text ta='center'>by</Text>
+                    <ArtistInfo artist={playingArtist} small={true}/>
+                </Group>}
+
+                {!playingAudio && scrolled &&
                 <Group align='center' justify='space-between' wrap='nowrap'>
                     <Group align='center' justify="center" gap="xs" wrap='nowrap'>
-                        <ArtistInfo artist={currArtist} small={true} />
+                        <ArtistInfo artist={currArtist} small={true}/>
                         <Arrow small={true}/>
                         <ArtistInfo artist={endArtist} small={true} is_green={true}/>
                     </Group>
                     <Text>{guesses} | {resets}</Text>
-                </Group>
+                </Group>}
             </Card> 
         )}
         </Transition>
