@@ -1,6 +1,6 @@
 "use client";
 import React, { Fragment } from "react";
-import { Artist, PlayingAudioContext } from "./Game";
+import { Artist, PlayingAudioContext, phoneMaxWidth } from "./Game";
 import {
   Affix,
   Avatar,
@@ -37,7 +37,7 @@ const AffixStatus = (props: AffixStatusProps) => {
           <Card
             onClick={onTap}
             ref={groupRef}
-            p="xs"
+            p="sm"
             withBorder
             styles={{ root: { maxHeight: "130px", overflow: "auto" } }}
             style={transitionStyles}
@@ -75,7 +75,6 @@ const AffixStatus = (props: AffixStatusProps) => {
                 />
                 <Text
                   ta="center"
-                  size={"12.5px"}
                   fw={700}
                   c="gray.1"
                   style={{ display: "inline-block" }}
