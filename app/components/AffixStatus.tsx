@@ -1,7 +1,7 @@
 'use client'
 import React, { useEffect, useState } from 'react'
 import { Artist, PlayingAudioContext } from './Game'
-import { Affix, Card, Group, ScrollArea, Text, Transition } from '@mantine/core'
+import { Affix, Avatar, Card, Group, ScrollArea, Text, Transition } from '@mantine/core'
 import ArtistInfo from './ArtistInfo'
 import Arrow from './Arrow'
 
@@ -29,7 +29,10 @@ const AffixStatus = (props: AffixStatusProps) => {
 
                 {playingAudio && playingArtist && 
                 <Group justify='center' align='center' gap='5px'>
-                    <Text ta='center'>Playing <Text c='green.6' fw={700} span>{playingArtist.top_song_name}</Text> by</Text>
+                    <Text ta='center'>Playing by</Text>
+                    <Avatar radius='sm' size={'sm'} src={playingArtist.top_song_art} alt={playingArtist.top_song_name + "art"}/>
+                    <Text c='green.6' fw={700}>{playingArtist.top_song_name}</Text>
+                    <Text ta='center'>by</Text>
                     <ArtistInfo artist={playingArtist} small={true}/>
                 </Group>}
 

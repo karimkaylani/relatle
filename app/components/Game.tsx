@@ -140,8 +140,6 @@ const Game = (props: GameProps) => {
     const [endMissed, setEndMissed] = useState(false)
     const shouldReduceMotion = useReducedMotion()
 
-    console.log(playingAudio, playingArtist)
-    
     const save = (saveData: SaveProps): void => {
         // if this is a save for a non-winning state, wanna make sure we 
         // don't lose streak data, avg score, etc. so we pull from state variables

@@ -11,7 +11,7 @@ export interface ArtistInfoProps {
 
 const ArtistInfo = ({artist, small, is_green=false, show_name=true}: ArtistInfoProps) => {
   return (
-    <Group justify="center" gap="xs">
+    <Group justify="center" gap={small ? '5px' : "xs"}>
         <Avatar size={small ? "sm" : "md"} src={artist.image} alt={artist.name}
             styles={is_green ? {
             image: { border: '2.5px solid #51cf66', borderRadius: "100%"  }
