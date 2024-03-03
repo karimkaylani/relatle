@@ -1,15 +1,23 @@
-import { Button, Flex, Text } from '@mantine/core'
-import React from 'react'
+import { Button } from "@mantine/core";
+import React from "react";
 
 export interface ResetProps {
-    resetHandler: () => void
+  resetHandler: () => void;
 }
 
 const Reset = (props: ResetProps) => {
-    const {resetHandler} = props
+  const { resetHandler } = props;
   return (
-    <Button onClick={resetHandler} size="md" color="yellow.7" fw={700} variant="filled">RESET</Button>
-  )
-}
+    <Button
+      onClick={resetHandler}
+      size="md"
+      color="yellow.7"
+      fw={700}
+      variant="filled"
+    >
+      RESET
+    </Button>
+  );
+};
 
-export default Reset
+export default Reset;

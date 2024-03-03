@@ -1,154 +1,199 @@
-import { Text, Modal, Stack, Autocomplete, Alert, Card, Group, Button, Image, CloseButton } from '@mantine/core'
-import React, { useState } from 'react'
-import { Artist } from './Game'
-import Arrow from './Arrow'
-import * as Collections from 'typescript-collections';
-import ShareCustomGame, { generateCustomGameURL } from './ShareCustomGame'
-import { IconInfoCircle, IconArrowsShuffle, IconPlayerPlayFilled } from '@tabler/icons-react';
-import HoverButton from './HoverButton';
-import ArtistInfo from './ArtistInfo';
+import {
+  Text,
+  Modal,
+  Stack,
+  Autocomplete,
+  Card,
+  Group,
+  Button,
+  Image,
+  CloseButton,
+} from "@mantine/core";
+import React, { useState } from "react";
+import { Artist } from "./Game";
+import Arrow from "./Arrow";
+import * as Collections from "typescript-collections";
+import ShareCustomGame, { generateCustomGameURL } from "./ShareCustomGame";
+import {
+  IconArrowsShuffle,
+  IconPlayerPlayFilled,
+} from "@tabler/icons-react";
+import HoverButton from "./HoverButton";
+import ArtistInfo from "./ArtistInfo";
 
 interface CustomGameModalProps {
-    web: {[key: string]: Artist},
-    customModalOpened: boolean,
-    customModalHandlers: any,
-    matchups: string[][]
+  web: { [key: string]: Artist };
+  customModalOpened: boolean;
+  customModalHandlers: any;
+  matchups: string[][];
 }
 
 /* From a starting artist, return a hashmap where the keys are endArtists
  and the values are the paths from the starting artist to the end artist */
-const getNumPathsEndArtists = (web: {[key: string]: Artist}, start: string, maxSteps: number=Infinity): {[key: string]: string[][]} => {
-    const visited: Set<string> = new Set();
-    const queue: Collections.Queue<[string, string[]]> = new Collections.Queue();
-    queue.enqueue([start, []]);
-    const endArtists: {[key: string]: string[][]} = {};
+const getNumPathsEndArtists = (
+  web: { [key: string]: Artist },
+  start: string,
+  maxSteps: number = Infinity
+): { [key: string]: string[][] } => {
+  const visited: Set<string> = new Set();
+  const queue: Collections.Queue<[string, string[]]> = new Collections.Queue();
+  queue.enqueue([start, []]);
+  const endArtists: { [key: string]: string[][] } = {};
 
-    while (!queue.isEmpty()) {
-        const item = queue.dequeue();
-        if (item === undefined) {
-            return endArtists;
-        }
-        const [node, path] = item
-        visited.add(node)
-        if (path.length <= maxSteps) {
-            if (node !== start) {
-                if (endArtists[node] === undefined) {
-                    endArtists[node] = [path]
-                } else {
-                    endArtists[node].push(path)
-                }
-            }
-            for (const neighbor of web[node].related || []) {
-                if (!visited.has(neighbor)) {
-                    queue.enqueue([neighbor, [...path, neighbor]]);
-                }
-            }
-            
-        }
+  while (!queue.isEmpty()) {
+    const item = queue.dequeue();
+    if (item === undefined) {
+      return endArtists;
     }
-    return endArtists
+    const [node, path] = item;
+    visited.add(node);
+    if (path.length <= maxSteps) {
+      if (node !== start) {
+        if (endArtists[node] === undefined) {
+          endArtists[node] = [path];
+        } else {
+          endArtists[node].push(path);
+        }
+      }
+      for (const neighbor of web[node].related || []) {
+        if (!visited.has(neighbor)) {
+          queue.enqueue([neighbor, [...path, neighbor]]);
+        }
+      }
+    }
+  }
+  return endArtists;
+};
+
+export function getValidPaths(
+  web: { [key: string]: Artist },
+  start: string,
+  end: string,
+  maxSteps: number
+): string[][] {
+  const visited: Set<string> = new Set();
+  const queue: Collections.Queue<[string, number, string[]]> =
+    new Collections.Queue();
+  queue.enqueue([start, 0, []]);
+  const paths: string[][] = [];
+
+  while (!queue.isEmpty()) {
+    const item = queue.dequeue();
+    if (item === undefined) {
+      return paths;
+    }
+    const [node, steps, path] = item;
+    visited.add(node);
+    if (steps <= maxSteps) {
+      if (node === end) {
+        paths.push(path);
+      }
+    }
+    for (const neighbor of web[node].related || []) {
+      if (!visited.has(neighbor)) {
+        queue.enqueue([neighbor, steps + 1, path.concat(neighbor)]);
+      }
+    }
+  }
+  return paths;
 }
 
-export function getValidPaths(web: {[key: string]: Artist}, start: string, end: string, maxSteps: number): string[][] {
-    const visited: Set<string> = new Set();
-    const queue: Collections.Queue<[string, number, string[]]> = new Collections.Queue();
-    queue.enqueue([start, 0, []]);
-    const paths: string[][] = [];
+const getConnectedNodes = (
+  graph: { [key: string]: Artist },
+  start: string
+): string[] => {
+  const visited: Set<string> = new Set();
+  const result: string[] = [];
 
-    while (!queue.isEmpty()) {
-        const item = queue.dequeue();
-        if (item === undefined) {
-            return paths;
-        }
-        const [node, steps, path] = item
-        visited.add(node)
-        if (steps <= maxSteps) {
-            if (node === end) {
-                paths.push(path);
-            }
-        }
-        for (const neighbor of web[node].related || []) {
-            if (!visited.has(neighbor)) {
-                queue.enqueue([neighbor, steps + 1, path.concat(neighbor)]);
-            }   
-        }
+  const dfs = (node: string) => {
+    if (!visited.has(node)) {
+      visited.add(node);
+      if (node !== start) {
+        result.push(node);
+      }
+      for (const neighbor of graph[node].related || []) {
+        dfs(neighbor);
+      }
     }
-    return paths;
-}
+  };
+  dfs(start);
+  return result;
+};
 
-const getConnectedNodes = (graph: {[key: string]: Artist}, start: string): string[] => {
-    const visited: Set<string> = new Set();
-    const result: string[] = [];
-
-    const dfs = (node: string) => {
-        if (!visited.has(node)) {
-            visited.add(node);
-            if (node !== start) {result.push(node); }
-            for (const neighbor of graph[node].related || []) {
-                dfs(neighbor);
-            }
-        }
-    }
-    dfs(start)
-    return result
-}
-
-const minDegOfSepRecommended = 3
-const maxDegOfSepRecommended = 7
-const maxDegOfSepWarning = 10
-const maxNumPathsForWarning = 4
-const minNumPathsForRecommended = 10
-const maxNumPathsForRecommended = Infinity
+const minDegOfSepRecommended = 3;
+const maxDegOfSepRecommended = 7;
+const maxDegOfSepWarning = 10;
+const maxNumPathsForWarning = 4;
+const minNumPathsForRecommended = 10;
+const maxNumPathsForRecommended = Infinity;
 
 const CustomGameModal = (props: CustomGameModalProps) => {
-    const {web, customModalOpened, customModalHandlers, matchups} = props
-    const {close: customModalClose} = customModalHandlers
-    const artistsList: string[] = [...Object.keys(web)];
-    const [matchupsFound, setMatchupsFound] = useState<string[]>([])
-    const [startArtist, setStartArtist] = useState<string>("")
-    const [endArtist, setEndArtist] = useState<string>("")
-    const [recommendedEndArtists, setRecommendedEndArtists] = useState<string[]>([])
+  const { web, customModalOpened, customModalHandlers, matchups } = props;
+  const { close: customModalClose } = customModalHandlers;
+  const artistsList: string[] = [...Object.keys(web)];
+  const [matchupsFound, setMatchupsFound] = useState<string[]>([]);
+  const [startArtist, setStartArtist] = useState<string>("");
+  const [endArtist, setEndArtist] = useState<string>("");
+  const [recommendedEndArtists, setRecommendedEndArtists] = useState<string[]>(
+    []
+  );
 
-    const changeStartArtist = (start: string) => {
-        setStartArtist(start)
-        if (artistsList.includes(start)) {
-            selectStartArtist(start) 
-        }
-        if (!artistsList.includes(endArtist)) {
-            setEndArtist("")
-        }
+  const changeStartArtist = (start: string) => {
+    setStartArtist(start);
+    if (artistsList.includes(start)) {
+      selectStartArtist(start);
     }
+    if (!artistsList.includes(endArtist)) {
+      setEndArtist("");
+    }
+  };
 
-    const repeatingArtistInAllPaths = (paths: string[][]): boolean => {
-        let all_artists_in_paths = new Set(paths.flat())
-        for (const artist of all_artists_in_paths) {
-            if (paths.filter((path) => path.slice(0,-1).includes(artist)).length === paths.length) {
-                return true
-            }
+  const repeatingArtistInAllPaths = (paths: string[][]): boolean => {
+    let all_artists_in_paths = new Set(paths.flat());
+    for (const artist of all_artists_in_paths) {
+      if (
+        paths.filter((path) => path.slice(0, -1).includes(artist)).length ===
+        paths.length
+      ) {
+        return true;
+      }
+    }
+    return false;
+  };
+
+  const atLeastTwoPathsIfNumFirstClicked = (
+    paths: string[][],
+    amount: number
+  ): boolean => {
+    const startingArtists = new Set(paths.map((x) => x[0]));
+    if (startingArtists.size === amount) {
+      for (const artist of startingArtists) {
+        if (paths.filter((path) => path[0] === artist).length < amount) {
+          return false;
         }
-        return false
+      }
     }
+    return true;
+  };
 
-    const atLeastTwoPathsIfNumFirstClicked = (paths: string[][], amount: number): boolean => {
-        const startingArtists = new Set(paths.map(x => x[0]))
-        if (startingArtists.size === amount) {
-            for (const artist of startingArtists) {
-                if (paths.filter((path) => path[0] === artist).length < amount) {
-                    return false
-                }
-            }
-        }
-        return true
-    }
+  const targetArtistRelatedBothDirections = (
+    end: string,
+    min: number
+  ): boolean => {
+    return (
+      web[end].related.filter(
+        (artist) =>
+          web[end].related.includes(artist) && web[artist].related.includes(end)
+      ).length >= min
+    );
+  };
 
-    const targetArtistRelatedBothDirections = (end: string, min: number): boolean  => {
-        return web[end].related.filter((artist) =>
-            web[end].related.includes(artist) && web[artist].related.includes(end)).length >= min
-    }
-
-    const isRecommendedMatchup  = (end: string,
-        closeEndArtists: string[], endArtistsWithMaxDegOfSep: {[key: string]: string[][]}): boolean => {
-        /* Conditions:
+  const isRecommendedMatchup = (
+    end: string,
+    closeEndArtists: string[],
+    endArtistsWithMaxDegOfSep: { [key: string]: string[][] }
+  ): boolean => {
+    /* Conditions:
         1. Must have at least minNumPathsForRecommended paths
         2. Must have at most maxNumPathsForRecommended paths
         3. Must not be a close end artist (path length within minDegOfSepRecommended)
@@ -156,156 +201,271 @@ const CustomGameModal = (props: CustomGameModalProps) => {
         5. If there are only 2 first clicked artists, then must be at least 2 paths for each
         6. Target artist must be related in both directions to at least 2 other artists
         */
-        return endArtistsWithMaxDegOfSep[end].length >= minNumPathsForRecommended &&
-        endArtistsWithMaxDegOfSep[end].length <= maxNumPathsForRecommended &&
-        !closeEndArtists.includes(end) &&
-        !repeatingArtistInAllPaths(endArtistsWithMaxDegOfSep[end]) &&
-        atLeastTwoPathsIfNumFirstClicked(endArtistsWithMaxDegOfSep[end], 2) &&
-        targetArtistRelatedBothDirections(end, 2)
-    }
+    return (
+      endArtistsWithMaxDegOfSep[end].length >= minNumPathsForRecommended &&
+      endArtistsWithMaxDegOfSep[end].length <= maxNumPathsForRecommended &&
+      !closeEndArtists.includes(end) &&
+      !repeatingArtistInAllPaths(endArtistsWithMaxDegOfSep[end]) &&
+      atLeastTwoPathsIfNumFirstClicked(endArtistsWithMaxDegOfSep[end], 2) &&
+      targetArtistRelatedBothDirections(end, 2)
+    );
+  };
 
-    const getRecommendedArtists = (start: string) => {
-        const closeEndArtists = Object.keys(getNumPathsEndArtists(web, start, minDegOfSepRecommended))
-        const endArtistsWithMaxDegOfSep = getNumPathsEndArtists(web, start, maxDegOfSepRecommended)
-        let recommendedEndArtists = Object.keys(endArtistsWithMaxDegOfSep).filter(
-            (artist) => isRecommendedMatchup(artist, closeEndArtists, endArtistsWithMaxDegOfSep))
+  const getRecommendedArtists = (start: string) => {
+    const closeEndArtists = Object.keys(
+      getNumPathsEndArtists(web, start, minDegOfSepRecommended)
+    );
+    const endArtistsWithMaxDegOfSep = getNumPathsEndArtists(
+      web,
+      start,
+      maxDegOfSepRecommended
+    );
+    let recommendedEndArtists = Object.keys(endArtistsWithMaxDegOfSep).filter(
+      (artist) =>
+        isRecommendedMatchup(artist, closeEndArtists, endArtistsWithMaxDegOfSep)
+    );
 
-        // For daily matchup curating: don't want to reuse target artists
-        if (process.env.NODE_ENV === 'development') {
-            // Get list of second artist of last 30 matchups
-            const secondArtists = matchups.slice(matchups.length-30).map((matchup) => matchup[1])
-            // Filter out artists that are second artists in any matchup
-            recommendedEndArtists = recommendedEndArtists.filter((artist) => !secondArtists.includes(artist))
-       }
-        return recommendedEndArtists
+    // For daily matchup curating: don't want to reuse target artists
+    if (process.env.NODE_ENV === "development") {
+      // Get list of second artist of last 30 matchups
+      const secondArtists = matchups
+        .slice(matchups.length - 30)
+        .map((matchup) => matchup[1]);
+      // Filter out artists that are second artists in any matchup
+      recommendedEndArtists = recommendedEndArtists.filter(
+        (artist) => !secondArtists.includes(artist)
+      );
     }
+    return recommendedEndArtists;
+  };
 
-    const selectStartArtist = (start: string) => {
-        if (!artistsList.includes(start)) { return }
-        const endArtists = getConnectedNodes(web, start)
-        setMatchupsFound(endArtists)
-        const recommendedEndArtists = getRecommendedArtists(start)
-        setRecommendedEndArtists(recommendedEndArtists)
-        setStartArtist(start)
-        if (!endArtists.includes(endArtist) || !artistsList.includes(endArtist)) {
-            setEndArtist("")
-        }
+  const selectStartArtist = (start: string) => {
+    if (!artistsList.includes(start)) {
+      return;
     }
-    
-    const closeModal = () => {
-        customModalClose()
-        setStartArtist("")
-        setEndArtist("")
-        setMatchupsFound([])
+    const endArtists = getConnectedNodes(web, start);
+    setMatchupsFound(endArtists);
+    const recommendedEndArtists = getRecommendedArtists(start);
+    setRecommendedEndArtists(recommendedEndArtists);
+    setStartArtist(start);
+    if (!endArtists.includes(endArtist) || !artistsList.includes(endArtist)) {
+      setEndArtist("");
     }
+  };
 
-    const getRandomMatchup = () => {
-        const start = artistsList[Math.floor(Math.random() * artistsList.length)]
-        const validEndArtsits = getConnectedNodes(web, start)
-        const end = validEndArtsits[Math.floor(Math.random() * validEndArtsits.length)]
-        selectStartArtist(start)
-        setEndArtist(end)
-    }
+  const closeModal = () => {
+    customModalClose();
+    setStartArtist("");
+    setEndArtist("");
+    setMatchupsFound([]);
+  };
 
-    const getRandomRecommendedMatchup = () => {
-        let found = false
-        while (!found) {
-            const start = artistsList[Math.floor(Math.random() * artistsList.length)]
-            const recommendedEndArtists = getRecommendedArtists(start)
-            if (recommendedEndArtists.length > 0) {
-                const end = recommendedEndArtists[Math.floor(Math.random() * recommendedEndArtists.length)]
-                selectStartArtist(start)
-                setEndArtist(end)
-                found = true
-            }
-        }
-    }
+  const getRandomMatchup = () => {
+    const start = artistsList[Math.floor(Math.random() * artistsList.length)];
+    const validEndArtsits = getConnectedNodes(web, start);
+    const end =
+      validEndArtsits[Math.floor(Math.random() * validEndArtsits.length)];
+    selectStartArtist(start);
+    setEndArtist(end);
+  };
 
-    const isMatchupDifficult = () => {
-        return artistsList.includes(startArtist) && matchupsFound.includes(endArtist) && 
-        getValidPaths(web, startArtist, endArtist, maxDegOfSepWarning).length < maxNumPathsForWarning &&
-        getValidPaths(web, startArtist, endArtist, minDegOfSepRecommended).length <= 0
+  const getRandomRecommendedMatchup = () => {
+    let found = false;
+    while (!found) {
+      const start = artistsList[Math.floor(Math.random() * artistsList.length)];
+      const recommendedEndArtists = getRecommendedArtists(start);
+      if (recommendedEndArtists.length > 0) {
+        const end =
+          recommendedEndArtists[
+            Math.floor(Math.random() * recommendedEndArtists.length)
+          ];
+        selectStartArtist(start);
+        setEndArtist(end);
+        found = true;
+      }
     }
-   
+  };
+
+  const isMatchupDifficult = () => {
+    return (
+      artistsList.includes(startArtist) &&
+      matchupsFound.includes(endArtist) &&
+      getValidPaths(web, startArtist, endArtist, maxDegOfSepWarning).length <
+        maxNumPathsForWarning &&
+      getValidPaths(web, startArtist, endArtist, minDegOfSepRecommended)
+        .length <= 0
+    );
+  };
+
   return (
-    <Modal opened={customModalOpened} 
-        onClose={closeModal} withCloseButton={true} centered
-        padding="xl" radius="lg"
-        title="Create a Custom Game"
-        styles={{ title: { fontSize: "20px", color: "#f1f3f5", fontWeight: 700, lineHeight: "32px" } }}>
-        <Stack>
-            <Text>Play your own custom matchup and send the link to challenge your friends.</Text>
-            <Autocomplete size='lg' radius="md" placeholder="Starting artist" data={artistsList}
-                onChange={changeStartArtist} selectFirstOptionOnChange={true}
-                styles={{input: {color: "#f1f3f5"}, dropdown: {color: "#f1f3f5"}}} value={startArtist}
-                leftSection={web[startArtist] !== undefined && 
-                <ArtistInfo artist={web[startArtist]} small={true} show_name={false}/>}
-                rightSection={
-                    <CloseButton
-                    aria-label="Clear input"
-                    onClick={() => setStartArtist('')}
-                    style={{ display: startArtist ? undefined : 'none' }}/>
-                } 
+    <Modal
+      opened={customModalOpened}
+      onClose={closeModal}
+      withCloseButton={true}
+      centered
+      padding="xl"
+      radius="lg"
+      title="Create a Custom Game"
+      styles={{
+        title: {
+          fontSize: "20px",
+          color: "#f1f3f5",
+          fontWeight: 700,
+          lineHeight: "32px",
+        },
+      }}
+    >
+      <Stack>
+        <Text>
+          Play your own custom matchup and send the link to challenge your
+          friends.
+        </Text>
+        <Autocomplete
+          size="lg"
+          radius="md"
+          placeholder="Starting artist"
+          data={artistsList}
+          onChange={changeStartArtist}
+          selectFirstOptionOnChange={true}
+          styles={{
+            input: { color: "#f1f3f5" },
+            dropdown: { color: "#f1f3f5" },
+          }}
+          value={startArtist}
+          leftSection={
+            web[startArtist] !== undefined && (
+              <ArtistInfo
+                artist={web[startArtist]}
+                small={true}
+                show_name={false}
+              />
+            )
+          }
+          rightSection={
+            <CloseButton
+              aria-label="Clear input"
+              onClick={() => setStartArtist("")}
+              style={{ display: startArtist ? undefined : "none" }}
+            />
+          }
+        />
+        <Arrow small={false} down={true} />
+        <Stack gap="xs">
+          <Autocomplete
+            size="lg"
+            radius="md"
+            placeholder="Target artist"
+            disabled={
+              !artistsList.includes(startArtist) || matchupsFound.length == 0
+            }
+            data={[
+              {
+                group: "Recommended Target Artists",
+                items: recommendedEndArtists.sort((a, b) => a.localeCompare(b)),
+              },
+              {
+                group: "Target Artists",
+                items: matchupsFound
+                  .filter((artist) => !recommendedEndArtists.includes(artist))
+                  .sort((a, b) => a.localeCompare(b)),
+              },
+            ]}
+            styles={{
+              input: {
+                color: "#f1f3f5",
+                outline: isMatchupDifficult() ? "2px solid #fcc419" : "",
+              },
+              groupLabel: { color: "#37b24d", fontWeight: 700 },
+              dropdown: { color: "#f1f3f5" },
+            }}
+            onChange={setEndArtist}
+            selectFirstOptionOnChange={true}
+            value={endArtist}
+            leftSection={
+              web[endArtist] !== undefined &&
+              matchupsFound.includes(endArtist) && (
+                <ArtistInfo
+                  artist={web[endArtist]}
+                  small={true}
+                  is_green={true}
+                  show_name={false}
                 />
-            <Arrow small={false} down={true}/>
-            <Stack gap="xs">
-                <Autocomplete size="lg" radius="md" placeholder="Target artist" disabled={!artistsList.includes(startArtist) || matchupsFound.length == 0}
-                    data={[
-                        {group: 'Recommended Target Artists', items: recommendedEndArtists.sort((a, b)=> a.localeCompare(b))},
-                        {group: 'Target Artists', items: matchupsFound.filter((artist)=> !recommendedEndArtists.includes(artist)).sort((a,b)=> a.localeCompare(b))}]}
-                    styles={{input: {color: "#f1f3f5", outline: isMatchupDifficult() ? '2px solid #fcc419' : ''}, 
-                    groupLabel: {color: "#37b24d", fontWeight: 700}, dropdown: {color: "#f1f3f5"}}}
-                    onChange={setEndArtist} selectFirstOptionOnChange={true} value={endArtist}
-                    leftSection={web[endArtist] !== undefined && matchupsFound.includes(endArtist) &&
-                        <ArtistInfo artist={web[endArtist]} small={true} is_green={true} show_name={false}/>}
-                    rightSection={
-                        <CloseButton
-                        aria-label="Clear input"
-                        onClick={() => setEndArtist('')}
-                        style={{ display: endArtist ? undefined : 'none' }}/>
-                    }
-                    />
+              )
+            }
+            rightSection={
+              <CloseButton
+                aria-label="Clear input"
+                onClick={() => setEndArtist("")}
+                style={{ display: endArtist ? undefined : "none" }}
+              />
+            }
+          />
 
-                {isMatchupDifficult() ? 
-                    <Text pl="5" pb='14' ta="left" fw={700} c='yellow.3' size="md">This matchup may be difficult!</Text>
-                    :
-                    <Text pl="5" ta="left" fw={700} size="sm">If you don&apos;t see your desired target artist, the matchup is impossible.</Text>
-                }
-            </Stack>
-            <Group align='center' justify='center'>
-                <HoverButton onTap={getRandomRecommendedMatchup}>
-                    <Card shadow="md" radius="lg"
-                    p="sm">
-                        <Group gap="6px" justify='center'>
-                            <Image src={"images/custom-icon.svg"}/>
-                            <Text size="sm" fw={700} c="gray.1">RECOMMENDED</Text>
-                        </Group>
-                    </Card>
-                </HoverButton>
-
-                <HoverButton onTap={getRandomMatchup}>
-                    <Card shadow="md" radius="lg"
-                    p="sm">
-                        <Group gap="4px" justify='center'>
-                            <IconArrowsShuffle size={16}/>
-                            <Text size="sm" fw={700} c="gray.1">RANDOM</Text>
-                        </Group>
-                    </Card>
-                </HoverButton>
-            </Group>
-
-            <Button leftSection={<IconPlayerPlayFilled size={20}/>}
-            onClick={() => window.open(generateCustomGameURL(startArtist, endArtist))}
-            disabled={!(artistsList.includes(startArtist) && matchupsFound.includes(endArtist))}
-            color="green.6" styles={{ section: {marginRight: "4px"}}}>
-                START CUSTOM GAME
-            </Button>
-
-            <ShareCustomGame start={startArtist} end={endArtist} 
-            disabled={!(artistsList.includes(startArtist) && matchupsFound.includes(endArtist))}/> 
+          {isMatchupDifficult() ? (
+            <Text pl="5" pb="14" ta="left" fw={700} c="yellow.3" size="md">
+              This matchup may be difficult!
+            </Text>
+          ) : (
+            <Text pl="5" ta="left" fw={700} size="sm">
+              If you don&apos;t see your desired target artist, the matchup is
+              impossible.
+            </Text>
+          )}
         </Stack>
-    </Modal>
-  )
-}
+        <Group align="center" justify="center">
+          <HoverButton onTap={getRandomRecommendedMatchup}>
+            <Card shadow="md" radius="lg" p="sm">
+              <Group gap="6px" justify="center">
+                <Image src={"images/custom-icon.svg"} alt="custom-game" />
+                <Text size="sm" fw={700} c="gray.1">
+                  RECOMMENDED
+                </Text>
+              </Group>
+            </Card>
+          </HoverButton>
 
-export default CustomGameModal
+          <HoverButton onTap={getRandomMatchup}>
+            <Card shadow="md" radius="lg" p="sm">
+              <Group gap="4px" justify="center">
+                <IconArrowsShuffle size={16} />
+                <Text size="sm" fw={700} c="gray.1">
+                  RANDOM
+                </Text>
+              </Group>
+            </Card>
+          </HoverButton>
+        </Group>
+
+        <Button
+          leftSection={<IconPlayerPlayFilled size={20} />}
+          onClick={() =>
+            window.open(generateCustomGameURL(startArtist, endArtist))
+          }
+          disabled={
+            !(
+              artistsList.includes(startArtist) &&
+              matchupsFound.includes(endArtist)
+            )
+          }
+          color="green.6"
+          styles={{ section: { marginRight: "4px" } }}
+        >
+          START CUSTOM GAME
+        </Button>
+
+        <ShareCustomGame
+          start={startArtist}
+          end={endArtist}
+          disabled={
+            !(
+              artistsList.includes(startArtist) &&
+              matchupsFound.includes(endArtist)
+            )
+          }
+        />
+      </Stack>
+    </Modal>
+  );
+};
+
+export default CustomGameModal;

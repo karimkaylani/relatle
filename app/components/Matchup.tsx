@@ -1,34 +1,38 @@
-import { Group, Text } from '@mantine/core'
-import React from 'react'
-import ArtistInfo from './ArtistInfo'
-import { Artist, phoneMaxWidth } from './Game'
-import Arrow from './Arrow'
-import PlayButton from './PlayButton'
+import { Group } from "@mantine/core";
+import React from "react";
+import ArtistInfo from "./ArtistInfo";
+import { Artist } from "./Game";
+import Arrow from "./Arrow";
+import PlayButton from "./PlayButton";
 
 export interface MatchupProps {
-    start: Artist,
-    end: Artist,
-    small: boolean
-    showPreviews?: boolean
+  start: Artist;
+  end: Artist;
+  small: boolean;
+  showPreviews?: boolean;
 }
 
 const Matchup = React.forwardRef<HTMLDivElement, MatchupProps>((props, ref) => {
-    const {start, end, small, showPreviews=false} = props
+  const { start, end, small, showPreviews = false } = props;
 
   return (
     <Group ref={ref} justify="center" gap="xs">
-        <Group justify="center" gap="4px">
-          <ArtistInfo artist={start} small={small}/>
-          {showPreviews && <PlayButton artist={start} audioUrl={start.top_song_preview_url}/>}
-        </Group>
-        <Arrow small={small}/>
-        <Group justify="center" gap="4px">
-          <ArtistInfo artist={end} small={small} is_green={true}></ArtistInfo>
-          {showPreviews && <PlayButton artist={end} audioUrl={end.top_song_preview_url}/>}
-        </Group>
+      <Group justify="center" gap="4px">
+        <ArtistInfo artist={start} small={small} />
+        {showPreviews && (
+          <PlayButton artist={start} audioUrl={start.top_song_preview_url} />
+        )}
+      </Group>
+      <Arrow small={small} />
+      <Group justify="center" gap="4px">
+        <ArtistInfo artist={end} small={small} is_green={true}></ArtistInfo>
+        {showPreviews && (
+          <PlayButton artist={end} audioUrl={end.top_song_preview_url} />
+        )}
+      </Group>
     </Group>
-  )
-})
-Matchup.displayName = "Matchup"
+  );
+});
+Matchup.displayName = "Matchup";
 
-export default Matchup
+export default Matchup;
