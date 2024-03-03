@@ -25,7 +25,7 @@ const AffixStatus = (props: AffixStatusProps) => {
     <Affix w="100%" h={0} top={0}>
         <Transition transition="slide-down" mounted={mounted}>
         {(transitionStyles) => (
-            <Card onClick={onTap} ref={groupRef} p="xs" withBorder styles={{root: {maxHeight: '100px', overflow: 'auto'}}} style={transitionStyles}>
+            <Card onClick={onTap} ref={groupRef} p="xs" withBorder styles={{root: {maxHeight: '130px', overflow: 'auto'}}} style={transitionStyles}>
 
                 {playingAudio && playingArtist && 
                 <Group justify='center' align='center' gap='5px'>
