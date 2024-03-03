@@ -58,11 +58,13 @@ const ArtistCard = ({artist, updateArtistHandler, path, won,
   const stopMusic = (fromNewAudio=false) => {
     if (!audioRef.current) { return }
     audioRef.current.pause();
-    setIsPlaying(false)
-    if (!fromNewAudio) {
+    // make sure audio was actually playing from this card
+    // if setting to null to make sure nullify other audio
+    if (isPlaying && !fromNewAudio) {
       setPlayingAudio(null)
       setPlayingArtist(null)
     }
+    setIsPlaying(false)
     // Reset audio after set time if audio hasn't been played again
     setResetAudioTimer(setTimeout(() => {
       if (audioRef.current && !isPlayingRef.current) {

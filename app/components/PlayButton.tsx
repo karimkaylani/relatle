@@ -35,7 +35,7 @@ const PlayButton = (props: PlayButtonProps) => {
         // only set playing audio to null if 
         // audio wasn't stopped because of another audio playing
         // i.e. manually stopped the music
-        if (!fromNewAudio) {
+        if (isPlaying && !fromNewAudio) {
             setPlayingAudio(null)
             setPlayingArtist(null)
         }
