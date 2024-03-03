@@ -28,7 +28,7 @@ import { useSwipeable } from "react-swipeable";
 import CountdownClock from "./CountdownClock";
 import CustomGameButton from "./CustomGameButton";
 import GlobalScoreStats from "./GlobalScoreStats";
-import { getAllGuesses, getCachedGuesses } from "../db";
+import { getCachedGuesses } from "../db";
 
 export interface GameOverProps {
   opened: boolean;
