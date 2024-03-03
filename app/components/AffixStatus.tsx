@@ -51,16 +51,17 @@ const AffixStatus = (props: AffixStatusProps) => {
                   src={playingArtist.top_song_art}
                   alt={playingArtist.top_song_name + "art"}
                   style={{
-                    marginLeft: "5px",
-                    marginRight: "5px",
                     display: "inline-block",
                     top: "7px",
+                    marginLeft: '3px',
+                    marginRight: "5px",
                   }}
                 />
                 <Text fw={700} c="green.6" span>
                   {playingArtist.top_song_name}
                 </Text>{" "}
                 by{" "}
+                <Center style={{display: "inline-block"}}>
                 <Avatar
                   size={"sm"}
                   src={playingArtist?.image}
@@ -68,7 +69,7 @@ const AffixStatus = (props: AffixStatusProps) => {
                   style={{
                     display: "inline-block",
                     top: "7px",
-                    marginLeft: "5px",
+                    marginLeft: '3px',
                     marginRight: "5px",
                   }}
                 />
@@ -81,6 +82,7 @@ const AffixStatus = (props: AffixStatusProps) => {
                 >
                   {playingArtist?.name}
                 </Text>
+                </Center>
               </Text>
             )}
 
