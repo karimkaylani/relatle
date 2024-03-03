@@ -13,7 +13,7 @@ def main():
     verify_matchups(web)
 
 def verify_matchups(web):
-    with open("public/matchups.json", "r") as outfile:
+    with open("app/matchups.json", "r") as outfile:
         matchups = json.load(outfile)
     # 25 is padding for removed matchups that have already occurred
     num_days = 25
