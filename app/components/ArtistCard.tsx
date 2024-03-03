@@ -47,7 +47,6 @@ const ArtistCard = ({artist, updateArtistHandler, path, won,
     playingAudio?.pause()
     setPlayingAudio(audioRef.current)
     setPlayingArtist(artist)
-    audioRef.current.play()
     audioRef.current.volume = 0.5
     setIsPlaying(true)
     resetAudioTimer && clearTimeout(resetAudioTimer)
@@ -55,12 +54,10 @@ const ArtistCard = ({artist, updateArtistHandler, path, won,
   }
 
 
-  const stopMusic = (fromNewAudio=false) => {
+  const stopMusic = () => {
     if (!audioRef.current) { return }
-    audioRef.current.pause();
-    // make sure audio was actually playing from this card
-    // if setting to null to make sure nullify other audio
-    if (isPlaying && !fromNewAudio) {
+    // only set to null if the audio being paused is the one currently playing
+    if (playingAudio === audioRef.current) {
       setPlayingAudio(null)
       setPlayingArtist(null)
     }
@@ -90,14 +87,14 @@ const ArtistCard = ({artist, updateArtistHandler, path, won,
   }
 
   const bind = useLongPress(() => {
-    startMusic()
+    audioRef.current?.play()
     setLongPress(true)
   }, {
     onFinish: () => {
-      stopMusic()
+      audioRef.current?.pause()
     },
     onCancel: () => {
-      stopMusic()
+      audioRef.current?.pause()
       setLongPress(false)
     }
   })
@@ -174,7 +171,7 @@ const ArtistCard = ({artist, updateArtistHandler, path, won,
               </Text>
           </Flex>
           <audio loop ref={audioRef} src={artist.top_song_preview_url}
-          onTimeUpdate={onTimeUpdate} onPause={() => stopMusic(true)}/>
+          onTimeUpdate={onTimeUpdate} onPlay={startMusic} onPause={stopMusic}/>
       </Card>
     </motion.button>
   ) 

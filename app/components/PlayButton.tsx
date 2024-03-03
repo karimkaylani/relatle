@@ -24,22 +24,18 @@ const PlayButton = (props: PlayButtonProps) => {
         playingAudio?.pause()
         setPlayingAudio(audioRef.current)
         setPlayingArtist(artist)
-        audioRef.current.play()
         audioRef.current.volume = 0.5
         setIsPlaying(true)
     }
 
-    const stopMusic = (fromNewAudio=false) => {
+    const stopMusic = () => {
         if (!audioRef.current) { return }
         setIsPlaying(false)
-        // only set playing audio to null if 
-        // audio wasn't stopped because of another audio playing
-        // i.e. manually stopped the music
-        if (isPlaying && !fromNewAudio) {
+        // only set to null if the audio being paused is the one currently playing
+        if (playingAudio === audioRef.current) {
             setPlayingAudio(null)
             setPlayingArtist(null)
         }
-        audioRef.current.pause()
         audioRef.current.currentTime = 0
         setProgress(0)
     }
@@ -52,7 +48,7 @@ const PlayButton = (props: PlayButtonProps) => {
 
   return (
     <Fragment>
-        <HoverButton onTap={isPlaying ? () => stopMusic(false) : startMusic}>
+        <HoverButton onTap={() => {isPlaying ? audioRef.current?.pause() : audioRef.current?.play()}}>
             <RingProgress thickness={2} size={isPhone ? 30 : 35} 
             sections={[{ value: progress, color: 'gray.1' }]}
             label={
@@ -64,7 +60,7 @@ const PlayButton = (props: PlayButtonProps) => {
             }>
             </RingProgress>
         </HoverButton>
-        <audio ref={audioRef} src={audioUrl} onTimeUpdate={onTimeUpdate} onEnded={() => stopMusic()} onPause={() => stopMusic(true)}/>
+        <audio ref={audioRef} src={audioUrl} onTimeUpdate={onTimeUpdate} onPlay={startMusic} onEnded={stopMusic} onPause={stopMusic}/>
     </Fragment>
   )
 }
