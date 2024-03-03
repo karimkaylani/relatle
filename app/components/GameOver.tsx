@@ -28,7 +28,7 @@ import { useSwipeable } from "react-swipeable";
 import CountdownClock from "./CountdownClock";
 import CustomGameButton from "./CustomGameButton";
 import GlobalScoreStats from "./GlobalScoreStats";
-import { getCachedGuesses } from "../db";
+import { getAllGuesses, getCachedGuesses } from "../db";
 
 export interface GameOverProps {
   opened: boolean;
@@ -105,7 +105,7 @@ const GameOver = ({
   const [loadingGlobalScore, setLoadingGlobalScore] = useState<boolean>(true);
 
   useEffect(() => {
-    if (!opened) {
+    if (!opened || !loadingGlobalScore) {
       return;
     }
     if (is_custom) {
@@ -118,7 +118,7 @@ const GameOver = ({
       }
       setLoadingGlobalScore(false);
     });
-  }, [opened, is_custom, matchupID]);
+  }, [opened, is_custom, loadingGlobalScore, matchupID]);
 
   const [height, setHeight] = useState(77);
   const ref = useRef<HTMLDivElement>(null);
