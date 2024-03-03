@@ -14,10 +14,7 @@ import { Artist } from "./Game";
 import Arrow from "./Arrow";
 import * as Collections from "typescript-collections";
 import ShareCustomGame, { generateCustomGameURL } from "./ShareCustomGame";
-import {
-  IconArrowsShuffle,
-  IconPlayerPlayFilled,
-} from "@tabler/icons-react";
+import { IconArrowsShuffle, IconPlayerPlayFilled } from "@tabler/icons-react";
 import HoverButton from "./HoverButton";
 import ArtistInfo from "./ArtistInfo";
 
@@ -297,6 +294,21 @@ const CustomGameModal = (props: CustomGameModalProps) => {
     );
   };
 
+  const compareSongs = (a: string, b: string) => {
+    let newA = removeArticles(a.toLowerCase());
+    let newB = removeArticles(b.toLowerCase());
+
+    return newA.localeCompare(newB);
+  };
+
+  const removeArticles = (title: string) => {
+    let words = title.split(" ");
+    if (words.length <= 1) { return title; }
+    if (words[0] == "a" || words[0] == "the" || words[0] == "an")
+      return words.splice(1).join(" ");
+    return title;
+  };
+
   return (
     <Modal
       opened={customModalOpened}
@@ -361,13 +373,13 @@ const CustomGameModal = (props: CustomGameModalProps) => {
             data={[
               {
                 group: "Recommended Target Artists",
-                items: recommendedEndArtists.sort((a, b) => a.localeCompare(b)),
+                items: recommendedEndArtists.sort(compareSongs),
               },
               {
                 group: "Target Artists",
                 items: matchupsFound
                   .filter((artist) => !recommendedEndArtists.includes(artist))
-                  .sort((a, b) => a.localeCompare(b)),
+                  .sort(compareSongs),
               },
             ]}
             styles={{

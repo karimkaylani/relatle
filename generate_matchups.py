@@ -24,7 +24,7 @@ def verify_matchups(web):
             print("Not in web:", matchup)
         elif not is_good_matchup(web, matchup):
             print("Not good matchup:", matchup)
-    start = datetime(2023, 10, 29)
+    start = datetime(2023, 11, 29)
     start += timedelta(days=num_days)
     print("Matchups completed until", start.strftime("%m/%d/%Y"))
     
