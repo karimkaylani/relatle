@@ -25,13 +25,13 @@ const AffixStatus = (props: AffixStatusProps) => {
     <Affix w="100%" h={0} top={0}>
         <Transition transition="slide-down" mounted={mounted}>
         {(transitionStyles) => (
-            <Card onClick={onTap} ref={groupRef} p="xs" withBorder styles={{root: {maxHeight: '100px'}}} style={transitionStyles}>
+            <Card onClick={onTap} ref={groupRef} p="xs" withBorder styles={{root: {maxHeight: '100px', overflow: 'auto'}}} style={transitionStyles}>
 
                 {playingAudio && playingArtist && 
                 <Group justify='center' align='center' gap='5px'>
-                    <Text ta='center'>Playing by</Text>
+                    <Text ta='center'>Playing</Text>
                     <Avatar radius='sm' size={'sm'} src={playingArtist.top_song_art} alt={playingArtist.top_song_name + "art"}/>
-                    <Text c='green.6' fw={700}>{playingArtist.top_song_name}</Text>
+                    <Text ta='center' c='green.6' fw={700}>{playingArtist.top_song_name}</Text>
                     <Text ta='center'>by</Text>
                     <ArtistInfo artist={playingArtist} small={true}/>
                 </Group>}
