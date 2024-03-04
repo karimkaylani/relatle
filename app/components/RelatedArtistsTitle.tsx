@@ -7,27 +7,28 @@ export interface RelatedArtistsTitleProps {
   artist: Artist;
   won: boolean;
   endArtist: Artist;
+  gameOver: boolean;
 }
 
 const RelatedArtistsTitle = React.forwardRef<
   HTMLDivElement,
   RelatedArtistsTitleProps
 >((props, ref) => {
-  const { artist, won, endArtist } = props;
+  const { artist, won, endArtist, gameOver } = props;
   let small = window.innerWidth <= phoneMaxWidth;
 
-  if (won) {
+  if (won || gameOver) {
     return (
       <Stack align="center" gap="xs">
+        <Text size={small ? "sm" : "md"}>
+          Tap the scoreboard to view your results
+        </Text>
         {won && (
-          <Text size={small ? "sm" : "md"}>
-            Tap the scoreboard to view your results
-          </Text>
+          <Group justify="center" gap="xs">
+            <Text size={small ? "md" : "lg"}>You found</Text>
+            <ArtistInfo artist={endArtist} small={small} />
+          </Group>
         )}
-        <Group justify="center" gap="xs">
-          <Text size={small ? "md" : "lg"}>You found</Text>
-          <ArtistInfo artist={endArtist} small={small} />
-        </Group>
       </Stack>
     );
   }

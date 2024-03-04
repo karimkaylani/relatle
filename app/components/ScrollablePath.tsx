@@ -8,10 +8,11 @@ export interface ScrollablePathProps {
   matchup: string[];
   web: { [key: string]: Artist };
   path: string[];
+  won: boolean;
 }
 
 const ScrollablePath = (props: ScrollablePathProps) => {
-  const { matchup, web, path } = props;
+  const { matchup, web, path, won } = props;
   const end = matchup[1];
   return (
     <ScrollArea
@@ -39,7 +40,7 @@ const ScrollablePath = (props: ScrollablePathProps) => {
             </Fragment>
           )
         )}
-        <ArtistInfo artist={web[end]} small={true} is_green={true}/>
+        {won ? <ArtistInfo artist={web[end]} small={true} is_green={true}/> : <Text c="red.5" size="13px" fw={500}>GIVE UP</Text>}
       </Group>
     </ScrollArea>
   );

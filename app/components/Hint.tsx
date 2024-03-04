@@ -69,6 +69,7 @@ const Hint = (props: HintProps) => {
                 <RelatedArtistsTitle
                   artist={endArtist}
                   won={false}
+                  gameOver={false}
                   endArtist={endArtist}
                 />
               </Stack>
@@ -90,6 +91,7 @@ const Hint = (props: HintProps) => {
                     artist={web[artist_name]}
                     path={path}
                     clickable={false}
+                    gameOver={false}
                     won={false}
                     end={endArtist.name}
                     clicked={false}

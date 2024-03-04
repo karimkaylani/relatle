@@ -39,6 +39,7 @@ import { useAnimate, useReducedMotion } from "framer-motion";
 import Hint from "./Hint";
 import NewFeatureModal from "./NewFeatureModal";
 import { createClient } from "@/utils/supabase/client";
+import GiveUpButton from "./GiveUpButton";
 
 export interface Artist {
   name: string;
@@ -57,12 +58,13 @@ interface GameProps {
 }
 
 interface SaveProps {
-  currArtist: Artist;
-  path: string[];
-  won: boolean;
-  guesses: number;
-  resets: number;
-  matchup: string[];
+  currArtist?: Artist;
+  path?: string[];
+  won?: boolean;
+  guesses?: number;
+  resets?: number;
+  matchup?: string[];
+  gameOver? : boolean;
   usedHint?: boolean;
   prevMatchupID?: number;
   numDaysPlayed?: number;
@@ -122,6 +124,7 @@ const Game = (props: GameProps) => {
   const [won, setWon] = useState<boolean>(false);
   const [guesses, setGuesses] = useState<number>(0);
   const [resets, setResets] = useState<number>(0);
+  const [gameOver, setGameOver] = useState<boolean>(false);
 
   const [prevMatchupID, setPrevMatchupID] = useState<number>(-1);
   const [numDaysPlayed, setNumDaysPlayed] = useState<number>(0);
@@ -245,11 +248,12 @@ const Game = (props: GameProps) => {
     }
     setCurrArtist(localSave.currArtist);
     setPath(localSave.path);
-    setWon(localSave.won);
-    setGuesses(localSave.guesses);
-    setResets(localSave.resets);
+    setWon(localSave.won ?? false);
+    setGuesses(localSave.guesses ?? 0);
+    setResets(localSave.resets ?? 0);
     setUsedHint(localSave.usedHint ?? false);
-    if (localSave.won) {
+    setGameOver(localSave.gameOver ?? false);
+    if (localSave.gameOver) {
       winModalOpen();
     }
   };
@@ -332,7 +336,7 @@ const Game = (props: GameProps) => {
 
   const updateArtistHandler = (artist: Artist) => {
     setArtistClicked(false);
-    if (won) {
+    if (gameOver) {
       if (artist.name === end) {
         winModalOpen();
       }
@@ -376,6 +380,7 @@ const Game = (props: GameProps) => {
               path: newPath,
               won: true,
               guesses: newGuesses,
+              gameOver,
               resets,
               matchup,
               usedHint,
@@ -385,6 +390,7 @@ const Game = (props: GameProps) => {
               path: newPath,
               won: true,
               guesses: newGuesses,
+              gameOver,
               resets,
               matchup,
               usedHint,
@@ -418,6 +424,7 @@ const Game = (props: GameProps) => {
       currArtist: artist,
       path: newPath,
       won,
+      gameOver,
       guesses: newGuesses,
       resets,
       matchup,
@@ -426,7 +433,7 @@ const Game = (props: GameProps) => {
   };
 
   const resetHandler = (): void => {
-    if (won === true || currArtist.name == start) {
+    if (gameOver || currArtist.name == start) {
       return;
     }
     if (currArtist.related.includes(end)) {
@@ -447,6 +454,7 @@ const Game = (props: GameProps) => {
       path: newPath,
       won,
       guesses,
+      gameOver,
       resets: newResets,
       matchup,
       usedHint,
@@ -462,12 +470,32 @@ const Game = (props: GameProps) => {
       currArtist,
       path,
       won,
+      gameOver,
       guesses,
       resets,
       matchup,
       usedHint: true,
     });
   };
+
+  const giveUpHandler = (): void => {
+    if (gameOver) {
+      return;
+    }
+    setGameOver(true);
+    winModalOpen();
+    setPath([...path, "GIVE UP"]);
+    save({
+      currArtist,
+      path: [...path, "GIVE UP"],
+      won,
+      guesses,
+      resets,
+      matchup,
+      gameOver: true,
+      usedHint,
+    });
+  }
 
   const missedArtistHandler = (): void => {
     setEndMissed(true);
@@ -573,12 +601,12 @@ const Game = (props: GameProps) => {
           />
         </PlayingAudioContext.Provider>
       </Stack>
-      {won ? (
+      {gameOver ? (
         <HoverButton onTap={winModalOpen}>
-          <Scoreboard guesses={guesses} resets={resets} greenBorder={won} />
+          <Scoreboard guesses={guesses} resets={resets} greenBorder={gameOver} />
         </HoverButton>
       ) : (
-        <Scoreboard guesses={guesses} resets={resets} greenBorder={won} />
+        <Scoreboard guesses={guesses} resets={resets} greenBorder={gameOver} />
       )}
       <Popover
         position="bottom"
@@ -590,6 +618,7 @@ const Game = (props: GameProps) => {
           <RelatedArtistsTitle
             artist={currArtist}
             won={won}
+            gameOver={gameOver}
             endArtist={web[end]}
           />
         </Popover.Target>
@@ -605,6 +634,7 @@ const Game = (props: GameProps) => {
         close={winModalClose}
         path={path}
         guesses={guesses}
+        won={won}
         matchup={matchup}
         resets={resets}
         web={web}
@@ -650,11 +680,12 @@ const Game = (props: GameProps) => {
               artist={web[artist_name]}
               path={path}
               won={won}
+              gameOver={gameOver}
               end={end}
               clicked={artistClicked}
               setClicked={setArtistClicked}
               updateArtistHandler={
-                won || artist_name === end
+                gameOver || artist_name === end
                   ? updateArtistHandler
                   : clickArtistHandler
               }
@@ -662,7 +693,7 @@ const Game = (props: GameProps) => {
           ))}
         </SimpleGrid>
       </PlayingAudioContext.Provider>
-      {!won && (
+      {!gameOver && (
         <Stack align="center" justify="center">
           <Text ta="center" c="gray.1" size="md">
             Feeling stuck?
@@ -671,9 +702,7 @@ const Game = (props: GameProps) => {
             {start !== currArtist.name && (
               <Reset
                 resetHandler={
-                  won || currArtist.name === start
-                    ? resetHandler
-                    : clickResetHandler
+                  clickResetHandler
                 }
               />
             )}
@@ -722,6 +751,7 @@ const Game = (props: GameProps) => {
         newFeatureModalOpened={newFeatureModalOpened}
         newFeatureModalHandlers={newFeatureModalHandlers}
       />
+      <GiveUpButton onClick={giveUpHandler} />
     </Flex>
   );
 };

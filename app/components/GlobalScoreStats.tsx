@@ -5,10 +5,11 @@ import GlobalScoreSlider from "./GlobalScoreSlider";
 export interface GlobalScoreStatsProps {
   guesses: number;
   allGuesses: number[];
+  won: boolean;
 }
 
 const GlobalScoreStats = (props: GlobalScoreStatsProps) => {
-  const { guesses, allGuesses } = props;
+  const { guesses, allGuesses, won } = props;
   const avgGuesses = allGuesses.reduce((a, b) => a + b, 0) / allGuesses.length;
   const minGuesses = Math.min(...allGuesses);
   const roundedAvgGuesses = Math.round(avgGuesses);
@@ -27,6 +28,7 @@ const GlobalScoreStats = (props: GlobalScoreStatsProps) => {
             guesses={guesses}
             avgGuesses={roundedAvgGuesses}
             minGuesses={minGuesses}
+            won={won}
           />
           <Text ta="center" size="sm">
             These values will update as more games are completed

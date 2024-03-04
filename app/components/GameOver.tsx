@@ -37,6 +37,7 @@ export interface GameOverProps {
   guesses: number;
   matchup: string[];
   resets: number;
+  won: boolean;
   web: { [key: string]: Artist };
   is_custom: boolean;
   matchupID: number;
@@ -79,6 +80,7 @@ const GameOver = ({
   close,
   path,
   guesses,
+  won,
   matchup,
   resets,
   web,
@@ -149,7 +151,7 @@ const GameOver = ({
         >
           <Drawer.Title style={{ width: "100%" }}>
             <Text ta="center" c="gray.1" size="xl" fw={700}>
-              You Won!
+              {won ? "You Won!" : "Game Over"}
             </Text>
           </Drawer.Title>
           <Drawer.CloseButton />
@@ -175,15 +177,15 @@ const GameOver = ({
             <Text ta="center" fw={700} size="sm">
               Your Path
             </Text>
-            <ScrollablePath matchup={matchup} web={web} path={path} />
+            <ScrollablePath matchup={matchup} web={web} path={path} won={won}/>
 
             <Group align="center" justify="center" gap="sm">
               <Text fw={700} size="sm" ta="center">
-                {guesses === minPathLength
+                {won && guesses === minPathLength
                   ? `Congrats! The shortest path was ${minPathLength} guesses long`
                   : `Shortest Path: ${minPathLength} guesses`}
               </Text>
-              {guesses !== minPathLength && (
+              {(!won || guesses !== minPathLength) && (
                 <Button
                   leftSection={
                     minPathOpened ? (
@@ -206,6 +208,7 @@ const GameOver = ({
                 matchup={matchup}
                 web={web}
                 path={minPath}
+                won={true}
               ></ScrollablePath>
             </Collapse>
 
@@ -213,7 +216,7 @@ const GameOver = ({
               (loadingGlobalScore ? (
                 <Loader color="green.6" size="sm" />
               ) : (
-                <GlobalScoreStats guesses={guesses} allGuesses={allGuesses} />
+                <GlobalScoreStats won={won} guesses={guesses} allGuesses={allGuesses} />
               ))}
 
             {!is_custom && (

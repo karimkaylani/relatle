@@ -16,10 +16,11 @@ export interface GlobalScoreSliderProps {
   avgGuesses: number;
   minGuesses: number;
   guesses: number;
+  won: boolean;
 }
 
 const GlobalScoreSlider = (props: GlobalScoreSliderProps) => {
-  let { avgGuesses, minGuesses, guesses } = props;
+  let { avgGuesses, minGuesses, guesses, won } = props;
   const range = [
     Math.min(avgGuesses, minGuesses, guesses),
     Math.max(avgGuesses, minGuesses, guesses),
@@ -70,15 +71,19 @@ const GlobalScoreSlider = (props: GlobalScoreSliderProps) => {
   }
   let scores: [string, number, string][] = [
     ["Min. Guesses", minGuesses, "gray.1"],
-    ["Your Score", guesses, "green.6"],
     ["Avg. Guesses", avgGuesses, "yellow.5"],
+    ["Your Score", guesses, "green.6"],
   ];
+
+  if (!won) {
+    scores.pop();
+  }
   scores.sort((a, b) => a[1] - b[1]);
 
   let yourScoreColor = "green.6";
-  if (guesses === minGuesses) {
+  if (won && guesses === minGuesses) {
     yourScoreColor = "linear-gradient(to right, #f1f3f5 10px, #40c057 10px";
-  } else if (guesses === avgGuesses) {
+  } else if (won && guesses === avgGuesses) {
     yourScoreColor = "linear-gradient(to right, #40c057 10px, #fcc419 10px";
   }
   return (
@@ -89,7 +94,7 @@ const GlobalScoreSlider = (props: GlobalScoreSliderProps) => {
         </Paper>
         <Circle color="gray.1" value={minGuesses} />
         <Circle color="yellow.5" value={avgGuesses} />
-        <Circle color={yourScoreColor} value={guesses} />
+        {won && <Circle color={yourScoreColor} value={guesses} />}
       </div>
       <Stack>
         <Group justify="center" align="center" gap="xs">

@@ -21,6 +21,7 @@ interface ArtistCardProps {
   updateArtistHandler: (artist: Artist) => void;
   path: string[];
   won: boolean;
+  gameOver: boolean;
   end: string;
   clicked: boolean;
   setClicked: (clicked: boolean) => void;
@@ -32,6 +33,7 @@ const ArtistCard = ({
   updateArtistHandler,
   path,
   won,
+  gameOver,
   end,
   clicked,
   setClicked,
@@ -186,7 +188,7 @@ const ArtistCard = ({
       audioRef.current?.pause();
       return;
     }
-    if (won) {
+    if (gameOver) {
       return updateArtistHandler(artist);
     }
     setClicked(true);
@@ -244,7 +246,7 @@ const ArtistCard = ({
         radius="md"
         withBorder
         padding="xs"
-        opacity={won && artist.name !== end ? 0.25 : 1}
+        opacity={gameOver && artist.name !== end ? 0.25 : 1}
         styles={{
           root: {
             width:
