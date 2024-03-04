@@ -133,6 +133,21 @@ const ArtistCard = ({
     };
   }, [resetAudioTimer]);
 
+  // Stop music when tab is hidden
+  useEffect(() => {
+    const handleVisibilityChange = () => {
+      if (document.hidden) {
+        audioRef.current?.pause();
+        setKeyHoldTimer(undefined);
+        setIsHoldingKey(false);
+      }
+    };
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+    return () => {
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
+    };
+  }, []);
+
   const onTimeUpdate = () => {
     if (!audioRef.current) {
       return;
