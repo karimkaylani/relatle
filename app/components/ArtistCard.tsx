@@ -52,8 +52,32 @@ const ArtistCard = ({
 
   const isPlayingRef = useRef(isPlaying);
 
+  const longPressThreshold = 400;
+
   const { playingAudio, setPlayingAudio, setPlayingArtist } =
     React.useContext(PlayingAudioContext);
+
+
+  // Long press support for keyboard
+  const [isHoldingKey, setIsHoldingKey] = useState(false);
+  const [keyHoldTimer, setKeyHoldTimer] = useState<NodeJS.Timeout|undefined>(undefined);
+
+  const onKeyDown = (event: React.KeyboardEvent<HTMLButtonElement>) => {
+    if (isHoldingKey) return;
+    if (event.key === "Enter") {
+      setIsHoldingKey(true);
+      setKeyHoldTimer(setTimeout(() => {
+        audioRef.current?.play();
+      }, longPressThreshold));
+    }
+  }
+
+  const onKeyUp = (event: React.KeyboardEvent<HTMLButtonElement>) => {
+    if (event.key === "Enter") {
+      clearTimeout(keyHoldTimer);
+      setIsHoldingKey(false);
+    }
+  }
 
   // To get up-to-date value of isPlaying in resetAudioTimer
   useEffect(() => {
@@ -130,7 +154,8 @@ const ArtistCard = ({
   );
 
   const clickArtistHandler = () => {
-    if (clicked || isLongPress) {
+    if (clicked || isLongPress || isPlaying) {
+      audioRef.current?.pause();
       return;
     }
     if (won) {
@@ -186,6 +211,8 @@ const ArtistCard = ({
       onMouseUp={() => setLongPress(false)}
       onTouchCancel={() => setLongPress(false)}
       onTapCancel={() => setLongPress(false)}
+      onKeyDown={onKeyDown}
+      onKeyUp={onKeyUp}
     >
       <Card
         ref={scope}
