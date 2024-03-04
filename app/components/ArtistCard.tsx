@@ -42,7 +42,6 @@ const ArtistCard = ({
 
   const [scope, animate] = useAnimate();
   const audioRef = React.useRef<HTMLAudioElement>(null);
-  const [isLongPress, setLongPress] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const [progress, setProgress] = useState(0);
 
@@ -57,27 +56,34 @@ const ArtistCard = ({
   const { playingAudio, setPlayingAudio, setPlayingArtist } =
     React.useContext(PlayingAudioContext);
 
-
-  // Long press support for keyboard
+  /* Long press support for keyboard */
+  // So keyDown doesn't fire multiple times
   const [isHoldingKey, setIsHoldingKey] = useState(false);
-  const [keyHoldTimer, setKeyHoldTimer] = useState<NodeJS.Timeout|undefined>(undefined);
+  const [keyHoldTimer, setKeyHoldTimer] = useState<NodeJS.Timeout | undefined>(
+    undefined
+  );
 
   const onKeyDown = (event: React.KeyboardEvent<HTMLButtonElement>) => {
+    // If tabbing away from artist card, treat like letting go of long press
+    if (event.key === "Tab") {
+      audioRef.current?.pause();
+      onKeyUp();
+    }
     if (isHoldingKey) return;
     if (event.key === "Enter") {
       setIsHoldingKey(true);
-      setKeyHoldTimer(setTimeout(() => {
-        audioRef.current?.play();
-      }, longPressThreshold));
+      setKeyHoldTimer(
+        setTimeout(() => {
+          audioRef.current?.play();
+        }, longPressThreshold)
+      );
     }
-  }
+  };
 
-  const onKeyUp = (event: React.KeyboardEvent<HTMLButtonElement>) => {
-    if (event.key === "Enter") {
-      clearTimeout(keyHoldTimer);
-      setIsHoldingKey(false);
-    }
-  }
+  const onKeyUp = () => {
+    clearTimeout(keyHoldTimer);
+    setIsHoldingKey(false);
+  };
 
   // To get up-to-date value of isPlaying in resetAudioTimer
   useEffect(() => {
@@ -140,7 +146,6 @@ const ArtistCard = ({
   const bind = useLongPress(
     () => {
       audioRef.current?.play();
-      setLongPress(true);
     },
     {
       onFinish: () => {
@@ -148,13 +153,15 @@ const ArtistCard = ({
       },
       onCancel: () => {
         audioRef.current?.pause();
-        setLongPress(false);
       },
+      threshold: longPressThreshold,
     }
   );
 
   const clickArtistHandler = () => {
-    if (clicked || isLongPress || isPlaying) {
+    /* If music is playing, don't follow through with click because
+       that means this is a long press. Just stop the music. */
+    if (clicked || isPlaying) {
       audioRef.current?.pause();
       return;
     }
@@ -162,7 +169,6 @@ const ArtistCard = ({
       return updateArtistHandler(artist);
     }
     setClicked(true);
-    setLongPress(false);
     const winningGuess = artist.name === end;
     const borderSize = winningGuess ? "4px" : "2px";
     const borderColor = winningGuess ? "#51cf66" : "#f1f3f5";
@@ -206,11 +212,8 @@ const ArtistCard = ({
           : {}
       }
       whileTap={{ scale: 0.95 }}
+      // This triggers for tap, click, and enter key
       onTap={clickable ? clickArtistHandler : () => audioRef.current?.pause()}
-      onTouchEnd={() => setLongPress(false)}
-      onMouseUp={() => setLongPress(false)}
-      onTouchCancel={() => setLongPress(false)}
-      onTapCancel={() => setLongPress(false)}
       onKeyDown={onKeyDown}
       onKeyUp={onKeyUp}
     >
