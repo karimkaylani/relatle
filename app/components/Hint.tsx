@@ -5,7 +5,7 @@ import { useDisclosure, useIntersection } from "@mantine/hooks";
 import { IconBulb } from "@tabler/icons-react";
 import React, { Fragment, useRef } from "react";
 import RelatedArtistsTitle from "./RelatedArtistsTitle";
-import { Artist, phoneMaxWidth } from "./Game";
+import { Artist, PlayingAudioContext, phoneMaxWidth } from "./Game";
 import ArtistCard from "./ArtistCard";
 import { useSwipeable } from "react-swipeable";
 
@@ -19,13 +19,24 @@ export interface HintProps {
 const Hint = (props: HintProps) => {
   const { endArtist, web, path, setUsedHint } = props;
   const [opened, { open, close }] = useDisclosure(false);
+  const { setPlayingAudio, playingAudio, setPlayingArtist, playingArtist } =
+    React.useContext(PlayingAudioContext);
+  const closeHint = () => {
+    // If artist from hint drawer is playing on close, stop it
+    if (endArtist.related.includes(playingArtist?.name ?? "")) {
+      playingAudio?.pause();
+      setPlayingAudio(null);
+      setPlayingArtist(null);
+    }
+    close();
+  };
   const headerSwipeHandlers = useSwipeable({
-    onSwipedDown: close,
+    onSwipedDown: closeHint,
   });
   const drawerSwipeHandlers = useSwipeable({
     onSwipedDown: () => {
       if (entry?.isIntersecting) {
-        close();
+        closeHint();
       }
     },
   });
@@ -40,7 +51,7 @@ const Hint = (props: HintProps) => {
       <Drawer.Root
         {...drawerSwipeHandlers}
         opened={opened}
-        onClose={close}
+        onClose={closeHint}
         size={window.innerWidth > phoneMaxWidth ? "610" : "75%"}
         style={{ borderRadius: "20px" }}
         padding="sm"
@@ -51,7 +62,7 @@ const Hint = (props: HintProps) => {
           <Drawer.Header
             {...headerSwipeHandlers}
             style={{ top: -1 }}
-            onClick={close}
+            onClick={closeHint}
           >
             <Drawer.Title style={{ width: "100%" }}>
               <Stack gap="xs">

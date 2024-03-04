@@ -69,6 +69,12 @@ const ArtistCard = ({
       audioRef.current?.pause();
       onKeyUp();
     }
+    // If hitting escape key on artist card in hint, stop music since hint drawer is being closed
+    // Note: Hint drawer is the only place where non-clickable artist cards are found
+    if (!clickable && event.key === "Escape") {
+      audioRef.current?.pause();
+      onKeyUp();
+    }
     if (isHoldingKey) return;
     if (event.key === "Enter") {
       setIsHoldingKey(true);
