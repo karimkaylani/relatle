@@ -206,7 +206,7 @@ const ArtistCard = ({
           : {}
       }
       whileTap={{ scale: 0.95 }}
-      onTap={clickable ? clickArtistHandler : () => null}
+      onTap={clickable ? clickArtistHandler : () => audioRef.current?.pause()}
       onTouchEnd={() => setLongPress(false)}
       onMouseUp={() => setLongPress(false)}
       onTouchCancel={() => setLongPress(false)}
