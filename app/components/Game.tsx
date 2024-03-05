@@ -39,7 +39,7 @@ import { useAnimate, useReducedMotion } from "framer-motion";
 import Hint from "./Hint";
 import NewFeatureModal from "./NewFeatureModal";
 import { createClient } from "@/utils/supabase/client";
-import GiveUpButton from "./GiveUpButton";
+import GiveUp from "./GiveUp";
 
 export interface Artist {
   name: string;
@@ -248,12 +248,14 @@ const Game = (props: GameProps) => {
     }
     setCurrArtist(localSave.currArtist);
     setPath(localSave.path);
-    setWon(localSave.won ?? false);
     setGuesses(localSave.guesses ?? 0);
     setResets(localSave.resets ?? 0);
     setUsedHint(localSave.usedHint ?? false);
-    setGameOver(localSave.gameOver ?? false);
-    if (localSave.gameOver) {
+    let wonValue = localSave.won ?? false;
+    setWon(wonValue);
+    let gameWonValue = localSave.gameOver ?? wonValue;
+    setGameOver(gameWonValue);
+    if (gameWonValue) {
       winModalOpen();
     }
   };
@@ -699,7 +701,7 @@ const Game = (props: GameProps) => {
             Feeling stuck?
           </Text>
           <Group justify="center" align="center">
-            {start !== currArtist.name && (
+          {start !== currArtist.name && (
               <Reset
                 resetHandler={
                   clickResetHandler
@@ -722,6 +724,7 @@ const Game = (props: GameProps) => {
               />
             </PlayingAudioContext.Provider>
           </Group>
+          {!gameOver && <GiveUp giveUpHandler={giveUpHandler} />}
         </Stack>
       )}
 
@@ -751,7 +754,6 @@ const Game = (props: GameProps) => {
         newFeatureModalOpened={newFeatureModalOpened}
         newFeatureModalHandlers={newFeatureModalHandlers}
       />
-      <GiveUpButton onClick={giveUpHandler} />
     </Flex>
   );
 };
