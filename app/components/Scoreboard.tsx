@@ -45,7 +45,7 @@ export const ScoreDisplay = (
 };
 
 const Scoreboard = (props: ScoreboardProps) => {
-  const { guesses, resets, borderColor=null, small } = props;
+  const { guesses, resets, borderColor = null, small } = props;
   return (
     <Card
       shadow="md"

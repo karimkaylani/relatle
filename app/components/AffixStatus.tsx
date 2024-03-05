@@ -43,7 +43,7 @@ const AffixStatus = (props: AffixStatusProps) => {
             style={transitionStyles}
           >
             {playingAudio && playingArtist && (
-              <Text ta="center" fw={700} className='m-0 p-0 top-0'>
+              <Text ta="center" fw={700} className="m-0 p-0 top-0">
                 Playing{" "}
                 <Avatar
                   radius="sm"
@@ -53,7 +53,7 @@ const AffixStatus = (props: AffixStatusProps) => {
                   style={{
                     display: "inline-block",
                     top: "7px",
-                    marginLeft: '3px',
+                    marginLeft: "3px",
                     marginRight: "5px",
                   }}
                 />
@@ -61,26 +61,26 @@ const AffixStatus = (props: AffixStatusProps) => {
                   {playingArtist.top_song_name}
                 </Text>{" "}
                 by{" "}
-                <Center style={{display: "inline-block"}}>
-                <Avatar
-                  size={"sm"}
-                  src={playingArtist?.image}
-                  alt={playingArtist?.name}
-                  style={{
-                    display: "inline-block",
-                    top: "7px",
-                    marginLeft: '3px',
-                    marginRight: "5px",
-                  }}
-                />
-                <Text
-                  ta="center"
-                  fw={700}
-                  c="gray.1"
-                  style={{ display: "inline-block" }}
-                >
-                  {playingArtist?.name}
-                </Text>
+                <Center style={{ display: "inline-block" }}>
+                  <Avatar
+                    size={"sm"}
+                    src={playingArtist?.image}
+                    alt={playingArtist?.name}
+                    style={{
+                      display: "inline-block",
+                      top: "7px",
+                      marginLeft: "3px",
+                      marginRight: "5px",
+                    }}
+                  />
+                  <Text
+                    ta="center"
+                    fw={700}
+                    c="gray.1"
+                    style={{ display: "inline-block" }}
+                  >
+                    {playingArtist?.name}
+                  </Text>
                 </Center>
               </Text>
             )}

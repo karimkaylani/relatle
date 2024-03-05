@@ -92,7 +92,10 @@ const GameOver = ({
   days_played,
 }: GameOverProps) => {
   const [start, end] = matchup;
-  const [minPathOpened, { open: openMinPath, close: closeMinPath, toggle: toggleMinPath }] = useDisclosure(false);
+  const [
+    minPathOpened,
+    { open: openMinPath, close: closeMinPath, toggle: toggleMinPath },
+  ] = useDisclosure(false);
 
   const headerSwipeHandlers = useSwipeable({
     onSwipedDown: close,

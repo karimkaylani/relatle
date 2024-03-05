@@ -1,10 +1,4 @@
-import {
-  Group,
-  Paper,
-  Space,
-  Stack,
-  Text,
-} from "@mantine/core";
+import { Group, Paper, Space, Stack, Text } from "@mantine/core";
 import React, { Fragment, useEffect, useState } from "react";
 
 interface CircleProps {

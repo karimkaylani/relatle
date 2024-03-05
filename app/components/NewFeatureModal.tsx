@@ -28,7 +28,7 @@ const NewFeatureModal = (props: NewFeatureModalProps) => {
             music. Try it out!
           </Text>
         </Stack>
-        <Image w={163} src="images/preview.png" alt='Song Previews'/>
+        <Image w={163} src="images/preview.png" alt="Song Previews" />
         <Button color="gray.7" w={150} onClick={newFeatureModalClose}>
           GOT IT!
         </Button>

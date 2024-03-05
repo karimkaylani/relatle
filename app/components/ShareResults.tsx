@@ -39,8 +39,10 @@ const ShareResults = (props: ShareResultsProps) => {
     let text = `relatle ${today}
 ${start} → ${end}
 ${generateEmojiLine()}
-${won ? 'Solved 🥳' : 'Gave up 😭'}
-${guesses} ${guesses === 1 ? 'guess' : 'guesses'}, ${resets} ${resets === 1 ? 'reset' : 'resets'}
+${won ? "Solved 🥳" : "Gave up 😭"}
+${guesses} ${guesses === 1 ? "guess" : "guesses"}, ${resets} ${
+      resets === 1 ? "reset" : "resets"
+    }
 ${url}`;
     return text;
   };

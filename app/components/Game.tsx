@@ -1,10 +1,6 @@
 "use client";
 
-import React, {
-  useEffect,
-  useRef,
-  useState,
-} from "react";
+import React, { useEffect, useRef, useState } from "react";
 import ArtistCard from "./ArtistCard";
 import GameOver from "./GameOver";
 import Reset from "./Reset";
@@ -64,7 +60,7 @@ interface SaveProps {
   guesses?: number;
   resets?: number;
   matchup?: string[];
-  gameOver? : boolean;
+  gameOver?: boolean;
   usedHint?: boolean;
   prevMatchupID?: number;
   numDaysPlayed?: number;
@@ -107,36 +103,19 @@ const addScoreToDB = async (
   const supabase = createClient();
 
   if (is_custom) {
-    return supabase
-      .from("custom_game_scores")
-      .insert({
-        timestamp: date,
-        matchup: JSON.stringify(matchup),
-        guesses,
-        resets,
-        path: JSON.stringify(path),
-        used_hint: usedHint,
-        won: won
-      });
+    return supabase.from("custom_game_scores").insert({
+      timestamp: date,
+      matchup: JSON.stringify(matchup),
+      guesses,
+      resets,
+      path: JSON.stringify(path),
+      used_hint: usedHint,
+      won: won,
+    });
   }
 
   if (!won) {
-    return supabase
-      .from("give_up_scores")
-      .insert({
-        timestamp: date,
-        matchup_id: matchupID,
-        matchup: JSON.stringify(matchup),
-        guesses,
-        resets,
-        path: JSON.stringify(path),
-        used_hint: usedHint,
-      });
-  }
-
-  return supabase
-    .from("scores")
-    .insert({
+    return supabase.from("give_up_scores").insert({
       timestamp: date,
       matchup_id: matchupID,
       matchup: JSON.stringify(matchup),
@@ -145,6 +124,17 @@ const addScoreToDB = async (
       path: JSON.stringify(path),
       used_hint: usedHint,
     });
+  }
+
+  return supabase.from("scores").insert({
+    timestamp: date,
+    matchup_id: matchupID,
+    matchup: JSON.stringify(matchup),
+    guesses,
+    resets,
+    path: JSON.stringify(path),
+    used_hint: usedHint,
+  });
 };
 
 const Game = (props: GameProps) => {
@@ -338,7 +328,7 @@ const Game = (props: GameProps) => {
     new Image().src = "images/give-up.png";
     new Image().src = "images/how-to-play.png";
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const [width, setWidth] = useState(0);
@@ -385,7 +375,7 @@ const Game = (props: GameProps) => {
     setGuesses(newGuesses);
     if (artist.name === end) {
       setWon(true);
-      setGameOver(true)
+      setGameOver(true);
       let new_streak = 1;
       if (
         prevMatchupID !== -1 &&
@@ -443,7 +433,16 @@ const Game = (props: GameProps) => {
       );
       winModalOpen();
       if (process.env.NODE_ENV !== "development") {
-        addScoreToDB(is_custom, true, matchup, matchupID, newGuesses, resets, newPath, usedHint);
+        addScoreToDB(
+          is_custom,
+          true,
+          matchup,
+          matchupID,
+          newGuesses,
+          resets,
+          newPath,
+          usedHint
+        );
       }
       return;
     }
@@ -527,7 +526,7 @@ const Game = (props: GameProps) => {
     let previousMatchupID = matchupID;
     setPrevMatchupID(previousMatchupID);
 
-    let new_streak = 0
+    let new_streak = 0;
     setStreak(new_streak);
 
     save(
@@ -562,9 +561,18 @@ const Game = (props: GameProps) => {
           }
     );
     if (process.env.NODE_ENV !== "development") {
-      addScoreToDB(is_custom, false, matchup, matchupID, guesses, resets, newPath, usedHint);
+      addScoreToDB(
+        is_custom,
+        false,
+        matchup,
+        matchupID,
+        guesses,
+        resets,
+        newPath,
+        usedHint
+      );
     }
-  }
+  };
 
   const missedArtistHandler = (): void => {
     setEndMissed(true);
@@ -673,7 +681,11 @@ const Game = (props: GameProps) => {
       </Stack>
       {gameOver ? (
         <HoverButton onTap={winModalOpen}>
-          <Scoreboard guesses={guesses} resets={resets} borderColor={won ? "#40c057" : "#fa5252"} />
+          <Scoreboard
+            guesses={guesses}
+            resets={resets}
+            borderColor={won ? "#40c057" : "#fa5252"}
+          />
         </HoverButton>
       ) : (
         <Scoreboard guesses={guesses} resets={resets} />
@@ -769,12 +781,8 @@ const Game = (props: GameProps) => {
             Feeling stuck?
           </Text>
           <Group justify="center" align="center">
-          {start !== currArtist.name && (
-              <Reset
-                resetHandler={
-                  clickResetHandler
-                }
-              />
+            {start !== currArtist.name && (
+              <Reset resetHandler={clickResetHandler} />
             )}
             <PlayingAudioContext.Provider
               value={{

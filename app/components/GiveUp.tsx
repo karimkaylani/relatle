@@ -22,16 +22,18 @@ const GiveUp = (props: GiveUpProps) => {
         padding="xl"
         radius="lg"
       >
-        <Stack align="center" justify="center" gap='xl'>
-          <Stack align='center' justify="center">
-            <Text size="24px" c='gray.1' fw={700} ta="center">
+        <Stack align="center" justify="center" gap="xl">
+          <Stack align="center" justify="center">
+            <Text size="24px" c="gray.1" fw={700} ta="center">
               Are you sure?
             </Text>
-            <Text ta='center' c='gray.1'>
-              {"If you give up, it will show in your shared results, reset your streak, and you will see the shortest path."}
+            <Text ta="center" c="gray.1">
+              {
+                "If you give up, it will show in your shared results, reset your streak, and you will see the shortest path."
+              }
             </Text>
           </Stack>
-          <Image w={158} src="images/give-up.png" alt='Give Up'/>
+          <Image w={158} src="images/give-up.png" alt="Give Up" />
           <Group align="center" justify="center">
             <Button
               onClick={giveUpHandler}
