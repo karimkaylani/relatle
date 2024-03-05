@@ -63,6 +63,7 @@ interface SaveProps {
   gameOver?: boolean;
   usedHint?: boolean;
   prevMatchupID?: number;
+  // This is really number of wins
   numDaysPlayed?: number;
   streak?: number;
   longestStreak?: number;
@@ -70,6 +71,7 @@ interface SaveProps {
   averageScore?: number;
   sumResets?: number;
   averageResets?: number;
+  gamesLost?: number;
 }
 
 export const phoneMaxWidth = 768;
@@ -155,6 +157,7 @@ const Game = (props: GameProps) => {
   const [averageScore, setAverageScore] = useState<number>(0);
   const [sumResets, setSumResets] = useState<number>(0);
   const [averageResets, setAverageResets] = useState<number>(0);
+  const [gamesLost, setGamesLost] = useState<number>(0);
 
   const [matchupID, setMatchupID] = useState<number>(-1);
 
@@ -214,6 +217,7 @@ const Game = (props: GameProps) => {
       saveData.averageScore = averageScore;
       saveData.sumResets = sumResets;
       saveData.averageResets = averageResets;
+      saveData.gamesLost = gamesLost;
     }
     localStorage.setItem(
       is_custom ? "props_custom" : "props",
@@ -261,6 +265,7 @@ const Game = (props: GameProps) => {
     setLongestStreak(localSave.longestStreak ?? 0);
     setSumScores(localSave.sumScores ?? 0);
     setAverageScore(localSave.averageScore ?? 0);
+    setGamesLost(localSave.gamesLost ?? 0);
 
     if (JSON.stringify(localSave.matchup) !== JSON.stringify(todayMatchup)) {
       // See if need to serve newFeature modal
@@ -429,6 +434,7 @@ const Game = (props: GameProps) => {
               averageScore: new_average_score,
               sumResets: new_sum_resets,
               averageResets: new_average_resets,
+              gamesLost: gamesLost,
             }
       );
       winModalOpen();
@@ -529,6 +535,9 @@ const Game = (props: GameProps) => {
     let new_streak = 0;
     setStreak(new_streak);
 
+    let new_games_lost = gamesLost + 1;
+    setGamesLost(new_games_lost);
+
     save(
       is_custom
         ? {
@@ -558,6 +567,7 @@ const Game = (props: GameProps) => {
             averageScore,
             sumResets,
             averageResets,
+            gamesLost: new_games_lost
           }
     );
     if (process.env.NODE_ENV !== "development") {
