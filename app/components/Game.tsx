@@ -206,7 +206,7 @@ const Game = (props: GameProps) => {
   const shouldReduceMotion = useReducedMotion();
 
   const save = (saveData: SaveProps): void => {
-    // if this is a save for a non-winning state, wanna make sure we
+    // if this is a save for a non-gameover state, wanna make sure we
     // don't lose streak data, avg score, etc. so we pull from state variables
     if (!is_custom && saveData.prevMatchupID === undefined) {
       saveData.prevMatchupID = prevMatchupID;
@@ -434,7 +434,7 @@ const Game = (props: GameProps) => {
               averageScore: new_average_score,
               sumResets: new_sum_resets,
               averageResets: new_average_resets,
-              gamesLost: gamesLost,
+              gamesLost,
             }
       );
       winModalOpen();
@@ -812,7 +812,7 @@ const Game = (props: GameProps) => {
           </Group>
         </Stack>
       )}
-      {!gameOver && guesses >= 1 && <GiveUp giveUpHandler={giveUpHandler} />}
+      {!gameOver && guesses >= 1 && <GiveUp giveUpHandler={giveUpHandler} is_custom={is_custom} />}
       <Space h={24} />
       <Text size={width > phoneMaxWidth ? "md" : "sm"}>
         Built by{" "}

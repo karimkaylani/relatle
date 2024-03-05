@@ -4,10 +4,11 @@ import React from "react";
 
 export interface GiveUpProps {
   giveUpHandler: () => void;
+  is_custom: boolean;
 }
 
 const GiveUp = (props: GiveUpProps) => {
-  const { giveUpHandler } = props;
+  const { giveUpHandler, is_custom } = props;
   const [opened, { open, close }] = useDisclosure(false);
   return (
     <>
@@ -28,9 +29,9 @@ const GiveUp = (props: GiveUpProps) => {
               Are you sure?
             </Text>
             <Text ta="center" c="gray.1">
-              {
-                "If you give up, it will show in your shared results, reset your streak, and you will see the shortest path."
-              }
+              {`If you give up, it will show in your shared results${
+                !is_custom ? ", reset your streak, " : " "
+              }and you will see the shortest path.`}
             </Text>
           </Stack>
           <Image w={158} src="images/give-up.png" alt="Give Up" />
