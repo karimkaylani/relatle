@@ -526,11 +526,6 @@ const Game = (props: GameProps) => {
     let new_streak = 0
     setStreak(new_streak);
 
-    let new_longest_streak = longestStreak
-    if (streak > longestStreak) {
-      new_longest_streak = streak;
-      setLongestStreak(new_longest_streak);
-    }
     save(
       is_custom
         ? {
@@ -555,7 +550,7 @@ const Game = (props: GameProps) => {
             prevMatchupID: previousMatchupID,
             numDaysPlayed,
             streak: new_streak,
-            longestStreak: new_longest_streak,
+            longestStreak,
             sumScores,
             averageScore,
             sumResets,
@@ -792,10 +787,9 @@ const Game = (props: GameProps) => {
               />
             </PlayingAudioContext.Provider>
           </Group>
-          {!gameOver && guesses >= 1 && <GiveUp giveUpHandler={giveUpHandler} />}
         </Stack>
       )}
-
+      {!gameOver && guesses >= 1 && <GiveUp giveUpHandler={giveUpHandler} />}
       <Space h={24} />
       <Text size={width > phoneMaxWidth ? "md" : "sm"}>
         Built by{" "}
