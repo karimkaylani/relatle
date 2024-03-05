@@ -127,7 +127,7 @@ const GameOver = ({
       toggleMinPath();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [won, toggleMinPath]);
+  }, [won]);
 
   const [height, setHeight] = useState(77);
   const ref = useRef<HTMLDivElement>(null);
