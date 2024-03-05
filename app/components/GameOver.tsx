@@ -92,7 +92,7 @@ const GameOver = ({
   days_played,
 }: GameOverProps) => {
   const [start, end] = matchup;
-  const [minPathOpened, { toggle: toggleMinPath }] = useDisclosure(false);
+  const [minPathOpened, { open: openMinPath, close: closeMinPath, toggle: toggleMinPath }] = useDisclosure(false);
 
   const headerSwipeHandlers = useSwipeable({
     onSwipedDown: close,
@@ -122,9 +122,12 @@ const GameOver = ({
     });
   }, [opened, is_custom, loadingGlobalScore, matchupID]);
 
+  // Auto open min path if won
   useEffect(() => {
     if (!won) {
-      toggleMinPath();
+      openMinPath();
+    } else {
+      closeMinPath();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [won]);
