@@ -486,17 +486,51 @@ const Game = (props: GameProps) => {
     }
     setGameOver(true);
     winModalOpen();
-    setPath([...path, "GIVE UP"]);
-    save({
-      currArtist,
-      path: [...path, "GIVE UP"],
-      won,
-      guesses,
-      resets,
-      matchup,
-      gameOver: true,
-      usedHint,
-    });
+    let newPath = [...path, "GIVE UP"];
+    setPath(newPath);
+
+    let previousMatchupID = matchupID;
+    setPrevMatchupID(previousMatchupID);
+
+    let new_streak = 0
+    setStreak(new_streak);
+
+    let new_longest_streak = longestStreak
+    if (streak > longestStreak) {
+      new_longest_streak = streak;
+      setLongestStreak(new_longest_streak);
+    }
+    save(
+      is_custom
+        ? {
+            currArtist,
+            path: newPath,
+            won,
+            guesses,
+            gameOver: true,
+            resets,
+            matchup,
+            usedHint,
+          }
+        : {
+            currArtist,
+            path: newPath,
+            won,
+            guesses,
+            gameOver: true,
+            resets,
+            matchup,
+            usedHint,
+            prevMatchupID: previousMatchupID,
+            numDaysPlayed,
+            streak: new_streak,
+            longestStreak: new_longest_streak,
+            sumScores,
+            averageScore,
+            sumResets,
+            averageResets,
+          }
+    );
   }
 
   const missedArtistHandler = (): void => {

@@ -234,7 +234,7 @@ const GameOver = ({
                       true
                     )}
                     <Divider orientation="vertical" />
-                    {ScoreDisplay("Days Played", days_played.toString(), true)}
+                    {ScoreDisplay("Games Won", days_played.toString(), true)}
                   </Group>
                 </Card>
               </Fragment>
