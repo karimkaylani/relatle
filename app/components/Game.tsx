@@ -12,7 +12,7 @@ import {
   Flex,
   SimpleGrid,
   Text,
-  Image,
+  Image as MantineImage,
   Anchor,
   Stack,
   Group,
@@ -334,6 +334,10 @@ const Game = (props: GameProps) => {
     setPath([todayMatchup[0]]);
     loadLocalStorageIntoState(todayMatchup);
     setLoading(false);
+    // preload modal images
+    new Image().src = "images/give-up.png";
+    new Image().src = "images/how-to-play.png";
+
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -624,12 +628,13 @@ const Game = (props: GameProps) => {
         {/* 160.46 is the width of of the CustomGameButton so that the logo is centered */}
         {width > phoneMaxWidth && <Space w={160.46} />}
         <Stack gap="0px">
-          <a href={is_custom ? "/" : "javascript:void(0)"}>
-            <Image
+          <a href={is_custom ? "/" : undefined}>
+            <MantineImage
+              style={{ cursor: "pointer" }}
               w={width > phoneMaxWidth ? 250 : 175}
               src="images/logo.png"
               alt="logo"
-            ></Image>
+            ></MantineImage>
           </a>
           {is_custom && (
             <Text p="0px" c="gray.1" ta="center">

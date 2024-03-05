@@ -28,7 +28,7 @@ const GiveUp = (props: GiveUpProps) => {
               Are you sure?
             </Text>
             <Text ta='center' c='gray.1'>
-              {"If you give up, it will show in your shared results and you will see the shortest path."}
+              {"If you give up, it will show in your shared results, reset your streak, and you will see the shortest path."}
             </Text>
           </Stack>
           <Image w={158} src="images/give-up.png" alt='Give Up'/>
