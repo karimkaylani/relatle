@@ -31,7 +31,7 @@ const GiveUp = (props: GiveUpProps) => {
               {"If you give up, it will show in your shared results and you will see the shortest path."}
             </Text>
           </Stack>
-          <Image w={158} src="images/give-up.png" alt='Song Previews'/>
+          <Image w={158} src="images/give-up.png" alt='Give Up'/>
           <Group align="center" justify="center">
             <Button
               onClick={giveUpHandler}
