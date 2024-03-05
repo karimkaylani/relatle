@@ -92,6 +92,8 @@ export const PlayingAudioContext = React.createContext<iPlayingAudioContext>({
 });
 
 const addScoreToDB = async (
+  is_custom: boolean,
+  won: boolean,
   matchup: string[],
   matchupID: number,
   guesses: number,
@@ -103,6 +105,35 @@ const addScoreToDB = async (
     timeZone: "America/Los_Angeles",
   });
   const supabase = createClient();
+
+  if (is_custom) {
+    return supabase
+      .from("custom_game_scores")
+      .insert({
+        timestamp: date,
+        matchup: JSON.stringify(matchup),
+        guesses,
+        resets,
+        path: JSON.stringify(path),
+        used_hint: usedHint,
+        won: won
+      });
+  }
+
+  if (!won) {
+    return supabase
+      .from("give_up_scores")
+      .insert({
+        timestamp: date,
+        matchup_id: matchupID,
+        matchup: JSON.stringify(matchup),
+        guesses,
+        resets,
+        path: JSON.stringify(path),
+        used_hint: usedHint,
+      });
+  }
+
   return supabase
     .from("scores")
     .insert({
@@ -407,8 +438,8 @@ const Game = (props: GameProps) => {
             }
       );
       winModalOpen();
-      if (!is_custom) {
-        addScoreToDB(matchup, matchupID, newGuesses, resets, newPath, usedHint);
+      if (process.env.NODE_ENV !== "development") {
+        addScoreToDB(is_custom, true, matchup, matchupID, newGuesses, resets, newPath, usedHint);
       }
       return;
     }
@@ -531,6 +562,9 @@ const Game = (props: GameProps) => {
             averageResets,
           }
     );
+    if (process.env.NODE_ENV !== "development") {
+      addScoreToDB(is_custom, false, matchup, matchupID, guesses, resets, newPath, usedHint);
+    }
   }
 
   const missedArtistHandler = (): void => {
