@@ -72,6 +72,8 @@ interface SaveProps {
   sumResets?: number;
   averageResets?: number;
   gamesLost?: number;
+  lowestScore?: number;
+  highestScore?: number;
 }
 
 export const phoneMaxWidth = 768;
@@ -158,6 +160,8 @@ const Game = (props: GameProps) => {
   const [sumResets, setSumResets] = useState<number>(0);
   const [averageResets, setAverageResets] = useState<number>(0);
   const [gamesLost, setGamesLost] = useState<number>(0);
+  const [lowestScore, setLowestScore] = useState<number>(0);
+  const [highestScore, setHighestScore] = useState<number>(0);
 
   const [matchupID, setMatchupID] = useState<number>(-1);
 
@@ -218,6 +222,8 @@ const Game = (props: GameProps) => {
       saveData.sumResets = sumResets;
       saveData.averageResets = averageResets;
       saveData.gamesLost = gamesLost;
+      saveData.lowestScore = lowestScore;
+      saveData.highestScore = highestScore;
     }
     localStorage.setItem(
       is_custom ? "props_custom" : "props",
@@ -266,12 +272,17 @@ const Game = (props: GameProps) => {
     setSumScores(localSave.sumScores ?? 0);
     setAverageScore(localSave.averageScore ?? 0);
     setGamesLost(localSave.gamesLost ?? 0);
+    setSumResets(localSave.sumResets ?? 0);
+    setAverageResets(localSave.averageResets ?? 0);
+    setLowestScore(localSave.lowestScore ?? 0);
+    setHighestScore(localSave.highestScore ?? 0);
 
     if (JSON.stringify(localSave.matchup) !== JSON.stringify(todayMatchup)) {
       // See if need to serve newFeature modal
       tryShowNewFeature();
       return;
     }
+    // Don't need to set matchup here, since it is set in useEffect
     setCurrArtist(localSave.currArtist);
     setPath(localSave.path);
     setGuesses(localSave.guesses ?? 0);
@@ -405,6 +416,17 @@ const Game = (props: GameProps) => {
       setSumResets(new_sum_resets);
       const new_average_resets = new_sum_resets / newNumDaysPlayed;
       setAverageResets(new_average_resets);
+
+      let new_lowest_score = lowestScore;
+      // default value of 0 means no lowest score yet
+      if (new_lowest_score === 0) {
+        new_lowest_score = newGuesses;
+      } else if (newGuesses < lowestScore) {
+        new_lowest_score = newGuesses;
+      }
+      setLowestScore(new_lowest_score);
+      const new_highest_score = newGuesses > highestScore ? newGuesses : highestScore;
+      setHighestScore(new_highest_score);
       save(
         is_custom
           ? {
@@ -435,6 +457,8 @@ const Game = (props: GameProps) => {
               sumResets: new_sum_resets,
               averageResets: new_average_resets,
               gamesLost,
+              lowestScore: new_lowest_score,
+              highestScore: new_highest_score
             }
       );
       winModalOpen();
@@ -567,7 +591,9 @@ const Game = (props: GameProps) => {
             averageScore,
             sumResets,
             averageResets,
-            gamesLost: new_games_lost
+            gamesLost: new_games_lost,
+            lowestScore,
+            highestScore
           }
     );
     if (process.env.NODE_ENV !== "development") {
