@@ -66,25 +66,25 @@ const GlobalScoreSlider = (props: GlobalScoreSliderProps) => {
       </Paper>
     );
   };
-  if (guesses < minGuesses) {
+  if (guesses < minGuesses && won) {
     minGuesses = guesses;
   }
+
+  let yourScoreColor = won ? "green.6" : "red.6";
+  let yourScoreColorHex = won ? "#40c057" : "#fa5252";
+
   let scores: [string, number, string][] = [
     ["Min. Guesses", minGuesses, "gray.1"],
     ["Avg. Guesses", avgGuesses, "yellow.5"],
-    ["Your Score", guesses, "green.6"],
+    ["Your Score", guesses, yourScoreColor],
   ];
 
-  if (!won) {
-    scores.pop();
-  }
   scores.sort((a, b) => a[1] - b[1]);
 
-  let yourScoreColor = "green.6";
-  if (won && guesses === minGuesses) {
-    yourScoreColor = "linear-gradient(to right, #f1f3f5 10px, #40c057 10px";
-  } else if (won && guesses === avgGuesses) {
-    yourScoreColor = "linear-gradient(to right, #40c057 10px, #fcc419 10px";
+  if (guesses === minGuesses) {
+    yourScoreColor = `linear-gradient(to right, #f1f3f5 10px, ${yourScoreColorHex} 10px`;
+  } else if (guesses === avgGuesses) {
+    yourScoreColor = `linear-gradient(to right, ${yourScoreColorHex} 10px, #fcc419 10px`;
   }
   return (
     <Fragment>
@@ -94,7 +94,7 @@ const GlobalScoreSlider = (props: GlobalScoreSliderProps) => {
         </Paper>
         <Circle color="gray.1" value={minGuesses} />
         <Circle color="yellow.5" value={avgGuesses} />
-        {won && <Circle color={yourScoreColor} value={guesses} />}
+        <Circle color={yourScoreColor} value={guesses} />
       </div>
       <Stack>
         <Group justify="center" align="center" gap="xs">

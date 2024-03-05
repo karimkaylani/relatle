@@ -122,6 +122,13 @@ const GameOver = ({
     });
   }, [opened, is_custom, loadingGlobalScore, matchupID]);
 
+  useEffect(() => {
+    if (!won) {
+      toggleMinPath();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [won, toggleMinPath]);
+
   const [height, setHeight] = useState(77);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -171,13 +178,12 @@ const GameOver = ({
             <Scoreboard
               guesses={guesses}
               resets={resets}
-              greenBorder={false}
               small={window.innerWidth > phoneMaxWidth ? false : true}
             />
             <Text ta="center" fw={700} size="sm">
               Your Path
             </Text>
-            <ScrollablePath matchup={matchup} web={web} path={path} won={won}/>
+            <ScrollablePath matchup={matchup} web={web} path={path} won={won} />
 
             <Group align="center" justify="center" gap="sm">
               <Text fw={700} size="sm" ta="center">
@@ -216,7 +222,11 @@ const GameOver = ({
               (loadingGlobalScore ? (
                 <Loader color="green.6" size="sm" />
               ) : (
-                <GlobalScoreStats won={won} guesses={guesses} allGuesses={allGuesses} />
+                <GlobalScoreStats
+                  won={won}
+                  guesses={guesses}
+                  allGuesses={allGuesses}
+                />
               ))}
 
             {!is_custom && (
@@ -284,6 +294,7 @@ const GameOver = ({
                         matchupID={matchupID}
                         resets={resets}
                         is_custom={is_custom}
+                        won={won}
                       />
                     </Group>
                   </Card>

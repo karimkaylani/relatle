@@ -40,7 +40,7 @@ const ScrollablePath = (props: ScrollablePathProps) => {
             </Fragment>
           )
         )}
-        {won ? <ArtistInfo artist={web[end]} small={true} is_green={true}/> : <Text c="red.5" size="13px" fw={500}>GIVE UP</Text>}
+        {won ? <ArtistInfo artist={web[end]} small={true} is_green={true}/> : <Text c="red.6" size="13px" fw={500}>GIVE UP</Text>}
       </Group>
     </ScrollArea>
   );

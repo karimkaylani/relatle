@@ -10,10 +10,11 @@ export interface ShareResultsProps {
   resets: number;
   is_custom: boolean;
   matchupID: number;
+  won: boolean;
 }
 
 const ShareResults = (props: ShareResultsProps) => {
-  const { path, guesses, matchup, resets, is_custom, matchupID } = props;
+  const { path, guesses, matchup, resets, is_custom, matchupID, won } = props;
   const [start, end] = matchup;
 
   const generateEmojiLine = (): string => {
@@ -25,7 +26,7 @@ const ShareResults = (props: ShareResultsProps) => {
         res += "⬜";
       }
     });
-    res = res.slice(0, -1) + "🟩";
+    res = res.slice(0, -1) + (won ? "🟩" : "🟥");
     return res;
   };
   const generateShareText = (): string => {
@@ -38,8 +39,8 @@ const ShareResults = (props: ShareResultsProps) => {
     let text = `relatle ${today}
 ${start} → ${end}
 ${generateEmojiLine()}
-Guesses: ${guesses}
-Resets: ${resets}
+${won ? 'Solved 🥳' : 'Gave up 😭'}
+${guesses} ${guesses === 1 ? 'guess' : 'guesses'}, ${resets} ${resets === 1 ? 'reset' : 'resets'}
 ${url}`;
     return text;
   };

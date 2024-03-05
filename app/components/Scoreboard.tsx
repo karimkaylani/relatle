@@ -5,7 +5,7 @@ import FlipNumbers from "react-flip-numbers";
 export interface ScoreboardProps {
   guesses: number;
   resets: number;
-  greenBorder: boolean;
+  borderColor?: string;
   small?: boolean;
 }
 
@@ -45,7 +45,7 @@ export const ScoreDisplay = (
 };
 
 const Scoreboard = (props: ScoreboardProps) => {
-  const { guesses, resets, greenBorder, small } = props;
+  const { guesses, resets, borderColor=null, small } = props;
   return (
     <Card
       shadow="md"
@@ -54,7 +54,7 @@ const Scoreboard = (props: ScoreboardProps) => {
       withBorder
       styles={{
         root: {
-          border: greenBorder ? "4px solid #51cf66" : "none",
+          border: borderColor ? `4px solid ${borderColor}` : "none",
         },
       }}
     >

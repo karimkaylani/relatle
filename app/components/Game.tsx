@@ -381,7 +381,7 @@ const Game = (props: GameProps) => {
     setGuesses(newGuesses);
     if (artist.name === end) {
       setWon(true);
-
+      setGameOver(true)
       let new_streak = 1;
       if (
         prevMatchupID !== -1 &&
@@ -413,7 +413,7 @@ const Game = (props: GameProps) => {
               path: newPath,
               won: true,
               guesses: newGuesses,
-              gameOver,
+              gameOver: true,
               resets,
               matchup,
               usedHint,
@@ -423,7 +423,7 @@ const Game = (props: GameProps) => {
               path: newPath,
               won: true,
               guesses: newGuesses,
-              gameOver,
+              gameOver: true,
               resets,
               matchup,
               usedHint,
@@ -673,10 +673,10 @@ const Game = (props: GameProps) => {
       </Stack>
       {gameOver ? (
         <HoverButton onTap={winModalOpen}>
-          <Scoreboard guesses={guesses} resets={resets} greenBorder={gameOver} />
+          <Scoreboard guesses={guesses} resets={resets} borderColor={won ? "#40c057" : "#fa5252"} />
         </HoverButton>
       ) : (
-        <Scoreboard guesses={guesses} resets={resets} greenBorder={gameOver} />
+        <Scoreboard guesses={guesses} resets={resets} />
       )}
       <Popover
         position="bottom"
@@ -792,7 +792,7 @@ const Game = (props: GameProps) => {
               />
             </PlayingAudioContext.Provider>
           </Group>
-          {!gameOver && <GiveUp giveUpHandler={giveUpHandler} />}
+          {!gameOver && guesses >= 1 && <GiveUp giveUpHandler={giveUpHandler} />}
         </Stack>
       )}
 

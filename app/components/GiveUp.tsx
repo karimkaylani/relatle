@@ -24,7 +24,7 @@ const GiveUp = (props: GiveUpProps) => {
       <Stack align="center" justify="center">
         <Text size="xl" fw={700} ta="center">Are you sure you want to give up?</Text>
         <Group align="center" justify="center">
-          <Button onClick={giveUpHandler} size="md" color="red.7" fw={700} variant="filled">
+          <Button onClick={giveUpHandler} size="md" color="red.6" fw={700} variant="filled">
             YES
           </Button>
           <Button onClick={close} size="md" color='gray.7' fw={700} variant="filled">
