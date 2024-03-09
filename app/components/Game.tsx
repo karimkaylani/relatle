@@ -49,7 +49,6 @@ export interface Artist {
 
 interface GameProps {
   web: { [key: string]: Artist };
-  matchups: string[][] | null;
   is_custom: boolean;
 }
 
@@ -142,7 +141,8 @@ const addScoreToDB = async (
 };
 
 const Game = (props: GameProps) => {
-  const { web, matchups, is_custom } = props;
+  let { is_custom, web } = props;
+  const [matchups, setMatchups] = useState<string[][] | null>(null);
   const [matchup, setMatchup] = useState<any>(null);
   const [currArtist, setCurrArtist] = useState<any>(null);
   const [path, setPath] = useState<any>(null);
@@ -325,25 +325,30 @@ const Game = (props: GameProps) => {
   // use loading so that nothing renders until localStorage is checked
   const [loading, setLoading] = useState(true);
   useEffect(() => {
-    // Put in here to ensure we're getting client time,
-    // as well as all other state variables that rely
-    // on our matchup
-    const start = searchParams.get("start");
-    const end = searchParams.get("end");
-    let custom_matchup = [start, end];
-    let todayMatchup = is_custom ? custom_matchup : getTodaysMatchup(matchups);
-    if (todayMatchup == null) {
-      return;
-    }
-    setMatchup(todayMatchup);
-    setCurrArtist(web[todayMatchup[0]]);
-    setPath([todayMatchup[0]]);
-    loadLocalStorageIntoState(todayMatchup);
-    setLoading(false);
-    // preload modal images
-    new Image().src = "images/give-up.png";
-    new Image().src = "images/how-to-play.png";
-
+    // Fetch matchups here so they are most up to date
+    fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/data/matchups.json`, { cache: "no-store" })
+      .then((res) => res.json())
+      .then((matchups) => { 
+        setMatchups(matchups)
+        // Put in here to ensure we're getting client time,
+        // as well as all other state variables that rely
+        // on our matchup
+        const start = searchParams.get("start");
+        const end = searchParams.get("end");
+        let custom_matchup = [start, end];
+        let todayMatchup = is_custom ? custom_matchup : getTodaysMatchup(matchups);
+        if (todayMatchup == null) {
+          return;
+        }
+        setMatchup(todayMatchup);
+        setCurrArtist(web[todayMatchup[0]]);
+        setPath([todayMatchup[0]]);
+        loadLocalStorageIntoState(todayMatchup);
+        setLoading(false);
+        // preload modal images
+        new Image().src = "images/give-up.png";
+        new Image().src = "images/how-to-play.png";
+  })
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

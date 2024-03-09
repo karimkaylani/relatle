@@ -2,10 +2,10 @@
 import Game from "./components/Game";
 import Script from "next/script";
 import { Suspense } from "react";
-import Web from "./web.json";
-import Matchups from "./matchups.json";
 
 export default async function Home() {
+  const webReq = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/data/web.json`);
+  const Web = await webReq.json();
   return (
     <main>
       <Suspense>
@@ -24,7 +24,7 @@ export default async function Home() {
               `}
           </Script>
         </div>
-        <Game web={Web} matchups={Matchups} is_custom={false} />
+        <Game web={Web} is_custom={false} />
       </Suspense>
     </main>
   );

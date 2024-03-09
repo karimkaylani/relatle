@@ -223,7 +223,7 @@ const CustomGameModal = (props: CustomGameModalProps) => {
     );
 
     // For daily matchup curating: don't want to reuse target artists
-    if (process.env.NODE_ENV === "development") {
+    if (process.env.NODE_ENV === "development" && matchups !== null) {
       // Get list of second artist of last 30 matchups
       const secondArtists = matchups
         .slice(matchups.length - 30)

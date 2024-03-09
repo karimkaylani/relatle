@@ -1,13 +1,14 @@
 import Script from "next/script";
 import Game from "../components/Game";
 import { Suspense } from "react";
-import Web from "../web.json";
 
 export const metadata = {
   title: "relatle (custom game)",
 };
 
 export default async function Home() {
+  const webReq = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/data/web.json`);
+  const Web = await webReq.json();
   return (
     <main>
       <Suspense>
@@ -26,7 +27,7 @@ export default async function Home() {
               `}
           </Script>
         </div>
-        <Game web={Web} matchups={null} is_custom={true} />
+        <Game web={Web} is_custom={true} />
       </Suspense>
     </main>
   );

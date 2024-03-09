@@ -8,7 +8,7 @@ export interface ShareCustomGameProps {
 }
 
 export const generateCustomGameURL = (start: string, end: string): string => {
-  return `https://relatle.io/custom?start=${encodeURIComponent(
+  return `${process.env.NEXT_PUBLIC_BASE_URL}/custom?start=${encodeURIComponent(
     start
   )}&end=${encodeURIComponent(end)}`;
 };

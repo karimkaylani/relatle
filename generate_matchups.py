@@ -7,13 +7,13 @@ from collections import Counter
 
 def main():
     web = {}
-    with open("app/web.json", "r") as outfile:
+    with open("public/data/web.json", "r") as outfile:
         web = json.load(outfile)
     # get_distribution_of_degrees_of_separation(web)
     verify_matchups(web)
 
 def verify_matchups(web):
-    with open("app/matchups.json", "r") as outfile:
+    with open("public/data/matchups.json", "r") as outfile:
         matchups = json.load(outfile)
     # 25 is padding for removed matchups that have already occurred
     num_days = 25
