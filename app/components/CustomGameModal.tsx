@@ -17,6 +17,7 @@ import ShareCustomGame, { generateCustomGameURL } from "./ShareCustomGame";
 import { IconArrowsShuffle, IconPlayerPlayFilled } from "@tabler/icons-react";
 import HoverButton from "./HoverButton";
 import ArtistInfo from "./ArtistInfo";
+import { useSearchParams } from "next/navigation";
 
 interface CustomGameModalProps {
   web: { [key: string]: Artist };
@@ -134,6 +135,7 @@ const CustomGameModal = (props: CustomGameModalProps) => {
   const [recommendedEndArtists, setRecommendedEndArtists] = useState<string[]>(
     []
   );
+  const searchParams = useSearchParams();
 
   const changeStartArtist = (start: string) => {
     setStartArtist(start);
@@ -223,7 +225,7 @@ const CustomGameModal = (props: CustomGameModalProps) => {
     );
 
     // For daily matchup curating: don't want to reuse target artists
-    if (process.env.NODE_ENV === "development" && matchups !== null) {
+    if (searchParams.get("curating") && matchups !== null) {
       // Get list of second artist of last 30 matchups
       const secondArtists = matchups
         .slice(matchups.length - 30)
