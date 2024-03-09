@@ -325,8 +325,9 @@ const Game = (props: GameProps) => {
   // use loading so that nothing renders until localStorage is checked
   const [loading, setLoading] = useState(true);
   useEffect(() => {
+    if (!loading) { return }
     // Fetch matchups here so they are most up to date
-    fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/data/matchups.json`, { cache: "no-store" })
+    fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/data/matchups.json`, { cache: "no-cache" })
       .then((res) => res.json())
       .then((matchups) => { 
         setMatchups(matchups)
