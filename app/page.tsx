@@ -4,8 +4,10 @@ import Script from "next/script";
 import { Suspense } from "react";
 
 export default async function Home() {
-  const webReq = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/data/web.json`);
+  const webReq = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/data/web.json`, { cache: "no-store"});
+  const matchupsReq = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/data/matchups.json`, { cache: "no-store"});
   const Web = await webReq.json();
+  const Matchups = await matchupsReq.json();
   return (
     <main>
       <Suspense>
@@ -24,7 +26,7 @@ export default async function Home() {
               `}
           </Script>
         </div>
-        <Game web={Web} is_custom={false} />
+        <Game web={Web} matchups={Matchups} is_custom={false} />
       </Suspense>
     </main>
   );

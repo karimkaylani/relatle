@@ -7,7 +7,7 @@ export const metadata = {
 };
 
 export default async function Home() {
-  const webReq = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/data/web.json`);
+  const webReq = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/data/web.json`, { cache: "no-store"});
   const Web = await webReq.json();
   return (
     <main>
