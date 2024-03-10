@@ -325,7 +325,6 @@ const Game = (props: GameProps) => {
   // use loading so that nothing renders until localStorage is checked
   const [loading, setLoading] = useState(true);
   useEffect(() => {
-    if (!loading) { return }
     // Put in here to ensure we're getting client time,
     // as well as all other state variables that rely
     // on our matchup
