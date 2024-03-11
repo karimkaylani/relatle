@@ -36,6 +36,7 @@ import Hint from "./Hint";
 import NewFeatureModal from "./NewFeatureModal";
 import { createClient } from "@/utils/supabase/client";
 import GiveUp from "./GiveUp";
+import { IconBrandGithub } from "@tabler/icons-react";
 
 export interface Artist {
   name: string;
@@ -142,7 +143,7 @@ const addScoreToDB = async (
 };
 
 const Game = (props: GameProps) => {
-  const { is_custom, web, matchups=null } = props;
+  const { is_custom, web, matchups = null } = props;
   const [matchup, setMatchup] = useState<any>(null);
   const [currArtist, setCurrArtist] = useState<any>(null);
   const [path, setPath] = useState<any>(null);
@@ -424,7 +425,8 @@ const Game = (props: GameProps) => {
         new_lowest_score = newGuesses;
       }
       setLowestScore(new_lowest_score);
-      const new_highest_score = newGuesses > highestScore ? newGuesses : highestScore;
+      const new_highest_score =
+        newGuesses > highestScore ? newGuesses : highestScore;
       setHighestScore(new_highest_score);
       save(
         is_custom
@@ -457,7 +459,7 @@ const Game = (props: GameProps) => {
               averageResets: new_average_resets,
               gamesLost,
               lowestScore: new_lowest_score,
-              highestScore: new_highest_score
+              highestScore: new_highest_score,
             }
       );
       winModalOpen();
@@ -592,7 +594,7 @@ const Game = (props: GameProps) => {
             averageResets,
             gamesLost: new_games_lost,
             lowestScore,
-            highestScore
+            highestScore,
           }
     );
     if (process.env.NODE_ENV !== "development") {
@@ -837,9 +839,11 @@ const Game = (props: GameProps) => {
           </Group>
         </Stack>
       )}
-      {!gameOver && guesses >= 1 && <GiveUp giveUpHandler={giveUpHandler} is_custom={is_custom} />}
+      {!gameOver && guesses >= 1 && (
+        <GiveUp giveUpHandler={giveUpHandler} is_custom={is_custom} />
+      )}
       <Space h={24} />
-      <Text size={width > phoneMaxWidth ? "md" : "sm"}>
+      <Text ta='center' size={width > phoneMaxWidth ? "md" : "sm"}>
         Built by{" "}
         <Anchor c="green.6" href="https://karimkaylani.com/" target="_blank">
           Karim Kaylani
@@ -851,6 +855,16 @@ const Game = (props: GameProps) => {
         .
       </Text>
       <Group justify="center" align="center">
+        <a className='mt-1' href="https://github.com/karimkaylani/relatle/" target="_blank">
+          <HoverButton
+            onTap={() => {
+              return;
+            }}
+          >
+            <IconBrandGithub/>
+          </HoverButton>
+        </a>
+        <Text c="gray.7">|</Text>
         <CoffeeButton />
         <Text c="gray.7">|</Text>
         <HowToPlay
