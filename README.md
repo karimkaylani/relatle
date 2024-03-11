@@ -42,4 +42,4 @@ Utilize graph algorithms to recommend matchups and ensure only possible matchups
 - <a href="https://tailwindcss.com/">Tailwind CSS</a>
 - <a href="https://www.framer.com/motion/">Framer Motion</a>
 
-Built by <a href="https://karimkaylani.com/" target="_blank">Karim Kaylani</a>. Designed by <a href="https://zade.design/" target="_blank">Zade Kaylani</a>.
+Created by <a href="https://karimkaylani.com/" target="_blank">Karim Kaylani</a>. Designed by <a href="https://zade.design/" target="_blank">Zade Kaylani</a>.

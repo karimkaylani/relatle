@@ -844,7 +844,7 @@ const Game = (props: GameProps) => {
       )}
       <Space h={24} />
       <Text ta='center' size={width > phoneMaxWidth ? "md" : "sm"}>
-        Built by{" "}
+        Created by{" "}
         <Anchor c="green.6" href="https://karimkaylani.com/" target="_blank">
           Karim Kaylani
         </Anchor>
