@@ -14,6 +14,8 @@ import {
   Group,
   Space,
   Popover,
+  Loader,
+  Center,
 } from "@mantine/core";
 import {
   useDisclosure,
@@ -356,7 +358,11 @@ const Game = (props: GameProps) => {
   }, []);
 
   if (loading) {
-    return null;
+    return (
+      <Center className='mt-14'>
+        <Loader size='lg' color='green.6'/>
+      </Center>
+    );
   }
 
   const [start, end] = matchup;
