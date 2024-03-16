@@ -336,24 +336,12 @@
     "Selena Gomez"
   ],
   [
-    "Justin Timberlake",
-    "Rage Against The Machine"
-  ],
-  [
     "Red Hot Chili Peppers",
     "Phoebe Bridgers"
   ],
   [
-    "Melanie Martinez",
-    "21 Savage"
-  ],
-  [
     "Glass Animals",
     "Christina Aguilera"
-  ],
-  [
-    "Backstreet Boys",
-    "Jason Derulo"
   ],
   [
     "Cardi B",
@@ -372,16 +360,8 @@
     "Steve Lacy"
   ],
   [
-    "The Beatles",
-    "Wham!"
-  ],
-  [
     "Bj\u00f6rk",
     "Hozier"
-  ],
-  [
-    "Taylor Swift",
-    "HAIM"
   ],
   [
     "Black Eyed Peas",
@@ -390,5 +370,25 @@
   [
     "Lana Del Rey",
     "One Direction"
+  ],
+  [
+    "Justin Timberlake",
+    "Rage Against The Machine"
+  ],
+  [
+    "Melanie Martinez",
+    "21 Savage"
+  ],
+  [
+    "Taylor Swift",
+    "HAIM"
+  ],
+  [
+    "Backstreet Boys",
+    "Jason Derulo"
+  ],
+  [
+    "The Beatles",
+    "Wham!"
   ]
 ]
