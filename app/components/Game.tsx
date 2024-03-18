@@ -307,7 +307,7 @@ const Game = (props: GameProps) => {
     /* to preserve correct matchupID -> matchup mapping, since some matchups were deleted
         as they are no longer recommended matchups
         If deleting a matchup that has already passed: enumerate this by 1 */
-    const matchupIndexPadding = 25;
+    const matchupIndexPadding = 29;
     // Launch of relatle, matchupID is # of days (matchups) since 11/29/2023
     const startingDate = new Date(2023, 10, 29);
 

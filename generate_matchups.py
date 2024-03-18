@@ -15,8 +15,8 @@ def main():
 def verify_matchups(web):
     with open("public/data/matchups.json", "r") as outfile:
         matchups = json.load(outfile)
-    # 25 is padding for removed matchups that have already occurred
-    num_days = 25
+    # padding for removed matchups that have already occurred
+    num_days = 29
     for matchup in matchups:
         num_days += 1
         start, end = matchup
@@ -64,8 +64,8 @@ def is_good_matchup(m, matchup):
         for artist in set([x[0] for x in valid_paths]):
             if len(list(filter(lambda x: x[0] == artist, valid_paths))) < 2:
                 return False
-    # Target artist has at least 2 artists that related in both directions
-    if len(list(filter(lambda x: end in m[x]['related'], m[end]['related']))) < 2:
+    # Target artist has at 30% of artists that related in both directions
+    if len(list(filter(lambda x: end in m[x]['related'], m[end]['related'])))/len(m[end]['related']) < 0.30:
         return False
     return True
 

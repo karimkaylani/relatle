@@ -177,13 +177,13 @@ const CustomGameModal = (props: CustomGameModalProps) => {
 
   const targetArtistRelatedBothDirections = (
     end: string,
-    min: number
+    percentage: number
   ): boolean => {
     return (
       web[end].related.filter(
         (artist) =>
           web[end].related.includes(artist) && web[artist].related.includes(end)
-      ).length >= min
+      ).length / web[end].related.length >= percentage
     );
   };
 
@@ -198,7 +198,7 @@ const CustomGameModal = (props: CustomGameModalProps) => {
         3. Must not be a close end artist (path length within minDegOfSepRecommended)
         4. There isn't any single artist that appears in all paths
         5. If there are only 2 first clicked artists, then must be at least 2 paths for each
-        6. Target artist must be related in both directions to at least 2 other artists
+        6. Target artist must be related in both directions to at 30% of their related artists
         */
     return (
       endArtistsWithMaxDegOfSep[end].length >= minNumPathsForRecommended &&
@@ -206,7 +206,7 @@ const CustomGameModal = (props: CustomGameModalProps) => {
       !closeEndArtists.includes(end) &&
       !repeatingArtistInAllPaths(endArtistsWithMaxDegOfSep[end]) &&
       atLeastTwoPathsIfNumFirstClicked(endArtistsWithMaxDegOfSep[end], 2) &&
-      targetArtistRelatedBothDirections(end, 2)
+      targetArtistRelatedBothDirections(end, 0.3)
     );
   };
 
