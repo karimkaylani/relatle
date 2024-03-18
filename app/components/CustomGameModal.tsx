@@ -285,7 +285,7 @@ const CustomGameModal = (props: CustomGameModalProps) => {
     }
   };
 
-  const isMatchupDifficult = () => {
+  const isCurrentMatchupDifficult = () => {
     return (
       artistsList.includes(startArtist) &&
       matchupsFound.includes(endArtist) &&
@@ -294,6 +294,10 @@ const CustomGameModal = (props: CustomGameModalProps) => {
       getValidPaths(web, startArtist, endArtist, minDegOfSepRecommended)
         .length <= 0
     );
+  };
+
+  const isCurrentMatchupRecommended = () => {
+    return endArtist !== "" && recommendedEndArtists.includes(endArtist);
   };
 
   const compareSongs = (a: string, b: string) => {
@@ -389,7 +393,11 @@ const CustomGameModal = (props: CustomGameModalProps) => {
             styles={{
               input: {
                 color: "#f1f3f5",
-                outline: isMatchupDifficult() ? "2px solid #fcc419" : "",
+                outline: isCurrentMatchupDifficult()
+                  ? "2px solid #fcc419"
+                  : isCurrentMatchupRecommended()
+                  ? "2px solid #40c057"
+                  : "",
               },
               groupLabel: { color: "#37b24d", fontWeight: 700 },
               dropdown: { color: "#f1f3f5" },
@@ -417,9 +425,13 @@ const CustomGameModal = (props: CustomGameModalProps) => {
             }
           />
 
-          {isMatchupDifficult() ? (
+          {isCurrentMatchupDifficult() ? (
             <Text pl="5" pb="14" ta="left" fw={700} c="yellow.3" size="md">
               This matchup may be difficult!
+            </Text>
+          ) : isCurrentMatchupRecommended() ? (
+            <Text pl="5" pb="14" ta="left" fw={700} c="green.6" size="md">
+              This is a recommended matchup!
             </Text>
           ) : (
             <Text pl="5" ta="left" fw={700} size="sm">
