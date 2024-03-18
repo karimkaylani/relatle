@@ -21,14 +21,15 @@ export interface AffixStatusProps {
   resets: number;
   scrolled: boolean | undefined;
   onTap: () => void;
+  won: boolean;
 }
 
 const AffixStatus = (props: AffixStatusProps) => {
-  const { currArtist, endArtist, guesses, resets, scrolled, onTap } = props;
+  const { currArtist, endArtist, guesses, resets, scrolled, onTap, won } = props;
   const groupRef = React.useRef<HTMLDivElement>(null);
 
   const { playingAudio, playingArtist } = React.useContext(PlayingAudioContext);
-  const mounted = scrolled === true || playingAudio !== null;
+  const mounted = (scrolled === true && !won) || playingAudio !== null;
 
   return (
     <Affix w="100%" h={0} top={0}>
@@ -85,7 +86,7 @@ const AffixStatus = (props: AffixStatusProps) => {
               </Text>
             )}
 
-            {!playingAudio && scrolled && (
+            {!playingAudio && scrolled && !won && (
               <Group align="center" justify="space-between" wrap="nowrap">
                 <Group align="center" justify="center" gap="xs" wrap="nowrap">
                   <ArtistInfo artist={currArtist} small={true} />

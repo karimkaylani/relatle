@@ -785,6 +785,7 @@ const Game = (props: GameProps) => {
           resets={resets}
           onTap={scrollToTop}
           scrolled={!entryAffix?.isIntersecting}
+          won={won}
         />
       </PlayingAudioContext.Provider>
       <Text ta="center" size={window.innerWidth <= phoneMaxWidth ? "sm" : "md"}>
