@@ -9,6 +9,7 @@ import {
   Center,
   Transition,
   Overlay,
+  CardSection,
 } from "@mantine/core";
 import { motion, useAnimate } from "framer-motion";
 import { useLongPress } from "use-long-press";
@@ -262,7 +263,6 @@ const ArtistCard = ({
         }}
       >
         <Flex align="center" direction="column" justify="center" gap="0px">
-          <Card.Section inheritPadding>
             <BackgroundImage
               draggable={false}
               radius="sm"
@@ -308,7 +308,6 @@ const ArtistCard = ({
                 </Transition>
               </Center>
             </BackgroundImage>
-          </Card.Section>
           <Text
             c={
               path.includes(artist.name) && artist.name !== end
