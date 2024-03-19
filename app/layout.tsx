@@ -3,7 +3,7 @@
 import "./globals.css";
 import "@mantine/core/styles.css";
 import React from "react";
-import { MantineProvider, ColorSchemeScript } from "@mantine/core";
+import { MantineProvider, ColorSchemeScript, createTheme } from "@mantine/core";
 import { GoogleAnalytics } from '@next/third-parties/google'
 
 export const metadata = {
@@ -17,6 +17,31 @@ export const metadata = {
     follow: true,
   },
 };
+
+const theme = createTheme({
+  fontFamily: "OpenSauceOne",
+  fontSizes: {
+    xs: "0.625rem",
+    sm: "0.75rem",
+    md: "0.875rem",
+    lg: "1.125rem",
+    xl: "1.25rem",
+  },
+  colors: {
+    dark: [
+      '#C1C2C5',
+      '#A6A7AB',
+      '#909296',
+      '#5c5f66',
+      '#373A40',
+      '#2C2E33',
+      '#25262b',
+      '#1A1B1E',
+      '#141517',
+      '#101113',
+    ],
+  },
+});
 
 export const runtime = "edge";
 
@@ -32,16 +57,7 @@ export default function RootLayout({
       </head>
       <body>
         <MantineProvider
-          theme={{
-            fontFamily: "OpenSauceOne",
-            fontSizes: {
-              xs: "0.625rem",
-              sm: "0.75rem",
-              md: "0.875rem",
-              lg: "1.125rem",
-              xl: "1.25rem",
-            },
-          }}
+          theme={theme}
           defaultColorScheme="dark"
         >
           {children}
