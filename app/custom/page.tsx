@@ -7,8 +7,6 @@ export const metadata = {
 
 export default async function Home() {
   return (
-    <main>
-      <Game web={Web} is_custom={true} />
-    </main>
+    <Game web={Web} is_custom={true} />
   );
 }
