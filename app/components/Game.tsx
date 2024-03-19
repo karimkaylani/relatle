@@ -359,7 +359,7 @@ const Game = (props: GameProps) => {
 
   if (loading) {
     return (
-      <Center className='pt-14'>
+      <Center className='mt-14'>
         <Loader size='lg' color='green.6'/>
       </Center>
     );
