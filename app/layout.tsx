@@ -4,6 +4,7 @@ import "./globals.css";
 import "@mantine/core/styles.css";
 import React from "react";
 import { MantineProvider, ColorSchemeScript } from "@mantine/core";
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 export const metadata = {
   title: "relatle",
@@ -27,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <ColorSchemeScript />
+        <ColorSchemeScript defaultColorScheme="dark" />
       </head>
       <body>
         <MantineProvider
@@ -46,6 +47,7 @@ export default function RootLayout({
           {children}
         </MantineProvider>
       </body>
+      <GoogleAnalytics gaId="G-J23EFVPLCJ"/>
     </html>
   );
 }
