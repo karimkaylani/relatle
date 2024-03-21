@@ -9,7 +9,6 @@ def main():
     web = {}
     with open("public/data/web.json", "r") as outfile:
         web = json.load(outfile)
-    # get_distribution_of_degrees_of_separation(web)
     verify_matchups(web)
 
 def verify_matchups(web):
@@ -17,6 +16,7 @@ def verify_matchups(web):
         matchups = json.load(outfile)
     # padding for removed matchups that have already occurred
     num_days = 29
+    seen = set()
     for matchup in matchups:
         num_days += 1
         start, end = matchup
@@ -24,6 +24,9 @@ def verify_matchups(web):
             print("Not in web:", matchup)
         elif not is_good_matchup(web, matchup):
             print("Not good matchup:", matchup)
+        elif (start, end) in seen:
+            print("Duplicate matchup:", matchup)
+        seen.add((start, end))
     start = datetime(2023, 11, 29)
     start += timedelta(days=num_days)
     print("Matchups completed until", start.strftime("%m/%d/%Y"))
