@@ -684,7 +684,7 @@ const Game = (props: GameProps) => {
               style={{ cursor: "pointer" }}
               w={width > phoneMaxWidth ? 250 : 175}
               src="images/logo.png"
-              alt="logo"
+              alt="Relatle Logo"
             ></MantineImage>
           </a>
           {is_custom && (
@@ -862,13 +862,13 @@ const Game = (props: GameProps) => {
         .
       </Text>
       <Group justify="center" align="center">
-        <a className='mt-1' href="https://github.com/karimkaylani/relatle/" target="_blank">
+        <a tabIndex={-1} className='mt-1' href="https://github.com/karimkaylani/relatle/" target="_blank">
           <HoverButton
             onTap={() => {
               return;
             }}
           >
-            <IconBrandGithub/>
+            <IconBrandGithub aria-label="Open source code on GitHub"/>
           </HoverButton>
         </a>
         <Text c="gray.7">|</Text>

@@ -5,7 +5,7 @@ import { IconCoffee } from "@tabler/icons-react";
 
 const CoffeeButton = () => {
   return (
-    <Anchor href="https://www.buymeacoffee.com/karimk" target="_blank">
+    <Anchor href="https://www.buymeacoffee.com/karimk" target="_blank" tabIndex={-1}>
       <HoverButton
         onTap={() => {
           return;

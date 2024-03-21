@@ -27,7 +27,7 @@ const HowToPlay = (props: HowToPlayProps) => {
   return (
     <Group justify="flex-end">
       <HoverButton onTap={open}>
-        <IconHelpCircle size={24} />
+        <IconHelpCircle aria-label="Open how to play" size={24} />
       </HoverButton>
       <Modal
         opened={opened}
@@ -106,9 +106,9 @@ const HowToPlay = (props: HowToPlayProps) => {
             />
           </Center>
           <Stack className="mr-5 ml-5" align="center">
-            <Title c="gray.1" order={4}>
+            <Text c="gray.1" fw={700} size='lg'>
               Related Artists?
-            </Title>
+            </Text>
             <Text fw={300}>
               Related artists are based on the &quot;Fans Also Like&quot;
               section {"you'll"} find on music streaming services which take

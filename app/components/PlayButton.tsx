@@ -72,9 +72,9 @@ const PlayButton = (props: PlayButtonProps) => {
           label={
             <Center>
               {isPlaying ? (
-                <IconPlayerStopFilled size={isPhone ? 12 : 16} />
+                <IconPlayerStopFilled aria-label={`Stop preview of ${artist.name}`} size={isPhone ? 12 : 16} />
               ) : (
-                <IconPlayerPlayFilled size={isPhone ? 12 : 16} />
+                <IconPlayerPlayFilled aria-label={`Play preview of ${artist.name}`} size={isPhone ? 12 : 16} />
               )}
             </Center>
           }
