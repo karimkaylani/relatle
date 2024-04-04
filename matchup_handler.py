@@ -9,7 +9,8 @@ def main():
     web = {}
     with open("public/data/web.json", "r") as outfile:
         web = json.load(outfile)
-    verify_matchups(web)
+    # verify_matchups(web)
+    is_good_matchup(web, ('FINNEAS', 'Doja Cat'))
 
 def verify_matchups(web):
     with open("public/data/matchups.json", "r") as outfile:
