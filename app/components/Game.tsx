@@ -16,6 +16,7 @@ import {
   Popover,
   Loader,
   Center,
+  Burger,
 } from "@mantine/core";
 import {
   useDisclosure,
@@ -80,6 +81,7 @@ interface SaveProps {
 }
 
 export const phoneMaxWidth = 768;
+const maxCustomTextWidth = 555;
 
 export interface iPlayingAudioContext {
   playingAudio: HTMLAudioElement | null;
@@ -677,7 +679,9 @@ const Game = (props: GameProps) => {
         styles={{ root: { width: "100%" } }}
       >
         {/* 160.46 is the width of of the CustomGameButton so that the logo is centered */}
-        {width > phoneMaxWidth && <Space w={160.46} />}
+        <div style={{width: width >= maxCustomTextWidth ? 160.46 : undefined}}>
+        <Burger w={38} opened={false} onClick={() => null} aria-label="Toggle navigation" />
+        </div>
         <Stack gap="0px">
           <a href={is_custom ? "/" : undefined}>
             <MantineImage
@@ -693,7 +697,7 @@ const Game = (props: GameProps) => {
             </Text>
           )}
         </Stack>
-        <CustomGameButton customModalOpen={customModalOpen} />
+        <CustomGameButton customModalOpen={customModalOpen} showText={width >= maxCustomTextWidth}/>
         <CustomGameModal
           customModalOpened={customModalOpened}
           customModalHandlers={customModalHandlers}

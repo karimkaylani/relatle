@@ -5,23 +5,26 @@ import { phoneMaxWidth } from "./Game";
 
 export interface CustomGameModalProps {
   customModalOpen: () => void;
+  showText: boolean;
 }
 
 const CustomGameButton = (props: CustomGameModalProps) => {
-  const { customModalOpen } = props;
+  const { customModalOpen, showText } = props;
 
   return (
     <HoverButton onTap={() => customModalOpen()}>
       <Card shadow="md" radius="lg" p="sm">
         <Group gap="sm" justify="center">
           <Image src={"images/custom-icon.svg"} alt="custom-game" />
-          <Text
-            fw={700}
-            size={window.innerWidth > phoneMaxWidth ? "md" : "sm"}
-            c="gray.1"
-          >
-            CUSTOM GAME
-          </Text>
+          {showText && (
+            <Text
+              fw={700}
+              size={window.innerWidth > phoneMaxWidth ? "md" : "sm"}
+              c="gray.1"
+            >
+              CUSTOM GAME
+            </Text>
+          )}
         </Group>
       </Card>
     </HoverButton>
