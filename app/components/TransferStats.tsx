@@ -5,6 +5,7 @@ import { IconChartBar, IconInfoCircle, IconTransfer } from '@tabler/icons-react'
 import { useDisclosure } from '@mantine/hooks';
 import { Button, Modal, PinInput, Stack, Text, Image, Divider, Alert} from '@mantine/core';
 import { useSearchParams } from "next/navigation";
+import ShareButton from "./ShareButton";
 
 const generateToken = (): string => {
     // randomly generate 5 character string
@@ -103,7 +104,7 @@ const TransferStats = () => {
             <Button
                 onClick={addStatsToDB}
                 variant="filled"
-                color='green.7'
+                color='green.6'
                 disabled={token !== ""}
                 loading={loadingExport}
                 leftSection={<Image src={"images/custom-icon.svg"} alt="custom-game" />}
@@ -111,6 +112,7 @@ const TransferStats = () => {
                 GENERATE CODE
             </Button>
             {token && <PinInput size='lg' value={token} readOnly />}
+            {token && <ShareButton shareText={token} buttonText={"CODE"} defaultColor={"green.6"} clickedColor={"green.9"} />}
         </Stack>
         <Divider style={{margin: '25px'}}/>
         <Stack align='center' justify='center' gap='md'>
@@ -124,7 +126,7 @@ const TransferStats = () => {
             <Button
                 onClick={() => transferStats(input)}
                 variant="filled"
-                color='green.7'
+                color='green.6'
                 loading={loadingImport}
                 leftSection={<IconTransfer size={16} />}
                 styles={{ section: { marginRight: "6px", marginBottom: "4px" } }}>
