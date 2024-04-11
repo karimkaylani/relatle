@@ -272,6 +272,7 @@ const Game = (props: GameProps) => {
     }
     // read in mainSave for streak, avg score, etc.
     const mainSave = readLocalStroage(false);
+    console.log(mainSave)
     let previous_matchup_id = mainSave?.prevMatchupID ?? -1;
     setPrevMatchupID(previous_matchup_id);
     setNumDaysPlayed(mainSave?.numDaysPlayed ?? 0);
