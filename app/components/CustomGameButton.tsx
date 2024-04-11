@@ -5,11 +5,11 @@ import { phoneMaxWidth } from "./Game";
 
 export interface CustomGameModalProps {
   customModalOpen: () => void;
-  showText: boolean;
+  showText?: boolean;
 }
 
 const CustomGameButton = (props: CustomGameModalProps) => {
-  const { customModalOpen, showText } = props;
+  const { customModalOpen, showText=true } = props;
 
   return (
     <HoverButton onTap={() => customModalOpen()}>

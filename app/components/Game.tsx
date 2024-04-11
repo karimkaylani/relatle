@@ -40,6 +40,7 @@ import NewFeatureModal from "./NewFeatureModal";
 import { createClient } from "@/utils/supabase/client";
 import GiveUp from "./GiveUp";
 import { IconBrandGithub } from "@tabler/icons-react";
+import SideDrawer from "./SideDrawer";
 
 export interface Artist {
   name: string;
@@ -361,8 +362,8 @@ const Game = (props: GameProps) => {
 
   if (loading) {
     return (
-      <Center className='pt-14'>
-        <Loader size='lg' color='green.6'/>
+      <Center className="pt-14">
+        <Loader size="lg" color="green.6" />
       </Center>
     );
   }
@@ -679,8 +680,23 @@ const Game = (props: GameProps) => {
         styles={{ root: { width: "100%" } }}
       >
         {/* 160.46 is the width of of the CustomGameButton so that the logo is centered */}
-        <div style={{width: width >= maxCustomTextWidth ? 160.46 : undefined}}>
-        <Burger w={38} opened={false} onClick={() => null} aria-label="Toggle navigation" />
+        <div
+          style={{ width: width >= maxCustomTextWidth ? 160.46 : undefined }}
+        >
+          <SideDrawer
+            streak={streak}
+            longest_streak={longestStreak}
+            games_won={numDaysPlayed}
+            total_guesses={sumScores}
+            average_score={averageScore}
+            average_resets={averageResets}
+            total_resets={sumResets}
+            games_lost={gamesLost}
+            lowest_score={lowestScore}
+            highest_score={highestScore}
+            customModalOpen={customModalOpen}
+            htpOpen={htpModalOpen}
+          />
         </div>
         <Stack gap="0px">
           <a href={is_custom ? "/" : undefined}>
@@ -697,7 +713,10 @@ const Game = (props: GameProps) => {
             </Text>
           )}
         </Stack>
-        <CustomGameButton customModalOpen={customModalOpen} showText={width >= maxCustomTextWidth}/>
+        <CustomGameButton
+          customModalOpen={customModalOpen}
+          showText={width >= maxCustomTextWidth}
+        />
         <CustomGameModal
           customModalOpened={customModalOpened}
           customModalHandlers={customModalHandlers}
@@ -854,7 +873,7 @@ const Game = (props: GameProps) => {
         <GiveUp giveUpHandler={giveUpHandler} is_custom={is_custom} />
       )}
       <Space h={24} />
-      <Text ta='center' size={width > phoneMaxWidth ? "md" : "sm"}>
+      <Text ta="center" size={width > phoneMaxWidth ? "md" : "sm"}>
         Created by{" "}
         <Anchor c="green.6" href="https://karimkaylani.com/" target="_blank">
           Karim Kaylani
@@ -866,13 +885,18 @@ const Game = (props: GameProps) => {
         .
       </Text>
       <Group justify="center" align="center">
-        <a tabIndex={-1} className='mt-1' href="https://github.com/karimkaylani/relatle/" target="_blank">
+        <a
+          tabIndex={-1}
+          className="mt-1"
+          href="https://github.com/karimkaylani/relatle/"
+          target="_blank"
+        >
           <HoverButton
             onTap={() => {
               return;
             }}
           >
-            <IconBrandGithub aria-label="Open source code on GitHub"/>
+            <IconBrandGithub aria-label="Open source code on GitHub" />
           </HoverButton>
         </a>
         <Text c="gray.7">|</Text>

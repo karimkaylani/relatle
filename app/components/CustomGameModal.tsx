@@ -18,6 +18,7 @@ import { IconArrowsShuffle, IconPlayerPlayFilled } from "@tabler/icons-react";
 import HoverButton from "./HoverButton";
 import ArtistInfo from "./ArtistInfo";
 import { useSearchParams } from "next/navigation";
+import IconHoverButton from "./IconHoverButton";
 
 interface CustomGameModalProps {
   web: { [key: string]: Artist };
@@ -441,7 +442,7 @@ const CustomGameModal = (props: CustomGameModalProps) => {
           )}
         </Stack>
         <Group align="center" justify="center">
-          <HoverButton onTap={getRandomRecommendedMatchup}>
+          {/* <HoverButton onTap={getRandomRecommendedMatchup}>
             <Card shadow="md" radius="lg" p="sm">
               <Group gap="6px" justify="center">
                 <Image src={"images/custom-icon.svg"} alt="custom-game" />
@@ -450,9 +451,10 @@ const CustomGameModal = (props: CustomGameModalProps) => {
                 </Text>
               </Group>
             </Card>
-          </HoverButton>
+          </HoverButton> */}
+          <IconHoverButton onTap={getRandomRecommendedMatchup} icon={<Image src={"images/custom-icon.svg"} alt="custom-game" />} text="RECOMMENDED" textSize='sm'/>
 
-          <HoverButton onTap={getRandomMatchup}>
+          {/* <HoverButton onTap={getRandomMatchup}>
             <Card shadow="md" radius="lg" p="sm">
               <Group gap="4px" justify="center">
                 <IconArrowsShuffle size={16} />
@@ -461,7 +463,8 @@ const CustomGameModal = (props: CustomGameModalProps) => {
                 </Text>
               </Group>
             </Card>
-          </HoverButton>
+          </HoverButton> */}
+          <IconHoverButton onTap={getRandomMatchup} icon={<IconArrowsShuffle size={16} />} text="RANDOM" textSize='sm'/>
         </Group>
 
         <Button
