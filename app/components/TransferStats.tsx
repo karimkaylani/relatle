@@ -23,8 +23,11 @@ const TransferStats = () => {
     const [token, setToken] = React.useState<string>("");
     const [error, setError] = React.useState<string>("");
     const [input, setInput] = React.useState<string>("");
+    const [loadingExport, setLoadingExport] = React.useState<boolean>(false);
+    const [loadingImport, setLoadingImport] = React.useState<boolean>(false);
 
     const addStatsToDB = async () => {
+        setLoadingExport(true);
         const supabase = createClient();
         const date = new Date().toLocaleString("en-US", {
             timeZone: "America/Los_Angeles",
@@ -38,6 +41,7 @@ const TransferStats = () => {
             ({ data, error } = await supabase.from("player_stats").select("*").eq("token", token));
         }
         setToken(currToken);
+        setLoadingExport(false);
     
         return supabase.from("player_stats").insert({
             timestamp: date,
@@ -47,8 +51,10 @@ const TransferStats = () => {
     }
 
     const transferStats = async (token: string) => {
+        setLoadingImport(true);
         if (token.length < 4) {
             setError("Please enter a 4 digit code");
+            setLoadingImport(false);
             return false;
         }
         token = token.toUpperCase();
@@ -67,6 +73,7 @@ const TransferStats = () => {
             return true;
         } else {
             setError("Token not found");
+            setLoadingImport(false);
             return false;
         }
     }
@@ -98,6 +105,7 @@ const TransferStats = () => {
                 variant="filled"
                 color='green.7'
                 disabled={token !== ""}
+                loading={loadingExport}
                 leftSection={<Image src={"images/custom-icon.svg"} alt="custom-game" />}
                 styles={{ section: { marginRight: "6px", marginBottom: "4px" } }}>
                 GENERATE CODE
@@ -117,6 +125,7 @@ const TransferStats = () => {
                 onClick={() => transferStats(input)}
                 variant="filled"
                 color='green.7'
+                loading={loadingImport}
                 leftSection={<IconTransfer size={16} />}
                 styles={{ section: { marginRight: "6px", marginBottom: "4px" } }}>
                 TRANSFER STATS
