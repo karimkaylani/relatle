@@ -39,6 +39,10 @@ export const ScoreDisplay = (
           fontFamily: "OpenSauceOne",
           fontWeight: 700,
         }}
+        nonNumberStyle={{
+          fontFamily: "OpenSauceOne",
+          fontSize: "1.5em",
+        }}
       />
     </Stack>
   );

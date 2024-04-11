@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react'
 import HoverButton from './HoverButton';
-import { Anchor, Card, Group, Image, Text } from '@mantine/core';
+import { Anchor, Button, Card, Group, Image, Text } from '@mantine/core';
 import { phoneMaxWidth } from './Game';
 
 export interface IconHoverButtonProps {
@@ -14,9 +14,9 @@ export interface IconHoverButtonProps {
 const IconHoverButton = (props: IconHoverButtonProps) => {
   const { onTap, icon, text, textSize=window.innerWidth > phoneMaxWidth ? "md" : "sm", url=undefined } = props;
   return (
-    <HoverButton onTap={() => onTap()}>
-    <Anchor href={url} target="_blank" tabIndex={-1} underline='never'>
-      <Card shadow="md" radius="lg" p="sm">
+    <Anchor onClick={onTap} href={url} target="_blank" tabIndex={-1} underline='never'>
+    <Card shadow="md" radius="lg" p="sm">
+        <HoverButton onTap={() => {return}}>
         <Group gap="sm" justify="center">
           {icon}
             <Text
@@ -27,9 +27,9 @@ const IconHoverButton = (props: IconHoverButtonProps) => {
               {text}
             </Text>
         </Group>
-      </Card>
-    </Anchor>
     </HoverButton>
+    </Card>
+    </Anchor>
   )
 }
 

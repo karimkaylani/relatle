@@ -12,8 +12,8 @@ const CustomGameButton = (props: CustomGameModalProps) => {
   const { customModalOpen, showText=true } = props;
 
   return (
-    <HoverButton onTap={() => customModalOpen()}>
-      <Card shadow="md" radius="lg" p="sm">
+    <Card onClick={customModalOpen} shadow="md" radius="lg" p="sm">
+     <HoverButton onTap={() => {return}}>
         <Group gap="sm" justify="center">
           <Image src={"images/custom-icon.svg"} alt="custom-game" />
           {showText && (
@@ -26,8 +26,8 @@ const CustomGameButton = (props: CustomGameModalProps) => {
             </Text>
           )}
         </Group>
-      </Card>
-    </HoverButton>
+      </HoverButton>
+    </Card>
   );
 };
 
