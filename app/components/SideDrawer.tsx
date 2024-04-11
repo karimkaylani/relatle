@@ -10,13 +10,15 @@ import {
   Center,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
-import React from "react";
+import React, { useEffect } from "react";
 import { ScoreDisplay } from "./Scoreboard";
 import CustomGameButton from "./CustomGameButton";
 import HoverButton from "./HoverButton";
 import IconHoverButton from "./IconHoverButton";
 import { IconHelpCircle } from "@tabler/icons-react";
 import CoffeeButton from "./CoffeeButton";
+import TransferStats from "./TransferStats";
+import { useSearchParams } from "next/navigation";
 
 export interface SideDrawerProps {
   streak: number;
@@ -34,6 +36,7 @@ export interface SideDrawerProps {
 }
 
 const SideDrawer = (props: SideDrawerProps) => {
+const searchParams = useSearchParams();
   const [opened, { open, close }] = useDisclosure(false);
   const {
     streak,
@@ -49,6 +52,13 @@ const SideDrawer = (props: SideDrawerProps) => {
     customModalOpen,
     htpOpen,
   } = props;
+
+  useEffect(() => {
+    if (searchParams.get('transfer')) {
+        open();
+    }
+}, [searchParams, open]);
+
   return (
     <>
       <Burger
@@ -76,9 +86,9 @@ const SideDrawer = (props: SideDrawerProps) => {
                     {ScoreDisplay("Games Won", games_won.toString(), true)}
                     <Divider orientation="vertical" />
                     {ScoreDisplay("Games Lost", games_lost.toString(), true)}
-                    {ScoreDisplay("Average Score", average_score.toString(), true)}
+                    {ScoreDisplay("Average Score", average_score.toFixed(1), true)}
                     <Divider orientation="vertical" />
-                    {ScoreDisplay("Average Resets", average_resets.toString(), true)}
+                    {ScoreDisplay("Average Resets", average_resets.toFixed(1), true)}
                     {ScoreDisplay("Lowest Score", lowest_score.toString(), true)}
                     <Divider orientation="vertical" />
                     {ScoreDisplay("Highest Score", highest_score.toString(), true)}
@@ -88,17 +98,12 @@ const SideDrawer = (props: SideDrawerProps) => {
                     </Group>
                 </Card>
             </Stack>
+            <TransferStats />
             <CustomGameButton
-                customModalOpen={() => {
-                close();
-                customModalOpen();
-                }}
+                customModalOpen={customModalOpen}
             />
             <IconHoverButton
-                onTap={() => {
-                close();
-                htpOpen();
-                }}
+                onTap={htpOpen}
                 icon={<IconHelpCircle size={18} />}
                 text="HOW TO PLAY"
             />
