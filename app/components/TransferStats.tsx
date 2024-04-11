@@ -64,6 +64,7 @@ const TransferStats = () => {
         if (data && data.length > 0) {
             const stats = data[0].stats;
             localStorage.setItem("props", stats);
+            // Refresh page with transfer=true so that the sidebar opens
             let url = window.location.href;    
             if (url.indexOf('?') > -1){
             url += '&transfer=true'
@@ -99,8 +100,8 @@ const TransferStats = () => {
         },
       }}>
         <Stack align='center' justify='center'>
-            <Text size='lg' c='gray.1' fw={700}>Export stats from this device</Text>
-            <Text>Press the button below to generate a code to enter into your other device</Text>
+            <Text ta='center' size='lg' c='gray.1' fw={700}>Export stats from this device</Text>
+            <Text ta='center'>Press the button below to generate a code to enter into your other device</Text>
             <Button
                 onClick={addStatsToDB}
                 variant="filled"
@@ -116,8 +117,8 @@ const TransferStats = () => {
         </Stack>
         <Divider style={{margin: '25px'}}/>
         <Stack align='center' justify='center' gap='md'>
-            <Text size='lg' c='gray.1' fw={700}>Import stats into this device</Text>
-            <Text>Enter code from original device below</Text>
+            <Text size='lg' c='gray.1' fw={700} ta='center'>Import stats into this device</Text>
+            <Text ta='center'>Enter code from original device below</Text>
             <Alert radius='lg' variant="light" color="red" icon={<IconInfoCircle size={16}/>}>
                 <Text size='sm' fw={700}>This will overwrite any of the stats currently on this device</Text>
             </Alert>

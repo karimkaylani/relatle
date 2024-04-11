@@ -16,7 +16,6 @@ import {
   Popover,
   Loader,
   Center,
-  Burger,
 } from "@mantine/core";
 import {
   useDisclosure,
@@ -55,7 +54,7 @@ export interface Artist {
 interface GameProps {
   web: { [key: string]: Artist };
   is_custom: boolean;
-  matchups?: string[][];
+  matchups: string[][];
 }
 
 interface SaveProps {
@@ -82,7 +81,7 @@ interface SaveProps {
 }
 
 export const phoneMaxWidth = 768;
-const maxCustomTextWidth = 555;
+const maxCustomTextWidth = 565;
 
 export interface iPlayingAudioContext {
   playingAudio: HTMLAudioElement | null;
@@ -148,7 +147,7 @@ const addScoreToDB = async (
 };
 
 const Game = (props: GameProps) => {
-  const { is_custom, web, matchups = null } = props;
+  const { is_custom, web, matchups } = props;
   const [matchup, setMatchup] = useState<any>(null);
   const [currArtist, setCurrArtist] = useState<any>(null);
   const [path, setPath] = useState<any>(null);
@@ -246,9 +245,9 @@ const Game = (props: GameProps) => {
     }
   };
 
-  const readLocalStroage = (): SaveProps | null => {
+  const readLocalStroage = (custom: boolean): SaveProps | null => {
     // Ensure page is mounted to client before trying to read localStorage
-    const item = localStorage.getItem(is_custom ? "props_custom" : "props");
+    const item = localStorage.getItem(custom ? "props_custom" : "props");
     if (item === null) {
       return null;
     }
@@ -256,8 +255,8 @@ const Game = (props: GameProps) => {
     return saveData;
   };
 
-  const loadLocalStorageIntoState = (todayMatchup: string[]): void => {
-    const localSave = readLocalStroage();
+  const loadLocalStorageIntoState = (todayMatchup: string[], matchup_id: number): void => {
+    const localSave = readLocalStroage(is_custom);
     if (localSave == null) {
       if (
         localStorage.getItem("props") == null &&
@@ -271,23 +270,35 @@ const Game = (props: GameProps) => {
       }
       return;
     }
-    setPrevMatchupID(localSave.prevMatchupID ?? -1);
-    setNumDaysPlayed(localSave.numDaysPlayed ?? 0);
-    setStreak(localSave.streak ?? 0);
-    setLongestStreak(localSave.longestStreak ?? 0);
-    setSumScores(localSave.sumScores ?? 0);
-    setAverageScore(localSave.averageScore ?? 0);
-    setGamesLost(localSave.gamesLost ?? 0);
-    setSumResets(localSave.sumResets ?? 0);
-    setAverageResets(localSave.averageResets ?? 0);
-    setLowestScore(localSave.lowestScore ?? 0);
-    setHighestScore(localSave.highestScore ?? 0);
+    // read in mainSave for streak, avg score, etc.
+    const mainSave = readLocalStroage(false);
+    let previous_matchup_id = mainSave?.prevMatchupID ?? -1;
+    setPrevMatchupID(previous_matchup_id);
+    setNumDaysPlayed(mainSave?.numDaysPlayed ?? 0);
+    // Reset streak if user skips a day
+    let new_streak = 0;
+    if (
+      previous_matchup_id !== -1 &&
+      (previous_matchup_id === matchup_id - 1 || previous_matchup_id === matchup_id)
+    ) {
+      new_streak = mainSave?.streak ?? 0;
+    }
+    setStreak(new_streak);
+    setLongestStreak(mainSave?.longestStreak ?? 0);
+    setSumScores(mainSave?.sumScores ?? 0);
+    setAverageScore(mainSave?.averageScore ?? 0);
+    setGamesLost(mainSave?.gamesLost ?? 0);
+    setSumResets(mainSave?.sumResets ?? 0);
+    setAverageResets(mainSave?.averageResets ?? 0);
+    setLowestScore(mainSave?.lowestScore ?? 0);
+    setHighestScore(mainSave?.highestScore ?? 0);
 
     if (JSON.stringify(localSave.matchup) !== JSON.stringify(todayMatchup)) {
       // See if need to serve newFeature modal
       tryShowNewFeature();
       return;
     }
+    // Use localsave here since we want to preserve the state of the game
     // Don't need to set matchup here, since it is set in useEffect
     setCurrArtist(localSave.currArtist);
     setPath(localSave.path);
@@ -303,7 +314,7 @@ const Game = (props: GameProps) => {
     }
   };
 
-  const getTodaysMatchup = (matchups: string[][] | null): any => {
+  const getTodaysMatchup = (matchups: string[][]): any => {
     if (matchups == null) {
       return;
     }
@@ -323,8 +334,9 @@ const Game = (props: GameProps) => {
 
     const matchupIndex = (diffDays - matchupIndexPadding) % matchups.length;
     const matchup = matchups[matchupIndex];
-    setMatchupID(diffDays + 1);
-    return matchup;
+    let matchup_id = diffDays + 1;
+    setMatchupID(matchup_id);
+    return [matchup, matchup_id];
   };
 
   // When component first mounts, load in localStorage
@@ -337,14 +349,17 @@ const Game = (props: GameProps) => {
     const start = searchParams.get("start");
     const end = searchParams.get("end");
     let custom_matchup = [start, end];
-    let todayMatchup = is_custom ? custom_matchup : getTodaysMatchup(matchups);
+    let [todayMatchup, matchup_id] = getTodaysMatchup(matchups);
+    if (is_custom) {
+      todayMatchup = custom_matchup;
+    }
     if (todayMatchup == null) {
       return;
     }
     setMatchup(todayMatchup);
     setCurrArtist(web[todayMatchup[0]]);
     setPath([todayMatchup[0]]);
-    loadLocalStorageIntoState(todayMatchup);
+    loadLocalStorageIntoState(todayMatchup, matchup_id);
     setLoading(false);
     // preload modal images
     new Image().src = "images/give-up.png";
@@ -401,13 +416,7 @@ const Game = (props: GameProps) => {
     if (artist.name === end) {
       setWon(true);
       setGameOver(true);
-      let new_streak = 1;
-      if (
-        prevMatchupID !== -1 &&
-        (prevMatchupID === matchupID - 1 || prevMatchupID === matchupID)
-      ) {
-        new_streak = streak + 1;
-      }
+      let new_streak = streak + 1;
       let new_longest_streak =
         new_streak > longestStreak ? new_streak : longestStreak;
       setPrevMatchupID(matchupID);

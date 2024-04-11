@@ -54,6 +54,7 @@ const searchParams = useSearchParams();
   } = props;
 
   useEffect(() => {
+    // open the drawer after transfer initiated
     if (searchParams.get('transfer')) {
         open();
     }
