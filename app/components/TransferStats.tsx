@@ -48,7 +48,7 @@ const TransferStats = () => {
 
     const transferStats = async (token: string) => {
         if (token.length < 4) {
-            setError("Please enter a 4 digit token");
+            setError("Please enter a 4 digit code");
             return false;
         }
         token = token.toUpperCase();
@@ -91,7 +91,7 @@ const TransferStats = () => {
         },
       }}>
         <Stack align='center' justify='center'>
-            <Text size='lg' c='gray.1' fw={700}>Move stats from this device</Text>
+            <Text size='lg' c='gray.1' fw={700}>Export stats from this device</Text>
             <Text>Press the button below to generate a code to enter into your other device</Text>
             <Button
                 onClick={addStatsToDB}
@@ -102,7 +102,7 @@ const TransferStats = () => {
                 styles={{ section: { marginRight: "6px", marginBottom: "4px" } }}>
                 GENERATE CODE
             </Button>
-            {token && <PinInput size='md' value={token} readOnly />}
+            {token && <PinInput size='lg' value={token} readOnly />}
         </Stack>
         <Divider style={{margin: '25px'}}/>
         <Stack align='center' justify='center' gap='md'>
@@ -111,8 +111,8 @@ const TransferStats = () => {
             <Alert radius='lg' variant="light" color="red" icon={<IconInfoCircle size={16}/>}>
                 <Text size='sm' fw={700}>This will overwrite any of the stats currently on this device</Text>
             </Alert>
-            <PinInput onChange={setInput} value={input} placeholder="" size='md' error={error.length > 0}/>
-            {error.length > 0 && <Text c='red'>{error}</Text>}
+            <PinInput color='gray.1' onChange={(value) => {setInput(value.toUpperCase())}} value={input} placeholder="" size='lg' error={error.length > 0} style={{color: 'white'}}/>
+            {error.length > 0 && <Text c='red.5'>{error}</Text>}
             <Button
                 onClick={() => transferStats(input)}
                 variant="filled"
