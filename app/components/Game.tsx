@@ -255,24 +255,9 @@ const Game = (props: GameProps) => {
     return saveData;
   };
 
-  const loadLocalStorageIntoState = (todayMatchup: string[], matchup_id: number): void => {
-    const localSave = readLocalStroage(is_custom);
-    if (localSave == null) {
-      if (
-        localStorage.getItem("props") == null &&
-        localStorage.getItem("props_custom") == null
-      ) {
-        // If first time playing, don't wanna show new feature modal
-        localStorage.setItem("newFeatureId", JSON.stringify(latestFeatureId));
-        htpModalOpen();
-      } else {
-        tryShowNewFeature();
-      }
-      return;
-    }
+  const loadLocalStorageIntoState = (todayMatchup: string[], matchup_id: number): void => {    
     // read in mainSave for streak, avg score, etc.
     const mainSave = readLocalStroage(false);
-    console.log(mainSave)
     let previous_matchup_id = mainSave?.prevMatchupID ?? -1;
     setPrevMatchupID(previous_matchup_id);
     setNumDaysPlayed(mainSave?.numDaysPlayed ?? 0);
@@ -293,6 +278,21 @@ const Game = (props: GameProps) => {
     setAverageResets(mainSave?.averageResets ?? 0);
     setLowestScore(mainSave?.lowestScore ?? 0);
     setHighestScore(mainSave?.highestScore ?? 0);
+
+    const localSave = readLocalStroage(is_custom);
+    if (localSave == null) {
+      if (
+        localStorage.getItem("props") == null &&
+        localStorage.getItem("props_custom") == null
+      ) {
+        // If first time playing, don't wanna show new feature modal
+        localStorage.setItem("newFeatureId", JSON.stringify(latestFeatureId));
+        htpModalOpen();
+      } else {
+        tryShowNewFeature();
+      }
+      return;
+    }
 
     if (JSON.stringify(localSave.matchup) !== JSON.stringify(todayMatchup)) {
       // See if need to serve newFeature modal
