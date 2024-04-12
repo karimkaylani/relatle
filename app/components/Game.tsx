@@ -255,7 +255,10 @@ const Game = (props: GameProps) => {
     return saveData;
   };
 
-  const loadLocalStorageIntoState = (todayMatchup: string[], matchup_id: number): void => {    
+  const loadLocalStorageIntoState = (
+    todayMatchup: string[],
+    matchup_id: number
+  ): void => {
     // read in mainSave for streak, avg score, etc.
     const mainSave = readLocalStroage(false);
     let previous_matchup_id = mainSave?.prevMatchupID ?? -1;
@@ -265,7 +268,8 @@ const Game = (props: GameProps) => {
     let new_streak = 0;
     if (
       previous_matchup_id !== -1 &&
-      (previous_matchup_id === matchup_id - 1 || previous_matchup_id === matchup_id)
+      (previous_matchup_id === matchup_id - 1 ||
+        previous_matchup_id === matchup_id)
     ) {
       new_streak = mainSave?.streak ?? 0;
     }
@@ -310,7 +314,7 @@ const Game = (props: GameProps) => {
     setWon(wonValue);
     let gameWonValue = localSave.gameOver ?? wonValue;
     setGameOver(gameWonValue);
-    if (gameWonValue) {
+    if (gameWonValue && !searchParams.get("transfer")) {
       winModalOpen();
     }
   };

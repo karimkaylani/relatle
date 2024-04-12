@@ -36,7 +36,7 @@ export interface SideDrawerProps {
 }
 
 const SideDrawer = (props: SideDrawerProps) => {
-const searchParams = useSearchParams();
+  const searchParams = useSearchParams();
   const [opened, { open, close }] = useDisclosure(false);
   const {
     streak,
@@ -55,10 +55,10 @@ const searchParams = useSearchParams();
 
   useEffect(() => {
     // open the drawer after transfer initiated
-    if (searchParams.get('transfer')) {
-        open();
+    if (searchParams.get("transfer")) {
+      open();
     }
-}, [searchParams, open]);
+  }, [searchParams, open]);
 
   return (
     <>
@@ -69,46 +69,50 @@ const searchParams = useSearchParams();
         aria-label="Toggle Sidebar"
       />
       <Drawer size="xs" opened={opened} onClose={close}>
-        <Stack justify="center" gap='lg'>
-            <Image
-                w={150}
-                src="images/logo.png"
-                alt="Relatle Logo"
-            ></Image>
-            <Stack gap='xs'>
-                <Text size="xl" c="gray.1" fw={700}>
-                    Statistics
-                </Text>
-                <Card shadow="lg" radius="lg" p="xs">
-                    <Group align="center" justify="center">
-                    {ScoreDisplay("Streak", streak.toString(), true)}
-                    <Divider orientation="vertical" />
-                    {ScoreDisplay("Longest Streak", longest_streak.toString(), true)}
-                    {ScoreDisplay("Games Won", games_won.toString(), true)}
-                    <Divider orientation="vertical" />
-                    {ScoreDisplay("Games Lost", games_lost.toString(), true)}
-                    {ScoreDisplay("Average Score", average_score.toFixed(1), true)}
-                    <Divider orientation="vertical" />
-                    {ScoreDisplay("Average Resets", average_resets.toFixed(1), true)}
-                    {ScoreDisplay("Lowest Score", lowest_score.toString(), true)}
-                    <Divider orientation="vertical" />
-                    {ScoreDisplay("Highest Score", highest_score.toString(), true)}
-                    {ScoreDisplay("Total Guesses", total_guesses.toString(), true)}
-                    <Divider orientation="vertical" />
-                    {ScoreDisplay("Total Resets", total_resets.toString(), true)}
-                    </Group>
-                </Card>
-            </Stack>
-            <TransferStats />
-            <CustomGameButton
-                customModalOpen={customModalOpen}
-            />
-            <IconHoverButton
-                onTap={htpOpen}
-                icon={<IconHelpCircle size={18} />}
-                text="HOW TO PLAY"
-            />
-            <CoffeeButton />
+        <Stack justify="center" gap="lg">
+          <Center>
+            <Image w={150} src="images/logo.png" alt="Relatle Logo"></Image>
+          </Center>
+          <Stack gap="xs">
+            <Text size="xl" c="gray.1" fw={700}>
+              Statistics
+            </Text>
+            <Card shadow="lg" radius="lg" p="xs">
+              <Group align="center" justify="center">
+                {ScoreDisplay("Streak", streak.toString(), true)}
+                <Divider orientation="vertical" />
+                {ScoreDisplay(
+                  "Longest Streak",
+                  longest_streak.toString(),
+                  true
+                )}
+                {ScoreDisplay("Games Won", games_won.toString(), true)}
+                <Divider orientation="vertical" />
+                {ScoreDisplay("Games Lost", games_lost.toString(), true)}
+                {ScoreDisplay("Average Score", average_score.toFixed(1), true)}
+                <Divider orientation="vertical" />
+                {ScoreDisplay(
+                  "Average Resets",
+                  average_resets.toFixed(1),
+                  true
+                )}
+                {ScoreDisplay("Lowest Score", lowest_score.toString(), true)}
+                <Divider orientation="vertical" />
+                {ScoreDisplay("Highest Score", highest_score.toString(), true)}
+                {ScoreDisplay("Total Guesses", total_guesses.toString(), true)}
+                <Divider orientation="vertical" />
+                {ScoreDisplay("Total Resets", total_resets.toString(), true)}
+              </Group>
+            </Card>
+          </Stack>
+          <TransferStats />
+          <CustomGameButton customModalOpen={customModalOpen} />
+          <IconHoverButton
+            onTap={htpOpen}
+            icon={<IconHelpCircle size={18} />}
+            text="HOW TO PLAY"
+          />
+          <CoffeeButton />
         </Stack>
       </Drawer>
     </>
