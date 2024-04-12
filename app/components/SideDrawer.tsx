@@ -21,6 +21,8 @@ import TransferStats from "./TransferStats";
 import { useSearchParams } from "next/navigation";
 
 export interface SideDrawerProps {
+  opened: boolean;
+  handlers: any;
   streak: number;
   longest_streak: number;
   games_won: number;
@@ -37,8 +39,8 @@ export interface SideDrawerProps {
 
 const SideDrawer = (props: SideDrawerProps) => {
   const searchParams = useSearchParams();
-  const [opened, { open, close }] = useDisclosure(false);
   const {
+    opened,
     streak,
     longest_streak,
     games_won,
@@ -52,6 +54,7 @@ const SideDrawer = (props: SideDrawerProps) => {
     customModalOpen,
     htpOpen,
   } = props;
+  const { open, close } = props.handlers;
 
   useEffect(() => {
     // open the drawer after transfer initiated
@@ -70,9 +73,6 @@ const SideDrawer = (props: SideDrawerProps) => {
       />
       <Drawer size="xs" opened={opened} onClose={close}>
         <Stack justify="center" gap="lg">
-          <Center>
-            <Image w={150} src="images/logo.png" alt="Relatle Logo"></Image>
-          </Center>
           <Stack gap="xs">
             <Text size="xl" c="gray.1" fw={700}>
               Statistics

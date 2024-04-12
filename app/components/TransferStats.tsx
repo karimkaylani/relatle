@@ -132,8 +132,7 @@ const TransferStats = () => {
             Export stats from this device
           </Text>
           <Text ta="center">
-            Press the button below to generate a code to enter into your other
-            device
+            Generate a code to enter into your target device
           </Text>
           <Button
             onClick={addStatsToDB}
@@ -163,7 +162,7 @@ const TransferStats = () => {
           <Text size="lg" c="gray.1" fw={700} ta="center">
             Import stats into this device
           </Text>
-          <Text ta="center">Enter code from original device below</Text>
+          <Text ta="center">Enter the code generated from the source device</Text>
           <Alert
             radius="lg"
             variant="light"
@@ -171,7 +170,7 @@ const TransferStats = () => {
             icon={<IconInfoCircle size={16} />}
           >
             <Text size="sm" fw={700}>
-              This will overwrite any of the stats currently on this device
+              This will overwrite the current stats on this device
             </Text>
           </Alert>
           <PinInput

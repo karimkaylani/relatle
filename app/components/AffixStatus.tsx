@@ -22,14 +22,15 @@ export interface AffixStatusProps {
   scrolled: boolean | undefined;
   onTap: () => void;
   won: boolean;
+  sideDrawerOpened: boolean;
 }
 
 const AffixStatus = (props: AffixStatusProps) => {
-  const { currArtist, endArtist, guesses, resets, scrolled, onTap, won } = props;
+  const { currArtist, endArtist, guesses, resets, scrolled, onTap, won, sideDrawerOpened } = props;
   const groupRef = React.useRef<HTMLDivElement>(null);
 
   const { playingAudio, playingArtist } = React.useContext(PlayingAudioContext);
-  const mounted = (scrolled === true && !won) || playingAudio !== null;
+  const mounted = !sideDrawerOpened && ((scrolled === true && !won) || playingAudio !== null);
 
   return (
     <Affix w="100%" h={0} top={0}>

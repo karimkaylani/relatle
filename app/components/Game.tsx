@@ -182,6 +182,9 @@ const Game = (props: GameProps) => {
   const [newFeatureModalOpened, newFeatureModalHandlers] = useDisclosure(false);
   const { open: newFeatureModalOpen } = newFeatureModalHandlers;
 
+  const [sidebarOpened, sidebarHandlers] = useDisclosure(false);
+  const { open: sidebarOpen } = sidebarHandlers;
+
   const [usedHint, setUsedHint] = useState<boolean>(false);
 
   const [playingAudio, setPlayingAudio] = useState<HTMLAudioElement | null>(
@@ -698,6 +701,8 @@ const Game = (props: GameProps) => {
           style={{ width: width >= maxCustomTextWidth ? 160.46 : undefined }}
         >
           <SideDrawer
+            opened={sidebarOpened}
+            handlers={sidebarHandlers}
             streak={streak}
             longest_streak={longestStreak}
             games_won={numDaysPlayed}
@@ -823,6 +828,7 @@ const Game = (props: GameProps) => {
           onTap={scrollToTop}
           scrolled={!entryAffix?.isIntersecting}
           won={won}
+          sideDrawerOpened={sidebarOpened}
         />
       </PlayingAudioContext.Provider>
       <Text ta="center" size={window.innerWidth <= phoneMaxWidth ? "sm" : "md"}>
