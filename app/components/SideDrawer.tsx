@@ -6,14 +6,10 @@ import {
   Group,
   Stack,
   Text,
-  Image,
-  Center,
 } from "@mantine/core";
-import { useDisclosure } from "@mantine/hooks";
 import React, { useEffect } from "react";
 import { ScoreDisplay } from "./Scoreboard";
 import CustomGameButton from "./CustomGameButton";
-import HoverButton from "./HoverButton";
 import IconHoverButton from "./IconHoverButton";
 import { IconHelpCircle } from "@tabler/icons-react";
 import CoffeeButton from "./CoffeeButton";
@@ -89,16 +85,16 @@ const SideDrawer = (props: SideDrawerProps) => {
                 {ScoreDisplay("Games Won", games_won.toString(), true)}
                 <Divider orientation="vertical" />
                 {ScoreDisplay("Games Lost", games_lost.toString(), true)}
-                {ScoreDisplay("Average Score", average_score.toFixed(1), true)}
+                {ScoreDisplay("Average Guesses", average_score.toFixed(1), true)}
                 <Divider orientation="vertical" />
                 {ScoreDisplay(
                   "Average Resets",
                   average_resets.toFixed(1),
                   true
                 )}
-                {ScoreDisplay("Lowest Score", lowest_score.toString(), true)}
+                {ScoreDisplay("Lowest Guesses", lowest_score.toString(), true)}
                 <Divider orientation="vertical" />
-                {ScoreDisplay("Highest Score", highest_score.toString(), true)}
+                {ScoreDisplay("Highest Guesses", highest_score.toString(), true)}
                 {ScoreDisplay("Total Guesses", total_guesses.toString(), true)}
                 <Divider orientation="vertical" />
                 {ScoreDisplay("Total Resets", total_resets.toString(), true)}
