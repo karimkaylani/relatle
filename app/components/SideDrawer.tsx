@@ -95,9 +95,6 @@ const SideDrawer = (props: SideDrawerProps) => {
                 {ScoreDisplay("Lowest Guesses", lowest_score.toString(), true)}
                 <Divider orientation="vertical" />
                 {ScoreDisplay("Highest Guesses", highest_score.toString(), true)}
-                {ScoreDisplay("Total Guesses", total_guesses.toString(), true)}
-                <Divider orientation="vertical" />
-                {ScoreDisplay("Total Resets", total_resets.toString(), true)}
               </Group>
             </Card>
           </Stack>
