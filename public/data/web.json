@@ -15,10 +15,10 @@
             "Lil Baby",
             "Big Sean"
         ],
-        "top_song_name": "Rich Baby Daddy (feat. Sexyy Red & SZA)",
-        "top_song_id": "1yeB8MUNeLo9Ek1UEpsyz6",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2737d384516b23347e92a587ed1",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/b05595d63200498786692be1f6d79f1685b4e2b5"
+        "top_song_name": "One Dance",
+        "top_song_id": "1zi7xx7UVEFkmKfv06H8x0",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2739416ed64daf84936d89e671c",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/0ee5843f6060102ce4ac239c856c452439e3d9d2"
     },
     "Bad Bunny": {
         "name": "Bad Bunny",
@@ -58,8 +58,8 @@
             "Childish Gambino"
         ],
         "top_song_name": "One Of The Girls (with JENNIE, Lily Rose Depp)",
-        "top_song_id": "1VNWdmXSbaNrnWod10WIL0",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273c87bfeef81a210ddb7f717b5",
+        "top_song_id": "7CyPwkp0oE8Ro9Dd5CUDjW",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273b0dd6a5cd1dec96c4119c262",
         "top_song_preview_url": "https://p.scdn.co/mp3-preview/e5bb7776aff44435b938eb084b2eca23e6c7f5ed"
     },
     "Justin Bieber": {
@@ -170,7 +170,7 @@
     "Taylor Swift": {
         "name": "Taylor Swift",
         "id": "06HL4z0CvFAxyc27GXpf02",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb859e4c14fa59296c8649e0e4",
+        "image": "https://i.scdn.co/image/ab6761610000e5ebe672b5f553298dcdccb0e676",
         "related": [
             "Selena Gomez",
             "Olivia Rodrigo",
@@ -191,7 +191,7 @@
     "Ariana Grande": {
         "name": "Ariana Grande",
         "id": "66CXWjxzNUsdJxJ2JdwvnR",
-        "image": "https://i.scdn.co/image/ab6761610000e5ebd254ca4d4fb43ef3051be3d7",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb40b5c07ab77b6b1a9075fdc0",
         "related": [
             "Camila Cabello",
             "Selena Gomez",
@@ -204,10 +204,10 @@
             "Olivia Rodrigo",
             "Nicki Minaj"
         ],
-        "top_song_name": "yes, and?",
-        "top_song_id": "7gaA3wERFkFkgivjwbSvkG",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2736b0b6e20fdb1ee07de7e92d6",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/0f137d3b1fce534e1c9b3adac096dc724315d5e4"
+        "top_song_name": "we can't be friends (wait for your love)",
+        "top_song_id": "51ZQ1vr10ffzbwIjDCwqm4",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2738b58d20f1b77295730db15b4",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/aa7d619d38c678b237b4131e77f05ecae504b84f"
     },
     "J Balvin": {
         "name": "J Balvin",
@@ -308,10 +308,10 @@
             "Ice Spice",
             "Normani"
         ],
-        "top_song_name": "FTCU",
-        "top_song_id": "1a73gcEg6h6Re6hHXoVltJ",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273651e1dbc0b5218f2306181a1",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/c7bb59bb3ff6d3989868d7b43becb4bd22fd2a75"
+        "top_song_name": "Beauty And A Beat",
+        "top_song_id": "2S5NuP68ckFRvC0qMd7dVR",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273da2c9e212d101ae2f9eefaa1",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/6dff839b2be5bd6eb7e33e398714100b0e6b78bd"
     },
     "Lil Wayne": {
         "name": "Lil Wayne",
@@ -371,10 +371,10 @@
             "Kid Cudi",
             "ScHoolboy Q"
         ],
-        "top_song_name": "Money Trees",
-        "top_song_id": "2HbKqm4o0w5wEeEFXm2sD4",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273d28d2ebdedb220e479743797",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/918a048521fe4c233f781943bd1194c20a12505a"
+        "top_song_name": "Like That",
+        "top_song_id": "2tudvzsrR56uom6smgOcSf",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273a46b07c291e6dfdee13b3ee8",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/793f43da71fe668c35b72a38ae7f93e783823e17"
     },
     "Juice WRLD": {
         "name": "Juice WRLD",
@@ -392,15 +392,15 @@
             "Ski Mask The Slump God",
             "XXXTENTACION"
         ],
-        "top_song_name": "All Girls Are The Same",
-        "top_song_id": "4VXIryQMWpIdGgYR4TrjT1",
+        "top_song_name": "Lucid Dreams",
+        "top_song_id": "285pBltuF7vW8TeWk8hdRR",
         "top_song_art": "https://i.scdn.co/image/ab67616d0000b273f7db43292a6a99b21b51d5b4",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/2f5e0faa19970ea5f6e116e7171c6d42d97c71af"
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/85ba40ef782e993bac9ee1c945f90c123b11ffec"
     },
     "Future": {
         "name": "Future",
         "id": "1RyvyyTE3xzB2ZywiAwp0i",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb24e41f491b129093a6fee383",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb6ef89e23678018c6d8630825",
         "related": [
             "Young Thug",
             "Gunna",
@@ -413,10 +413,10 @@
             "Quavo",
             "Migos"
         ],
-        "top_song_name": "Too Many Nights (feat. Don Toliver & with Future)",
-        "top_song_id": "2Hh3ETdQKrmSI3QS0hme7g",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273c4fee55d7b51479627c31f89",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/113245d7442b7b3880c40b3407dbc695396338f6"
+        "top_song_name": "Like That",
+        "top_song_id": "2tudvzsrR56uom6smgOcSf",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273a46b07c291e6dfdee13b3ee8",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/793f43da71fe668c35b72a38ae7f93e783823e17"
     },
     "Maroon 5": {
         "name": "Maroon 5",
@@ -505,7 +505,7 @@
     "Khalid": {
         "name": "Khalid",
         "id": "6LuN9FCkKOj5PcnpouEgny",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb31072db9da0311ecfabe96bf",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb5be3f26e0c3aa322637a975f",
         "related": [
             "Bazzi",
             "Kehlani",
@@ -526,7 +526,7 @@
     "Daddy Yankee": {
         "name": "Daddy Yankee",
         "id": "4VMYDCV2IEDYJArk749S6m",
-        "image": "https://i.scdn.co/image/ab6761610000e5ebf9ad208bbff79c1ce09c77c1",
+        "image": "https://i.scdn.co/image/ab6761610000e5ebaa534de724c7a565c07bb3f5",
         "related": [
             "Nicky Jam",
             "Wisin & Yandel",
@@ -547,7 +547,7 @@
     "Billie Eilish": {
         "name": "Billie Eilish",
         "id": "6qqNVTkY8uBg9cP3Jd7DAH",
-        "image": "https://i.scdn.co/image/ab6761610000e5ebd8b9980db67272cb4d2c3daf",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb4a21b4760d2ecb7b0dcdc8da",
         "related": [
             "Olivia Rodrigo",
             "Doja Cat",
@@ -568,7 +568,7 @@
     "Dua Lipa": {
         "name": "Dua Lipa",
         "id": "6M2wZ9GZgrQXHCFfjv46we",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb4e125f9c0f56dfb73fb97eaa",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb0c68f6c95232e716f0abee8d",
         "related": [
             "Camila Cabello",
             "Bebe Rexha",
@@ -665,15 +665,15 @@
             "Alicia Keys",
             "Rihanna"
         ],
-        "top_song_name": "Just the Way You Are",
-        "top_song_id": "7BqBn9nzAq8spo5e7cZ0dJ",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273f6b55ca93bd33211227b502b",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/6d1a901b10c7dc609d4c8628006b04bc6e672be8"
+        "top_song_name": "Locked out of Heaven",
+        "top_song_id": "3w3y8KPTfNeOKPiqUTakBh",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273926f43e7cce571e62720fd46",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/5a0318e6c43964786d22b9431af35490e96cff3d"
     },
     "Imagine Dragons": {
         "name": "Imagine Dragons",
         "id": "53XhwfbYqKCa1cC15pYq2q",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb920dc1f617550de8388f368e",
+        "image": "https://i.scdn.co/image/ab6761610000e5ebab47d8dae2b24f5afe7f9d38",
         "related": [
             "OneRepublic",
             "Twenty One Pilots",
@@ -694,7 +694,7 @@
     "Sam Smith": {
         "name": "Sam Smith",
         "id": "2wY79sveU1sp5g7SokKOiI",
-        "image": "https://i.scdn.co/image/ab6761610000e5eba8eef8322e55fc49ab436eea",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb7ba9b5726cdd0814dc0cda2e",
         "related": [
             "Calum Scott",
             "James Arthur",
@@ -736,7 +736,7 @@
     "Cardi B": {
         "name": "Cardi B",
         "id": "4kYSro6naA4h99UJvo89HB",
-        "image": "https://i.scdn.co/image/ab6761610000e5ebcb20fdd7386ecab9d34d0e71",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb4e8a7e14e2f602eb9af24e31",
         "related": [
             "Megan Thee Stallion",
             "City Girls",
@@ -749,10 +749,10 @@
             "Ella Mai",
             "Kehlani"
         ],
-        "top_song_name": "WAP (feat. Megan Thee Stallion)",
-        "top_song_id": "4Oun2ylbjFKMPTiaSbbCih",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273c450c89d3eb750d3535b0a0c",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/ad79b922940884cd57a17df2dede2c5d106d907c"
+        "top_song_name": "Punter\u00eda",
+        "top_song_id": "2dYXrWkNO40NXy2Q3IYLRc",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2737501431ca5326c536f90610c",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/177c6049d38d8c8074696851b27d8be88a019394"
     },
     "Calvin Harris": {
         "name": "Calvin Harris",
@@ -778,7 +778,7 @@
     "21 Savage": {
         "name": "21 Savage",
         "id": "1URnnhqYAYcrqrcwql10ft",
-        "image": "https://i.scdn.co/image/ab6761610000e5eba5e754a9c1fc7ad7ee01798b",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb4f8f76117470957c0e81e5b2",
         "related": [
             "Metro Boomin",
             "Gunna",
@@ -812,10 +812,10 @@
             "Jowell & Randy",
             "Daddy Yankee"
         ],
-        "top_song_name": "El Perd\u00f3n (with Enrique Iglesias)",
-        "top_song_id": "7qCAVkHWZkF44OzOUKf8Cr",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273d77dbcd4dbd37cdfa61771fa",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/9aab246764425357825f70418e2e37435ea9c846"
+        "top_song_name": "X",
+        "top_song_id": "5YUyW9opqNsMSEzzecZih1",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273072a21c666bf2f7b3fababef",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/6745d4cf983eef46735f94db5a3336010546254b"
     },
     "Selena Gomez": {
         "name": "Selena Gomez",
@@ -904,7 +904,7 @@
     "J. Cole": {
         "name": "J. Cole",
         "id": "6l3HvQ5sa6mXTsMTB19rO5",
-        "image": "https://i.scdn.co/image/ab6761610000e5ebadd503b411a712e277895c8a",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb4b053c29fd4b317ff825f0dc",
         "related": [
             "Kendrick Lamar",
             "A$AP Rocky",
@@ -946,7 +946,7 @@
     "Farruko": {
         "name": "Farruko",
         "id": "329e4yvIujISKGKz1BZZbO",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb123dda336ae1e7e995ee3db5",
+        "image": "https://i.scdn.co/image/ab6761610000e5eba4f05d6d3eaa559bbed7edb6",
         "related": [
             "Wisin",
             "Yandel",
@@ -988,7 +988,7 @@
     "Anuel AA": {
         "name": "Anuel AA",
         "id": "2R21vXR83lH98kGeO99Y66",
-        "image": "https://i.scdn.co/image/ab6761610000e5ebadc4e360e643006e0a912af9",
+        "image": "https://i.scdn.co/image/ab6761610000e5eba23ceb177745632b517cb7b2",
         "related": [
             "Bryant Myers",
             "Myke Towers",
@@ -1177,7 +1177,7 @@
     "The Chainsmokers": {
         "name": "The Chainsmokers",
         "id": "69GGBxA162lTqCwzJG5jLp",
-        "image": "https://i.scdn.co/image/ab6761610000e5ebdb68d678df6d89bf8a55d052",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb9c0f09a8247c54ecba74819d",
         "related": [
             "Zedd",
             "Jonas Blue",
@@ -1282,7 +1282,7 @@
     "Camila Cabello": {
         "name": "Camila Cabello",
         "id": "4nDoRrQiYLoBzwC5BhVJzF",
-        "image": "https://i.scdn.co/image/ab6761610000e5ebec05963eab63676a539fef13",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb99a94361a732b7eb49342d35",
         "related": [
             "Fifth Harmony",
             "Bebe Rexha",
@@ -1295,15 +1295,15 @@
             "Halsey",
             "Hailee Steinfeld"
         ],
-        "top_song_name": "Se\u00f1orita",
-        "top_song_id": "6v3KW9xbzN5yKLt9YKDYA2",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273c820f033bd82bef4355d1563",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/cf6ae4e497f91c285cc57ec2be36bbad2133af47"
+        "top_song_name": "I LUV IT (feat. Playboi Carti)",
+        "top_song_id": "2H2ytI7ompfNmRkI2sq8Uk",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273127aebaf8cc68fa4d07c615f",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/dac105442fc83b3b2a8cbd238ffa9d898d73e805"
     },
     "Doja Cat": {
         "name": "Doja Cat",
         "id": "5cj0lLjcoR7YOSnhnX0Po5",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb7f6d6cac38d494e87692af99",
+        "image": "https://i.scdn.co/image/ab6761610000e5ebe94f88ff74ae4ddcab961f97",
         "related": [
             "Megan Thee Stallion",
             "Cardi B",
@@ -1408,7 +1408,7 @@
     "Gunna": {
         "name": "Gunna",
         "id": "2hlmm7s2ICUX0LVIhVFlZQ",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb431138db2c76bf37d7d870c8",
+        "image": "https://i.scdn.co/image/ab6761610000e5ebda52d6cccb72d844a2000c30",
         "related": [
             "Young Thug",
             "Offset",
@@ -1463,10 +1463,10 @@
             "LMFAO",
             "Sean Paul"
         ],
-        "top_song_name": "Spicy Margarita",
-        "top_song_id": "22bZVqJfATps2ETj7017Ms",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2739f355d1d6a4922ce35b17705",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/34bf44392036c99f1cdf2c5a5223441f3b0d4e27"
+        "top_song_name": "Talk Dirty (feat. 2 Chainz)",
+        "top_song_id": "6g6A7qNhTfUgOSH7ROOxTD",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2730376bdff8b70d934f297303e",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/1bc07a5c8add955817ff4570e10ae0b31a1d8677"
     },
     "A$AP Rocky": {
         "name": "A$AP Rocky",
@@ -1534,7 +1534,7 @@
     "DJ Snake": {
         "name": "DJ Snake",
         "id": "540vIaP2JwjQb9dm3aArA4",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb4b6c50f5fdfc89384b19cc68",
+        "image": "https://i.scdn.co/image/ab6761610000e5ebca97cf089968b569e29d795c",
         "related": [
             "Major Lazer",
             "Jack \u00dc",
@@ -1547,10 +1547,10 @@
             "Alesso",
             "Martin Garrix"
         ],
-        "top_song_name": "Let Me Love You",
-        "top_song_id": "0lYBSQXN6rCTvUZvg9S0lU",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273212d776c31027c511f0ee3bc",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/7864c6e844bdf1438c355017ecab0daceccb82f9"
+        "top_song_name": "Lean On",
+        "top_song_id": "01aTsQoKoeXofSTvKuunzv",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273d6d24aee7b49a2db98a76856",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/5cdeec9f8b351372aa5e9f36f39d03d7bb58cef8"
     },
     "Marshmello": {
         "name": "Marshmello",
@@ -1597,7 +1597,7 @@
     "Quavo": {
         "name": "Quavo",
         "id": "0VRj0yCOv2FXJNP47XQnx5",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb14f31cb638401481a5bdfc45",
+        "image": "https://i.scdn.co/image/ab6761610000e5ebd52229f479361a2375f6021c",
         "related": [
             "Takeoff",
             "Offset",
@@ -1694,10 +1694,10 @@
             "Becky G",
             "Luis Fonsi"
         ],
-        "top_song_name": "TQG",
-        "top_song_id": "0DWdj2oZMBFSzRsi2Cvfzf",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b27382de1ca074ae63cb18fce335",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/c520c20ae60af8c28865d865d34d8d05a65e7844"
+        "top_song_name": "Hips Don't Lie (feat. Wyclef Jean)",
+        "top_song_id": "3ZFTkvIE7kyPt6Nu3PEa7V",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b27327ddd747545c0d0cfe7595fa",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/374b492571c9ba59c2c4b455ab79ee7501adab93"
     },
     "Twenty One Pilots": {
         "name": "Twenty One Pilots",
@@ -1723,7 +1723,7 @@
     "Big Sean": {
         "name": "Big Sean",
         "id": "0c173mlxpT3dSFRgMO8XPh",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb89dccc0a0b3d818c8d5fb711",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb4022657af888d9f0de15342e",
         "related": [
             "2 Chainz",
             "Wale",
@@ -1778,10 +1778,10 @@
             "A$AP Ferg",
             "Kodak Black"
         ],
-        "top_song_name": "Need It (feat. YoungBoy Never Broke Again)",
-        "top_song_id": "1cMMVJ4FDqhCci9efd1BU6",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273f89d00155b6a066650e5460d",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/9b8846cd51e85ef157510af3633593df12237fde"
+        "top_song_name": "Slide (feat. Frank Ocean & Migos)",
+        "top_song_id": "7tr2za8SQg2CI8EDgrdtNl",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2734d3fa5ce7ba599f4fd7803ef",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/16f9a0b74ce7aa75cfcfcd2bd928cda87ba11045"
     },
     "Pop Smoke": {
         "name": "Pop Smoke",
@@ -1841,10 +1841,10 @@
             "Jhayco",
             "Farruko"
         ],
-        "top_song_name": "El Malo",
-        "top_song_id": "144k7KOL7ZPopw7rTTzzXN",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273ec105eaf625391e95540ba97",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/cfcd43eea03345520e6e4673ed2dd9fcf3c64499"
+        "top_song_name": "LA RANGER (feat. Myke Towers)",
+        "top_song_id": "0QoaFLmBJyuVuzOIGy6iCS",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b27376d202b234aa815077af5c96",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/de3bda1ccbe7d10b8a4ffbef16efa195641903c6"
     },
     "The Rolling Stones": {
         "name": "The Rolling Stones",
@@ -1933,7 +1933,7 @@
     "G-Eazy": {
         "name": "G-Eazy",
         "id": "02kJSzxNuaWGqwubyUba0Z",
-        "image": "https://i.scdn.co/image/ab6761610000e5ebd9cfdc05548d1655bc265f85",
+        "image": "https://i.scdn.co/image/ab6761610000e5ebb796c0db7acaf3f1b71d1e3b",
         "related": [
             "Logic",
             "Lil Dicky",
@@ -1946,10 +1946,10 @@
             "Machine Gun Kelly",
             "KYLE"
         ],
-        "top_song_name": "Tumblr Girls (feat. Christoph Andersson)",
-        "top_song_id": "4Fv6wNYUixnYkj3Dgfrls8",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273bdfe4efd674482cf5ac88c99",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/0da4593e1107351dd0496f0348b0a64e4e035922"
+        "top_song_name": "Lady Killers II - Christoph Andersson Remix",
+        "top_song_id": "1xUddpWyEuYl5T3mduKnOJ",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b27386e1a56d4e4a414610301433",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/fe9af50aabaa91970d74b9bcb404af661d234b36"
     },
     "A Boogie Wit da Hoodie": {
         "name": "A Boogie Wit da Hoodie",
@@ -1967,10 +1967,10 @@
             "NAV",
             "Lil Tecca"
         ],
-        "top_song_name": "Drowning (feat. Kodak Black)",
-        "top_song_id": "1f5cbQtDrykjarZVrShaDI",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273cdba7ee22968991250725ce1",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/f770a1a0b3dfb5bc652f89848e45ab9d09f7dc69"
+        "top_song_name": "Look Back at It",
+        "top_song_id": "3Ol2xnObFdKV9pmRD2t9x8",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273a5c7151899ae5da4f4382d54",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/f2e60f4404785f1bdc8722f5315801dfb7aef2c6"
     },
     "Trippie Redd": {
         "name": "Trippie Redd",
@@ -2156,10 +2156,10 @@
             "Bryson Tiller",
             "PARTYNEXTDOOR"
         ],
-        "top_song_name": "Snooze",
-        "top_song_id": "4iZ4pt7kvcaH6Yo8UoZ4s2",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b27370dbc9f47669d120ad874ec1",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/8c53920b5fd2c3178afa36cac9eec68b5ee9204a"
+        "top_song_name": "Saturn",
+        "top_song_id": "1bjeWoagtHmUKputLVyDxQ",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273d70916ee9e40c90380ba5f07",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/74f603e906ab7a5409cf2edc6dda326ebe7c1d49"
     },
     "Michael Jackson": {
         "name": "Michael Jackson",
@@ -2219,10 +2219,10 @@
             "The Offspring",
             "Stone Temple Pilots"
         ],
-        "top_song_name": "Can't Stop",
-        "top_song_id": "3ZOEytgrvLwQaqXreDs2Jx",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273de1af2785a83cc660155a0c4",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/1b3bc0aca1746a99cbb8dd07b2325f6499b58a2e"
+        "top_song_name": "Californication",
+        "top_song_id": "48UPSzbZjgc449aqz8bxox",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b27394d08ab63e57b0cae74e8595",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/0fd595c5b63db10f4a99683f8248ea5d13700683"
     },
     "Mac Miller": {
         "name": "Mac Miller",
@@ -2387,10 +2387,10 @@
             "Zion & Lennox",
             "Bryant Myers"
         ],
-        "top_song_name": "ALV",
-        "top_song_id": "32hCeeK3ayPux4UauNPsgA",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2735947e677a3370208d0ba491d",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/81ef55df937988b280f88e902bdee1c1fa8a0ed8"
+        "top_song_name": "X'CLUSIVO - REMIX",
+        "top_song_id": "62k8iliO7KTiYp7LWGPa5p",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2735327757614a832374e491778",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/1da4c107de3dbd63f8768d0a1752e425e4e1d611"
     },
     "Pharrell Williams": {
         "name": "Pharrell Williams",
@@ -2555,10 +2555,10 @@
             "Young Money",
             "T.I."
         ],
-        "top_song_name": "Money In The Grave (Drake ft. Rick Ross)",
-        "top_song_id": "5ry2OE6R2zPQFDO85XkgRb",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2733f3b653b0a7b9e889a712c3d",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/77c4e124f56fbb1e7c5f2715fb9db0a3567c44bb"
+        "top_song_name": "Everyday Hustle",
+        "top_song_id": "3Vg7nPYlOrCkcV1abKbRQ1",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273a46b07c291e6dfdee13b3ee8",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/a9efc05f4f7b8b1e95c8a717511e024e794bc7bf"
     },
     "Polo G": {
         "name": "Polo G",
@@ -2639,10 +2639,10 @@
             "Lil Uzi Vert",
             "Quavo"
         ],
-        "top_song_name": "Creepin' (with The Weeknd & 21 Savage)",
-        "top_song_id": "2dHHgzDwk4BJdRwy9uXhTO",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273c4fee55d7b51479627c31f89",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/adc5d059e4ccc40bbad75f3844eb03546d9ab05a"
+        "top_song_name": "Like That",
+        "top_song_id": "2tudvzsrR56uom6smgOcSf",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273a46b07c291e6dfdee13b3ee8",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/793f43da71fe668c35b72a38ae7f93e783823e17"
     },
     "Elton John": {
         "name": "Elton John",
@@ -2786,9 +2786,9 @@
             "USHER"
         ],
         "top_song_name": "Selfish",
-        "top_song_id": "0QosomGFiJYOxj2ViZfqng",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273da6090501a3b5467e6f715e6",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/0a4ceeae3c76ad629f3b91e680315e406cb66105"
+        "top_song_id": "64WL36LvfiLGQJIDqLPAwB",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273435445bec400f2d5e30582d1",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/fced13c746f3a83087f1a532545be4a47f0dcac1"
     },
     "Lil Peep": {
         "name": "Lil Peep",
@@ -2877,7 +2877,7 @@
     "Enrique Iglesias": {
         "name": "Enrique Iglesias",
         "id": "7qG3b048QCHVRO5Pv1T5lw",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb952701937c396cfa9b598a37",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb95bd4e059ac547c2c6eb1da7",
         "related": [
             "Ricky Martin",
             "Luis Fonsi",
@@ -2890,10 +2890,10 @@
             "Camila",
             "Gente De Zona"
         ],
-        "top_song_name": "ASI ES LA VIDA",
-        "top_song_id": "0Me3GyNuLOa1YTIxhJPyCn",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2733d2a295bbc9935d3e4b5bfe5",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/6f67d028d788a09dea00bf4d16d0e771744a942b"
+        "top_song_name": "Cuando Me Enamoro",
+        "top_song_id": "79gkHjNTSyGPXEyGkNQ8zH",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b27361b07d8471f34aa6616eaf21",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/8c801457cf8d7cc5464b70dc09e51f1ade8b1f46"
     },
     "Olivia Rodrigo": {
         "name": "Olivia Rodrigo",
@@ -3037,15 +3037,15 @@
             "Sech",
             "Jay Wheeler"
         ],
-        "top_song_name": "Medallo",
-        "top_song_id": "6lX6l7OuA3qrnIRfdsr0dw",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2730a0ee97e8ba4373476538f19",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/3004da5477c0e4690a3be22d54a865996387a8e2"
+        "top_song_name": "LA RANGER (feat. Myke Towers)",
+        "top_song_id": "0QoaFLmBJyuVuzOIGy6iCS",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b27376d202b234aa815077af5c96",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/de3bda1ccbe7d10b8a4ffbef16efa195641903c6"
     },
     "Lauv": {
         "name": "Lauv",
         "id": "5JZ7CnR6gTvEMKX4g70Amv",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb9c0eb37411c26ff54c29dcb6",
+        "image": "https://i.scdn.co/image/ab6761610000e5ebb173d69f77530d77a991984f",
         "related": [
             "Jeremy Zucker",
             "LANY",
@@ -3207,7 +3207,7 @@
         ],
         "top_song_name": "Wild Thoughts (feat. Rihanna & Bryson Tiller)",
         "top_song_id": "45XhKYRRkyeqoW3teSOkCM",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2737b219c19829e83a86cc9786c",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2737a993075e27042a11896b8fb",
         "top_song_preview_url": "https://p.scdn.co/mp3-preview/09dcb0c72ec8b75b91f1b603669544d6b6a247c7"
     },
     "John Mayer": {
@@ -3226,15 +3226,15 @@
             "Ray LaMontagne",
             "The Fray"
         ],
-        "top_song_name": "New Light",
-        "top_song_id": "4T6FWA703h6H7zk1FoSARw",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273779063301154e835a91a35e0",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/017e35397f13569c1f488b61d9b7cd52facf00a5"
+        "top_song_name": "Slow Dancing in a Burning Room",
+        "top_song_id": "2jdAk8ATWIL3dwT47XpRfu",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2737af5fdc5ef048a68db62b85f",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/6d12adc4a57955aea80caa0f6b81b71c6301788e"
     },
     "Anne-Marie": {
         "name": "Anne-Marie",
         "id": "1zNqDE7qDGCsyzJwohVaoX",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb67013e289b84440ce3d1c88e",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb679c995b0d4a641ba32aa5f0",
         "related": [
             "Bebe Rexha",
             "Zara Larsson",
@@ -3276,7 +3276,7 @@
     "Manuel Turizo": {
         "name": "Manuel Turizo",
         "id": "0tmwSHipWxN12fsoLcFU3B",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb9ec21e11a3ef595582c0287e",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb1e9113cd4ae1305c7a4b84f4",
         "related": [
             "Piso 21",
             "Mau y Ricky",
@@ -3331,10 +3331,10 @@
             "Meghan Trainor",
             "Jessie J"
         ],
-        "top_song_name": "Secret Love Song (feat. Jason Derulo)",
-        "top_song_id": "6KHL1En9v6iNWjcs44mcmU",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273995994477ea1ae8097978bf8",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/7746fbb287b6488216d9b6a6ab00ff65d7afbdc2"
+        "top_song_name": "Heartbreak Anthem (with David Guetta & Little Mix)",
+        "top_song_id": "5K6Ssv4Z3zRvxt0P6EKUAP",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2731fcd19d56ad06561b76c1665",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/fc1aa9aa9e150cae0ad9c545a7f2ea1e3d1fc903"
     },
     "Skrillex": {
         "name": "Skrillex",
@@ -3350,10 +3350,10 @@
             "Hardwell",
             "Major Lazer"
         ],
-        "top_song_name": "Where Are \u00dc Now (with Justin Bieber)",
-        "top_song_id": "66hayvUbTotekKU3H4ta1f",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b27357fc4730e06c9ab20c1e073b",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/baf97fea2e3e1c97092ac69426691b703d20d0e2"
+        "top_song_name": "Rumble",
+        "top_song_id": "74fmYjFwt9CqEFAh8ybeBD",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2736382f06498259682f91cf981",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/eb79af9f809883de0632f02388ec354478612754"
     },
     "Machine Gun Kelly": {
         "name": "Machine Gun Kelly",
@@ -3434,10 +3434,10 @@
             "Mabel",
             "Fifth Harmony"
         ],
-        "top_song_name": "On My Love",
-        "top_song_id": "6WrwKvip8DCxbcs4LXsYwT",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273190f9305561a841f11aef318",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/17e28fff65f6ee7895e0b729fbcab3ea3b09f020"
+        "top_song_name": "Lush Life",
+        "top_song_id": "1rIKgCH4H52lrvDcz50hS8",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2739e1683774b22648f4f178ed3",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/2f14e67d9660815897317b300241b228e40bcd97"
     },
     "David Bowie": {
         "name": "David Bowie",
@@ -3494,10 +3494,10 @@
             "Jay Wheeler",
             "Brytiago"
         ],
-        "top_song_name": "El Amor de tu Vida (feat. Lenny Tav\u00e1rez & Best) - Remix",
-        "top_song_id": "0e09Q1sQWzAsP2Yo62la9F",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273a3ffdd5ffc280760d5f49ebc",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/7667a4c935e41b419e7fffd1d01d7d76c29c8e29"
+        "top_song_name": "LA RANGER (feat. Myke Towers)",
+        "top_song_id": "0QoaFLmBJyuVuzOIGy6iCS",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b27376d202b234aa815077af5c96",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/de3bda1ccbe7d10b8a4ffbef16efa195641903c6"
     },
     "AC/DC": {
         "name": "AC/DC",
@@ -3583,7 +3583,7 @@
     "ZAYN": {
         "name": "ZAYN",
         "id": "5ZsFI1h6hIdQRw2ti0hz81",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb056f821a5186892979410deb",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb7a1fba1bb3618ef71355f82a",
         "related": [
             "Louis Tomlinson",
             "Liam Payne",
@@ -3617,10 +3617,10 @@
             "Ellie Goulding",
             "Jax Jones"
         ],
-        "top_song_name": "Symphony (feat. Zara Larsson)",
-        "top_song_id": "72gv4zhNvRVdQA0eOenCal",
+        "top_song_name": "Rockabye (feat. Sean Paul & Anne-Marie)",
+        "top_song_id": "2hrUO4drrO63i7FYbCLBl2",
         "top_song_art": "https://i.scdn.co/image/ab67616d0000b27337fb0680110fbb107740de5d",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/582525d17cae952887337a1fcdf0e4763bf9ad1a"
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/dbf4049b4e6c037a9f03f7ce5299e9512d2ae8fa"
     },
     "Nirvana": {
         "name": "Nirvana",
@@ -3659,10 +3659,10 @@
             "Barbra Streisand",
             "Whitney Houston"
         ],
-        "top_song_name": "Spicy Margarita",
-        "top_song_id": "22bZVqJfATps2ETj7017Ms",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2739f355d1d6a4922ce35b17705",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/34bf44392036c99f1cdf2c5a5223441f3b0d4e27"
+        "top_song_name": "Feeling Good",
+        "top_song_id": "3I09LQbHS3NSU46Ly3tPpR",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2735d7d966732bd44ac2a13b614",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/08eb4b4d6a7f769140c2bf10351994a3dfc3b85e"
     },
     "NF": {
         "name": "NF",
@@ -3751,7 +3751,7 @@
     "Anitta": {
         "name": "Anitta",
         "id": "7FNnA9vBm6EKceENgCGRMb",
-        "image": "https://i.scdn.co/image/ab6761610000e5ebadfb6f56b9dbbab47b4efd06",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb27c49a12f1a6bb4c9eeedee0",
         "related": [
             "LUDMILLA",
             "PEDRO SAMPAIO",
@@ -3780,15 +3780,15 @@
             "Toni Braxton",
             "Brandy"
         ],
-        "top_song_name": "My Boo",
-        "top_song_id": "68vgtRHr7iZHpzGpon6Jlo",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273365b3fb800c19f7ff72602da",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/5391dafc63896270994d13c5fc501da0d149ef49"
+        "top_song_name": "If I Ain't Got You",
+        "top_song_id": "3XVBdLihbNbxUwZosxcGuJ",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b27356ff19308ebeb48e2ba6094b",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/2d1fd54c4a4147b43e1eb79c00380e36818a2546"
     },
     "Felix Jaehn": {
         "name": "Felix Jaehn",
         "id": "4bL2B6hmLlMWnUEZnorEtG",
-        "image": "https://i.scdn.co/image/ab6761610000e5ebb755e12d96b1baab7a48a979",
+        "image": "https://i.scdn.co/image/ab6761610000e5ebac2bb7e06a641dadc3379ba0",
         "related": [
             "Robin Schulz",
             "Sam Feldt",
@@ -3822,10 +3822,10 @@
             "Mary J. Blige",
             "Jennifer Hudson"
         ],
-        "top_song_name": "All I Want for Christmas Is You",
-        "top_song_id": "0bYg9bo50gSsH3LtXe2SQn",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2734246e3158421f5abb75abc4f",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/6b1557cd25d543940a3decd85a7bf2bc136c51f8"
+        "top_song_name": "We Belong Together",
+        "top_song_id": "3LmvfNUQtglbTrydsdIqFU",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273768bc8d9f078db929dfcfbd1",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/daa63a8c071c8a7882888b9c136ee4d832c63b0e"
     },
     "Playboi Carti": {
         "name": "Playboi Carti",
@@ -4033,9 +4033,9 @@
             "TINI"
         ],
         "top_song_name": "Ni Me Debes Ni Te Debo",
-        "top_song_id": "3Zin1vaMx7PjFWIOBTE4FM",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2730e30fcf494fd711ad068d1cd",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/6cf28789c7e6937146bbbb13d2a77c89ef505ad4"
+        "top_song_id": "1393rKYgZHNphZrdx1jWoN",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273daf12ebec7ae15f8322e1e5e",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/522ccbf5d9547f94c1a580aea6b86d83b65f0d29"
     },
     "U2": {
         "name": "U2",
@@ -4061,7 +4061,7 @@
     "Becky G": {
         "name": "Becky G",
         "id": "4obzFoKoKRHIphyHzJ35G3",
-        "image": "https://i.scdn.co/image/ab6761610000e5ebd132bf0d4a9203404cd66f79",
+        "image": "https://i.scdn.co/image/ab6761610000e5ebd9e94a40fd6ef4fe68318821",
         "related": [
             "NATTI NATASHA",
             "Sof\u00eda Reyes",
@@ -4103,7 +4103,7 @@
     "Kesha": {
         "name": "Kesha",
         "id": "6LqNN22kT3074XbTVUrhzX",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb8e32655d5ee8021c812b0f74",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb93edab94acfe329cfcd339ec",
         "related": [
             "Fergie",
             "Iggy Azalea",
@@ -4137,10 +4137,10 @@
             "Bon Iver",
             "Lorde"
         ],
-        "top_song_name": "Take Me to Church",
-        "top_song_id": "1CS7Sd1u5tWkstBhpssyjP",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2734ca68d59a4a29c856a4a39c2",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/d6170162e349338277c97d2fab42c386701a4089"
+        "top_song_name": "Too Sweet",
+        "top_song_id": "0AjmK0Eai4zGrLaJwPvrDp",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2732e8b4358d044b75807e30bf0",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/e526daac5ec6c4594ab3760cc48cee835379802d"
     },
     "YG": {
         "name": "YG",
@@ -4158,10 +4158,10 @@
             "Nipsey Hussle",
             "K CAMP"
         ],
-        "top_song_name": "Brand New",
-        "top_song_id": "697cBYjdAjPKe0RsEc6532",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2732cf7dfe9c3796ea778dcde8b",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/837aaf7f79b36f291a151e17a9e519074fdcea94"
+        "top_song_name": "Who Do You Love?",
+        "top_song_id": "7ngdkrVQPgP3AoIxUrTpHT",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273d5e1093f3b6f0a59114a4905",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/533cc26c77aa98cda27d2264154d023c6b565605"
     },
     "Alessia Cara": {
         "name": "Alessia Cara",
@@ -4283,10 +4283,10 @@
             "Israel & Rodolffo",
             "Gusttavo Lima"
         ],
-        "top_song_name": "Logo Eu",
-        "top_song_id": "2655xYZ347fG2N6OjkoMQ8",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273afcda189d3e44b4abefddecb",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/ec68e45e3eeb9d415188c46eaeb43fae7e77a651"
+        "top_song_name": "Haver\u00e1 Sinais - Ao Vivo",
+        "top_song_id": "6X6jKoyw1OjogRghMEQAZV",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273e2cc124172480f276562e107",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/5106dca17c80b1074dd241366359d3908316e03e"
     },
     "Radiohead": {
         "name": "Radiohead",
@@ -4354,7 +4354,7 @@
     "Kehlani": {
         "name": "Kehlani",
         "id": "0cGUm45nv7Z6M6qdXYQGTX",
-        "image": "https://i.scdn.co/image/ab6761610000e5ebd2657bcafcb300d90816523f",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb257217c67faea40445b21169",
         "related": [
             "Ella Mai",
             "H.E.R.",
@@ -4367,10 +4367,10 @@
             "Jacquees",
             "Bryson Tiller"
         ],
-        "top_song_name": "Nights Like This (feat. Ty Dolla $ign)",
-        "top_song_id": "6ZRuF2n1CQxyxxAAWsKJOy",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273237088df385325bb2ebbb37b",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/603131313ab97576652b9c0769b2a68296d283ad"
+        "top_song_name": "Gangsta",
+        "top_song_id": "5cw9s2zGrbny2M2p3WRmGm",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b27378394761781d70751fc8d931",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/7fecbfc20ca0ae941fdaf8dffb41e9ede4547e95"
     },
     "Frank Sinatra": {
         "name": "Frank Sinatra",
@@ -4417,7 +4417,7 @@
     "Darell": {
         "name": "Darell",
         "id": "1TtXnWcUs0FCkaZDPGYHdf",
-        "image": "https://i.scdn.co/image/ab6761610000e5ebe95edd8934df121c88d48d01",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb37c0d527733b39b5f7bf5743",
         "related": [
             "Casper Magico",
             "Noriel",
@@ -4448,15 +4448,15 @@
             "Franco De Vita",
             "Cali Y El Dandee"
         ],
-        "top_song_name": "El Correcto",
-        "top_song_id": "4tYgQrGwhpvjfq4ryajgUo",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2733adc22fdbbd02c64fbcca131",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/f41e394c91054e754434393cb3a721cdcc7b09c8"
+        "top_song_name": "Un A\u00f1o",
+        "top_song_id": "2vrpcQNg6itmgVZWsNjWe0",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273194331547eaabec350413225",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/b661cc369ef61ac46f37053e38b3d1fe0eda79dc"
     },
     "Gusttavo Lima": {
         "name": "Gusttavo Lima",
         "id": "7MiDcPa6UiV3In7lIM71IN",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb14e4962a672bb77e1ab32fa7",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb7f66b72673ec45b67464961d",
         "related": [
             "Z\u00e9 Neto & Cristiano",
             "Henrique & Juliano",
@@ -4470,8 +4470,8 @@
             "Hugo & Guilherme"
         ],
         "top_song_name": "Canudinho - Ao Vivo",
-        "top_song_id": "3wShSQczmwl6BwPqzRy1J9",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273af51d69326f6531282a73bab",
+        "top_song_id": "476o0POREG1XMArNtHRAy2",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2738709edf04c33ca5a758b467e",
         "top_song_preview_url": "https://p.scdn.co/mp3-preview/440cfbcba329063e17c544305ab6336d6b235622"
     },
     "Miguel": {
@@ -4511,10 +4511,10 @@
             "H.E.R.",
             "Ella Mai"
         ],
-        "top_song_name": "HISS",
-        "top_song_id": "79AHPJd8upvNxyK2qQcY8J",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2739ea288a3dbc316b15cab5ad0",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/939c9e6c6835a0610e02f80510f8d577c6d5c1f4"
+        "top_song_name": "Wanna Be (with Megan Thee Stallion)",
+        "top_song_id": "7mOC6phfrfz3jfigg1aGsE",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273bd9951bb4c9813bc540bde1d",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/46773e46d0ea4c37c4ed3d8e3e1c7b602d8a74c6"
     },
     "Pink Floyd": {
         "name": "Pink Floyd",
@@ -4540,7 +4540,7 @@
     "Meghan Trainor": {
         "name": "Meghan Trainor",
         "id": "6JL8zeS1NmiOftqZTRgdTz",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb4d8f97058ff993df0f4eb9ee",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb365984489dac7a79eac204e3",
         "related": [
             "Fifth Harmony",
             "Little Mix",
@@ -4561,7 +4561,7 @@
     "Yandel": {
         "name": "Yandel",
         "id": "0eHQ9o50hj6ZDNBt6Ys1sD",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb7dbaf2fabcbd4b37168397fd",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb743290c5438763d36861766b",
         "related": [
             "Wisin",
             "Zion & Lennox",
@@ -4594,10 +4594,10 @@
             "Trey Songz",
             "Ludacris"
         ],
-        "top_song_name": "Buy U a Drank (Shawty Snappin') (feat. Yung Joc)",
-        "top_song_id": "1tkMs9wDPknQ3ZHcKDw1ES",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273baf2f329d4feeb19761eddf4",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/f7af382c64f472191f8e5ccf8d37b9ca98b5f9e7"
+        "top_song_name": "Been Like This",
+        "top_song_id": "3t7MOVjzXyqT7vPw4eNrAV",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b27358aa5a0c917b5ad89dceb65a",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/e2ab81025037d62d0bc91cce1a8bce686ef7681a"
     },
     "Charli XCX": {
         "name": "Charli XCX",
@@ -4615,15 +4615,15 @@
             "Lorde",
             "Kesha"
         ],
-        "top_song_name": "Speed Drive (From Barbie The Album)",
-        "top_song_id": "5VxmI3IdgAxWVvUnJoLuY2",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273cd6f4f3b7d178e0a8b963da1",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/bd0a080a87ce594303d57981d921d65e12af6599"
+        "top_song_name": "Von dutch",
+        "top_song_id": "01TnMXIy7mJJQ7E8uy937N",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2735a933871a40c5b9e1deea8d3",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/7faf86e041f0fc977545aadc2b4f852eb5f145d4"
     },
     "Luis Fonsi": {
         "name": "Luis Fonsi",
         "id": "4V8Sr092TqfHkfAA5fXXqG",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb001c45ab669fe850f6d573fa",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb610b9e669ad98b784906fc97",
         "related": [
             "David Bisbal",
             "Chayanne",
@@ -4678,10 +4678,10 @@
             "Miguel",
             "Ty Dolla $ign"
         ],
-        "top_song_name": "Don't",
-        "top_song_id": "3pXF1nA74528Edde4of9CC",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273d5f3cea8affdca01a0dc754f",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/f7e8de8a2a419c43ddf77af8572e6ad1e4cb64d4"
+        "top_song_name": "Whatever She Wants [BONUS]",
+        "top_song_id": "7aQ1tSYr518KwnE4SVSQbT",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2735b7314bd0c9cab582954878a",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/72a170a8e9ed64cc4e6d810c5f42b2a62fd849a5"
     },
     "Russ": {
         "name": "Russ",
@@ -4720,15 +4720,15 @@
             "Wesley Safad\u00e3o",
             "Mar\u00edlia Mendon\u00e7a"
         ],
-        "top_song_name": "Devia Ser Proibido - Ao Vivo Em Bras\u00edlia",
-        "top_song_id": "0QcKkN8b4iVkmVsbaze8OS",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b27316cbfc92ed9c5ace03ed944e",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/5a339f6de25ec83ff50b309ad66a83624d05868a"
+        "top_song_name": "Quase Algo - Ao Vivo Em Nova Iorque / 2022",
+        "top_song_id": "3iam4WkRoqMoBBCwDFZNgd",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273f4cd354192a44f0e26d5a877",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/696437a24a40b0a411f4b73500fcb6fc0c7fc55b"
     },
     "Duki": {
         "name": "Duki",
         "id": "1bAftSH8umNcGZ0uyV7LMg",
-        "image": "https://i.scdn.co/image/ab6761610000e5ebdc25969093ccc4655316c9b9",
+        "image": "https://i.scdn.co/image/ab6761610000e5ebb970a6d0f33428393c578f1a",
         "related": [
             "KHEA",
             "LIT killah",
@@ -4800,10 +4800,10 @@
             "Nicki Nicole",
             "Manuel Turizo"
         ],
-        "top_song_name": "BESO",
-        "top_song_id": "609E1JCInJncactoMmkDon",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2734d6cf0d0d5e32ca4fa3a59e1",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/ec3accbe111dac19702411be5adb665d4cd44c0c"
+        "top_song_name": "DESPECH\u00c1",
+        "top_song_id": "53tfEupEzQRtVFOeZvk7xq",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273efc0ef9dd996312ebaf0bf52",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/304868e078d8f2c3209977997c47542181096b61"
     },
     "Labrinth": {
         "name": "Labrinth",
@@ -5153,10 +5153,10 @@
             "FINNEAS",
             "Lorde"
         ],
-        "top_song_name": "One Of Your Girls",
-        "top_song_id": "5Eh1nj7IjV9lwpcKAkidyY",
+        "top_song_name": "Rush",
+        "top_song_id": "4ZnkygoWLzcGbQYCm3lkae",
         "top_song_art": "https://i.scdn.co/image/ab67616d0000b27367103283a4eb57578a428252",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/9f380859b6a10dbc8037d927545da21a047aff0a"
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/e25b1963b15dc0685aeb91493b9a638ef69bcb48"
     },
     "6ix9ine": {
         "name": "6ix9ine",
@@ -5182,7 +5182,7 @@
     "Nickelback": {
         "name": "Nickelback",
         "id": "6deZN1bslXzeGvOLaLMOIF",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb6fd63d17d5f242226134ae2f",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb4ad382f899596d8c7b9e8e09",
         "related": [
             "3 Doors Down",
             "Hinder",
@@ -5203,7 +5203,7 @@
     "Morat": {
         "name": "Morat",
         "id": "5C4PDR4LnhZTbVnKWXuDKD",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb83827236e89f05f07ff51ed3",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb08c3b70e494bd0ea0ef56fb7",
         "related": [
             "Beret",
             "Reik",
@@ -5244,7 +5244,7 @@
     "Jennifer Lopez": {
         "name": "Jennifer Lopez",
         "id": "2DlGxzQSjYe5N6G9nkYghR",
-        "image": "https://i.scdn.co/image/ab6761610000e5ebaa483617f45b0652c0dbc238",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb6c85a90c558ca8d368392f60",
         "related": [
             "Christina Aguilera",
             "The Pussycat Dolls",
@@ -5551,10 +5551,10 @@
             "Eladio Carrion",
             "Maria Becerra"
         ],
-        "top_song_name": "Young Miko: Bzrp Music Sessions, Vol. 58",
-        "top_song_id": "6VciS3dRMpZhJiDxT8ArFi",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2737b58409ef2fbbcd4d0f4ed05",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/9416c58197239a900e6a5af5b51815d7343609f7"
+        "top_song_name": "Natanael Cano: Bzrp Music Sessions, Vol. 59",
+        "top_song_id": "2DbV9TSdeGr5FobCFDRzvq",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2734e5b3584c8d41b4f75cefcea",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/caea5d566c999a0f80c56bfd9506a3d091442a78"
     },
     "Kelly Clarkson": {
         "name": "Kelly Clarkson",
@@ -5633,10 +5633,10 @@
             "De La Ghetto",
             "Cosculluela"
         ],
-        "top_song_name": "Besos Moja2",
-        "top_song_id": "6OzUIp8KjuwxJnCWkXp1uL",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2739f05bb270f81880fd844aae8",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/8b17c9ae5706f7f2e41a6ec3470631b3094017b6"
+        "top_song_name": "Rakata",
+        "top_song_id": "1kQqiC1rS1FiuVpeBKN0QN",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2737715c409b824e68db51c7adf",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/990b94b8d626b0b72c2490aa100022cbbe567318"
     },
     "Foo Fighters": {
         "name": "Foo Fighters",
@@ -5753,10 +5753,10 @@
             "Gazo",
             "Niska"
         ],
-        "top_song_name": "J'fais plaisir \u00e0 la zone",
-        "top_song_id": "26Anqi86HCCG57L5CE0gTr",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2734967a6d7e47e5da99c4c2400",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/2f6aaacfa119870d7110881af77d872e02ef82ad"
+        "top_song_name": "Oh qu'elle est belle",
+        "top_song_id": "7wwQoJtPLBVeMIZlW11cp6",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273735f5c18f82a88d3e65abd61",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/25a22e48847210e9957a8f48e3d09ef7b142d546"
     },
     "Paramore": {
         "name": "Paramore",
@@ -5774,10 +5774,10 @@
             "Mayday Parade",
             "Pierce The Veil"
         ],
-        "top_song_name": "Still into You",
-        "top_song_id": "1yjY7rpaAQvKwpdUliHx0d",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273532033d0d90736f661c13d35",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/4abdea56e053fe7d0f4f4e446b43d404b28edf69"
+        "top_song_name": "Misery Business",
+        "top_song_id": "6SpLc7EXZIPpy0sVko0aoU",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273bee754528c08d5ff6799a1eb",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/ba87b3463a795afa81ee18d3fbb116bb7793140e"
     },
     "Nat King Cole": {
         "name": "Nat King Cole",
@@ -5906,10 +5906,10 @@
             "Nick Jonas",
             "The Vamps"
         ],
-        "top_song_name": "Let Me Go (with Alesso, Florida Georgia Line & watt)",
-        "top_song_id": "5Gu0PDLN4YJeW75PpBSg9p",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273523eb48df1fa22b6d450833e",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/abe198a0c5a10d311d5c7c21297def76d5a0ee84"
+        "top_song_name": "Starving",
+        "top_song_id": "4Ce37cRWvM1vIGGynKcs22",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2730506a838892be6229dca857b",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/31f6e6cc0119be916f272b2fd2d59e7b262ccb4b"
     },
     "Lost Frequencies": {
         "name": "Lost Frequencies",
@@ -5928,8 +5928,8 @@
             "Jonas Blue"
         ],
         "top_song_name": "Where Are You Now",
-        "top_song_id": "1JzH2IS7bVWpMkNIJqywaB",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2732f371d93706d198fbd5fb96c",
+        "top_song_id": "3mfER4ORePHvN35cbZ3dkV",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273580da30167c82db5fcc5f798",
         "top_song_preview_url": "https://p.scdn.co/mp3-preview/2524ba8c7e53a72a62eaf3bae51d63c9427284c9"
     },
     "Black Sabbath": {
@@ -6155,8 +6155,8 @@
         ],
         "top_song_name": "Ophelia",
         "top_song_id": "3d8y0t70g7hw2FOWl9Z4Fm",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273cd34380a48c22de3d0e475de",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/72ddb34d6735c03a8ae82f14d0236ce7b4d47ae4"
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2732ebf129f0db6d0e88372600e",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/8c2d1447b1f425955e56f93bbb427436b28c6bb0"
     },
     "Niall Horan": {
         "name": "Niall Horan",
@@ -6203,7 +6203,7 @@
     "Z\u00e9 Neto & Cristiano": {
         "name": "Z\u00e9 Neto & Cristiano",
         "id": "487N2T9nIPEHrlTZLL3SQs",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb1bb9201db3ff149830f0139a",
+        "image": "https://i.scdn.co/image/ab6761610000e5ebd3332d80d4e5ea58423e50a9",
         "related": [
             "Matheus & Kauan",
             "Henrique & Juliano",
@@ -6234,10 +6234,10 @@
             "Jon Z",
             "Brytiago"
         ],
-        "top_song_name": "Gato de Noche",
-        "top_song_id": "7zybwfvL6F1t17U4FUZLRM",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273ece3f312090c67b9d5043c67",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/7d6a9dab2f3779eef37ef52603d20607a1390d91"
+        "top_song_name": "Safaera",
+        "top_song_id": "2DEZmgHKAvm41k4J3R2E9Y",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273548f7ec52da7313de0c5e4a0",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/9a5a46759106c4a952223d007a253474d4b01816"
     },
     "Kali Uchis": {
         "name": "Kali Uchis",
@@ -6428,7 +6428,7 @@
     "Alesso": {
         "name": "Alesso",
         "id": "4AVFqumd2ogHFlRbKIjp1t",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb85bb0aa225cf7e0dbc9fcefe",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb327e7178289c299c48e12577",
         "related": [
             "Sebastian Ingrosso",
             "Nicky Romero",
@@ -6491,7 +6491,7 @@
     "Glass Animals": {
         "name": "Glass Animals",
         "id": "4yvcSjfu4PC0CYQyLy4wSq",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb66b27eccb69756f8eceabc23",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb4d0c5a183b44073ca01dee0b",
         "related": [
             "alt-J",
             "Cage The Elephant",
@@ -6533,7 +6533,7 @@
     "Chencho Corleone": {
         "name": "Chencho Corleone",
         "id": "37230BxxYs9ksS7OkZw3IU",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb2e862710857d2b3e1b5fb4f4",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb35a6227be8217b6abeb70738",
         "related": [
             "Ryan Castro",
             "Plan B",
@@ -6596,7 +6596,7 @@
     "Bon Jovi": {
         "name": "Bon Jovi",
         "id": "58lV9VcRSjABbAbfWS6skp",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb2b6d91713f53bc932e4cc13f",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb52aade0d2ea19706074da4b9",
         "related": [
             "Def Leppard",
             "Aerosmith",
@@ -6755,10 +6755,10 @@
             "Lenny Tav\u00e1rez",
             "KEVIN ROLDAN"
         ],
-        "top_song_name": "3 Am",
-        "top_song_id": "1F205Nl2feOSYSztLNOJAL",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273ff62e603fe8ea1813b4ff5a8",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/e7f70ac4a703a78e9b078e02b8c01056c2797979"
+        "top_song_name": "Netflixxx",
+        "top_song_id": "4WDSPCfr60K0HI7YYhEHKu",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273b0f3efaba85ded275d984fd7",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/1680958ac5e1a30c5b7219a22850cf606ea25172"
     },
     "Lizzo": {
         "name": "Lizzo",
@@ -6818,15 +6818,15 @@
             "Franz Ferdinand",
             "The Strokes"
         ],
-        "top_song_name": "Time to Pretend",
-        "top_song_id": "4iG2gAwKXsOcijVaVXzRPW",
+        "top_song_name": "Electric Feel",
+        "top_song_id": "3FtYbEfBqAlGO46NUDQSAt",
         "top_song_art": "https://i.scdn.co/image/ab67616d0000b2738b32b139981e79f2ebe005eb",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/7f430e9ee8be92d4582b741f465fd38cece48ed5"
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/b288d1b3245bfa82243267c77fe152dbd696f3c8"
     },
     "Matheus & Kauan": {
         "name": "Matheus & Kauan",
         "id": "2Z0lRIqr997lIUiPtrpKCr",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb2e9540231996935a10d1d690",
+        "image": "https://i.scdn.co/image/ab6761610000e5ebff2a2232c16593087e851ff4",
         "related": [
             "Israel & Rodolffo",
             "Gustavo Mioto",
@@ -6868,7 +6868,7 @@
     "Grupo Firme": {
         "name": "Grupo Firme",
         "id": "1dKdetem2xEmjgvyymzytS",
-        "image": "https://i.scdn.co/image/ab6761610000e5ebf7c96239ac530b917cb0c27d",
+        "image": "https://i.scdn.co/image/ab6761610000e5ebf8c66fe1013f74f2a003dd76",
         "related": [
             "Carin Leon",
             "El Fantasma",
@@ -6898,10 +6898,10 @@
             "The xx",
             "ODESZA"
         ],
-        "top_song_name": "Latch",
-        "top_song_id": "1DunhgeZSEgWiIYbHqXl0c",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2737d9cf15a27f29ffc8ef01e8d",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/9bb04de68f48ea4f86337144e1924ab015c1d17a"
+        "top_song_name": "You & Me - Rivo Remix",
+        "top_song_id": "0xoYZ45fgTfyQYREZPN7Sa",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2739b18753eb7552e25b7f134c4",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/8a6fc72be23816c03acdbae48a44b028ba95254a"
     },
     "Papa Roach": {
         "name": "Papa Roach",
@@ -7022,10 +7022,10 @@
             "David Bisbal",
             "Alejandro Sanz"
         ],
-        "top_song_name": "Es Por Ti",
-        "top_song_id": "3b1IQflSLrgzYQPGFzI9cl",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b27323a1613112c1ecf946f51177",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/2bc671222a16d6eb0bd5b586127be54e8bdd04f5"
+        "top_song_name": "Besos En Guerra",
+        "top_song_id": "1mlGScrDQqHqmhdIqE8MmA",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b27390fa215e791c13fe9bacb8bc",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/f86289e45f85e714a030cc4fb92efcccf88da1f9"
     },
     "A$AP Ferg": {
         "name": "A$AP Ferg",
@@ -7064,10 +7064,10 @@
             "Brett Young",
             "Brantley Gilbert"
         ],
-        "top_song_name": "Thank God",
-        "top_song_id": "1brnLTvarI9D1hLP6z2Ar8",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2733b7c6c5af0af9fc1a9714b36",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/852b3a14655f3b1dbd94226b16f87edfc6c82340"
+        "top_song_name": "What Ifs (feat. Lauren Alaina)",
+        "top_song_id": "7zVCrzzEJU7u24sbJPXA5W",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b27348295fd4144b8ce6b437d682",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/8c161285ddfe42f110ab59302ef58900a53daf65"
     },
     "Bon Iver": {
         "name": "Bon Iver",
@@ -7124,10 +7124,10 @@
             "Israel & Rodolffo",
             "Z\u00e9 Neto & Cristiano"
         ],
-        "top_song_name": "Narcisista - Ao Vivo",
-        "top_song_id": "4dHMuSjpkUcWW3zZehOFj7",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2731b297034872f4646a7fc7ae3",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/59113a62308431c428877248afa0b0eb6d9848e1"
+        "top_song_name": "Morena De Goi\u00e2nia - Ao Vivo",
+        "top_song_id": "1WHDOr19zyyqu6XXIvdgfX",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b27378b03b7534ce5a81046d36da",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/0e4f24cc23b05d26645ca9455afec0fe76493741"
     },
     "Aventura": {
         "name": "Aventura",
@@ -7265,7 +7265,7 @@
     "Lil Mosey": {
         "name": "Lil Mosey",
         "id": "5zctI4wO9XSKS8XwcnqEHk",
-        "image": "https://i.scdn.co/image/ab6761610000e5ebe1ca9dbff03bb74709e93247",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb707dedff9a990c4be4ef21f8",
         "related": [
             "Blueface",
             "Lil Tecca",
@@ -7363,8 +7363,8 @@
             "Simple Minds"
         ],
         "top_song_name": "Enjoy the Silence",
-        "top_song_id": "4wGSg2Qqpt2sGCWuAZj6EN",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2735952c4782caf4283105f2120",
+        "top_song_id": "0yp3TvJNlG50Q4tAHWNCRm",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273972ac79d249efed1c7b2c8c1",
         "top_song_preview_url": "https://p.scdn.co/mp3-preview/52914be143f0dac1fad0f9bf11b079487bbac6f1"
     },
     "Dean Martin": {
@@ -7376,10 +7376,10 @@
             "Nat King Cole",
             "Frank Sinatra"
         ],
-        "top_song_name": "Let It Snow! Let It Snow! Let It Snow!",
-        "top_song_id": "2uFaJJtFpPDc5Pa95XzTvg",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2736d88028a85c771f37374c8ea",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/1ef163efdd3087a004a81dcacadb59a5bee41b4f"
+        "top_song_name": "That's Amore",
+        "top_song_id": "4I4aQGNJ2HufloNtB65nxR",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273df4dfaff5c996b7998d6c34e",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/990b7e3ea970c549bd916fc0330d260d75928133"
     },
     "Stormzy": {
         "name": "Stormzy",
@@ -7413,10 +7413,10 @@
             "beabadoobee",
             "Steve Lacy"
         ],
-        "top_song_name": "THE SHADE",
-        "top_song_id": "1gH1h30wkQdd9zhY3j7a8T",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2735b656d32ea6b0b9c54c2d2e0",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/b62081b11cc9821d10922900bc290eaf459d7e84"
+        "top_song_name": "Pluto Projector",
+        "top_song_id": "4EWBhKf1fOFnyMtUzACXEc",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273733e6d7818eef87d20df86b5",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/de98b7525eaa0120bf0cf147888e81f75017a76a"
     },
     "M\u00e5neskin": {
         "name": "M\u00e5neskin",
@@ -7438,7 +7438,7 @@
     "Nio Garcia": {
         "name": "Nio Garcia",
         "id": "5hdhHgpxyniooUiQVaPxQ0",
-        "image": "https://i.scdn.co/image/ab6761610000e5ebac3ce18b33492e239845fc4c",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb743819afb90e79a5bbf1dc00",
         "related": [
             "Casper Magico",
             "Darell",
@@ -7459,7 +7459,7 @@
     "Calibre 50": {
         "name": "Calibre 50",
         "id": "4jogXSSvlyMkODGSZ2wc2P",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb00ec57ba55c076ad94f32722",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb540205d6dc257f493c7fbdd8",
         "related": [
             "Gerardo Ortiz",
             "La Adictiva",
@@ -7469,10 +7469,10 @@
             "El Fantasma",
             "Grupo Firme"
         ],
-        "top_song_name": "Si Te Pudiera Mentir",
-        "top_song_id": "3p6eieHX6oEOzJStPtEsLu",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273ed88a900a0f56464d141906a",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/cf19791420edd51a97cd8fad91ae5fd552038578"
+        "top_song_name": "A La Antig\u00fcita",
+        "top_song_id": "798ahLNEcoFER7Vywg1FMT",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273d84afc209eb57d425bf368fd",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/23541b8b59dab562a7d671057c66681dc11246f5"
     },
     "Bruce Springsteen": {
         "name": "Bruce Springsteen",
@@ -7706,7 +7706,7 @@
     "Pearl Jam": {
         "name": "Pearl Jam",
         "id": "1w5Kfo2jwwIPruYS2UWh56",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb122d1145d880736383742ebc",
+        "image": "https://i.scdn.co/image/ab6761610000e5ebe431fb8ba17cdee73e4ce08a",
         "related": [
             "Stone Temple Pilots",
             "Soundgarden",
@@ -7790,7 +7790,7 @@
     "Danny Ocean": {
         "name": "Danny Ocean",
         "id": "5H1nN1SzW0qNeUEZvuXjAj",
-        "image": "https://i.scdn.co/image/ab6761610000e5ebb34de09dd050a89da22a8ca1",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb78ed5e911016370e11f1f7bb",
         "related": [
             "Piso 21",
             "Manuel Turizo",
@@ -7845,10 +7845,10 @@
             "Rob Zombie",
             "Shinedown"
         ],
-        "top_song_name": "Down with the Sickness",
-        "top_song_id": "40rvBMQizxkIqnjPdEWY1v",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2732b222dcd5c4fcac7c0e81da2",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/e337c2d60afaee5d3c31e8ed2676539ae0f1220b"
+        "top_song_name": "The Sound of Silence - CYRIL Remix",
+        "top_song_id": "32aeRhnsILUPSbPiH5x62t",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2735ae1ccf0db0174bcbde1777e",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/89937a0bc7a8870ddd4f4228efcfccc6a243ddf7"
     },
     "Noriel": {
         "name": "Noriel",
@@ -7969,7 +7969,7 @@
         ],
         "top_song_name": "My Heart Will Go On - Love Theme from \"Titanic\"",
         "top_song_id": "33LC84JgLvK2KuW43MfaNq",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273745adc3f697ea1ec79d66901",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273def7146ca744f3b1bf838404",
         "top_song_preview_url": "https://p.scdn.co/mp3-preview/68c13229ec9b1b4a5ea580e801061fd7791857c4"
     },
     "Tate McRae": {
@@ -8377,10 +8377,10 @@
             "Cazzu",
             "Duki"
         ],
-        "top_song_name": "Los del Espacio",
-        "top_song_id": "1Hs1uUl8o2VtDp1DABFq0O",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b27352a52eac3761e2133bd0f57a",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/5bbdd15509b10d1b62cf5aa43500255754e2096b"
+        "top_song_name": "CORAZ\u00d3N VAC\u00cdO",
+        "top_song_id": "3oNnzH6hmqIGIhJ1NcHlrh",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273a3cbe5aa0bcf10eb02a8c960",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/15a67adb85841c362532e7cf8c01a12251084880"
     },
     "Jessie J": {
         "name": "Jessie J",
@@ -8458,7 +8458,7 @@
     "The Black Keys": {
         "name": "The Black Keys",
         "id": "7mnBLXK823vNxN3UWB7Gfz",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb8c6603de85e897d759d7cffc",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb62526d21ffdce8d9b6e093e6",
         "related": [
             "Jack White",
             "The White Stripes",
@@ -8493,8 +8493,8 @@
             "The Script"
         ],
         "top_song_name": "Where Are You Now",
-        "top_song_id": "1JzH2IS7bVWpMkNIJqywaB",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2732f371d93706d198fbd5fb96c",
+        "top_song_id": "3mfER4ORePHvN35cbZ3dkV",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273580da30167c82db5fcc5f798",
         "top_song_preview_url": "https://p.scdn.co/mp3-preview/2524ba8c7e53a72a62eaf3bae51d63c9427284c9"
     },
     "Avenged Sevenfold": {
@@ -8857,7 +8857,7 @@
     "Pentatonix": {
         "name": "Pentatonix",
         "id": "26AHtbjWKiwYzsoGoUZq53",
-        "image": "https://i.scdn.co/image/ab6761610000e5ebd8c57872541b101fb95d6295",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb746dd598cf914934bd27ed7e",
         "related": [
             "Lindsey Stirling",
             "Tori Kelly",
@@ -8946,10 +8946,10 @@
             "Diddy",
             "Timbaland"
         ],
-        "top_song_name": "RATATA",
-        "top_song_id": "4wteGC0HtLeZWjDcczc4Pw",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2736382f06498259682f91cf981",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/738aedaa1f3727cd98e64b63393a3f27f7128a23"
+        "top_song_name": "Work It",
+        "top_song_id": "3jagJCUbdqhDSPuxP8cAqF",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b27395d8583bba8f3cd794fa5bae",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/590b9c7307f4a3856128aa8d83f749548b81c8e5"
     },
     "Busta Rhymes": {
         "name": "Busta Rhymes",
@@ -9114,9 +9114,9 @@
             "Britney Spears",
             "Culture Club"
         ],
-        "top_song_name": "Popular (with Playboi Carti & Madonna)",
-        "top_song_id": "7GUhiAHLoVy1V8ucQuZ3CB",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273c87bfeef81a210ddb7f717b5",
+        "top_song_name": "Popular (with Playboi Carti & Madonna) - From The Idol Vol. 1 (Music from the HBO Original Series)",
+        "top_song_id": "6WzRpISELf3YglGAh7TXcG",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2734c8f092adc59b4bf4212389d",
         "top_song_preview_url": "https://p.scdn.co/mp3-preview/3bb12d1f2bdfd7eaf80d8502fe28806a422d8e5c"
     },
     "Jay Wheeler": {
@@ -9161,7 +9161,7 @@
     "Carin Leon": {
         "name": "Carin Leon",
         "id": "66ihevNkSYNzRAl44dx6jJ",
-        "image": "https://i.scdn.co/image/ab6761610000e5ebe77ad05db3992a45714340cb",
+        "image": "https://i.scdn.co/image/ab6761610000e5ebc3745afdc57cf47c8be5ee3a",
         "related": [
             "Grupo Firme",
             "Grupo Frontera",
@@ -9238,7 +9238,7 @@
     "Sam Hunt": {
         "name": "Sam Hunt",
         "id": "2kucQ9jQwuD8jWdtR9Ef38",
-        "image": "https://i.scdn.co/image/ab6761610000e5ebcf3c2fdcf8db021111d6da29",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb800647d0d619aa4bbfc10a53",
         "related": [
             "Old Dominion",
             "Brett Young",
@@ -9299,7 +9299,7 @@
     "TINI": {
         "name": "TINI",
         "id": "7vXDAI8JwjW531ouMGbfcp",
-        "image": "https://i.scdn.co/image/ab6761610000e5ebd1ee0c41d3c79e916b910696",
+        "image": "https://i.scdn.co/image/ab6761610000e5eba5a88ae3915ac988fc36fba5",
         "related": [
             "Maria Becerra",
             "Tiago PZK",
@@ -9563,10 +9563,10 @@
             "Eslabon Armado",
             "Alfredo Olivas"
         ],
-        "top_song_name": "LADY GAGA",
-        "top_song_id": "7mXuWTczZNxG5EDcjFEuJR",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2732fb583ed96f8f35cbf2897ba",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/ec439edcef8f1b71e88cfeb7d200db274901123b"
+        "top_song_name": "Y LLORO",
+        "top_song_id": "6RcAHyC5sAUIbPTkhOQwd8",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273f3ba6742a35f111aaea1ca2f",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/f82787d084854523e602d1239f44f04ced392dc5"
     },
     "Mora": {
         "name": "Mora",
@@ -9761,10 +9761,10 @@
             "John Denver",
             "Neil Diamond"
         ],
-        "top_song_name": "The Sound of Silence - Acoustic Version",
-        "top_song_id": "5y788ya4NvwhBznoDIcXwK",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2733b50c381e5f477c3cd066286",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/ce31ae784cc3a4a3958a6ae24e5a9d6d664b8508"
+        "top_song_name": "Mrs. Robinson - From \"The Graduate\" Soundtrack",
+        "top_song_id": "0iOZM63lendWRTTeKhZBSC",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273d8fb5b4308dc27f210064ef4",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/b48d5e6bd6312c23e674b6d3c5293438190cd99b"
     },
     "Sublime": {
         "name": "Sublime",
@@ -9939,7 +9939,7 @@
     "Tinashe": {
         "name": "Tinashe",
         "id": "0NIIxcxNHmOoyBx03SfTCD",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb74cca01a52304bfd552cd17d",
+        "image": "https://i.scdn.co/image/ab6761610000e5eba669f860c74c9007934d2cb6",
         "related": [
             "Normani",
             "Pia Mia",
@@ -10146,7 +10146,7 @@
     "Chief Keef": {
         "name": "Chief Keef",
         "id": "15iVAtD3s3FsQR4w1v6M0P",
-        "image": "https://i.scdn.co/image/ab6761610000e5eba09a58010871b4458e11fa1b",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb72f21f6e0b2f784a9276fcf2",
         "related": [
             "Bobby Shmurda",
             "Sheck Wes",
@@ -10166,7 +10166,7 @@
     "bbno$": {
         "name": "bbno$",
         "id": "41X1TR6hrK8Q2ZCpp2EqCz",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb6bca811e558018074bbc1b05",
+        "image": "https://i.scdn.co/image/ab6761610000e5eba8618661086b4c3c71f18680",
         "related": [
             "Yung Gravy",
             "Rich Brian",
@@ -10220,7 +10220,7 @@
     "Weezer": {
         "name": "Weezer",
         "id": "3jOstUTkEu2JkjvRdBA5Gu",
-        "image": "https://i.scdn.co/image/ab6761610000e5ebcff30a7278638dfd7e2726a9",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb3cd35451daa1b690cfbbb2d4",
         "related": [
             "CAKE",
             "Jimmy Eat World",
@@ -10433,10 +10433,10 @@
             "Christina Perri",
             "The Wanted"
         ],
-        "top_song_name": "Lifestyle (Jason Derulo ft. Adam Levine)",
-        "top_song_id": "4rEe3htSUbJbO8kJePhHBx",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b27386a8ab515de4b7aef28cd631",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/13988589a3026918f4863a90fa750d3be01e1ca5"
+        "top_song_name": "Lost Stars",
+        "top_song_id": "7rdGrVIoqwPWOULauvglio",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2730600f5db8d72f078268b9cbf",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/1ffd40b2b55aec7389a2ce8801a040d6d2741542"
     },
     "Liam Payne": {
         "name": "Liam Payne",
@@ -10482,7 +10482,7 @@
     "Kenny Chesney": {
         "name": "Kenny Chesney",
         "id": "3grHWM9bx2E9vwJCdlRv9O",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb2648ab5a22f928a3e9e3b184",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb5de44c9558a47909debca2cd",
         "related": [
             "Toby Keith",
             "Tim McGraw",
@@ -10503,7 +10503,7 @@
     "Sum 41": {
         "name": "Sum 41",
         "id": "0qT79UgT5tY4yudH9VfsdT",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb9af74b88c7db1500a52e4774",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb625af80b68ae4eb559c6c417",
         "related": [
             "Good Charlotte",
             "Bowling For Soup",
@@ -10650,7 +10650,7 @@
     "Sabrina Carpenter": {
         "name": "Sabrina Carpenter",
         "id": "74KM79TiuVKeVCqs8QtB0B",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb00e540b760b56d02cc415c47",
+        "image": "https://i.scdn.co/image/ab6761610000e5ebaead9d4bfd812d0d267b2991",
         "related": [
             "Zendaya",
             "Madison Beer",
@@ -10671,7 +10671,7 @@
     "Cigarettes After Sex": {
         "name": "Cigarettes After Sex",
         "id": "1QAJqy2dA3ihHBFIHRphZj",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb02f8a809f97454e67a648c67",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb951ddfa8b5a19e7452d3e98e",
         "related": [
             "TV Girl",
             "Clairo",
@@ -10719,7 +10719,7 @@
     "Lyanno": {
         "name": "Lyanno",
         "id": "1Ts9of7VPZElwPQnqnDSfW",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb65bebbf824aaee76df41ad41",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb822af25c5a3b299c26d91da4",
         "related": [
             "Lenny Tav\u00e1rez",
             "Alex Rose",
@@ -10784,10 +10784,10 @@
             "Guilherme & Benuto",
             "Jorge & Mateus"
         ],
-        "top_song_name": "DEJA VU",
-        "top_song_id": "2IDf0IZ9dfw0uDYV2n1bJc",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273e035c09f33e2a896edef4bdb",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/322ef760a5b90dfe9ff6cb23fb43bc02ba791ed2"
+        "top_song_name": "MEIO TERMO - Ao Vivo",
+        "top_song_id": "23IebZSNZ8VzwUr4rJNGRG",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273845b7e5dfb634d609b154e7a",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/33d6001b158e96dba8df025c4809397b1f9cf23b"
     },
     "Gryffin": {
         "name": "Gryffin",
@@ -10889,7 +10889,7 @@
     "Carlos Rivera": {
         "name": "Carlos Rivera",
         "id": "39yVoqm6sYFvvqF1RciUVf",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb0a6f7f3156a3b8022578243d",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb8c023a13a5a28bc29cc30ed4",
         "related": [
             "Yuridia",
             "Ha*Ash",
@@ -10905,7 +10905,7 @@
     "Dermot Kennedy": {
         "name": "Dermot Kennedy",
         "id": "5KNNVgR6LBIABRIomyCwKJ",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb2cd8d09c5888a19d747f60a2",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb01d2c1d798d01d814a830430",
         "related": [
             "Tom Walker",
             "James Bay",
@@ -11141,10 +11141,10 @@
             "Lord Huron",
             "FINNEAS"
         ],
-        "top_song_name": "You Are Enough",
-        "top_song_id": "1Wdj4wRDYS7aT4CoPS0mAH",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273c761387d83c7c615da7008a8",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/58a475d84e057a7f2a3a3cb6f63d7d455dea8011"
+        "top_song_name": "Turning Page",
+        "top_song_id": "2kfGoV9a5dbSKCNmUWH2ZF",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b27330eb992a82f895893f60375b",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/7e7be58424b8dbc3a93db14bc573ad717243145a"
     },
     "Normani": {
         "name": "Normani",
@@ -11503,7 +11503,7 @@
     "KEVIN ROLDAN": {
         "name": "KEVIN ROLDAN",
         "id": "1RBzGO6Nm3uyhUSxP7EDWO",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb290705113ef67789e1bf49c6",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb3630a314fa04e9a6e5a4a782",
         "related": [
             "Justin Quiles",
             "Alex Rose",
@@ -11542,10 +11542,10 @@
             "Zion",
             "De La Ghetto"
         ],
-        "top_song_name": "ID",
-        "top_song_id": "0crVjW9Jz8ktVuVXoUi187",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273969a668a4236d0de376a51db",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/a1612c6b8ca71433366a943f451ee7385da11160"
+        "top_song_name": "Safaera",
+        "top_song_id": "2DEZmgHKAvm41k4J3R2E9Y",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273548f7ec52da7313de0c5e4a0",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/9a5a46759106c4a952223d007a253474d4b01816"
     },
     "Alex Rose": {
         "name": "Alex Rose",
@@ -11949,10 +11949,10 @@
             "Johnny Cash",
             "Neil Diamond"
         ],
-        "top_song_name": "Jolene",
-        "top_song_id": "5fdhThPDe6jQQDqCyWrdAn",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b27314021e9ab9da5813bc6791cb",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/66cd00686ab84843e560ae024e60e8bf0fba786d"
+        "top_song_name": "TYRANT",
+        "top_song_id": "3NtCIBBz5pEAVGeHL4h5mS",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2734903a9678d5664b9cd9a3fd8",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/32c70c11c2d3286ae0b8d8d339b9ea0d9ff12f78"
     },
     "Martin Jensen": {
         "name": "Martin Jensen",
@@ -12006,10 +12006,10 @@
             "Two Feet",
             "Dennis Lloyd"
         ],
-        "top_song_name": "Devil Eyes",
-        "top_song_id": "7MiZjKawmXTsTNePyTfPyL",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273ecdad1ee6d530eb965d7c51e",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/712f2fe51bbaa666c423168f2c231098fbd09b4a"
+        "top_song_name": "Habits (Stay High) - Hippie Sabotage Remix",
+        "top_song_id": "0roebDwroi83VzqtHOBjzh",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2735d6b54713658e0785c33e06e",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/951c126f18315593167a196e5f86afbe39f1759f"
     },
     "The Wanted": {
         "name": "The Wanted",
@@ -12049,7 +12049,7 @@
     "Don Diablo": {
         "name": "Don Diablo",
         "id": "1l2ekx5skC4gJH8djERwh1",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb037a3eff023c895115c1a29e",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb33e729f4105ebf64287be5e6",
         "related": [
             "Oliver Heldens",
             "DVBBS",
@@ -12066,7 +12066,7 @@
     "Pedro Cap\u00f3": {
         "name": "Pedro Cap\u00f3",
         "id": "4QVBYiagIaa6ZGSPMbybpy",
-        "image": "https://i.scdn.co/image/ab6761610000e5ebd2567e467666ca2e34e91fae",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb5654c9b95355d8db420a7a4a",
         "related": [
             "Sof\u00eda Reyes",
             "Mau y Ricky",
@@ -12106,7 +12106,7 @@
     "Los Tigres Del Norte": {
         "name": "Los Tigres Del Norte",
         "id": "3hYtANQYrE6pd2PbtEyTIy",
-        "image": "https://i.scdn.co/image/ab6761610000e5eba13442aca1869223a98e4f3b",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb9847260aeb55965eda5bf2a0",
         "related": [
             "Los Temerarios",
             "Los Bukis",
@@ -12257,7 +12257,7 @@
     "Danna Paola": {
         "name": "Danna Paola",
         "id": "5xSx2FM8mQnrfgM1QsHniB",
-        "image": "https://i.scdn.co/image/ab6761610000e5ebc07de562b10894c9176c88a1",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb5f0bc881658764ed71ed2b07",
         "related": [
             "Sof\u00eda Reyes",
             "Ha*Ash",
@@ -12333,17 +12333,17 @@
     "TOMORROW X TOGETHER": {
         "name": "TOMORROW X TOGETHER",
         "id": "0ghlgldX5Dd6720Q3qFyQB",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb8b446e5bd3820ac772155b31",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb3835e2ba41427e8356bbd091",
         "related": [
             "ENHYPEN",
             "Stray Kids",
             "SEVENTEEN",
             "Agust D"
         ],
-        "top_song_name": "Chasing That Feeling",
-        "top_song_id": "0ZPjVmof45INEERgYfadtv",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2736067880e6c410727ac5a5f8b",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/b4e41b4c681aedcafed0959308e47a9ce1ada465"
+        "top_song_name": "Deja Vu",
+        "top_song_id": "3aAnwyBJY9OLNLqSgd4fZU",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b27303c996028737858321d2ffe0",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/2cca480b447f185b5a64c94e6bdf112bc16c7ef4"
     },
     "Supertramp": {
         "name": "Supertramp",
@@ -12361,10 +12361,10 @@
             "The Cars",
             "Kansas"
         ],
-        "top_song_name": "Breakfast In America - 2010 Remastered",
-        "top_song_id": "4a5pNRjwmzYQuEY1E7O6pj",
+        "top_song_name": "The Logical Song - Remastered 2010",
+        "top_song_id": "6mHOcVtsHLMuesJkswc0GZ",
         "top_song_art": "https://i.scdn.co/image/ab67616d0000b2735405ef9e393f5f1e53b4b42e",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/ac3c12aa6a32db5b171f67b9d13a16adc431da3a"
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/40810a2f83247bea42ea6067ff47c183128e3c26"
     },
     "Mon Laferte": {
         "name": "Mon Laferte",
@@ -12439,10 +12439,10 @@
             "Bastille",
             "Robin Schulz"
         ],
-        "top_song_name": "Love Me Again",
-        "top_song_id": "5VSCgNlSmTV2Yq5lB40Eaw",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273c31ce98936c6c5d0deefe978",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/19ee36bbd6f8deba9c712b33f3b0bdeb6de982a1"
+        "top_song_name": "Blame (feat. John Newman)",
+        "top_song_id": "07nH4ifBxUB4lZcsf44Brn",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273063c048e9ef6bd021b744756",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/31297ae5e2f5524fe28b18ed71abc79683c66a88"
     },
     "Bing Crosby": {
         "name": "Bing Crosby",
@@ -12511,10 +12511,10 @@
             "Darell",
             "Nio Garcia"
         ],
-        "top_song_name": "Nost\u00e1lgico",
-        "top_song_id": "2BEcap3xJtmiPaHKyfQi4e",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273006cb8a368b174bbef547df1",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/356f47121298bd6606c82c7c06135f0fef2044f4"
+        "top_song_name": "Santa",
+        "top_song_id": "5bi0gh89wRuH2OgjdAKFsb",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273f02899736a6ff8dd538ae70b",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/0f6ef71a778db3848bb186092bccd8f0290c10a0"
     },
     "Pink Sweat$": {
         "name": "Pink Sweat$",
@@ -12612,8 +12612,8 @@
             "Lil Yachty"
         ],
         "top_song_name": "leavemealone",
-        "top_song_id": "7iUScoHKNJC5hqtA40vMlj",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2730920dda3769771de5ffd4578",
+        "top_song_id": "1nzOUWyHoZLzf9EX0pnFPn",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273fd4fd4ebe15ddab320bbe7c1",
         "top_song_preview_url": "https://p.scdn.co/mp3-preview/154e06b77aed19154a2b3e7dcfc9af91c74f4433"
     },
     "Kacey Musgraves": {
@@ -12670,7 +12670,7 @@
         ],
         "top_song_name": "I'm Just a Kid",
         "top_song_id": "6otiaV2fagE3s8IvP6WkwG",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2737e973b97ebe64cabf8e3dfa0",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273fbee462a3aa4e7ea05e07aa5",
         "top_song_preview_url": "https://p.scdn.co/mp3-preview/6aff03beae0370a806e35a01ba828ef774620fa8"
     },
     "Kylie Minogue": {
@@ -12749,7 +12749,7 @@
     "Jon Z": {
         "name": "Jon Z",
         "id": "5bWUlnPx9OYKsLiUJrhCA1",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb3f46bb7311103877116831b3",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb9e6df0929ef7ed8e7fe0c6cf",
         "related": [
             "Noriel",
             "Darell",
@@ -12762,10 +12762,10 @@
             "DJ Luian",
             "De La Ghetto"
         ],
-        "top_song_name": "0 Sentimientos (Remix) [feat. Baby Rasta, Noriel, Darkiel, Messiah & Lyan]",
-        "top_song_id": "3gYco8uoFBmpxqYlz3Zhs7",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273d8c9df61c1a7cc684b7c6db6",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/e8efc0ffea0e57cd60545298471ec2e4c6b7f231"
+        "top_song_name": "Suave (Remix)",
+        "top_song_id": "4phvdPGXE8MGXsTBhqB5ht",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2736032996512ae7971a32777b9",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/0ba859c0353f6ca065f45c9cb0486c236f1eea6d"
     },
     "3 Doors Down": {
         "name": "3 Doors Down",
@@ -12901,10 +12901,10 @@
             "$NOT",
             "Lil Dicky"
         ],
-        "top_song_name": "Betty (Get Money)",
-        "top_song_id": "1JCrXIeI6a9qRIkfAEz7J1",
+        "top_song_name": "C\u2019est La Vie (with bbno$ & Rich Brian)",
+        "top_song_id": "3QqOcLtTU8zzlQRJCZzttP",
         "top_song_art": "https://i.scdn.co/image/ab67616d0000b2734684ae99ac25a39d60e0a23b",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/66d23936071f95382d4755cbd611052dae0f63ae"
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/af3f2a22ad018ebb014c22c496be98b81f5a162c"
     },
     "Eslabon Armado": {
         "name": "Eslabon Armado",
@@ -12946,7 +12946,7 @@
     "Electric Light Orchestra": {
         "name": "Electric Light Orchestra",
         "id": "7jefIIksOi1EazgRTfW2Pk",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb3f289b61b4d965ce54e31841",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb6ee22df4403027ae525ced87",
         "related": [
             "Supertramp",
             "The Moody Blues",
@@ -13075,10 +13075,10 @@
             "Chevelle",
             "Mudvayne"
         ],
-        "top_song_name": "Please Please Please Let Me Get What I Want - 2005 Remaster",
-        "top_song_id": "42gzADgUU7e2yu5Qn8WfeC",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2739bb36ec0850f21845af83b2d",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/a6a279b6bca6af5b0017901be6ea54cabf406079"
+        "top_song_name": "Change (In the House of Flies)",
+        "top_song_id": "51c94ac31swyDQj9B3Lzs3",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2735c53799f473fa3e1a48c00ed",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/d0fca1a516d07cea609f8f259faf940af456cdfa"
     },
     "Ella Henderson": {
         "name": "Ella Henderson",
@@ -13159,7 +13159,7 @@
     "beabadoobee": {
         "name": "beabadoobee",
         "id": "35l9BRT7MXmM8bv2WDQiyB",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb9d6d0ba276987f19641c27de",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb6a97b44a87bc0b23cd7c8c78",
         "related": [
             "Laufey",
             "Clairo",
@@ -13178,7 +13178,7 @@
     "Owl City": {
         "name": "Owl City",
         "id": "07QEuhtrNmmZ0zEcqE9SF6",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb89100f32987cbdb4fe8242cc",
+        "image": "https://i.scdn.co/image/ab6761610000e5ebce3fbd73ae4f8b3ff54a0a5c",
         "related": [
             "Plain White T's",
             "Neon Trees",
@@ -13334,7 +13334,7 @@
     "Tori Kelly": {
         "name": "Tori Kelly",
         "id": "1vSN1fsvrzpbttOYGsliDr",
-        "image": "https://i.scdn.co/image/ab6761610000e5ebd1a7ecd79e63927c5a765535",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb544ba0da8dbe879efa20bcb9",
         "related": [
             "JoJo",
             "Jordin Sparks",
@@ -13348,8 +13348,8 @@
             "MKTO"
         ],
         "top_song_name": "Bridge Over Troubled Water (feat. John Legend & Tori Kelly)",
-        "top_song_id": "4FG5dNlurEtZ84kCTg5YLA",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2738c701772ba5484a0368f3e1d",
+        "top_song_id": "4asa5agcZmibrmpTmb1q6m",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273b1b5640ec6436246b57a32f1",
         "top_song_preview_url": "https://p.scdn.co/mp3-preview/370e329fbd05c87d7c1d1927561f0bafee906ee7"
     },
     "Guaynaa": {
@@ -13652,7 +13652,7 @@
         ],
         "top_song_name": "Sunday Best",
         "top_song_id": "1qYKWcEOrh2tM8PlgIm8K1",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2731a0affe36002256fac950cdb",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b27328fc968d1e066921c2c798fd",
         "top_song_preview_url": "https://p.scdn.co/mp3-preview/0062178836f645d0c1ab0a84447cddd1022aec15"
     },
     "Duran Duran": {
@@ -13871,10 +13871,10 @@
             "Eslabon Armado",
             "Alfredo Olivas"
         ],
-        "top_song_name": "HARLEY QUINN",
-        "top_song_id": "6CvTEtGagmzQvkUzzyKR9k",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273ad57982065339f7dc2058efe",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/2845f30873601167f8970f2d64f53cda26441b7a"
+        "top_song_name": "Que Onda",
+        "top_song_id": "6uIIdjYTxxpWOyWuVXrKQO",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273c8fd4190e32eed2dfcd00f66",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/84bedddb9d7ae9cc58aad446d435c9eea28bdabb"
     },
     "Dynoro": {
         "name": "Dynoro",
@@ -14090,7 +14090,7 @@
     "AURORA": {
         "name": "AURORA",
         "id": "1WgXqy2Dd70QQOU7Ay074N",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb68369596eaf232b28b63d583",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb1cf26a96c2acfb260495a187",
         "related": [
             "MARINA",
             "Daughter",
@@ -14111,7 +14111,7 @@
     "Wallows": {
         "name": "Wallows",
         "id": "0NIPkIjTV8mB795yEIiPYL",
-        "image": "https://i.scdn.co/image/ab6761610000e5ebefef82942ab84b0f1b294288",
+        "image": "https://i.scdn.co/image/ab6761610000e5ebc83bf2d64390a022f70674e1",
         "related": [
             "Declan McKenna",
             "Clairo",
@@ -14150,10 +14150,10 @@
             "Lil Tecca",
             "Lil Uzi Vert"
         ],
-        "top_song_name": "IDGAF (feat. Yeat)",
-        "top_song_id": "2YSzYUF3jWqb9YP9VXmpjE",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2737d384516b23347e92a587ed1",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/c23e9088d5bbab9edfb8e6c37af8e8eee0016e39"
+        "top_song_name": "Breathe",
+        "top_song_id": "5NAOhPAZ57eFAXr3qatS6i",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2739567b80f50a5b9f0178ae993",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/f22571049c9a70cf4699b5f114ed2b33003b86b5"
     },
     "Ofenbach": {
         "name": "Ofenbach",
@@ -14212,7 +14212,7 @@
     "Diego & Victor Hugo": {
         "name": "Diego & Victor Hugo",
         "id": "3k68C6mNMJL6OaAdWeW2ZF",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb66f9c83e88eabde971b28157",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb6131129126875643347a82c0",
         "related": [
             "Guilherme & Benuto",
             "Israel & Rodolffo",
@@ -14334,7 +14334,7 @@
     "KALEO": {
         "name": "KALEO",
         "id": "7jdFEYD2LTYjfwxOdlVjmc",
-        "image": "https://i.scdn.co/image/ab6761610000e5ebc2bc8368a241196dd45d6f62",
+        "image": "https://i.scdn.co/image/ab6761610000e5ebd12dda5c73df781c0bbfe311",
         "related": [
             "The Black Keys",
             "Rag'n'Bone Man",
@@ -14416,7 +14416,7 @@
     "Selena": {
         "name": "Selena",
         "id": "6IE6z7DcZIT4Ml3Fh5Ivch",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb2c4b4251247aa30c7b6de155",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb0e20a9e55782c42122e38409",
         "related": [
             "Thalia",
             "Julieta Venegas"
@@ -14429,7 +14429,7 @@
     "Billy Ray Cyrus": {
         "name": "Billy Ray Cyrus",
         "id": "60rpJ9SgigSd16DOAG7GSa",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb440230373e8ffaf11c36f96d",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb4bfffdfbc6383f5cac847b77",
         "related": [
             "Alan Jackson",
             "Dolly Parton",
@@ -14750,7 +14750,7 @@
     "Will Smith": {
         "name": "Will Smith",
         "id": "41qil2VaGbD194gaEcmmyx",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb9e7e37aff77edd18db4584ff",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb1a1a0efad11249e8827073bb",
         "related": [
             "LL COOL J",
             "Coolio",
@@ -14825,10 +14825,10 @@
             "Nina Simone",
             "Bill Withers"
         ],
-        "top_song_name": "At Last",
-        "top_song_id": "4Hhv2vrOTy89HFRcjU3QOx",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273b2229a8fdf377abaf3652624",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/33a1d8d54f9a05885866036e1322391771eaa41d"
+        "top_song_name": "I'd Rather Go Blind",
+        "top_song_id": "1kPBT8S2wJFNAyBMnGVZgL",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2737649604d1b27be1c78c466e9",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/02ef920ee472f08762760435e47264a014636a1d"
     },
     "Fugees": {
         "name": "Fugees",
@@ -14995,10 +14995,10 @@
             "Niska",
             "Ninho"
         ],
-        "top_song_name": "Casanova",
-        "top_song_id": "30D9x5LFgL2o9xidjX2wtE",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2735e90edde8fea572f0400c369",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/fc6b27c85b90e481d29992503ca8d562cfdfaedd"
+        "top_song_name": "MAMI WATA",
+        "top_song_id": "6yqwxY8qifBBhyryjZutxk",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2737dfe25eb478d69089abbaec1",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/7ecb716e8bee3ce51c39539027cb63c5617473b2"
     },
     "MF DOOM": {
         "name": "MF DOOM",
@@ -15089,10 +15089,10 @@
             "Bea Miller",
             "Bebe Rexha"
         ],
-        "top_song_name": "Sit Still, Look Pretty",
-        "top_song_id": "6ZtiywT2Qm50a1uR0jlY35",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273499bc87c1341c44bcc52da15",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/284f6a366f5a97078661c6debcd72c43f473732a"
+        "top_song_name": "Don't Let Me Down",
+        "top_song_id": "1i1fxkWeaMmKEB4T7zqbzK",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b27302df2d642b572cf4f284a5c3",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/4db7d84bd59065908dcbd9d8fa2d7b8f0e392359"
     },
     "Thirty Seconds To Mars": {
         "name": "Thirty Seconds To Mars",
@@ -15387,7 +15387,7 @@
     "Creed": {
         "name": "Creed",
         "id": "43sZBwHjahUvgbx1WNIkIz",
-        "image": "https://i.scdn.co/image/a8e1ecca8c64abce46d504284424b6e910fc0f40",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb0d86c8971cc4d6fa63d58bae",
         "related": [
             "Puddle Of Mudd",
             "Hinder",
@@ -15426,7 +15426,7 @@
     "Neil Young": {
         "name": "Neil Young",
         "id": "6v8FB84lnmJs434UJf2Mrm",
-        "image": "https://i.scdn.co/image/ab6772690000c46c49b91a07c864561ba7c78ba7",
+        "image": "https://i.scdn.co/image/ab6761610000e5ebbae8276dffd864ebac759b76",
         "related": [
             "Crosby, Stills & Nash",
             "Bob Dylan",
@@ -15439,15 +15439,15 @@
             "The Velvet Underground",
             "Tom Waits"
         ],
-        "top_song_name": "Journey Through the Past",
-        "top_song_id": "73uAQw29X3mrO1taWZaOvm",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273b089402ed16680010d0131d4",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/60794df6809ced46c489cb99184fd0cbdc06190b"
+        "top_song_name": "Heart of Gold",
+        "top_song_id": "26QKxvjlCo2fSd3T4c8Zpb",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2730940e6b24f977f68b5fc35d1",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/672dc466d653cd519ea7e9e3dca26d7793a03c9f"
     },
     "Beyonc\u00e9": {
         "name": "Beyonc\u00e9",
         "id": "6vWDO969PvNqNYHIOW5v0m",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb2b7962ada66cbea99dcb0caa",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb247f44069c0bd1781df2f785",
         "related": [
             "Destiny's Child",
             "Alicia Keys",
@@ -15461,9 +15461,9 @@
             "Justin Timberlake"
         ],
         "top_song_name": "TEXAS HOLD 'EM",
-        "top_song_id": "7AYmToZ5y67fBjq4RLFbuq",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2736c1836a40380c147eab9c98f",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/049e763cb1a9fe9ef0ecec1a1a27c9335ee521f1"
+        "top_song_id": "7wLShogStyDeZvL0a6daN5",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2731572698fff8a1db257a53599",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/0a69f787920bde0a0e1d17af762695ad3cc9d99b"
     },
     "KAROL G": {
         "name": "KAROL G",
@@ -15535,10 +15535,10 @@
             "NewJeans",
             "TOMORROW X TOGETHER"
         ],
-        "top_song_name": "How You Like That",
-        "top_song_id": "4SFknyjLcyTLJFPKD2m96o",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2737dd8f95320e8ef08aa121dfe",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/29a60b8d3fe44fdab03a0921fe70a9ea4a972a59"
+        "top_song_name": "Pink Venom",
+        "top_song_id": "5zwwW9Oq7ubSxoCGyW1nbY",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273002ef53878df1b4e91c15406",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/a59a76b4738f85626dc0a00024936fe6e0d62d45"
     },
     "YoungBoy Never Broke Again": {
         "name": "YoungBoy Never Broke Again",
@@ -15625,7 +15625,7 @@
     "Ava Max": {
         "name": "Ava Max",
         "id": "4npEfmQ6YuiwW1GpUmaq3F",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb25806739a86070d817a9588d",
+        "image": "https://i.scdn.co/image/ab6761610000e5ebf4827e6db5b9b3ada7888dee",
         "related": [
             "Mabel",
             "Bebe Rexha",
@@ -15646,7 +15646,7 @@
     "Banda MS de Sergio Liz\u00e1rraga": {
         "name": "Banda MS de Sergio Liz\u00e1rraga",
         "id": "2C6i0I5RiGzDKN9IAF8reh",
-        "image": "https://i.scdn.co/image/ab6761610000e5ebec366deaeb5e8e51a819b6a8",
+        "image": "https://i.scdn.co/image/ab6761610000e5ebf21390bf6f7fe0c469913a85",
         "related": [
             "La Adictiva",
             "La Arrolladora Banda El Lim\u00f3n De Rene Camacho",
@@ -15667,10 +15667,10 @@
         "related": [
             "NewJeans"
         ],
-        "top_song_name": "I GOT YOU (Original)",
-        "top_song_id": "4RXsi1oTj3uaqoRC9UrwGA",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273d112b7516a0a23058a819764",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/c2d16340f54ca825850adae6ba0f0323428526f3"
+        "top_song_name": "ONE SPARK",
+        "top_song_id": "7cIn67LEvk16v6komC8znS",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273bd8c739ce7e59ae9414c7a26",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/eaf448cde4f65ad39d638e91faf4de696b974487"
     },
     "System Of A Down": {
         "name": "System Of A Down",
@@ -15706,15 +15706,15 @@
             "Peso Pluma",
             "Eslabon Armado"
         ],
-        "top_song_name": "O Me Voy O Te Vas",
-        "top_song_id": "127UT7AiWflJwjXWUBBVTQ",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273c1814d19b44c5e9df7ef33bd",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/ed8d7abc18f92761b7214d3e97870fd702110a2e"
+        "top_song_name": "Madonna",
+        "top_song_id": "5LhI8m7n8xlQmNe3b7Rwis",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273fcd2820c9b859adc64a64b88",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/1f5da933d7ad8458956721a548e4cb3f565a377e"
     },
     "Jhayco": {
         "name": "Jhayco",
         "id": "6nVcHLIgY5pE2YCl8ubca1",
-        "image": "https://i.scdn.co/image/ab6761610000e5ebd8ff1e5648c9a11c7025b2e3",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb409c53e5e4a8438ccc5c51d0",
         "related": [
             "Tainy",
             "Mora",
@@ -15727,10 +15727,10 @@
             "Dalex",
             "Brytiago"
         ],
-        "top_song_name": "Holanda",
-        "top_song_id": "6irysuQyZWd7Bjj7ePiOs2",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273cd2ceb6adaa32ecc83cec5c3",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/08ccb64a82966d35f2dbf41415e0c99a0c1f49c5"
+        "top_song_name": "D\u00c1KITI",
+        "top_song_id": "4MzXwWMhyBbmu6hOcLVD49",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273005ee342f4eef2cc6e8436ab",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/78f5e89d6384301b40fd9e5a659152a33dac6646"
     },
     "Stray Kids": {
         "name": "Stray Kids",
@@ -15790,7 +15790,7 @@
     "Dalex": {
         "name": "Dalex",
         "id": "0KPX4Ucy9dk82uj4GpKesn",
-        "image": "https://i.scdn.co/image/ab6761610000e5ebf318c0b1fa970920231aa639",
+        "image": "https://i.scdn.co/image/ab6761610000e5ebff284180f08000247df12e2c",
         "related": [
             "Lenny Tav\u00e1rez",
             "Alex Rose",
@@ -15803,10 +15803,10 @@
             "Jay Wheeler",
             "Nio Garcia"
         ],
-        "top_song_name": "Hola - Remix",
-        "top_song_id": "17I27VXKtqXJHL6ReaG0eS",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2734ff87c537b7a187063affff1",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/0b2d30d6a8142f6fb9ade19e9abc4d0097800135"
+        "top_song_name": "LA RANGER (feat. Myke Towers)",
+        "top_song_id": "0QoaFLmBJyuVuzOIGy6iCS",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b27376d202b234aa815077af5c96",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/de3bda1ccbe7d10b8a4ffbef16efa195641903c6"
     },
     "Summer Walker": {
         "name": "Summer Walker",
@@ -15845,10 +15845,10 @@
             "Gucci Mane",
             "Tee Grizzley"
         ],
-        "top_song_name": "Really Really",
-        "top_song_id": "10I3CmmwT0BkOVhduDy53o",
+        "top_song_name": "2 Phones",
+        "top_song_id": "0wdKiSBUT7aZkXUIdJWcwC",
         "top_song_art": "https://i.scdn.co/image/ab67616d0000b273e9f118d86ff427f89bdcbb74",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/5df72a13347062ea9e32c89e743136ee4ccf3de6"
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/865b59a26c8ae8729df7514a0623661820cfcefb"
     },
     "Ninho": {
         "name": "Ninho",
@@ -15925,7 +15925,7 @@
     "Capital Bra": {
         "name": "Capital Bra",
         "id": "4WZGDpNwrC0vNQyl9QzF7d",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb7f60e9888fdf577945eb7bdd",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb4e8304b0f274dac75a70fd3c",
         "related": [
             "Bonez MC",
             "RAF Camora",
@@ -16006,9 +16006,9 @@
             "Pepe Aguilar"
         ],
         "top_song_name": "El Amor De Mi Vida",
-        "top_song_id": "04sktg3deiYUweHfbFUZTM",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2730fbfe75fb58c2e07def46917",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/3934d6ff86eeaba8103d7d00535c138d2d02dcb8"
+        "top_song_id": "3pCkC3Ahgl7MShJbafchZz",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273890a54b3560700b72816d472",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/fee06ee8b84128f164158a29d99055519efec8b5"
     },
     "Bibi Blocksberg": {
         "name": "Bibi Blocksberg",
@@ -16124,10 +16124,10 @@
             "Junior H",
             "Alfredo Olivas"
         ],
-        "top_song_name": "un x100to",
-        "top_song_id": "2yzshFeBIwH8tWIqHEFLeD",
+        "top_song_name": "EL AMOR DE SU VIDA",
+        "top_song_id": "0O3U5iwTbiXCREMkvotJuN",
         "top_song_art": "https://i.scdn.co/image/ab67616d0000b27382ce4c7bbf861185252e82ae",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/903e4abb01bf8d0cf9b6737624d05b1041bad806"
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/b72bd7042b43f3e7634e2da7efa1fdc9d0218ceb"
     },
     "Outkast": {
         "name": "Outkast",
@@ -16200,10 +16200,10 @@
             "Fuerza Regida",
             "Natanael Cano"
         ],
-        "top_song_name": "Pixelados",
-        "top_song_id": "77phWAt2l34OadUUUqi5ai",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b27382c47f52f8ee74aedca7bea3",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/66487d1f7c96745b1d2c46401c9baa585111074f"
+        "top_song_name": "Si No Quieres No",
+        "top_song_id": "1C84d9abZVKWHT2YYpoean",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2735c7365ca8cfaf7d80136c656",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/d7d61eec7c0ac31c5019a40c1e6169f2c0776386"
     },
     "PNL": {
         "name": "PNL",
@@ -16440,10 +16440,10 @@
             "Pepe Aguilar",
             "Alejandro Fern\u00e1ndez"
         ],
-        "top_song_name": "Si No Te Hubieras Ido",
-        "top_song_id": "1fhusBTFmHeB6BxVsvj2lN",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273d2301f29e0f447f4dfdebf9c",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/4f50df890ef48f4e7608317d9e3a506f0e576428"
+        "top_song_name": "Acepto Mi Derrota",
+        "top_song_id": "6DLLMiIJ4ZTEavY5Qg7QVD",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273b0cfb94bd5583e3775d2df6a",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/57597c5a8e2694f9e5a59c1db7e244f508e0ae44"
     },
     "NewJeans": {
         "name": "NewJeans",
@@ -16649,10 +16649,10 @@
             "Matheus & Kauan",
             "Z\u00e9 Neto & Cristiano"
         ],
-        "top_song_name": "DEJA VU",
-        "top_song_id": "2IDf0IZ9dfw0uDYV2n1bJc",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273e035c09f33e2a896edef4bdb",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/322ef760a5b90dfe9ff6cb23fb43bc02ba791ed2"
+        "top_song_name": "RAM TCHUM",
+        "top_song_id": "6mJCx80Wc91GPi9ew9bkmD",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273db8df35632c1be1caeb9461d",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/f6cb71bf13af635bfdee9fe4d1266af83f01f996"
     },
     "Rag'n'Bone Man": {
         "name": "Rag'n'Bone Man",
@@ -16752,16 +16752,16 @@
     "LUDMILLA": {
         "name": "LUDMILLA",
         "id": "3CDoRporvSjdzTrm99a3gi",
-        "image": "https://i.scdn.co/image/ab6761610000e5ebcbc5629f5ff6eecca7d192e8",
+        "image": "https://i.scdn.co/image/ab6761610000e5ebf3ee6661f23aca73e81407bb",
         "related": [
             "PEDRO SAMPAIO",
             "Anitta",
             "DENNIS"
         ],
-        "top_song_name": "Macetando",
-        "top_song_id": "6eJUG282cUKuIoa72sEsqO",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2733bc15b5807bd7e3500944a69",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/872322e0edc2920115ae13c889eceadd0ac39987"
+        "top_song_name": "Dia de Fluxo",
+        "top_song_id": "6GmyQws2xpUFIN5dXBNTrl",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2732d0ff645a34a82365a04add6",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/332e67f19216c7d056d27cbf610fef10d1620ed2"
     },
     "Jon Bellion": {
         "name": "Jon Bellion",
@@ -16808,15 +16808,15 @@
             "Apache 207",
             "Capital Bra"
         ],
-        "top_song_name": "Mit Dir",
-        "top_song_id": "3gengEn3je6KGekvgNnHxA",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273b4bb2962553a77d5deffce90",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/1f956944c45af82ab4b8f5c5fb98999cd447f2b3"
+        "top_song_name": "Follow",
+        "top_song_id": "552rCxBynmuPhmOLczMqCY",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273436bd62f90ea594caf9a8154",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/afc72a57a5575c8662642d440a6bd4b330578d64"
     },
     "Joyner Lucas": {
         "name": "Joyner Lucas",
         "id": "6C1ohJrd5VydigQtaGy5Wa",
-        "image": "https://i.scdn.co/image/ab6761610000e5ebaf819bd1b0eb53368ac96607",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb5499a7cda22fba70a237903d",
         "related": [
             "Hopsin",
             "Logic",
@@ -16828,15 +16828,15 @@
             "G-Eazy",
             "Jay Rock"
         ],
-        "top_song_name": "Ramen & OJ",
-        "top_song_id": "4TIqzdAssasqx3DAe6cG9J",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2734fd8e64469ff9dd01faf50fe",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/0af1c66665c4fdfd11d8252f9135ea8c12d2a1a9"
+        "top_song_name": "Best For Me",
+        "top_song_id": "5t5tLsfuyOyyuXF96M4g2a",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2733bd44e314f3638f55f59408b",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/419eda8981ac2bb490996a7b11c58d2c9d29eb46"
     },
     "Ha*Ash": {
         "name": "Ha*Ash",
         "id": "5xd2Tg7Zo8755eCy8Gxkp8",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb5ac5fe3493b3614f5e6b5162",
+        "image": "https://i.scdn.co/image/ab6761610000e5ebaae7c43a4f71d534555d6e36",
         "related": [
             "Jesse & Joy",
             "Camila",
@@ -16884,10 +16884,10 @@
             "Wisin",
             "Yandel"
         ],
-        "top_song_name": "Sensacion Del Bloque",
-        "top_song_id": "5clFSlfkCRlhnH1cAQjSBi",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b27395efcedfc7f85ef8bc0a37b6",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/e8fc792b8e34973053d6f907f47c1f614fd87726"
+        "top_song_name": "FARDOS",
+        "top_song_id": "33VIvWmmCUgix6Htm1WdOJ",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b27344d0e103124e96e727eb54e7",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/7975edbacf24b69fd99bb5ad29a57d304f879e17"
     },
     "Kontra K": {
         "name": "Kontra K",
@@ -16900,10 +16900,10 @@
             "Capital Bra",
             "Gzuz"
         ],
-        "top_song_name": "Die Sonne",
-        "top_song_id": "3T33so3escAbwbrgcIqyRa",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b27363d59b005804112f52371e09",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/75f00d60c5524e63e268d9602e6d2f6df76f5780"
+        "top_song_name": "Liebe ist ein Dieb",
+        "top_song_id": "01LYfVauZ0LlK5gok0HdTO",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273db63aeae4d0bd5d0de4a5510",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/c7e8dd079ee43753cf618cca2ee65e15b3aa9572"
     },
     "Lofi Fruits Music": {
         "name": "Lofi Fruits Music",
@@ -17036,7 +17036,7 @@
     "Gustavo Mioto": {
         "name": "Gustavo Mioto",
         "id": "1X6ORK7IekgmyjV6IFPszP",
-        "image": "https://i.scdn.co/image/ab6761610000e5ebb6331dbc7b415a65d6b77a4c",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb71bc7bb1c3de3f69cbc55759",
         "related": [
             "Israel & Rodolffo",
             "Guilherme & Benuto",
@@ -17077,7 +17077,7 @@
     "Quinn XCII": {
         "name": "Quinn XCII",
         "id": "3ApUX1o6oSz321MMECyIYd",
-        "image": "https://i.scdn.co/image/ab6761610000e5ebb742526c1ecfba5c4bf03f91",
+        "image": "https://i.scdn.co/image/ab6761610000e5ebb2d314a14c837b78643d1c85",
         "related": [
             "Chelsea Cutler",
             "Jon Bellion",
@@ -17085,10 +17085,10 @@
             "Surfaces",
             "blackbear"
         ],
-        "top_song_name": "Love Me Less (feat. Quinn XCII)",
-        "top_song_id": "2tOOcDDYkh0PSjr6GwPEAJ",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273038e01a9fbf375dcccea5a3c",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/d481e741c88c32abe455dcd1f9261c7874287d40"
+        "top_song_name": "Pasadena",
+        "top_song_id": "5EcxDrQuoP14uKF2RFOy8A",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273ccde1e58ffc7781cf921488a",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/b2219e94922ab7bdc75b6350f3a5533729ec2dcd"
     },
     "Sade": {
         "name": "Sade",
@@ -17231,7 +17231,7 @@
     "Hugo & Guilherme": {
         "name": "Hugo & Guilherme",
         "id": "1LIuN7ov1IBQDdLsU83ojl",
-        "image": "https://i.scdn.co/image/ab6761610000e5ebf3c34f6ad6c37b0a2ee839bf",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb8f536fda8a3d7f84e4271d9a",
         "related": [
             "Guilherme & Benuto",
             "Israel & Rodolffo",
@@ -17239,8 +17239,8 @@
             "Matheus & Kauan"
         ],
         "top_song_name": "Vazou Na Braquiara - Ao Vivo",
-        "top_song_id": "1ZtgnRr4uKMOoCzP4vnQDl",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273bd98a3d29367e2b455f69490",
+        "top_song_id": "2RX89Di479sc53wkaNgt9E",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b27378b03b7534ce5a81046d36da",
         "top_song_preview_url": "https://p.scdn.co/mp3-preview/674bc6e5025c18bb2009ae64a73f9d98864efbd9"
     },
     "Benjamin Bl\u00fcmchen": {
@@ -17253,8 +17253,8 @@
         ],
         "top_song_name": "Benjamin Bl\u00fcmchen Lied",
         "top_song_id": "7hM8vxIqpdZejSi1BQuLFl",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273bb67ebe06345a27d633acb33",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/32fbf170831024435f7c25763ca7e58419f212b7"
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b27317c37a2bc651c9452fe43ca5",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/1ec6ad0be1c0fb6fc3b8460742a35d009c0a0793"
     },
     "TV Girl": {
         "name": "TV Girl",
@@ -17285,10 +17285,10 @@
             "Eladio Carrion",
             "Plan B"
         ],
-        "top_song_name": "Maquiav\u00e9lico",
-        "top_song_id": "447r2keRxpkINmWYp83MlH",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273fd7bf6e660e2da01813c70f7",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/6f1349e64fcba20839bb4ed991e87f90bb8dc38d"
+        "top_song_name": "Querer Querernos",
+        "top_song_id": "6d3q0F9VNtdxQUTVlRcet6",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273b67647d776568c8aa90c889d",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/7a46b5c7eb57a93c6fb578e56dad83d7b3ae9b6f"
     },
     "Atif Aslam": {
         "name": "Atif Aslam",
@@ -17391,10 +17391,10 @@
             "Ninho",
             "Gazo"
         ],
-        "top_song_name": "Blue Porsche (feat. Niska)",
-        "top_song_id": "5HrTFBZUpOLBHAqK0c4aHj",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273d811db49fcc425d11b713498",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/0b11103f247669b89c37d12508163f9f8e0b91d2"
+        "top_song_name": "Sans Coeur",
+        "top_song_id": "13lEdYCC4iCm6cBi3qzBVV",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273da300531c90d3f5cebdb7aca",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/739251cb174f3be8b401b6a29c12e1c8f2305d82"
     },
     "Jaden": {
         "name": "Jaden",
@@ -17498,7 +17498,7 @@
     "Empire of the Sun": {
         "name": "Empire of the Sun",
         "id": "67hb7towEyKvt5Z8Bx306c",
-        "image": "https://i.scdn.co/image/ab6761610000e5ebe51c443e9e8c1952c80357b4",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb7c8e910ff83c55999319c4f0",
         "related": [
             "MGMT",
             "Passion Pit",
@@ -17519,7 +17519,7 @@
     "Ryan Castro": {
         "name": "Ryan Castro",
         "id": "7j6DKwmjbxvpQO8h914uEz",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb990e09290fdbc2728fae3987",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb659c5094f83939153e30933b",
         "related": [
             "Chencho Corleone",
             "Feid",
@@ -17528,10 +17528,10 @@
             "Plan B",
             "Jhayco"
         ],
-        "top_song_name": "QUEMA",
-        "top_song_id": "2hn2zOA2XFlv6DSmesylrL",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2734cb950c91f7b0c8414dcc88e",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/788238acd439da083fabc9d6b0d92eff3f4faf35"
+        "top_song_name": "UNA NOCHE EN MEDELL\u00cdN - REMIX",
+        "top_song_id": "0GJwUAlBMJTbY4VE7iE761",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273d026bf9d7780f6a1267b4d03",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/0a7ff41414c6ff9a2c2aebc3891c40ee08c2903c"
     },
     "Guilherme & Benuto": {
         "name": "Guilherme & Benuto",
@@ -17544,10 +17544,10 @@
             "Ana Castela",
             "Mari Fernandez"
         ],
-        "top_song_name": "Manda um Oi - Ao Vivo",
-        "top_song_id": "0HlioiDYWAqP6p73XFUOP7",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b27368669c389be5d24e7d22f750",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/6942496ff8b08d6f3aad360d2b5919350f4be1b8"
+        "top_song_name": "Torre Eiffel - Ao Vivo",
+        "top_song_id": "54UGdW621lBINbfMWJmmSO",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2739daae4d07ec961398fd96eeb",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/b4e8f299182c922d0496f59468e190ff8a41be96"
     },
     "fun.": {
         "name": "fun.",
@@ -17594,16 +17594,16 @@
     "Mari Fernandez": {
         "name": "Mari Fernandez",
         "id": "0BHm7qbh3ENxvXzkQAG7MP",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb6301bbc0a4bdb1596db161c6",
+        "image": "https://i.scdn.co/image/ab6761610000e5eba51c78223023fb9f3b7b69c6",
         "related": [
             "Guilherme & Benuto",
             "Israel & Rodolffo",
             "Gustavo Mioto"
         ],
-        "top_song_name": "30 Cadeados - Ao Vivo",
-        "top_song_id": "4UBTjBOglPqrcDKSLwYHQr",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273af51d69326f6531282a73bab",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/309de3a3000888c94010b2879e7fe1abb658ad5f"
+        "top_song_name": "Falta de Mim - Ao Vivo",
+        "top_song_id": "2IGh6DnMiX408xwoJP9Lmb",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273769a8aedd1839af024a5da90",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/f1d17a4003e37c1b2080df152d44fd7109c005e0"
     },
     "Seether": {
         "name": "Seether",
@@ -17667,7 +17667,7 @@
     "Thalia": {
         "name": "Thalia",
         "id": "23wEWD21D4TPYiJugoXmYb",
-        "image": "https://i.scdn.co/image/ab6761610000e5ebada3773282adf9b0452d2cf9",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb77c1ab5e2a4934d8ba1a4e84",
         "related": [
             "Ricky Martin",
             "Chayanne"
@@ -17826,7 +17826,7 @@
     "Pixies": {
         "name": "Pixies",
         "id": "6zvul52xwTWzilBZl6BUbT",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb99573774804459752563d227",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb6397f98673384aa50c9581df",
         "related": [
             "Joy Division",
             "The Velvet Underground",
@@ -17838,9 +17838,9 @@
             "The Cure",
             "Siouxsie and the Banshees"
         ],
-        "top_song_name": "Where Is My Mind? - Remastered",
+        "top_song_name": "Where Is My Mind? - 2007 Remaster",
         "top_song_id": "7wCmS9TTVUcIhRalDYFgPy",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273626ad9bb7d5f84c59652b161",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2738aa545a0ea869940cce358b5",
         "top_song_preview_url": "https://p.scdn.co/mp3-preview/03da0b85c9fa2fb5e621e97d4fb145a17aaf7ef1"
     },
     "Rich Brian": {
@@ -17964,7 +17964,7 @@
     "LIT killah": {
         "name": "LIT killah",
         "id": "1vqR17Iv8VFdzure1TAXEq",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb90076723daaa3dd91eb4d6c2",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb65ed0931e30be68065fd1a61",
         "related": [
             "Tiago PZK",
             "KHEA",
@@ -18120,10 +18120,10 @@
             "Atif Aslam",
             "Pritam"
         ],
-        "top_song_name": "Khuda Jaane",
-        "top_song_id": "0gPgdRfB4jdGrlyXS0Vx78",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b27319beb7ceaa4fb95633718305",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/b6b1b416915b3e67bb26bb05b6e8e42109892911"
+        "top_song_name": "Ajab Si (From \"Om Shanti Om\")",
+        "top_song_id": "2RgvvnMwtP0R2OkVZmFvnV",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273456e0af8e834546541a00efa",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/5be359ae99d20351cc8cbf670052db71205f21b3"
     },
     "Freddie Dredd": {
         "name": "Freddie Dredd",
@@ -18182,10 +18182,10 @@
             "RAF Camora",
             "Ufo361"
         ],
-        "top_song_name": "2 Germans (feat. Gzuz)",
-        "top_song_id": "6jIv0gF05ZdTZPoZaipFx0",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273d811db49fcc425d11b713498",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/41ee5c855949d08d54b88b938a031ce1a699f191"
+        "top_song_name": "Noch ein Glas",
+        "top_song_id": "7tIzHYNGyUvZ9zYrND1U0p",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2737716aae6abb97eb2e8bd215d",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/7dde306c430927344d651a75e5720cf4c4376b50"
     },
     "Greeicy": {
         "name": "Greeicy",
@@ -18200,10 +18200,10 @@
             "Manuel Turizo",
             "CNCO"
         ],
-        "top_song_name": "Esta Noche",
-        "top_song_id": "4vhkI8x68EaGQR3Kn7Pwhc",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2731e7b15088bef347e4355af62",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/be64ceda36d51d1d7897da9c37e94318b67e7350"
+        "top_song_name": "Destino",
+        "top_song_id": "041Kcvnw8nOdq8xiRibPTG",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273dd556eb6f9478ba921f1cb7d",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/e6a91458ada5c0c27f067e290f1b2695c87459ed"
     },
     "Fred again..": {
         "name": "Fred again..",
@@ -18215,8 +18215,8 @@
             "KAYTRANADA"
         ],
         "top_song_name": "leavemealone",
-        "top_song_id": "7iUScoHKNJC5hqtA40vMlj",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2730920dda3769771de5ffd4578",
+        "top_song_id": "1nzOUWyHoZLzf9EX0pnFPn",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273fd4fd4ebe15ddab320bbe7c1",
         "top_song_preview_url": "https://p.scdn.co/mp3-preview/154e06b77aed19154a2b3e7dcfc9af91c74f4433"
     },
     "Ice Spice": {
@@ -18234,10 +18234,10 @@
             "Cardi B",
             "Steve Lacy"
         ],
-        "top_song_name": "Think U The Shit (Fart)",
-        "top_song_id": "4w2Furap0ZzaiK4J14E9sR",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b27316028dc1a1bc9ff0fc661ea6",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/1cf80fe25ce9df3d102a15b19a8e6232bb1be794"
+        "top_song_name": "Boy's a liar Pt. 2",
+        "top_song_id": "5CCr8msaN3MhgqBoa9yWhH",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b27312e36c27d935e955b44c6581",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/543d8d09a5530a1ab94dd0c6f83fc4ee3e0d7f96"
     },
     "Gracie Abrams": {
         "name": "Gracie Abrams",
@@ -18268,10 +18268,10 @@
             "Charli XCX",
             "Azealia Banks"
         ],
-        "top_song_name": "When We Were Young (The Logical Song)",
-        "top_song_id": "1CcLA0eaauck34YEIrvAAq",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273c8e153557024fd571a5a83d6",
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/082f3e35b4ffbf7751deac28c70e27a84cab7ed3"
+        "top_song_name": "Unholy (feat. Kim Petras)",
+        "top_song_id": "0NZPBYD5qbEWRs3PrGiRkT",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b27350a1691fbbfb693a5171d600",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/19eee1dea8b5b4bdecb56a3b27306c72b889f3c7"
     },
     "boygenius": {
         "name": "boygenius",
@@ -18290,7 +18290,7 @@
     "Laufey": {
         "name": "Laufey",
         "id": "7gW0r5CkdEUMm42w9XpyZO",
-        "image": "https://i.scdn.co/image/ab6761610000e5eba1d45585ab07d4bd7fe53351",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb71eb8f92b86868400ed4e006",
         "related": [
             "beabadoobee",
             "Mitski",
@@ -18357,7 +18357,7 @@
     "Maggie Rogers": {
         "name": "Maggie Rogers",
         "id": "4NZvixzsSefsNiIqXn0NDe",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb874c6e61680379852093994c",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb621d7cddc0d2fa4d94ed1c1e",
         "related": [
             "HAIM",
             "Kacey Musgraves",
@@ -18413,10 +18413,10 @@
     "Badshah": {
         "name": "Badshah",
         "id": "0y59o4v8uw5crbN9M3JiL1",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb7a0840c1bc94c349ead3a302",
-        "top_song_name": "Players",
-        "top_song_id": "0MbOLfDcGk8ROHJYXJHu5c",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b27374567e1ea8de537e6e4500fc",
+        "image": "https://i.scdn.co/image/ab6761610000e5ebeddbb664c4723f268a60d8c1",
+        "top_song_name": "Naina (From \"Crew\")",
+        "top_song_id": "1eZefeDb8uOsjvcbl1fJrG",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2737eb29e15e05e9b058c5cc81e",
         "related": [
             "Tony Kakkar",
             "Yo Yo Honey Singh",
@@ -18426,7 +18426,7 @@
             "Diljit Dosanjh",
             "Darshan Raval"
         ],
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/eda6a315a6ae2273ec7f1fe20c744e07d31ced5f"
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/88d58a13fbaa9a1068aef2a3ee3100e8ff26f0fd"
     },
     "Sidhu Moose Wala": {
         "name": "Sidhu Moose Wala",
@@ -18508,24 +18508,24 @@
         "name": "Sonu Nigam",
         "id": "1dVygo6tRFXC8CSWURQJq2",
         "image": "https://i.scdn.co/image/ab6761610000e5ebbc959d7569618ec2af2210f5",
-        "top_song_name": "Akhiyaan Gulaab (From \"Teri Baaton Mein Aisa Uljha Jiya\")",
-        "top_song_id": "23NtsJjA1GhlKMAypBv9xR",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273bdf8ff3faefe634411ebd6b3",
+        "top_song_name": "Main Agar Kahoon",
+        "top_song_id": "3WVHfTd7xz9VPYJQFpOp8j",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2734439e680e8080e3b889352b9",
         "related": [
             "Udit Narayan",
             "Kumar Sanu",
             "Alka Yagnik",
             "Shreya Ghoshal"
         ],
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/ea00af6baa942154c1a3e3d55a196ac463c7754e"
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/da6f63ef98b8be3e6f4747e235fa3eb6c4e7a2f9"
     },
     "Yo Yo Honey Singh": {
         "name": "Yo Yo Honey Singh",
         "id": "7uIbLdzzSEqnX0Pkrb56cR",
         "image": "https://i.scdn.co/image/ab6761610000e5eb29cf7f1a56f5ff1911f6a0ef",
-        "top_song_name": "Akhiyaan Gulaab (From \"Teri Baaton Mein Aisa Uljha Jiya\")",
-        "top_song_id": "23NtsJjA1GhlKMAypBv9xR",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273bdf8ff3faefe634411ebd6b3",
+        "top_song_name": "Desi Kalakaar",
+        "top_song_id": "7m4CgL81VVIHaaiSxyH922",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b27365ce8c712e4fb894bc88461b",
         "related": [
             "Badshah",
             "Tony Kakkar",
@@ -18534,7 +18534,7 @@
             "Darshan Raval",
             "Diljit Dosanjh"
         ],
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/ea00af6baa942154c1a3e3d55a196ac463c7754e"
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/8d55abe443f7738f42727ef20d90c245952d4f2e"
     },
     "Agust D": {
         "name": "Agust D",
@@ -18572,16 +18572,16 @@
         "name": "Udit Narayan",
         "id": "70B80Lwx2sxti0M1Ng9e8K",
         "image": "https://i.scdn.co/image/ab6761610000e5eb8de0e6e7e55d7773931ab7f4",
-        "top_song_name": "Akhiyaan Milaoon Kabhi",
-        "top_song_id": "735WeIIQYRfmtEdMmOgDY1",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2736867fa779258eedae633c587",
+        "top_song_name": "Premika Ne Pyar Se",
+        "top_song_id": "2BpV7xTI41RgdSQ5bjgAfX",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2734e7477ef34ad9ffec54f4aff",
         "related": [
             "Kumar Sanu",
             "Alka Yagnik",
             "Lata Mangeshkar",
             "Sonu Nigam"
         ],
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/95dcdfafb6435fc1f391c564be35596a09034d44"
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/d8ebdab2ca126cef2f3a6ff21216e462fd4b8b6b"
     },
     "Alka Yagnik": {
         "name": "Alka Yagnik",
@@ -18602,16 +18602,16 @@
         "name": "Lata Mangeshkar",
         "id": "61JrslREXq98hurYL2hYoc",
         "image": "https://i.scdn.co/image/ab6761610000e5eba0199b159c0c5a9f62333d32",
-        "top_song_name": "Aankhein Khuli",
-        "top_song_id": "16XEVyPh5NT31CAAqPbxQF",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b27305a0d368c0fbf69c9a76bc81",
+        "top_song_name": "Mere Khwabon Mein (From \"Dilwale Dulhania Le Jayenge\")",
+        "top_song_id": "4gYBJIMEnBB0Ylz7VSAMNt",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2736f39da36b20a464bdc28fd21",
         "related": [
             "Alka Yagnik",
             "Kumar Sanu",
             "Udit Narayan",
             "Sonu Nigam"
         ],
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/c8bd590dc6a8d0bb1f147d89bef7711b89657a72"
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/96685ad745cd047dde55f4ddde303669729863cc"
     },
     "Man\u00e1": {
         "name": "Man\u00e1",
@@ -18636,7 +18636,7 @@
     "Marc Anthony": {
         "name": "Marc Anthony",
         "id": "4wLXwxDeWQ8mtUIRPxGiD6",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb31a5a0b585e53c5d9977c42f",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb036b6cb012fd1c34862161c2",
         "top_song_name": "Vivir Mi Vida",
         "top_song_id": "3QHMxEOAGD51PDlbFPHLyJ",
         "top_song_art": "https://i.scdn.co/image/ab67616d0000b27321be16e998effa9f1f4b63a9",
@@ -18668,7 +18668,7 @@
     "Tony Kakkar": {
         "name": "Tony Kakkar",
         "id": "0NZtn1Kyq08alpHCTRf3dv",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb8bc9396fa218a538bb3cd27e",
+        "image": "https://i.scdn.co/image/ab6761610000e5ebde685d7d8ce2b501e78ea018",
         "top_song_name": "Coca Cola (From \"Luka Chuppi\")",
         "top_song_id": "352wEkChkiClswqwDoM0nj",
         "top_song_art": "https://i.scdn.co/image/ab67616d0000b273aae447f2cdb31024a4cd4f1d",
@@ -18891,7 +18891,7 @@
     "Janet Jackson": {
         "name": "Janet Jackson",
         "id": "4qwGe91Bz9K2T8jXTZ815W",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb9931deb97d6e9f8bbed64314",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb2dd24ea054d29fa7cb57c0b3",
         "top_song_name": "That's The Way Love Goes",
         "top_song_id": "29rQJydAlO0uMyWvRIZxQg",
         "top_song_art": "https://i.scdn.co/image/ab67616d0000b273e63518d50aff63f57d2b8ead",
@@ -19250,9 +19250,9 @@
         "name": "Slash",
         "id": "4Cqia9vrAbm7ANXbJGXsTE",
         "image": "https://i.scdn.co/image/ab6761610000e5eb16bbce3d5fb8a51e7cc3dce0",
-        "top_song_name": "Anastasia",
-        "top_song_id": "7JJ22vCP45tMhZnAH4Sp1e",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b27393fcf9e88b195900509772dd",
+        "top_song_name": "Oh Well feat. Chris Stapleton",
+        "top_song_id": "6xvriZfsi9MZ8TAE2wqY2z",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273a288a30f4133154538ea5d3d",
         "related": [
             "Alter Bridge",
             "Skid Row",
@@ -19264,7 +19264,7 @@
             "Megadeth",
             "Whitesnake"
         ],
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/1795f40ea3ce7fa4489e08c290b7d70339dbfd22"
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/4e3c2a277db9b21ee95562cb7849e9f6db559fff"
     },
     "All Time Low": {
         "name": "All Time Low",
@@ -19346,7 +19346,7 @@
     "Brantley Gilbert": {
         "name": "Brantley Gilbert",
         "id": "5q8HGNo0BjLWaTAhRtbwxa",
-        "image": "https://i.scdn.co/image/ab6761610000e5ebacf70c5ff9b60c8f7da4c570",
+        "image": "https://i.scdn.co/image/ab6761610000e5ebcc1b459cf6c389ce167728b4",
         "top_song_name": "Son Of The Dirty South",
         "top_song_id": "6WaPKTy7RYb21gs8PasOPL",
         "top_song_art": "https://i.scdn.co/image/ab67616d0000b2736ef0cfb42e4d3c9f8ff056dd",
@@ -19587,9 +19587,9 @@
         "name": "Bone Thugs-N-Harmony",
         "id": "5spEJXLwD1sKUdC2bnOHPg",
         "image": "https://i.scdn.co/image/ab6761610000e5ebb60f40ed17d0ef8d1a630c00",
-        "top_song_name": "Tha Crossroads",
-        "top_song_id": "5KSJ9k1FYjFLnIRlJT2wF8",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273e49f4677129d4b8b9d9f50ac",
+        "top_song_name": "Thuggish Ruggish Bone",
+        "top_song_id": "7qHAjAL7CpadaZLamuBZRm",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2734265ced59f64378b8a1904ad",
         "related": [
             "Warren G",
             "Naughty By Nature",
@@ -19597,7 +19597,7 @@
             "LL COOL J",
             "Method Man"
         ],
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/be907adc0d03b2fa8b19e25f482ad087d6da9cec"
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/3e49fa793842eddcac44d9b578818de721b74916"
     },
     "Little Big Town": {
         "name": "Little Big Town",
@@ -19675,15 +19675,15 @@
         "name": "Brooks & Dunn",
         "id": "0XKOBt59crntr7HQXXO8Yz",
         "image": "https://i.scdn.co/image/ab6761610000e5eb9a9b27317d43de785e22517d",
-        "top_song_name": "1, 2 Many",
-        "top_song_id": "226le7T3p82reYWzsi9Hsz",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273429d8ec28f865acf2a927c2d",
+        "top_song_name": "Boot Scootin' Boogie",
+        "top_song_id": "7Fq9RwQxSn3kW85PrDUf0M",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273941001e5ce6bc1272466de29",
         "related": [
             "Big & Rich",
             "Trace Adkins",
             "Toby Keith"
         ],
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/0aad8c4049f5bdf8ddfb92945f7ae0ecd17522af"
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/c221b090acf0ca427df7148e20e00d23ea0a4410"
     },
     "Big Time Rush": {
         "name": "Big Time Rush",
@@ -19702,7 +19702,7 @@
     "Skid Row": {
         "name": "Skid Row",
         "id": "4opTS86dN9uO313J9CE8xg",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb5e4033901c3d87289e0cbc08",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb59fe65d4b1e00e486f285167",
         "top_song_name": "18 and Life",
         "top_song_id": "3620P9KJS2PDebJ9ABFitc",
         "top_song_art": "https://i.scdn.co/image/ab67616d0000b273bb639863b7b716acf67bfa64",
@@ -19737,9 +19737,9 @@
         "name": "TOTO",
         "id": "0PFtn5NtBbbUNbU9EAmIWF",
         "image": "https://i.scdn.co/image/ab6761610000e5eba59a5bcab211f964fe9bfb06",
-        "top_song_name": "Africa",
-        "top_song_id": "2374M0fQpWi3dLnB54qaLX",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2734a052b99c042dc15f933145b",
+        "top_song_name": "Hold the Line",
+        "top_song_id": "4aVuWgvD0X63hcOCnZtNFA",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273f903e62767a0e22e33b7af83",
         "related": [
             "Foreigner",
             "Chicago",
@@ -19752,7 +19752,7 @@
             "Men At Work",
             "Huey Lewis & The News"
         ],
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/86d951a680c33cca769822e0ef854c1b20301b32"
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/11e480955e46f3b6b5c1e0b6c28db18c25c1e73e"
     },
     "Fabolous": {
         "name": "Fabolous",
@@ -19884,7 +19884,7 @@
     "Tom Petty and the Heartbreakers": {
         "name": "Tom Petty and the Heartbreakers",
         "id": "4tX2TplrkIP4v05BNC903e",
-        "image": "https://i.scdn.co/image/ab6761610000e5ebfabc6315ae43968729ce9e36",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb5523644ec269f1dd79808aff",
         "top_song_name": "Mary Jane's Last Dance",
         "top_song_id": "3dmqIB2Qxe2XZobw9gXxJ6",
         "top_song_art": "https://i.scdn.co/image/ab67616d0000b2730c3a1b46b6b846dfdfbc6a7d",
@@ -20208,15 +20208,15 @@
         "name": "YFN Lucci",
         "id": "5Berubt6ysOy2LCMyqhmXP",
         "image": "https://i.scdn.co/image/ab6761610000e5eb98f604a9405b6425313f4089",
-        "top_song_name": "Date Night",
-        "top_song_id": "5PG6PN2sVSWbFt88bix5uY",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b27314ce0f2f1f1909d681664388",
+        "top_song_name": "Everyday We Lit (feat. PnB Rock)",
+        "top_song_id": "3J8Q6aBhjpvao8BsBQ6H9Y",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273fb368904bdcbe5ba7205abd0",
         "related": [
             "Rich Homie Quan",
             "K CAMP",
             "Yo Gotti"
         ],
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/3436ab225af71b811ebfabb6062e0026f3b03fcc"
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/c0154a82036c0b0ba4c30412f8e6e28b6d84d418"
     },
     "Hoobastank": {
         "name": "Hoobastank",
@@ -20428,9 +20428,9 @@
         "name": "REO Speedwagon",
         "id": "55vs7NT1KxcFjbMC4y202E",
         "image": "https://i.scdn.co/image/ab6761610000e5ebfc5a03aa1823cfbe08b8b2ed",
-        "top_song_name": "Can't Fight This Feeling",
-        "top_song_id": "5WwqdeavrQrbeAMDxGawse",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273b815265c56ecfa5136a4015d",
+        "top_song_name": "Keep on Loving You",
+        "top_song_id": "4rcHWl68ai6KvpXlc8vbnE",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273d514470784e3d02ee0bcdb80",
         "related": [
             "Styx",
             "Foreigner",
@@ -20442,7 +20442,7 @@
             "Starship",
             "Bad Company"
         ],
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/47811ce4b58e8fb058e13bdfb21225aa357a5c9f"
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/3cdad676ebe5f7b2ff03b781834d7e596c279fe5"
     },
     "Lil Xan": {
         "name": "Lil Xan",
@@ -20612,7 +20612,7 @@
     "Tom Petty": {
         "name": "Tom Petty",
         "id": "2UZMlIwnkgAEDBsw1Rejkn",
-        "image": "https://i.scdn.co/image/ab6761610000e5eba56c2e176f0626e2a001431f",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb04be19df32766bc65af155ed",
         "top_song_name": "Free Fallin'",
         "top_song_id": "5tVA6TkbaAH9QMITTQRrNv",
         "top_song_art": "https://i.scdn.co/image/ab67616d0000b27336572e6726714544f5bed456",
@@ -20633,7 +20633,7 @@
     "Nicky Romero": {
         "name": "Nicky Romero",
         "id": "5ChF3i92IPZHduM7jN3dpg",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb343c238c9b274c64fd049b59",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb3835669a129a80f4768263fe",
         "top_song_name": "I Could Be The One (Avicii Vs. Nicky Romero) - Radio Edit",
         "top_song_id": "591nHHHzZl1NLt9PMKpinM",
         "top_song_art": "https://i.scdn.co/image/ab67616d0000b273c37b2ce76e8cc86b6683e0a5",
@@ -20805,7 +20805,7 @@
         "name": "Jamiroquai",
         "id": "6J7biCazzYhU3gM9j1wfid",
         "image": "https://i.scdn.co/image/ab6761610000e5eb7e6dca959714339b69e9718d",
-        "top_song_name": "Virtual Insanity - Remastered",
+        "top_song_name": "Virtual Insanity - Remastered 2006",
         "top_song_id": "4UQDZlZhGUDoYMohwrY28v",
         "top_song_art": "https://i.scdn.co/image/ab67616d0000b27343a58a3269fa18d1e4f8b5ca",
         "related": [
@@ -20826,9 +20826,9 @@
         "name": "Simply Red",
         "id": "1fa0cOhromAZdq2xRA4vv8",
         "image": "https://i.scdn.co/image/ab6761610000e5ebdf126340c69932e9c9ff27de",
-        "top_song_name": "If You Don't Know Me by Now - 2008 Remaster",
-        "top_song_id": "7DFawVSjI88xR9mjnWwURg",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2738f8dc242b396ddc31c01d36c",
+        "top_song_name": "Holding Back the Years - 2008 Remaster",
+        "top_song_id": "1yg7fwwYmx9DQ2TdXUmfpJ",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273d27f104dd5adb7029d109720",
         "related": [
             "Seal",
             "Spandau Ballet",
@@ -20838,7 +20838,7 @@
             "Simple Minds",
             "Tina Turner"
         ],
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/0c6cd273031aef9c142b6eaeb56ea470ceb7e1a8"
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/47922f8bc535c85a3f637ac0c3b4adc28b6602b7"
     },
     "The Verve": {
         "name": "The Verve",
@@ -20880,7 +20880,7 @@
     "AWOLNATION": {
         "name": "AWOLNATION",
         "id": "4njdEjTnLfcGImKZu1iSrz",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb57d8f913c146d3962afad8df",
+        "image": "https://i.scdn.co/image/ab6761610000e5ebd880bab2bc3d7839c0c25137",
         "top_song_name": "Sail",
         "top_song_id": "7ueP5u2qkdZbIPN2YA6LR0",
         "top_song_art": "https://i.scdn.co/image/ab67616d0000b27332f1572738340ddc9569c54b",
@@ -20923,13 +20923,13 @@
         "name": "DENNIS",
         "id": "6xlRSRMLgZbsSNd0BMobwy",
         "image": "https://i.scdn.co/image/ab6761610000e5eb4ca8b241787391c0d625a162",
-        "top_song_name": "T\u00e1 OK",
-        "top_song_id": "0fABszUFNbNq9IW503Gj8v",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2736b19d46024e623f257363a36",
+        "top_song_name": "RAM TCHUM",
+        "top_song_id": "6mJCx80Wc91GPi9ew9bkmD",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273db8df35632c1be1caeb9461d",
         "related": [
             "PEDRO SAMPAIO"
         ],
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/53d83121788d1a98041d868e1a2e44aa57e4d38c"
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/f6cb71bf13af635bfdee9fe4d1266af83f01f996"
     },
     "BROCKHAMPTON": {
         "name": "BROCKHAMPTON",
@@ -20993,7 +20993,7 @@
     "Lindsey Stirling": {
         "name": "Lindsey Stirling",
         "id": "378dH6EszOLFShpRzAQkVM",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb8a0579f5bf1a376e019e6457",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb36c6fa1b8ff851988de641f8",
         "top_song_name": "Carol Of The Bells",
         "top_song_id": "0byPyCPX9mfGMiAGVZxasq",
         "top_song_art": "https://i.scdn.co/image/ab67616d0000b273b4a35e290c22d73c16df1f7b",
@@ -21008,7 +21008,7 @@
     "Lee Brice": {
         "name": "Lee Brice",
         "id": "5Zq7R5qmi58ByYyBQTlNuk",
-        "image": "https://i.scdn.co/image/ab6761610000e5ebdda79571deaba197ad4793e2",
+        "image": "https://i.scdn.co/image/ab6761610000e5eba18fe96d08b1cd5e1b6e3d24",
         "top_song_name": "One Of Them Girls",
         "top_song_id": "6uyiyatWPCqC59Mm4rO8xL",
         "top_song_art": "https://i.scdn.co/image/ab67616d0000b273fc27d74c91d8fa9e528b288c",
@@ -21107,7 +21107,7 @@
     "Daughtry": {
         "name": "Daughtry",
         "id": "5P5FTygHyx2G57oszR3Wot",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb079209ee37431851b0fa0164",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb8d77449249782b0163f351a2",
         "top_song_name": "Over You",
         "top_song_id": "2R5uY1gbIKzGB1yAOH067s",
         "top_song_art": "https://i.scdn.co/image/ab67616d0000b27391eca63cca2e2a766e78f705",
@@ -21211,7 +21211,7 @@
     "Olivia O'Brien": {
         "name": "Olivia O'Brien",
         "id": "1QRj3hoop9Mv5VvHQkwPEp",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb3fc309291abaad3515ea1e21",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb49df8b861fa8ae1bf2e2cd32",
         "top_song_name": "Complicated",
         "top_song_id": "226PUvIuxGdceSijXXZRRz",
         "top_song_art": "https://i.scdn.co/image/ab67616d0000b27380f777ae3eddc13d02c9b878",
@@ -21272,7 +21272,7 @@
         "image": "https://i.scdn.co/image/ab6761610000e5eb3e17e695dc823f15740344b7",
         "top_song_name": "OHMAMI - With Maggie Lindemann",
         "top_song_id": "0VTgQpNGDH4wXWcwIgxUlh",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273c89b1bf16c28d9be010293e1",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b27371ea2825148e1d12114e32eb",
         "related": [
             "Olivia O'Brien",
             "Bea Miller",
@@ -21336,7 +21336,7 @@
         "image": "https://i.scdn.co/image/ab6761610000e5eba080a8e96758f416301578f9",
         "top_song_name": "Blue Monday",
         "top_song_id": "6hHc7Pks7wtBIW8Z6A0iFq",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b27394495799a7b5341842e87645",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2734b000428d8a6dfa14e743db6",
         "related": [
             "Joy Division",
             "Siouxsie and the Banshees",
@@ -21519,9 +21519,9 @@
         "name": "John Denver",
         "id": "7EK1bQADBoqbYXnT4Cqv9w",
         "image": "https://i.scdn.co/image/ab6761610000e5eb748322a35cb459c837d5ac9e",
-        "top_song_name": "Take Me Home, Country Roads",
-        "top_song_id": "1QbOvACeYanja5pbnJbAmk",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273a19cee952b6dae128d68f116",
+        "top_song_name": "Take Me Home, Country Roads - Original Version",
+        "top_song_id": "1YYhDizHx7PnDhAhko6cDS",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b27334fb2b0117a542d515dc78d6",
         "related": [
             "Neil Diamond",
             "Carly Simon",
@@ -21531,7 +21531,7 @@
             "Carole King",
             "Simon & Garfunkel"
         ],
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/b0805419e05dd1872abea1d5a798399be024cde8"
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/c2ab971d183b0c08d1b0ec1f4cbc27c778c6ce13"
     },
     "Michael Bolton": {
         "name": "Michael Bolton",
@@ -21570,7 +21570,7 @@
     "Jake Owen": {
         "name": "Jake Owen",
         "id": "1n2pb9Tsfe4SwAjmUac6YT",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb123a40d694793e8bca96e5c9",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb07fa8b648c4c02514f34cf87",
         "top_song_name": "Barefoot Blue Jean Night",
         "top_song_id": "3ts6xK5GzfMAAriT9AIBmP",
         "top_song_art": "https://i.scdn.co/image/ab67616d0000b273d3b977f92e5887257ed1a455",
@@ -21677,9 +21677,9 @@
         "name": "Lupe Fiasco",
         "id": "01QTIT5P1pFP3QnnFSdsJf",
         "image": "https://i.scdn.co/image/ab6761610000e5eb17e0a43f3aaa0c48410c4b68",
-        "top_song_name": "The Show Goes On",
-        "top_song_id": "4NTWZqvfQTlOMitlVn6tew",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b27320cac893b7a494f729128dac",
+        "top_song_name": "Superstar (feat. Matthew Santos)",
+        "top_song_id": "7dltD9eEX7X1zk8JJ9BS0e",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273c3244d303444a43b933b9bf4",
         "related": [
             "Mos Def",
             "Big K.R.I.T.",
@@ -21690,7 +21690,7 @@
             "Wale",
             "Jay Rock"
         ],
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/82ecf0570b5ba506be317be1cb78cf7717348abd"
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/e49ad71d2cbd369765f88131c93996291e985607"
     },
     "Sugarland": {
         "name": "Sugarland",
@@ -21765,9 +21765,9 @@
         "name": "Xzibit",
         "id": "4tujQJicOnuZRLiBFdp3Ou",
         "image": "https://i.scdn.co/image/ab6761610000e5ebb04749391ab206764049c219",
-        "top_song_name": "My Name (feat. Eminem & Nate Dogg)",
-        "top_song_id": "24S7rWWB6ohk2j5ABrm5DJ",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273444a3ab1decfa9a618ac497c",
+        "top_song_name": "X",
+        "top_song_id": "5stZnlPMYz3Ba8Hbo3ajlP",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273ca223db78b2ffe5c462cf848",
         "related": [
             "Redman",
             "Method Man",
@@ -21778,7 +21778,7 @@
             "LL COOL J",
             "Naughty By Nature"
         ],
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/3c07c22896513d25a45d50171503a47e684aa97b"
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/37dbe424dddf73507a319628dba04a1e83e77a02"
     },
     "Lamb of God": {
         "name": "Lamb of God",
@@ -21837,9 +21837,9 @@
         "name": "Bj\u00f6rk",
         "id": "7w29UYBi0qsHi5RTcv3lmA",
         "image": "https://i.scdn.co/image/ab6761610000e5ebaeb5c04fdd8ec6273850d207",
-        "top_song_name": "Oral",
-        "top_song_id": "6VCNxAwxA83j2jE3QZpYPr",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2736c6b2687a3a1c2f0fb9d1842",
+        "top_song_name": "Army of Me",
+        "top_song_id": "3vEmpJQC2p8h0U3OiBufQm",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273a865a9acd0169c7a014063b0",
         "related": [
             "Portishead",
             "PJ Harvey",
@@ -21850,7 +21850,7 @@
             "Joy Division",
             "Sigur R\u00f3s"
         ],
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/eb73404325c250abb7353f7eb80e446921912c92"
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/093b55865bf7c7e288290383901110aac3993259"
     },
     "Chuck Berry": {
         "name": "Chuck Berry",
@@ -21903,13 +21903,13 @@
         "name": "Plies",
         "id": "3jksrX4oBklxR78ft8gv3j",
         "image": "https://i.scdn.co/image/ab6761610000e5eb0c7b5904dc0ee47d9407a19c",
-        "top_song_name": "Heart Mind",
-        "top_song_id": "2OPxM2L3KtuehqY24vTMGs",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273c4b5744bceeafc06a9cc4d6d",
+        "top_song_name": "Hypnotized (feat. Akon)",
+        "top_song_id": "3LN41NUdHkyNqQhi9gExMm",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2732d9f3326c45a2733eea2164f",
         "related": [
             "Pretty Ricky"
         ],
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/17b759bac7968c08989a4ca85b50c2eb327eecf3"
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/90f850eb918e983c8efb10db331054fd8b792da5"
     },
     "P.O.D.": {
         "name": "P.O.D.",
@@ -22131,22 +22131,22 @@
         "name": "Juan Mag\u00e1n",
         "id": "1ackd5XprZEkH3McKbQD51",
         "image": "https://i.scdn.co/image/ab6761610000e5eb9bff446a54ba1ca20ddbb001",
-        "top_song_name": "Por Fin Te Encontr\u00e9",
-        "top_song_id": "2DAULesb1U4Qz4FSTZpEUJ",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2733981b932cc802632d6a45c67",
+        "top_song_name": "Bailando por Ahi",
+        "top_song_id": "6sHBvzRsuGunQTfCk18KXi",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2734fd9adda79bc5839feca9720",
         "related": [
             "Cali Y El Dandee",
             "Gente De Zona"
         ],
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/68c9f57dec2aaf56b9de166d05046284ace8de4c"
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/c1cc20c773e841cbf1bac86be5dc97e8766066be"
     },
     "Vince Staples": {
         "name": "Vince Staples",
         "id": "68kEuyFKyqrdQQLLsmiatm",
         "image": "https://i.scdn.co/image/ab6761610000e5eb53054f8bc7e0153daefe12cc",
-        "top_song_name": "THE BEACH",
-        "top_song_id": "0lqAn1YfFVQ3SdoF7tRZO2",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2739fd6f55c35811d79d01f94ef",
+        "top_song_name": "&burn (with Vince Staples)",
+        "top_song_id": "7uX3gufAoBVqKVoD3dBLLD",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273f3425d012117543bf914c451",
         "related": [
             "Earl Sweatshirt",
             "Isaiah Rashad",
@@ -22157,7 +22157,7 @@
             "Jay Rock",
             "Joey Bada$$"
         ],
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/0d42c807dd2f546507721215b816482de93d5284"
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/a20b0f6eb5c6c3bdd286d23172e84fcf3cb2de63"
     },
     "Killswitch Engage": {
         "name": "Killswitch Engage",
@@ -22198,7 +22198,7 @@
         "name": "Bush",
         "id": "78SHxLdtysAXgywQ4vE0Oa",
         "image": "https://i.scdn.co/image/ab6761610000e5ebd209395dc5321f4b5163aed4",
-        "top_song_name": "Glycerine",
+        "top_song_name": "Glycerine - 2014 Remastered",
         "top_song_id": "7wpYSigAhQeZp3cdsMQ3Af",
         "top_song_art": "https://i.scdn.co/image/ab67616d0000b273b915466e715e0bf6c3da35a1",
         "related": [
@@ -22272,9 +22272,9 @@
         "name": "The Velvet Underground",
         "id": "1nJvji2KIlWSseXRSlNYsC",
         "image": "https://i.scdn.co/image/d69c2cf10323bf08443c7d122f3a1824a760ab57",
-        "top_song_name": "Pale Blue Eyes",
-        "top_song_id": "11VwZwNF29HrqwalYUMitb",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2739a2c40b6a1af4a92aac991c5",
+        "top_song_name": "Sunday Morning",
+        "top_song_id": "11607FzqoipskTsXrwEHnJ",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b27398260c528e6eec9dd431c1d7",
         "related": [
             "Patti Smith",
             "Iggy Pop",
@@ -22283,7 +22283,7 @@
             "The Kinks",
             "PJ Harvey"
         ],
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/b30c7c6d0d932c8b12c31671ba425ecef594a3e2"
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/901c4db8c417fb8003ccb0e14b5a3b306d34c0ca"
     },
     "KSHMR": {
         "name": "KSHMR",
@@ -22546,8 +22546,8 @@
         "name": "Bad Meets Evil",
         "id": "77IURH5NC56Jn09QHi76is",
         "image": "https://i.scdn.co/image/570d46c60960d93990710d83a5f8012217eb7aec",
-        "top_song_name": "Fast Lane",
-        "top_song_id": "2c5Isyd07hWsl7AQia2Dig",
+        "top_song_name": "Lighters",
+        "top_song_id": "5zpDHEU12zATwLGvozxPw2",
         "top_song_art": "https://i.scdn.co/image/ab67616d0000b27359a1132f3cab22f80b2d2777",
         "related": [
             "D12",
@@ -22558,7 +22558,7 @@
             "The Game",
             "Lloyd Banks"
         ],
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/59907257584dce543ff2939205a328318adad1be"
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/d1fad81dabecaa24e69f8a2a11b74638f9aea82b"
     },
     "Sex Pistols": {
         "name": "Sex Pistols",
@@ -22645,9 +22645,9 @@
         "name": "Tenacious D",
         "id": "1XpDYCrUJnvCo9Ez6yeMWh",
         "image": "https://i.scdn.co/image/ab6761610000e5eb7637f18f419921b8d24bd9e5",
-        "top_song_name": "Tribute",
-        "top_song_id": "6crBy2sODw2HS53xquM6us",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273ee0285c63a334af9b91fa12b",
+        "top_song_name": "...Baby One More Time (from Kung Fu Panda 4)",
+        "top_song_id": "7eFJIjNXaC7LzDwloz9WIP",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b27348a61a05f7e344f6610077b7",
         "related": [
             "The Lonely Island",
             "Stone Sour",
@@ -22660,7 +22660,7 @@
             "Drowning Pool",
             "The Offspring"
         ],
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/0b516801ec0a770edee38f4436ae26cbbc3c0e5f"
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/c44df9861a532041b1b74aebe2f82239a1d7b76c"
     },
     "The Cars": {
         "name": "The Cars",
@@ -22824,9 +22824,9 @@
         "name": "Sabrina Claudio",
         "id": "30DhU7BDmF4PH0JVhu8ZRg",
         "image": "https://i.scdn.co/image/ab6761610000e5eba278d9dfffcd319a9daf83d4",
-        "top_song_name": "Belong to You (feat. 6LACK)",
-        "top_song_id": "3GsmYNNiz9GCXgVgphLlyl",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b27306d4e3dd11ade43c5f6d6e51",
+        "top_song_name": "Settle For Less",
+        "top_song_id": "7sxzgBWY6o3jq3BrxQQVGP",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273c406abe35d909abac87bccb5",
         "related": [
             "Alina Baraz",
             "Snoh Aalegra",
@@ -22834,15 +22834,15 @@
             "Teyana Taylor",
             "H.E.R."
         ],
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/4a6670a2439ecfb458c4eac20d63083d4837650b"
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/1addd882c6f582188813ae727718f03d55a837f6"
     },
     "Pet Shop Boys": {
         "name": "Pet Shop Boys",
         "id": "2ycnb8Er79LoH2AsR5ldjh",
         "image": "https://i.scdn.co/image/ab6761610000e5ebd24f448b409b6304c2880614",
-        "top_song_name": "Always on My Mind - 2003 Remaster",
-        "top_song_id": "2SWn864dJI5RNyrp3F4Kp1",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2737c66279746c33b8f9ccac1aa",
+        "top_song_name": "West End Girls - 2018 Remaster",
+        "top_song_id": "2Di0qFNb7ATroCGB3q0Ka7",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2733540f5cb8e1e7a54125f84db",
         "related": [
             "Erasure",
             "a-ha",
@@ -22852,7 +22852,7 @@
             "Spandau Ballet",
             "Simple Minds"
         ],
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/88f12d204f606bb0199cc56644d0db0c5a816b90"
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/cbbe144dceea12069b3f5a3dbc35bb3801a1c218"
     },
     "DeJ Loaf": {
         "name": "DeJ Loaf",
@@ -22994,9 +22994,9 @@
         "name": "Leon Bridges",
         "id": "3qnGvpP8Yth1AqSBMqON5x",
         "image": "https://i.scdn.co/image/ab6761610000e5ebc1493f8c442935b396753e21",
-        "top_song_name": "July (feat. Leon Bridges)",
-        "top_song_id": "3V0nnQhqvbE3JmiDdnzQFQ",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273acebb58ea70a6e5ff1c4d261",
+        "top_song_name": "July",
+        "top_song_id": "1AT84WTynwUzUm2PIXz7az",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273757a1016e0f19dd847ce4cea",
         "related": [
             "Alabama Shakes",
             "Khruangbin",
@@ -23005,12 +23005,12 @@
             "Maggie Rogers",
             "Anderson .Paak"
         ],
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/2f04c2491ba44f3fa16d1870725e5727cb0d53a4"
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/affc99fdffe912b148739289f1f412309be2462f"
     },
     "Royal Blood": {
         "name": "Royal Blood",
         "id": "2S5hlvw4CMtMGswFtfdK15",
-        "image": "https://i.scdn.co/image/ab6761610000e5ebe8b65188fe197abd30703ae2",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb731a9ef85c9a9b208399770f",
         "top_song_name": "Figure It Out",
         "top_song_id": "6V0A3jkb9ntudO0kmcJ1xd",
         "top_song_art": "https://i.scdn.co/image/ab67616d0000b2739a0866ecde8aad9ecfcef44d",
@@ -23355,7 +23355,7 @@
     "London Grammar": {
         "name": "London Grammar",
         "id": "3Bd1cgCjtCI32PYvDC3ynO",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb5cdc6c97f01c4d7b786d1e76",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb03fca863ba2e1e379ad19998",
         "top_song_name": "Strong",
         "top_song_id": "0QMK2WVjKy3iKdqajgDB1P",
         "top_song_art": "https://i.scdn.co/image/ab67616d0000b27300dc54892c783f1825e7c60c",
@@ -23456,9 +23456,9 @@
         "name": "Brett Eldredge",
         "id": "0qSX3s5pJnAlSsgsCne8Cz",
         "image": "https://i.scdn.co/image/ab6761610000e5eb3be6bd19302e88701bb512e0",
-        "top_song_name": "Baby, It's Cold Outside (feat. Meghan Trainor)",
-        "top_song_id": "5Q2P43CJra0uRAogjHyJDK",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b27387b3fbe945e07da0e7af5e88",
+        "top_song_name": "Beat of the Music",
+        "top_song_id": "3un2KQUaQ2brEpd8dK93wI",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b27312fea884ccce32556164b075",
         "related": [
             "Scotty McCreery",
             "Kip Moore",
@@ -23468,7 +23468,7 @@
             "Justin Moore",
             "Cole Swindell"
         ],
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/7efd53b0671a7971e7b4ac6827b665c30d80e3ad"
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/2c4fd39956f8c5038c0164454ecaa6329c6ce573"
     },
     "Beck": {
         "name": "Beck",
@@ -23530,13 +23530,13 @@
         "name": "Jack & Jack",
         "id": "1INuLZXjjVbcJRyWvD1iSq",
         "image": "https://i.scdn.co/image/ab6761610000e5eb5735c68176e05d1040c2a949",
-        "top_song_name": "No One Compares To You",
-        "top_song_id": "4cZ3UsiKd1kUQIaq4BFIj2",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273b8930c6ded15853219d6f3cf",
+        "top_song_name": "Rise",
+        "top_song_id": "5ZSl6gDoV6bPPxzmLeneV9",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2735b6bcc59c3562a6f362344c6",
         "related": [
             "Why Don't We"
         ],
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/dea9972051d20074e33524f7b65954d993f207ee"
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/6454059d7289f542f7d61c227df244fc2f591a43"
     },
     "Claude Debussy": {
         "name": "Claude Debussy",
@@ -23741,7 +23741,7 @@
     "Modest Mouse": {
         "name": "Modest Mouse",
         "id": "1yAwtBaoHLEDWAnWR87hBT",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb3ff03c042ca55bcc7e7f490e",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb39b413eb76d2ae87496d76b8",
         "top_song_name": "Float On",
         "top_song_id": "2lwwrWVKdf3LR9lbbhnr6R",
         "top_song_art": "https://i.scdn.co/image/ab67616d0000b273cc68329bfbf34037df965dc1",
@@ -23957,7 +23957,7 @@
     "Mayday Parade": {
         "name": "Mayday Parade",
         "id": "3WfJ1OtrWI7RViX9DMyEGy",
-        "image": "https://i.scdn.co/image/ab6761610000e5ebeed4b5ab59e129eb74470107",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb8c2f2cd7b6e3909707433264",
         "top_song_name": "Jamie All Over",
         "top_song_id": "05qCCJQJiOwvPQBb7akf1R",
         "top_song_art": "https://i.scdn.co/image/ab67616d0000b273f7a58da348455480bf248fd5",
@@ -24262,9 +24262,9 @@
         "name": "Joni Mitchell",
         "id": "5hW4L92KnC6dX9t7tYM4Ve",
         "image": "https://i.scdn.co/image/68cfb061951dbd44c95422a54cb70baec0722ca3",
-        "top_song_name": "Both Sides Now - Live",
-        "top_song_id": "1OvFn7fs7eXGyYVXCypH1P",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273620579123737c59b22ac6411",
+        "top_song_name": "Big Yellow Taxi",
+        "top_song_id": "6UkMcAA19lTdjs22jtB7o2",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273b80ea8399313aeffb10b0acb",
         "related": [
             "Carole King",
             "Carly Simon",
@@ -24275,7 +24275,7 @@
             "Patti Smith",
             "The Byrds"
         ],
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/fe779addce100f645e3af5e5abb6d21261f9f2bb"
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/3a64e270af1efbc6deaedd97f3dc57aad2c40e1d"
     },
     "The Roots": {
         "name": "The Roots",
@@ -24356,7 +24356,7 @@
     "Nick Cave & The Bad Seeds": {
         "name": "Nick Cave & The Bad Seeds",
         "id": "4UXJsSlnKd7ltsrHebV79Q",
-        "image": "https://i.scdn.co/image/ab6761610000e5ebee32d7c5cec25d73f884eba5",
+        "image": "https://i.scdn.co/image/ab6761610000e5ebadb5e59949a4273aaa168696",
         "top_song_name": "O Children",
         "top_song_id": "73ZlmJxexVebFozgZhEhkd",
         "top_song_art": "https://i.scdn.co/image/ab67616d0000b2736bcc08bffa8f7f1375970f71",
@@ -24552,7 +24552,7 @@
     "Passion Pit": {
         "name": "Passion Pit",
         "id": "7gjAu1qr5C2grXeQFFOGeh",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb4e4842404e18865b7a5c38cc",
+        "image": "https://i.scdn.co/image/ab6761610000e5ebc1554b18e96bf7329531a107",
         "top_song_name": "Take a Walk",
         "top_song_id": "4Sfa7hdVkqlM8UW5LsSY3F",
         "top_song_art": "https://i.scdn.co/image/ab67616d0000b273f860547bc8ba0c59df4fe2c3",
@@ -24617,26 +24617,26 @@
         "name": "Residente",
         "id": "5GcWBUX00IPuWVGMIRK1sS",
         "image": "https://i.scdn.co/image/ab6761610000e5eb5bda9ce5834fff3c8baa646f",
-        "top_song_name": "Ren\u00e9",
-        "top_song_id": "1GmHEl2cWpMvkDCuEh0tQY",
+        "top_song_name": "Que Fluya",
+        "top_song_id": "2edb2SIakC6HADUz6s34hS",
         "top_song_art": "https://i.scdn.co/image/ab67616d0000b27307a9f805cb3512657e5aaa58",
         "related": [
             "Calle 13"
         ],
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/eb16206f643a8675757910a8c09bb0d6e2f2ac12"
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/f7dc14c95511bc3bbd7bd5b530b2145153fbca22"
     },
     "John Williams": {
         "name": "John Williams",
         "id": "3dRfiJ2650SZu6GbydcHNb",
         "image": "https://i.scdn.co/image/ab6761610000e5eb86b13e4d2e65ebf694384ef4",
-        "top_song_name": "Carol of the Bells",
-        "top_song_id": "4tHqQMWSqmL6YjXwsqthDI",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273a68c06155b7c3cf82b00cb96",
+        "top_song_name": "Duel of the Fates",
+        "top_song_id": "1ghlpxVfPbFH2jenrv9vVw",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2738b344822c35025ba9439f004",
         "related": [
             "Hans Zimmer",
             "Ennio Morricone"
         ],
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/526351cb845f38fab35a356fa9f91f1853bacc1d"
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/b3292ce2b613db3bc07369e52cd1688891ba486d"
     },
     "Jackson Browne": {
         "name": "Jackson Browne",
@@ -25014,7 +25014,7 @@
     "Masego": {
         "name": "Masego",
         "id": "3ycxRkcZ67ALN3GQJ57Vig",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb161fef4ab6a8ff32c699d6fa",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb3edae572777c466a5eec14b6",
         "top_song_name": "Tadow",
         "top_song_id": "51rPRW8NjxZoWPPjnRGzHw",
         "top_song_art": "https://i.scdn.co/image/ab67616d0000b273f1814f1b76df2fa196e4f45e",
@@ -25183,13 +25183,13 @@
         "name": "Stefflon Don",
         "id": "2ExGrw6XpbtUAJHTLtUXUD",
         "image": "https://i.scdn.co/image/ab6761610000e5eb1a18862abdc55c10a7069461",
-        "top_song_name": "Selecta (feat. Stefflon Don)",
-        "top_song_id": "6TlFnB8GBrlILKv5qy27Sn",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2738a7fdf2de701f3ea4cfacfc1",
+        "top_song_name": "Bum Bum Tam Tam",
+        "top_song_id": "6k2900NjJeVqZM55G3Danu",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273d1243ff8852e722747ead762",
         "related": [
             "City Girls"
         ],
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/1f5262536b2e49dd34b0811dd871d5afbe3c48ca"
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/8fbeb37463867a5c58c2fb65968eb039143ea301"
     },
     "Tom Misch": {
         "name": "Tom Misch",
@@ -25251,7 +25251,7 @@
     "Dillon Francis": {
         "name": "Dillon Francis",
         "id": "5R3Hr2cnCCjt220Jmt2xLf",
-        "image": "https://i.scdn.co/image/ab6761610000e5ebc61c75f2f76dbcd5f49a3e8c",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb7a10c0a271f96529bf28f97f",
         "top_song_name": "Goodies",
         "top_song_id": "4wOpEBvnIXTcC2ASM6J1dQ",
         "top_song_art": "https://i.scdn.co/image/ab67616d0000b273c6af01138c83149291621de3",
@@ -25283,15 +25283,15 @@
         "name": "Skepta",
         "id": "2p1fiYHYiXz9qi0JJyxBzN",
         "image": "https://i.scdn.co/image/ab6761610000e5eb9465af7e4deb336ca4deb7e9",
-        "top_song_name": "Gas Me Up (Diligent)",
-        "top_song_id": "18cocM7GNYj2Scj1ePOJYc",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273803bf442f0a5b3faa7002766",
+        "top_song_name": "Tony Montana",
+        "top_song_id": "3mARtPEP8hi1LzMctEwVN4",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b27365747db3a4c0abe5ab281563",
         "related": [
             "AJ Tracey",
             "J Hus",
             "Stormzy"
         ],
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/4f027fa911d9eb126bc9deef870be98c5ba097cc"
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/a2f3506c07e9cb8a507265b4d2a6fd74b33a0719"
     },
     "Justice": {
         "name": "Justice",
@@ -25299,7 +25299,7 @@
         "image": "https://i.scdn.co/image/ab6761610000e5ebf140c161d9f9cc9afe85b6ed",
         "top_song_name": "One Night/All Night",
         "top_song_id": "7sjuNUjWtSqhbxJ3RAUffm",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273e2d85e24e16dadb90a67a6df",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273c768df472fddb34f4ebf2347",
         "related": [
             "The Chemical Brothers",
             "Metronomy",
@@ -25323,8 +25323,8 @@
         "name": "Flyleaf",
         "id": "4IliztYDlfMvzQzbx50o60",
         "image": "https://i.scdn.co/image/ab6761610000e5ebf806c08eef7d367476b561d0",
-        "top_song_name": "I'm So Sick",
-        "top_song_id": "3FP8A246XpuafFofRhDlWG",
+        "top_song_name": "All Around Me",
+        "top_song_id": "1zN6ynJG4PdR61YWv4PQ3Y",
         "top_song_art": "https://i.scdn.co/image/ab67616d0000b2739fba3529eaf6979c736806e6",
         "related": [
             "Halestorm",
@@ -25336,7 +25336,7 @@
             "Escape the Fate",
             "Seether"
         ],
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/4aa4922be1079d388734735f4d6c7ac64cd6b906"
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/0d75f1ed05367890f9d4524a2049621dcffb81e0"
     },
     "Ted Nugent": {
         "name": "Ted Nugent",
@@ -25605,13 +25605,13 @@
         "name": "Porter Robinson",
         "id": "3dz0NnIZhtKKeXZxLOxCam",
         "image": "https://i.scdn.co/image/ab6761610000e5eb1ac12dcb2cc4fc7c740c5e0c",
-        "top_song_name": "Everything Goes On",
-        "top_song_id": "3WBRfkOozHEsG0hbrBzwlm",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2732b1a62237771427afb899387",
+        "top_song_name": "Cheerleader",
+        "top_song_id": "779mhz1mAry946r91qzR1r",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273dc62d955a52189e19ada8d4f",
         "related": [
             "Dillon Francis"
         ],
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/2dfc39ada0221d0948aa6230558121f4b52eb197"
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/883e7571164e86d3725a46a05a679eea28a1b585"
     },
     "CAKE": {
         "name": "CAKE",
@@ -25716,7 +25716,7 @@
     "Trapt": {
         "name": "Trapt",
         "id": "1UdQqCUR7RwB9YYJONwbdM",
-        "image": "https://i.scdn.co/image/ab6761610000e5ebdd5c6992e9c5cba9c071d763",
+        "image": "https://i.scdn.co/image/ab6761610000e5ebc9a593eff1a900863206d18b",
         "top_song_name": "Headstrong",
         "top_song_id": "1AEYT6VxrxXPMoQUxsY0E4",
         "top_song_art": "https://i.scdn.co/image/ab67616d0000b27374d9a833744be96426ee833c",
@@ -25989,9 +25989,9 @@
         "name": "Ab-Soul",
         "id": "0g9vAlRPK9Gt3FKCekk4TW",
         "image": "https://i.scdn.co/image/ab6761610000e5eb313ba2f006e069072e6ed486",
-        "top_song_name": "DO BETTER",
-        "top_song_id": "6MtStOzbbrBAEJUgLeYkIg",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273940300fd91d0e1ca28ad3dcf",
+        "top_song_name": "Foux (feat. Ab-Soul)",
+        "top_song_id": "6UqgBwNMKmhjDuN0OcVJA0",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273454a4fb74aa36c7cb57b9153",
         "related": [
             "Jay Rock",
             "Big K.R.I.T.",
@@ -26000,12 +26000,12 @@
             "Freddie Gibbs",
             "Curren$y"
         ],
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/4f75d33f7dd35d91c19fdcd968d4aa3089626012"
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/161a76f7545961b6500691a9fdecfc7ba108a244"
     },
     "Aitch": {
         "name": "Aitch",
         "id": "2PJEagPIxaBugeMjIyKVXF",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb0006e67c1eed165495012076",
+        "image": "https://i.scdn.co/image/ab6761610000e5ebae65f1f660825592448dd360",
         "top_song_name": "Bamba (feat. Aitch & BIA)",
         "top_song_id": "7sJNeWTXkZCEC7OnFMpGWL",
         "top_song_art": "https://i.scdn.co/image/ab67616d0000b27348064ef6df8fad8a52219c32",
@@ -26060,7 +26060,7 @@
     "KYLE": {
         "name": "KYLE",
         "id": "4qBgvVog0wzW75IQ48mU7v",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb60a3cdaf5e5629b55e411583",
+        "image": "https://i.scdn.co/image/ab6761610000e5ebeb77665897ce533f73f59bf6",
         "top_song_name": "iSpy (feat. Lil Yachty)",
         "top_song_id": "6xbraxG0bSBOuAr5IUXmtM",
         "top_song_art": "https://i.scdn.co/image/ab67616d0000b2739c0037956ad7914bb2be4961",
@@ -26094,7 +26094,7 @@
     "Carly Simon": {
         "name": "Carly Simon",
         "id": "4FtSnMlCVxCswABUmdhwpm",
-        "image": "https://i.scdn.co/image/ab6761610000e5ebd167409d8eff3cc0e9aeb21d",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb8a121647ac451ef6397d40cd",
         "top_song_name": "You're So Vain",
         "top_song_id": "2DnJjbjNTV9Nd5NOa1KGba",
         "top_song_art": "https://i.scdn.co/image/ab67616d0000b2731af9e8390e2d251b916d9185",
@@ -26136,9 +26136,9 @@
         "name": "Liam Gallagher",
         "id": "6sN51vEARnAAdBw1IKZ8Q9",
         "image": "https://i.scdn.co/image/ab6761610000e5eb6001f6fe4b6a1cb5871640b5",
-        "top_song_name": "Just Another Rainbow",
-        "top_song_id": "2xE7912IhBp4poxLjOS6WJ",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b27311186817f5abccc8780d8985",
+        "top_song_name": "Mars To Liverpool",
+        "top_song_id": "0Vr2gS3YFbS2WRw5nCPMFY",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273f63b5bb868dfdae0b33718a1",
         "related": [
             "The Stone Roses",
             "The Verve",
@@ -26146,7 +26146,7 @@
             "Kasabian",
             "Oasis"
         ],
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/27441e59598b6a0e1e47d6a4dfe47a594e44ed9c"
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/c9b88a9249c80993d1df372ec80c65dfed6f91e0"
     },
     "Snoh Aalegra": {
         "name": "Snoh Aalegra",
@@ -26378,7 +26378,7 @@
     "Oliver Heldens": {
         "name": "Oliver Heldens",
         "id": "5nki7yRhxgM509M5ADlN1p",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb021c23c69e01f3e917264393",
+        "image": "https://i.scdn.co/image/ab6761610000e5ebe0de3617061247aa35ff7865",
         "top_song_name": "I Was Made For Lovin' You (feat. Nile Rodgers & House Gospel Choir)",
         "top_song_id": "2LxdNADWier3MKTei8FbOY",
         "top_song_art": "https://i.scdn.co/image/ab67616d0000b273873997a27febe78aa5276669",
@@ -26468,7 +26468,7 @@
     "Metronomy": {
         "name": "Metronomy",
         "id": "54QMjE4toDfiCryzYWCpXX",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb86dd27699ca06ca87a355c62",
+        "image": "https://i.scdn.co/image/ab6761610000e5ebae5bfca273012a12aa469dfe",
         "top_song_name": "The Look",
         "top_song_id": "6zfczP87XO2SxWlQtnjFNa",
         "top_song_art": "https://i.scdn.co/image/ab67616d0000b2738ca7d89456553e4bbbf3c981",
@@ -26521,16 +26521,16 @@
         "name": "Nothing But Thieves",
         "id": "1kDGbuxWknIKx4FlgWxiSp",
         "image": "https://i.scdn.co/image/ab6761610000e5eb065faf07b0343e97bf3fba57",
-        "top_song_name": "Oh No :: He Said What?",
-        "top_song_id": "7Gk8icymiW50sDfFbWLoVG",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b27303f9882a733a60a615469782",
+        "top_song_name": "Something On My Mind",
+        "top_song_id": "7uEvezzgCoYmqRDloOXUSR",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273e8ed8f7f1fb2486182ec93d9",
         "related": [
             "Royal Blood",
             "Catfish and the Bottlemen",
             "Foals",
             "The Wombats"
         ],
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/daf45c0731b245b1d63d2a956d414762346257c1"
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/d995ed183e937ada91d4433edc0d20e790d590ee"
     },
     "Pixie Lott": {
         "name": "Pixie Lott",
@@ -26642,7 +26642,7 @@
     "Rainbow Kitten Surprise": {
         "name": "Rainbow Kitten Surprise",
         "id": "4hz8tIajF2INpgM0qzPJz2",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb1b8f08f741213f04e4c3a25a",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb88aed23707da4abd1b8e2fe7",
         "top_song_name": "It's Called: Freefall",
         "top_song_id": "474uVhyGgK5MtY9gMcDgGl",
         "top_song_art": "https://i.scdn.co/image/ab67616d0000b2739529217e48fc8bab89c8a1f9",
@@ -26782,7 +26782,7 @@
     "Twista": {
         "name": "Twista",
         "id": "6vbY3hOaCAhC7VjucswgdS",
-        "image": "https://i.scdn.co/image/ab6761610000e5eb1612d54459b3ddb2a80f1430",
+        "image": "https://i.scdn.co/image/ab6761610000e5ebe37be858f5a8b74dc35780c4",
         "top_song_name": "Slow Jamz",
         "top_song_id": "3A4cpTBPaIQdtPFb5JxtaX",
         "top_song_art": "https://i.scdn.co/image/ab67616d0000b27325b055377757b3cdd6f26b78",
@@ -27081,25 +27081,25 @@
         "id": "1n65zfwYIj5kKEtNgxUlWb",
         "image": "https://i.scdn.co/image/ab6761610000e5eb924bb9e7396ad3bc32cfeab0",
         "top_song_name": "Spellbound",
-        "top_song_id": "5Ng6UbryNd3eds2zQk9MUf",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2732cc7f91bdbd30dd7c408777a",
+        "top_song_id": "28rmYerSDjX81r5KCevY7G",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2738b094bbf9f89ec2f7a9a6524",
         "related": [
             "Joy Division"
         ],
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/c50f5bdf4749421337b8f44a79f20551418453ff"
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/6a6e2b0af75bd98b71d4dada07f0cedf97c8a883"
     },
     "Nujabes": {
         "name": "Nujabes",
         "id": "3Rq3YOF9YG9YfCWD4D56RZ",
         "image": "https://i.scdn.co/image/ab6761610000e5eb2dd5a47714902a1db1810456",
-        "top_song_name": "Feather (feat. Cise Starr & Akin from CYNE)",
-        "top_song_id": "2ej1A2Ze6P2EOW7KfIosZR",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273912cc8fe2e9a53d328757a41",
+        "top_song_name": "aruarian dance",
+        "top_song_id": "4sUTagdmyuyAxd7RvbygpQ",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b27359ef99ed996b4e537ed2e6a3",
         "related": [
             "MF DOOM",
             "Thundercat"
         ],
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/5f938f411df9e22a60ff286f91964fb7e586bdca"
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/8649fac23b7acd801608cbdf9c95559d88a04801"
     },
     "De La Soul": {
         "name": "De La Soul",
@@ -27119,9 +27119,9 @@
         "name": "Kiiara",
         "id": "4u5smJBskI6Adzv08PuiUP",
         "image": "https://i.scdn.co/image/ab6761610000e5eb3a50ec3bc61d904970f4dd1b",
-        "top_song_name": "Heavy (feat. Kiiara)",
-        "top_song_id": "104buTcnP2AsxqB7U1FIZ4",
-        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273145e1cf12538f5666511237d",
+        "top_song_name": "Gold",
+        "top_song_id": "7yNX3ZFBWZoR52pbeU4Mcl",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b27304090677fe520a72568910ec",
         "related": [
             "Daya",
             "Pia Mia",
@@ -27130,7 +27130,7 @@
             "Tove Lo",
             "Bea Miller"
         ],
-        "top_song_preview_url": "https://p.scdn.co/mp3-preview/c1c9cfdb592815fc6590df2ab84977826c3a3dd0"
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/55775ff4e8b7fd339a7fd99e62a5688debd71022"
     },
     "Scotty McCreery": {
         "name": "Scotty McCreery",
