@@ -348,6 +348,7 @@ const CustomGameModal = (props: CustomGameModalProps) => {
           data={artistsList}
           onChange={changeStartArtist}
           selectFirstOptionOnChange={true}
+          spellCheck="false"
           styles={{
             input: { color: "#f1f3f5" },
             dropdown: { color: "#f1f3f5" },
@@ -405,6 +406,7 @@ const CustomGameModal = (props: CustomGameModalProps) => {
             }}
             onChange={setEndArtist}
             selectFirstOptionOnChange={true}
+            spellCheck="false"
             value={endArtist}
             leftSection={
               web[endArtist] !== undefined &&
