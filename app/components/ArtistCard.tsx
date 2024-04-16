@@ -66,6 +66,23 @@ const ArtistCard = ({
     undefined
   );
 
+  // Get fallback image if artist image fails to load
+  const [imageLoadError, setImageLoadError] = useState(!artist.image);
+  const fallbackSrc = `https://ui-avatars.com/api/?background=212529&color=f1f3f5&name=${encodeURIComponent(
+    artist.name.replace(/[^A-Z0-9]/ig, "")
+  )}`;
+
+  useEffect(() => {
+    let img = new Image();
+    img.src = artist.image;
+    img.onload = () => {
+      setImageLoadError(false);
+    };
+    img.onerror = () => {
+      setImageLoadError(true);
+    };
+  }, [artist.image]);
+
   const onKeyDown = (event: React.KeyboardEvent<HTMLButtonElement>) => {
     // If tabbing away from artist card, treat like letting go of long press
     if (event.key === "Tab") {
@@ -266,7 +283,7 @@ const ArtistCard = ({
             <BackgroundImage
               draggable={false}
               radius="sm"
-              src={artist.image}
+              src={imageLoadError ? fallbackSrc : artist.image}
               w={img_size}
               h={img_size}
               styles={{
