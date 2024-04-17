@@ -827,7 +827,7 @@ const Game = (props: GameProps) => {
           resets={resets}
           onTap={scrollToTop}
           scrolled={!entryAffix?.isIntersecting}
-          won={won}
+          gameOver={gameOver}
           sideDrawerOpened={sidebarOpened}
         />
       </PlayingAudioContext.Provider>

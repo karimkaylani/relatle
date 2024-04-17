@@ -21,16 +21,16 @@ export interface AffixStatusProps {
   resets: number;
   scrolled: boolean | undefined;
   onTap: () => void;
-  won: boolean;
+  gameOver: boolean;
   sideDrawerOpened: boolean;
 }
 
 const AffixStatus = (props: AffixStatusProps) => {
-  const { currArtist, endArtist, guesses, resets, scrolled, onTap, won, sideDrawerOpened } = props;
+  const { currArtist, endArtist, guesses, resets, scrolled, onTap, gameOver, sideDrawerOpened } = props;
   const groupRef = React.useRef<HTMLDivElement>(null);
 
   const { playingAudio, playingArtist } = React.useContext(PlayingAudioContext);
-  const mounted = !sideDrawerOpened && ((scrolled === true && !won) || playingAudio !== null);
+  const mounted = !sideDrawerOpened && ((scrolled === true && !gameOver) || playingAudio !== null);
 
   return (
     <Affix w="100%" h={0} top={0}>
@@ -87,7 +87,7 @@ const AffixStatus = (props: AffixStatusProps) => {
               </Text>
             )}
 
-            {!playingAudio && scrolled && !won && (
+            {!playingAudio && scrolled && !gameOver && (
               <Group align="center" justify="space-between" wrap="nowrap">
                 <Group align="center" justify="center" gap="xs" wrap="nowrap">
                   <ArtistInfo artist={currArtist} small={true} />
