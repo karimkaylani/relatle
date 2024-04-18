@@ -11,7 +11,7 @@ import React, { useEffect } from "react";
 import { ScoreDisplay } from "./Scoreboard";
 import CustomGameButton from "./CustomGameButton";
 import IconHoverButton from "./IconHoverButton";
-import { IconHelpCircle } from "@tabler/icons-react";
+import { IconHelpCircle, IconRss } from "@tabler/icons-react";
 import CoffeeButton from "./CoffeeButton";
 import TransferStats from "./TransferStats";
 import { useSearchParams } from "next/navigation";
@@ -85,7 +85,11 @@ const SideDrawer = (props: SideDrawerProps) => {
                 {ScoreDisplay("Games Won", games_won.toString(), true)}
                 <Divider orientation="vertical" />
                 {ScoreDisplay("Games Lost", games_lost.toString(), true)}
-                {ScoreDisplay("Average Guesses", average_score.toFixed(1), true)}
+                {ScoreDisplay(
+                  "Average Guesses",
+                  average_score.toFixed(1),
+                  true
+                )}
                 <Divider orientation="vertical" />
                 {ScoreDisplay(
                   "Average Resets",
@@ -94,7 +98,11 @@ const SideDrawer = (props: SideDrawerProps) => {
                 )}
                 {ScoreDisplay("Lowest Guesses", lowest_score.toString(), true)}
                 <Divider orientation="vertical" />
-                {ScoreDisplay("Highest Guesses", highest_score.toString(), true)}
+                {ScoreDisplay(
+                  "Highest Guesses",
+                  highest_score.toString(),
+                  true
+                )}
               </Group>
             </Card>
           </Stack>
@@ -106,6 +114,14 @@ const SideDrawer = (props: SideDrawerProps) => {
             text="HOW TO PLAY"
           />
           <CoffeeButton />
+          <IconHoverButton
+            url="https://docs.google.com/forms/d/e/1FAIpQLSeMEW3eGqVXheqidY43q9yMVK2QCi-AEJV3JGTuPK4LX9U9eA/viewform?usp=sf_link"
+            onTap={() => {
+              return;
+            }}
+            icon={<IconRss size={16} />}
+            text="SEND FEEDBACK"
+          />
         </Stack>
       </Drawer>
     </>
