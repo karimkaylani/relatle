@@ -18,10 +18,10 @@ import {
 import ShareResults from "./ShareResults";
 import { Artist, phoneMaxWidth } from "./Game";
 import ScrollablePath from "./ScrollablePath";
-import Scoreboard, { ScoreDisplay } from "./Scoreboard";
+import Scoreboard from "./Scoreboard";
 import SharePath from "./SharePath";
 import * as Collections from "typescript-collections";
-import { IconArrowDown, IconArrowUp } from "@tabler/icons-react";
+import { IconArrowDown, IconArrowUp, IconBolt } from "@tabler/icons-react";
 import { useDisclosure } from "@mantine/hooks";
 import Matchup from "./Matchup";
 import { useSwipeable } from "react-swipeable";
@@ -29,6 +29,7 @@ import CountdownClock from "./CountdownClock";
 import CustomGameButton from "./CustomGameButton";
 import GlobalScoreStats from "./GlobalScoreStats";
 import { getCachedGuesses } from "../db";
+import ScoreDisplay from "./ScoreDisplay";
 
 export interface GameOverProps {
   opened: boolean;
@@ -242,15 +243,16 @@ const GameOver = ({
                 </Text>
                 <Card shadow="lg" radius="lg" p="xs">
                   <Group align="center" justify="center">
-                    {ScoreDisplay("Streak", streak.toString(), true)}
+                    <ScoreDisplay
+                      text={"Streak"}
+                      value={streak.toString()}
+                      icon={streak > 1 && <IconBolt color="#EDD600" />}
+                      color={streak > 1 ? "#EDD600" : "white"}
+                    />
                     <Divider orientation="vertical" />
-                    {ScoreDisplay(
-                      "Longest Streak",
-                      longest_streak.toString(),
-                      true
-                    )}
+                    <ScoreDisplay text={"Longest Streak"} value={longest_streak.toString()}/>
                     <Divider orientation="vertical" />
-                    {ScoreDisplay("Games Won", days_played.toString(), true)}
+                    <ScoreDisplay text={"Games Won"} value={days_played.toString()}/>
                   </Group>
                 </Card>
               </Fragment>

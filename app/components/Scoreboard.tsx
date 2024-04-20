@@ -1,6 +1,6 @@
 import { Card, Divider, Stack, Group, Space, Text } from "@mantine/core";
-import React from "react";
-import FlipNumbers from "react-flip-numbers";
+import React, { ReactNode } from "react";
+import ScoreDisplay from "./ScoreDisplay";
 
 export interface ScoreboardProps {
   guesses: number;
@@ -8,45 +8,6 @@ export interface ScoreboardProps {
   borderColor?: string;
   small?: boolean;
 }
-
-export const ScoreDisplay = (
-  text: string,
-  value: string,
-  small: boolean | undefined
-) => {
-  const numberSize = small ? 20 : 22;
-  return (
-    <Stack
-      gap="3px"
-      justify="center"
-      align="center"
-      className="mb-1"
-      styles={{ root: { minWidth: "80px" } }}
-    >
-      <Text ta="center" size="sm" fw={500}>
-        {text}
-      </Text>
-      <Space h={2} />
-      <FlipNumbers
-        height={numberSize}
-        width={numberSize - 4}
-        color="white"
-        background="gray.9"
-        play
-        perspective={150}
-        numbers={value}
-        numberStyle={{
-          fontFamily: "OpenSauceOne",
-          fontWeight: 700,
-        }}
-        nonNumberStyle={{
-          fontFamily: "OpenSauceOne",
-          fontSize: "1.5em",
-        }}
-      />
-    </Stack>
-  );
-};
 
 const Scoreboard = (props: ScoreboardProps) => {
   const { guesses, resets, borderColor = null, small } = props;
@@ -63,9 +24,9 @@ const Scoreboard = (props: ScoreboardProps) => {
       }}
     >
       <Group justify="center">
-        {ScoreDisplay("Guesses", guesses.toString(), small)}
+        <ScoreDisplay text={"Guesses"} value={guesses.toString()} small={false}/>
         <Divider orientation="vertical" />
-        {ScoreDisplay("Resets", resets.toString(), small)}
+        <ScoreDisplay text={"Resets"} value={resets.toString()} small={false} changeColor="#fcc419"/>
       </Group>
     </Card>
   );

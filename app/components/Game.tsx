@@ -698,7 +698,14 @@ const Game = (props: GameProps) => {
       >
         {/* 160.46 is the width of of the CustomGameButton so that the logo is centered */}
         <div
-          style={{ width: width >= maxCustomTextWidth ? 160.46 : undefined }}
+          style={{
+            width:
+              width >= phoneMaxWidth
+                ? 149.35
+                : width >= maxCustomTextWidth
+                ? 135.16
+                : undefined,
+          }}
         >
           <SideDrawer
             opened={sidebarOpened}
@@ -831,9 +838,6 @@ const Game = (props: GameProps) => {
           sideDrawerOpened={sidebarOpened}
         />
       </PlayingAudioContext.Provider>
-      <Text ta="center" size={window.innerWidth <= phoneMaxWidth ? "sm" : "md"}>
-        Press and hold on an artist to hear a preview of their music
-      </Text>
       <PlayingAudioContext.Provider
         value={{
           playingAudio,
@@ -862,6 +866,9 @@ const Game = (props: GameProps) => {
           ))}
         </SimpleGrid>
       </PlayingAudioContext.Provider>
+      <Text ta="center" size={window.innerWidth <= phoneMaxWidth ? "sm" : "md"}>
+        Press and hold on an artist to hear a preview of their music
+      </Text>
       {!gameOver && (
         <Stack align="center" justify="center">
           <Text ta="center" c="gray.1" size="md">

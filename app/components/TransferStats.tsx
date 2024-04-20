@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import IconHoverButton from "./IconHoverButton";
 import {
   IconChartBar,
+  IconDownload,
   IconInfoCircle,
   IconTransfer,
 } from "@tabler/icons-react";
@@ -107,8 +108,8 @@ const TransferStats = () => {
     <>
       <IconHoverButton
         onTap={open}
-        icon={<IconChartBar size={16} />}
-        text="TRANSFER STATS"
+        icon={<IconDownload style={{transform: 'rotate(-90deg)'}} size={16} />}
+        text="Transfer Stats"
       />
       <Modal
         opened={opened}

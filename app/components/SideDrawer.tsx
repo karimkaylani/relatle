@@ -1,6 +1,7 @@
 import {
   Burger,
   Card,
+  Center,
   Divider,
   Drawer,
   Group,
@@ -8,13 +9,13 @@ import {
   Text,
 } from "@mantine/core";
 import React, { useEffect } from "react";
-import { ScoreDisplay } from "./Scoreboard";
 import CustomGameButton from "./CustomGameButton";
 import IconHoverButton from "./IconHoverButton";
-import { IconHelpCircle, IconRss } from "@tabler/icons-react";
+import { IconBolt, IconFlag2, IconHelpCircle } from "@tabler/icons-react";
 import CoffeeButton from "./CoffeeButton";
 import TransferStats from "./TransferStats";
 import { useSearchParams } from "next/navigation";
+import ScoreDisplay from "./ScoreDisplay";
 
 export interface SideDrawerProps {
   opened: boolean;
@@ -51,13 +52,16 @@ const SideDrawer = (props: SideDrawerProps) => {
     htpOpen,
   } = props;
   const { open, close } = props.handlers;
+  const [test, setTest] = React.useState<number>(0);
 
   useEffect(() => {
     // open the drawer after transfer initiated
     if (searchParams.get("transfer")) {
       open();
     }
+    setTest(7)
   }, [searchParams, open]);
+
 
   return (
     <>
@@ -73,60 +77,45 @@ const SideDrawer = (props: SideDrawerProps) => {
             <Text size="xl" c="gray.1" fw={700}>
               Statistics
             </Text>
-            <Card shadow="lg" radius="lg" p="xs">
+            <Card shadow="lg" radius="lg" p="xs" withBorder>
               <Group align="center" justify="center">
                 <Stack gap="sm">
-                  {ScoreDisplay("Streak", streak.toString(), true)}
-                  {ScoreDisplay("Games Won", games_won.toString(), true)}
-                  {ScoreDisplay(
-                    "Average Guesses",
-                    average_score.toFixed(1),
-                    true
-                  )}
-                  {ScoreDisplay(
-                    "Best Guess Count",
-                    lowest_score.toString(),
-                    true
-                  )}
+                  <ScoreDisplay
+                    text={"Streak"}
+                    value={streak.toString()}
+                    icon={streak > 1 && <IconBolt color="#EDD600" />}
+                    color={streak > 1 ? "#EDD600" : "white"}
+                  />
+                  <ScoreDisplay text={"Games Won"} value={games_won.toString()}/>
+                  <ScoreDisplay text={"Average Guesses"} value={average_score.toFixed()} decimal/>
+                  <ScoreDisplay text={"Best Guess Count"} value={lowest_score.toString()}/>
                 </Stack>
-
                 <Divider orientation="vertical" />
                 <Stack gap="sm">
-                  {ScoreDisplay(
-                    "Longest Streak",
-                    longest_streak.toString(),
-                    true
-                  )}
-                  {ScoreDisplay("Games Lost", games_lost.toString(), true)}
-                  {ScoreDisplay(
-                    "Average Resets",
-                    average_resets.toFixed(1),
-                    true
-                  )}
-                  {ScoreDisplay(
-                    "Worst Guess Count",
-                    highest_score.toString(),
-                    true
-                  )}
+                  <ScoreDisplay text={"Longest Streak"} value={longest_streak.toString()}/>
+                  <ScoreDisplay text={"Games Lost"} value={games_lost.toString()}/>
+                  <ScoreDisplay text={"Average Resets"} value={average_resets.toFixed(1)} decimal/>
+                  <ScoreDisplay text={"Worst Guess Count"} value={highest_score.toString()}/>
                 </Stack>
               </Group>
             </Card>
           </Stack>
           <TransferStats />
-          <CustomGameButton customModalOpen={customModalOpen} />
+          <CustomGameButton customModalOpen={customModalOpen} caps={false} />
+          <Divider w={44} style={{ margin: "auto" }} />
           <IconHoverButton
             onTap={htpOpen}
             icon={<IconHelpCircle size={18} />}
-            text="HOW TO PLAY"
+            text="How to Play"
           />
-          <CoffeeButton />
+          <CoffeeButton caps={false} />
           <IconHoverButton
             url="https://docs.google.com/forms/d/e/1FAIpQLSeMEW3eGqVXheqidY43q9yMVK2QCi-AEJV3JGTuPK4LX9U9eA/viewform?usp=sf_link"
             onTap={() => {
               return;
             }}
-            icon={<IconRss size={16} />}
-            text="SEND FEEDBACK"
+            icon={<IconFlag2 size={16} />}
+            text="Send Feedback"
           />
         </Stack>
       </Drawer>
