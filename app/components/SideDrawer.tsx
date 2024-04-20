@@ -75,34 +75,40 @@ const SideDrawer = (props: SideDrawerProps) => {
             </Text>
             <Card shadow="lg" radius="lg" p="xs">
               <Group align="center" justify="center">
-                {ScoreDisplay("Streak", streak.toString(), true)}
+                <Stack gap="sm">
+                  {ScoreDisplay("Streak", streak.toString(), true)}
+                  {ScoreDisplay("Games Won", games_won.toString(), true)}
+                  {ScoreDisplay(
+                    "Average Guesses",
+                    average_score.toFixed(1),
+                    true
+                  )}
+                  {ScoreDisplay(
+                    "Best Guess Count",
+                    lowest_score.toString(),
+                    true
+                  )}
+                </Stack>
+
                 <Divider orientation="vertical" />
-                {ScoreDisplay(
-                  "Longest Streak",
-                  longest_streak.toString(),
-                  true
-                )}
-                {ScoreDisplay("Games Won", games_won.toString(), true)}
-                <Divider orientation="vertical" />
-                {ScoreDisplay("Games Lost", games_lost.toString(), true)}
-                {ScoreDisplay(
-                  "Average Guesses",
-                  average_score.toFixed(1),
-                  true
-                )}
-                <Divider orientation="vertical" />
-                {ScoreDisplay(
-                  "Average Resets",
-                  average_resets.toFixed(1),
-                  true
-                )}
-                {ScoreDisplay("Lowest Guesses", lowest_score.toString(), true)}
-                <Divider orientation="vertical" />
-                {ScoreDisplay(
-                  "Highest Guesses",
-                  highest_score.toString(),
-                  true
-                )}
+                <Stack gap="sm">
+                  {ScoreDisplay(
+                    "Longest Streak",
+                    longest_streak.toString(),
+                    true
+                  )}
+                  {ScoreDisplay("Games Lost", games_lost.toString(), true)}
+                  {ScoreDisplay(
+                    "Average Resets",
+                    average_resets.toFixed(1),
+                    true
+                  )}
+                  {ScoreDisplay(
+                    "Worst Guess Count",
+                    highest_score.toString(),
+                    true
+                  )}
+                </Stack>
               </Group>
             </Card>
           </Stack>
