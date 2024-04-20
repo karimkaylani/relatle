@@ -11,7 +11,13 @@ import {
 import React from "react";
 import HoverButton from "./HoverButton";
 import { Artist } from "./Game";
-import { IconHelpCircle } from "@tabler/icons-react";
+import {
+  IconHelp,
+  IconHelpCircle,
+  IconHelpOff,
+  IconHelpSmall,
+  IconQuestionMark,
+} from "@tabler/icons-react";
 import Matchup from "./Matchup";
 
 export interface HowToPlayProps {
@@ -49,17 +55,21 @@ const HowToPlay = (props: HowToPlayProps) => {
       >
         <Stack align="left" gap="lg">
           <Group wrap="nowrap">
-            <Card shadow="sm" radius="md" padding="5px" w={30}>
-              <Text ta="center">1</Text>
+            <Card shadow="sm" radius="md" padding="5px" w={32}>
+              <Text c="gray.1" fw={700} ta="center">
+                1
+              </Text>
             </Card>
             <Text fw={300}>Identify the artist matchup of the day</Text>
           </Group>
 
           <Matchup start={start} end={end} small={true} />
 
-          <Group wrap="nowrap" align="left">
-            <Card shadow="sm" radius="md" padding="5px" w={85} h={33}>
-              <Text ta="center">2</Text>
+          <Group wrap="nowrap" justify="flex-start" align="flex-start">
+            <Card shadow="sm" radius="md" padding="5px" w={68} h={33}>
+              <Text fw={700} c="gray.1" ta="center">
+                2
+              </Text>
             </Card>
             <Stack align="center" justify="center">
               <Text fw={300}>
@@ -72,30 +82,31 @@ const HowToPlay = (props: HowToPlayProps) => {
                 If you get stuck, you can{" "}
                 <Text fw={700} c="yellow.5" span>
                   RESET
-                </Text>{" "}
-                back to the starting artist or use the{" "}
+                </Text>
+                {", "}
+                use the{" "}
                 <Text fw={700} c="gray.1" span>
                   HINT
-                </Text>{" "}
-                to see the target artist{"'"}s related artists
-              </Text>
-
-              <Text ta="left" fw={300}>
-                <Text fw={700} span>
-                  Tip:{" "}
                 </Text>
-                Press and hold on an artist to hear a preview of their music!
+                {", "}
+                or{" "}
+                <Text fw={700} c="red.6" span>
+                  GIVE UP
+                </Text>
+                {"."}
               </Text>
             </Stack>
           </Group>
 
           <Group wrap="nowrap">
-            <Card shadow="sm" radius="md" padding="5px" w={50}>
-              <Text ta="center">3</Text>
+            <Card shadow="sm" radius="md" padding="5px" w={41}>
+              <Text c="gray.1" fw={700} ta="center">
+                3
+              </Text>
             </Card>
             <Text fw={300}>
-              To win, make sure to select the target artist once they pop up or
-              you&apos;ll miss it! Have fun!
+              Select the target artist once they pop up or you&apos;ll miss it!
+              Have fun!
             </Text>
           </Group>
           <Center>
@@ -105,16 +116,23 @@ const HowToPlay = (props: HowToPlayProps) => {
               alt="Clicking an artist box"
             />
           </Center>
-          <Stack className="mr-5 ml-5" align="center">
-            <Text c="gray.1" fw={700} size='lg'>
-              Related Artists?
-            </Text>
-            <Text fw={300}>
-              Related artists are based on the &quot;Fans Also Like&quot;
-              section {"you'll"} find on music streaming services which take
-              user listening habits into account
-            </Text>
-          </Stack>
+          <Group wrap="nowrap" justify="flex-start" align="flex-start">
+            <Card shadow="sm" radius="md" p="1px" w={90} h={33}>
+              <Center>
+                <IconHelpSmall style={{minWidth: '30px'}} size={30} />
+              </Center>
+            </Card>
+            <Stack gap="0px">
+              <Text fw={700} c="gray.1" span>
+                {"What's a related artist?"}
+              </Text>
+              <Text fw={300}>
+                Related artists are based on the &quot;Fans Also Like&quot;
+                section {"you'll"} find on music streaming services which take user
+                listening habits into account.
+              </Text>
+            </Stack>
+          </Group>
         </Stack>
       </Modal>
     </Group>
