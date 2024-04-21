@@ -21,3 +21,9 @@
   src: url('/fonts/OpenSauceOne-Bold.ttf');
   font-weight: 700;
 }
+
+.ticker-digit {
+  font-feature-settings: "tnum";
+  font-family: monospace;
+  font-weight: 700;
+}

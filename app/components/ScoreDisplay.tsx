@@ -10,6 +10,7 @@ export interface ScoreDisplayProps {
   value: string;
   small?: boolean;
   icon?: ReactNode;
+  textColor?: string;
   color?: string;
   decimal?: boolean;
   changeColor?: string;
@@ -22,18 +23,19 @@ const ScoreDisplay = (props: ScoreDisplayProps) => {
     small = true,
     icon,
     decimal=false,
+    textColor = "#C1C2C6",
     color = "white",
     changeColor='white'
   } = props;
   const numberSize = (small ? '24px' : '26px');
   return (
     <Stack
-      gap="4px"
+      gap="6px"
       justify="center"
       align="center"
       styles={{ root: { minWidth: "80px" } }}
     >
-      <Text ta="center" size="sm" fw={500} c={color && color}>
+      <Text ta="center" size="sm" fw={500} c={textColor}>
         {text}
       </Text>
       <Group gap="0px">

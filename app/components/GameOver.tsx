@@ -30,6 +30,7 @@ import CustomGameButton from "./CustomGameButton";
 import GlobalScoreStats from "./GlobalScoreStats";
 import { getCachedGuesses } from "../db";
 import ScoreDisplay from "./ScoreDisplay";
+import StreakDisplay from "./StreakDisplay";
 
 export interface GameOverProps {
   opened: boolean;
@@ -243,12 +244,7 @@ const GameOver = ({
                 </Text>
                 <Card shadow="lg" radius="lg" p="xs">
                   <Group align="center" justify="center">
-                    <ScoreDisplay
-                      text={"Streak"}
-                      value={streak.toString()}
-                      icon={streak > 1 && <IconBolt color="#EDD600" />}
-                      color={streak > 1 ? "#EDD600" : "white"}
-                    />
+                    <StreakDisplay streak={streak}/>
                     <Divider orientation="vertical" />
                     <ScoreDisplay text={"Longest Streak"} value={longest_streak.toString()}/>
                     <Divider orientation="vertical" />

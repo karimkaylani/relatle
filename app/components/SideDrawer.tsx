@@ -16,6 +16,7 @@ import CoffeeButton from "./CoffeeButton";
 import TransferStats from "./TransferStats";
 import { useSearchParams } from "next/navigation";
 import ScoreDisplay from "./ScoreDisplay";
+import StreakDisplay from "./StreakDisplay";
 
 export interface SideDrawerProps {
   opened: boolean;
@@ -77,21 +78,16 @@ const SideDrawer = (props: SideDrawerProps) => {
             <Text size="xl" c="gray.1" fw={700}>
               Statistics
             </Text>
-            <Card shadow="lg" radius="lg" p="xs" withBorder>
+            <Card shadow="lg" radius="lg" p="sm" withBorder>
               <Group align="center" justify="center">
-                <Stack gap="sm">
-                  <ScoreDisplay
-                    text={"Streak"}
-                    value={streak.toString()}
-                    icon={streak > 1 && <IconBolt color="#EDD600" />}
-                    color={streak > 1 ? "#EDD600" : "white"}
-                  />
+                <Stack gap="md">
+                  <StreakDisplay streak={streak} />
                   <ScoreDisplay text={"Games Won"} value={games_won.toString()}/>
                   <ScoreDisplay text={"Average Guesses"} value={average_score.toFixed()} decimal/>
                   <ScoreDisplay text={"Best Guess Count"} value={lowest_score.toString()}/>
                 </Stack>
                 <Divider orientation="vertical" />
-                <Stack gap="sm">
+                <Stack gap="md">
                   <ScoreDisplay text={"Longest Streak"} value={longest_streak.toString()}/>
                   <ScoreDisplay text={"Games Lost"} value={games_lost.toString()}/>
                   <ScoreDisplay text={"Average Resets"} value={average_resets.toFixed(1)} decimal/>
@@ -101,20 +97,20 @@ const SideDrawer = (props: SideDrawerProps) => {
             </Card>
           </Stack>
           <TransferStats />
-          <CustomGameButton customModalOpen={customModalOpen} caps={false} />
+          <CustomGameButton customModalOpen={customModalOpen} />
           <Divider w={44} style={{ margin: "auto" }} />
           <IconHoverButton
             onTap={htpOpen}
-            icon={<IconHelpCircle size={18} />}
+            icon={<IconHelpCircle size={18} color='white'/>}
             text="How to Play"
           />
-          <CoffeeButton caps={false} />
+          <CoffeeButton />
           <IconHoverButton
             url="https://docs.google.com/forms/d/e/1FAIpQLSeMEW3eGqVXheqidY43q9yMVK2QCi-AEJV3JGTuPK4LX9U9eA/viewform?usp=sf_link"
             onTap={() => {
               return;
             }}
-            icon={<IconFlag2 size={16} />}
+            icon={<IconFlag2 size={16} color='white'/>}
             text="Send Feedback"
           />
         </Stack>

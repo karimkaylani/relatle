@@ -6,11 +6,10 @@ import { phoneMaxWidth } from "./Game";
 export interface CustomGameModalProps {
   customModalOpen: () => void;
   showText?: boolean;
-  caps?: boolean;
 }
 
 const CustomGameButton = (props: CustomGameModalProps) => {
-  const { customModalOpen, showText=true, caps=false } = props;
+  const { customModalOpen, showText=true } = props;
 
   return (
     <Card onClick={customModalOpen} shadow="md" radius="lg" p="sm">
@@ -23,7 +22,7 @@ const CustomGameButton = (props: CustomGameModalProps) => {
               size={window.innerWidth > phoneMaxWidth ? "md" : "sm"}
               c="gray.1"
             >
-              {caps ? "CUSTOM GAME" : "Custom Game"}
+              {"Custom Game"}
             </Text>
           )}
         </Group>
