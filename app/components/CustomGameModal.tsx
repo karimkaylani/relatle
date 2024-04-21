@@ -467,7 +467,7 @@ const CustomGameModal = (props: CustomGameModalProps) => {
             rightSection={
               artistsList.includes(startArtist) && (
                 <Group gap="xs" justify="flex-end" align="center">
-                  <HoverButton onTap={recommendedEndArtists.length > 0 ? getRandomFixedStart : () => {}}>
+                  <HoverButton onTap={recommendedEndArtists.length > 0 ? getRandomRecommendedFixedStart : () => {}}>
                     <Image
                       src={"images/custom-icon.svg"}
                       alt="New Random Recommended End Artist"
