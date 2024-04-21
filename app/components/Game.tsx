@@ -409,21 +409,11 @@ const Game = (props: GameProps) => {
     }
   };
 
-  const updateArtistHandler = (artist: Artist) => {
-    setArtistClicked(false);
-    if (gameOver) {
-      if (artist.name === end) {
-        winModalOpen();
-      }
-      return;
-    }
-    const newPath = [...path, artist.name];
-    const newGuesses = guesses + 1;
-    setPath(newPath);
-    setGuesses(newGuesses);
-    if (artist.name === end) {
-      setWon(true);
-      setGameOver(true);
+  const winHandler = (newGuesses: number, newPath: string[]) => {
+    setWon(true);
+    setGameOver(true);
+    // DAILY GAME
+    if (!is_custom) {
       let new_streak = streak + 1;
       let new_longest_streak =
         new_streak > longestStreak ? new_streak : longestStreak;
@@ -454,60 +444,72 @@ const Game = (props: GameProps) => {
       const new_highest_score =
         newGuesses > highestScore ? newGuesses : highestScore;
       setHighestScore(new_highest_score);
-      save(
-        is_custom
-          ? {
-              currArtist,
-              path: newPath,
-              won: true,
-              guesses: newGuesses,
-              gameOver: true,
-              resets,
-              matchup,
-              usedHint,
-            }
-          : {
-              currArtist,
-              path: newPath,
-              won: true,
-              guesses: newGuesses,
-              gameOver: true,
-              resets,
-              matchup,
-              usedHint,
-              prevMatchupID: matchupID,
-              numDaysPlayed: newNumDaysPlayed,
-              streak: new_streak,
-              longestStreak: new_longest_streak,
-              sumScores: new_sum_scores,
-              averageScore: new_average_score,
-              sumResets: new_sum_resets,
-              averageResets: new_average_resets,
-              gamesLost,
-              lowestScore: new_lowest_score,
-              highestScore: new_highest_score,
-            }
+      save({
+        currArtist,
+        path: newPath,
+        won: true,
+        guesses: newGuesses,
+        gameOver: true,
+        resets,
+        matchup,
+        usedHint,
+        prevMatchupID: matchupID,
+        numDaysPlayed: newNumDaysPlayed,
+        streak: new_streak,
+        longestStreak: new_longest_streak,
+        sumScores: new_sum_scores,
+        averageScore: new_average_score,
+        sumResets: new_sum_resets,
+        averageResets: new_average_resets,
+        gamesLost,
+        lowestScore: new_lowest_score,
+        highestScore: new_highest_score,
+      });
+      // CUSTOM GAME
+    } else {
+      save({
+        currArtist,
+        path: newPath,
+        won: true,
+        guesses: newGuesses,
+        gameOver: true,
+        resets,
+        matchup,
+        usedHint,
+      });
+    }
+    winModalOpen();
+    if (process.env.NODE_ENV !== "development") {
+      addScoreToDB(
+        is_custom,
+        true,
+        matchup,
+        matchupID,
+        newGuesses,
+        resets,
+        newPath,
+        usedHint
       );
-      winModalOpen();
-      if (process.env.NODE_ENV !== "development") {
-        addScoreToDB(
-          is_custom,
-          true,
-          matchup,
-          matchupID,
-          newGuesses,
-          resets,
-          newPath,
-          usedHint
-        );
+    }
+  }
+
+  const updateArtistHandler = (artist: Artist) => {
+    setArtistClicked(false);
+    if (gameOver) {
+      if (artist.name === end) {
+        winModalOpen();
       }
       return;
     }
-    try {
-      scrollToTop();
-    } catch (e) {
-      console.error(e);
+    const newPath = [...path, artist.name];
+    const newGuesses = guesses + 1;
+    setPath(newPath);
+    setGuesses(newGuesses);
+    if (artist.name === end) {
+      winHandler(newGuesses, newPath);
+      return;
     }
+    scrollToTop();
     const prevCurrArtist = currArtist;
     if (prevCurrArtist.related.includes(end)) {
       missedArtistHandler();
@@ -532,11 +534,7 @@ const Game = (props: GameProps) => {
     if (currArtist.related.includes(end)) {
       missedArtistHandler();
     }
-    try {
-      scrollToTop();
-    } catch (e) {
-      console.error(e);
-    }
+    scrollToTop();
     const newPath = [...path, "RESET"];
     setPath(newPath);
     const newResets = resets + 1;
@@ -580,49 +578,51 @@ const Game = (props: GameProps) => {
     let newPath = [...path, "GIVE UP"];
     setPath(newPath);
 
-    let previousMatchupID = matchupID;
-    setPrevMatchupID(previousMatchupID);
+    // DAILY GAME
+    if (!is_custom) {
+      let previousMatchupID = matchupID;
+      setPrevMatchupID(previousMatchupID);
 
-    let new_streak = 0;
-    setStreak(new_streak);
+      let new_streak = 0;
+      setStreak(new_streak);
 
-    let new_games_lost = gamesLost + 1;
-    setGamesLost(new_games_lost);
+      let new_games_lost = gamesLost + 1;
+      setGamesLost(new_games_lost);
+      save({
+        currArtist,
+        path: newPath,
+        won,
+        guesses,
+        gameOver: true,
+        resets,
+        matchup,
+        usedHint,
+        prevMatchupID: previousMatchupID,
+        numDaysPlayed,
+        streak: new_streak,
+        longestStreak,
+        sumScores,
+        averageScore,
+        sumResets,
+        averageResets,
+        gamesLost: new_games_lost,
+        lowestScore,
+        highestScore,
+      });
+    // CUSTOM GAME
+    } else {
+      save({
+        currArtist,
+        path: newPath,
+        won,
+        guesses,
+        gameOver: true,
+        resets,
+        matchup,
+        usedHint,
+      });
+    }
 
-    save(
-      is_custom
-        ? {
-            currArtist,
-            path: newPath,
-            won,
-            guesses,
-            gameOver: true,
-            resets,
-            matchup,
-            usedHint,
-          }
-        : {
-            currArtist,
-            path: newPath,
-            won,
-            guesses,
-            gameOver: true,
-            resets,
-            matchup,
-            usedHint,
-            prevMatchupID: previousMatchupID,
-            numDaysPlayed,
-            streak: new_streak,
-            longestStreak,
-            sumScores,
-            averageScore,
-            sumResets,
-            averageResets,
-            gamesLost: new_games_lost,
-            lowestScore,
-            highestScore,
-          }
-    );
     if (process.env.NODE_ENV !== "development") {
       addScoreToDB(
         is_custom,

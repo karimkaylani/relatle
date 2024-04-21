@@ -60,7 +60,7 @@ const HowToPlay = (props: HowToPlayProps) => {
                 1
               </Text>
             </Card>
-            <Text fw={300}>Identify the artist matchup of the day</Text>
+            <Text fw={300}>Identify the artist matchup</Text>
           </Group>
 
           <Matchup start={start} end={end} small={true} />
