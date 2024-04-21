@@ -21,7 +21,7 @@ const SharePath = (props: SharePathProps) => {
   return (
     <ShareButton
       shareText={pathString}
-      buttonText="PATH"
+      buttonText="Path"
       defaultColor="gray.7"
       clickedColor="gray.9"
     />

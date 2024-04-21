@@ -50,7 +50,7 @@ const HowToPlay = (props: HowToPlayProps) => {
             fontWeight: 700,
             lineHeight: "32px",
           },
-          header: { top: -1 },
+          header: { top: -1, paddingBottom: '8px' },
         }}
       >
         <Stack align="left" gap="lg">

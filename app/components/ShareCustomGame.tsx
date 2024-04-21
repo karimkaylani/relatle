@@ -21,7 +21,7 @@ const ShareCustomGame = (props: ShareCustomGameProps) => {
     <ShareButton
       disabled={disabled}
       shareText={url}
-      buttonText="CUSTOM GAME LINK"
+      buttonText=""
       defaultColor="gray.7"
       clickedColor="gray.9"
     />

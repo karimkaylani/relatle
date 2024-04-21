@@ -31,7 +31,7 @@ const ShareButton = ({
         leftSection={<IconShare2 size={20} />}
         styles={{ section: { marginRight: "4px", marginBottom: "4px" } }}
       >
-        SHARE {buttonText.toLocaleUpperCase()}
+        Share {buttonText}
       </Button>
     );
   }
@@ -47,8 +47,8 @@ const ShareButton = ({
           styles={{ section: { marginRight: "4px" } }}
         >
           {copied
-            ? `COPIED ${buttonText.toLocaleUpperCase()}`
-            : `COPY ${buttonText.toLocaleUpperCase()}`}
+            ? `Copied ${buttonText}!`
+            : `Copy ${buttonText}`}
         </Button>
       )}
     </CopyButton>

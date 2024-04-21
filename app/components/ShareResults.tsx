@@ -50,7 +50,7 @@ ${url}`;
   return (
     <ShareButton
       shareText={generateShareText()}
-      buttonText="RESULTS"
+      buttonText="Results"
       defaultColor="green.6"
       clickedColor="green.9"
     />

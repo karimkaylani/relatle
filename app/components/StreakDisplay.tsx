@@ -12,7 +12,7 @@ const StreakDisplay = ({streak: streak}: StreakDisplayProps) => {
     <ScoreDisplay
         text={"Streak"}
         value={streak.toString()}
-        icon={isReturningStreak && <IconBolt color="#EDD600" fill='#EDD600'/>}
+        icon={isReturningStreak && <IconBolt color="#EDD600" fill='#EDD600' stroke={1}/>}
         color={isReturningStreak ? "#EDD600" : undefined}
         textColor={isReturningStreak ? "#EDD600" : undefined}
     />

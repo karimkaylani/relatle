@@ -144,15 +144,15 @@ const TransferStats = () => {
             leftSection={
               <Image src={"images/custom-icon.svg"} alt="custom-game" />
             }
-            styles={{ section: { marginRight: "6px", marginBottom: "4px" } }}
+            styles={{ section: { marginRight: "6px" } }}
           >
-            GENERATE CODE
+            Generate Code
           </Button>
           {token && <PinInput size="lg" value={token} readOnly />}
           {token && (
             <ShareButton
               shareText={token}
-              buttonText={"CODE"}
+              buttonText={"Code"}
               defaultColor={"green.6"}
               clickedColor={"green.9"}
             />
@@ -192,9 +192,9 @@ const TransferStats = () => {
             color="green.6"
             loading={loadingImport}
             leftSection={<IconTransfer size={16} />}
-            styles={{ section: { marginRight: "6px", marginBottom: "4px" } }}
+            styles={{ section: { marginRight: "6px"} }}
           >
-            TRANSFER STATS
+            Transfer Stats
           </Button>
         </Stack>
       </Modal>

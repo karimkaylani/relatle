@@ -138,6 +138,10 @@ const CustomGameModal = (props: CustomGameModalProps) => {
   );
   const searchParams = useSearchParams();
 
+  const invalidMatchup = !(
+    artistsList.includes(startArtist) && matchupsFound.includes(endArtist)
+  );
+
   const changeStartArtist = (start: string) => {
     setStartArtist(start);
     if (artistsList.includes(start)) {
@@ -184,7 +188,9 @@ const CustomGameModal = (props: CustomGameModalProps) => {
       web[end].related.filter(
         (artist) =>
           web[end].related.includes(artist) && web[artist].related.includes(end)
-      ).length / web[end].related.length >= percentage
+      ).length /
+        web[end].related.length >=
+      percentage
     );
   };
 
@@ -286,6 +292,20 @@ const CustomGameModal = (props: CustomGameModalProps) => {
     }
   };
 
+  const getRandomRecommendedFixedStart = () => {
+    const newEnd =
+      recommendedEndArtists[
+        Math.floor(Math.random() * recommendedEndArtists.length)
+      ];
+    setEndArtist(newEnd);
+  };
+
+  const getRandomFixedStart = () => {
+    const newEnd =
+      matchupsFound[Math.floor(Math.random() * matchupsFound.length)];
+    setEndArtist(newEnd);
+  };
+
   const isCurrentMatchupDifficult = () => {
     return (
       artistsList.includes(startArtist) &&
@@ -334,6 +354,9 @@ const CustomGameModal = (props: CustomGameModalProps) => {
           fontWeight: 700,
           lineHeight: "32px",
         },
+        header: {
+          paddingBottom: "8px",
+        },
       }}
     >
       <Stack>
@@ -341,6 +364,20 @@ const CustomGameModal = (props: CustomGameModalProps) => {
           Play your own custom matchup and send the link to challenge your
           friends.
         </Text>
+        <Group align="center" justify="center">
+          <IconHoverButton
+            onTap={getRandomRecommendedMatchup}
+            icon={<Image src={"images/custom-icon.svg"} alt="custom-game" />}
+            text="Recommended"
+            textSize="sm"
+          />
+          <IconHoverButton
+            onTap={getRandomMatchup}
+            icon={<IconArrowsShuffle size={16} color="white" />}
+            text="Random"
+            textSize="sm"
+          />
+        </Group>
         <Autocomplete
           size="lg"
           radius="md"
@@ -419,12 +456,33 @@ const CustomGameModal = (props: CustomGameModalProps) => {
                 />
               )
             }
+            rightSectionWidth={100}
             rightSection={
-              <CloseButton
-                aria-label="Clear input"
-                onClick={() => setEndArtist("")}
-                style={{ display: endArtist ? undefined : "none" }}
-              />
+              artistsList.includes(startArtist) && (
+                <Group gap="6px">
+                  <HoverButton onTap={getRandomRecommendedFixedStart}>
+                    <Image
+                      src={"images/custom-icon.svg"}
+                      alt="New Random Recommended End Artist"
+                    />
+                  </HoverButton>
+                  <HoverButton onTap={getRandomFixedStart}>
+                    <IconArrowsShuffle
+                      size={16}
+                      color="white"
+                      aria-label="New Random End Artist"
+                    />
+                  </HoverButton>
+                  <CloseButton
+                    aria-label="Clear input"
+                    onClick={() => setEndArtist("")}
+                    style={{ opacity: endArtist ? 100 : 0 }}
+                    styles={{
+                      root: { marginLeft: "-6px", marginRight: "-16px" },
+                    }}
+                  />
+                </Group>
+              )
             }
           />
 
@@ -443,59 +501,25 @@ const CustomGameModal = (props: CustomGameModalProps) => {
             </Text>
           )}
         </Stack>
-        <Group align="center" justify="center">
-          {/* <HoverButton onTap={getRandomRecommendedMatchup}>
-            <Card shadow="md" radius="lg" p="sm">
-              <Group gap="6px" justify="center">
-                <Image src={"images/custom-icon.svg"} alt="custom-game" />
-                <Text size="sm" fw={700} c="gray.1">
-                  RECOMMENDED
-                </Text>
-              </Group>
-            </Card>
-          </HoverButton> */}
-          <IconHoverButton onTap={getRandomRecommendedMatchup} icon={<Image src={"images/custom-icon.svg"} alt="custom-game" />} text="RECOMMENDED" textSize='sm'/>
 
-          {/* <HoverButton onTap={getRandomMatchup}>
-            <Card shadow="md" radius="lg" p="sm">
-              <Group gap="4px" justify="center">
-                <IconArrowsShuffle size={16} />
-                <Text size="sm" fw={700} c="gray.1">
-                  RANDOM
-                </Text>
-              </Group>
-            </Card>
-          </HoverButton> */}
-          <IconHoverButton onTap={getRandomMatchup} icon={<IconArrowsShuffle size={16} />} text="RANDOM" textSize='sm'/>
+        <Group grow>
+          <Button
+            leftSection={<IconPlayerPlayFilled size={20} />}
+            onClick={() =>
+              window.open(generateCustomGameURL(startArtist, endArtist))
+            }
+            disabled={invalidMatchup}
+            color="green.6"
+            styles={{ section: { marginRight: "4px" } }}
+          >
+            Play
+          </Button>
+          <ShareCustomGame
+            start={startArtist}
+            end={endArtist}
+            disabled={invalidMatchup}
+          />
         </Group>
-
-        <Button
-          leftSection={<IconPlayerPlayFilled size={20} />}
-          onClick={() =>
-            window.open(generateCustomGameURL(startArtist, endArtist))
-          }
-          disabled={
-            !(
-              artistsList.includes(startArtist) &&
-              matchupsFound.includes(endArtist)
-            )
-          }
-          color="green.6"
-          styles={{ section: { marginRight: "4px" } }}
-        >
-          START CUSTOM GAME
-        </Button>
-
-        <ShareCustomGame
-          start={startArtist}
-          end={endArtist}
-          disabled={
-            !(
-              artistsList.includes(startArtist) &&
-              matchupsFound.includes(endArtist)
-            )
-          }
-        />
       </Stack>
     </Modal>
   );
