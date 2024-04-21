@@ -10,7 +10,7 @@ import {
 } from "@mantine/core";
 import React from "react";
 import HoverButton from "./HoverButton";
-import { Artist } from "./Game";
+import { Artist, phoneMaxWidth } from "./Game";
 import {
   IconHelp,
   IconHelpCircle,
@@ -111,7 +111,7 @@ const HowToPlay = (props: HowToPlayProps) => {
           </Group>
           <Center>
             <Image
-              w={250}
+              w={window.innerWidth > phoneMaxWidth ? 250 : 175}
               src="images/how-to-play.png"
               alt="Clicking an artist box"
             />

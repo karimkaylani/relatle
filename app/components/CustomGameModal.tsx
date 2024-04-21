@@ -293,16 +293,22 @@ const CustomGameModal = (props: CustomGameModalProps) => {
   };
 
   const getRandomRecommendedFixedStart = () => {
-    const newEnd =
-      recommendedEndArtists[
-        Math.floor(Math.random() * recommendedEndArtists.length)
-      ];
+    if (recommendedEndArtists.length == 1) {
+      setEndArtist(recommendedEndArtists[0]);
+      return;
+    }
+    let filtered = recommendedEndArtists.filter((artist) => artist !== endArtist);
+    let newEnd = filtered[Math.floor(Math.random() * filtered.length)];
     setEndArtist(newEnd);
   };
 
   const getRandomFixedStart = () => {
-    const newEnd =
-      matchupsFound[Math.floor(Math.random() * matchupsFound.length)];
+    if (matchupsFound.length == 1) {
+      setEndArtist(matchupsFound[0]);
+      return;
+    }
+    let filtered = matchupsFound.filter((artist) => artist !== endArtist);
+    let newEnd = filtered[Math.floor(Math.random() * filtered.length)];
     setEndArtist(newEnd);
   };
 
@@ -387,7 +393,7 @@ const CustomGameModal = (props: CustomGameModalProps) => {
           selectFirstOptionOnChange={true}
           spellCheck="false"
           styles={{
-            input: { color: "#f1f3f5", fontSize: "16px"},
+            input: { color: "#f1f3f5", fontSize: "16px" },
             dropdown: { color: "#f1f3f5" },
             option: { fontSize: "14px" },
           }}
@@ -444,8 +450,12 @@ const CustomGameModal = (props: CustomGameModalProps) => {
                   ? "2px solid #40c057"
                   : "",
               },
-              groupLabel: { color: "#37b24d", fontWeight: 700, fontSize: "14px"},
-              dropdown: { color: "#f1f3f5"},
+              groupLabel: {
+                color: "#37b24d",
+                fontWeight: 700,
+                fontSize: "14px",
+              },
+              dropdown: { color: "#f1f3f5" },
               option: { fontSize: "14px" },
             }}
             onChange={setEndArtist}
@@ -463,15 +473,23 @@ const CustomGameModal = (props: CustomGameModalProps) => {
                 />
               )
             }
-            rightSectionWidth={82}
+            rightSectionWidth={84}
             rightSection={
               artistsList.includes(startArtist) && (
                 <Group gap="xs" justify="flex-end" align="center">
-                  <HoverButton onTap={recommendedEndArtists.length > 0 ? getRandomRecommendedFixedStart : () => {}}>
+                  <HoverButton
+                    onTap={
+                      recommendedEndArtists.length > 0
+                        ? getRandomRecommendedFixedStart
+                        : () => {}
+                    }
+                  >
                     <Image
                       src={"images/custom-icon.svg"}
                       alt="New Random Recommended End Artist"
-                      style={{opacity: recommendedEndArtists.length > 0 ? 1 : 0}}
+                      style={{
+                        opacity: recommendedEndArtists.length > 0 ? 1 : 0,
+                      }}
                     />
                   </HoverButton>
                   <HoverButton onTap={getRandomFixedStart}>
@@ -480,7 +498,7 @@ const CustomGameModal = (props: CustomGameModalProps) => {
                       color="white"
                       aria-label="New Random End Artist"
                     />
-                  </HoverButton> 
+                  </HoverButton>
                   <CloseButton
                     aria-label="Clear input"
                     onClick={() => setEndArtist("")}
