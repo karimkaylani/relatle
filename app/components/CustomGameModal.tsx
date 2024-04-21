@@ -9,7 +9,7 @@ import {
   Image,
   CloseButton,
 } from "@mantine/core";
-import React, { useState } from "react";
+import React, { use, useEffect, useRef, useState } from "react";
 import { Artist } from "./Game";
 import Arrow from "./Arrow";
 import * as Collections from "typescript-collections";
@@ -467,27 +467,25 @@ const CustomGameModal = (props: CustomGameModalProps) => {
             rightSection={
               artistsList.includes(startArtist) && (
                 <Group gap="xs" justify="flex-end" align="center">
-                  {recommendedEndArtists.length > 0 && (
-                    <HoverButton onTap={getRandomRecommendedFixedStart}>
-                      <Image
-                        src={"images/custom-icon.svg"}
-                        alt="New Random Recommended End Artist"
-                      />
-                    </HoverButton>
-                  )}
+                  <HoverButton onTap={recommendedEndArtists.length > 0 ? getRandomFixedStart : () => {}}>
+                    <Image
+                      src={"images/custom-icon.svg"}
+                      alt="New Random Recommended End Artist"
+                      style={{opacity: recommendedEndArtists.length > 0 ? 1 : 0}}
+                    />
+                  </HoverButton>
                   <HoverButton onTap={getRandomFixedStart}>
                     <IconArrowsShuffle
                       size={16}
                       color="white"
                       aria-label="New Random End Artist"
                     />
-                  </HoverButton>
+                  </HoverButton> 
                   <CloseButton
                     aria-label="Clear input"
                     onClick={() => setEndArtist("")}
-                    style={{ opacity: endArtist ? 100 : 0 }}
                     styles={{
-                      root: { marginLeft: "-6px" },
+                      root: { marginLeft: "-6px", opacity: endArtist ? 1 : 0 },
                     }}
                   />
                 </Group>
