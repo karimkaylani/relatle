@@ -126,10 +126,11 @@ const TransferStats = () => {
             fontWeight: 700,
             lineHeight: "32px",
           },
+          header: { paddingBottom: "16px" },
         }}
       >
         <Stack align="center" justify="center">
-          <Text ta="center" size="lg" c="gray.1" fw={700}>
+          <Text ta="center" size="md" c="gray.1" fw={700}>
             Export stats from this device
           </Text>
           <Text ta="center">
@@ -160,7 +161,7 @@ const TransferStats = () => {
         </Stack>
         <Divider style={{ margin: "25px" }} />
         <Stack align="center" justify="center" gap="md">
-          <Text size="lg" c="gray.1" fw={700} ta="center">
+          <Text size="md" c="gray.1" fw={700} ta="center">
             Import stats into this device
           </Text>
           <Text ta="center">Enter the code generated from the source device</Text>

@@ -72,12 +72,20 @@ const SideDrawer = (props: SideDrawerProps) => {
         onClick={open}
         aria-label="Toggle Sidebar"
       />
-      <Drawer size="xs" opened={opened} onClose={close}>
+      <Drawer size="xs" opened={opened} onClose={close} title='Statistics'
+      styles={{
+        title: {
+          fontSize: "20px",
+          color: "#f1f3f5",
+          fontWeight: 700,
+          lineHeight: "32px",
+        },
+        header: {
+          paddingBottom: "8px",
+        },
+      }}>
         <Stack justify="center" gap="lg">
           <Stack gap="xs">
-            <Text size="xl" c="gray.1" fw={700}>
-              Statistics
-            </Text>
             <Card shadow="lg" radius="lg" p="sm" withBorder>
               <Group align="center" justify="center">
                 <Stack gap="md">

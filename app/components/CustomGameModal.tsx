@@ -387,8 +387,9 @@ const CustomGameModal = (props: CustomGameModalProps) => {
           selectFirstOptionOnChange={true}
           spellCheck="false"
           styles={{
-            input: { color: "#f1f3f5" },
+            input: { color: "#f1f3f5", fontSize: "16px"},
             dropdown: { color: "#f1f3f5" },
+            option: { fontSize: "12px" },
           }}
           value={startArtist}
           leftSection={
@@ -400,12 +401,14 @@ const CustomGameModal = (props: CustomGameModalProps) => {
               />
             )
           }
+          rightSectionWidth={20}
           rightSection={
             <CloseButton
               aria-label="Clear input"
               onClick={() => setStartArtist("")}
               style={{
-                display: startArtist ? undefined : "none"
+                display: startArtist ? undefined : "none",
+                marginRight: "12px",
               }}
             />
           }
@@ -434,14 +437,16 @@ const CustomGameModal = (props: CustomGameModalProps) => {
             styles={{
               input: {
                 color: "#f1f3f5",
+                fontSize: "16px",
                 outline: isCurrentMatchupDifficult()
                   ? "2px solid #fcc419"
                   : isCurrentMatchupRecommended()
                   ? "2px solid #40c057"
                   : "",
               },
-              groupLabel: { color: "#37b24d", fontWeight: 700 },
-              dropdown: { color: "#f1f3f5" },
+              groupLabel: { color: "#37b24d", fontWeight: 700, fontSize: "14px"},
+              dropdown: { color: "#f1f3f5"},
+              option: { fontSize: "14px" },
             }}
             onChange={setEndArtist}
             selectFirstOptionOnChange={true}
@@ -458,10 +463,10 @@ const CustomGameModal = (props: CustomGameModalProps) => {
                 />
               )
             }
-            rightSectionWidth={64}
+            rightSectionWidth={76}
             rightSection={
               artistsList.includes(startArtist) && (
-                <Group gap="6px" justify="flex-end" align="center">
+                <Group gap="xs" justify="flex-end" align="center">
                   {recommendedEndArtists.length > 0 && (
                     <HoverButton onTap={getRandomRecommendedFixedStart}>
                       <Image
