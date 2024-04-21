@@ -14,9 +14,9 @@ export interface IconHoverButtonProps {
 const IconHoverButton = (props: IconHoverButtonProps) => {
   const { onTap, icon, text, textSize=window.innerWidth > phoneMaxWidth ? "md" : "sm", url=undefined } = props;
   return (
-    <Anchor onClick={onTap} href={url} target="_blank" tabIndex={-1} underline='never'>
-    <Card shadow="md" radius="lg" p="sm">
-        <HoverButton onTap={() => {return}}>
+      <HoverButton onTap={onTap}>
+        <Anchor href={url} underline='never' target='_blank'>
+        <Card shadow="md" radius="lg" p="sm">
         <Group gap="sm" justify="center">
           {icon}
             <Text
@@ -27,9 +27,9 @@ const IconHoverButton = (props: IconHoverButtonProps) => {
               {text}
             </Text>
         </Group>
+      </Card>
+      </Anchor>
     </HoverButton>
-    </Card>
-    </Anchor>
   )
 }
 

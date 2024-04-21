@@ -404,7 +404,9 @@ const CustomGameModal = (props: CustomGameModalProps) => {
             <CloseButton
               aria-label="Clear input"
               onClick={() => setStartArtist("")}
-              style={{ display: startArtist ? undefined : "none" }}
+              style={{
+                display: startArtist ? undefined : "none"
+              }}
             />
           }
         />
@@ -456,16 +458,18 @@ const CustomGameModal = (props: CustomGameModalProps) => {
                 />
               )
             }
-            rightSectionWidth={100}
+            rightSectionWidth={64}
             rightSection={
               artistsList.includes(startArtist) && (
-                <Group gap="6px">
-                  <HoverButton onTap={getRandomRecommendedFixedStart}>
-                    <Image
-                      src={"images/custom-icon.svg"}
-                      alt="New Random Recommended End Artist"
-                    />
-                  </HoverButton>
+                <Group gap="6px" justify="flex-end" align="center">
+                  {recommendedEndArtists.length > 0 && (
+                    <HoverButton onTap={getRandomRecommendedFixedStart}>
+                      <Image
+                        src={"images/custom-icon.svg"}
+                        alt="New Random Recommended End Artist"
+                      />
+                    </HoverButton>
+                  )}
                   <HoverButton onTap={getRandomFixedStart}>
                     <IconArrowsShuffle
                       size={16}
@@ -478,7 +482,7 @@ const CustomGameModal = (props: CustomGameModalProps) => {
                     onClick={() => setEndArtist("")}
                     style={{ opacity: endArtist ? 100 : 0 }}
                     styles={{
-                      root: { marginLeft: "-6px", marginRight: "-16px" },
+                      root: { marginLeft: "-6px" },
                     }}
                   />
                 </Group>
