@@ -867,7 +867,7 @@ const Game = (props: GameProps) => {
         </SimpleGrid>
       </PlayingAudioContext.Provider>
       <Text ta="center" size={window.innerWidth <= phoneMaxWidth ? "sm" : "md"}>
-        Press and hold on an artist to hear a preview of their music
+        Press and hold on an artist to hear their music!
       </Text>
       {!gameOver && (
         <Stack align="center" justify="center">

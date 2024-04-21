@@ -513,7 +513,7 @@ const CustomGameModal = (props: CustomGameModalProps) => {
 
           {isCurrentMatchupDifficult() ? (
             <Text pl="5" pb="14" ta="left" fw={700} c="yellow.3" size="md">
-              This matchup may be difficult!
+              Warning, this matchup may be difficult!
             </Text>
           ) : isCurrentMatchupRecommended() ? (
             <Text pl="5" pb="14" ta="left" fw={700} c="green.6" size="md">
