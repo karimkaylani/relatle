@@ -389,7 +389,7 @@ const CustomGameModal = (props: CustomGameModalProps) => {
           styles={{
             input: { color: "#f1f3f5", fontSize: "16px"},
             dropdown: { color: "#f1f3f5" },
-            option: { fontSize: "12px" },
+            option: { fontSize: "14px" },
           }}
           value={startArtist}
           leftSection={
@@ -463,7 +463,7 @@ const CustomGameModal = (props: CustomGameModalProps) => {
                 />
               )
             }
-            rightSectionWidth={76}
+            rightSectionWidth={82}
             rightSection={
               artistsList.includes(startArtist) && (
                 <Group gap="xs" justify="flex-end" align="center">
