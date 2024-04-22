@@ -694,7 +694,7 @@ const Game = (props: GameProps) => {
       align="center"
       direction="column"
       gap="lg"
-      className="mt-5 pb-10 pl-5 pr-5"
+      className="mt-5 pb-14 pl-5 pr-5"
     >
       <Group
         justify="space-between"
@@ -917,8 +917,8 @@ const Game = (props: GameProps) => {
         </Anchor>
         .
       </Text>
-      <Group justify="center" align="center">
-        <Group>
+      <Group gap='8px' justify="center" align="center">
+        <Group justify='space-between' align='center' gap='md'>
           <ClickableIcon
             icon={<IconBrandReddit aria-label="Visit r/relatle on Reddit" />}
             url="https://reddit.com/r/relatle"
@@ -931,7 +931,7 @@ const Game = (props: GameProps) => {
         <Text c="gray.7">|</Text>
         <CoffeeButton />
         <Text c="gray.7">|</Text>
-        <Group>
+        <Group justify='space-between' align='center' gap='md'>
           <ClickableIcon
             icon={<IconFlag2 aria-label="Send Feedback" />}
             url="https://docs.google.com/forms/d/e/1FAIpQLSeMEW3eGqVXheqidY43q9yMVK2QCi-AEJV3JGTuPK4LX9U9eA/viewform?usp=sf_link"
