@@ -9,7 +9,7 @@ export interface HoverButtonProps {
 }
 
 const HoverButton = (props: HoverButtonProps) => {
-  const { onTap, children, onKeyDown=onTap } = props;
+  const { onTap, children, onKeyDown=() => {} } = props;
   return (
     <motion.button
       whileHover={
