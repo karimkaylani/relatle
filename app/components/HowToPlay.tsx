@@ -45,7 +45,7 @@ const HowToPlay = (props: HowToPlayProps) => {
         title="How to Play"
         styles={{
           title: {
-            fontSize: "24px",
+            fontSize: "20px",
             color: "#f1f3f5",
             fontWeight: 700,
             lineHeight: "32px",
@@ -53,14 +53,14 @@ const HowToPlay = (props: HowToPlayProps) => {
           header: { top: -1, paddingBottom: '8px' },
         }}
       >
-        <Stack align="left" gap="lg">
+        <Stack align="left" gap="md">
           <Group wrap="nowrap">
             <Card shadow="sm" radius="md" padding="5px" w={32}>
               <Text c="gray.1" fw={700} ta="center">
                 1
               </Text>
             </Card>
-            <Text fw={300}>Identify the artist matchup</Text>
+            <Text fw={300}>Identify the artist matchup:</Text>
           </Group>
 
           <Matchup start={start} end={end} small={true} />
