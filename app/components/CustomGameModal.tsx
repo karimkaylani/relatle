@@ -495,7 +495,7 @@ const CustomGameModal = (props: CustomGameModalProps) => {
                     (recommendedEndArtists.length == 1 &&
                       endArtist !== recommendedEndArtists[0])) && (
                     <HoverButton onTap={getRandomRecommendedFixedStart}>
-                      <CustomIcon label={"New Random Recommended End Artist"}/>
+                      <CustomIcon label={"New Random Recommended End Artist"} />
                     </HoverButton>
                   )}
                   <HoverButton onTap={getRandomFixedStart}>
@@ -509,8 +509,9 @@ const CustomGameModal = (props: CustomGameModalProps) => {
                     aria-label="Clear input"
                     onClick={() => setEndArtist("")}
                     style={{
-                      display: startArtist ? undefined : "none",
+                      opacity: endArtist ? 100 : 0,
                       marginLeft: "-6px",
+                      cursor: endArtist ? "pointer" : "default",
                     }}
                   />
                 </Group>
