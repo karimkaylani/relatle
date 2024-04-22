@@ -13,7 +13,7 @@ const GiveUp = (props: GiveUpProps) => {
   return (
     <>
       <Button onClick={open} size="md" color="red.6" fw={700} variant="filled">
-        GIVE UP
+        Give Up
       </Button>
       <Modal
         opened={opened}
@@ -43,7 +43,7 @@ const GiveUp = (props: GiveUpProps) => {
               fw={700}
               variant="filled"
             >
-              YES, GIVE UP
+              Yes, Give Up
             </Button>
             <Button
               onClick={close}
@@ -52,7 +52,7 @@ const GiveUp = (props: GiveUpProps) => {
               fw={700}
               variant="filled"
             >
-              NO, KEEP PLAYING
+              No, Keep Trying
             </Button>
           </Group>
         </Stack>

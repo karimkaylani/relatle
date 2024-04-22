@@ -15,7 +15,7 @@ const Reset = (props: ResetProps) => {
       fw={700}
       variant="filled"
     >
-      RESET
+      Reset
     </Button>
   );
 };

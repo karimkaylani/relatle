@@ -81,17 +81,17 @@ const HowToPlay = (props: HowToPlayProps) => {
               <Text fw={300}>
                 If you get stuck, you can{" "}
                 <Text fw={700} c="yellow.5" span>
-                  RESET
+                  Reset
                 </Text>
                 {", "}
                 use the{" "}
                 <Text fw={700} c="gray.1" span>
-                  HINT
+                  Hint
                 </Text>
                 {", "}
                 or{" "}
                 <Text fw={700} c="red.6" span>
-                  GIVE UP
+                  Give Up
                 </Text>
                 {"."}
               </Text>

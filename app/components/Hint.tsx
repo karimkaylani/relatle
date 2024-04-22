@@ -115,7 +115,7 @@ const Hint = (props: HintProps) => {
           setUsedHint(true);
         }}
       >
-        HINT
+        Hint
       </Button>
     </Fragment>
   );

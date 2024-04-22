@@ -203,9 +203,9 @@ const GameOver = ({
                 <Button
                   leftSection={
                     minPathOpened ? (
-                      <IconArrowUp size={15} />
+                      <Text size='xl'>{"–"}</Text>
                     ) : (
-                      <IconArrowDown size={15} />
+                      <Text size='lg'>+</Text>
                     )
                   }
                   color="gray.9"
@@ -213,7 +213,7 @@ const GameOver = ({
                   styles={{ section: { marginRight: "4px" } }}
                   onClick={toggleMinPath}
                 >
-                  {minPathOpened ? "HIDE" : "VIEW"}
+                  {minPathOpened ? "Hide" : "Show"}
                 </Button>
               )}
             </Group>
