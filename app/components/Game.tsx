@@ -701,9 +701,9 @@ const Game = (props: GameProps) => {
           style={{
             width:
               width >= phoneMaxWidth
-                ? 149.35
+                ? 153.35
                 : width >= maxCustomTextWidth
-                ? 135.16
+                ? 139.16
                 : undefined,
           }}
         >

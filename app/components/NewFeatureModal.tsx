@@ -15,7 +15,7 @@ const NewFeatureModal = (props: NewFeatureModalProps) => {
       onClose={newFeatureModalClose}
       withCloseButton={false}
       centered
-      padding="xl"
+      padding="lg"
       radius="lg"
     >
       <Stack align="center" justify="center" gap="lg">

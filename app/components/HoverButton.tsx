@@ -5,10 +5,11 @@ import { motion } from "framer-motion";
 export interface HoverButtonProps {
   onTap: () => void;
   children: any;
+  onKeyDown?: () => void;
 }
 
 const HoverButton = (props: HoverButtonProps) => {
-  const { onTap, children } = props;
+  const { onTap, children, onKeyDown=onTap } = props;
   return (
     <motion.button
       whileHover={
@@ -16,6 +17,11 @@ const HoverButton = (props: HoverButtonProps) => {
       }
       whileTap={{ scale: 0.95 }}
       onTap={onTap}
+      onKeyDown={(e) => {
+        if (e.key === "Enter") {
+          onKeyDown();
+        }
+      }}
     >
       {children}
     </motion.button>

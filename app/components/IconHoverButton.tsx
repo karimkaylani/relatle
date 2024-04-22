@@ -8,27 +8,28 @@ export interface IconHoverButtonProps {
     icon: ReactNode;
     text: string;
     textSize?: string;
-    url?: string;
+    showText?: boolean;
   }
 
 const IconHoverButton = (props: IconHoverButtonProps) => {
-  const { onTap, icon, text, textSize=window.innerWidth > phoneMaxWidth ? "md" : "sm", url=undefined } = props;
+  const { onTap, icon, text, textSize=window.innerWidth > phoneMaxWidth ? "md" : "sm", showText=true } = props;
+  // onTap breaks for drawers/modals, will trigger on scroll
+  // So use Card onClick instead, but still expose onKeyDown for keyboard support
   return (
-      <HoverButton onTap={() => {}}>
-        <Anchor onClick={onTap} href={url} underline='never' target='_blank'>
-        <Card shadow="md" radius="lg" p="sm">
+      <HoverButton onTap={() => {}} onKeyDown={onTap}>
+        <Card onClick={onTap} shadow="md" radius="lg" p="sm">
         <Group gap="sm" justify="center">
           {icon}
+          {showText &&
             <Text
               fw={700}
               size={textSize}
               c="gray.1"
             >
               {text}
-            </Text>
+            </Text>}
         </Group>
       </Card>
-      </Anchor>
     </HoverButton>
   )
 }

@@ -8,9 +8,8 @@ import IconHoverButton from "./IconHoverButton";
 const CoffeeButton = () => {
   return (
     <IconHoverButton
-      url="https://www.buymeacoffee.com/karimk"
       onTap={() => {
-        return;
+        window.open("https://www.buymeacoffee.com/karimk", "_blank");
       }}
       icon={<IconMug size={16} color="white"/>}
       text={"Buy Us A Coffee"}

@@ -20,6 +20,7 @@ import {
 } from "@mantine/core";
 import { useSearchParams } from "next/navigation";
 import ShareButton from "./ShareButton";
+import CustomIcon from "./CustomIcon";
 
 const generateToken = (): string => {
   // randomly generate 5 character string
@@ -143,7 +144,7 @@ const TransferStats = () => {
             disabled={token !== ""}
             loading={loadingExport}
             leftSection={
-              <Image src={"images/custom-icon.svg"} alt="custom-game" />
+              <CustomIcon size={18} />
             }
             styles={{ section: { marginRight: "6px" } }}
           >
@@ -172,7 +173,7 @@ const TransferStats = () => {
             icon={<IconInfoCircle size={16} />}
           >
             <Text size="sm" fw={700}>
-              This will overwrite the current stats on this device
+              This will overwrite the data currently on this device
             </Text>
           </Alert>
           <PinInput

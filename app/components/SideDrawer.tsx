@@ -67,7 +67,7 @@ const SideDrawer = (props: SideDrawerProps) => {
   return (
     <>
       <Burger
-        w={38}
+        w={42}
         opened={opened}
         onClick={open}
         aria-label="Toggle Sidebar"
@@ -114,9 +114,8 @@ const SideDrawer = (props: SideDrawerProps) => {
           />
           <CoffeeButton />
           <IconHoverButton
-            url="https://docs.google.com/forms/d/e/1FAIpQLSeMEW3eGqVXheqidY43q9yMVK2QCi-AEJV3JGTuPK4LX9U9eA/viewform?usp=sf_link"
             onTap={() => {
-              return;
+              window.open("https://docs.google.com/forms/d/e/1FAIpQLSeMEW3eGqVXheqidY43q9yMVK2QCi-AEJV3JGTuPK4LX9U9eA/viewform?usp=sf_link", "_blank");
             }}
             icon={<IconFlag2 size={16} color='white'/>}
             text="Send Feedback"

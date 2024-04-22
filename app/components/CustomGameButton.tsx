@@ -1,7 +1,6 @@
-import { Card, Group, Text, Image } from "@mantine/core";
 import React from "react";
-import HoverButton from "./HoverButton";
-import { phoneMaxWidth } from "./Game";
+import CustomIcon from "./CustomIcon";
+import IconHoverButton from "./IconHoverButton";
 
 export interface CustomGameModalProps {
   customModalOpen: () => void;
@@ -9,25 +8,15 @@ export interface CustomGameModalProps {
 }
 
 const CustomGameButton = (props: CustomGameModalProps) => {
-  const { customModalOpen, showText=true } = props;
+  const { customModalOpen, showText = true } = props;
 
   return (
-    <Card onClick={customModalOpen} shadow="md" radius="lg" p="sm">
-     <HoverButton onTap={() => {return}}>
-        <Group gap="sm" justify="center">
-          <Image src={"images/custom-icon.svg"} alt="custom-game" />
-          {showText && (
-            <Text
-              fw={700}
-              size={window.innerWidth > phoneMaxWidth ? "md" : "sm"}
-              c="gray.1"
-            >
-              {"Custom Game"}
-            </Text>
-          )}
-        </Group>
-      </HoverButton>
-    </Card>
+    <IconHoverButton
+      onTap={customModalOpen}
+      icon={<CustomIcon size={18} label={"Custom Game"} />}
+      text="Custom Game"
+      showText={showText}
+    />
   );
 };
 

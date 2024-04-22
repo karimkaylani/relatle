@@ -20,7 +20,7 @@ const GiveUp = (props: GiveUpProps) => {
         onClose={close}
         withCloseButton={false}
         centered
-        padding="xl"
+        padding="lg"
         radius="lg"
       >
         <Stack align="center" justify="center" gap="xl">
