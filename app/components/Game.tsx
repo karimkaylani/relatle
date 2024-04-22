@@ -38,8 +38,9 @@ import Hint from "./Hint";
 import NewFeatureModal from "./NewFeatureModal";
 import { createClient } from "@/utils/supabase/client";
 import GiveUp from "./GiveUp";
-import { IconBrandGithub } from "@tabler/icons-react";
+import { IconBrandGithub, IconBrandReddit, IconFlag2, IconRss } from "@tabler/icons-react";
 import SideDrawer from "./SideDrawer";
+import ClickableIcon from "./ClickableIcon";
 
 export interface Artist {
   name: string;
@@ -491,7 +492,7 @@ const Game = (props: GameProps) => {
         usedHint
       );
     }
-  }
+  };
 
   const updateArtistHandler = (artist: Artist) => {
     setArtistClicked(false);
@@ -609,7 +610,7 @@ const Game = (props: GameProps) => {
         lowestScore,
         highestScore,
       });
-    // CUSTOM GAME
+      // CUSTOM GAME
     } else {
       save({
         currArtist,
@@ -912,23 +913,21 @@ const Game = (props: GameProps) => {
         .
       </Text>
       <Group justify="center" align="center">
-        <a
-          tabIndex={-1}
-          className="mt-1"
-          href="https://github.com/karimkaylani/relatle/"
-          target="_blank"
-        >
-          <HoverButton
-            onTap={() => {
-              return;
-            }}
-          >
-            <IconBrandGithub aria-label="Open source code on GitHub" />
-          </HoverButton>
-        </a>
+        <ClickableIcon
+          icon={<IconBrandReddit aria-label="Visit r/relatle on Reddit" />}
+          url="https://reddit.com/r/relatle"
+        />
+        <ClickableIcon
+          icon={<IconBrandGithub aria-label="Open source code on GitHub" />}
+          url="https://github.com/karimkaylani/relatle/"
+        />
         <Text c="gray.7">|</Text>
         <CoffeeButton />
         <Text c="gray.7">|</Text>
+        <ClickableIcon
+          icon={<IconFlag2 aria-label="Send Feedback" />}
+          url="https://docs.google.com/forms/d/e/1FAIpQLSeMEW3eGqVXheqidY43q9yMVK2QCi-AEJV3JGTuPK4LX9U9eA/viewform?usp=sf_link"
+        />
         <HowToPlay
           start={web[start]}
           end={web[end]}
