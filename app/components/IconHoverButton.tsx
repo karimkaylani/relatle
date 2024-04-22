@@ -18,7 +18,7 @@ const IconHoverButton = (props: IconHoverButtonProps) => {
   return (
       <HoverButton onTap={() => {}} onKeyDown={onTap}>
         <Card onClick={onTap} shadow="md" radius="lg" p="sm">
-        <Group gap="sm" justify="center">
+        <Group gap="6px" justify="center">
           {icon}
           {showText &&
             <Text
