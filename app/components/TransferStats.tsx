@@ -116,7 +116,7 @@ const TransferStats = () => {
         onClose={close}
         withCloseButton={true}
         centered
-        padding="xl"
+        padding="lg"
         radius="lg"
         title="Transfer Stats"
         styles={{

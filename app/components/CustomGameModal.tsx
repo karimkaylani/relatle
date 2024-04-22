@@ -350,7 +350,7 @@ const CustomGameModal = (props: CustomGameModalProps) => {
       onClose={closeModal}
       withCloseButton={true}
       centered
-      padding="xl"
+      padding="lg"
       radius="lg"
       title="Create a Custom Game"
       styles={{
@@ -473,7 +473,7 @@ const CustomGameModal = (props: CustomGameModalProps) => {
                 />
               )
             }
-            rightSectionWidth={84}
+            rightSectionWidth={86}
             rightSection={
               artistsList.includes(startArtist) && (
                 <Group gap="xs" justify="flex-end" align="center">

@@ -40,7 +40,7 @@ const HowToPlay = (props: HowToPlayProps) => {
         onClose={close}
         withCloseButton={true}
         centered
-        padding="xl"
+        padding="lg"
         radius="lg"
         title="How to Play"
         styles={{
