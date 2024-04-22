@@ -696,14 +696,14 @@ const Game = (props: GameProps) => {
         wrap="nowrap"
         styles={{ root: { width: "100%" } }}
       >
-        {/* 160.46 is the width of of the CustomGameButton so that the logo is centered */}
+        {/* Widths of CustomGameButton so that the logo is centered */}
         <div
           style={{
             width:
               width >= phoneMaxWidth
-                ? 153.35
+                ? 147.35
                 : width >= maxCustomTextWidth
-                ? 139.16
+                ? 133.16
                 : undefined,
           }}
         >
