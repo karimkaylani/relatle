@@ -21,7 +21,6 @@ const ArtistInfo = ({
         size={small ? "sm" : "md"}
         src={artist.image}
         alt={artist.name}
-        imageProps={{ loading: "lazy" }}
         styles={
           is_green
             ? {

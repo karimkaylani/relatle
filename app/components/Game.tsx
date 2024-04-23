@@ -8,7 +8,7 @@ import {
   Flex,
   SimpleGrid,
   Text,
-  Image as MantineImage,
+  Image,
   Anchor,
   Stack,
   Group,
@@ -375,9 +375,6 @@ const Game = (props: GameProps) => {
     setPath([todayMatchup[0]]);
     loadLocalStorageIntoState(todayMatchup, matchup_id);
     setLoading(false);
-    // preload modal images
-    new Image().src = "images/give-up.png";
-    new Image().src = "images/how-to-play.png";
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -405,8 +402,17 @@ const Game = (props: GameProps) => {
     start === end ||
     getValidPaths(web, start, end, Infinity).length === 0
   ) {
-    window.open("/", "_self");
-    return;
+    if (is_custom) {
+      window.open("/", "_self");
+      return;
+    }
+    return (
+      <Center className="pt-14">
+        <Text size="xl" fw={700} ta="center">
+          This matchup is not valid.
+        </Text>
+      </Center>
+    );
   }
 
   const scrollToTop = () => {
@@ -732,12 +738,12 @@ const Game = (props: GameProps) => {
         </div>
         <Stack gap="0px">
           <a href={is_custom ? "/" : undefined}>
-            <MantineImage
+            <Image
               style={{ cursor: "pointer" }}
               w={width > phoneMaxWidth ? 250 : 175}
               src="images/logo.png"
               alt="Relatle Logo"
-            ></MantineImage>
+            ></Image>
           </a>
           {is_custom && (
             <Text p="0px" c="gray.1" ta="center">
