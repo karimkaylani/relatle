@@ -5,6 +5,6 @@ import Matchups from "../public/data/matchups.json";
 
 export default async function Home() {
   return (
-    <Game web={Web} matchups={Matchups} is_custom={false} />
+    <h1>Hello world</h1>
   );
 }
