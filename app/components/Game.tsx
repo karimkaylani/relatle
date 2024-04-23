@@ -399,15 +399,15 @@ const Game = (props: GameProps) => {
 
   const [start, end] = matchup;
 
-  if (
-    !(start in web) ||
-    !(end in web) ||
-    start === end ||
-    getValidPaths(web, start, end, Infinity).length === 0
-  ) {
-    window.open("/", "_self");
-    return;
-  }
+  // if (
+  //   !(start in web) ||
+  //   !(end in web) ||
+  //   start === end ||
+  //   getValidPaths(web, start, end, Infinity).length === 0
+  // ) {
+  //   window.open("/", "_self");
+  //   return;
+  // }
 
   const scrollToTop = () => {
     if (!entryAffix?.isIntersecting) {
@@ -855,8 +855,8 @@ const Game = (props: GameProps) => {
         <SimpleGrid ref={scope} cols={{ base: 2, xs: 3, sm: 3, md: 4, lg: 5 }}>
           {currArtist.related.map((artist_name: string) => (
             <ArtistCard
-              key={web[artist_name].id}
-              artist={web[artist_name]}
+              key={web[artist_name]?.id ?? "blah"}
+              artist={web[artist_name] ?? "test name"}
               path={path}
               won={won}
               gameOver={gameOver}

@@ -68,9 +68,10 @@ const ArtistCard = ({
     undefined
   );
 
-  const fallbackSrc = `https://ui-avatars.com/api/?background=212529&color=f1f3f5&name=${encodeURIComponent(
-    artist.name.replace(/[^A-Z0-9]/gi, "")
-  )}`;
+  // const fallbackSrc = `https://ui-avatars.com/api/?background=212529&color=f1f3f5&name=${encodeURIComponent(
+  //   artist.name.replace(/[^A-Z0-9]/gi, "")
+  // )}`;
+  const fallbackSrc = "https://via.placeholder.com/150"
 
   const onKeyDown = (event: React.KeyboardEvent<HTMLButtonElement>) => {
     // If tabbing away from artist card, treat like letting go of long press
@@ -340,6 +341,7 @@ const ArtistCard = ({
           </Text>
         </Flex>
         <audio
+          preload="none"
           loop
           ref={audioRef}
           src={artist.top_song_preview_url}

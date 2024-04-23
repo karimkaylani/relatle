@@ -87,8 +87,8 @@ const Hint = (props: HintProps) => {
               <SimpleGrid cols={{ base: 2, xs: 3, sm: 3, md: 4, lg: 5 }}>
                 {endArtist.related.map((artist_name: string) => (
                   <ArtistCard
-                    key={web[artist_name].id}
-                    artist={web[artist_name]}
+                    key={web[artist_name]?.id ?? "blah"}
+                    artist={web[artist_name] ?? "blah"}
                     path={path}
                     clickable={false}
                     gameOver={false}
