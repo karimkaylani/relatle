@@ -5,11 +5,13 @@ import {
   Text,
   Flex,
   BackgroundImage,
+  Image,
   RingProgress,
   Center,
   Transition,
   Overlay,
   CardSection,
+  Box,
 } from "@mantine/core";
 import { motion, useAnimate } from "framer-motion";
 import { useLongPress } from "use-long-press";
@@ -66,22 +68,9 @@ const ArtistCard = ({
     undefined
   );
 
-  // Get fallback image if artist image fails to load
-  const [imageLoadError, setImageLoadError] = useState(!artist.image);
   const fallbackSrc = `https://ui-avatars.com/api/?background=212529&color=f1f3f5&name=${encodeURIComponent(
-    artist.name.replace(/[^A-Z0-9]/ig, "")
+    artist.name.replace(/[^A-Z0-9]/gi, "")
   )}`;
-
-  useEffect(() => {
-    let img = new Image();
-    img.src = artist.image;
-    img.onload = () => {
-      setImageLoadError(false);
-    };
-    img.onerror = () => {
-      setImageLoadError(true);
-    };
-  }, [artist.image]);
 
   const onKeyDown = (event: React.KeyboardEvent<HTMLButtonElement>) => {
     // If tabbing away from artist card, treat like letting go of long press
@@ -279,13 +268,16 @@ const ArtistCard = ({
           },
         }}
       >
-        <Flex align="center" direction="column" justify="center" gap="0px">
-            <BackgroundImage
+        <Flex align="center" direction="column" justify="center" gap="xs">
+          <Box style={{ position: "relative" }}>
+            <Image
               draggable={false}
               radius="sm"
-              src={imageLoadError ? fallbackSrc : artist.image}
+              src={artist.image}
+              fallbackSrc={fallbackSrc}
               w={img_size}
               h={img_size}
+              alt={artist.name}
               styles={{
                 root: {
                   userSelect: "none",
@@ -293,38 +285,46 @@ const ArtistCard = ({
                   WebkitTouchCallout: "none",
                 },
               }}
+            />
+            <Center
+              styles={{
+                root: {
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  bottom: 0,
+                },
+              }}
             >
-              <Center
-                className={window.innerWidth > phoneMaxWidth ? "pt-8" : "pt-3"}
+              <Transition
+                mounted={isPlaying}
+                transition="fade"
+                duration={400}
+                timingFunction="ease"
               >
-                <Transition
-                  mounted={isPlaying}
-                  transition="fade"
-                  duration={400}
-                  timingFunction="ease"
-                >
-                  {(styles) => (
-                    <Fragment>
-                      <Overlay style={styles} backgroundOpacity={0.5} />
-                      <RingProgress
-                        thickness={5}
-                        style={styles}
-                        styles={{ root: { zIndex: 1000 } }}
-                        sections={[{ value: progress, color: "gray.1" }]}
-                        label={
-                          <Center>
-                            <Lottie
-                              animationData={waveAnimation}
-                              style={{ width: 50 }}
-                            />
-                          </Center>
-                        }
-                      />
-                    </Fragment>
-                  )}
-                </Transition>
-              </Center>
-            </BackgroundImage>
+                {(styles) => (
+                  <Fragment>
+                    <Overlay style={styles} backgroundOpacity={0.5} />
+                    <RingProgress
+                      thickness={5}
+                      style={styles}
+                      styles={{ root: { zIndex: 1000 } }}
+                      sections={[{ value: progress, color: "gray.1" }]}
+                      label={
+                        <Center>
+                          <Lottie
+                            animationData={waveAnimation}
+                            style={{ width: 50 }}
+                          />
+                        </Center>
+                      }
+                    />
+                  </Fragment>
+                )}
+              </Transition>
+            </Center>
+          </Box>
           <Text
             c={
               path.includes(artist.name) && artist.name !== end
@@ -333,7 +333,6 @@ const ArtistCard = ({
             }
             fw={700}
             size={text_size}
-            mt="md"
             ta="center"
             styles={{ root: { userSelect: "none", WebkitUserSelect: "none" } }}
           >
