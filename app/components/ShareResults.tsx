@@ -2,6 +2,7 @@
 import React from "react";
 import { generateCustomGameURL } from "./ShareCustomGame";
 import ShareButton from "./ShareButton";
+import { green, dk_green } from "../colors";
 
 export interface ShareResultsProps {
   path: string[];
@@ -51,8 +52,8 @@ ${url}`;
     <ShareButton
       shareText={generateShareText()}
       buttonText="Results"
-      defaultColor="green.6"
-      clickedColor="green.9"
+      defaultColor={green}
+      clickedColor={dk_green}
     />
   );
 };

@@ -20,6 +20,7 @@ import ArtistInfo from "./ArtistInfo";
 import { useSearchParams } from "next/navigation";
 import IconHoverButton from "./IconHoverButton";
 import CustomIcon from "./CustomIcon";
+import { white, yellow, green, dk_green } from "../colors";
 
 interface CustomGameModalProps {
   web: { [key: string]: Artist };
@@ -359,7 +360,7 @@ const CustomGameModal = (props: CustomGameModalProps) => {
       styles={{
         title: {
           fontSize: "20px",
-          color: "#f1f3f5",
+          color: white,
           fontWeight: 700,
           lineHeight: "32px",
         },
@@ -382,7 +383,7 @@ const CustomGameModal = (props: CustomGameModalProps) => {
           />
           <IconHoverButton
             onTap={getRandomMatchup}
-            icon={<IconArrowsShuffle size={16} color="white" />}
+            icon={<IconArrowsShuffle size={16} color={white} />}
             text="Random"
             textSize="sm"
           />
@@ -396,8 +397,8 @@ const CustomGameModal = (props: CustomGameModalProps) => {
           selectFirstOptionOnChange={true}
           spellCheck="false"
           styles={{
-            input: { color: "#f1f3f5", fontSize: "16px" },
-            dropdown: { color: "#f1f3f5" },
+            input: { color: white, fontSize: "16px" },
+            dropdown: { color: white },
             option: { fontSize: "14px" },
           }}
           value={startArtist}
@@ -451,20 +452,20 @@ const CustomGameModal = (props: CustomGameModalProps) => {
             ]}
             styles={{
               input: {
-                color: "#f1f3f5",
+                color: white,
                 fontSize: "16px",
                 outline: isCurrentMatchupDifficult()
-                  ? "2px solid #fcc419"
+                  ? `2px solid ${yellow}`
                   : isCurrentMatchupRecommended()
-                  ? "2px solid #40c057"
+                  ? `2px solid ${green}`
                   : "",
               },
               groupLabel: {
-                color: "#37b24d",
+                color: dk_green,
                 fontWeight: 700,
                 fontSize: "14px",
               },
-              dropdown: { color: "#f1f3f5" },
+              dropdown: { color: white },
               option: { fontSize: "14px" },
             }}
             onChange={setEndArtist}
@@ -520,11 +521,11 @@ const CustomGameModal = (props: CustomGameModalProps) => {
           />
 
           {isCurrentMatchupDifficult() ? (
-            <Text pl="5" pb="14" ta="left" fw={700} c="yellow.3" size="md">
+            <Text pl="5" pb="14" ta="left" fw={700} c={yellow} size="md">
               Warning, this matchup may be difficult!
             </Text>
           ) : isCurrentMatchupRecommended() ? (
-            <Text pl="5" pb="14" ta="left" fw={700} c="green.6" size="md">
+            <Text pl="5" pb="14" ta="left" fw={700} c={green} size="md">
               This is a recommended matchup!
             </Text>
           ) : (
@@ -542,7 +543,7 @@ const CustomGameModal = (props: CustomGameModalProps) => {
               window.open(generateCustomGameURL(startArtist, endArtist))
             }
             disabled={invalidMatchup}
-            color="green.6"
+            color={green}
             styles={{ section: { marginRight: "4px" } }}
           >
             Play

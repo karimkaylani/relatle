@@ -1,6 +1,7 @@
 import { Button, Group, Modal, Stack, Text, Image } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import React from "react";
+import { gray, red, white } from "../colors";
 
 export interface GiveUpProps {
   giveUpHandler: () => void;
@@ -12,7 +13,7 @@ const GiveUp = (props: GiveUpProps) => {
   const [opened, { open, close }] = useDisclosure(false);
   return (
     <>
-      <Button onClick={open} size="md" color="red.6" fw={700} variant="filled">
+      <Button onClick={open} size="md" color={red} fw={700} variant="filled">
         Give Up
       </Button>
       <Modal
@@ -25,10 +26,10 @@ const GiveUp = (props: GiveUpProps) => {
       >
         <Stack align="center" justify="center" gap="xl">
           <Stack align="center" justify="center">
-            <Text size="24px" c="gray.1" fw={700} ta="center">
+            <Text size="24px" c={white} fw={700} ta="center">
               Are you sure?
             </Text>
-            <Text ta="center" c="gray.1">
+            <Text ta="center" c={white}>
               {`If you give up, it will show in your shared results${
                 !is_custom ? ", reset your streak, " : " "
               }and you will see the shortest path.`}
@@ -39,7 +40,7 @@ const GiveUp = (props: GiveUpProps) => {
             <Button
               onClick={giveUpHandler}
               size="md"
-              color="red.6"
+              color={red}
               fw={700}
               variant="filled"
             >
@@ -48,7 +49,7 @@ const GiveUp = (props: GiveUpProps) => {
             <Button
               onClick={close}
               size="md"
-              color="gray.7"
+              color={gray}
               fw={700}
               variant="filled"
             >

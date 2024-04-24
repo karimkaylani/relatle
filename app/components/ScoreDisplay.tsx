@@ -4,6 +4,7 @@ import React, { ReactNode } from "react";
 import FlipNumbers from "react-flip-numbers";
 import dynamic from "next/dynamic";
 import { AnimatedCounter } from "react-animated-counter";
+import { white } from "../colors";
 
 export interface ScoreDisplayProps {
   text: string;
@@ -22,12 +23,11 @@ const ScoreDisplay = (props: ScoreDisplayProps) => {
     value,
     small = true,
     icon,
-    decimal=false,
-    textColor = "#C1C2C6",
-    color = "white",
-    changeColor='white'
+    decimal = false,
+    color = white,
+    changeColor = white,
   } = props;
-  const numberSize = (small ? '24px' : '26px');
+  const numberSize = small ? "24px" : "26px";
   return (
     <Stack
       gap="6px"
@@ -35,7 +35,7 @@ const ScoreDisplay = (props: ScoreDisplayProps) => {
       align="center"
       styles={{ root: { minWidth: "80px" } }}
     >
-      <Text ta="center" size="sm" fw={500} c={textColor}>
+      <Text ta="center" size="sm" fw={500}>
         {text}
       </Text>
       <Group gap="0px">
@@ -49,34 +49,6 @@ const ScoreDisplay = (props: ScoreDisplayProps) => {
           fontSize={numberSize}
           incrementColor={changeColor}
         />
-        {/* <AnimatedNumbers
-          animateToNumber={parseFloat(value)}
-          fontStyle={{
-            fontFamily: "OpenSauceOne",
-            fontWeight: 700,
-            fontSize: numberSize,
-            color: color,
-          }}
-        /> */}
-
-        {/* <FlipNumbers
-            height={numberSize}
-            width={numberSize - 4}
-            color={color}
-            background="gray.9"
-            play={true}
-            perspective={150}
-            duration={5}
-            numbers={value}
-            numberStyle={{
-              fontFamily: "OpenSauceOne",
-              fontWeight: 700,
-            }}
-            nonNumberStyle={{
-              fontFamily: "OpenSauceOne",
-              fontSize: "1.5em",
-            }} 
-        />*/}
       </Group>
     </Stack>
   );

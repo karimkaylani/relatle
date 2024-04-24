@@ -17,6 +17,7 @@ import TransferStats from "./TransferStats";
 import { useSearchParams } from "next/navigation";
 import ScoreDisplay from "./ScoreDisplay";
 import StreakDisplay from "./StreakDisplay";
+import { white } from "../colors";
 
 export interface SideDrawerProps {
   opened: boolean;
@@ -77,7 +78,7 @@ const SideDrawer = (props: SideDrawerProps) => {
         styles={{
           title: {
             fontSize: "20px",
-            color: "#f1f3f5",
+            color: white,
             fontWeight: 700,
             lineHeight: "32px",
           },

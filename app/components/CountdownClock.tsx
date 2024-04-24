@@ -1,6 +1,7 @@
 import { Card, Stack, Text } from "@mantine/core";
 import React, { useEffect, useState } from "react";
 import FlipNumbers from "react-flip-numbers";
+import { dk_gray, white } from "../colors";
 
 const CountdownClock = () => {
   const calculateTimeLeft = (): { hrs: string; mins: string; secs: string } => {
@@ -51,8 +52,8 @@ const CountdownClock = () => {
         <FlipNumbers
           height={14}
           width={11}
-          color="white"
-          background="gray.9"
+          color={white}
+          background={dk_gray}
           play
           perspective={150}
           numbers={`${timeLeft.hrs}:${timeLeft.mins}:${timeLeft.secs}`}

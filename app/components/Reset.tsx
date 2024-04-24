@@ -1,5 +1,6 @@
 import { Button } from "@mantine/core";
 import React from "react";
+import { yellow } from "../colors";
 
 export interface ResetProps {
   resetHandler: () => void;
@@ -11,7 +12,7 @@ const Reset = (props: ResetProps) => {
     <Button
       onClick={resetHandler}
       size="md"
-      color="yellow.7"
+      color={yellow}
       fw={700}
       variant="filled"
     >

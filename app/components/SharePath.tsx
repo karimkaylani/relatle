@@ -1,5 +1,6 @@
 import React from "react";
 import ShareButton from "./ShareButton";
+import { dk_gray, gray } from "../colors";
 
 export interface SharePathProps {
   path: string[];
@@ -22,8 +23,8 @@ const SharePath = (props: SharePathProps) => {
     <ShareButton
       shareText={pathString}
       buttonText="Path"
-      defaultColor="gray.7"
-      clickedColor="gray.9"
+      defaultColor={gray}
+      clickedColor={dk_gray}
     />
   );
 };

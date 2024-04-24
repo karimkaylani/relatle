@@ -6,6 +6,7 @@ import React, { Fragment } from "react";
 import HoverButton from "./HoverButton";
 import { Center, RingProgress } from "@mantine/core";
 import { Artist, PlayingAudioContext, phoneMaxWidth } from "./Game";
+import { white } from "../colors";
 
 export interface PlayButtonProps {
   audioUrl: string;
@@ -68,7 +69,7 @@ const PlayButton = (props: PlayButtonProps) => {
         <RingProgress
           thickness={2}
           size={isPhone ? 30 : 35}
-          sections={[{ value: progress, color: "gray.1" }]}
+          sections={[{ value: progress, color: white }]}
           label={
             <Center>
               {isPlaying ? (

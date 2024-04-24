@@ -2,6 +2,7 @@ import React, { ReactNode } from 'react'
 import HoverButton from './HoverButton';
 import { Anchor, Button, Card, Group, Image, Text } from '@mantine/core';
 import { phoneMaxWidth } from './Game';
+import { white } from '../colors';
 
 export interface IconHoverButtonProps {
     onTap: () => void;
@@ -24,7 +25,7 @@ const IconHoverButton = (props: IconHoverButtonProps) => {
             <Text
               fw={700}
               size={textSize}
-              c="gray.1"
+              c={white}
             >
               {text}
             </Text>}

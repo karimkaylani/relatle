@@ -17,6 +17,7 @@ import { motion, useAnimate } from "framer-motion";
 import { useLongPress } from "use-long-press";
 import waveAnimation from "../audioWave.json";
 import dynamic from "next/dynamic";
+import { dk_gray, green, light_gray, white } from "../colors";
 const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 
 interface ArtistCardProps {
@@ -68,7 +69,7 @@ const ArtistCard = ({
     undefined
   );
 
-  const fallbackSrc = `https://ui-avatars.com/api/?background=212529&color=f1f3f5&name=${encodeURIComponent(
+  const fallbackSrc = `https://ui-avatars.com/api/?background=${dk_gray}&color=${white}&name=${encodeURIComponent(
     artist.name.replace(/[^A-Z0-9]/gi, "")
   )}`;
 
@@ -201,7 +202,7 @@ const ArtistCard = ({
     setClicked(true);
     const winningGuess = artist.name === end;
     const borderSize = winningGuess ? "4px" : "2px";
-    const borderColor = winningGuess ? "#51cf66" : "#f1f3f5";
+    const borderColor = winningGuess ? green : white;
     animate(
       [
         [
@@ -310,7 +311,7 @@ const ArtistCard = ({
                       thickness={5}
                       style={styles}
                       styles={{ root: { zIndex: 1000 } }}
-                      sections={[{ value: progress, color: "gray.1" }]}
+                      sections={[{ value: progress, color: white }]}
                       label={
                         <Center>
                           <Lottie
@@ -328,8 +329,8 @@ const ArtistCard = ({
           <Text
             c={
               path.includes(artist.name) && artist.name !== end
-                ? "gray.5"
-                : "gray.1"
+                ? {light_gray}
+                : white
             }
             fw={700}
             size={text_size}

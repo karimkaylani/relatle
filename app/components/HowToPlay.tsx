@@ -19,6 +19,7 @@ import {
   IconQuestionMark,
 } from "@tabler/icons-react";
 import Matchup from "./Matchup";
+import { white, yellow, red } from "../colors";
 
 export interface HowToPlayProps {
   start: Artist;
@@ -46,7 +47,7 @@ const HowToPlay = (props: HowToPlayProps) => {
         styles={{
           title: {
             fontSize: "20px",
-            color: "#f1f3f5",
+            color: white,
             fontWeight: 700,
             lineHeight: "32px",
           },
@@ -56,7 +57,7 @@ const HowToPlay = (props: HowToPlayProps) => {
         <Stack align="left" gap="md">
           <Group wrap="nowrap">
             <Card shadow="sm" radius="md" padding="5px" w={32}>
-              <Text c="gray.1" fw={700} ta="center">
+              <Text c={white} fw={700} ta="center">
                 1
               </Text>
             </Card>
@@ -67,7 +68,7 @@ const HowToPlay = (props: HowToPlayProps) => {
 
           <Group wrap="nowrap" justify="flex-start" align="flex-start">
             <Card shadow="sm" radius="md" padding="5px" w={68} h={33}>
-              <Text fw={700} c="gray.1" ta="center">
+              <Text fw={700} c={white} ta="center">
                 2
               </Text>
             </Card>
@@ -80,17 +81,17 @@ const HowToPlay = (props: HowToPlayProps) => {
 
               <Text fw={300}>
                 If you get stuck, you can{" "}
-                <Text fw={700} c="yellow.5" span>
+                <Text fw={700} c={yellow} span>
                   Reset
                 </Text>
                 {", "}
                 use the{" "}
-                <Text fw={700} c="gray.1" span>
+                <Text fw={700} c={white} span>
                   Hint
                 </Text>
                 {", "}
                 or{" "}
-                <Text fw={700} c="red.6" span>
+                <Text fw={700} c={red} span>
                   Give Up
                 </Text>
                 {"."}
@@ -100,7 +101,7 @@ const HowToPlay = (props: HowToPlayProps) => {
 
           <Group wrap="nowrap">
             <Card shadow="sm" radius="md" padding="5px" w={41}>
-              <Text c="gray.1" fw={700} ta="center">
+              <Text c={white} fw={700} ta="center">
                 3
               </Text>
             </Card>
@@ -123,7 +124,7 @@ const HowToPlay = (props: HowToPlayProps) => {
               </Center>
             </Card>
             <Stack gap="0px">
-              <Text fw={700} c="gray.1" span>
+              <Text fw={700} c={white} span>
                 {"What's a related artist?"}
               </Text>
               <Text fw={300}>

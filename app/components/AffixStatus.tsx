@@ -13,6 +13,7 @@ import {
 } from "@mantine/core";
 import ArtistInfo from "./ArtistInfo";
 import Arrow from "./Arrow";
+import { green, white } from "../colors";
 
 export interface AffixStatusProps {
   currArtist: Artist;
@@ -59,7 +60,7 @@ const AffixStatus = (props: AffixStatusProps) => {
                     marginRight: "5px",
                   }}
                 />
-                <Text fw={700} c="green.6" span>
+                <Text fw={700} c={green} span>
                   {playingArtist.top_song_name}
                 </Text>{" "}
                 by{" "}
@@ -78,7 +79,7 @@ const AffixStatus = (props: AffixStatusProps) => {
                   <Text
                     ta="center"
                     fw={700}
-                    c="gray.1"
+                    c={white}
                     style={{ display: "inline-block" }}
                   >
                     {playingArtist?.name}

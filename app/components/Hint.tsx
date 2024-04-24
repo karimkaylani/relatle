@@ -8,6 +8,8 @@ import RelatedArtistsTitle from "./RelatedArtistsTitle";
 import { Artist, PlayingAudioContext, phoneMaxWidth } from "./Game";
 import ArtistCard from "./ArtistCard";
 import { useSwipeable } from "react-swipeable";
+import OutlineButton from "./OutlineButton";
+import { white } from "../colors";
 
 export interface HintProps {
   endArtist: Artist;
@@ -117,6 +119,15 @@ const Hint = (props: HintProps) => {
       >
         Hint
       </Button>
+      {/* <OutlineButton
+        text="Hint"
+        color={white}
+        icon={<IconBulb size={22}/>}
+        onClick={() => {
+          open();
+          setUsedHint(true);
+        }}
+      /> */}
     </Fragment>
   );
 };

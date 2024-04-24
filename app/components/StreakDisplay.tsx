@@ -1,6 +1,7 @@
 import React from 'react'
 import ScoreDisplay from './ScoreDisplay'
 import { IconBolt } from '@tabler/icons-react'
+import { yellow } from '../colors';
 
 export interface StreakDisplayProps {
     streak: number;
@@ -12,9 +13,9 @@ const StreakDisplay = ({streak: streak}: StreakDisplayProps) => {
     <ScoreDisplay
         text={"Streak"}
         value={streak.toString()}
-        icon={isReturningStreak && <IconBolt color="#EDD600" fill='#EDD600' stroke={1}/>}
-        color={isReturningStreak ? "#EDD600" : undefined}
-        textColor={isReturningStreak ? "#EDD600" : undefined}
+        icon={isReturningStreak && <IconBolt color={yellow} fill={yellow} stroke={1}/>}
+        color={isReturningStreak ? yellow : undefined}
+        textColor={isReturningStreak ? yellow : undefined}
     />
   )
 }

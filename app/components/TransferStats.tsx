@@ -21,6 +21,7 @@ import {
 import { useSearchParams } from "next/navigation";
 import ShareButton from "./ShareButton";
 import CustomIcon from "./CustomIcon";
+import { white, green, dk_green, red } from "../colors";
 
 const generateToken = (): string => {
   // randomly generate 5 character string
@@ -109,7 +110,7 @@ const TransferStats = () => {
     <>
       <IconHoverButton
         onTap={open}
-        icon={<IconDownload style={{transform: 'rotate(-90deg)'}} size={16} color='white'/>}
+        icon={<IconDownload style={{transform: 'rotate(-90deg)'}} size={16} color={white}/>}
         text="Transfer Stats"
       />
       <Modal
@@ -123,7 +124,7 @@ const TransferStats = () => {
         styles={{
           title: {
             fontSize: "20px",
-            color: "#f1f3f5",
+            color: white,
             fontWeight: 700,
             lineHeight: "32px",
           },
@@ -131,7 +132,7 @@ const TransferStats = () => {
         }}
       >
         <Stack align="center" justify="center">
-          <Text ta="center" size="md" c="gray.1" fw={700}>
+          <Text ta="center" size="md" c={white} fw={700}>
             Export stats from this device
           </Text>
           <Text ta="center">
@@ -140,7 +141,7 @@ const TransferStats = () => {
           <Button
             onClick={addStatsToDB}
             variant="filled"
-            color="green.6"
+            color={green}
             disabled={token !== ""}
             loading={loadingExport}
             leftSection={
@@ -155,14 +156,14 @@ const TransferStats = () => {
             <ShareButton
               shareText={token}
               buttonText={"Code"}
-              defaultColor={"green.6"}
-              clickedColor={"green.9"}
+              defaultColor={green}
+              clickedColor={dk_green}
             />
           )}
         </Stack>
         <Divider style={{ margin: "25px" }} />
         <Stack align="center" justify="center" gap="md">
-          <Text size="md" c="gray.1" fw={700} ta="center">
+          <Text size="md" c={white} fw={700} ta="center">
             Import stats into this device
           </Text>
           <Text ta="center">Enter the code generated from the source device</Text>
@@ -177,7 +178,7 @@ const TransferStats = () => {
             </Text>
           </Alert>
           <PinInput
-            color="gray.1"
+            color={white}
             onChange={(value) => {
               setInput(value.toUpperCase());
             }}
@@ -185,13 +186,13 @@ const TransferStats = () => {
             placeholder=""
             size="lg"
             error={error.length > 0}
-            style={{ color: "white" }}
+            style={{ color: white }}
           />
-          {error.length > 0 && <Text c="red.5">{error}</Text>}
+          {error.length > 0 && <Text c={red}>{error}</Text>}
           <Button
             onClick={() => transferStats(input)}
             variant="filled"
-            color="green.6"
+            color={green}
             loading={loadingImport}
             leftSection={<IconTransfer size={16} />}
             styles={{ section: { marginRight: "6px"} }}

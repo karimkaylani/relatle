@@ -1,6 +1,7 @@
 import { Stack, Text } from "@mantine/core";
 import React, { Fragment } from "react";
 import GlobalScoreSlider from "./GlobalScoreSlider";
+import { white } from "../colors";
 
 export interface GlobalScoreStatsProps {
   guesses: number;
@@ -19,7 +20,7 @@ const GlobalScoreStats = (props: GlobalScoreStatsProps) => {
         {"Today's Global Results"}
       </Text>
       {allGuesses.length < 3 ? (
-        <Text ta="center" size="sm" c="gray.1">
+        <Text ta="center" size="sm" c={white}>
           Come back soon for global results
         </Text>
       ) : (

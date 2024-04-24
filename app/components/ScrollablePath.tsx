@@ -3,6 +3,7 @@ import React, { Fragment } from "react";
 import { Artist } from "./Game";
 import ArtistInfo from "./ArtistInfo";
 import Arrow from "./Arrow";
+import { yellow, red } from "../colors";
 
 export interface ScrollablePathProps {
   matchup: string[];
@@ -33,7 +34,7 @@ const ScrollablePath = (props: ScrollablePathProps) => {
             </Fragment>
           ) : (
             <Fragment key={index}>
-              <Text c="yellow.5" size="13px" fw={500}>
+              <Text c={yellow} size="13px" fw={500}>
                 RESET
               </Text>
               <Arrow small={true} />
@@ -43,7 +44,7 @@ const ScrollablePath = (props: ScrollablePathProps) => {
         {won ? (
           <ArtistInfo artist={web[end]} small={true} is_green={true} />
         ) : (
-          <Text c="red.6" size="13px" fw={500}>
+          <Text c={red} size="13px" fw={500}>
             GIVE UP
           </Text>
         )}

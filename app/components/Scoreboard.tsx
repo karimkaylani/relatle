@@ -1,6 +1,7 @@
 import { Card, Divider, Stack, Group, Space, Text } from "@mantine/core";
 import React, { ReactNode } from "react";
 import ScoreDisplay from "./ScoreDisplay";
+import { yellow } from "../colors";
 
 export interface ScoreboardProps {
   guesses: number;
@@ -26,7 +27,7 @@ const Scoreboard = (props: ScoreboardProps) => {
       <Group justify="center">
         <ScoreDisplay text={"Guesses"} value={guesses.toString()} small={false}/>
         <Divider orientation="vertical" />
-        <ScoreDisplay text={"Resets"} value={resets.toString()} small={false} changeColor="#fcc419"/>
+        <ScoreDisplay text={"Resets"} value={resets.toString()} small={false} changeColor={yellow}/>
       </Group>
     </Card>
   );

@@ -31,6 +31,7 @@ import GlobalScoreStats from "./GlobalScoreStats";
 import { getCachedGuesses } from "../db";
 import ScoreDisplay from "./ScoreDisplay";
 import StreakDisplay from "./StreakDisplay";
+import { white, green, modal_drawer_bg, dk_gray } from "../colors";
 
 export interface GameOverProps {
   opened: boolean;
@@ -166,7 +167,7 @@ const GameOver = ({
           onClick={close}
         >
           <Drawer.Title style={{ width: "100%" }}>
-            <Text ta="center" c="gray.1" size="xl" fw={700}>
+            <Text ta="center" c={white} size="xl" fw={700}>
               {won ? "You Won!" : "Game Over"}
             </Text>
           </Drawer.Title>
@@ -209,7 +210,7 @@ const GameOver = ({
                       <Text size='lg'>+</Text>
                     )
                   }
-                  color="gray.9"
+                  color={dk_gray}
                   size="xs"
                   styles={{ section: { marginRight: "4px" } }}
                   onClick={toggleMinPath}
@@ -229,7 +230,7 @@ const GameOver = ({
 
             {!is_custom &&
               (loadingGlobalScore ? (
-                <Loader color="green.6" size="sm" />
+                <Loader color={green} size="sm" />
               ) : (
                 <GlobalScoreStats
                   won={won}
@@ -278,7 +279,7 @@ const GameOver = ({
                   <Card
                     ref={ref}
                     p="lg"
-                    bg="#1a1b1e"
+                    bg={modal_drawer_bg}
                     radius="0px"
                     style={transitionStyles}
                     withBorder

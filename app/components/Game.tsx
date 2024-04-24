@@ -46,6 +46,7 @@ import {
 } from "@tabler/icons-react";
 import SideDrawer from "./SideDrawer";
 import ClickableIcon from "./ClickableIcon";
+import { green, white, red, gray } from "../colors";
 
 export interface Artist {
   name: string;
@@ -389,7 +390,7 @@ const Game = (props: GameProps) => {
   if (loading) {
     return (
       <Center className="pt-14">
-        <Loader size="lg" color="green.6" />
+        <Loader size="lg" color={green} />
       </Center>
     );
   }
@@ -746,7 +747,7 @@ const Game = (props: GameProps) => {
             ></Image>
           </a>
           {is_custom && (
-            <Text p="0px" c="gray.1" ta="center">
+            <Text p="0px" c={white} ta="center">
               Custom Game
             </Text>
           )}
@@ -788,7 +789,7 @@ const Game = (props: GameProps) => {
           <Scoreboard
             guesses={guesses}
             resets={resets}
-            borderColor={won ? "#40c057" : "#fa5252"}
+            borderColor={won ? green : red}
           />
         </HoverButton>
       ) : (
@@ -798,7 +799,7 @@ const Game = (props: GameProps) => {
         position="bottom"
         opened={endMissed}
         transitionProps={{ duration: 500, transition: "pop" }}
-        styles={{ dropdown: { backgroundColor: "#e9ecef", border: "none" } }}
+        styles={{ dropdown: { backgroundColor: white, border: "none" } }}
       >
         <Popover.Target>
           <RelatedArtistsTitle
@@ -810,7 +811,7 @@ const Game = (props: GameProps) => {
         </Popover.Target>
 
         <Popover.Dropdown>
-          <Text c="gray.8" fw={700} size="md" ta="center">
+          <Text c={white} fw={700} size="md" ta="center">
             You missed {end}!
           </Text>
         </Popover.Dropdown>
@@ -883,7 +884,7 @@ const Game = (props: GameProps) => {
       </Text>
       {!gameOver && (
         <Stack align="center" justify="center">
-          <Text ta="center" c="gray.1" size="md">
+          <Text ta="center" c={white} size="md">
             Feeling stuck?
           </Text>
           <Group justify="center" align="center">
@@ -914,17 +915,17 @@ const Game = (props: GameProps) => {
       <Space h={24} />
       <Text ta="center" size={width > phoneMaxWidth ? "md" : "sm"}>
         Created by{" "}
-        <Anchor c="green.6" href="https://karimkaylani.com/" target="_blank">
+        <Anchor c={green} href="https://karimkaylani.com/" target="_blank">
           Karim Kaylani
         </Anchor>
         . Designed by{" "}
-        <Anchor c="green.6" href="https://zade.design/" target="_blank">
+        <Anchor c={green} href="https://zade.design/" target="_blank">
           Zade Kaylani
         </Anchor>
         .
       </Text>
-      <Group gap='8px' justify="center" align="center">
-        <Group justify='space-between' align='center' gap='md'>
+      <Group gap="8px" justify="center" align="center">
+        <Group justify="space-between" align="center" gap="md">
           <ClickableIcon
             icon={<IconBrandReddit aria-label="Visit r/relatle on Reddit" />}
             url="https://reddit.com/r/relatle"
@@ -934,10 +935,10 @@ const Game = (props: GameProps) => {
             url="https://github.com/karimkaylani/relatle/"
           />
         </Group>
-        <Text c="gray.7">|</Text>
+        <Text c={gray}>|</Text>
         <CoffeeButton />
-        <Text c="gray.7">|</Text>
-        <Group justify='space-between' align='center' gap='md'>
+        <Text c={gray}>|</Text>
+        <Group justify="space-between" align="center" gap="md">
           <ClickableIcon
             icon={<IconFlag2 aria-label="Send Feedback" />}
             url="https://docs.google.com/forms/d/e/1FAIpQLSeMEW3eGqVXheqidY43q9yMVK2QCi-AEJV3JGTuPK4LX9U9eA/viewform?usp=sf_link"
