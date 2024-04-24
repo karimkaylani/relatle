@@ -35,7 +35,7 @@ const ShareButton = ({
     <CopyButton value={shareText}>
       {({ copied, copy }) => (
         <OutlineButton
-          disabled={false}
+          disabled={disabled}
           text={copied ? `Copied ${buttonText}!` : `Copy ${buttonText}`}
           color={color}
           onClick={copy}
