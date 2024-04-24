@@ -37,24 +37,16 @@ const GiveUp = (props: GiveUpProps) => {
           </Stack>
           <Image w={158} src="images/give-up.png" alt="Give Up" />
           <Group align="center" justify="center">
-            <Button
+            <RelatleButton
               onClick={giveUpHandler}
-              size="md"
               color={red}
-              fw={700}
-              variant="filled"
-            >
-              Yes, Give Up
-            </Button>
-            <Button
+              text="Yes, Give Up"
+            />
+            <RelatleButton
               onClick={close}
-              size="md"
-              color={gray7}
-              fw={700}
-              variant="filled"
-            >
-              No, Keep Trying
-            </Button>
+              color={white}
+              text="No, Keep Trying"
+            />
           </Group>
         </Stack>
       </Modal>

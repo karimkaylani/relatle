@@ -11,6 +11,7 @@ export interface ShareButtonProps {
   color: string;
   borderColor?: string;
   textColor?: string;
+  size?: string;
 }
 
 const ShareButton = ({
@@ -18,6 +19,7 @@ const ShareButton = ({
   shareText,
   buttonText,
   color,
+  size='md'
 }: ShareButtonProps) => {
   if (navigator.share) {
     return (
@@ -27,6 +29,7 @@ const ShareButton = ({
         color={color}
         onClick={() => navigator.share({ text: shareText })}
         icon={<IconShare2 color={!disabled ? color : undefined}/>}
+        size={size}
       />
     );
   }
@@ -40,6 +43,7 @@ const ShareButton = ({
           color={color}
           onClick={copy}
           icon={<IconCopy color={!disabled ? color : undefined}/>}
+          size={size}
       />
       )}
     </CopyButton>

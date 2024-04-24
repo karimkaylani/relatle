@@ -69,7 +69,7 @@ const ArtistCard = ({
     undefined
   );
 
-  const fallbackSrc = `https://ui-avatars.com/api/?background=${gray9}&color=${white}&name=${encodeURIComponent(
+  const fallbackSrc = `https://ui-avatars.com/api/?background=${gray9.slice(1)}&color=${white.slice(1)}&name=${encodeURIComponent(
     artist.name.replace(/[^A-Z0-9]/gi, "")
   )}`;
 

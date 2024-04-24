@@ -10,6 +10,8 @@ export interface RelatleButtonProps {
   onClick: () => void;
   disabled?: boolean;
   icon?: React.ReactNode;
+  loading?: boolean;
+  size?: string;
 }
 
 const RelatleButton = ({
@@ -18,6 +20,8 @@ const RelatleButton = ({
   textColor=color,
   borderColor=color,
   disabled = false,
+  loading = false,
+  size='md',
   onClick,
   icon = undefined,
 }: RelatleButtonProps) => {
@@ -29,18 +33,19 @@ const RelatleButton = ({
   return (
     <Button
       disabled={disabled}
+      loading={loading}
       leftSection={icon}
       radius={8}
       variant="light"
       color={color}
-      size="md"
+      size={size}
       onClick={onClick}
       styles={{
         label: { fontSize: "14px", color: !disabled ? textColor : undefined },
         section: { marginRight: "8px" },
         root: {
           border: !disabled ? `2px solid ${borderColor}` : undefined,
-          minHeight: "45px",
+          minHeight: size === 'md' ? "45px" : undefined,
         },
       }}
     >

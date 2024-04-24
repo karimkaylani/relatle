@@ -21,7 +21,8 @@ import {
 import { useSearchParams } from "next/navigation";
 import ShareButton from "./ShareButton";
 import CustomIcon from "./CustomIcon";
-import { white, green, dk_green, red } from "../colors";
+import { white, green, dk_green, red, yellow, gray9 } from "../colors";
+import RelatleButton from "./RelatleButton";
 
 const generateToken = (): string => {
   // randomly generate 5 character string
@@ -138,19 +139,14 @@ const TransferStats = () => {
           <Text ta="center">
             Generate a code to enter into your target device
           </Text>
-          <Button
+          <RelatleButton
             onClick={addStatsToDB}
-            variant="filled"
             color={green}
+            text="Generate Code"
+            icon={<CustomIcon size={18} color={token === "" ? green : 'undefined'}/>}
             disabled={token !== ""}
             loading={loadingExport}
-            leftSection={
-              <CustomIcon size={18} />
-            }
-            styles={{ section: { marginRight: "6px" } }}
-          >
-            Generate Code
-          </Button>
+          />
           {token && <PinInput size="lg" value={token} readOnly />}
           {token && (
             <ShareButton
@@ -188,16 +184,13 @@ const TransferStats = () => {
             style={{ color: white }}
           />
           {error.length > 0 && <Text c={red}>{error}</Text>}
-          <Button
+          <RelatleButton
             onClick={() => transferStats(input)}
-            variant="filled"
             color={green}
+            text="Transfer Stats"
+            icon={<IconDownload style={{transform: 'rotate(-90deg)'}} size={18} />}
             loading={loadingImport}
-            leftSection={<IconTransfer size={16} />}
-            styles={{ section: { marginRight: "6px"} }}
-          >
-            Transfer Stats
-          </Button>
+          />
         </Stack>
       </Modal>
     </>
