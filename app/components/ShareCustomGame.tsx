@@ -23,9 +23,7 @@ const ShareCustomGame = (props: ShareCustomGameProps) => {
       disabled={disabled}
       shareText={url}
       buttonText="Link"
-      color={gray5}
-      textColor={white}
-      borderColor={gray6}
+      color={white}
     />
   );
 };

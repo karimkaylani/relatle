@@ -24,7 +24,6 @@ const SharePath = (props: SharePathProps) => {
       shareText={pathString}
       buttonText="Path"
       color={white}
-      borderColor={gray6}
     />
   );
 };

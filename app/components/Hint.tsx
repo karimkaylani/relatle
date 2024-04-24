@@ -8,7 +8,7 @@ import RelatedArtistsTitle from "./RelatedArtistsTitle";
 import { Artist, PlayingAudioContext, phoneMaxWidth } from "./Game";
 import ArtistCard from "./ArtistCard";
 import { useSwipeable } from "react-swipeable";
-import OutlineButton from "./OutlineButton";
+import RelatleButton from "./RelatleButton";
 import { gray5, gray6, gray7, gray8, gray9, white } from "../colors";
 
 export interface HintProps {
@@ -108,7 +108,7 @@ const Hint = (props: HintProps) => {
       </Drawer.Root>
 
       
-      <OutlineButton
+      <RelatleButton
         text="Hint"
         color={white} 
         icon={<IconBulb color={white} size={22}/>}

@@ -1,7 +1,7 @@
 import { Button } from "@mantine/core";
 import React from "react";
 import { yellow } from "../colors";
-import OutlineButton from "./OutlineButton";
+import RelatleButton from "./RelatleButton";
 import { IconRefresh } from "@tabler/icons-react";
 
 export interface ResetProps {
@@ -11,7 +11,7 @@ export interface ResetProps {
 const Reset = (props: ResetProps) => {
   const { resetHandler } = props;
   return (
-    <OutlineButton text="Reset" color={yellow} borderColor={yellow} onClick={resetHandler} icon={<IconRefresh size={18}/>}/>
+    <RelatleButton text="Reset" color={yellow} borderColor={yellow} onClick={resetHandler} icon={<IconRefresh size={18}/>}/>
   );
 };
 export default Reset;

@@ -2,7 +2,7 @@ import { Button, Group, Modal, Stack, Text, Image, darken } from "@mantine/core"
 import { useDisclosure } from "@mantine/hooks";
 import React from "react";
 import { dk_red, gray7, red, white } from "../colors";
-import OutlineButton from "./OutlineButton";
+import RelatleButton from "./RelatleButton";
 import { IconFlag } from "@tabler/icons-react";
 
 export interface GiveUpProps {
@@ -15,7 +15,7 @@ const GiveUp = (props: GiveUpProps) => {
   const [opened, { open, close }] = useDisclosure(false);
   return (
     <>
-      <OutlineButton icon={<IconFlag size={18}/>} text="Give Up" color={red} onClick={open} />
+      <RelatleButton icon={<IconFlag size={18}/>} text="Give Up" color={red} onClick={open} />
       <Modal
         opened={opened}
         onClose={close}

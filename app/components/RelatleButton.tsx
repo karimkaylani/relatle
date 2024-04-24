@@ -2,7 +2,7 @@ import { Button, darken } from "@mantine/core";
 import React from "react";
 import { dk_yellow, gray5, gray6, gray7, white } from "../colors";
 
-export interface OutlineButtonProps {
+export interface RelatleButtonProps {
   text: string;
   color: string;
   textColor?: string;
@@ -12,7 +12,7 @@ export interface OutlineButtonProps {
   icon?: React.ReactNode;
 }
 
-const OutlineButton = ({
+const RelatleButton = ({
   text,
   color,
   textColor=color,
@@ -20,7 +20,7 @@ const OutlineButton = ({
   disabled = false,
   onClick,
   icon = undefined,
-}: OutlineButtonProps) => {
+}: RelatleButtonProps) => {
   if (color === white) {
     borderColor = gray6;
     textColor = white;
@@ -49,4 +49,4 @@ const OutlineButton = ({
   );
 };
 
-export default OutlineButton;
+export default RelatleButton;

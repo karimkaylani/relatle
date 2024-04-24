@@ -21,7 +21,7 @@ import { useSearchParams } from "next/navigation";
 import IconHoverButton from "./IconHoverButton";
 import CustomIcon from "./CustomIcon";
 import { white, yellow, green, dk_green } from "../colors";
-import OutlineButton from "./OutlineButton";
+import RelatleButton from "./RelatleButton";
 
 interface CustomGameModalProps {
   web: { [key: string]: Artist };
@@ -543,7 +543,7 @@ const CustomGameModal = (props: CustomGameModalProps) => {
             end={endArtist}
             disabled={invalidMatchup}
           />
-          <OutlineButton
+          <RelatleButton
             text="Play"
             color={green}
             onClick={() =>
