@@ -2,6 +2,7 @@ import { Button, CopyButton } from "@mantine/core";
 import { IconCopy, IconShare2 } from "@tabler/icons-react";
 import React from "react";
 import OutlineButton from "./OutlineButton";
+import { white } from "../colors";
 
 export interface ShareButtonProps {
   shareText: string;
@@ -25,11 +26,9 @@ const ShareButton = ({
       <OutlineButton
         disabled={disabled}
         text={`Share ${buttonText}`}
-        color={color}
-        textColor={textColor}
+        color={white}
         onClick={() => navigator.share({ text: shareText })}
         icon={<IconShare2 color={!disabled ? textColor : undefined}/>}
-        borderColor={borderColor}
       />
     );
   }
@@ -40,11 +39,9 @@ const ShareButton = ({
         <OutlineButton
           disabled={disabled}
           text={copied ? `Copied ${buttonText}!` : `Copy ${buttonText}`}
-          color={color}
-          textColor={textColor}
+          color={white}
           onClick={copy}
           icon={<IconCopy color={!disabled ? textColor : undefined}/>}
-          borderColor={borderColor}
       />
       )}
     </CopyButton>

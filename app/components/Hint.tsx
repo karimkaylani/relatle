@@ -110,9 +110,7 @@ const Hint = (props: HintProps) => {
       
       <OutlineButton
         text="Hint"
-        color={gray5} 
-        textColor={white}
-        borderColor={gray6}
+        color={white} 
         icon={<IconBulb color={white} size={22}/>}
         onClick={() => {
           open();
