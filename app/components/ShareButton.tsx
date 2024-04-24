@@ -21,6 +21,7 @@ const ShareButton = ({
   if (navigator.share) {
     return (
       <OutlineButton
+        disabled={disabled}
         text={`Share ${buttonText}`}
         color={color}
         onClick={() => navigator.share({ text: shareText })}
