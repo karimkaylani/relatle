@@ -462,7 +462,7 @@ const CustomGameModal = (props: CustomGameModalProps) => {
                   : "",
               },
               groupLabel: {
-                color: dk_green,
+                color: green,
                 fontWeight: 700,
                 fontSize: "14px",
               },
