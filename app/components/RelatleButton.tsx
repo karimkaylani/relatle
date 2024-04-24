@@ -1,4 +1,4 @@
-import { Button, darken } from "@mantine/core";
+import { alpha, Button, darken } from "@mantine/core";
 import React from "react";
 import { dk_yellow, gray5, gray6, gray7, white } from "../colors";
 
@@ -44,7 +44,7 @@ const RelatleButton = ({
         label: { fontSize: "14px", color: !disabled ? textColor : undefined },
         section: { marginRight: "8px" },
         root: {
-          border: !disabled ? `2px solid ${borderColor}` : undefined,
+          border: !disabled ? `2px solid ${alpha(borderColor, 0.5)}` : undefined,
           minHeight: size === 'md' ? "45px" : undefined,
         },
       }}
