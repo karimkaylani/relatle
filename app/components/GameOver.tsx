@@ -139,10 +139,10 @@ const GameOver = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [won]);
 
-  const [height, setHeight] = useState(77);
+  const [height, setHeight] = useState(86);
   const ref = useRef<HTMLDivElement>(null);
 
-  const handleResize = () => setHeight(ref.current?.clientHeight ?? 77);
+  const handleResize = () => setHeight(ref.current?.clientHeight ?? 86);
 
   useEffect(() => {
     handleResize();
@@ -154,7 +154,7 @@ const GameOver = ({
     <Drawer.Root
       opened={opened}
       onClose={close}
-      size={window.innerWidth > phoneMaxWidth ? "80%" : "85%"}
+      size={window.innerWidth > phoneMaxWidth ? "80%" : "88%"}
       style={{ borderRadius: "20px" }}
       padding="sm"
       position={"bottom"}
@@ -178,7 +178,7 @@ const GameOver = ({
             align="center"
             direction="column"
             gap="lg"
-            styles={{ root: { marginBottom: height } }}
+            styles={{ root: { marginBottom: height + 15 } }}
           >
             <Matchup
               start={web[start]}
