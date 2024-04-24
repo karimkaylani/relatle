@@ -9,7 +9,7 @@ import { Artist, PlayingAudioContext, phoneMaxWidth } from "./Game";
 import ArtistCard from "./ArtistCard";
 import { useSwipeable } from "react-swipeable";
 import OutlineButton from "./OutlineButton";
-import { gray6, gray7, gray8, white } from "../colors";
+import { gray5, gray6, gray7, gray8, gray9, white } from "../colors";
 
 export interface HintProps {
   endArtist: Artist;
@@ -110,9 +110,10 @@ const Hint = (props: HintProps) => {
       
       <OutlineButton
         text="Hint"
-        color={white}
+        color={gray5} 
+        textColor={white}
         borderColor={gray6}
-        icon={<IconBulb size={22}/>}
+        icon={<IconBulb color={white} size={22}/>}
         onClick={() => {
           open();
           setUsedHint(true);

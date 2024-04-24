@@ -11,8 +11,7 @@ export interface ResetProps {
 const Reset = (props: ResetProps) => {
   const { resetHandler } = props;
   return (
-    <OutlineButton text="Reset" color={yellow} onClick={resetHandler} icon={<IconRefresh size={18}/>}/>
+    <OutlineButton text="Reset" color={yellow} borderColor={yellow} onClick={resetHandler} icon={<IconRefresh size={18}/>}/>
   );
 };
-
 export default Reset;

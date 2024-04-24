@@ -1,10 +1,11 @@
-import { Button } from "@mantine/core";
+import { Button, darken } from "@mantine/core";
 import React from "react";
-import { gray6, gray7 } from "../colors";
+import { dk_yellow, gray6, gray7 } from "../colors";
 
 export interface OutlineButtonProps {
   text: string;
   color: string;
+  textColor?: string;
   borderColor?: string;
   onClick: () => void;
   disabled?: boolean;
@@ -14,7 +15,8 @@ export interface OutlineButtonProps {
 const OutlineButton = ({
   text,
   color,
-  borderColor = undefined,
+  textColor=color,
+  borderColor=color,
   disabled = false,
   onClick,
   icon = undefined,
@@ -24,12 +26,12 @@ const OutlineButton = ({
       disabled={disabled}
       leftSection={icon}
       radius={8}
-      variant="outline"
+      variant="light"
       color={color}
       size="md"
       onClick={onClick}
       styles={{
-        label: { fontSize: "14px" },
+        label: { fontSize: "14px", color: !disabled ? textColor : undefined },
         section: { marginRight: "8px" },
         root: {
           border: !disabled ? `2px solid ${borderColor}` : undefined,

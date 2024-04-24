@@ -9,6 +9,7 @@ export interface ShareButtonProps {
   buttonText: string;
   color: string;
   borderColor?: string;
+  textColor?: string;
 }
 
 const ShareButton = ({
@@ -16,7 +17,8 @@ const ShareButton = ({
   shareText,
   buttonText,
   color,
-  borderColor=color
+  borderColor=color,
+  textColor=color
 }: ShareButtonProps) => {
   if (navigator.share) {
     return (
@@ -24,8 +26,9 @@ const ShareButton = ({
         disabled={disabled}
         text={`Share ${buttonText}`}
         color={color}
+        textColor={textColor}
         onClick={() => navigator.share({ text: shareText })}
-        icon={<IconShare2 />}
+        icon={<IconShare2 color={!disabled ? textColor : undefined}/>}
         borderColor={borderColor}
       />
     );
@@ -38,8 +41,9 @@ const ShareButton = ({
           disabled={disabled}
           text={copied ? `Copied ${buttonText}!` : `Copy ${buttonText}`}
           color={color}
+          textColor={textColor}
           onClick={copy}
-          icon={<IconCopy />}
+          icon={<IconCopy color={!disabled ? textColor : undefined}/>}
           borderColor={borderColor}
       />
       )}

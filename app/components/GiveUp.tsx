@@ -1,7 +1,7 @@
-import { Button, Group, Modal, Stack, Text, Image } from "@mantine/core";
+import { Button, Group, Modal, Stack, Text, Image, darken } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import React from "react";
-import { gray7, red, white } from "../colors";
+import { dk_red, gray7, red, white } from "../colors";
 import OutlineButton from "./OutlineButton";
 import { IconFlag } from "@tabler/icons-react";
 

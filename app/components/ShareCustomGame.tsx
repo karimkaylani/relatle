@@ -1,6 +1,6 @@
 import React from "react";
 import ShareButton from "./ShareButton";
-import { gray9, gray7, white, gray6 } from "../colors";
+import { gray9, gray7, white, gray6, gray5 } from "../colors";
 
 export interface ShareCustomGameProps {
   start: string;
@@ -23,7 +23,8 @@ const ShareCustomGame = (props: ShareCustomGameProps) => {
       disabled={disabled}
       shareText={url}
       buttonText="Link"
-      color={white}
+      color={gray5}
+      textColor={white}
       borderColor={gray6}
     />
   );
