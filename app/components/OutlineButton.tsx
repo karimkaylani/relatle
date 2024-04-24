@@ -33,7 +33,6 @@ const OutlineButton = ({
         section: { marginRight: "8px" },
         root: {
           border: `2px solid ${borderColor}`,
-          minHeight: "45px",
         },
       }}
     >
