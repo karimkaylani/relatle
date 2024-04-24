@@ -104,6 +104,7 @@ const GameOver = ({
   });
 
   const [minPath, setMinPath] = useState<string[]>([]);
+  const [minPathLength, setMinPathLength] = useState<number>(0);
   const [allGuesses, setAllGuesses] = useState<number[]>([]);
   const [loadingGlobalScore, setLoadingGlobalScore] = useState<boolean>(true);
 
@@ -112,6 +113,7 @@ const GameOver = ({
       return;
     }
     const mPath = getMinPath(web, start, end);
+    setMinPathLength(mPath.length);
     mPath.unshift(start);
     setMinPath(mPath);
     if (is_custom) {
@@ -194,11 +196,11 @@ const GameOver = ({
 
             <Group align="center" justify="center" gap="sm">
               <Text fw={700} size="sm" ta="center">
-                {won && guesses === minPath.length
-                  ? `Congrats! The shortest path was ${minPath.length} guesses long`
-                  : `Shortest Path: ${minPath.length} guesses`}
+                {won && guesses === minPathLength
+                  ? `Congrats! The shortest path was ${minPathLength} guesses long`
+                  : `Shortest Path: ${minPathLength} guesses`}
               </Text>
-              {(!won || guesses !== minPath.length) && (
+              {(!won || guesses !== minPathLength) && (
                 <Button
                   leftSection={
                     minPathOpened ? (
