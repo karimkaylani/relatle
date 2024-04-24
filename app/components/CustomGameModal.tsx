@@ -21,6 +21,7 @@ import { useSearchParams } from "next/navigation";
 import IconHoverButton from "./IconHoverButton";
 import CustomIcon from "./CustomIcon";
 import { white, yellow, green, dk_green } from "../colors";
+import OutlineButton from "./OutlineButton";
 
 interface CustomGameModalProps {
   web: { [key: string]: Artist };
@@ -537,21 +538,19 @@ const CustomGameModal = (props: CustomGameModalProps) => {
         </Stack>
 
         <Group grow>
-          <Button
-            leftSection={<IconPlayerPlayFilled size={20} />}
-            onClick={() =>
-              window.open(generateCustomGameURL(startArtist, endArtist))
-            }
-            disabled={invalidMatchup}
-            color={green}
-            styles={{ section: { marginRight: "4px" } }}
-          >
-            Play
-          </Button>
           <ShareCustomGame
             start={startArtist}
             end={endArtist}
             disabled={invalidMatchup}
+          />
+          <OutlineButton
+            text="Play"
+            color={green}
+            onClick={() =>
+              window.open(generateCustomGameURL(startArtist, endArtist))
+            }
+            disabled={invalidMatchup}
+            icon={<IconPlayerPlayFilled size={20} />}
           />
         </Group>
       </Stack>

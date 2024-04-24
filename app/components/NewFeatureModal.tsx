@@ -1,6 +1,6 @@
 import { Modal, Stack, Text, Image, Button } from "@mantine/core";
 import React from "react";
-import { gray, white } from "../colors";
+import { gray7, white } from "../colors";
 
 export interface NewFeatureModalProps {
   newFeatureModalOpened: boolean;
@@ -30,7 +30,7 @@ const NewFeatureModal = (props: NewFeatureModalProps) => {
           </Text>
         </Stack>
         <Image w={163} src="images/preview.png" alt="Song Previews" />
-        <Button color={gray} w={150} onClick={newFeatureModalClose}>
+        <Button color={gray7} w={150} onClick={newFeatureModalClose}>
           GOT IT!
         </Button>
       </Stack>

@@ -52,8 +52,7 @@ ${url}`;
     <ShareButton
       shareText={generateShareText()}
       buttonText="Results"
-      defaultColor={green}
-      clickedColor={dk_green}
+      color={green}
     />
   );
 };

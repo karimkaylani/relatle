@@ -1,55 +1,46 @@
 import { Button, CopyButton } from "@mantine/core";
 import { IconCopy, IconShare2 } from "@tabler/icons-react";
 import React from "react";
+import OutlineButton from "./OutlineButton";
 
 export interface ShareButtonProps {
   shareText: string;
   disabled?: boolean;
   buttonText: string;
-  defaultColor: string;
-  clickedColor: string;
+  color: string;
+  borderColor?: string;
 }
 
 const ShareButton = ({
   disabled = false,
   shareText,
   buttonText,
-  defaultColor,
-  clickedColor,
+  color,
+  borderColor=color
 }: ShareButtonProps) => {
   if (navigator.share) {
     return (
-      <Button
-        disabled={disabled}
-        onClick={() =>
-          navigator.share({
-            text: shareText,
-          })
-        }
-        variant="filled"
-        color={defaultColor}
-        leftSection={<IconShare2 size={20} />}
-        styles={{ section: { marginRight: "4px", marginBottom: "4px" } }}
-      >
-        Share {buttonText}
-      </Button>
+      <OutlineButton
+        text={`Share ${buttonText}`}
+        color={color}
+        onClick={() => navigator.share({ text: shareText })}
+        icon={<IconShare2 />}
+        borderColor={borderColor}
+      />
     );
   }
 
   return (
     <CopyButton value={shareText}>
       {({ copied, copy }) => (
-        <Button
-          disabled={disabled}
-          color={copied ? clickedColor : defaultColor}
+        <OutlineButton
+          disabled={false}
+          text={copied ? `Copied ${buttonText}!` : `Copy ${buttonText}`}
+          color={color}
           onClick={copy}
-          leftSection={<IconCopy size={20} />}
-          styles={{ section: { marginRight: "4px" } }}
-        >
-          {copied
-            ? `Copied ${buttonText}!`
-            : `Copy ${buttonText}`}
-        </Button>
+          icon={<IconCopy />}
+          borderColor={borderColor}
+      />
       )}
     </CopyButton>
   );

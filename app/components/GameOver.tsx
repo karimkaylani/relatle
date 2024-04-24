@@ -31,7 +31,7 @@ import GlobalScoreStats from "./GlobalScoreStats";
 import { getCachedGuesses } from "../db";
 import ScoreDisplay from "./ScoreDisplay";
 import StreakDisplay from "./StreakDisplay";
-import { white, green, modal_drawer_bg, dk_gray } from "../colors";
+import { white, green, gray9, gray8 } from "../colors";
 
 export interface GameOverProps {
   opened: boolean;
@@ -127,7 +127,7 @@ const GameOver = ({
       }
       setLoadingGlobalScore(false);
     });
-  }, [opened, is_custom, loadingGlobalScore, matchupID, web, start, end]);
+  }, [opened, is_custom, loadingGlobalScore, matchupID, web, start, end, minPath.length]);
 
   // Auto open min path if won
   useEffect(() => {
@@ -210,7 +210,7 @@ const GameOver = ({
                       <Text size='lg'>+</Text>
                     )
                   }
-                  color={dk_gray}
+                  color={gray8}
                   size="xs"
                   styles={{ section: { marginRight: "4px" } }}
                   onClick={toggleMinPath}
@@ -279,7 +279,7 @@ const GameOver = ({
                   <Card
                     ref={ref}
                     p="lg"
-                    bg={modal_drawer_bg}
+                    bg={gray9}
                     radius="0px"
                     style={transitionStyles}
                     withBorder

@@ -46,7 +46,7 @@ import {
 } from "@tabler/icons-react";
 import SideDrawer from "./SideDrawer";
 import ClickableIcon from "./ClickableIcon";
-import { green, white, red, gray } from "../colors";
+import { green, white, red, gray7 } from "../colors";
 
 export interface Artist {
   name: string;
@@ -906,12 +906,13 @@ const Game = (props: GameProps) => {
                 setUsedHint={useHintHandler}
               />
             </PlayingAudioContext.Provider>
+            {!gameOver && guesses >= 1 && (
+              <GiveUp giveUpHandler={giveUpHandler} is_custom={is_custom} />
+            )}
           </Group>
         </Stack>
       )}
-      {!gameOver && guesses >= 1 && (
-        <GiveUp giveUpHandler={giveUpHandler} is_custom={is_custom} />
-      )}
+
       <Space h={24} />
       <Text ta="center" size={width > phoneMaxWidth ? "md" : "sm"}>
         Created by{" "}
@@ -935,9 +936,9 @@ const Game = (props: GameProps) => {
             url="https://github.com/karimkaylani/relatle/"
           />
         </Group>
-        <Text c={gray}>|</Text>
+        <Text c={gray7}>|</Text>
         <CoffeeButton />
-        <Text c={gray}>|</Text>
+        <Text c={gray7}>|</Text>
         <Group justify="space-between" align="center" gap="md">
           <ClickableIcon
             icon={<IconFlag2 aria-label="Send Feedback" />}

@@ -17,7 +17,7 @@ import { motion, useAnimate } from "framer-motion";
 import { useLongPress } from "use-long-press";
 import waveAnimation from "../audioWave.json";
 import dynamic from "next/dynamic";
-import { dk_gray, green, light_gray, white } from "../colors";
+import { gray9, green, gray5, white } from "../colors";
 const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 
 interface ArtistCardProps {
@@ -69,7 +69,7 @@ const ArtistCard = ({
     undefined
   );
 
-  const fallbackSrc = `https://ui-avatars.com/api/?background=${dk_gray}&color=${white}&name=${encodeURIComponent(
+  const fallbackSrc = `https://ui-avatars.com/api/?background=${gray9}&color=${white}&name=${encodeURIComponent(
     artist.name.replace(/[^A-Z0-9]/gi, "")
   )}`;
 
@@ -329,7 +329,7 @@ const ArtistCard = ({
           <Text
             c={
               path.includes(artist.name) && artist.name !== end
-                ? {light_gray}
+                ? {light_gray: gray5}
                 : white
             }
             fw={700}

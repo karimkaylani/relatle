@@ -1,6 +1,6 @@
 import { Group, Paper, Space, Stack, Text } from "@mantine/core";
 import React, { Fragment, useEffect, useState } from "react";
-import { gray, green, red, white, yellow } from "../colors";
+import { gray7, green, red, white, yellow } from "../colors";
 
 interface CircleProps {
   color: string;
@@ -52,7 +52,7 @@ const GlobalScoreSlider = (props: GlobalScoreSliderProps) => {
             marginLeft: -15,
             left: padding,
             position: "relative",
-            border: `6px solid ${gray}`,
+            border: `6px solid ${gray7}`,
             borderRadius: "70%",
           },
         }}
@@ -83,7 +83,7 @@ const GlobalScoreSlider = (props: GlobalScoreSliderProps) => {
   return (
     <Fragment>
       <div style={{ margin: 0, padding: 0 }}>
-        <Paper bg={gray} w={width} radius="xl" className="-mb-5">
+        <Paper bg={gray7} w={width} radius="xl" className="-mb-5">
           <Space h={10} />
         </Paper>
         <Circle color={white} value={minGuesses} />
@@ -98,7 +98,7 @@ const GlobalScoreSlider = (props: GlobalScoreSliderProps) => {
                 {label}: {score}
               </Text>
               {index !== scores.length - 1 && (
-                <Text fw={700} size="sm" c={gray}>
+                <Text fw={700} size="sm" c={gray7}>
                   |
                 </Text>
               )}

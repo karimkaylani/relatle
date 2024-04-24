@@ -156,8 +156,7 @@ const TransferStats = () => {
             <ShareButton
               shareText={token}
               buttonText={"Code"}
-              defaultColor={green}
-              clickedColor={dk_green}
+              color={green}
             />
           )}
         </Stack>
