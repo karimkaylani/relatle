@@ -46,7 +46,7 @@ import {
 } from "@tabler/icons-react";
 import SideDrawer from "./SideDrawer";
 import ClickableIcon from "./ClickableIcon";
-import { green, white, red, gray7 } from "../colors";
+import { green, white, red, gray7, gray9, gray8, yellow } from "../colors";
 
 export interface Artist {
   name: string;
@@ -799,7 +799,7 @@ const Game = (props: GameProps) => {
         position="bottom"
         opened={endMissed}
         transitionProps={{ duration: 500, transition: "pop" }}
-        styles={{ dropdown: { backgroundColor: white, border: "none" } }}
+        styles={{ dropdown: { backgroundColor: gray7 } }}
       >
         <Popover.Target>
           <RelatedArtistsTitle
