@@ -1,6 +1,8 @@
-import { Modal, Stack, Text, Image, Button } from "@mantine/core";
+import { Modal, Stack, Text, Image, Button, Group } from "@mantine/core";
 import React from "react";
-import { gray7, white } from "../colors";
+import { green, white } from "../colors";
+import RelatleButton from "./RelatleButton";
+import { IconBrandReddit } from "@tabler/icons-react";
 
 export interface NewFeatureModalProps {
   newFeatureModalOpened: boolean;
@@ -18,21 +20,25 @@ const NewFeatureModal = (props: NewFeatureModalProps) => {
       centered
       padding="lg"
       radius="lg"
+      closeOnClickOutside={false}
     >
       <Stack align="center" justify="center" gap="lg">
-        <Stack gap="xs">
+        <Stack gap="md">
           <Text ta="center" c={white} fw={700} size="xl">
-            Introducing previews
+            Relatle has new artists!
           </Text>
           <Text ta="center" size="md">
-            You can now press and hold on an artist to hear a preview of their
-            music. Try it out!
+          {"We’ve added more of your favs and now let you pick from up to 12 artists per guess (previously 10)."}
           </Text>
         </Stack>
-        <Image w={163} src="images/preview.png" alt="Song Previews" />
-        <Button color={gray7} w={150} onClick={newFeatureModalClose}>
-          GOT IT!
-        </Button>
+        <Image w={274} src="images/new-artists.png" alt="Song Previews" />
+        <Group>
+          <RelatleButton color={green} onClick={() => {
+            window.open("https://www.reddit.com/r/relatle/", "_blank");
+          }} icon={<IconBrandReddit />} text="View New Artists"/>
+          <RelatleButton color={white} onClick={newFeatureModalClose} text="Got It!"/>
+        </Group>
+        
       </Stack>
     </Modal>
   );

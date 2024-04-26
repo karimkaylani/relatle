@@ -188,9 +188,7 @@ const Game = (props: GameProps) => {
 
   const [newFeatureModalOpened, newFeatureModalHandlers] = useDisclosure(false);
   const { open: newFeatureModalOpen } = newFeatureModalHandlers;
-
   const [sidebarOpened, sidebarHandlers] = useDisclosure(false);
-  const { open: sidebarOpen } = sidebarHandlers;
 
   const [usedHint, setUsedHint] = useState<boolean>(false);
 
@@ -200,7 +198,7 @@ const Game = (props: GameProps) => {
   const [playingArtist, setPlayingArtist] = useState<Artist | null>(null);
 
   // For new feature modal pop-up
-  const latestFeatureId = 0;
+  const latestFeatureId = 1;
 
   const searchParams = useSearchParams();
   const { scrollIntoView, targetRef: scrollViewRef } =
