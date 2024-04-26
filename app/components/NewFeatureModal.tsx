@@ -34,7 +34,7 @@ const NewFeatureModal = (props: NewFeatureModalProps) => {
         <Image w={274} src="images/new-artists.png" alt="Song Previews" />
         <Group>
           <RelatleButton color={green} onClick={() => {
-            window.open("https://www.reddit.com/r/relatle/", "_blank");
+            window.open("https://www.reddit.com/r/relatle/comments/1cdww7v/new_artists_added_to_relatle_100/", "_blank");
           }} icon={<IconBrandReddit />} text="View New Artists"/>
           <RelatleButton color={white} onClick={newFeatureModalClose} text="Got It!"/>
         </Group>
