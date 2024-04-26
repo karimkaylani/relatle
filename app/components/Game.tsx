@@ -859,7 +859,7 @@ const Game = (props: GameProps) => {
           setPlayingArtist,
         }}
       >
-        <SimpleGrid ref={scope} cols={{ base: 2, xs: 3, sm: 3, md: 4, lg: 5 }}>
+        <SimpleGrid ref={scope} cols={{ base: 2, xs: 3, sm: 4, md: 4, lg: 4 }}>
           {currArtist.related.map((artist_name: string) => (
             <ArtistCard
               key={web[artist_name].id}
