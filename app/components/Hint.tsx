@@ -86,7 +86,7 @@ const Hint = (props: HintProps) => {
                   "These artists aren't guaranteed to be related in both directions"
                 }
               </Text>
-              <SimpleGrid ref={scope} cols={{ base: 2, xs: 3, sm: 4, md: 4, lg: 4 }}>
+              <SimpleGrid cols={{ base: 2, xs: 3, sm: 4, md: 4, lg: 4 }}>
                 {endArtist.related.map((artist_name: string) => (
                   <ArtistCard
                     key={web[artist_name].id}
