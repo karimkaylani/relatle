@@ -58,9 +58,13 @@ def is_good_matchup(m, matchup):
     if not (max_allowed_num_paths >= len(valid_paths) >= min_allowed_num_paths):
         return False
     # Don't want any single artist to be in every valid path
-    all_artists_in_paths = set([x for path in valid_paths for x in path])
+    new_valid_paths = valid_paths
+    # If only 1 first related artist, then ignore the first artist
+    if len(m[matchup[0]]['related']) == 1:
+        new_valid_paths = [path[1:] for path in valid_paths]
+    all_artists_in_paths = set([x for path in new_valid_paths for x in path])
     for artist in all_artists_in_paths:
-        if len(list(filter(lambda x: artist in x[:-1], valid_paths))) == len(valid_paths):
+        if len(list(filter(lambda x: artist in x[:-1], new_valid_paths))) == len(new_valid_paths):
             return False
     # If only 2 first artists, then must be at least 2 paths for each
     if (len(set([x[0] for x in valid_paths])) == 2):

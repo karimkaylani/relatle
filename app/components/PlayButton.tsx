@@ -2,7 +2,7 @@ import {
   IconPlayerPlayFilled,
   IconPlayerStopFilled,
 } from "@tabler/icons-react";
-import React, { Fragment } from "react";
+import React, { Fragment, use, useEffect } from "react";
 import HoverButton from "./HoverButton";
 import { Center, RingProgress } from "@mantine/core";
 import { Artist, PlayingAudioContext, phoneMaxWidth } from "./Game";
@@ -69,7 +69,7 @@ const PlayButton = (props: PlayButtonProps) => {
         <RingProgress
           thickness={2}
           size={isPhone ? 30 : 35}
-          sections={[{ value: progress, color: white }]}
+          sections={[{ value: !Number.isNaN(progress) ? progress : 0, color: white }]}
           label={
             <Center>
               {isPlaying ? (

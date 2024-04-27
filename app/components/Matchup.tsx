@@ -17,19 +17,9 @@ const Matchup = React.forwardRef<HTMLDivElement, MatchupProps>((props, ref) => {
 
   return (
     <Group ref={ref} justify="center" gap="xs">
-      <Group justify="center" gap="4px">
-        <ArtistInfo artist={start} small={small} />
-        {showPreviews && (
-          <PlayButton artist={start} audioUrl={start.top_song_preview_url} />
-        )}
-      </Group>
+      <ArtistInfo artist={start} small={small} preview={showPreviews} />
       <Arrow small={small} />
-      <Group justify="center" gap="4px">
-        <ArtistInfo artist={end} small={small} is_green={true}></ArtistInfo>
-        {showPreviews && (
-          <PlayButton artist={end} audioUrl={end.top_song_preview_url} />
-        )}
-      </Group>
+      <ArtistInfo artist={end} small={small} is_green={true} preview={showPreviews}/>
     </Group>
   );
 });
