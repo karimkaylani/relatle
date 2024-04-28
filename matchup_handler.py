@@ -15,7 +15,7 @@ def verify_matchups(web):
     with open("public/data/matchups.json", "r") as outfile:
         matchups = json.load(outfile)
     # padding for removed matchups that have already occurred
-    num_days = 64
+    num_days = 72
     seen = set()
     for matchup in matchups:
         num_days += 1
