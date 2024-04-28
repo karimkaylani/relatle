@@ -26564,6 +26564,7 @@
             "Toro y Moi",
             "Leon Bridges",
             "NEIL FRANCES",
+            "King Gizzard & The Lizard Wizard",
             "Parcels",
             "Tash Sultana",
             "Michael Kiwanuka",
@@ -33718,6 +33719,7 @@
             "100 gecs",
             "Run The Jewels",
             "King Krule",
+            "King Gizzard & The Lizard Wizard",
             "Aphex Twin",
             "MF DOOM"
         ]
@@ -33837,6 +33839,19 @@
             "Cafun\u00e9",
             "Cuco",
             "Men I Trust"
+        ]
+    },
+    "King Gizzard & The Lizard Wizard": {
+        "name": "King Gizzard & The Lizard Wizard",
+        "id": "6XYvaoDGE0VmRt83Jss9Sn",
+        "image": "https://i.scdn.co/image/ab6761610000e5ebae21e90221e814c50033133a",
+        "top_song_name": "Work This Time",
+        "top_song_id": "5X45Y7GyAP3cuAN6bgjz2v",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/800b3dc87790d0cb9fe7881905e48562c1de68ab?cid=577f071a28c64da1a74fba199136d923",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b2732c3b34e52b78e68fe4327ddc",
+        "related": [
+            "Death Grips",
+            "Khruangbin"
         ]
     }
 }
