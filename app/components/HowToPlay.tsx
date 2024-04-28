@@ -19,7 +19,7 @@ import {
   IconQuestionMark,
 } from "@tabler/icons-react";
 import Matchup from "./Matchup";
-import { white, yellow, red } from "../colors";
+import { white, yellow, red, green } from "../colors";
 
 export interface HowToPlayProps {
   start: Artist;
@@ -61,7 +61,7 @@ const HowToPlay = (props: HowToPlayProps) => {
                 1
               </Text>
             </Card>
-            <Text fw={300}>Identify the artist matchup:</Text>
+            <Text fw={300}>Identify the <Text fw={700} c={white} span>artist matchup</Text>:</Text>
           </Group>
 
           <Matchup start={start} end={end} small={true} />
@@ -74,9 +74,10 @@ const HowToPlay = (props: HowToPlayProps) => {
             </Card>
             <Stack align="center" justify="center">
               <Text fw={300}>
-                Tap on the related artists that you think will get you closer to
-                the target artist. The less steps it takes you, the better your
-                score!
+              <Text fw={500} c={white} span>Tap on the related artists</Text> that you think will get you closer to
+                the target artist.{" "}
+                <Text fw={500} c={white} span>Press and hold</Text> on an artist to hear a <Text fw={500} c={white} span>sample of their music</Text>.
+                The less steps it takes you, <Text fw={500} c={green} span>the better your score!</Text> 
               </Text>
 
               <Text fw={300}>
@@ -106,7 +107,7 @@ const HowToPlay = (props: HowToPlayProps) => {
               </Text>
             </Card>
             <Text fw={300}>
-              Select the target artist once they pop up or you&apos;ll miss it!
+            <Text fw={500} c={white} span>Select the target artist</Text> once they pop up or you&apos;ll miss it!
               Have fun!
             </Text>
           </Group>
