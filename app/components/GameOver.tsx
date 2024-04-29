@@ -32,6 +32,7 @@ import { getCachedGuesses } from "../db";
 import ScoreDisplay from "./ScoreDisplay";
 import StreakDisplay from "./StreakDisplay";
 import { white, green, gray9, gray8 } from "../colors";
+import { createClient } from "@/utils/supabase/client";
 
 export interface GameOverProps {
   opened: boolean;
@@ -78,6 +79,22 @@ const getMinPath = (
   return [];
 };
 
+const getCustomGameGuesses = async (
+  matchup: string[]
+): Promise<number[]> => {
+  const supabase = createClient();
+  const { data, error } = await supabase
+    .from("custom_game_scores")
+    .select("guesses")
+    .eq("matchup", JSON.stringify(matchup))
+    .eq("won", true);
+  if (error) {
+    console.error("Error fetching custom game guesses", error);
+    return [];
+  }
+  return data?.map((d: any) => d.guesses);
+};
+
 const GameOver = ({
   opened,
   close,
@@ -118,16 +135,30 @@ const GameOver = ({
     mPath.unshift(start);
     setMinPath(mPath);
     if (is_custom) {
-      setLoadingGlobalScore(false);
-      return;
+      getCustomGameGuesses(matchup).then((res) => {
+        if (res !== null) {
+          setAllGuesses(res);
+        }
+      });
+    } else {
+      getCachedGuesses(matchupID).then((res) => {
+        if (res !== null) {
+          setAllGuesses(res);
+        }
+      });
     }
-    getCachedGuesses(matchupID).then((res) => {
-      if (res !== null) {
-        setAllGuesses(res);
-      }
-      setLoadingGlobalScore(false);
-    });
-  }, [opened, is_custom, loadingGlobalScore, matchupID, web, start, end, minPath.length]);
+    setLoadingGlobalScore(false);
+  }, [
+    opened,
+    is_custom,
+    loadingGlobalScore,
+    matchupID,
+    web,
+    start,
+    end,
+    minPath.length,
+    matchup,
+  ]);
 
   // Auto open min path if won
   useEffect(() => {
@@ -190,13 +221,22 @@ const GameOver = ({
               resets={resets}
               small={window.innerWidth > phoneMaxWidth ? false : true}
             />
-            <Text ta="center" fw={700} size="sm">
+            <Text
+              ta="center"
+              fw={700}
+              size={window.innerWidth > phoneMaxWidth ? "md" : "sm"}
+            >
               Your Path
             </Text>
             <ScrollablePath matchup={matchup} web={web} path={path} won={won} />
 
             <Group align="center" justify="center" gap="sm">
-              <Text fw={700} size="sm" ta="center">
+              <Text
+                fw={700}
+                size={window.innerWidth > phoneMaxWidth ? "md" : "sm"}
+                ta="center"
+                c={won && guesses === minPathLength ? green : undefined}
+              >
                 {won && guesses === minPathLength
                   ? `Congrats! The shortest path was ${minPathLength} guesses long`
                   : `Shortest Path: ${minPathLength} guesses`}
@@ -205,9 +245,9 @@ const GameOver = ({
                 <Button
                   leftSection={
                     minPathOpened ? (
-                      <Text size='xl'>{"–"}</Text>
+                      <Text size="xl">{"–"}</Text>
                     ) : (
-                      <Text size='lg'>+</Text>
+                      <Text size="lg">+</Text>
                     )
                   }
                   color={gray8}
@@ -228,29 +268,40 @@ const GameOver = ({
               ></ScrollablePath>
             </Collapse>
 
-            {!is_custom &&
-              (loadingGlobalScore ? (
-                <Loader color={green} size="sm" />
-              ) : (
+            {loadingGlobalScore ? (
+              <Loader color={green} size="sm" />
+            ) : (
+              (allGuesses.length >= 2) && (
                 <GlobalScoreStats
                   won={won}
                   guesses={guesses}
                   allGuesses={allGuesses}
                 />
-              ))}
+              )
+            )}
 
             {!is_custom && (
               <Fragment>
-                <Text ta="center" fw={700} size="sm">
+                <Text
+                  ta="center"
+                  fw={700}
+                  size={window.innerWidth > phoneMaxWidth ? "md" : "sm"}
+                >
                   Your Stats
                 </Text>
                 <Card shadow="lg" radius="lg" p="xs">
                   <Group align="center" justify="center">
-                    <StreakDisplay streak={streak}/>
+                    <StreakDisplay streak={streak} />
                     <Divider orientation="vertical" />
-                    <ScoreDisplay text={"Longest Streak"} value={longest_streak.toString()}/>
+                    <ScoreDisplay
+                      text={"Longest Streak"}
+                      value={longest_streak.toString()}
+                    />
                     <Divider orientation="vertical" />
-                    <ScoreDisplay text={"Games Won"} value={days_played.toString()}/>
+                    <ScoreDisplay
+                      text={"Games Won"}
+                      value={days_played.toString()}
+                    />
                   </Group>
                 </Card>
               </Fragment>
@@ -258,7 +309,10 @@ const GameOver = ({
             {!is_custom && <CountdownClock />}
             {is_custom && (
               <Stack gap="xs" align="center" className="pt-5">
-                <Text fw={700} size="md">
+                <Text
+                  fw={700}
+                  size={window.innerWidth > phoneMaxWidth ? "md" : "sm"}
+                >
                   Play another!
                 </Text>
                 <CustomGameButton

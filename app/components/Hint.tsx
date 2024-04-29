@@ -55,8 +55,7 @@ const Hint = (props: HintProps) => {
         opened={opened}
         onClose={closeHint}
         size={window.innerWidth > phoneMaxWidth ? "610" : "75%"}
-        style={{ borderRadius: "20px" }}
-        padding="sm"
+        style={{padding: '0px'}}
         position={"bottom"}
       >
         <Drawer.Overlay />
@@ -67,14 +66,12 @@ const Hint = (props: HintProps) => {
             onClick={closeHint}
           >
             <Drawer.Title style={{ width: "100%" }}>
-              <Stack gap="xs">
                 <RelatedArtistsTitle
                   artist={endArtist}
                   won={false}
                   gameOver={false}
                   endArtist={endArtist}
                 />
-              </Stack>
             </Drawer.Title>
             <Drawer.CloseButton />
           </Drawer.Header>
