@@ -34,7 +34,7 @@ const AffixStatus = (props: AffixStatusProps) => {
   const mounted = !sideDrawerOpened && ((scrolled === true && !gameOver) || playingAudio !== null);
 
   return (
-    <Affix w="100%" h={0} top={0}>
+    <Affix w="100%" h={0} top={0} zIndex={201}>
       <Transition transition="slide-down" mounted={mounted}>
         {(transitionStyles) => (
           <Card
