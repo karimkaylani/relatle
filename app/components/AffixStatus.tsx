@@ -40,13 +40,13 @@ const AffixStatus = (props: AffixStatusProps) => {
           <Card
             onClick={onTap}
             ref={groupRef}
-            p="sm"
+            p={playingAudio ? '3px' : '9px'}
             withBorder
             styles={{ root: { maxHeight: "130px", overflow: "auto" } }}
             style={transitionStyles}
           >
             {playingAudio && playingArtist && (
-              <Text ta="center" fw={700} className="m-0 p-0 top-0">
+              <Text ta="center" fw={700} styles={{root: {marginBottom: '7px'}}}>
                 Playing{" "}
                 <Avatar
                   radius="sm"
