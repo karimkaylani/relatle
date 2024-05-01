@@ -31,6 +31,7 @@ import GlobalScoreStats from "./GlobalScoreStats";
 import { white, green, gray9, gray8 } from "../colors";
 import RelatleButton from "./RelatleButton";
 import { getCachedStats } from "../db";
+import Realistic from "react-canvas-confetti/dist/presets/fireworks";
 
 export interface GameOverProps {
   opened: boolean;
@@ -116,6 +117,18 @@ const GameOver = ({
   const [minPathLength, setMinPathLength] = useState<number>(0);
   const [stats, setStats] = useState<Stats|null>(null);
   const [loadingGlobalScore, setLoadingGlobalScore] = useState<boolean>(true);
+  const [confetti, setConfetti] = useState<boolean>(false);
+
+  // toggle confetti function with delay
+  const toggleConfetti = () => {
+    if (confetti) {
+      return;
+    }
+    setConfetti(true);
+    setTimeout(() => {
+      setConfetti(false);
+    }, 1000);
+  };
 
   useEffect(() => {
     if (!opened || !loadingGlobalScore || minPath.length > 0) {
@@ -124,6 +137,9 @@ const GameOver = ({
     const mPath = getMinPath(web, start, end);
     let mPathLength = mPath.length;
     setMinPathLength(mPathLength);
+    if (won && guesses === mPathLength) {
+      toggleConfetti();
+    }
     mPath.unshift(start);
     setMinPath(mPath);
     getCachedStats(matchup, mPathLength).then((res) => {
@@ -133,7 +149,8 @@ const GameOver = ({
       console.error(e);
       setLoadingGlobalScore(false);
     });
-  }, [opened, is_custom, loadingGlobalScore, matchupID, web, start, end, minPath.length, matchup, minPathLength]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [opened]);
 
   // Auto open min path if won
   useEffect(() => {
@@ -231,9 +248,9 @@ const GameOver = ({
                 onClick={toggleMinPath}
               />
             )}
-
+            {confetti && <Realistic autorun={{speed: 1.5, duration: 3}}/>}
             {won && guesses === minPathLength && (
-              <RelatleButton size='sm' icon={<IconStar size={18}/>} text={"You got the Shortest Path!"} color={green} onClick={() => {}}/>
+              <RelatleButton size='sm' icon={<IconStar size={18}/>} text={"You got the Shortest Path!"} color={green} onClick={toggleConfetti}/>
             )}
 
             <Collapse in={minPathOpened}>
