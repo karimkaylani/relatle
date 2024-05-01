@@ -49,20 +49,21 @@ const CountdownClock = () => {
           Time Until Next Matchup
         </Text>
         <FlipNumbers
-          height={24}
-          width={20}
+          height={38}
+          width={24}
           color={white}
           play
           perspective={150}
           numbers={`${timeLeft.hrs}:${timeLeft.mins}:${timeLeft.secs}`}
           numberStyle={{
             fontFamily: "OpenSauceOne",
+            fontSize: '22px',
             fontWeight: 700,
           }}
           nonNumberStyle={{
             fontFamily: "OpenSauceOne",
             fontWeight: 700,
-            fontSize: '32px',
+            fontSize: '28px',
             color: white,
             marginBottom: '5px',
           }}
