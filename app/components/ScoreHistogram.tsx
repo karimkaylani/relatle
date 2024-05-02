@@ -12,10 +12,11 @@ const ScoreHistogram = (props: ScoreHistogramProps) => {
   let { bins, won, guesses } = props;
   const [width, setWidth] = useState(0);
   let maxWidth = 300;
-  const widthPadding = 0;
+  const widthPadding = 80;
   const maxPctg = Math.max(...Object.values(bins));
   maxWidth = maxPctg > 0 ? maxWidth / (maxPctg / 100) : maxWidth;
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const handleResize = () =>
     setWidth(
       window.innerWidth > maxWidth + widthPadding
@@ -27,7 +28,7 @@ const ScoreHistogram = (props: ScoreHistogramProps) => {
     handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  }, [handleResize]);
 
   const scoreInBin = (guesses: number, bin: string) => {
     const [min, max] = bin.split("-").map((x) => parseInt(x));
@@ -39,7 +40,7 @@ const ScoreHistogram = (props: ScoreHistogramProps) => {
     return (
       <Group gap="3px" wrap="nowrap">
         <Paper
-          w={width * (value / 100)}
+          w={(width - widthPadding) * (value / 100)}
           h={24}
           bg={color}
           style={{ borderRadius: "0px 15px 15px 0px" }}
