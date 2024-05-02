@@ -21,7 +21,7 @@ const ShareButton = ({
   color,
   size='md'
 }: ShareButtonProps) => {
-  if (navigator.share && navigator.canShare({ text: shareText })) {
+  if (navigator.share && navigator.canShare && navigator.canShare({ text: shareText })) {
     return (
       <RelatleButton
         disabled={disabled}
