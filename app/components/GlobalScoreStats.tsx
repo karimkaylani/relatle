@@ -46,11 +46,11 @@ const GlobalScoreStats = (props: GlobalScoreStatsProps) => {
             label={"Number of Plays"}
             value={stats.numGames.toLocaleString()}
           />
+          <Stat label={"Win Rate"} value={stats.winRate.toFixed(0) + "%"} />
           <Stat
             label={"Perfect Game Rate"}
             value={stats.perfectGameRate.toFixed(0) + "%"}
           />
-          <Stat label={"Win Rate"} value={stats.winRate.toFixed(0) + "%"} />
         </Stack>
       </Group>
       <Text ta="center" size="sm" fs='italic' c={'#F1F3F5'}>
