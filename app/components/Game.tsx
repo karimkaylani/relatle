@@ -47,6 +47,7 @@ import {
 import SideDrawer from "./SideDrawer";
 import ClickableIcon from "./ClickableIcon";
 import { green, white, red, gray7, gray9, gray8, yellow } from "../colors";
+import PathModal from "./PathModal";
 
 export interface Artist {
   name: string;
@@ -189,6 +190,9 @@ const Game = (props: GameProps) => {
   const [newFeatureModalOpened, newFeatureModalHandlers] = useDisclosure(false);
   const { open: newFeatureModalOpen } = newFeatureModalHandlers;
   const [sidebarOpened, sidebarHandlers] = useDisclosure(false);
+
+  const [pathModalOpened, pathModalHandlers] = useDisclosure(false);
+  const { open: pathModalOpen } = pathModalHandlers;
 
   const [usedHint, setUsedHint] = useState<boolean>(false);
 
@@ -782,17 +786,22 @@ const Game = (props: GameProps) => {
           />
         </PlayingAudioContext.Provider>
       </Stack>
-      {gameOver ? (
-        <HoverButton onTap={winModalOpen}>
-          <Scoreboard
-            guesses={guesses}
-            resets={resets}
-            borderColor={won ? green : red}
-          />
-        </HoverButton>
-      ) : (
-        <Scoreboard guesses={guesses} resets={resets} />
-      )}
+      <HoverButton onTap={gameOver ? winModalOpen : pathModalOpen}>
+        <Scoreboard
+          guesses={guesses}
+          resets={resets}
+          borderColor={gameOver ? (won ? green : red) : undefined}
+        />
+      </HoverButton>
+      <PathModal
+        opened={pathModalOpened}
+        handlers={pathModalHandlers}
+        path={path}
+        matchup={matchup}
+        guesses={guesses}
+        resets={resets}
+        web={web}
+      />
       <Popover
         position="bottom"
         opened={endMissed}

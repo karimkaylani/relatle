@@ -6,7 +6,7 @@ import { yellow } from "../colors";
 export interface ScoreboardProps {
   guesses: number;
   resets: number;
-  borderColor?: string;
+  borderColor?: string|undefined;
   small?: boolean;
 }
 
