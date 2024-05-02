@@ -29,7 +29,7 @@ const ScrollablePath = (props: ScrollablePathProps) => {
     >
       <Group justify="flex-start" gap="xs">
         {path.map((artist_name, index) => (
-          <Fragment key={artist_name}>
+          <Fragment key={index}>
             {artist_name === "RESET" ? (
               <Text c={yellow} size="sm" fw={700}>
                 RESET

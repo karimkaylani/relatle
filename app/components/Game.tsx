@@ -190,6 +190,7 @@ const Game = (props: GameProps) => {
   const [newFeatureModalOpened, newFeatureModalHandlers] = useDisclosure(false);
   const { open: newFeatureModalOpen } = newFeatureModalHandlers;
   const [sidebarOpened, sidebarHandlers] = useDisclosure(false);
+  const { open: sidebarOpen } = sidebarHandlers;
 
   const [pathModalOpened, pathModalHandlers] = useDisclosure(false);
   const { open: pathModalOpen } = pathModalHandlers;
@@ -834,10 +835,8 @@ const Game = (props: GameProps) => {
         web={web}
         is_custom={is_custom}
         matchupID={matchupID}
-        streak={streak}
-        longest_streak={longestStreak}
-        days_played={numDaysPlayed}
         customModalOpen={customModalOpen}
+        openStats={sidebarOpen}
       />
       <PlayingAudioContext.Provider
         value={{

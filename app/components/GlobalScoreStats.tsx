@@ -29,11 +29,11 @@ const GlobalScoreStats = (props: GlobalScoreStatsProps) => {
   return (
     <Stack align="center" justify="center">
        <Text fw={700} ta="center" size="sm" c={white}>
-        {"Score Distribution"}
+        {"Global Score Distribution"}
       </Text>
       <ScoreHistogram bins={stats.bins} guesses={guesses} won={won} />
       <Text fw={700} ta="center" size="sm" c={white}>
-        {"Global Matchup Stats"}
+        {"Matchup Stats"}
       </Text>
       <Group justify="center" align="center" gap="35px">
         <Stack>
@@ -53,7 +53,7 @@ const GlobalScoreStats = (props: GlobalScoreStatsProps) => {
           />
         </Stack>
       </Group>
-      <Text ta="center" size="sm" fs='italic' c={'#F1F3F5'}>
+      <Text ta="center" size="sm">
         These values will update every couple of minutes
       </Text>
     </Stack>
