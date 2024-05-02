@@ -14,10 +14,10 @@ export interface GlobalScoreStatsProps {
 const Stat = (props: { label: string; value: string }) => {
   return (
     <Group justify="space-between">
-      <Text ta="center">
+      <Text ta="center" size='sm'>
         {props.label}
       </Text>
-      <Text ta="center" c={white} fw={700}>
+      <Text ta="center" c={white} fw={700} size='sm'>
         {props.value}
       </Text>
     </Group>
@@ -29,7 +29,7 @@ const GlobalScoreStats = (props: GlobalScoreStatsProps) => {
   return (
     <Stack align="center" justify="center">
       <Text fw={700} ta="center" size="sm" c={white}>
-        {"Global Results"}
+        {"Score Distribution"}
       </Text>
       {!stats ? (
         <Text ta="center" size="sm" c={white}>
@@ -37,6 +37,10 @@ const GlobalScoreStats = (props: GlobalScoreStatsProps) => {
         </Text>
       ) : (
         <>
+          <ScoreHistogram bins={stats.bins} guesses={guesses} won={won}/>
+          <Text fw={700} ta="center" size="sm" c={white}>
+            {"Global Results"}
+          </Text>
           <Group justify='center' align="center" gap='35px'>
             <Stack>
                 <Stat label={"Shortest Path"} value={shortestPath.toString()} />
@@ -49,10 +53,6 @@ const GlobalScoreStats = (props: GlobalScoreStatsProps) => {
                 <Stat label={"Win Rate"} value={stats.winRate.toFixed(0) + "%"} />
             </Stack>
           </Group>
-          <Text fw={700} ta="center" size="sm" c={white}>
-            {"Score Distribution"}
-          </Text>
-          <ScoreHistogram bins={stats.bins} guesses={guesses} won={won}/>
           <Text ta="center" size="sm">
             These values will update every couple of minutes
           </Text>

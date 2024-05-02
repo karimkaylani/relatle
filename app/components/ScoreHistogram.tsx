@@ -1,5 +1,5 @@
 import { Box, Divider, Group, Paper, Stack, Text } from "@mantine/core";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { gray7, green, red, white } from "../colors";
 
 export interface ScoreHistogramProps {
@@ -10,10 +10,24 @@ export interface ScoreHistogramProps {
 
 const ScoreHistogram = (props: ScoreHistogramProps) => {
   let { bins, won, guesses } = props;
-  // 330.88 width max
-  let maxWidth = window.innerWidth > 365 ? 280 : 200;
+  const [width, setWidth] = useState(0);
+  let maxWidth = 300;
+  const widthPadding = 0;
   const maxPctg = Math.max(...Object.values(bins));
   maxWidth = maxPctg > 0 ? maxWidth / (maxPctg / 100) : maxWidth;
+
+  const handleResize = () =>
+    setWidth(
+      window.innerWidth > maxWidth + widthPadding
+        ? maxWidth
+        : window.innerWidth - widthPadding
+    );
+
+  useEffect(() => {
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const scoreInBin = (guesses: number, bin: string) => {
     const [min, max] = bin.split("-").map((x) => parseInt(x));
@@ -27,7 +41,7 @@ const ScoreHistogram = (props: ScoreHistogramProps) => {
     const { color, value } = props;
     return (
     <Group gap='3px' wrap="nowrap">
-        <Paper w={maxWidth * (value / 100)} h={24} bg={color} style={{borderRadius: '0px 15px 15px 0px'}} />
+        <Paper w={width * (value / 100)} h={24} bg={color} style={{borderRadius: '0px 15px 15px 0px'}} />
         <Text c={white} fw={700} size="sm">
             {value.toFixed(0) + "%"}
         </Text>
@@ -36,7 +50,7 @@ const ScoreHistogram = (props: ScoreHistogramProps) => {
   };
 
   return (
-    <Group gap="0px" w="100%" wrap="nowrap">
+    <Group gap="0px" w={width} wrap="nowrap" justify="center">
       <Stack className="mr-2" justify="space-around" h={184}>
         {Object.keys(bins).map((b, i) => (
             <Text c={white} fw={700} size="sm" key={i}>

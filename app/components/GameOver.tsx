@@ -119,6 +119,13 @@ const GameOver = ({
   const [loadingGlobalScore, setLoadingGlobalScore] = useState<boolean>(true);
   const [confetti, setConfetti] = useState<boolean>(false);
 
+  const confettiDecorateOptions = (defaultOptions: any) => {
+    return {
+      ...defaultOptions,
+      colors: [green]
+    };
+  };
+
   // toggle confetti function with delay
   const toggleConfetti = () => {
     if (confetti) {
@@ -248,7 +255,7 @@ const GameOver = ({
                 onClick={toggleMinPath}
               />
             )}
-            {confetti && <Realistic autorun={{speed: 1.5, duration: 3}}/>}
+            {confetti && <Realistic autorun={{speed: 1.5, duration: 3}} decorateOptions={confettiDecorateOptions} />}
             {won && guesses === minPathLength && (
               <RelatleButton size='sm' icon={<IconStar size={18}/>} text={"You got the Shortest Path!"} color={green} onClick={toggleConfetti}/>
             )}
