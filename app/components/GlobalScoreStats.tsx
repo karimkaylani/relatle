@@ -29,7 +29,7 @@ const GlobalScoreStats = (props: GlobalScoreStatsProps) => {
   return (
     <Stack align="center" justify="center">
       <Text fw={700} ta="center" size="sm" c={white}>
-        {"Score Distribution"}
+        {"Global Matchup Stats"}
       </Text>
       {!stats ? (
         <Text ta="center" size="sm" c={white}>
@@ -37,10 +37,6 @@ const GlobalScoreStats = (props: GlobalScoreStatsProps) => {
         </Text>
       ) : (
         <>
-          <ScoreHistogram bins={stats.bins} guesses={guesses} won={won}/>
-          <Text fw={700} ta="center" size="sm" c={white}>
-            {"Global Results"}
-          </Text>
           <Group justify='center' align="center" gap='35px'>
             <Stack>
                 <Stat label={"Shortest Path"} value={shortestPath.toString()} />
@@ -53,6 +49,10 @@ const GlobalScoreStats = (props: GlobalScoreStatsProps) => {
                 <Stat label={"Win Rate"} value={stats.winRate.toFixed(0) + "%"} />
             </Stack>
           </Group>
+          <Text fw={700} ta="center" size="sm" c={white}>
+            {"Score Distribution"}
+          </Text>
+          <ScoreHistogram bins={stats.bins} guesses={guesses} won={won}/>
           <Text ta="center" size="sm">
             These values will update every couple of minutes
           </Text>
