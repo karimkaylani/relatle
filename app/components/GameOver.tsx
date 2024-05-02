@@ -1,6 +1,6 @@
 "use client";
 
-import React, { Fragment, useEffect, useRef, useState } from "react";
+import React, { Fragment, useCallback, useEffect, useRef, useState } from "react";
 import {
   Text,
   Flex,
@@ -36,7 +36,7 @@ import CustomGameButton from "./CustomGameButton";
 import GlobalScoreStats from "./GlobalScoreStats";
 import { white, green, gray9, gray8 } from "../colors";
 import RelatleButton from "./RelatleButton";
-import { getCachedStats } from "../db";
+import { getStats } from "../db";
 import Realistic from "react-canvas-confetti/dist/presets/fireworks";
 
 export interface GameOverProps {
@@ -152,7 +152,7 @@ const GameOver = ({
     }
     mPath.unshift(start);
     setMinPath(mPath);
-    getCachedStats(matchup, mPathLength)
+    getStats(matchup, mPathLength)
       .then((res) => {
         setStats(res);
         setLoadingGlobalScore(false);

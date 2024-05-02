@@ -1,9 +1,8 @@
-"use server";
-import { createClient } from "@/utils/supabase/server";
-import { unstable_cache } from "next/cache";
+'use client'
+import { createClient } from "@/utils/supabase/client";
 import { Stats } from "./components/GameOver";
 
-const getStats = async (matchup: string[], shortestPath: number): Promise<Stats | null> => {
+export const getStats = async (matchup: string[], shortestPath: number): Promise<Stats | null> => {
   const supabase = createClient();
   console.log("Fetching guesses for matchup", matchup);
   let { data, error } = await supabase
@@ -97,10 +96,3 @@ const getStats = async (matchup: string[], shortestPath: number): Promise<Stats 
     bins,
   };
 };
-
-export const getCachedStats = unstable_cache(
-  async (matchup: string[], shortestPath: number): Promise<Stats | null> =>
-    getStats(matchup, shortestPath),
-  ['stats'],
-  { tags: ["stats"], revalidate: 300 }
-);
