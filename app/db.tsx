@@ -3,7 +3,7 @@ import { createClient } from "@/utils/supabase/server";
 import { unstable_cache } from "next/cache";
 import { Stats } from "./components/GameOver";
 
-export const getStats = async (matchup: string[], shortestPath: number): Promise<Stats | null> => {
+const getStats = async (matchup: string[], shortestPath: number): Promise<Stats | null> => {
   const supabase = createClient();
   console.log("Fetching guesses for matchup", matchup);
   let { data, error } = await supabase
@@ -29,6 +29,10 @@ export const getStats = async (matchup: string[], shortestPath: number): Promise
   let customGuesses = customData?.filter((d: any) => d.won).map((d: any) => d.guesses) ?? [];
   guesses = guesses.concat(customGuesses);
 
+  if (guesses.length < 3) {
+    return null;
+  }
+
   // count number of games with won = false
   let numCustomLost = customData?.filter((d: any) => !d.won).length ?? 0;
 
@@ -46,13 +50,21 @@ export const getStats = async (matchup: string[], shortestPath: number): Promise
   const numLost = numCustomLost + numGivenUp;
   const numWon = guesses.length;
   const numGames = numWon + numLost;
-  if (numGames < 3) {
-    return null;
-  }
   const perfectGames = guesses.filter((g: number) => g === shortestPath).length;
   const perfectGameRate = (perfectGames / numGames) * 100;
   const winRate = (numWon / numGames) * 100;
-  const binsRange = [[shortestPath, 10], [11, 15], [16, 20], [21, 25], [26, Infinity]];
+  
+  const binSize = 5;
+  const numBins = 5;  
+  let binsRange = [];
+
+  let curr = shortestPath
+  for (let i = 0; i < numBins - 1; i++) {
+    let next = curr + (binSize - 1);
+    binsRange.push([curr, next]);
+    curr = next + 1;
+  }
+  binsRange.push([curr, Infinity]);
 
   const getKey = (b: number[]) => {
     if (b[1] === Infinity) {

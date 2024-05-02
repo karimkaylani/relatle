@@ -30,6 +30,7 @@ const ScoreHistogram = (props: ScoreHistogramProps) => {
   }, [handleResize]);
 
   const scoreInBin = (guesses: number, bin: string) => {
+    if (bin.endsWith("+")) return guesses >= parseInt(bin.split("+")[0]);
     const [min, max] = bin.split("-").map((x) => parseInt(x));
     return guesses >= min && guesses <= max;
   };

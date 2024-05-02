@@ -254,7 +254,7 @@ const GameOver = ({
                 onClick={toggleMinPath}
               />
             )}
-            {confetti && <Realistic autorun={{speed: 1.5, duration: 3}} decorateOptions={confettiDecorateOptions} />}
+            {confetti && <Realistic autorun={{speed: 1}} decorateOptions={confettiDecorateOptions} />}
             {won && guesses === minPathLength && (
               <RelatleButton size='sm' icon={<IconStar size={18}/>} text={"You got the Shortest Path!"} color={green} onClick={toggleConfetti}/>
             )}
