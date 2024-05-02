@@ -236,7 +236,6 @@ const GameOver = ({
                 matchup={matchup}
                 web={web}
                 path={path}
-                won={won}
               />
             </Collapse>
 
@@ -265,7 +264,6 @@ const GameOver = ({
                 matchup={matchup}
                 web={web}
                 path={minPath}
-                won={true}
               ></ScrollablePath>
             </Collapse>
 
