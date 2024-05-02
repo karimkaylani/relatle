@@ -266,6 +266,8 @@ const ArtistCard = ({
             userSelect: "none",
             WebkitUserSelect: "none",
             WebkitTouchCallout: "none",
+            msUserSelect: "none",
+            MozUserSelect: "none",
           },
         }}
       >
