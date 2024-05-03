@@ -168,10 +168,8 @@ const GameOver = ({
   useEffect(() => {
     if (!won) {
       openMinPath();
-      closePath();
     } else {
       closeMinPath();
-      openPath();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [won]);

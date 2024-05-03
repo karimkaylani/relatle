@@ -54,7 +54,7 @@ const GlobalScoreStats = (props: GlobalScoreStatsProps) => {
         </Stack>
       </Group>
       <Text ta="center" size="sm">
-        These values will update every couple of minutes
+        These values will update as the day progresses
       </Text>
     </Stack>
   );
