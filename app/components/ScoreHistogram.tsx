@@ -66,7 +66,7 @@ const ScoreHistogram = (props: ScoreHistogramProps) => {
         {Object.keys(bins).map((b, i) => (
           <Bar
             key={i}
-            color={scoreInBin(guesses, b) ? (won ? green : red) : gray7}
+            color={won && scoreInBin(guesses, b) ? green: gray7}
             value={bins[b]}
           />
         ))}
