@@ -25,17 +25,17 @@ const NewFeatureModal = (props: NewFeatureModalProps) => {
       <Stack align="center" justify="center" gap="lg">
         <Stack gap="md">
           <Text ta="center" c={white} fw={700} size="xl">
-            Relatle has new artists!
+            More Matchup Stats!
           </Text>
-          <Text ta="center" size="md">
-          {"We’ve added more of your favs and now let you pick from up to 12 artists per guess (previously 10)."}
+          <Text ta="center" size="md" w={350}>
+          {"When finishing a daily or custom matchup, you'll now get loads of new global stats. There’s also a special surprise for getting the shortest path!"}
           </Text>
         </Stack>
-        <Image w={274} src="images/new-artists.png" alt="Song Previews" />
+        <Image w={274} src="images/new-stats.png" alt="Song Previews" />
         <Group>
           <RelatleButton color={green} onClick={() => {
-            window.open("https://www.reddit.com/r/relatle/comments/1cdww7v/new_artists_added_to_relatle_100/", "_blank");
-          }} icon={<IconBrandReddit />} text="View New Artists"/>
+            window.open("https://www.reddit.com/r/relatle/comments/1cixlur/update_new_matchup_stats_view_current_path/", "_blank");
+          }} icon={<IconBrandReddit />} text="Discuss"/>
           <RelatleButton color={white} onClick={newFeatureModalClose} text="Got It!"/>
         </Group>
         

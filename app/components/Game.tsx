@@ -203,7 +203,7 @@ const Game = (props: GameProps) => {
   const [playingArtist, setPlayingArtist] = useState<Artist | null>(null);
 
   // For new feature modal pop-up
-  const latestFeatureId = 1;
+  const latestFeatureId = 2;
 
   const searchParams = useSearchParams();
   const { scrollIntoView, targetRef: scrollViewRef } =
