@@ -38,7 +38,6 @@ const CountdownClock = () => {
     return () => clearInterval(interval);
   }, []);
   return (
-    <Card shadow="md" radius="lg" p="xs">
       <Stack
         gap="3px"
         justify="center"
@@ -46,23 +45,30 @@ const CountdownClock = () => {
         className="mb-1"
         styles={{ root: { minWidth: "80px" } }}
       >
-        <Text size="sm" ta="center" fw={500}>
-          Time until next matchup
+        <Text size="sm" ta="center" fw={700} c={white}>
+          Time Until Next Matchup
         </Text>
         <FlipNumbers
-          height={14}
-          width={11}
+          height={38}
+          width={16}
           color={white}
           play
           perspective={150}
           numbers={`${timeLeft.hrs}:${timeLeft.mins}:${timeLeft.secs}`}
           numberStyle={{
             fontFamily: "OpenSauceOne",
+            fontSize: '16px',
             fontWeight: 700,
+          }}
+          nonNumberStyle={{
+            fontFamily: "OpenSauceOne",
+            fontWeight: 700,
+            fontSize: '28px',
+            color: white,
+            marginBottom: '5px',
           }}
         />
       </Stack>
-    </Card>
   );
 };
 

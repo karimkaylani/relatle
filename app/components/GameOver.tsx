@@ -1,6 +1,6 @@
 "use client";
 
-import React, { Fragment, useEffect, useRef, useState } from "react";
+import React, { Fragment, useCallback, useEffect, useRef, useState } from "react";
 import {
   Text,
   Flex,
@@ -21,17 +21,23 @@ import ScrollablePath from "./ScrollablePath";
 import Scoreboard from "./Scoreboard";
 import SharePath from "./SharePath";
 import * as Collections from "typescript-collections";
-import { IconArrowDown, IconArrowUp, IconBolt } from "@tabler/icons-react";
+import {
+  IconArrowDown,
+  IconArrowUp,
+  IconBolt,
+  IconChartBar,
+  IconStar,
+} from "@tabler/icons-react";
 import { useDisclosure } from "@mantine/hooks";
 import Matchup from "./Matchup";
 import { useSwipeable } from "react-swipeable";
 import CountdownClock from "./CountdownClock";
 import CustomGameButton from "./CustomGameButton";
 import GlobalScoreStats from "./GlobalScoreStats";
-import { getCachedGuesses } from "../db";
-import ScoreDisplay from "./ScoreDisplay";
-import StreakDisplay from "./StreakDisplay";
 import { white, green, gray9, gray8 } from "../colors";
+import RelatleButton from "./RelatleButton";
+import { getStats } from "../db";
+import Realistic from "react-canvas-confetti/dist/presets/fireworks";
 
 export interface GameOverProps {
   opened: boolean;
@@ -45,9 +51,15 @@ export interface GameOverProps {
   is_custom: boolean;
   matchupID: number;
   customModalOpen: () => void;
-  streak: number;
-  longest_streak: number;
-  days_played: number;
+  openStats: () => void;
+}
+
+export interface Stats {
+  averageScore: number;
+  numGames: number;
+  perfectGameRate: number;
+  winRate: number;
+  bins: { [key: string]: number };
 }
 
 const getMinPath = (
@@ -90,15 +102,15 @@ const GameOver = ({
   is_custom,
   matchupID,
   customModalOpen,
-  streak,
-  longest_streak,
-  days_played,
+  openStats,
 }: GameOverProps) => {
   const [start, end] = matchup;
   const [
     minPathOpened,
     { open: openMinPath, close: closeMinPath, toggle: toggleMinPath },
   ] = useDisclosure(false);
+  const [pathOpened, { open: openPath, close: closePath, toggle: togglePath }] =
+    useDisclosure(false);
 
   const headerSwipeHandlers = useSwipeable({
     onSwipedDown: close,
@@ -106,35 +118,60 @@ const GameOver = ({
 
   const [minPath, setMinPath] = useState<string[]>([]);
   const [minPathLength, setMinPathLength] = useState<number>(0);
-  const [allGuesses, setAllGuesses] = useState<number[]>([]);
+  const [stats, setStats] = useState<Stats | null>(null);
   const [loadingGlobalScore, setLoadingGlobalScore] = useState<boolean>(true);
+  const [confetti, setConfetti] = useState<boolean>(false);
+
+  const confettiDecorateOptions = (defaultOptions: any) => {
+    return {
+      ...defaultOptions,
+      colors: [green],
+    };
+  };
+
+  // toggle confetti function with delay
+  const toggleConfetti = () => {
+    if (confetti) {
+      return;
+    }
+    setConfetti(true);
+    setTimeout(() => {
+      setConfetti(false);
+    }, 1000);
+  };
 
   useEffect(() => {
     if (!opened || !loadingGlobalScore || minPath.length > 0) {
       return;
     }
     const mPath = getMinPath(web, start, end);
-    setMinPathLength(mPath.length);
+    let mPathLength = mPath.length;
+    setMinPathLength(mPathLength);
+    if (won && guesses === mPathLength) {
+      toggleConfetti();
+    }
     mPath.unshift(start);
     setMinPath(mPath);
-    if (is_custom) {
-      setLoadingGlobalScore(false);
-      return;
-    }
-    getCachedGuesses(matchupID).then((res) => {
-      if (res !== null) {
-        setAllGuesses(res);
-      }
-      setLoadingGlobalScore(false);
-    });
-  }, [opened, is_custom, loadingGlobalScore, matchupID, web, start, end, minPath.length]);
+    getStats(matchup, mPathLength)
+      .then((res) => {
+        setStats(res);
+        setLoadingGlobalScore(false);
+      })
+      .catch((e) => {
+        console.error(e);
+        setLoadingGlobalScore(false);
+      });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [opened]);
 
   // Auto open min path if won
   useEffect(() => {
     if (!won) {
       openMinPath();
+      closePath();
     } else {
       closeMinPath();
+      openPath();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [won]);
@@ -190,71 +227,90 @@ const GameOver = ({
               resets={resets}
               small={window.innerWidth > phoneMaxWidth ? false : true}
             />
-            <Text ta="center" fw={700} size="sm">
-              Your Path
-            </Text>
-            <ScrollablePath matchup={matchup} web={web} path={path} won={won} />
+            <RelatleButton
+              size="sm"
+              icon={
+                <Text size="lg" c={white}>
+                  {pathOpened ? "–" : "+"}
+                </Text>
+              }
+              color={white}
+              text={pathOpened ? "Hide Your Path" : "Show Your Path"}
+              onClick={togglePath}
+            />
+            <Collapse in={pathOpened}>
+              <ScrollablePath matchup={matchup} web={web} path={path} />
+            </Collapse>
 
-            <Group align="center" justify="center" gap="sm">
-              <Text fw={700} size="sm" ta="center">
-                {won && guesses === minPathLength
-                  ? `Congrats! The shortest path was ${minPathLength} guesses long`
-                  : `Shortest Path: ${minPathLength} guesses`}
-              </Text>
-              {(!won || guesses !== minPathLength) && (
-                <Button
-                  leftSection={
-                    minPathOpened ? (
-                      <Text size='xl'>{"–"}</Text>
-                    ) : (
-                      <Text size='lg'>+</Text>
-                    )
-                  }
-                  color={gray8}
-                  size="xs"
-                  styles={{ section: { marginRight: "4px" } }}
-                  onClick={toggleMinPath}
-                >
-                  {minPathOpened ? "Hide" : "Show"}
-                </Button>
-              )}
-            </Group>
+            {(!won || guesses !== minPathLength) && (
+              <RelatleButton
+                size="sm"
+                icon={
+                  <Text size="lg" c={white}>
+                    {minPathOpened ? "–" : "+"}
+                  </Text>
+                }
+                color={white}
+                text={
+                  (minPathOpened
+                    ? "Hide Shortest Path"
+                    : "Show Shortest Path") +
+                  " (" +
+                  minPathLength +
+                  " guesses)"
+                }
+                onClick={toggleMinPath}
+              />
+            )}
+            {confetti && (
+              <Realistic
+                autorun={{ speed: 1 }}
+                decorateOptions={confettiDecorateOptions}
+              />
+            )}
+            {won && guesses === minPathLength && (
+              <RelatleButton
+                size="sm"
+                icon={<IconStar size={18} />}
+                text={"You got the Shortest Path!"}
+                color={green}
+                onClick={toggleConfetti}
+              />
+            )}
+
             <Collapse in={minPathOpened}>
               <ScrollablePath
                 matchup={matchup}
                 web={web}
                 path={minPath}
-                won={true}
               ></ScrollablePath>
             </Collapse>
 
-            {!is_custom &&
-              (loadingGlobalScore ? (
-                <Loader color={green} size="sm" />
-              ) : (
+            {loadingGlobalScore ? (
+              <Loader color={green} size="sm" />
+            ) : (
+              stats && (
                 <GlobalScoreStats
                   won={won}
                   guesses={guesses}
-                  allGuesses={allGuesses}
+                  stats={stats}
+                  shortestPath={minPathLength}
                 />
-              ))}
-
-            {!is_custom && (
-              <Fragment>
-                <Text ta="center" fw={700} size="sm">
-                  Your Stats
-                </Text>
-                <Card shadow="lg" radius="lg" p="xs">
-                  <Group align="center" justify="center">
-                    <StreakDisplay streak={streak}/>
-                    <Divider orientation="vertical" />
-                    <ScoreDisplay text={"Longest Streak"} value={longest_streak.toString()}/>
-                    <Divider orientation="vertical" />
-                    <ScoreDisplay text={"Games Won"} value={days_played.toString()}/>
-                  </Group>
-                </Card>
-              </Fragment>
+              )
             )}
+            {!is_custom && (
+              <RelatleButton
+                color={white}
+                size="sm"
+                text="View Your All-Time Stats"
+                onClick={() => {
+                  close();
+                  openStats();
+                }}
+                icon={<IconChartBar size={18} color={white} />}
+              />
+            )}
+
             {!is_custom && <CountdownClock />}
             {is_custom && (
               <Stack gap="xs" align="center" className="pt-5">

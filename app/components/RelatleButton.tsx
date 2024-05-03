@@ -45,7 +45,7 @@ const RelatleButton = ({
         section: { marginRight: "8px" },
         root: {
           border: !disabled ? `2px solid ${alpha(borderColor, 0.5)}` : undefined,
-          minHeight: size === 'md' ? "45px" : undefined,
+          minHeight: size === 'md' ? "45px" : size === 'sm' ? "40px" : undefined,
         },
       }}
     >

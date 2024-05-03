@@ -1,41 +1,61 @@
-import { Stack, Text } from "@mantine/core";
-import React, { Fragment } from "react";
-import GlobalScoreSlider from "./GlobalScoreSlider";
+import { Divider, Group, Stack, Text } from "@mantine/core";
+import React from "react";
 import { white } from "../colors";
+import { Stats } from "./GameOver";
+import ScoreHistogram from "./ScoreHistogram";
 
 export interface GlobalScoreStatsProps {
   guesses: number;
-  allGuesses: number[];
+  stats: Stats;
   won: boolean;
+  shortestPath: number;
 }
 
-const GlobalScoreStats = (props: GlobalScoreStatsProps) => {
-  const { guesses, allGuesses, won } = props;
-  const avgGuesses = allGuesses.reduce((a, b) => a + b, 0) / allGuesses.length;
-  const minGuesses = Math.min(...allGuesses);
-  const roundedAvgGuesses = Math.round(avgGuesses);
+const Stat = (props: { label: string; value: string }) => {
   return (
-    <Stack gap="xl" align="center" justify="center">
-      <Text fw={700} ta="center" size="sm">
-        {"Today's Global Results"}
+    <Group justify="space-between">
+      <Text ta="center" size="sm">
+        {props.label}
       </Text>
-      {allGuesses.length < 3 ? (
-        <Text ta="center" size="sm" c={white}>
-          Come back soon for global results
-        </Text>
-      ) : (
-        <Fragment>
-          <GlobalScoreSlider
-            guesses={guesses}
-            avgGuesses={roundedAvgGuesses}
-            minGuesses={minGuesses}
-            won={won}
+      <Text ta="center" c={white} fw={700} size="sm">
+        {props.value}
+      </Text>
+    </Group>
+  );
+};
+
+const GlobalScoreStats = (props: GlobalScoreStatsProps) => {
+  const { guesses, stats, won, shortestPath } = props;
+  return (
+    <Stack align="center" justify="center">
+       <Text fw={700} ta="center" size="sm" c={white}>
+        {"Global Score Distribution"}
+      </Text>
+      <ScoreHistogram bins={stats.bins} guesses={guesses} won={won} />
+      <Text fw={700} ta="center" size="sm" c={white}>
+        {"Matchup Stats"}
+      </Text>
+      <Group justify="center" align="center" gap="35px">
+        <Stack>
+          <Stat label={"Shortest Path"} value={shortestPath.toString()} />
+          <Stat label={"Your Score"} value={guesses.toString()} />
+          <Stat label={"Average Score"} value={stats.averageScore.toFixed(0)} />
+        </Stack>
+        <Stack>
+          <Stat
+            label={"Number of Plays"}
+            value={stats.numGames.toLocaleString()}
           />
-          <Text ta="center" size="sm">
-            These values will update as more games are completed
-          </Text>
-        </Fragment>
-      )}
+          <Stat label={"Win Rate"} value={stats.winRate.toFixed(0) + "%"} />
+          <Stat
+            label={"Perfect Game Rate"}
+            value={stats.perfectGameRate.toFixed(0) + "%"}
+          />
+        </Stack>
+      </Group>
+      <Text ta="center" size="sm">
+        These values will update every couple of minutes
+      </Text>
     </Stack>
   );
 };
