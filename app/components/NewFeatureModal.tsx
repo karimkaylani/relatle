@@ -27,7 +27,7 @@ const NewFeatureModal = (props: NewFeatureModalProps) => {
           <Text ta="center" c={white} fw={700} size="xl">
             More Matchup Stats!
           </Text>
-          <Text ta="center" size="md" w={350}>
+          <Text ta="center" size="md" style={{maxWidth: 350}}>
           {"When finishing a daily or custom matchup, you'll now get loads of new global stats. There’s also a special surprise for getting the shortest path!"}
           </Text>
         </Stack>
