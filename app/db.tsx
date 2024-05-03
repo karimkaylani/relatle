@@ -4,7 +4,6 @@ import { Stats } from "./components/GameOver";
 
 export const getStats = async (matchup: string[], shortestPath: number): Promise<Stats | null> => {
   const supabase = createClient();
-  console.log("Fetching guesses for matchup", matchup);
   let { data, error } = await supabase
     .from("scores")
     .select("guesses")
