@@ -32,7 +32,7 @@ const NewFeatureModal = (props: NewFeatureModalProps) => {
           </Text>
         </Stack>
         <Image w={274} src="images/new-stats.png" alt="Song Previews" />
-        <Group>
+        <Group justify='center' align="center">
           <RelatleButton color={green} onClick={() => {
             window.open("https://www.reddit.com/r/relatle/comments/1cixlur/update_new_matchup_stats_view_current_path/", "_blank");
           }} icon={<IconBrandReddit />} text="Discuss"/>
