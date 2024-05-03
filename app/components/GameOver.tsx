@@ -137,7 +137,7 @@ const GameOver = ({
     setConfetti(true);
     setTimeout(() => {
       setConfetti(false);
-    }, 1000);
+    }, 1500);
   };
 
   useEffect(() => {
@@ -262,7 +262,7 @@ const GameOver = ({
             )}
             {confetti && (
               <Realistic
-                autorun={{ speed: 1 }}
+                autorun={{ speed: 0.3 }}
                 decorateOptions={confettiDecorateOptions}
               />
             )}
