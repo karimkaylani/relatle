@@ -38,8 +38,8 @@ const GlobalScoreStats = (props: GlobalScoreStatsProps) => {
       <Group justify="center" align="center" gap="35px">
         <Stack>
           <Stat label={"Shortest Path"} value={shortestPath.toString()} />
-          <Stat label={"Your Score"} value={guesses.toString()} />
           <Stat label={"Average Score"} value={stats.averageScore.toFixed(0)} />
+          <Stat label={"Your Score"} value={guesses.toString()} />
         </Stack>
         <Stack>
           <Stat
