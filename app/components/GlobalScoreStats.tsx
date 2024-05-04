@@ -1,8 +1,8 @@
 import { Divider, Group, Stack, Text } from "@mantine/core";
 import React from "react";
 import { white } from "../colors";
-import { Stats } from "./GameOver";
 import ScoreHistogram from "./ScoreHistogram";
+import { Stats } from "../db";
 
 export interface GlobalScoreStatsProps {
   guesses: number;
