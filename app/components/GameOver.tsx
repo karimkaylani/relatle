@@ -36,7 +36,7 @@ import CustomGameButton from "./CustomGameButton";
 import GlobalScoreStats from "./GlobalScoreStats";
 import { white, green, gray9, gray8 } from "../colors";
 import RelatleButton from "./RelatleButton";
-import { getStats } from "../db";
+import { getStats, Stats } from "../db";
 import Realistic from "react-canvas-confetti/dist/presets/fireworks";
 
 export interface GameOverProps {
@@ -52,14 +52,6 @@ export interface GameOverProps {
   matchupID: number;
   customModalOpen: () => void;
   openStats: () => void;
-}
-
-export interface Stats {
-  averageScore: number;
-  numGames: number;
-  perfectGameRate: number;
-  winRate: number;
-  bins: { [key: string]: number };
 }
 
 const getMinPath = (

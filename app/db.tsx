@@ -1,57 +1,27 @@
 'use client'
 import { createClient } from "@/utils/supabase/client";
-import { Stats } from "./components/GameOver";
+
+export interface Stats {
+  averageScore: number;
+  numGames: number;
+  perfectGameRate: number;
+  winRate: number;
+  bins: { [key: string]: number };
+}
 
 export const getStats = async (matchup: string[], shortestPath: number): Promise<Stats | null> => {
   const supabase = createClient();
-  let { data, error } = await supabase
-    .from("scores")
-    .select("guesses")
-    .eq("matchup", JSON.stringify(matchup));
+  // call get_stats postgres function
+  let { data, error } = await supabase.rpc("get_stats", { curr_matchup: JSON.stringify(matchup), shortest_path: shortestPath });
   if (error) {
     console.error(error);
     return null;
   }
-  // Convert to list of guesses
-  let guesses = data?.map((d: any) => d.guesses) ?? [];
-
-  let { data: customData, error: customError } = await supabase
-    .from("custom_game_scores")
-    .select("guesses, won")
-    .eq("matchup", JSON.stringify(matchup));
-  if (customError) {
-    console.error(customError);
-    return null;
-  }
-  // get guesses for custom games with won = true
-  let customGuesses = customData?.filter((d: any) => d.won).map((d: any) => d.guesses) ?? [];
-  guesses = guesses.concat(customGuesses);
-
-  if (guesses.length < 3) {
+  const { average_score, num_games, perfect_game_rate, win_rate, won_guesses } = data[0];
+  if (!num_games || num_games < 3 || !average_score || !perfect_game_rate || !win_rate) {
     return null;
   }
 
-  // count number of games with won = false
-  let numCustomLost = customData?.filter((d: any) => !d.won).length ?? 0;
-
-  const averageScore = guesses.reduce((a: number, b: number) => a + b, 0) / guesses.length;
-
-  let { data: givenUpData, error: givenUpError } = await supabase
-    .from("give_up_scores")
-    .select("guesses")
-    .eq("matchup", JSON.stringify(matchup));
-  if (givenUpError) {
-    console.error(givenUpError);
-    return null;
-  }
-  let numGivenUp = givenUpData?.length ?? 0;
-  const numLost = numCustomLost + numGivenUp;
-  const numWon = guesses.length;
-  const numGames = numWon + numLost;
-  const perfectGames = guesses.filter((g: number) => g === shortestPath).length;
-  const perfectGameRate = (perfectGames / numGames) * 100;
-  const winRate = (numWon / numGames) * 100;
-  
   const binSize = 5;
   const numBins = 5;  
   let binsRange = [];
@@ -76,7 +46,7 @@ export const getStats = async (matchup: string[], shortestPath: number): Promise
     bins[getKey(b)] = 0;
   }
 
-  for (let g of guesses) {
+  for (let g of won_guesses) {
     for (let b of binsRange) {
       if (g >= b[0] && g <= b[1]) {
         let key = getKey(b);
@@ -85,13 +55,38 @@ export const getStats = async (matchup: string[], shortestPath: number): Promise
     }
   }
   for (let key of Object.keys(bins)) {
-    bins[key] = (bins[key] / numGames) * 100;
+    bins[key] = (bins[key] / num_games) * 100;
   }
   return {
-    averageScore,
-    numGames,
-    perfectGameRate,
-    winRate,
+    averageScore: average_score,
+    numGames: num_games,
+    perfectGameRate: perfect_game_rate,
+    winRate: win_rate,
     bins,
   };
 };
+
+export interface CustomGame {
+  matchup: string[];
+  numGames: number;
+  averageScore: number;
+  winRate: number;
+}
+
+export const getLeaderboard = async(): Promise<CustomGame[] | null> => {
+  const supabase = createClient();
+  let { data, error } = await supabase.rpc("get_leaderboard", { amount: 5 });
+  if (error) {
+    console.error(error);
+    return null;
+  }
+  let res = data.map((row: any) => {
+    return {
+      matchup: JSON.parse(row.matchup),
+      numGames: row.num_plays,
+      averageScore: row.average_guesses,
+      winRate: row.win_percentage,
+    };
+  });
+  return res;
+}
