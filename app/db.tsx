@@ -75,7 +75,7 @@ export interface CustomGame {
 
 export const getLeaderboard = async(): Promise<CustomGame[] | null> => {
   const supabase = createClient();
-  let { data, error } = await supabase.rpc("get_leaderboard", { amount: 5 });
+  let { data, error } = await supabase.rpc("get_leaderboard", { amount: 25 });
   if (error) {
     console.error(error);
     return null;

@@ -48,6 +48,7 @@ import SideDrawer from "./SideDrawer";
 import ClickableIcon from "./ClickableIcon";
 import { green, white, red, gray7, gray9, gray8, yellow } from "../colors";
 import PathModal from "./PathModal";
+import Link from "next/link";
 
 export interface Artist {
   name: string;
@@ -741,14 +742,14 @@ const Game = (props: GameProps) => {
           />
         </div>
         <Stack gap="0px">
-          <a href={is_custom ? "/" : undefined}>
+          <Link href={is_custom ? "/" : ""}>
             <Image
               style={{ cursor: "pointer" }}
               w={width > phoneMaxWidth ? 250 : 175}
               src="images/logo.png"
               alt="Relatle Logo"
             ></Image>
-          </a>
+          </Link>
           {is_custom && (
             <Text p="0px" c={white} ta="center">
               Custom Game

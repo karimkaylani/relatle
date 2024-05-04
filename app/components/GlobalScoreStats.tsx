@@ -11,7 +11,7 @@ export interface GlobalScoreStatsProps {
   shortestPath: number;
 }
 
-const Stat = (props: { label: string; value: string }) => {
+export const Stat = (props: { label: string; value: string }) => {
   return (
     <Group justify="space-between">
       <Text ta="center" size="sm">
