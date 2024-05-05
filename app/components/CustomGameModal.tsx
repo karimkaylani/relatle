@@ -359,9 +359,20 @@ const CustomGameModal = (props: CustomGameModalProps) => {
     return endArtist !== "" && recommendedEndArtists.includes(endArtist);
   };
 
+  const getArtistOrder = () => {
+    let res: { [key: string]: number} = {}
+    // loop with index
+    for (let i = 0; i < artistsList.length; i++) {
+      res[artistsList[i]] = i
+    }
+    return res
+  }
+
+  const artistRanking = getArtistOrder()
+
   const compareArtists = (a: string, b: string) => {
     // sort based on order of keys in web
-    return Object.keys(web).indexOf(a) - Object.keys(web).indexOf(b);
+    return artistRanking[a] - artistRanking[b]
   };
 
   const removeArticles = (title: string) => {
