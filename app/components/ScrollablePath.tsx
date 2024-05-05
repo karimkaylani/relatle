@@ -15,7 +15,7 @@ const ScrollablePath = (props: ScrollablePathProps) => {
   const { matchup, web, path } = props;
   const end = matchup[1];
   if (path.length <= 1) {
-    return <Text c={white}>No path yet! Make some guesses and come back</Text>;
+    return <Text c={white} ta='center'>No path yet! Make some guesses and come back</Text>;
   }
   return (
     <ScrollArea
