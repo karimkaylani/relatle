@@ -13136,7 +13136,8 @@
             "6LACK",
             "Ella Mai",
             "H.E.R.",
-            "Tinashe"
+            "Tinashe",
+            "Saint Levant"
         ],
         "top_song_name": "FIGURES",
         "top_song_id": "3U3J5v3rkx89WnFEQvAJD5",
@@ -21309,9 +21310,9 @@
             "Teyana Taylor",
             "Masego",
             "Ella Mai",
+            "Saint Levant",
             "Jessie Reyez",
-            "WILLOW",
-            "RAYE"
+            "WILLOW"
         ],
         "top_song_preview_url": "https://p.scdn.co/mp3-preview/79266971c59345d6a8f01abda13758f055e8281e"
     },
@@ -33852,6 +33853,32 @@
         "related": [
             "Death Grips",
             "Khruangbin"
+        ]
+    },
+    "Saint Levant": {
+        "name": "Saint Levant",
+        "id": "5ZZsFnpO7frU8h5xH1wtjT",
+        "image": "https://i.scdn.co/image/ab6761610000e5ebc0dba08ba4a44f9cd4329f54",
+        "top_song_name": "Very Few Friends",
+        "top_song_id": "4rjcVZDZ74xqv49D8kFh5l",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/7333813023dd2b1cb66183293bc2981bcd27ca21?cid=1329c10e9bd74b4893f02fc0cad220b0",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273cdef17c6c7140f1497e3bdb9",
+        "related": [
+            "Jorja Smith",
+            "Jessie Reyez",
+            "Elyanna"
+        ]
+    },
+    "Elyanna": {
+        "name": "Elyanna",
+        "id": "0jIWKlfmD4Ew7HeVVrq03g",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb88b64e15982a3e8177913573",
+        "top_song_name": "Ganeni",
+        "top_song_id": "2qXSWquHZScT6OMJARM6Ql",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/7d1144362ab1406fb63b613445d84d06cbfb3021?cid=1329c10e9bd74b4893f02fc0cad220b0",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b27378413218941443644ea493c1",
+        "related": [
+            "Saint Levant"
         ]
     }
 }
