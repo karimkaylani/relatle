@@ -93,7 +93,7 @@ const Leaderboard = (props: LeaderboardProps) => {
             justifyContent: "center",
             alignItems: "center",
             gap: "10px",
-            width: "1000px",
+            width: "105%",
             paddingTop: "20px",
             paddingBottom: "20px",
           }}
