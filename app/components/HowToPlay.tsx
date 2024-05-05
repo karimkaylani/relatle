@@ -63,8 +63,9 @@ const HowToPlay = (props: HowToPlayProps) => {
             </Card>
             <Text fw={300}>Identify the <Text fw={500} c={white} span>artist matchup</Text>:</Text>
           </Group>
-
-          <Matchup start={start} end={end} small={true} />
+          <Center>
+            <Matchup start={start} end={end} small={true} />
+          </Center>
 
           <Group wrap="nowrap" justify="flex-start" align="flex-start">
             <Card shadow="sm" radius="md" padding="5px" w={68} h={33}>
