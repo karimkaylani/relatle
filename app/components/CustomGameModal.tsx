@@ -360,10 +360,8 @@ const CustomGameModal = (props: CustomGameModalProps) => {
   };
 
   const compareArtists = (a: string, b: string) => {
-    let newA = removeArticles(a.toLowerCase());
-    let newB = removeArticles(b.toLowerCase());
-
-    return newA.localeCompare(newB);
+    // sort based on order of keys in web
+    return Object.keys(web).indexOf(a) - Object.keys(web).indexOf(b);
   };
 
   const removeArticles = (title: string) => {
