@@ -2,11 +2,20 @@
 import React, { useEffect } from "react";
 import { CustomGame, getLeaderboard } from "../db";
 import { Artist, phoneMaxWidth } from "./Game";
-import { Stack, Image, Group, Space, Text, Loader } from "@mantine/core";
+import {
+  Stack,
+  Image,
+  Group,
+  Space,
+  Text,
+  Loader,
+  Center,
+} from "@mantine/core";
 import Link from "next/link";
 import { IconArrowLeft } from "@tabler/icons-react";
 import { green, white } from "../colors";
 import GameCard from "./GameCard";
+import InfiniteScroll from "react-infinite-scroll-component";
 
 export interface LeaderboardProps {
   web: { [key: string]: Artist };
@@ -16,10 +25,12 @@ const Leaderboard = (props: LeaderboardProps) => {
   const { web } = props;
   const [leaderboard, setLeaderboard] = React.useState<CustomGame[]>([]);
   const [loading, setLoading] = React.useState(true);
+
+  const loadAmount = 50;
   useEffect(() => {
-    getLeaderboard().then((leaderboard) => {
+    getLeaderboard(loadAmount, 0).then((leaderboard) => {
       if (leaderboard) {
-        setLeaderboard(leaderboard);
+        setLeaderboard(leaderboard.games);
       }
       setLoading(false);
     });
@@ -41,11 +52,11 @@ const Leaderboard = (props: LeaderboardProps) => {
       gap="lg"
       className="mt-5 pb-14 pl-5 pr-5"
     >
-      <Group justify="space-between" align='center' w="100%">
-        <Link href={'/'}>
+      <Group justify="space-between" align="center" w="100%">
+        <Link href={"/"}>
           <IconArrowLeft size={arrowWidth} color={white} />
         </Link>
-        <Stack justify='center' align='center' gap="0px">
+        <Stack justify="center" align="center" gap="0px">
           <Link href={"/"}>
             <Image
               style={{ cursor: "pointer" }}
@@ -60,24 +71,55 @@ const Leaderboard = (props: LeaderboardProps) => {
         </Stack>
         <Space w={arrowWidth} />
       </Group>
-      <Group gap="sm" justify='center' align='center' w='75%'>
-        {loading ? (
-          <Loader color={green} size="md" />
-        ) : leaderboard.length === 0 ? (
-          <Text c={white}>No data available, please try again</Text>
-        ) : (
-          leaderboard.map((game, index) => (
-            <GameCard
-              key={index}
-              start={web[game.matchup[0]]}
-              end={web[game.matchup[1]]}
-              plays={game.numGames}
-              avg_score={game.averageScore}
-              win_rate={game.winRate}
-            />
-          ))
-        )}
-      </Group>
+      {loading ? (
+        <Loader color={green} size="md" />
+      ) : leaderboard.length === 0 ? (
+        <Text c={white}>No data available, please try again</Text>
+      ) : (
+        <InfiniteScroll
+          dataLength={leaderboard.length}
+          next={() =>
+            getLeaderboard(loadAmount, leaderboard.length).then(
+              (new_leaderboard) => {
+                if (new_leaderboard) {
+                  setLeaderboard(leaderboard.concat(new_leaderboard.games));
+                }
+              }
+            )
+          }
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+            gap: "10px",
+            width: "1000px",
+            paddingTop: "20px",
+            paddingBottom: "20px",
+          }}
+          hasMore={leaderboard[leaderboard.length - 1].numGames >= 3}
+          loader={
+            <Center>
+              <Loader color={green} size="md" />
+            </Center>
+          }
+        >
+          {leaderboard.map(
+            (game, index) =>
+              web[game.matchup[0]] &&
+              web[game.matchup[1]] && (
+                <GameCard
+                  key={index}
+                  start={web[game.matchup[0]]}
+                  end={web[game.matchup[1]]}
+                  plays={game.numGames}
+                  avg_score={game.averageScore}
+                  win_rate={game.winRate}
+                />
+              )
+          )}
+        </InfiniteScroll>
+      )}
     </Stack>
   );
 };

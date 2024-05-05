@@ -73,9 +73,14 @@ export interface CustomGame {
   winRate: number;
 }
 
-export const getLeaderboard = async(): Promise<CustomGame[] | null> => {
+export interface Leaderboard {
+  games: CustomGame[];
+  size: number;
+}
+
+export const getLeaderboard = async(amount: number, start_pos: number): Promise<Leaderboard | null> => {
   const supabase = createClient();
-  let { data, error } = await supabase.rpc("get_leaderboard", { amount: 25 });
+  let { data, error } = await supabase.rpc("get_leaderboard", { amount: amount, start_position: start_pos});
   if (error) {
     console.error(error);
     return null;
@@ -88,5 +93,8 @@ export const getLeaderboard = async(): Promise<CustomGame[] | null> => {
       winRate: row.win_percentage,
     };
   });
-  return res;
+  return {
+    games: res,
+    size: 1000
+  };
 }

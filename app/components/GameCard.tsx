@@ -17,12 +17,12 @@ export interface GameCardProps {
 const GameCard = (props: GameCardProps) => {
     const { start, end, plays, avg_score, win_rate } = props
     const url = generateCustomGameURL(start.name, end.name)
-    const maxWidth = 330;
+    const maxWidth = 450;
   return (
     <HoverButton onTap={() => window.open(url, '_blank')}>
     <Card shadow="lg" radius="lg" p="sm" withBorder w={window.innerWidth > maxWidth ? maxWidth : undefined}> 
         <Stack gap='xs'>
-        <Matchup start={start} end={end} small={true} />
+        <Matchup start={start} end={end} small={window.innerWidth < phoneMaxWidth} />
         <Group>
             <Stat label={'Plays'} value={plays.toLocaleString()} />
             <Stat label={'Avg Score'} value={avg_score.toFixed(0)} />
