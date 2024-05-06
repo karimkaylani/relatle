@@ -36,6 +36,7 @@ const Leaderboard = (props: LeaderboardProps) => {
   const { open } = customModalHandlers;
 
   const loadAmount = 50;
+  const numLoads = 2;
   useEffect(() => {
     getLeaderboard(loadAmount, 1).then((leaderboard) => {
       if (leaderboard) {
@@ -118,7 +119,7 @@ const Leaderboard = (props: LeaderboardProps) => {
               gap: "10px",
               padding: "20px",
             }}
-            hasMore={leaderboard.length <= 95}
+            hasMore={leaderboard.length < loadAmount * numLoads}
             loader={
               <Center>
                 <Loader color={green} size="md" />

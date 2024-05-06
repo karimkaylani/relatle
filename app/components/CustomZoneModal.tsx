@@ -54,15 +54,13 @@ const CustomZoneModal = (props: CustomZoneModalProps) => {
             popular matchups.
           </Text>
           <Image w={274} src="images/custom-zone.png" alt="Custom Games" />
-          <Group align="center" justify="center">
-            <Link href="/leaderboard">
-              <RelatleButton
-                color={white}
-                text="Browse"
-                onClick={() => {}}
-                icon={<IconList size={18} color={white} />}
-              />
-            </Link>
+          <Group align="center" justify="center" grow w='75%'>
+            <RelatleButton
+              color={white}
+              text="Browse"
+              onClick={() => window.open('/leaderboard', '_self')}
+              icon={<IconList size={18} color={white} />}
+            />
             <RelatleButton
               color={green}
               text="Create"
