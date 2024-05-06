@@ -359,11 +359,20 @@ const CustomGameModal = (props: CustomGameModalProps) => {
     return endArtist !== "" && recommendedEndArtists.includes(endArtist);
   };
 
-  const compareArtists = (a: string, b: string) => {
-    let newA = removeArticles(a.toLowerCase());
-    let newB = removeArticles(b.toLowerCase());
+  const getArtistOrder = () => {
+    let res: { [key: string]: number} = {}
+    // loop with index
+    for (let i = 0; i < artistsList.length; i++) {
+      res[artistsList[i]] = i
+    }
+    return res
+  }
 
-    return newA.localeCompare(newB);
+  const artistRanking = getArtistOrder()
+
+  const compareArtists = (a: string, b: string) => {
+    // sort based on order of keys in web
+    return artistRanking[a] - artistRanking[b]
   };
 
   const removeArticles = (title: string) => {
