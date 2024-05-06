@@ -92,10 +92,9 @@ const Leaderboard = (props: LeaderboardProps) => {
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
+            alignContent: "center",
             gap: "10px",
-            width: "105%",
-            paddingTop: "20px",
-            paddingBottom: "20px",
+            padding: "20px",
           }}
           hasMore={leaderboard[leaderboard.length - 1].numGames >= 3}
           loader={
