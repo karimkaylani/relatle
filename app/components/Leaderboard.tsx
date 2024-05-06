@@ -28,7 +28,7 @@ const Leaderboard = (props: LeaderboardProps) => {
 
   const loadAmount = 50;
   useEffect(() => {
-    getLeaderboard(loadAmount, 0).then((leaderboard) => {
+    getLeaderboard(loadAmount, 1).then((leaderboard) => {
       if (leaderboard) {
         setLeaderboard(leaderboard.games);
       }
