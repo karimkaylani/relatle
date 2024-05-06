@@ -49,6 +49,7 @@ import ClickableIcon from "./ClickableIcon";
 import { green, white, red, gray7, gray9, gray8, yellow } from "../colors";
 import PathModal from "./PathModal";
 import Link from "next/link";
+import CustomZoneModal from "./CustomZoneModal";
 
 export interface Artist {
   name: string;
@@ -185,8 +186,8 @@ const Game = (props: GameProps) => {
   const [htpModalOpened, htpModalHandlers] = useDisclosure(false);
   const { open: htpModalOpen } = htpModalHandlers;
 
-  const [customModalOpened, customModalHandlers] = useDisclosure(false);
-  const { open: customModalOpen } = customModalHandlers;
+  const [customZoneOpened, customZoneHandlers] = useDisclosure(false);
+  const { open: customZoneOpen } = customZoneHandlers;
 
   const [newFeatureModalOpened, newFeatureModalHandlers] = useDisclosure(false);
   const { open: newFeatureModalOpen } = newFeatureModalHandlers;
@@ -737,7 +738,7 @@ const Game = (props: GameProps) => {
             games_lost={gamesLost}
             lowest_score={lowestScore}
             highest_score={highestScore}
-            customModalOpen={customModalOpen}
+            customModalOpen={customZoneOpen}
             htpOpen={htpModalOpen}
           />
         </div>
@@ -757,12 +758,12 @@ const Game = (props: GameProps) => {
           )}
         </Stack>
         <CustomGameButton
-          customModalOpen={customModalOpen}
+          customModalOpen={customZoneOpen}
           showText={width >= maxCustomTextWidth}
         />
-        <CustomGameModal
-          customModalOpened={customModalOpened}
-          customModalHandlers={customModalHandlers}
+        <CustomZoneModal
+          customZoneOpened={customZoneOpened}
+          customZoneHandlers={customZoneHandlers}
           web={web}
           matchups={Object.values(matchups ?? {})}
         />
@@ -836,7 +837,7 @@ const Game = (props: GameProps) => {
         web={web}
         is_custom={is_custom}
         matchupID={matchupID}
-        customModalOpen={customModalOpen}
+        customModalOpen={customZoneOpen}
         openStats={sidebarOpen}
       />
       <PlayingAudioContext.Provider
