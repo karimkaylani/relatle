@@ -53,7 +53,7 @@ const Leaderboard = (props: LeaderboardProps) => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
   const arrowSize = width > phoneMaxWidth ? 40 : 34;
-  const createButtonWidth = width > phoneMaxWidth ? 116.2 : 66;
+  const createButtonWidth = width > phoneMaxWidth ? 95.53 : width > maxCustomTextWidth ? 88.74 : 42;
 
   return (
     <>
@@ -86,11 +86,10 @@ const Leaderboard = (props: LeaderboardProps) => {
               Custom Game Leaderboard
             </Text>
           </Stack>
-          <RelatleButton
+          <CustomGameButton
+            customModalOpen={open}
             color={green}
             text="Create"
-            onClick={open}
-            icon={<CustomIcon color={green} />}
             showText={width > maxCustomTextWidth}
           />
         </Group>
