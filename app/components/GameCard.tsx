@@ -5,6 +5,7 @@ import Matchup from './Matchup'
 import { Stat } from './GlobalScoreStats'
 import HoverButton from './HoverButton'
 import { generateCustomGameURL } from './ShareCustomGame'
+import Link from 'next/link'
 
 export interface GameCardProps {
     start: Artist,
@@ -19,7 +20,8 @@ const GameCard = (props: GameCardProps) => {
     const url = generateCustomGameURL(start.name, end.name)
     const maxWidth = 500;
   return (
-    <HoverButton onTap={() => window.open(url, '_blank')}>
+    <Link href={url} target='_blank' prefetch={false} tabIndex={-1}>
+    <HoverButton onTap={() => {}}>
     <Card shadow="lg" radius="lg" p="sm" withBorder w={window.innerWidth > maxWidth ? maxWidth : window.innerWidth - 30}> 
         <Stack gap='xs'>
         <Matchup start={start} end={end} small={window.innerWidth < phoneMaxWidth} center={false} />
@@ -31,6 +33,7 @@ const GameCard = (props: GameCardProps) => {
         </Stack>
     </Card>
     </HoverButton>
+    </Link>
   )
 }
 
