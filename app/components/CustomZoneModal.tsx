@@ -49,7 +49,7 @@ const CustomZoneModal = (props: CustomZoneModalProps) => {
         }}
       >
         <Stack align="center" justify="center">
-          <Text ta="center">
+          <Text ta="center" style={{maxWidth: '320px'}}>
             Make your own custom game to play and share or browse our most
             popular matchups.
           </Text>
