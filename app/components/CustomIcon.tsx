@@ -11,7 +11,7 @@ export interface CustomIconProps {
 const CustomIcon = (props: CustomIconProps) => {
     const { size=18, label=undefined, color=white } = props;
   return (
-    <IconSparkles size={size} aria-label={label} fill={white} color={color} stroke={1} />
+    <IconSparkles size={size} aria-label={label} fill={color} color={color} stroke={1} />
   )
 }
 
