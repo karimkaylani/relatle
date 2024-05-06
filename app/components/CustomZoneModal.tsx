@@ -1,6 +1,6 @@
 import { Modal, Stack, Text, Image, Group } from "@mantine/core";
 import React from "react";
-import { Artist } from "./Game";
+import { Artist, maxButtonGrowWidth, maxCustomTextWidth } from "./Game";
 import { green, white } from "../colors";
 import { useDisclosure } from "@mantine/hooks";
 import CustomGameModal from "./CustomGameModal";
@@ -54,7 +54,7 @@ const CustomZoneModal = (props: CustomZoneModalProps) => {
             popular matchups.
           </Text>
           <Image w={274} src="images/custom-zone.png" alt="Custom Games" />
-          <Group align="center" justify="center" grow w='75%'>
+        <Group w='100%' justify='center' align='center' grow={window.innerWidth > maxButtonGrowWidth}>
             <RelatleButton
               color={white}
               text="Browse"

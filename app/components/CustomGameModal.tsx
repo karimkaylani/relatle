@@ -10,7 +10,7 @@ import {
   CloseButton,
 } from "@mantine/core";
 import React, { use, useEffect, useRef, useState } from "react";
-import { Artist } from "./Game";
+import { Artist, maxButtonGrowWidth, maxCustomTextWidth, phoneMaxWidth } from "./Game";
 import Arrow from "./Arrow";
 import * as Collections from "typescript-collections";
 import ShareCustomGame, { generateCustomGameURL } from "./ShareCustomGame";
@@ -573,7 +573,7 @@ const CustomGameModal = (props: CustomGameModalProps) => {
           )}
         </Stack>
 
-        <Group grow>
+        <Group w='100%' justify='center' align='center' grow={(typeof window !== "undefined") ? window.innerWidth > maxButtonGrowWidth : false}>
           <ShareCustomGame
             start={startArtist}
             end={endArtist}
