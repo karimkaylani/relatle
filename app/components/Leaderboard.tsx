@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { Suspense, useEffect } from "react";
 import { CustomGame, getLeaderboard } from "../db";
 import { Artist, maxCustomTextWidth, phoneMaxWidth } from "./Game";
 import {
@@ -55,7 +55,6 @@ const Leaderboard = (props: LeaderboardProps) => {
   const arrowSize = width > phoneMaxWidth ? 40 : 34;
   const createButtonWidth = width > phoneMaxWidth ? 116.2 : 66;
 
-
   return (
     <>
       <Stack
@@ -65,11 +64,15 @@ const Leaderboard = (props: LeaderboardProps) => {
         className="mt-5 pb-14 pl-5 pr-5"
       >
         <Group justify="space-between" align="center" w="100%" wrap="nowrap">
-            <Link href={"/"}>
-              <HoverButton onTap={() => {}}>
-                <IconArrowLeft size={arrowSize} color={white} width={createButtonWidth}/>
-              </HoverButton>
-            </Link>
+          <Link href={"/"}>
+            <HoverButton onTap={() => {}}>
+              <IconArrowLeft
+                size={arrowSize}
+                color={white}
+                width={createButtonWidth}
+              />
+            </HoverButton>
+          </Link>
           <Stack justify="center" align="center" gap="0px">
             <Link href={"/"}>
               <Image
@@ -140,12 +143,14 @@ const Leaderboard = (props: LeaderboardProps) => {
           </InfiniteScroll>
         )}
       </Stack>
-      <CustomGameModal
-        customModalOpened={customModalOpened}
-        customModalHandlers={customModalHandlers}
-        web={web}
-        matchups={[]}
-      />
+      <Suspense>
+        <CustomGameModal
+          customModalOpened={customModalOpened}
+          customModalHandlers={customModalHandlers}
+          web={web}
+          matchups={[]}
+        />
+      </Suspense>
     </>
   );
 };
