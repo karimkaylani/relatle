@@ -8,7 +8,7 @@ import {
   Flex,
   SimpleGrid,
   Text,
-  Image,
+  Image as MantineImage,
   Anchor,
   Stack,
   Group,
@@ -381,6 +381,16 @@ const Game = (props: GameProps) => {
     setPath([todayMatchup[0]]);
     loadLocalStorageIntoState(todayMatchup, matchup_id);
     setLoading(false);
+
+    // preload images in modals
+    const preloadImage = (src: string) => {
+      const image = new Image();
+      image.src = src;
+    };
+    preloadImage('images/give-up.png');
+    preloadImage('images/how-to-play.png');
+    preloadImage('images/custom-zone.png');
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -744,12 +754,12 @@ const Game = (props: GameProps) => {
         </div>
         <Stack gap="0px">
           <Link href={is_custom ? "/" : ""}>
-            <Image
+            <MantineImage
               style={{ cursor: "pointer" }}
               w={width > phoneMaxWidth ? 250 : 175}
               src="images/logo.png"
               alt="Relatle Logo"
-            ></Image>
+            ></MantineImage>
           </Link>
           {is_custom && (
             <Text p="0px" c={white} ta="center">

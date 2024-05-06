@@ -6,12 +6,13 @@ export interface CustomIconProps {
     size?: number;
     label?: string|undefined;
     color?: string;
+    filled?: boolean;
 }
 
 const CustomIcon = (props: CustomIconProps) => {
-    const { size=18, label=undefined, color=white } = props;
+    const { size=18, label=undefined, color=white, filled=true } = props;
   return (
-    <IconSparkles size={size} aria-label={label} fill={white} color={color} stroke={1} />
+    <IconSparkles size={size} aria-label={label} fill={filled ? color : undefined} color={color} stroke={1} />
   )
 }
 

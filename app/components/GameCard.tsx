@@ -22,7 +22,7 @@ const GameCard = (props: GameCardProps) => {
     <HoverButton onTap={() => window.open(url, '_blank')}>
     <Card shadow="lg" radius="lg" p="sm" withBorder w={window.innerWidth > maxWidth ? maxWidth : window.innerWidth - 30}> 
         <Stack gap='xs'>
-        <Matchup start={start} end={end} small={window.innerWidth < phoneMaxWidth} center={false}/>
+        <Matchup start={start} end={end} small={window.innerWidth < phoneMaxWidth} center={false} />
         <Group>
             <Stat label={'Plays'} value={plays.toLocaleString()} />
             <Stat label={'Avg Score'} value={avg_score.toFixed(0)} />
