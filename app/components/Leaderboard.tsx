@@ -30,7 +30,7 @@ const Leaderboard = (props: LeaderboardProps) => {
   useEffect(() => {
     getLeaderboard(loadAmount, 1).then((leaderboard) => {
       if (leaderboard) {
-        setLeaderboard(leaderboard.games);
+        setLeaderboard(leaderboard);
       }
       setLoading(false);
     });
@@ -82,7 +82,7 @@ const Leaderboard = (props: LeaderboardProps) => {
             getLeaderboard(loadAmount, leaderboard.length).then(
               (new_leaderboard) => {
                 if (new_leaderboard) {
-                  setLeaderboard(leaderboard.concat(new_leaderboard.games));
+                  setLeaderboard(leaderboard.concat(new_leaderboard));
                 }
               }
             )
