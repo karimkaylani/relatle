@@ -90,6 +90,7 @@ interface SaveProps {
 
 export const phoneMaxWidth = 768;
 const maxCustomTextWidth = 565;
+export const maxButtonGrowWidth = 370;
 
 export interface iPlayingAudioContext {
   playingAudio: HTMLAudioElement | null;
