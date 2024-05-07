@@ -58,7 +58,7 @@ const CustomZoneModal = (props: CustomZoneModalProps) => {
             <RelatleButton
               color={white}
               text="Browse"
-              onClick={() => window.open('/leaderboard', '_self')}
+              onClick={() => window.open('/top-games', '_self')}
               icon={<IconList size={18} color={white} />}
             />
             <RelatleButton

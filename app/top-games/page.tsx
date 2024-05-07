@@ -1,9 +1,8 @@
 import Leaderboard from "../components/Leaderboard";
 import Web from "../../public/data/web.json";
-import { Suspense } from "react";
 
 export const metadata = {
-  title: "relatle (leaderboard)",
+  title: "relatle (top custom games)",
 };
 
 export default async function Home() {
