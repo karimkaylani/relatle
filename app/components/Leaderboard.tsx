@@ -22,29 +22,78 @@ import { useDisclosure } from "@mantine/hooks";
 import RelatleButton from "./RelatleButton";
 import CustomIcon from "./CustomIcon";
 import CustomGameModal from "./CustomGameModal";
+import SortButtons from "./SortButtons";
 
 export interface LeaderboardProps {
   web: { [key: string]: Artist };
 }
 
+export enum SortParameter {
+  numGames = "Plays",
+  averageScore = "Avg Score",
+  winRate = "Win Rate",
+}
+
+export enum SortOrder {
+  asc = "asc",
+  desc = "desc",
+}
+
+
 const Leaderboard = (props: LeaderboardProps) => {
   const { web } = props;
+  const [topGames, setTopGames] = React.useState<CustomGame[]>([]);
   const [leaderboard, setLeaderboard] = React.useState<CustomGame[]>([]);
   const [loading, setLoading] = React.useState(true);
+
+  const [sortParameter, setSortParameter] = React.useState<SortParameter>(
+    SortParameter.numGames
+  );
+  const [sortOrder, setSortOrder] = React.useState<SortOrder>(SortOrder.desc);
 
   const [customModalOpened, customModalHandlers] = useDisclosure(false);
   const { open } = customModalHandlers;
 
-  const loadAmount = 50;
-  const numLoads = 2;
+  const loadAmount = 25;
+  const totalAmount = 150;
   useEffect(() => {
-    getLeaderboard(loadAmount, 1).then((leaderboard) => {
+    getLeaderboard(totalAmount, 1).then((leaderboard) => {
       if (leaderboard) {
-        setLeaderboard(leaderboard);
+        setTopGames(leaderboard);
+        let currLeaderboard = leaderboard.slice(0, loadAmount);
+        setLeaderboard(currLeaderboard);
       }
       setLoading(false);
     });
   }, []);
+
+  const sortLeaderboard = (
+    parameter: SortParameter,
+    order: SortOrder
+  ) => {
+    setSortParameter(parameter);
+    setSortOrder(order);
+    let sortedLeaderboard = [...topGames];
+    if (parameter === SortParameter.numGames) {
+      sortedLeaderboard.sort((a, b) => {
+        return order === SortOrder.asc
+          ? a.numGames - b.numGames
+          : b.numGames - a.numGames;
+      });
+    } else if (parameter === SortParameter.averageScore) {
+      sortedLeaderboard.sort((a, b) => {
+        return order === SortOrder.asc
+          ? a.averageScore - b.averageScore
+          : b.averageScore - a.averageScore;
+      });
+    } else if (parameter === SortParameter.winRate) {
+      sortedLeaderboard.sort((a, b) => {
+        return order === SortOrder.asc ? a.winRate - b.winRate : b.winRate - a.winRate;
+      });
+    }
+    setTopGames(sortedLeaderboard);
+    setLeaderboard(sortedLeaderboard.slice(0, loadAmount));
+  };
 
   const [width, setWidth] = React.useState(0);
   useEffect(() => {
@@ -54,7 +103,8 @@ const Leaderboard = (props: LeaderboardProps) => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
   const arrowSize = width > phoneMaxWidth ? 40 : 34;
-  const createButtonWidth = width > phoneMaxWidth ? 95.53 : width > maxCustomTextWidth ? 88.74 : 42;
+  const createButtonWidth =
+    width > phoneMaxWidth ? 95.53 : width > maxCustomTextWidth ? 88.74 : 42;
 
   return (
     <>
@@ -65,14 +115,15 @@ const Leaderboard = (props: LeaderboardProps) => {
         className="mt-5 pb-14 pl-5 pr-5"
       >
         <Group justify="space-between" align="center" w="100%" wrap="nowrap">
-          <Link href={"/"}>
+          <Link href={"/"} style={{textAlign: 'left'}}>
+            <Group justify='flex-start' w={createButtonWidth}>
             <HoverButton onTap={() => {}}>
               <IconArrowLeft
                 size={arrowSize}
                 color={white}
-                width={createButtonWidth}
               />
             </HoverButton>
+            </Group>
           </Link>
           <Stack justify="center" align="center" gap="0px">
             <Link href={"/"}>
@@ -84,7 +135,7 @@ const Leaderboard = (props: LeaderboardProps) => {
               ></Image>
             </Link>
             <Text p="0px" c={white} ta="center">
-              Custom Game Leaderboard
+              Top Custom Games
             </Text>
           </Stack>
           <CustomGameButton
@@ -99,48 +150,56 @@ const Leaderboard = (props: LeaderboardProps) => {
         ) : leaderboard.length === 0 ? (
           <Text c={white}>No data available, please try again</Text>
         ) : (
-          <InfiniteScroll
-            dataLength={leaderboard.length}
-            next={() =>
-              getLeaderboard(loadAmount, leaderboard.length).then(
-                (new_leaderboard) => {
-                  if (new_leaderboard) {
-                    setLeaderboard(leaderboard.concat(new_leaderboard));
-                  }
-                }
-              )
-            }
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              alignItems: "center",
-              alignContent: "center",
-              gap: "10px",
-              padding: "20px",
-            }}
-            hasMore={leaderboard.length < loadAmount * numLoads}
-            loader={
-              <Center>
-                <Loader color={green} size="md" />
-              </Center>
-            }
-          >
-            {leaderboard.map(
-              (game, index) =>
-                web[game.matchup[0]] &&
-                web[game.matchup[1]] && (
-                  <GameCard
-                    key={index}
-                    start={web[game.matchup[0]]}
-                    end={web[game.matchup[1]]}
-                    plays={game.numGames}
-                    avg_score={game.averageScore}
-                    win_rate={game.winRate}
-                  />
-                )
-            )}
-          </InfiniteScroll>
+          <>
+            <SortButtons
+              sortOrder={sortOrder}
+              sortParameter={sortParameter}
+              sort={sortLeaderboard}
+            />
+            <InfiniteScroll
+              dataLength={leaderboard.length}
+              next={() => {
+                setLeaderboard(
+                  leaderboard.concat(
+                    topGames.slice(
+                      leaderboard.length,
+                      leaderboard.length + loadAmount
+                    )
+                  )
+                );
+              }}
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignItems: "center",
+                alignContent: "center",
+                gap: "10px",
+                padding: "20px",
+              }}
+              hasMore={leaderboard.length < topGames.length}
+              loader={
+                <Center>
+                  <Loader color={green} size="md" />
+                </Center>
+              }
+            >
+              {leaderboard.map(
+                (game, index) =>
+                  web[game.matchup[0]] &&
+                  web[game.matchup[1]] && (
+                    <GameCard
+                      key={index}
+                      start={web[game.matchup[0]]}
+                      end={web[game.matchup[1]]}
+                      plays={game.numGames}
+                      avg_score={game.averageScore}
+                      win_rate={game.winRate}
+                    />
+                  )
+              )}
+            </InfiniteScroll>
+          </>
         )}
       </Stack>
       <Suspense>

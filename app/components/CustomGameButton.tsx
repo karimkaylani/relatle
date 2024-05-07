@@ -1,6 +1,7 @@
 import React from "react";
 import CustomIcon from "./CustomIcon";
 import IconHoverButton from "./IconHoverButton";
+import { green } from "../colors";
 
 export interface CustomGameModalProps {
   customModalOpen: () => void;
@@ -15,10 +16,10 @@ const CustomGameButton = (props: CustomGameModalProps) => {
   return (
     <IconHoverButton
       onTap={customModalOpen}
-      icon={<CustomIcon size={18} label={text} />}
+      icon={<CustomIcon size={18} label={text} color={color}/>}
       text={text}
       showText={showText}
-      bgColor={color}
+      textColor={color}
     />
   );
 };

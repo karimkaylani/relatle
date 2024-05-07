@@ -11,6 +11,7 @@ export interface RelatleButtonProps {
   disabled?: boolean;
   icon?: React.ReactNode;
   loading?: boolean;
+  filled?: boolean;
   size?: string;
   showText?: boolean;
 }
@@ -22,6 +23,7 @@ const RelatleButton = ({
   borderColor=color,
   disabled = false,
   loading = false,
+  filled = false,
   size='md',
   onClick,
   icon = undefined,
@@ -29,7 +31,6 @@ const RelatleButton = ({
 }: RelatleButtonProps) => {
   if (color === white) {
     borderColor = gray6;
-    textColor = white;
     color = gray5;
   }
   return (
@@ -38,7 +39,7 @@ const RelatleButton = ({
       loading={loading}
       leftSection={showText && icon}
       radius={8}
-      variant="light"
+      variant={filled ? "white" : "light"}
       color={color}
       size={size}
       onClick={onClick}
