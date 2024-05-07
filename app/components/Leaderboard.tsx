@@ -175,7 +175,9 @@ const Leaderboard = (props: LeaderboardProps) => {
                 alignItems: "center",
                 alignContent: "center",
                 gap: "10px",
-                padding: "20px",
+                paddingTop: "2px",
+                paddingLeft: "15px",
+                paddingRight: '15px',
               }}
               hasMore={leaderboard.length < topGames.length}
               loader={
