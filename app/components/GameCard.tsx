@@ -22,7 +22,7 @@ const GameCard = (props: GameCardProps) => {
   return (
     <Link href={url} target='_blank' prefetch={false} tabIndex={-1}>
     <HoverButton onTap={() => {}}>
-    <Card shadow="lg" radius="lg" p="sm" withBorder w={window.innerWidth > maxWidth ? maxWidth : window.innerWidth - 30}> 
+    <Card shadow="lg" radius="lg" p="sm" withBorder w={window.innerWidth > maxWidth ? maxWidth : window.innerWidth - 40}> 
         <Stack gap='xs'>
         <Matchup start={start} end={end} small={window.innerWidth < phoneMaxWidth} center={false} />
         <Group>
