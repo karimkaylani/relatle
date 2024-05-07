@@ -573,7 +573,7 @@ const CustomGameModal = (props: CustomGameModalProps) => {
           )}
         </Stack>
 
-        <Group w='100%' justify='center' align='center' grow={(typeof window !== "undefined") ? window.innerWidth > maxButtonGrowWidth : false}>
+        <Group w='100%' justify='center' align='center' grow={window.innerWidth > maxButtonGrowWidth}>
           <ShareCustomGame
             start={startArtist}
             end={endArtist}

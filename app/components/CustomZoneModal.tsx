@@ -49,9 +49,9 @@ const CustomZoneModal = (props: CustomZoneModalProps) => {
         }}
       >
         <Stack align="center" justify="center">
-          <Text ta="center" style={{maxWidth: '320px'}}>
-            Make your own custom game to play and share or browse our most
-            popular matchups.
+          <Text ta="center" style={{maxWidth: '290px'}}>
+            Create a custom game to play and share 
+            or browse our most popular matchups.
           </Text>
           <Image w={274} src="images/custom-zone.png" alt="Custom Games" />
         <Group w='100%' justify='center' align='center' grow={window.innerWidth > maxButtonGrowWidth}>

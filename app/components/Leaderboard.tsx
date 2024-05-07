@@ -106,6 +106,14 @@ const Leaderboard = (props: LeaderboardProps) => {
   const createButtonWidth =
     width > phoneMaxWidth ? 95.53 : width > maxCustomTextWidth ? 88.74 : 42;
 
+    if (loading) {
+      return (
+        <Center className="pt-14">
+          <Loader size="lg" color={green} />
+        </Center>
+      );
+    }
+
   return (
     <>
       <Stack
