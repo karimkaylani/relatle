@@ -44,6 +44,7 @@ const Leaderboard = (props: LeaderboardProps) => {
   const { web } = props;
   const [topGames, setTopGames] = React.useState<CustomGame[]>([]);
   const [leaderboard, setLeaderboard] = React.useState<CustomGame[]>([]);
+  const [mounted, setMounted] = React.useState(false);
   const [loading, setLoading] = React.useState(true);
 
   const [sortParameter, setSortParameter] = React.useState<SortParameter>(
@@ -57,6 +58,7 @@ const Leaderboard = (props: LeaderboardProps) => {
   const loadAmount = 25;
   const totalAmount = 150;
   useEffect(() => {
+    setMounted(true);
     getLeaderboard(totalAmount, 1).then((leaderboard) => {
       if (leaderboard) {
         setTopGames(leaderboard);
@@ -106,7 +108,7 @@ const Leaderboard = (props: LeaderboardProps) => {
   const createButtonWidth =
     width > phoneMaxWidth ? 95.53 : width > maxCustomTextWidth ? 88.74 : 42;
 
-    if (loading) {
+    if (mounted === false) {
       return (
         <Center className="pt-14">
           <Loader size="lg" color={green} />
