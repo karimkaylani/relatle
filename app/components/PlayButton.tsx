@@ -82,7 +82,6 @@ const PlayButton = (props: PlayButtonProps) => {
         ></RingProgress>
       </HoverButton>
       <audio
-        preload="none"
         ref={audioRef}
         src={audioUrl}
         onTimeUpdate={onTimeUpdate}
