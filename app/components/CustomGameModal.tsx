@@ -10,7 +10,7 @@ import {
   CloseButton,
 } from "@mantine/core";
 import React, { use, useEffect, useRef, useState } from "react";
-import { Artist, maxButtonGrowWidth, maxCustomTextWidth, phoneMaxWidth } from "./Game";
+import { Artist, maxButtonGrowWidth } from "./Game";
 import Arrow from "./Arrow";
 import * as Collections from "typescript-collections";
 import ShareCustomGame, { generateCustomGameURL } from "./ShareCustomGame";
@@ -222,7 +222,11 @@ const CustomGameModal = (props: CustomGameModalProps) => {
       endArtistsWithMaxDegOfSep[end].length >= minNumPathsForRecommended &&
       endArtistsWithMaxDegOfSep[end].length <= maxNumPathsForRecommended &&
       !closeEndArtists.includes(end) &&
-      !repeatingArtistInAllPaths(endArtistsWithMaxDegOfSep[end], start, web[start].related.length === 1) &&
+      !repeatingArtistInAllPaths(
+        endArtistsWithMaxDegOfSep[end],
+        start,
+        web[start].related.length === 1
+      ) &&
       atLeastTwoPathsIfNumFirstClicked(endArtistsWithMaxDegOfSep[end], 2) &&
       targetArtistRelatedBothDirections(end, 0.3)
     );
@@ -346,11 +350,11 @@ const CustomGameModal = (props: CustomGameModalProps) => {
       maxDegOfSepWarning
     );
     return (
-      artistsList.includes(startArtist) &&
-      matchupsFound.includes(endArtist) &&
-      (validPaths.length < maxNumPathsForWarning &&
-      getValidPaths(web, startArtist, endArtist, minDegOfSepRecommended)
-        .length <= 0) ||
+      (artistsList.includes(startArtist) &&
+        matchupsFound.includes(endArtist) &&
+        validPaths.length < maxNumPathsForWarning &&
+        getValidPaths(web, startArtist, endArtist, minDegOfSepRecommended)
+          .length <= 0) ||
       repeatingArtistInAllPaths(validPaths, startArtist, true)
     );
   };
@@ -360,19 +364,19 @@ const CustomGameModal = (props: CustomGameModalProps) => {
   };
 
   const getArtistOrder = () => {
-    let res: { [key: string]: number} = {}
+    let res: { [key: string]: number } = {};
     // loop with index
     for (let i = 0; i < artistsList.length; i++) {
-      res[artistsList[i]] = i
+      res[artistsList[i]] = i;
     }
-    return res
-  }
+    return res;
+  };
 
-  const artistRanking = getArtistOrder()
+  const artistRanking = getArtistOrder();
 
   const compareArtists = (a: string, b: string) => {
     // sort based on order of keys in web
-    return artistRanking[a] - artistRanking[b]
+    return artistRanking[a] - artistRanking[b];
   };
 
   const removeArticles = (title: string) => {

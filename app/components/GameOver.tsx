@@ -146,6 +146,9 @@ const GameOver = ({
     setMinPath(mPath);
     getStats(matchup, mPathLength)
       .then((res) => {
+        if (!res) {
+          openPath();
+        }
         setStats(res);
         setLoadingGlobalScore(false);
       })
