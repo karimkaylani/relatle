@@ -23,6 +23,7 @@ import RelatleButton from "./RelatleButton";
 import CustomIcon from "./CustomIcon";
 import CustomGameModal from "./CustomGameModal";
 import SortButtons from "./SortButtons";
+import Logo from "./Logo";
 
 export interface LeaderboardProps {
   web: { [key: string]: Artist };
@@ -137,12 +138,7 @@ const Leaderboard = (props: LeaderboardProps) => {
           </Link>
           <Stack justify="center" align="center" gap="0px">
             <Link href={"/"}>
-              <Image
-                style={{ cursor: "pointer" }}
-                w={width > phoneMaxWidth ? 250 : 175}
-                src="images/logo.png"
-                alt="Relatle Logo"
-              ></Image>
+              <Logo />
             </Link>
             <Text p="0px" c={white} ta="center">
               Top Custom Games

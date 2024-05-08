@@ -50,6 +50,7 @@ import { green, white, red, gray7, gray9, gray8, yellow } from "../colors";
 import PathModal from "./PathModal";
 import Link from "next/link";
 import CustomZoneModal from "./CustomZoneModal";
+import Logo from "./Logo";
 
 export interface Artist {
   name: string;
@@ -755,12 +756,7 @@ const Game = (props: GameProps) => {
         </div>
         <Stack gap="0px">
           <Link href={is_custom ? "/" : ""}>
-            <MantineImage
-              style={{ cursor: "pointer" }}
-              w={width > phoneMaxWidth ? 250 : 175}
-              src="images/logo.png"
-              alt="Relatle Logo"
-            ></MantineImage>
+            <Logo />
           </Link>
           {is_custom && (
             <Text p="0px" c={white} ta="center">
