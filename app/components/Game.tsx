@@ -838,6 +838,7 @@ const Game = (props: GameProps) => {
         matchupID={matchupID}
         customModalOpen={customModalOpen}
         openStats={sidebarOpen}
+        streak={streak}
       />
       <PlayingAudioContext.Provider
         value={{
