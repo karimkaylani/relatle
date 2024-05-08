@@ -343,7 +343,6 @@ const ArtistCard = ({
           </Text>
         </Flex>
         <audio
-          preload="none"
           loop
           ref={audioRef}
           src={artist.top_song_preview_url}
