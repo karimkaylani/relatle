@@ -2,16 +2,24 @@ import { Card, Divider, Stack, Group, Space, Text } from "@mantine/core";
 import React, { ReactNode } from "react";
 import ScoreDisplay from "./ScoreDisplay";
 import { yellow } from "../colors";
+import StreakDisplay from "./StreakDisplay";
 
 export interface ScoreboardProps {
   guesses: number;
   resets: number;
-  borderColor?: string|undefined;
+  borderColor?: string | undefined;
   small?: boolean;
+  streak?: number | undefined;
 }
 
 const Scoreboard = (props: ScoreboardProps) => {
-  const { guesses, resets, borderColor = null, small } = props;
+  const {
+    guesses,
+    resets,
+    borderColor = null,
+    small,
+    streak = undefined,
+  } = props;
   return (
     <Card
       shadow="md"
@@ -25,9 +33,24 @@ const Scoreboard = (props: ScoreboardProps) => {
       }}
     >
       <Group justify="center">
-        <ScoreDisplay text={"Guesses"} value={guesses.toString()} small={false}/>
+        {streak !== undefined && (
+          <>
+            <StreakDisplay streak={streak} />
+            <Divider orientation="vertical" />
+          </>
+        )}
+        <ScoreDisplay
+          text={"Guesses"}
+          value={guesses.toString()}
+          small={false}
+        />
         <Divider orientation="vertical" />
-        <ScoreDisplay text={"Resets"} value={resets.toString()} small={false} changeColor={yellow}/>
+        <ScoreDisplay
+          text={"Resets"}
+          value={resets.toString()}
+          small={false}
+          changeColor={yellow}
+        />
       </Group>
     </Card>
   );

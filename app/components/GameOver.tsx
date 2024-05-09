@@ -52,6 +52,7 @@ export interface GameOverProps {
   matchupID: number;
   customModalOpen: () => void;
   openStats: () => void;
+  streak: number;
 }
 
 const getMinPath = (
@@ -95,6 +96,7 @@ const GameOver = ({
   matchupID,
   customModalOpen,
   openStats,
+  streak
 }: GameOverProps) => {
   const [start, end] = matchup;
   const [
@@ -219,6 +221,7 @@ const GameOver = ({
               guesses={guesses}
               resets={resets}
               small={window.innerWidth > phoneMaxWidth ? false : true}
+              streak={!is_custom ? streak : undefined}
             />
             <RelatleButton
               size="sm"
