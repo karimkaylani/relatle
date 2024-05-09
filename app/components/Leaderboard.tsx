@@ -203,6 +203,7 @@ const Leaderboard = (props: LeaderboardProps) => {
                       plays={game.numGames}
                       avg_score={game.averageScore}
                       win_rate={game.winRate}
+                      index={index + 1}
                     />
                   )
               )}

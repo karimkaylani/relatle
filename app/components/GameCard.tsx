@@ -1,4 +1,4 @@
-import { Card, Group, Stack } from '@mantine/core'
+import { Card, Group, Stack, Text } from '@mantine/core'
 import React from 'react'
 import { Artist, phoneMaxWidth } from './Game'
 import Matchup from './Matchup'
@@ -13,16 +13,19 @@ export interface GameCardProps {
     plays: number,
     avg_score: number,
     win_rate: number,
+    index: number
 }
 
 const GameCard = (props: GameCardProps) => {
-    const { start, end, plays, avg_score, win_rate } = props
+    const { start, end, plays, avg_score, win_rate, index } = props
     const url = generateCustomGameURL(start.name, end.name)
     const maxWidth = 500;
   return (
     <Link href={url} target='_blank' prefetch={false} tabIndex={-1}>
     <HoverButton onTap={() => {}}>
     <Card shadow="lg" radius="lg" p="sm" withBorder w={window.innerWidth > maxWidth ? maxWidth : window.innerWidth - 40}> 
+      <Group wrap='nowrap'>
+        <Text>{index}</Text>
         <Stack gap='xs'>
         <Matchup start={start} end={end} small={window.innerWidth < phoneMaxWidth} center={false} />
         <Group>
@@ -31,6 +34,7 @@ const GameCard = (props: GameCardProps) => {
             <Stat label={'Win Rate'} value={win_rate.toFixed(0) + '%'} />
         </Group>
         </Stack>
+      </Group>
     </Card>
     </HoverButton>
     </Link>

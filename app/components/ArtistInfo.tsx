@@ -21,7 +21,7 @@ const ArtistInfo = ({
 }: ArtistInfoProps) => {
   return (
     <Group justify="center" gap="4px">
-      <Group justify="center" gap={small ? "5px" : "xs"}>
+      <Group justify="center" gap={small ? "5px" : "xs"} wrap='nowrap'>
         <Avatar
           size={small ? "sm" : "md"}
           src={artist.image}
