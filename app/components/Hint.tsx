@@ -54,7 +54,7 @@ const Hint = (props: HintProps) => {
         {...drawerSwipeHandlers}
         opened={opened}
         onClose={closeHint}
-        size={window.innerHeight > 900 ? "835" : "75%"}
+        size={window.innerHeight > 900 ? "855" : "75%"}
         style={{ borderRadius: "20px" }}
         padding="sm"
         position={"bottom"}
