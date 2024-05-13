@@ -67,12 +67,12 @@ const SideDrawer = (props: SideDrawerProps) => {
   return (
     <>
       <Burger
-        opened={opened}
+        opened={false}
         onClick={open}
         aria-label="Toggle Sidebar"
       />
       <Drawer
-        size="xs"
+        size="sm"
         opened={opened}
         onClose={close}
         title="Statistics"
