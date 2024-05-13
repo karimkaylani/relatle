@@ -98,6 +98,7 @@ interface SaveProps {
 export const phoneMaxWidth = 768;
 export const maxCustomTextWidth = 650;
 export const maxButtonGrowWidth = 370;
+export const feedBackForm = "https://docs.google.com/forms/d/e/1FAIpQLSeMEW3eGqVXheqidY43q9yMVK2QCi-AEJV3JGTuPK4LX9U9eA/viewform?usp=sf_link"
 
 export interface iPlayingAudioContext {
   playingAudio: HTMLAudioElement | null;
@@ -969,7 +970,7 @@ const Game = (props: GameProps) => {
         <Group justify="space-between" align="center" gap="md">
           <ClickableIcon
             icon={<IconFlag2 aria-label="Send Feedback" />}
-            url="https://docs.google.com/forms/d/e/1FAIpQLSeMEW3eGqVXheqidY43q9yMVK2QCi-AEJV3JGTuPK4LX9U9eA/viewform?usp=sf_link"
+            url={feedBackForm}
           />
           <HowToPlay
             start={web[start]}

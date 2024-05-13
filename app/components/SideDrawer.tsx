@@ -20,6 +20,7 @@ import StreakDisplay from "./StreakDisplay";
 import { white } from "../colors";
 import TopGamesButton from "./TopGamesButton";
 import ArchiveButton from "./ArchiveButton";
+import { feedBackForm } from "./Game";
 
 export interface SideDrawerProps {
   opened: boolean;
@@ -145,7 +146,7 @@ const SideDrawer = (props: SideDrawerProps) => {
           <IconHoverButton
             onTap={() => {
               window.open(
-                "https://docs.google.com/forms/d/e/1FAIpQLSeMEW3eGqVXheqidY43q9yMVK2QCi-AEJV3JGTuPK4LX9U9eA/viewform?usp=sf_link",
+                feedBackForm,
                 "_blank"
               );
             }}
