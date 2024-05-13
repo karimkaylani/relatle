@@ -11,7 +11,7 @@ import {
 import React, { useEffect } from "react";
 import CustomGameButton from "./CustomGameButton";
 import IconHoverButton from "./IconHoverButton";
-import { IconBolt, IconFlag2, IconHelpCircle } from "@tabler/icons-react";
+import { IconBolt, IconBurger, IconFlag2, IconHelpCircle, IconMenu2 } from "@tabler/icons-react";
 import CoffeeButton from "./CoffeeButton";
 import TransferStats from "./TransferStats";
 import { useSearchParams } from "next/navigation";
@@ -20,7 +20,7 @@ import StreakDisplay from "./StreakDisplay";
 import { white } from "../colors";
 import TopGamesButton from "./TopGamesButton";
 import ArchiveButton from "./ArchiveButton";
-import { feedBackForm } from "./Game";
+import { feedBackForm, maxCustomTextWidth } from "./Game";
 
 export interface SideDrawerProps {
   opened: boolean;
@@ -67,13 +67,9 @@ const SideDrawer = (props: SideDrawerProps) => {
 
   return (
     <>
-      <Burger
-        opened={false}
-        onClick={open}
-        aria-label="Toggle Sidebar"
-      />
+      <IconHoverButton onTap={open} text={'Menu'} icon={<IconMenu2 size={18}/>} showText={window.innerWidth > maxCustomTextWidth}/>
       <Drawer
-        size="sm"
+        size="xs"
         opened={opened}
         onClose={close}
         title="Statistics"

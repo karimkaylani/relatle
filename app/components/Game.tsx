@@ -96,7 +96,7 @@ interface SaveProps {
 }
 
 export const phoneMaxWidth = 768;
-export const maxCustomTextWidth = 650;
+export const maxCustomTextWidth = 680;
 export const maxButtonGrowWidth = 370;
 export const feedBackForm = "https://docs.google.com/forms/d/e/1FAIpQLSeMEW3eGqVXheqidY43q9yMVK2QCi-AEJV3JGTuPK4LX9U9eA/viewform?usp=sf_link"
 
@@ -730,11 +730,9 @@ const Game = (props: GameProps) => {
         align="center"
         wrap="nowrap"
         gap='sm'
-        styles={{ root: { width:'100%', maxWidth: "1000px" } }}
+        styles={{ root: { width:'100%', maxWidth: "816px" } }}
       >
-        <div
-          style={{flexGrow: 1, flexBasis: 0}}
-        >
+        <Group wrap='nowrap' style={{flexGrow: 1, flexBasis: 0, display: 'flex', justifyContent: 'flex-start'}}>
           <SideDrawer
             opened={sidebarOpened}
             handlers={sidebarHandlers}
@@ -751,12 +749,8 @@ const Game = (props: GameProps) => {
             customModalOpen={customModalOpen}
             htpOpen={htpModalOpen}
           />
-        </div>
-        <div 
-        style={{flexGrow: 1, flexBasis: 0}}
-        >
-        <ArchiveButton showText={width > maxCustomTextWidth}/>
-        </div>
+          <ArchiveButton showText={width > maxCustomTextWidth}/>
+        </Group>
         <Stack gap="0px">
           <Link href={is_custom ? "/" : ""}>
             <Logo />
@@ -767,19 +761,13 @@ const Game = (props: GameProps) => {
             </Text>
           )}
         </Stack>
-        <div 
-        style={{flexGrow: 1, flexBasis: 0, display: 'flex', justifyContent: 'flex-end'}}
-        >
+        <Group wrap='nowrap' style={{flexGrow: 1, flexBasis: 0, display: 'flex', justifyContent: 'flex-end'}}>
         <TopGamesButton showText={width > maxCustomTextWidth}/>
-        </div>
-        <div
-        style={{flexGrow: 1, flexBasis: 0, display: 'flex', justifyContent: 'flex-end'}}
-        >
         <CustomGameButton
           customModalOpen={customModalOpen}
           showText={width >= maxCustomTextWidth}
         />
-        </div>
+        </Group>
       </Group>
       <CustomGameModal
           customModalOpened={customModalOpened}
