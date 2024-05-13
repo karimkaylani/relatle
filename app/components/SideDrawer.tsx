@@ -67,7 +67,7 @@ const SideDrawer = (props: SideDrawerProps) => {
 
   return (
     <>
-      <IconHoverButton onTap={open} text={'Menu'} icon={<IconMenu2 size={18}/>} showText={window.innerWidth > maxCustomTextWidth}/>
+      <IconHoverButton onTap={open} text={'Menu'} icon={<IconMenu2 color={white} size={18}/>} showText={window.innerWidth > maxCustomTextWidth}/>
       <Drawer
         size="xs"
         opened={opened}
