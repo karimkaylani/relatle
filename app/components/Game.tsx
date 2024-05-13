@@ -729,7 +729,7 @@ const Game = (props: GameProps) => {
         align="center"
         wrap="nowrap"
         gap='sm'
-        styles={{ root: { width: "100%" } }}
+        styles={{ root: { width:'100%', maxWidth: "1000px" } }}
       >
         <div
           style={{flexGrow: 1, flexBasis: 0}}
