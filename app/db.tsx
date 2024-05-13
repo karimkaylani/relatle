@@ -21,7 +21,6 @@ export const getStats = async (matchup: string[], shortestPath: number): Promise
   if (!num_games || num_games < 3 || !average_score || !perfect_game_rate || !win_rate) {
     return null;
   }
-
   const binSize = 5;
   const numBins = 5;  
   let binsRange = [];
@@ -55,7 +54,7 @@ export const getStats = async (matchup: string[], shortestPath: number): Promise
     }
   }
   for (let key of Object.keys(bins)) {
-    bins[key] = (bins[key] / num_games) * 100;
+    bins[key] = (bins[key] / won_guesses.length) * 100;
   }
   return {
     averageScore: average_score,
