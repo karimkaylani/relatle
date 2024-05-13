@@ -18,6 +18,8 @@ import { useSearchParams } from "next/navigation";
 import ScoreDisplay from "./ScoreDisplay";
 import StreakDisplay from "./StreakDisplay";
 import { white } from "../colors";
+import TopGamesButton from "./TopGamesButton";
+import ArchiveButton from "./ArchiveButton";
 
 export interface SideDrawerProps {
   opened: boolean;
@@ -65,7 +67,6 @@ const SideDrawer = (props: SideDrawerProps) => {
   return (
     <>
       <Burger
-        w={42}
         opened={opened}
         onClick={open}
         aria-label="Toggle Sidebar"
@@ -131,7 +132,9 @@ const SideDrawer = (props: SideDrawerProps) => {
             </Card>
           </Stack>
           <TransferStats />
-          <CustomGameButton customModalOpen={customModalOpen} />
+          <CustomGameButton customModalOpen={customModalOpen} text='Create Custom Game'/>
+          <TopGamesButton text='Top Custom Games' />
+          <ArchiveButton text='Past Daily Games' />
           <Divider w={44} style={{ margin: "auto" }} />
           <IconHoverButton
             onTap={htpOpen}

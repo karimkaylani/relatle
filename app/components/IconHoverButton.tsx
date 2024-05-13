@@ -19,14 +19,15 @@ const IconHoverButton = (props: IconHoverButtonProps) => {
   // So use Card onClick instead, but still expose onKeyDown for keyboard support
   return (
       <HoverButton onTap={() => {}} onKeyDown={onTap}>
-        <Card onClick={onTap} shadow="md" radius="lg" p="sm">
-        <Group gap="6px" justify="center">
+        <Card onClick={onTap} shadow="md" radius="lg" p={showText ? "sm" : "xs"}>
+        <Group gap="6px" justify="center" wrap='nowrap'>
           {icon}
           {showText &&
             <Text
               fw={700}
               size={textSize}
               c={textColor}
+              truncate='end'
             >
               {text}
             </Text>}

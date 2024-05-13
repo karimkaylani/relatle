@@ -42,15 +42,19 @@ import {
   IconBrandGithub,
   IconBrandReddit,
   IconFlag2,
+  IconHistory,
   IconRss,
+  IconTrophy,
 } from "@tabler/icons-react";
 import SideDrawer from "./SideDrawer";
 import ClickableIcon from "./ClickableIcon";
 import { green, white, red, gray7, gray9, gray8, yellow } from "../colors";
 import PathModal from "./PathModal";
 import Link from "next/link";
-import CustomZoneModal from "./CustomZoneModal";
 import Logo from "./Logo";
+import IconHoverButton from "./IconHoverButton";
+import TopGamesButton from "./TopGamesButton";
+import ArchiveButton from "./ArchiveButton";
 
 export interface Artist {
   name: string;
@@ -92,7 +96,7 @@ interface SaveProps {
 }
 
 export const phoneMaxWidth = 768;
-export const maxCustomTextWidth = 565;
+export const maxCustomTextWidth = 650;
 export const maxButtonGrowWidth = 370;
 
 export interface iPlayingAudioContext {
@@ -188,8 +192,8 @@ const Game = (props: GameProps) => {
   const [htpModalOpened, htpModalHandlers] = useDisclosure(false);
   const { open: htpModalOpen } = htpModalHandlers;
 
-  const [customZoneOpened, customZoneHandlers] = useDisclosure(false);
-  const { open: customZoneOpen } = customZoneHandlers;
+  const [customModalOpened, customModalHandlers] = useDisclosure(false);
+  const { open: customModalOpen } = customModalHandlers;
 
   const [newFeatureModalOpened, newFeatureModalHandlers] = useDisclosure(false);
   const { open: newFeatureModalOpen } = newFeatureModalHandlers;
@@ -724,18 +728,11 @@ const Game = (props: GameProps) => {
         justify="space-between"
         align="center"
         wrap="nowrap"
+        gap='sm'
         styles={{ root: { width: "100%" } }}
       >
-        {/* Widths of CustomGameButton so that the logo is centered */}
         <div
-          style={{
-            width:
-              width >= phoneMaxWidth
-                ? 147.35
-                : width >= maxCustomTextWidth
-                ? 133.16
-                : undefined,
-          }}
+          style={{flexGrow: 1, flexBasis: 0}}
         >
           <SideDrawer
             opened={sidebarOpened}
@@ -750,9 +747,14 @@ const Game = (props: GameProps) => {
             games_lost={gamesLost}
             lowest_score={lowestScore}
             highest_score={highestScore}
-            customModalOpen={customZoneOpen}
+            customModalOpen={customModalOpen}
             htpOpen={htpModalOpen}
           />
+        </div>
+        <div 
+        style={{flexGrow: 1, flexBasis: 0}}
+        >
+        <ArchiveButton showText={width > maxCustomTextWidth}/>
         </div>
         <Stack gap="0px">
           <Link href={is_custom ? "/" : ""}>
@@ -764,17 +766,26 @@ const Game = (props: GameProps) => {
             </Text>
           )}
         </Stack>
+        <div 
+        style={{flexGrow: 1, flexBasis: 0, display: 'flex', justifyContent: 'flex-end'}}
+        >
+        <TopGamesButton showText={width > maxCustomTextWidth}/>
+        </div>
+        <div
+        style={{flexGrow: 1, flexBasis: 0, display: 'flex', justifyContent: 'flex-end'}}
+        >
         <CustomGameButton
-          customModalOpen={customZoneOpen}
+          customModalOpen={customModalOpen}
           showText={width >= maxCustomTextWidth}
         />
-        <CustomZoneModal
-          customZoneOpened={customZoneOpened}
-          customZoneHandlers={customZoneHandlers}
+        </div>
+      </Group>
+      <CustomGameModal
+          customModalOpened={customModalOpened}
+          customModalHandlers={customModalHandlers}
           web={web}
           matchups={Object.values(matchups ?? {})}
         />
-      </Group>
       <Stack gap="xs">
         <Text size={width > phoneMaxWidth ? "md" : "sm"} ta="center">
           Use related artists to get from
@@ -844,7 +855,7 @@ const Game = (props: GameProps) => {
         web={web}
         is_custom={is_custom}
         matchupID={matchupID}
-        customModalOpen={customZoneOpen}
+        customModalOpen={customModalOpen}
         openStats={sidebarOpen}
         streak={streak}
       />

@@ -11,7 +11,7 @@ export interface CustomGameModalProps {
 }
 
 const CustomGameButton = (props: CustomGameModalProps) => {
-  const { customModalOpen, showText = true, text='Custom Game', color } = props;
+  const { customModalOpen, showText = true, text='Custom', color } = props;
 
   return (
     <IconHoverButton
