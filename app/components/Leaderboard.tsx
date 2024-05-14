@@ -27,6 +27,7 @@ import Logo from "./Logo";
 
 export interface LeaderboardProps {
   web: { [key: string]: Artist };
+  isArchive?: boolean;
 }
 
 export enum SortParameter {
@@ -42,7 +43,7 @@ export enum SortOrder {
 
 
 const Leaderboard = (props: LeaderboardProps) => {
-  const { web } = props;
+  const { web, isArchive=false } = props;
   const [topGames, setTopGames] = React.useState<CustomGame[]>([]);
   const [leaderboard, setLeaderboard] = React.useState<CustomGame[]>([]);
   const [mounted, setMounted] = React.useState(false);
@@ -109,13 +110,13 @@ const Leaderboard = (props: LeaderboardProps) => {
   const createButtonWidth =
     width > phoneMaxWidth ? 95.53 : width > maxCustomTextWidth ? 88.74 : 42;
 
-    if (mounted === false) {
-      return (
-        <Center className="pt-14">
-          <Loader size="lg" color={green} />
-        </Center>
-      );
-    }
+  if (mounted === false) {
+    return (
+      <Center className="pt-14">
+        <Loader size="lg" color={green} />
+      </Center>
+    );
+  }
 
   return (
     <>
@@ -125,7 +126,7 @@ const Leaderboard = (props: LeaderboardProps) => {
         gap="lg"
         className="mt-5 pb-14 pl-5 pr-5"
       >
-        <Group justify="space-between" align="center" w="100%" wrap="nowrap">
+        <Group justify="space-between" align="center" w="100%" wrap="nowrap" style={{maxWidth: '816px'}}>
           <Link href={"/"} style={{textAlign: 'left'}}>
             <Group justify='flex-start' w={createButtonWidth}>
             <HoverButton onTap={() => {}}>
@@ -141,12 +142,11 @@ const Leaderboard = (props: LeaderboardProps) => {
               <Logo />
             </Link>
             <Text p="0px" c={white} ta="center">
-              Top Custom Games
+              {isArchive ?  'Past Daily Games' : 'Top Custom Games'}
             </Text>
           </Stack>
           <CustomGameButton
             customModalOpen={open}
-            color={green}
             text="Create"
             showText={width > maxCustomTextWidth}
           />
@@ -157,11 +157,13 @@ const Leaderboard = (props: LeaderboardProps) => {
           <Text c={white}>No data available, please try again</Text>
         ) : (
           <>
+            {!isArchive && (
             <SortButtons
               sortOrder={sortOrder}
               sortParameter={sortParameter}
               sort={sortLeaderboard}
             />
+            )}
             <InfiniteScroll
               dataLength={leaderboard.length}
               next={() => {
