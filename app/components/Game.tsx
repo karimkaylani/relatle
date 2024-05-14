@@ -55,6 +55,7 @@ import Logo from "./Logo";
 import IconHoverButton from "./IconHoverButton";
 import TopGamesButton from "./TopGamesButton";
 import ArchiveButton from "./ArchiveButton";
+import MainContainer from "./MainContainer";
 
 export interface Artist {
   name: string;
@@ -98,7 +99,8 @@ interface SaveProps {
 export const phoneMaxWidth = 768;
 export const maxCustomTextWidth = 680;
 export const maxButtonGrowWidth = 370;
-export const feedBackForm = "https://docs.google.com/forms/d/e/1FAIpQLSeMEW3eGqVXheqidY43q9yMVK2QCi-AEJV3JGTuPK4LX9U9eA/viewform?usp=sf_link"
+export const feedBackForm =
+  "https://docs.google.com/forms/d/e/1FAIpQLSeMEW3eGqVXheqidY43q9yMVK2QCi-AEJV3JGTuPK4LX9U9eA/viewform?usp=sf_link";
 
 export interface iPlayingAudioContext {
   playingAudio: HTMLAudioElement | null;
@@ -161,6 +163,32 @@ const addScoreToDB = async (
     path: JSON.stringify(path),
     used_hint: usedHint,
   });
+};
+
+/* to preserve correct matchupID -> matchup mapping, since some matchups were deleted
+      as they are no longer recommended matchups
+      If deleting a matchup that has already passed: enumerate this by 1 */
+export const matchupIndexPadding = 72;
+
+// Launch of relatle, matchupID is # of days (matchups) since 11/29/2023
+export const startingDate = new Date(2023, 10, 29);
+
+export const getTodaysMatchup = (matchups: string[][]): any => {
+  if (matchups == null) {
+    return;
+  }
+
+  const oneDay = 24 * 60 * 60 * 1000; // hours * minutes * seconds * milliseconds
+  const now = new Date();
+  const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  const diffDays = Math.round(
+    Math.abs((today.getTime() - startingDate.getTime()) / oneDay)
+  );
+
+  const matchupIndex = (diffDays - matchupIndexPadding) % matchups.length;
+  const matchup = matchups[matchupIndex];
+  let matchup_id = diffDays + 1;
+  return [matchup, matchup_id];
 };
 
 const Game = (props: GameProps) => {
@@ -341,31 +369,6 @@ const Game = (props: GameProps) => {
     }
   };
 
-  const getTodaysMatchup = (matchups: string[][]): any => {
-    if (matchups == null) {
-      return;
-    }
-    /* to preserve correct matchupID -> matchup mapping, since some matchups were deleted
-        as they are no longer recommended matchups
-        If deleting a matchup that has already passed: enumerate this by 1 */
-    const matchupIndexPadding = 72;
-    // Launch of relatle, matchupID is # of days (matchups) since 11/29/2023
-    const startingDate = new Date(2023, 10, 29);
-
-    const oneDay = 24 * 60 * 60 * 1000; // hours * minutes * seconds * milliseconds
-    const now = new Date();
-    const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-    const diffDays = Math.round(
-      Math.abs((today.getTime() - startingDate.getTime()) / oneDay)
-    );
-
-    const matchupIndex = (diffDays - matchupIndexPadding) % matchups.length;
-    const matchup = matchups[matchupIndex];
-    let matchup_id = diffDays + 1;
-    setMatchupID(matchup_id);
-    return [matchup, matchup_id];
-  };
-
   // When component first mounts, load in localStorage
   // use loading so that nothing renders until localStorage is checked
   const [loading, setLoading] = useState(true);
@@ -387,6 +390,7 @@ const Game = (props: GameProps) => {
     setCurrArtist(web[todayMatchup[0]]);
     setPath([todayMatchup[0]]);
     loadLocalStorageIntoState(todayMatchup, matchup_id);
+    setMatchupID(todayMatchup[1]);
     setLoading(false);
 
     // preload images in modals
@@ -394,9 +398,9 @@ const Game = (props: GameProps) => {
       const image = new Image();
       image.src = src;
     };
-    preloadImage('images/give-up.png');
-    preloadImage('images/how-to-play.png');
-    preloadImage('images/custom-zone.png');
+    preloadImage("images/give-up.png");
+    preloadImage("images/how-to-play.png");
+    preloadImage("images/custom-zone.png");
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -719,20 +723,23 @@ const Game = (props: GameProps) => {
   };
 
   return (
-    <Flex
-      align="center"
-      direction="column"
-      gap="lg"
-      className="mt-5 pb-14 pl-5 pr-5"
-    >
+    <MainContainer>
       <Group
         justify="space-between"
         align="center"
         wrap="nowrap"
-        gap='sm'
-        styles={{ root: { width:'100%', maxWidth: "816px" } }}
+        gap="sm"
+        styles={{ root: { width: "100%", maxWidth: "816px" } }}
       >
-        <Group wrap='nowrap' style={{flexGrow: 1, flexBasis: 0, display: 'flex', justifyContent: 'flex-start'}}>
+        <Group
+          wrap="nowrap"
+          style={{
+            flexGrow: 1,
+            flexBasis: 0,
+            display: "flex",
+            justifyContent: "flex-start",
+          }}
+        >
           <SideDrawer
             opened={sidebarOpened}
             handlers={sidebarHandlers}
@@ -749,7 +756,7 @@ const Game = (props: GameProps) => {
             customModalOpen={customModalOpen}
             htpOpen={htpModalOpen}
           />
-          <ArchiveButton showText={width > maxCustomTextWidth}/>
+          <ArchiveButton showText={width > maxCustomTextWidth} />
         </Group>
         <Stack gap="0px">
           <Link href={is_custom ? "/" : ""}>
@@ -761,20 +768,28 @@ const Game = (props: GameProps) => {
             </Text>
           )}
         </Stack>
-        <Group wrap='nowrap' style={{flexGrow: 1, flexBasis: 0, display: 'flex', justifyContent: 'flex-end'}}>
-        <TopGamesButton showText={width > maxCustomTextWidth}/>
-        <CustomGameButton
-          customModalOpen={customModalOpen}
-          showText={width >= maxCustomTextWidth}
-        />
+        <Group
+          wrap="nowrap"
+          style={{
+            flexGrow: 1,
+            flexBasis: 0,
+            display: "flex",
+            justifyContent: "flex-end",
+          }}
+        >
+          <TopGamesButton showText={width > maxCustomTextWidth} />
+          <CustomGameButton
+            customModalOpen={customModalOpen}
+            showText={width >= maxCustomTextWidth}
+          />
         </Group>
       </Group>
       <CustomGameModal
-          customModalOpened={customModalOpened}
-          customModalHandlers={customModalHandlers}
-          web={web}
-          matchups={Object.values(matchups ?? {})}
-        />
+        customModalOpened={customModalOpened}
+        customModalHandlers={customModalHandlers}
+        web={web}
+        matchups={Object.values(matchups ?? {})}
+      />
       <Stack gap="xs">
         <Text size={width > phoneMaxWidth ? "md" : "sm"} ta="center">
           Use related artists to get from
@@ -972,7 +987,7 @@ const Game = (props: GameProps) => {
         newFeatureModalOpened={newFeatureModalOpened}
         newFeatureModalHandlers={newFeatureModalHandlers}
       />
-    </Flex>
+    </MainContainer>
   );
 };
 

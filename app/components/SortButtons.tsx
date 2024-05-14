@@ -1,7 +1,7 @@
 import React from "react";
 import RelatleButton from "./RelatleButton";
 import { black, white } from "../colors";
-import { SortOrder, SortParameter } from "./Leaderboard";
+import { SortOrder, SortParameter } from "./TopCustomGames";
 import { IconArrowDown, IconArrowUp } from "@tabler/icons-react";
 import { Group } from "@mantine/core";
 

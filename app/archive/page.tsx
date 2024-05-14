@@ -1,5 +1,6 @@
-import Leaderboard from "../components/Leaderboard";
 import Web from "../../public/data/web.json";
+import Matchups from "../../public/data/matchups.json";
+import PastDailyGames from "../components/PastDailyGames";
 
 export const metadata = {
   title: "relatle (archive)",
@@ -7,6 +8,6 @@ export const metadata = {
 
 export default async function Home() {
   return (
-    <Leaderboard web={Web} isArchive={true}/>
+    <PastDailyGames web={Web} matchups={Matchups.slice().reverse()} />
   );
 }

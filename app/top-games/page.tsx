@@ -1,4 +1,4 @@
-import Leaderboard from "../components/Leaderboard";
+import TopCustomGames from "../components/TopCustomGames";
 import Web from "../../public/data/web.json";
 
 export const metadata = {
@@ -7,6 +7,6 @@ export const metadata = {
 
 export default async function Home() {
   return (
-    <Leaderboard web={Web}/>
+    <TopCustomGames web={Web}/>
   );
 }

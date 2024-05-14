@@ -24,10 +24,11 @@ import CustomIcon from "./CustomIcon";
 import CustomGameModal from "./CustomGameModal";
 import SortButtons from "./SortButtons";
 import Logo from "./Logo";
+import LeaderboardTitle from "./LeaderboardTitle";
+import MainContainer from "./MainContainer";
 
-export interface LeaderboardProps {
+export interface TopCustomGamesProps {
   web: { [key: string]: Artist };
-  isArchive?: boolean;
 }
 
 export enum SortParameter {
@@ -41,9 +42,21 @@ export enum SortOrder {
   desc = "desc",
 }
 
+export const CardContainerStyles = {
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "center",
+  alignItems: "center",
+  alignContent: "center",
+  gap: "10px",
+  paddingTop: "2px",
+  paddingLeft: "15px",
+  paddingRight: '15px',
+}
 
-const Leaderboard = (props: LeaderboardProps) => {
-  const { web, isArchive=false } = props;
+
+const TopCustomGames = (props: TopCustomGamesProps) => {
+  const { web } = props;
   const [topGames, setTopGames] = React.useState<CustomGame[]>([]);
   const [leaderboard, setLeaderboard] = React.useState<CustomGame[]>([]);
   const [mounted, setMounted] = React.useState(false);
@@ -106,9 +119,6 @@ const Leaderboard = (props: LeaderboardProps) => {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-  const arrowSize = width > phoneMaxWidth ? 40 : 34;
-  const createButtonWidth =
-    width > phoneMaxWidth ? 95.53 : width > maxCustomTextWidth ? 88.74 : 42;
 
   if (mounted === false) {
     return (
@@ -120,50 +130,19 @@ const Leaderboard = (props: LeaderboardProps) => {
 
   return (
     <>
-      <Stack
-        align="center"
-        justify="center"
-        gap="lg"
-        className="mt-5 pb-14 pl-5 pr-5"
-      >
-        <Group justify="space-between" align="center" w="100%" wrap="nowrap" style={{maxWidth: '816px'}}>
-          <Link href={"/"} style={{textAlign: 'left'}}>
-            <Group justify='flex-start' w={createButtonWidth}>
-            <HoverButton onTap={() => {}}>
-              <IconArrowLeft
-                size={arrowSize}
-                color={white}
-              />
-            </HoverButton>
-            </Group>
-          </Link>
-          <Stack justify="center" align="center" gap="0px">
-            <Link href={"/"}>
-              <Logo />
-            </Link>
-            <Text p="0px" c={white} ta="center">
-              {isArchive ?  'Past Daily Games' : 'Top Custom Games'}
-            </Text>
-          </Stack>
-          <CustomGameButton
-            customModalOpen={open}
-            text="Create"
-            showText={width > maxCustomTextWidth}
-          />
-        </Group>
+      <MainContainer>
+        <LeaderboardTitle title='Top Custom Games' openCustomModal={open}/>
         {loading ? (
           <Loader color={green} size="md" />
         ) : leaderboard.length === 0 ? (
           <Text c={white}>No data available, please try again</Text>
         ) : (
           <>
-            {!isArchive && (
             <SortButtons
               sortOrder={sortOrder}
               sortParameter={sortParameter}
               sort={sortLeaderboard}
             />
-            )}
             <InfiniteScroll
               dataLength={leaderboard.length}
               next={() => {
@@ -176,17 +155,7 @@ const Leaderboard = (props: LeaderboardProps) => {
                   )
                 );
               }}
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "center",
-                alignItems: "center",
-                alignContent: "center",
-                gap: "10px",
-                paddingTop: "2px",
-                paddingLeft: "15px",
-                paddingRight: '15px',
-              }}
+              style={CardContainerStyles as React.CSSProperties}
               hasMore={leaderboard.length < topGames.length}
               loader={
                 <Center>
@@ -212,7 +181,7 @@ const Leaderboard = (props: LeaderboardProps) => {
             </InfiniteScroll>
           </>
         )}
-      </Stack>
+      </MainContainer>
       <Suspense>
         <CustomGameModal
           customModalOpened={customModalOpened}
@@ -225,4 +194,4 @@ const Leaderboard = (props: LeaderboardProps) => {
   );
 };
 
-export default Leaderboard;
+export default TopCustomGames;
