@@ -11,7 +11,7 @@ export interface TopGamesButtonProps {
 
 const TopGamesButton = ({showText=true, text='Top Games'}: TopGamesButtonProps) => {
   return (
-    <IconHoverButton onTap={() => window.open('top-games', '_self')} icon={<IconTrophy color={white} size={18} />} showText={showText} text={text} />
+    <IconHoverButton onTap={() => window.open('top-games', '_self')} icon={<IconTrophy color={white} size={24} />} showText={showText} text={text} />
   )
 }
 

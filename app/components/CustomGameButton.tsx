@@ -16,7 +16,7 @@ const CustomGameButton = (props: CustomGameModalProps) => {
   return (
     <IconHoverButton
       onTap={customModalOpen}
-      icon={<CustomIcon size={18} label={text} color={color}/>}
+      icon={<CustomIcon size={24} label={text} color={color}/>}
       text={text}
       showText={showText}
       textColor={color}

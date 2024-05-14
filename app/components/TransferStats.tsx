@@ -111,7 +111,7 @@ const TransferStats = () => {
     <>
       <IconHoverButton
         onTap={open}
-        icon={<IconDownload style={{transform: 'rotate(-90deg)'}} size={16} color={white}/>}
+        icon={<IconDownload style={{transform: 'rotate(-90deg)'}} size={22} color={white}/>}
         text="Transfer Stats"
       />
       <Modal

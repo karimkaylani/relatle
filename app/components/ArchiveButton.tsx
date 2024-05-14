@@ -11,7 +11,7 @@ export interface ArchiveButtonProps {
 
 const ArchiveButton = ({showText=true, text='Archive'}: ArchiveButtonProps) => {
   return (
-    <IconHoverButton onTap={() => window.open('/archive', '_self')} icon={<IconHistory color={white} size={18} />} showText={showText} text={text} />
+    <IconHoverButton onTap={() => window.open('/archive', '_self')} icon={<IconHistory color={white} size={24} />} showText={showText} text={text} />
   )
 }
 

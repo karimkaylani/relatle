@@ -67,7 +67,7 @@ const SideDrawer = (props: SideDrawerProps) => {
 
   return (
     <>
-      <IconHoverButton onTap={open} text={'Menu'} icon={<IconMenu2 color={white} size={18}/>} showText={window.innerWidth > maxCustomTextWidth}/>
+      <IconHoverButton onTap={open} text={'Menu'} icon={<IconMenu2 color={white} size={24}/>} showText={window.innerWidth > maxCustomTextWidth}/>
       <Drawer
         size="xs"
         opened={opened}
@@ -135,7 +135,7 @@ const SideDrawer = (props: SideDrawerProps) => {
           <Divider w={44} style={{ margin: "auto" }} />
           <IconHoverButton
             onTap={htpOpen}
-            icon={<IconHelpCircle size={18} color="white" />}
+            icon={<IconHelpCircle size={24} color="white" />}
             text="How to Play"
           />
           <CoffeeButton />
@@ -146,7 +146,7 @@ const SideDrawer = (props: SideDrawerProps) => {
                 "_blank"
               );
             }}
-        icon={<IconFlag2 size={16} color="white" />}
+        icon={<IconFlag2 size={22} color="white" />}
             text="Send Feedback"
           />
         </Stack>

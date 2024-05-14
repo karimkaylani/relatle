@@ -12,7 +12,7 @@ const CoffeeButton = () => {
       onTap={() => {
         window.open("https://www.buymeacoffee.com/karimk", "_blank");
       }}
-      icon={<IconMug size={16} color={white}/>}
+      icon={<IconMug size={22} color={white}/>}
       text={"Buy Us A Coffee"}
     />
   );
