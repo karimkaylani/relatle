@@ -854,7 +854,7 @@ const Game = (props: GameProps) => {
           guesses={guesses}
           resets={resets}
           onTap={scrollToTop}
-          scrolled={!entryAffix?.isIntersecting}
+          scrolled={entryAffix !== null && !entryAffix.isIntersecting}
           gameOver={gameOver}
           sideDrawerOpened={sidebarOpened}
         />
