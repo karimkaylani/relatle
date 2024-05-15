@@ -242,7 +242,7 @@ const Game = (props: GameProps) => {
   const router = useRouter();
 
   // For new feature modal pop-up
-  const latestFeatureId = 2;
+  const latestFeatureId = 3;
 
   const searchParams = useSearchParams();
   const { scrollIntoView, targetRef: scrollViewRef } =

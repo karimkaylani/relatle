@@ -3,6 +3,7 @@ import React from "react";
 import { green, white } from "../colors";
 import RelatleButton from "./RelatleButton";
 import { IconBrandReddit } from "@tabler/icons-react";
+import { maxButtonGrowWidth } from "./Game";
 
 export interface NewFeatureModalProps {
   newFeatureModalOpened: boolean;
@@ -25,14 +26,14 @@ const NewFeatureModal = (props: NewFeatureModalProps) => {
       <Stack align="center" justify="center" gap="lg">
         <Stack gap="md">
           <Text ta="center" c={white} fw={700} size="xl">
-            More Matchup Stats!
+            Top Matchups and Archive!
           </Text>
           <Text ta="center" size="md" style={{maxWidth: 350}}>
-          {"When finishing a daily or custom matchup, you'll now get loads of new global stats. There’s also a special surprise for getting the shortest path!"}
+          {"You can now view relatle’s daily archive and browse top Custom Games by Number of Plays, Avg Score, or Win Rate. Get Relatling!"}
           </Text>
         </Stack>
-        <Image w={274} src="images/new-stats.png" alt="Song Previews" />
-        <Group justify='center' align="center">
+        <Image w={274} src="images/matchups.png" alt="List of Top Matchups" />
+        <Group w='100%' justify='center' align='center' grow={window.innerWidth > maxButtonGrowWidth}>
           <RelatleButton color={green} onClick={() => {
             window.open("https://www.reddit.com/r/relatle/comments/1cixlur/update_new_matchup_stats_view_current_path/", "_blank");
           }} icon={<IconBrandReddit />} text="Discuss"/>
