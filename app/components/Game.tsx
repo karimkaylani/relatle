@@ -184,7 +184,6 @@ export const getTodaysMatchup = (matchups: string[][]): any => {
   const diffDays = Math.round(
     Math.abs((today.getTime() - startingDate.getTime()) / oneDay)
   );
-
   const matchupIndex = (diffDays - matchupIndexPadding) % matchups.length;
   const matchup = matchups[matchupIndex];
   let matchup_id = diffDays + 1;
@@ -392,7 +391,7 @@ const Game = (props: GameProps) => {
     setCurrArtist(web[todayMatchup[0]]);
     setPath([todayMatchup[0]]);
     loadLocalStorageIntoState(todayMatchup, matchup_id);
-    setMatchupID(matchupID);
+    setMatchupID(matchup_id);
     setLoading(false);
 
     // preload images in modals
