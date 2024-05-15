@@ -392,7 +392,7 @@ const Game = (props: GameProps) => {
     setCurrArtist(web[todayMatchup[0]]);
     setPath([todayMatchup[0]]);
     loadLocalStorageIntoState(todayMatchup, matchup_id);
-    setMatchupID(todayMatchup[1]);
+    setMatchupID(matchupID);
     setLoading(false);
 
     // preload images in modals
