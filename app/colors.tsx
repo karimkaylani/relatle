@@ -1,4 +1,4 @@
-export const white = "#f1f3f5";
+export const white = "#FFFFFF";
 export const black = "#0C0C0C";
 export const green = "#40C057";
 export const dk_green = "#032309";

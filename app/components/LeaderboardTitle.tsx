@@ -1,3 +1,4 @@
+"use client";
 import { Group, Stack, Text } from "@mantine/core";
 import { IconArrowLeft } from "@tabler/icons-react";
 import Link from "next/link";
@@ -7,13 +8,18 @@ import CustomGameButton from "./CustomGameButton";
 import { maxCustomTextWidth, phoneMaxWidth } from "./Game";
 import HoverButton from "./HoverButton";
 import Logo from "./Logo";
+import { useRouter } from "next/navigation";
 
 export interface LeaderboardTitleProps {
   title: string;
   openCustomModal: () => void;
 }
 
-const LeaderboardTitle = ({title, openCustomModal}: LeaderboardTitleProps) => {
+const LeaderboardTitle = ({
+  title,
+  openCustomModal,
+}: LeaderboardTitleProps) => {
+  const router = useRouter();
   const createButtonWidth =
     window.innerWidth > phoneMaxWidth
       ? 95.53
@@ -29,13 +35,19 @@ const LeaderboardTitle = ({title, openCustomModal}: LeaderboardTitleProps) => {
       wrap="nowrap"
       style={{ maxWidth: "816px" }}
     >
-      <Link href={"/"} style={{ textAlign: "left" }}>
-        <Group justify="flex-start" w={createButtonWidth}>
-          <HoverButton onTap={() => {}}>
-            <IconArrowLeft size={arrowSize} color={white} />
-          </HoverButton>
-        </Group>
-      </Link>
+      <Group justify="flex-start" w={createButtonWidth}>
+        <HoverButton
+          onTap={() => {
+            if (window.history.length > 1) {
+              router.back();
+            } else {
+              router.push("/");
+            }
+          }}
+        >
+          <IconArrowLeft size={arrowSize} color={white} />
+        </HoverButton>
+      </Group>
       <Stack justify="center" align="center" gap="0px">
         <Link href={"/"}>
           <Logo />

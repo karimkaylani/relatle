@@ -29,7 +29,7 @@ const DailyGameGameCard = (props: DailyGameCardProps) => {
           w={window.innerWidth > maxWidth ? maxWidth : window.innerWidth - 40}
         >
             <Stack>
-            <Text fw={700} ta='left'>{'#' + matchupID + ' | ' + date}</Text>
+            <Text size='sm' fw={700} ta='left'>{'#' + matchupID + ' | ' + date}</Text>
             <Matchup
                 start={start}
                 end={end}

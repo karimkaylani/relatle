@@ -739,6 +739,7 @@ const Game = (props: GameProps) => {
             display: "flex",
             justifyContent: "flex-start",
           }}
+          gap='8px'
         >
           <SideDrawer
             opened={sidebarOpened}
@@ -776,6 +777,7 @@ const Game = (props: GameProps) => {
             display: "flex",
             justifyContent: "flex-end",
           }}
+          gap='8px'
         >
           <TopGamesButton showText={width > maxCustomTextWidth} />
           <CustomGameButton

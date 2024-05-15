@@ -62,14 +62,16 @@ const PastDailyGames = ({ web, matchups }: PastDailyGamesProps) => {
       </Center>
     );
 
+  const gameAmount = 30;
   const startIndex = matchups.length - todayMatchup + 1;
-  const endIndex = startIndex + 30;
+  const endIndex = startIndex + gameAmount;
   return (
     <>
       <MainContainer>
         <LeaderboardTitle title="Past Daily Games" openCustomModal={open} />
         <div style={CardContainerStyles as React.CSSProperties}>
-          {matchups.slice(startIndex, endIndex)
+          {matchups
+            .slice(startIndex, endIndex)
             .map(
               (matchup, index) =>
                 web[matchup[0]] &&
@@ -77,7 +79,9 @@ const PastDailyGames = ({ web, matchups }: PastDailyGamesProps) => {
                   <DailyGameGameCard
                     start={web[matchup[0]]}
                     end={web[matchup[1]]}
-                    matchupID={matchups.length - index - startIndex + matchupIndexPadding}
+                    matchupID={
+                      matchups.length - index - startIndex + matchupIndexPadding
+                    }
                     date={getDate(matchups.length - index - startIndex - 1)}
                     key={index + startIndex}
                   />
