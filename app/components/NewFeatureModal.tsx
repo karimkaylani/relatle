@@ -35,7 +35,7 @@ const NewFeatureModal = (props: NewFeatureModalProps) => {
         <Image w={274} src="images/matchups.png" alt="List of Top Matchups" />
         <Group w='100%' justify='center' align='center' grow={window.innerWidth > maxButtonGrowWidth}>
           <RelatleButton color={green} onClick={() => {
-            window.open("https://www.reddit.com/r/relatle/comments/1cixlur/update_new_matchup_stats_view_current_path/", "_blank");
+            window.open("https://www.reddit.com/r/relatle/comments/1csqqd0/update_top_custom_games_and_daily_matchup_archive/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button", "_blank");
           }} icon={<IconBrandReddit />} text="Discuss"/>
           <RelatleButton color={white} onClick={newFeatureModalClose} text="Got It!"/>
         </Group>
