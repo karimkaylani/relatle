@@ -28,7 +28,7 @@ import Scoreboard from "./Scoreboard";
 import RelatedArtistsTitle from "./RelatedArtistsTitle";
 import HowToPlay from "./HowToPlay";
 import HoverButton from "./HoverButton";
-import { useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import CustomGameButton from "./CustomGameButton";
 import CustomGameModal, { getValidPaths } from "./CustomGameModal";
 import AffixStatus from "./AffixStatus";
@@ -239,6 +239,8 @@ const Game = (props: GameProps) => {
   );
   const [playingArtist, setPlayingArtist] = useState<Artist | null>(null);
 
+  const router = useRouter();
+
   // For new feature modal pop-up
   const latestFeatureId = 2;
 
@@ -430,7 +432,7 @@ const Game = (props: GameProps) => {
     getValidPaths(web, start, end, Infinity).length === 0
   ) {
     if (is_custom) {
-      window.open("/", "_self");
+      router.push("/");
       return;
     }
     return (
