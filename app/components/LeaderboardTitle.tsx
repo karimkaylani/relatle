@@ -9,6 +9,7 @@ import { maxCustomTextWidth, phoneMaxWidth } from "./Game";
 import HoverButton from "./HoverButton";
 import Logo from "./Logo";
 import { useRouter } from "next/navigation";
+import TopGamesButton from "./TopGamesButton";
 
 export interface LeaderboardTitleProps {
   title: string;
@@ -20,22 +21,25 @@ const LeaderboardTitle = ({
   openCustomModal,
 }: LeaderboardTitleProps) => {
   const router = useRouter();
-  const createButtonWidth =
-    window.innerWidth > phoneMaxWidth
-      ? 95.53
-      : window.innerWidth > maxCustomTextWidth
-      ? 88.74
-      : 42;
   const arrowSize = window.innerWidth > phoneMaxWidth ? 40 : 34;
   return (
     <Group
       justify="space-between"
       align="center"
-      w="100%"
       wrap="nowrap"
-      style={{ maxWidth: "816px" }}
+      gap="sm"
+      styles={{ root: { width: "100%", maxWidth: "816px" } }}
     >
-      <Group justify="flex-start" w={createButtonWidth}>
+      <Group
+        wrap="nowrap"
+        style={{
+          flexGrow: 1,
+          flexBasis: 0,
+          display: "flex",
+          justifyContent: "flex-start",
+        }}
+        gap="8px"
+      >
         <HoverButton
           onTap={() => {
             if (window.history.length > 1) {
@@ -48,19 +52,30 @@ const LeaderboardTitle = ({
           <IconArrowLeft size={arrowSize} color={white} />
         </HoverButton>
       </Group>
-      <Stack justify="center" align="center" gap="0px">
-        <Link href={"/"}>
+      <Link href={'/'}>
+        <Stack gap="0px">
           <Logo />
-        </Link>
-        <Text p="0px" c={white} ta="center">
-          {title}
-        </Text>
-      </Stack>
-      <CustomGameButton
-        customModalOpen={openCustomModal}
-        text="Create"
-        showText={window.innerWidth > maxCustomTextWidth}
-      />
+            <Text p="0px" c={white} ta="center">
+              {title}
+            </Text>
+        </Stack>
+      </Link>
+      <Group
+        wrap="nowrap"
+        style={{
+          flexGrow: 1,
+          flexBasis: 0,
+          display: "flex",
+          justifyContent: "flex-end",
+        }}
+        gap="8px"
+      >
+        <CustomGameButton
+          customModalOpen={openCustomModal}
+          text="Create"
+          showText={window.innerWidth > maxCustomTextWidth}
+        />
+      </Group>
     </Group>
   );
 };

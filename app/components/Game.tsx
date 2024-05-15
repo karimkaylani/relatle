@@ -741,7 +741,7 @@ const Game = (props: GameProps) => {
             display: "flex",
             justifyContent: "flex-start",
           }}
-          gap='8px'
+          gap="8px"
         >
           <SideDrawer
             opened={sidebarOpened}
@@ -761,16 +761,16 @@ const Game = (props: GameProps) => {
           />
           <ArchiveButton showText={width > maxCustomTextWidth} />
         </Group>
-        <Stack gap="0px">
-          <Link href={is_custom ? "/" : ""}>
+        <Link href={is_custom ? "/" : ""}>
+          <Stack gap="0px">
             <Logo />
-          </Link>
-          {is_custom && (
-            <Text p="0px" c={white} ta="center">
-              Custom Game
-            </Text>
-          )}
-        </Stack>
+            {is_custom && (
+              <Text p="0px" c={white} ta="center">
+                Custom Game
+              </Text>
+            )}
+          </Stack>
+        </Link>
         <Group
           wrap="nowrap"
           style={{
@@ -779,7 +779,7 @@ const Game = (props: GameProps) => {
             display: "flex",
             justifyContent: "flex-end",
           }}
-          gap='8px'
+          gap="8px"
         >
           <TopGamesButton showText={width > maxCustomTextWidth} />
           <CustomGameButton

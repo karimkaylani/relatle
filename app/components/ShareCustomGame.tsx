@@ -8,8 +8,8 @@ export interface ShareCustomGameProps {
   disabled: boolean;
 }
 
-export const generateCustomGameURL = (start: string, end: string): string => {
-  return `${process.env.NEXT_PUBLIC_BASE_URL}/custom?start=${encodeURIComponent(
+export const generateCustomGameURL = (start: string, end: string, relative=false): string => {
+  return `${relative ? process.env.NEXT_PUBLIC_BASE_URL : ""}/custom?start=${encodeURIComponent(
     start
   )}&end=${encodeURIComponent(end)}`;
 };

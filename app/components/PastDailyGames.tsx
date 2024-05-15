@@ -29,10 +29,9 @@ const PastDailyGames = ({ web, matchups }: PastDailyGamesProps) => {
 
   useEffect(() => {
     let today = getTodaysMatchup(matchups)[1];
-    console.log(today - matchupIndexPadding);
     setTodayMatchup(today - matchupIndexPadding);
     setLoading(true);
-  }, []);
+  }, [matchups]);
 
   const [width, setWidth] = React.useState(-1);
   useEffect(() => {
