@@ -72,7 +72,7 @@ const SideDrawer = (props: SideDrawerProps) => {
         size="xs"
         opened={opened}
         onClose={close}
-        title="Statistics"
+        title="Menu"
         styles={{
           title: {
             fontSize: "20px",
