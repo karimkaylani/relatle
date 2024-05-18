@@ -9,7 +9,7 @@ export interface ShareCustomGameProps {
 }
 
 export const generateCustomGameURL = (start: string, end: string, relative=false): string => {
-  return `${relative ? process.env.NEXT_PUBLIC_BASE_URL : ""}/custom?start=${encodeURIComponent(
+  return `${relative ? "" : process.env.NEXT_PUBLIC_BASE_URL}/custom?start=${encodeURIComponent(
     start
   )}&end=${encodeURIComponent(end)}`;
 };
