@@ -92,10 +92,9 @@ const TransferStats = () => {
       let url = window.location.href;
       if (!url.includes("transfer=true")) {
         if (url.indexOf("?") > -1) {
-            url += "&transfer=true";
-        } 
-        else {
-            url += "?transfer=true";
+          url += "&transfer=true";
+        } else {
+          url += "?transfer=true";
         }
       }
       window.location.href = url;
@@ -111,7 +110,13 @@ const TransferStats = () => {
     <>
       <IconHoverButton
         onTap={open}
-        icon={<IconDownload style={{transform: 'rotate(-90deg)'}} size={22} color={white}/>}
+        icon={
+          <IconDownload
+            style={{ transform: "rotate(-90deg)" }}
+            size={22}
+            color={white}
+          />
+        }
         text="Transfer Stats"
       />
       <Modal
@@ -143,17 +148,18 @@ const TransferStats = () => {
             onClick={addStatsToDB}
             color={green}
             text="Generate Code"
-            icon={<CustomIcon size={18} color={token === "" ? green : 'undefined'}/>}
+            icon={
+              <CustomIcon
+                size={18}
+                color={token === "" ? green : "undefined"}
+              />
+            }
             disabled={token !== ""}
             loading={loadingExport}
           />
           {token && <PinInput size="lg" value={token} readOnly />}
           {token && (
-            <ShareButton
-              shareText={token}
-              buttonText={"Code"}
-              color={green}
-            />
+            <ShareButton shareText={token} buttonText={"Code"} color={green} />
           )}
         </Stack>
         <Divider style={{ margin: "25px" }} />
@@ -161,17 +167,17 @@ const TransferStats = () => {
           <Text size="md" c={white} fw={700} ta="center">
             Import stats into this device
           </Text>
-          <Text ta="center">Enter the code generated from the source device</Text>
+          <Text ta="center">
+            Enter the code generated from the source device
+          </Text>
           <Alert
             radius="lg"
             variant="light"
             color="red"
             icon={<IconInfoCircle size={16} />}
-          >
-            <Text size="sm" fw={700}>
-              This will overwrite the data currently on this device
-            </Text>
-          </Alert>
+            title="This will overwrite the data currently on this device"
+            styles={{ title: { paddingTop: "1.5px" } }}
+          />
           <PinInput
             color={white}
             onChange={(value) => {
@@ -188,7 +194,9 @@ const TransferStats = () => {
             onClick={() => transferStats(input)}
             color={green}
             text="Transfer Stats"
-            icon={<IconDownload style={{transform: 'rotate(-90deg)'}} size={18} />}
+            icon={
+              <IconDownload style={{ transform: "rotate(-90deg)" }} size={18} />
+            }
             loading={loadingImport}
           />
         </Stack>
