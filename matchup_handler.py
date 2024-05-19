@@ -28,7 +28,7 @@ def verify_matchups(web):
             print("Duplicate matchup:", matchup)
         seen.add((start, end))
     start = datetime(2023, 11, 29)
-    start += timedelta(days=num_days)
+    start += timedelta(days=num_days-1)
     print("Matchups completed until", start.strftime("%m/%d/%Y"))
     
 
