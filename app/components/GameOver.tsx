@@ -319,7 +319,7 @@ const GameOver = ({
               <Text fw={700} size="md">
                 Play another!
               </Text>
-              <Group>
+              <Group justify="center" align="center">
                 <ArchiveButton />
                 <TopGamesButton />
                 <CustomGameButton

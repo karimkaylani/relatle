@@ -77,13 +77,13 @@ const ArtistCard = ({
     // If tabbing away from artist card, treat like letting go of long press
     if (event.key === "Tab") {
       audioRef.current?.pause();
-      onKeyUp();
+      return;
     }
     // If hitting escape key on artist card in hint, stop music since hint drawer is being closed
     // Note: Hint drawer is the only place where non-clickable artist cards are found
     if (!clickable && event.key === "Escape") {
       audioRef.current?.pause();
-      onKeyUp();
+      return;
     }
     if (isHoldingKey) return;
     if (event.key === "Enter") {
@@ -96,7 +96,13 @@ const ArtistCard = ({
     }
   };
 
-  const onKeyUp = () => {
+  const onKeyUp = (event: React.KeyboardEvent<HTMLButtonElement>) => {
+    if (event.key === 'Enter') {
+      if (isHoldingKey && !isPlaying) {
+        clickFunction();
+      }
+      audioRef.current?.pause();
+    }
     clearTimeout(keyHoldTimer);
     setIsHoldingKey(false);
   };
@@ -231,6 +237,7 @@ const ArtistCard = ({
       }
     );
   };
+  const clickFunction = clickable ? clickArtistHandler : () => audioRef.current?.pause()
 
   return (
     <motion.button
@@ -244,11 +251,11 @@ const ArtistCard = ({
       }
       whileTap={{ scale: 0.95 }}
       // This triggers for tap, click, and enter key
-      onTap={clickable ? clickArtistHandler : () => audioRef.current?.pause()}
       onKeyDown={onKeyDown}
       onKeyUp={onKeyUp}
     >
       <Card
+        onClick={clickFunction}
         ref={scope}
         shadow="sm"
         radius="md"

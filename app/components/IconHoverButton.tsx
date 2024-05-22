@@ -15,11 +15,9 @@ export interface IconHoverButtonProps {
 
 const IconHoverButton = (props: IconHoverButtonProps) => {
   const { onTap, icon, text, textSize=window.innerWidth > phoneMaxWidth ? "md" : "sm", showText=true, textColor=white } = props;
-  // onTap breaks for drawers/modals, will trigger on scroll
-  // So use Card onClick instead, but still expose onKeyDown for keyboard support
   return (
-      <HoverButton onTap={() => {}} onKeyDown={onTap}>
-        <Card onClick={onTap} shadow="md" radius="lg" p={showText ? "sm" : "xs"}>
+      <HoverButton onTap={onTap}>
+        <Card shadow="md" radius="lg" p={showText ? "sm" : "xs"}>
         <Group gap="6px" justify="center" wrap='nowrap'>
           {icon}
           {showText &&
