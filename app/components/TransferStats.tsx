@@ -157,7 +157,7 @@ const TransferStats = () => {
             disabled={token !== ""}
             loading={loadingExport}
           />
-          {token && <PinInput size="lg" value={token} readOnly />}
+          {token && <PinInput size="lg" color={white} value={token} styles={{input: {color: white }}} readOnly />}
           {token && (
             <ShareButton shareText={token} buttonText={"Code"} color={green} />
           )}

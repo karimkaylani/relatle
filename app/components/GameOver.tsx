@@ -314,25 +314,22 @@ const GameOver = ({
                 icon={<IconChartBar size={18} color={white} />}
               />
             )}
-
-            {is_custom && (
-              <Stack gap="xs" align="center" className="pt-5">
-                <Text fw={700} size="md">
-                  Play another!
-                </Text>
-                <Group>
-                  <ArchiveButton />
-                  <TopGamesButton />
-                  <CustomGameButton
-                    customModalOpen={() => {
-                      close();
-                      customModalOpen();
-                    }}
-                  />
-                </Group>
-              </Stack>
-            )}
             {!is_custom && <CountdownClock />}
+            <Stack gap="xs" align="center">
+              <Text fw={700} size="md">
+                Play another!
+              </Text>
+              <Group>
+                <ArchiveButton />
+                <TopGamesButton />
+                <CustomGameButton
+                  customModalOpen={() => {
+                    close();
+                    customModalOpen();
+                  }}
+                />
+              </Group>
+            </Stack>
             <Affix w="100%" position={{ bottom: 0 }}>
               <Transition
                 transition="slide-up"
