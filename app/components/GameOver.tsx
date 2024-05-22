@@ -315,7 +315,6 @@ const GameOver = ({
               />
             )}
 
-            {!is_custom && <CountdownClock />}
             {is_custom && (
               <Stack gap="xs" align="center" className="pt-5">
                 <Text fw={700} size="md">
@@ -333,6 +332,7 @@ const GameOver = ({
                 </Group>
               </Stack>
             )}
+            {!is_custom && <CountdownClock />}
             <Affix w="100%" position={{ bottom: 0 }}>
               <Transition
                 transition="slide-up"

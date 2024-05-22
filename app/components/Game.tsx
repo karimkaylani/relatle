@@ -406,7 +406,6 @@ const Game = (props: GameProps) => {
     preloadImage("images/give-up.png");
     preloadImage("images/how-to-play.png");
     preloadImage("images/custom-zone.png");
-    iframeModalOpen()
     // if page is loaded in iframe, open iframe modal
     if (window.location !== window.parent.location) {
       iframeModalOpen();
