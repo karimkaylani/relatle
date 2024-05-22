@@ -56,6 +56,7 @@ import IconHoverButton from "./IconHoverButton";
 import TopGamesButton from "./TopGamesButton";
 import ArchiveButton from "./ArchiveButton";
 import MainContainer from "./MainContainer";
+import IFrameModal from "./IFrameModal";
 
 export interface Artist {
   name: string;
@@ -231,6 +232,9 @@ const Game = (props: GameProps) => {
   const [pathModalOpened, pathModalHandlers] = useDisclosure(false);
   const { open: pathModalOpen } = pathModalHandlers;
 
+  const [iframeModalOpened, iframeModalHandlers] = useDisclosure(false);
+  const { open: iframeModalOpen } = iframeModalHandlers;
+
   const [usedHint, setUsedHint] = useState<boolean>(false);
 
   const [playingAudio, setPlayingAudio] = useState<HTMLAudioElement | null>(
@@ -402,7 +406,10 @@ const Game = (props: GameProps) => {
     preloadImage("images/give-up.png");
     preloadImage("images/how-to-play.png");
     preloadImage("images/custom-zone.png");
-
+    // if page is loaded in iframe, open iframe modal
+    if (window.location !== window.parent.location) {
+      iframeModalOpen();
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -986,6 +993,7 @@ const Game = (props: GameProps) => {
           />
         </Group>
       </Group>
+      <IFrameModal opened={iframeModalOpened} />
       <NewFeatureModal
         newFeatureModalOpened={newFeatureModalOpened}
         newFeatureModalHandlers={newFeatureModalHandlers}

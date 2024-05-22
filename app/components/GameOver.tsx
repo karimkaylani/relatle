@@ -1,6 +1,12 @@
 "use client";
 
-import React, { Fragment, useCallback, useEffect, useRef, useState } from "react";
+import React, {
+  Fragment,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import {
   Text,
   Flex,
@@ -38,6 +44,8 @@ import { white, green, gray9, gray8 } from "../colors";
 import RelatleButton from "./RelatleButton";
 import { getStats, Stats } from "../db";
 import Realistic from "react-canvas-confetti/dist/presets/fireworks";
+import TopGamesButton from "./TopGamesButton";
+import ArchiveButton from "./ArchiveButton";
 
 export interface GameOverProps {
   opened: boolean;
@@ -96,7 +104,7 @@ const GameOver = ({
   matchupID,
   customModalOpen,
   openStats,
-  streak
+  streak,
 }: GameOverProps) => {
   const [start, end] = matchup;
   const [
@@ -313,12 +321,16 @@ const GameOver = ({
                 <Text fw={700} size="md">
                   Play another!
                 </Text>
-                <CustomGameButton
-                  customModalOpen={() => {
-                    close();
-                    customModalOpen();
-                  }}
-                />
+                <Group>
+                  <ArchiveButton />
+                  <TopGamesButton />
+                  <CustomGameButton
+                    customModalOpen={() => {
+                      close();
+                      customModalOpen();
+                    }}
+                  />
+                </Group>
               </Stack>
             )}
             <Affix w="100%" position={{ bottom: 0 }}>
