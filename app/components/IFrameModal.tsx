@@ -10,28 +10,35 @@ import {
 
 export interface IFrameModalProps {
   opened: boolean;
+  handlers: any;
 }
 
-const IFrameModal = ({ opened }: IFrameModalProps) => {
+const IFrameModal = ({ opened, handlers }: IFrameModalProps) => {
+  const { close } = handlers;
   return (
     <Modal
       opened={opened}
-      onClose={() => {}}
-      withCloseButton={false}
+      onClose={close}
+      withCloseButton={true}
       centered
       padding="lg"
       radius="lg"
       closeOnClickOutside={false}
+      closeOnEscape={false}
+      trapFocus={false}
+      title={
+        <Group gap="xs">
+          <IconAlertCircleFilled size={30} color={white} />
+          <Text ta="center" c={white} fw={700} size="xl">
+            UH OH!
+          </Text>
+        </Group>
+      }
+      overlayProps={{
+        backgroundOpacity: 0.8,
+      }}
     >
       <Stack align="center" justify="center" gap="lg">
-        <Stack gap="md">
-          <Group gap="xs">
-            <IconAlertCircleFilled size={30} color={white} />
-            <Text ta="center" c={white} fw={700} size="xl">
-              UH OH!
-            </Text>
-          </Group>
-
           <Text size="lg" span>
             {
               "It appears you are playing on a third party website which may cause you to experience issues."
@@ -39,12 +46,13 @@ const IFrameModal = ({ opened }: IFrameModalProps) => {
             <br />
             <br />
             {"All users should play on "}
-            <Text c={white} fw={700} span>relatle.io</Text>
+            <Text c={white} fw={700} span>
+              relatle.io
+            </Text>
             {
               " for the newest features, statistics tracking, and overall best experience."
             }
           </Text>
-        </Stack>
         <RelatleButton
           color={green}
           onClick={() => {
