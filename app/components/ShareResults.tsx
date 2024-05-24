@@ -12,10 +12,11 @@ export interface ShareResultsProps {
   is_custom: boolean;
   matchupID: number;
   won: boolean;
+  shortestPath: number;
 }
 
 const ShareResults = (props: ShareResultsProps) => {
-  const { path, guesses, matchup, resets, is_custom, matchupID, won } = props;
+  const { path, guesses, matchup, resets, is_custom, matchupID, won, shortestPath } = props;
   const [start, end] = matchup;
 
   const generateEmojiLine = (): string => {
@@ -36,11 +37,19 @@ const ShareResults = (props: ShareResultsProps) => {
     if (is_custom) {
       url = generateCustomGameURL(start, end);
     }
+    let result = "";
+    if (won && guesses === shortestPath) {
+      result = "Shortest Path! 🌟"
+    } else if (won) {
+      result = "Solved 🥳"
+    } else {
+      result = "Gave up 😭"
+    }
 
     let text = `relatle ${today}
 ${start} → ${end}
 ${generateEmojiLine()}
-${won ? "Solved 🥳" : "Gave up 😭"}
+${result}
 ${guesses} ${guesses === 1 ? "guess" : "guesses"}, ${resets} ${
       resets === 1 ? "reset" : "resets"
     }

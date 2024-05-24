@@ -362,6 +362,7 @@ const GameOver = ({
                         resets={resets}
                         is_custom={is_custom}
                         won={won}
+                        shortestPath={minPathLength}
                       />
                     </Group>
                   </Card>
