@@ -25,11 +25,11 @@ const PastDailyGames = ({ web, matchups }: PastDailyGamesProps) => {
 
   const [customModalOpened, customModalHandlers] = useDisclosure(false);
   const { open } = customModalHandlers;
-  const [todayMatchup, setTodayMatchup] = React.useState<number>(-1);
+  const [todayMatchupID, setTodayMatchupID] = React.useState<number>(-1);
 
   useEffect(() => {
     let today = getTodaysMatchup(matchups)[1];
-    setTodayMatchup(today - matchupIndexPadding);
+    setTodayMatchupID(today);
     setLoading(true);
   }, [matchups]);
 
@@ -41,9 +41,9 @@ const PastDailyGames = ({ web, matchups }: PastDailyGamesProps) => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const getDate = (index: number) => {
+  const getDate = (matchup_id: number) => {
     let date = new Date(startingDate);
-    date.setDate(date.getDate() + index + matchupIndexPadding);
+    date.setDate(date.getDate() + matchup_id - 1);
     // format day as Tuesday, May 14 2024
     const options: Intl.DateTimeFormatOptions = {
       weekday: "long",
@@ -62,15 +62,18 @@ const PastDailyGames = ({ web, matchups }: PastDailyGamesProps) => {
     );
 
   const gameAmount = 30;
-  const startIndex = matchups.length - todayMatchup + 1;
-  const endIndex = startIndex + gameAmount;
+  let pastMatchups: string[][] = []
+  for (let i = todayMatchupID - 1; i > todayMatchupID - gameAmount - 1; i--) {
+    let index = (i - matchupIndexPadding - 1) % matchups.length
+    pastMatchups.push(matchups[index])
+  }
+
   return (
     <>
       <MainContainer>
         <LeaderboardTitle title="Past Daily Games" openCustomModal={open} />
         <div style={CardContainerStyles as React.CSSProperties}>
-          {matchups
-            .slice(startIndex, endIndex)
+          {pastMatchups
             .map(
               (matchup, index) =>
                 web[matchup[0]] &&
@@ -79,10 +82,10 @@ const PastDailyGames = ({ web, matchups }: PastDailyGamesProps) => {
                     start={web[matchup[0]]}
                     end={web[matchup[1]]}
                     matchupID={
-                      matchups.length - index - startIndex + matchupIndexPadding
+                      todayMatchupID - index - 1
                     }
-                    date={getDate(matchups.length - index - startIndex - 1)}
-                    key={index + startIndex}
+                    date={getDate(todayMatchupID - index - 1)}
+                    key={index}
                   />
                 )
             )}

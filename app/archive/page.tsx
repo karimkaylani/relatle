@@ -8,6 +8,6 @@ export const metadata = {
 
 export default async function Home() {
   return (
-    <PastDailyGames web={Web} matchups={Matchups.slice().reverse()} />
+    <PastDailyGames web={Web} matchups={Matchups} />
   );
 }
