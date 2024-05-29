@@ -54,6 +54,7 @@ export default function RootLayout({
         <ColorSchemeScript defaultColorScheme="dark" />
       </head>
       <body>
+        <div className="safe-area-overlay"></div>
         <MantineProvider
           theme={theme}
           defaultColorScheme="dark"
