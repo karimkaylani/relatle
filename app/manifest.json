@@ -1,0 +1,26 @@
+{
+    "name": "relatle",
+    "description": "Connect two musicians together using their related artists!",
+    "start_url": "/",
+    "lang": "en-US",
+    "theme_color": "#40C057",
+    "display": "standalone",
+    "background_color": "#0C0C0C",
+    "icons": [
+      {
+        "src": "https://relatle.io/images/pwa-512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      },
+      {
+        "src": "https://relatle.io/images/pwa-192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      }
+    ],
+    "screenshots": [
+      {
+        "src": "https://github.com/karimkaylani/relatle/assets/19757304/99ead5e2-411c-4585-8019-5df6acdaeb6f"
+      }
+    ]
+  }
