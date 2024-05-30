@@ -577,7 +577,12 @@ const CustomGameModal = (props: CustomGameModalProps) => {
           )}
         </Stack>
 
-        <Group w='100%' justify='center' align='center' grow={window.innerWidth > maxButtonGrowWidth}>
+        <Group
+          w="100%"
+          justify="center"
+          align="center"
+          grow={window.innerWidth > maxButtonGrowWidth}
+        >
           <ShareCustomGame
             start={startArtist}
             end={endArtist}
@@ -587,7 +592,12 @@ const CustomGameModal = (props: CustomGameModalProps) => {
             text="Play"
             color={green}
             onClick={() =>
-              window.open(generateCustomGameURL(startArtist, endArtist))
+              window.open(
+                generateCustomGameURL(startArtist, endArtist),
+                window.matchMedia("(display-mode: standalone)").matches
+                  ? "_self"
+                  : "_blank"
+              )
             }
             disabled={invalidMatchup}
             icon={<IconPlayerPlayFilled size={20} />}

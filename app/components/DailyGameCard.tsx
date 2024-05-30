@@ -19,7 +19,16 @@ const DailyGameGameCard = (props: DailyGameCardProps) => {
   const url = generateCustomGameURL(start.name, end.name);
   const maxWidth = 500;
   return (
-    <Link href={url} target="_blank" prefetch={false} tabIndex={-1}>
+    <Link
+      href={url}
+      target={
+        window.matchMedia("(display-mode: standalone)").matches
+          ? "_self"
+          : "_blank"
+      }
+      prefetch={false}
+      tabIndex={-1}
+    >
       <HoverButton onTap={() => {}}>
         <Card
           shadow="lg"
@@ -28,13 +37,15 @@ const DailyGameGameCard = (props: DailyGameCardProps) => {
           withBorder
           w={window.innerWidth > maxWidth ? maxWidth : window.innerWidth - 40}
         >
-            <Stack>
-            <Text size='sm' fw={700} ta='left'>{'#' + matchupID + ' | ' + date}</Text>
+          <Stack>
+            <Text size="sm" fw={700} ta="left">
+              {"#" + matchupID + " | " + date}
+            </Text>
             <Matchup
-                start={start}
-                end={end}
-                small={window.innerWidth < phoneMaxWidth}
-                center={false}
+              start={start}
+              end={end}
+              small={window.innerWidth < phoneMaxWidth}
+              center={false}
             />
           </Stack>
         </Card>
