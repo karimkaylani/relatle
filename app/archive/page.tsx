@@ -4,6 +4,7 @@ import PastDailyGames from "../components/PastDailyGames";
 
 export const metadata = {
   title: "relatle (archive)",
+  description: "Browse and play past daily games!",
 };
 
 export default async function Home() {
