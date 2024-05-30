@@ -1,12 +1,17 @@
 {
     "name": "relatle",
+    "short_name": "relatle",
     "description": "Connect two musicians together using their related artists!",
     "start_url": "/",
     "scope": "/",
     "lang": "en-US",
     "theme_color": "#40C057",
     "display": "standalone",
+    "display_override": [
+      "window-controls-overlay"
+    ],
     "background_color": "#0C0C0C",
+    "handle_links": "preferred",
     "icons": [
       {
         "src": "https://relatle.io/images/pwa-512.png",
