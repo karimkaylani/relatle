@@ -128,9 +128,8 @@ const HowToPlay = (props: HowToPlayProps) => {
                 {"What's a related artist?"}
               </Text>
               <Text fw={300}>
-                Related artists are based on the &quot;Fans Also Like&quot;
-                section {"you'll"} find on music streaming services which take user
-                listening habits into account.
+                Related artists are based on the &quot;Fans Also Like&quot; sections on music services.
+                They use data from listeners of an artist to identify <Text fw={500} c={white} span> other artists that fans frequently listen to. </Text>
               </Text>
             </Stack>
           </Group>
