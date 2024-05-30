@@ -20,17 +20,37 @@ export interface PastDailyGamesProps {
   matchups: string[][];
 }
 
-const PastDailyGames = ({ web, matchups }: PastDailyGamesProps) => {
-  const [loading, setLoading] = React.useState(false);
+const PastDailyGames = ({ web, matchups: localMatchups }: PastDailyGamesProps) => {
+  const [matchups, setMatchups] = React.useState(localMatchups)
+  const [loading, setLoading] = React.useState(true);
 
   const [customModalOpened, customModalHandlers] = useDisclosure(false);
   const { open } = customModalHandlers;
   const [todayMatchupID, setTodayMatchupID] = React.useState<number>(-1);
 
+  // Ensure newest matchup data
+  useEffect(() => {
+    fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/data/matchups.json`, {
+      cache: "no-cache",
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (
+          data &&
+          Object.keys(data).length > 1 &&
+          JSON.stringify(data) !== JSON.stringify(matchups)
+        ) {
+          setMatchups(data);
+          setLoading(true);
+        }
+      });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   useEffect(() => {
     let today = getTodaysMatchup(matchups)[1];
     setTodayMatchupID(today);
-    setLoading(true);
+    setLoading(false);
   }, [matchups]);
 
   const [width, setWidth] = React.useState(-1);
@@ -54,7 +74,7 @@ const PastDailyGames = ({ web, matchups }: PastDailyGamesProps) => {
     return date.toLocaleDateString("en-US", options);
   };
 
-  if (!loading)
+  if (loading)
     return (
       <Center className="pt-14">
         <Loader size="lg" color={green} />

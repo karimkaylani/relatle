@@ -42,7 +42,8 @@ const LeaderboardTitle = ({
       >
         <HoverButton
           onTap={() => {
-            if (window.history.length > 1) {
+            // If refferrer has same domain, then just go back
+            if (document.referrer.indexOf(location.protocol + "//" + location.host) === 0) {
               router.back();
             } else {
               router.push("/");

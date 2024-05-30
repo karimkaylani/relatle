@@ -63,7 +63,7 @@ export interface GameOverProps {
   streak: number;
 }
 
-const getMinPath = (
+export const getMinPath = (
   web: { [key: string]: Artist },
   start: string,
   end: string

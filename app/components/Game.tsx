@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import ArtistCard from "./ArtistCard";
-import GameOver from "./GameOver";
+import GameOver, { getMinPath } from "./GameOver";
 import Reset from "./Reset";
 import {
   Flex,
@@ -95,6 +95,7 @@ interface SaveProps {
   gamesLost?: number;
   lowestScore?: number;
   highestScore?: number;
+  numPerfectGames?: number;
 }
 
 export const phoneMaxWidth = 768;
@@ -192,7 +193,8 @@ export const getTodaysMatchup = (matchups: string[][]): any => {
 };
 
 const Game = (props: GameProps) => {
-  const { is_custom, web, matchups } = props;
+  const { is_custom, web, matchups: localMatchups } = props;
+  const [matchups, setMatchups] = useState<string[][]>(localMatchups);
   const [matchup, setMatchup] = useState<any>(null);
   const [currArtist, setCurrArtist] = useState<any>(null);
   const [path, setPath] = useState<any>(null);
@@ -212,6 +214,7 @@ const Game = (props: GameProps) => {
   const [gamesLost, setGamesLost] = useState<number>(0);
   const [lowestScore, setLowestScore] = useState<number>(0);
   const [highestScore, setHighestScore] = useState<number>(0);
+  const [numPerfectGames, setNumPerfectGames] = useState<number>(0);
 
   const [matchupID, setMatchupID] = useState<number>(-1);
 
@@ -284,6 +287,7 @@ const Game = (props: GameProps) => {
       saveData.gamesLost = gamesLost;
       saveData.lowestScore = lowestScore;
       saveData.highestScore = highestScore;
+      saveData.numPerfectGames = numPerfectGames;
     }
     localStorage.setItem(
       is_custom ? "props_custom" : "props",
@@ -337,6 +341,7 @@ const Game = (props: GameProps) => {
     setAverageResets(mainSave?.averageResets ?? 0);
     setLowestScore(mainSave?.lowestScore ?? 0);
     setHighestScore(mainSave?.highestScore ?? 0);
+    setNumPerfectGames(mainSave?.numPerfectGames ?? 0);
 
     const localSave = readLocalStroage(is_custom);
     if (localSave == null) {
@@ -374,6 +379,39 @@ const Game = (props: GameProps) => {
     }
   };
 
+  // Ensure newest matchup data
+  useEffect(() => {
+    if (!is_custom) {
+      fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/data/matchups.json`, {
+        cache: "no-cache",
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          if (
+            data &&
+            Object.keys(data).length > 1 &&
+            JSON.stringify(data) !== JSON.stringify(matchups)
+          ) {
+            setMatchups(data);
+            setLoading(true);
+          }
+        });
+    }
+
+    // preload images in modals
+    const preloadImage = (src: string) => {
+      const image = new Image();
+      image.src = src;
+    };
+    preloadImage("images/give-up.png");
+    preloadImage("images/how-to-play.png");
+    // if page is loaded in iframe, open iframe modal
+    if (window.location !== window.parent.location) {
+      iframeModalOpen();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   // When component first mounts, load in localStorage
   // use loading so that nothing renders until localStorage is checked
   const [loading, setLoading] = useState(true);
@@ -397,21 +435,8 @@ const Game = (props: GameProps) => {
     loadLocalStorageIntoState(todayMatchup, matchup_id);
     setMatchupID(matchup_id);
     setLoading(false);
-
-    // preload images in modals
-    const preloadImage = (src: string) => {
-      const image = new Image();
-      image.src = src;
-    };
-    preloadImage("images/give-up.png");
-    preloadImage("images/how-to-play.png");
-    preloadImage("images/custom-zone.png");
-    // if page is loaded in iframe, open iframe modal
-    if (window.location !== window.parent.location) {
-      iframeModalOpen();
-    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [matchups]);
 
   const [width, setWidth] = useState(0);
   const handleResize = () => setWidth(window.innerWidth);
@@ -425,9 +450,9 @@ const Game = (props: GameProps) => {
   useEffect(() => {
     const interval = setInterval(() => {
       if (is_custom || matchupID === -1) {
-        return
+        return;
       }
-      let new_matchup_id = getTodaysMatchup(matchups)[1]
+      let new_matchup_id = getTodaysMatchup(matchups)[1];
       if (new_matchup_id !== matchupID) {
         window.location.reload();
       }
@@ -507,6 +532,13 @@ const Game = (props: GameProps) => {
       const new_highest_score =
         newGuesses > highestScore ? newGuesses : highestScore;
       setHighestScore(new_highest_score);
+
+      let new_num_perfect_games = numPerfectGames;
+      let shortest_path = getMinPath(web, start, end);
+      if (newGuesses === shortest_path.length) {
+        new_num_perfect_games += 1;
+      }
+      setNumPerfectGames(new_num_perfect_games);
       save({
         currArtist,
         path: newPath,
@@ -527,6 +559,7 @@ const Game = (props: GameProps) => {
         gamesLost,
         lowestScore: new_lowest_score,
         highestScore: new_highest_score,
+        numPerfectGames: new_num_perfect_games,
       });
       // CUSTOM GAME
     } else {
@@ -671,6 +704,7 @@ const Game = (props: GameProps) => {
         gamesLost: new_games_lost,
         lowestScore,
         highestScore,
+        numPerfectGames,
       });
       // CUSTOM GAME
     } else {
