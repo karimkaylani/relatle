@@ -38,37 +38,37 @@ const CountdownClock = () => {
     return () => clearInterval(interval);
   }, []);
   return (
-      <Stack
-        gap="3px"
-        justify="center"
-        align="center"
-        className="mb-1"
-        styles={{ root: { minWidth: "80px" } }}
-      >
-        <Text size="sm" ta="center" fw={700} c={white}>
-          Time Until Next Matchup
-        </Text>
-        <FlipNumbers
-          height={38}
-          width={16}
-          color={white}
-          play
-          perspective={150}
-          numbers={`${timeLeft.hrs}:${timeLeft.mins}:${timeLeft.secs}`}
-          numberStyle={{
-            fontFamily: "OpenSauceOne",
-            fontSize: '16px',
-            fontWeight: 700,
-          }}
-          nonNumberStyle={{
-            fontFamily: "OpenSauceOne",
-            fontWeight: 700,
-            fontSize: '28px',
-            color: white,
-            marginBottom: '5px',
-          }}
-        />
-      </Stack>
+    <Stack
+      gap="3px"
+      justify="center"
+      align="center"
+      className="mb-1"
+      styles={{ root: { minWidth: "80px" } }}
+    >
+      <Text size="sm" ta="center" fw={700} c={white}>
+        Time Until Next Matchup
+      </Text>
+      <FlipNumbers
+        height={38}
+        width={16}
+        color={white}
+        play
+        perspective={150}
+        numbers={`${timeLeft.hrs}:${timeLeft.mins}:${timeLeft.secs}`}
+        numberStyle={{
+          fontFamily: "OpenSauceOne",
+          fontSize: "16px",
+          fontWeight: 700,
+        }}
+        nonNumberStyle={{
+          fontFamily: "OpenSauceOne",
+          fontWeight: 700,
+          fontSize: "28px",
+          color: white,
+          marginBottom: "5px",
+        }}
+      />
+    </Stack>
   );
 };
 

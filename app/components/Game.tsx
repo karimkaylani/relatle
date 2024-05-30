@@ -421,6 +421,22 @@ const Game = (props: GameProps) => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  // Refresh if current time would yield a new matchup
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (is_custom || matchupID === -1) {
+        return
+      }
+      let new_matchup_id = getTodaysMatchup(matchups)[1]
+      if (new_matchup_id !== matchupID) {
+        window.location.reload();
+      }
+    }, 1000);
+
+    // Clean up the interval on component unmount
+    return () => clearInterval(interval);
+  }, [matchupID, matchups, is_custom]);
+
   if (loading) {
     return (
       <Center className="pt-14">

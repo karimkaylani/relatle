@@ -34,5 +34,5 @@
   right: 0;
   bottom: 0;
   height: env(safe-area-inset-bottom, 0px);
-  z-index: 1000; /* Ensure it is above other elements */
+  z-index: 1000;
 }
