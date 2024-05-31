@@ -156,7 +156,7 @@ const addScoreToDB = async (
     });
   }
 
-  supabase.from("scores_duplicate").insert({
+  await supabase.from("scores_duplicate").insert({
     timestamp: date,
     matchup_id: matchupID,
     matchup: JSON.stringify(matchup),
@@ -585,7 +585,7 @@ const Game = (props: GameProps) => {
       });
     }
     winModalOpen();
-    if (process.env.NODE_ENV !== "development") {
+  
       addScoreToDB(
         is_custom,
         true,
@@ -596,7 +596,7 @@ const Game = (props: GameProps) => {
         newPath,
         usedHint
       );
-    }
+    
   };
 
   const updateArtistHandler = (artist: Artist) => {
