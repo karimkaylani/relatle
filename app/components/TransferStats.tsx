@@ -159,7 +159,7 @@ const TransferStats = () => {
           />
           {token && <PinInput size="lg" color={white} value={token} styles={{input: {color: white }}} readOnly />}
           {token && (
-            <ShareButton shareText={token} buttonText={"Code"} color={green} />
+            <ShareButton copy shareText={token} buttonText={"Code"} color={green} />
           )}
         </Stack>
         <Divider style={{ margin: "25px" }} />

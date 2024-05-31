@@ -12,6 +12,7 @@ export interface ShareButtonProps {
   borderColor?: string;
   textColor?: string;
   size?: string;
+  copy?: boolean;
 }
 
 const ShareButton = ({
@@ -19,9 +20,10 @@ const ShareButton = ({
   shareText,
   buttonText,
   color,
-  size='md'
+  size='md',
+  copy=false,
 }: ShareButtonProps) => {
-  if (navigator.share && navigator.canShare && navigator.canShare({ text: shareText })) {
+  if (!copy && navigator.share && navigator.canShare && navigator.canShare({ text: shareText })) {
     return (
       <RelatleButton
         disabled={disabled}
