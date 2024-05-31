@@ -156,6 +156,16 @@ const addScoreToDB = async (
     });
   }
 
+  supabase.from("scores_duplicate").insert({
+    timestamp: date,
+    matchup_id: matchupID,
+    matchup: JSON.stringify(matchup),
+    guesses,
+    resets,
+    path: JSON.stringify(path),
+    used_hint: usedHint,
+  });
+
   return supabase.from("scores").insert({
     timestamp: date,
     matchup_id: matchupID,
