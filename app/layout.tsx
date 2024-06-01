@@ -2,6 +2,7 @@
 // All packages except `@mantine/hooks` require styles imports
 import "./globals.css";
 import "@mantine/core/styles.css";
+import '@mantine/carousel/styles.css';
 import React from "react";
 import { MantineProvider, ColorSchemeScript, createTheme } from "@mantine/core";
 import { GoogleAnalytics } from '@next/third-parties/google'

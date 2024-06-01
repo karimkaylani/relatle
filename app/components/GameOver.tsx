@@ -20,6 +20,7 @@ import {
   Stack,
   Divider,
   Loader,
+  Center,
 } from "@mantine/core";
 import ShareResults from "./ShareResults";
 import { Artist, phoneMaxWidth } from "./Game";
@@ -46,6 +47,8 @@ import { getStats, Stats } from "../db";
 import Realistic from "react-canvas-confetti/dist/presets/fireworks";
 import TopGamesButton from "./TopGamesButton";
 import ArchiveButton from "./ArchiveButton";
+import { Carousel, Embla, useAnimationOffsetEffect } from "@mantine/carousel";
+import ShortestPathCarousel from "./ShortestPathCarousel";
 
 export interface GameOverProps {
   opened: boolean;
@@ -91,6 +94,48 @@ export const getMinPath = (
   return [];
 };
 
+export const getMinPaths = (
+  web: { [key: string]: Artist },
+  start: string,
+  end: string
+): string[][] => {
+  // get all of the paths that are the minimum length
+  const visited: Set<string> = new Set();
+  const queue: Collections.Queue<[string, string[]]> = new Collections.Queue();
+  queue.enqueue([start, []]);
+  const paths: string[][] = [];
+
+  while (!queue.isEmpty()) {
+    const item = queue.dequeue();
+    if (item === undefined) {
+      return [];
+    }
+    const [node, path] = item;
+    if (node === end) {
+      paths.push(path);
+    }
+    if (!visited.has(node)) {
+      visited.add(node);
+      for (const neighbor of web[node].related || []) {
+        queue.enqueue([neighbor, path.concat(neighbor)]);
+      }
+    }
+
+    // if we have paths already and the current path is longer than the shortest path
+    // we can stop searching
+    if (paths.length > 0 && path.length > paths[0].length) {
+      break;
+    }
+  }
+
+  for (let i = 0; i < paths.length; i++) {
+    paths[i].unshift(start);
+  }
+  return paths;
+}
+
+export const minPathCollapseAnimationDuration = 200;
+
 const GameOver = ({
   opened,
   close,
@@ -118,11 +163,13 @@ const GameOver = ({
     onSwipedDown: close,
   });
 
-  const [minPath, setMinPath] = useState<string[]>([]);
+  const [minPaths, setMinPaths] = useState<string[][]>([]);
   const [minPathLength, setMinPathLength] = useState<number>(0);
   const [stats, setStats] = useState<Stats | null>(null);
   const [loadingGlobalScore, setLoadingGlobalScore] = useState<boolean>(true);
   const [confetti, setConfetti] = useState<boolean>(false);
+
+  const numMinPaths = 5;
 
   const confettiDecorateOptions = (defaultOptions: any) => {
     return {
@@ -143,17 +190,17 @@ const GameOver = ({
   };
 
   useEffect(() => {
-    if (!opened || !loadingGlobalScore || minPath.length > 0) {
+    if (!opened || !loadingGlobalScore || minPaths.length > 0) {
       return;
     }
-    const mPath = getMinPath(web, start, end);
-    let mPathLength = mPath.length;
-    setMinPathLength(mPathLength);
+    const mPath = getMinPaths(web, start, end).slice(0, numMinPaths);
+    let mPathLength = mPath[0].length;
+    // minus 1 because the start artist is not counted
+    setMinPathLength(mPathLength - 1);
     if (won && guesses === mPathLength) {
       toggleConfetti();
     }
-    mPath.unshift(start);
-    setMinPath(mPath);
+    setMinPaths(mPath);
     getStats(matchup, mPathLength)
       .then((res) => {
         if (!res) {
@@ -257,8 +304,8 @@ const GameOver = ({
                 color={white}
                 text={
                   (minPathOpened
-                    ? "Hide Shortest Path"
-                    : "Show Shortest Path") +
+                    ? "Hide Shortest Paths"
+                    : "Show Shortest Paths") +
                   " (" +
                   minPathLength +
                   " guesses)"
@@ -282,12 +329,14 @@ const GameOver = ({
               />
             )}
 
-            <Collapse in={minPathOpened}>
-              <ScrollablePath
-                matchup={matchup}
-                web={web}
-                path={minPath}
-              ></ScrollablePath>
+            <Collapse in={minPathOpened} transitionDuration={minPathCollapseAnimationDuration}>
+              {minPathOpened && (
+                <ShortestPathCarousel
+                  matchup={matchup}
+                  web={web}
+                  minPaths={minPaths}
+                />
+              )}
             </Collapse>
 
             {loadingGlobalScore ? (
