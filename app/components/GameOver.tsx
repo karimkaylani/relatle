@@ -174,6 +174,10 @@ const GameOver = ({
   useEffect(() => {
     if (minPathOpened) {
       setShowMinCarousel(true)
+    } else {
+      setTimeout(() => {
+        setShowMinCarousel(false)
+      }, minPathCollapseAnimationDuration)
     }
   }, [minPathOpened]);
 
