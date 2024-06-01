@@ -35,8 +35,9 @@ const ShortestPathCarousel = ({
       previousControlIcon={<IconChevronLeft color={white} />}
       styles={{
         root: { paddingBottom: "10px" },
-        indicator: { backgroundColor: white, width: '8px', height: '8px' },
+        indicator: { backgroundColor: white, width: "8px", height: "8px" },
         indicators: { bottom: "-10px" },
+        control: { backgroundColor: "transparent", border: "none" },
       }}
       loop
     >

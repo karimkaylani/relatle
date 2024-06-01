@@ -155,8 +155,8 @@ const GameOver = ({
   const [
     minPathOpened,
     { open: openMinPath, close: closeMinPath, toggle: toggleMinPath },
-  ] = useDisclosure(false);
-  const [showMinCarousel, setShowMinCarousel] = useState<boolean>(false);
+  ] = useDisclosure(!won);
+  const [showMinCarousel, setShowMinCarousel] = useState<boolean>(!won);
   const [pathOpened, { open: openPath, close: closePath, toggle: togglePath }] =
     useDisclosure(false);
 
@@ -173,11 +173,7 @@ const GameOver = ({
   // delay hiding carousel to allow animation to finish
   useEffect(() => {
     if (minPathOpened) {
-      setShowMinCarousel(true);
-    } else {
-      setTimeout(() => {
-        setShowMinCarousel(false);
-      }, minPathCollapseAnimationDuration);
+      setShowMinCarousel(true)
     }
   }, [minPathOpened]);
 
@@ -227,16 +223,6 @@ const GameOver = ({
       });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [opened]);
-
-  // Auto open min path if won
-  useEffect(() => {
-    if (!won) {
-      openMinPath();
-    } else {
-      closeMinPath();
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [won]);
 
   const [height, setHeight] = useState(86);
   const ref = useRef<HTMLDivElement>(null);
