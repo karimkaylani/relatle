@@ -5,6 +5,7 @@ import { white } from "../colors";
 import { Artist, phoneMaxWidth } from "./Game";
 import ScrollablePath from "./ScrollablePath";
 import { minPathCollapseAnimationDuration } from "./GameOver";
+import { IconChevronLeft, IconChevronRight } from "@tabler/icons-react";
 
 export interface ShortestPathCarouselProps {
   matchup: string[];
@@ -25,11 +26,13 @@ const ShortestPathCarousel = ({
     <Carousel
       slideGap="sm"
       withIndicators={minPaths.length > 1}
-      withControls={minPaths.length > 1}
+      withControls={minPaths.length > 1 && window.innerWidth > phoneMaxWidth}
       draggable={minPaths.length > 1}
       w={window.innerWidth > phoneMaxWidth ? 600 : window.innerWidth - 10}
       getEmblaApi={setEmbla}
       controlSize={23}
+      nextControlIcon={<IconChevronRight color={white} />}
+      previousControlIcon={<IconChevronLeft color={white} />}
       styles={{
         root: { paddingBottom: "10px" },
         indicator: { backgroundColor: white, width: '8px', height: '8px' },
