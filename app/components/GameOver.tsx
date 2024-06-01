@@ -156,6 +156,7 @@ const GameOver = ({
     minPathOpened,
     { open: openMinPath, close: closeMinPath, toggle: toggleMinPath },
   ] = useDisclosure(false);
+  const [showMinCarousel, setShowMinCarousel] = useState<boolean>(false);
   const [pathOpened, { open: openPath, close: closePath, toggle: togglePath }] =
     useDisclosure(false);
 
@@ -168,6 +169,17 @@ const GameOver = ({
   const [stats, setStats] = useState<Stats | null>(null);
   const [loadingGlobalScore, setLoadingGlobalScore] = useState<boolean>(true);
   const [confetti, setConfetti] = useState<boolean>(false);
+
+  // delay hiding carousel to allow animation to finish
+  useEffect(() => {
+    if (minPathOpened) {
+      setShowMinCarousel(true);
+    } else {
+      setTimeout(() => {
+        setShowMinCarousel(false);
+      }, minPathCollapseAnimationDuration);
+    }
+  }, [minPathOpened]);
 
   const numMinPaths = 5;
 
@@ -330,7 +342,7 @@ const GameOver = ({
             )}
 
             <Collapse in={minPathOpened} transitionDuration={minPathCollapseAnimationDuration}>
-              {minPathOpened && (
+              {showMinCarousel && (
                 <ShortestPathCarousel
                   matchup={matchup}
                   web={web}
