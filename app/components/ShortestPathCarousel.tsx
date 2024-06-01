@@ -34,7 +34,6 @@ const ShortestPathCarousel = ({
         root: { paddingBottom: "10px" },
         indicator: { backgroundColor: white, width: '8px', height: '8px' },
         indicators: { bottom: "-10px" },
-        control: {color: white}
       }}
       loop
     >
