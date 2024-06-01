@@ -304,8 +304,8 @@ const GameOver = ({
                 color={white}
                 text={
                   (minPathOpened
-                    ? "Hide Shortest Paths"
-                    : "Show Shortest Paths") +
+                    ? "Hide Shortest Path" + (minPaths.length > 1 ? "s" : "")
+                    : "Show Shortest Path" + (minPaths.length > 1 ? "s" : "")) +
                   " (" +
                   minPathLength +
                   " guesses)"

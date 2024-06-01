@@ -24,7 +24,9 @@ const ShortestPathCarousel = ({
   return (
     <Carousel
       slideGap="sm"
-      withIndicators
+      withIndicators={minPaths.length > 1}
+      withControls={minPaths.length > 1}
+      draggable={minPaths.length > 1}
       w={window.innerWidth > phoneMaxWidth ? 600 : window.innerWidth - 10}
       getEmblaApi={setEmbla}
       controlSize={23}
