@@ -202,9 +202,9 @@ const GameOver = ({
       return;
     }
     const mPath = getMinPaths(web, start, end).slice(0, numMinPaths);
-    let mPathLength = mPath[0].length;
+    let mPathLength = mPath[0].length - 1;
     // minus 1 because the start artist is not counted
-    setMinPathLength(mPathLength - 1);
+    setMinPathLength(mPathLength);
     if (won && guesses === mPathLength) {
       toggleConfetti();
     }
