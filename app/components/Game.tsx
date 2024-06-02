@@ -464,7 +464,7 @@ const Game = (props: GameProps) => {
       }
       let new_matchup_id = getTodaysMatchup(matchups)[1];
       if (new_matchup_id !== matchupID) {
-        window.location.reload();
+        window.location.href = window.location.pathname
       }
     }, 1000);
 
