@@ -155,8 +155,8 @@ const GameOver = ({
   const [
     minPathOpened,
     { open: openMinPath, close: closeMinPath, toggle: toggleMinPath },
-  ] = useDisclosure(false);
-  const [showMinCarousel, setShowMinCarousel] = useState<boolean>(false);
+  ] = useDisclosure(!won);
+  const [showMinCarousel, setShowMinCarousel] = useState<boolean>(!won);
   const [pathOpened, { open: openPath, close: closePath, toggle: togglePath }] =
     useDisclosure(false);
 
@@ -185,6 +185,9 @@ const GameOver = ({
     if (!won) {
       openMinPath();
       setShowMinCarousel(true);
+    }
+    if (won) {
+      closeMinPath();
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [won]);
