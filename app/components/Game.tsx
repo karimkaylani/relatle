@@ -585,7 +585,7 @@ const Game = (props: GameProps) => {
       });
     }
     winModalOpen();
-  
+    if (process.env.NODE_ENV !== "development") {
       addScoreToDB(
         is_custom,
         true,
@@ -596,7 +596,7 @@ const Game = (props: GameProps) => {
         newPath,
         usedHint
       );
-    
+    }
   };
 
   const updateArtistHandler = (artist: Artist) => {

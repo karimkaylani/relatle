@@ -132,7 +132,7 @@ export const getMinPaths = (
     paths[i].unshift(start);
   }
   return paths;
-}
+};
 
 export const minPathCollapseAnimationDuration = 200;
 
@@ -173,11 +173,11 @@ const GameOver = ({
   // delay hiding carousel to allow animation to finish
   useEffect(() => {
     if (minPathOpened) {
-      setShowMinCarousel(true)
+      setShowMinCarousel(true);
     } else {
       setTimeout(() => {
-        setShowMinCarousel(false)
-      }, minPathCollapseAnimationDuration)
+        setShowMinCarousel(false);
+      }, minPathCollapseAnimationDuration);
     }
   }, [minPathOpened]);
 
@@ -212,7 +212,11 @@ const GameOver = ({
     if (won && guesses === mPathLength) {
       toggleConfetti();
     }
-    setMinPaths(mPath);
+    setMinPaths(
+      mPath.filter(
+        (min_path) => JSON.stringify(min_path) !== JSON.stringify(path)
+      )
+    );
     getStats(matchup, mPathLength)
       .then((res) => {
         if (!res) {
@@ -232,6 +236,14 @@ const GameOver = ({
   const ref = useRef<HTMLDivElement>(null);
 
   const handleResize = () => setHeight(ref.current?.clientHeight ?? 86);
+
+  const shortestPathButtonText =
+    (guesses === minPathLength ? "Other " : "") +
+    "Shortest Path" +
+    (minPaths.length > 1 ? "s" : "") +
+    " (" +
+    minPathLength +
+    " guesses)";
 
   useEffect(() => {
     handleResize();
@@ -280,41 +292,6 @@ const GameOver = ({
               small={window.innerWidth > phoneMaxWidth ? false : true}
               streak={!is_custom ? streak : undefined}
             />
-            <RelatleButton
-              size="sm"
-              icon={
-                <Text size="lg" c={white}>
-                  {pathOpened ? "–" : "+"}
-                </Text>
-              }
-              color={white}
-              text={pathOpened ? "Hide Your Path" : "Show Your Path"}
-              onClick={togglePath}
-            />
-            <Collapse in={pathOpened}>
-              <ScrollablePath matchup={matchup} web={web} path={path} />
-            </Collapse>
-
-            {(!won || guesses !== minPathLength) && (
-              <RelatleButton
-                size="sm"
-                icon={
-                  <Text size="lg" c={white}>
-                    {minPathOpened ? "–" : "+"}
-                  </Text>
-                }
-                color={white}
-                text={
-                  (minPathOpened
-                    ? "Hide Shortest Path" + (minPaths.length > 1 ? "s" : "")
-                    : "Show Shortest Path" + (minPaths.length > 1 ? "s" : "")) +
-                  " (" +
-                  minPathLength +
-                  " guesses)"
-                }
-                onClick={toggleMinPath}
-              />
-            )}
             {confetti && (
               <Realistic
                 autorun={{ speed: 0.3 }}
@@ -330,16 +307,53 @@ const GameOver = ({
                 onClick={toggleConfetti}
               />
             )}
-
-            <Collapse in={minPathOpened} transitionDuration={minPathCollapseAnimationDuration}>
-              {showMinCarousel && (
-                <ShortestPathCarousel
-                  matchup={matchup}
-                  web={web}
-                  minPaths={minPaths}
-                />
-              )}
+            <RelatleButton
+              size="sm"
+              icon={
+                <Text size="lg" c={white}>
+                  {pathOpened ? "–" : "+"}
+                </Text>
+              }
+              color={white}
+              text={pathOpened ? "Hide Your Path" : "Show Your Path"}
+              onClick={togglePath}
+            />
+            <Collapse in={pathOpened}>
+              <ScrollablePath matchup={matchup} web={web} path={path} />
             </Collapse>
+
+            {minPaths.length > 0 && (
+              <>
+                <RelatleButton
+                  size="sm"
+                  icon={
+                    <Text size="lg" c={white}>
+                      {minPathOpened ? "–" : "+"}
+                    </Text>
+                  }
+                  color={white}
+                  text={
+                    minPathOpened
+                      ? "Hide " + shortestPathButtonText
+                      : "Show " + shortestPathButtonText
+                  }
+                  onClick={toggleMinPath}
+                />
+
+                <Collapse
+                  in={minPathOpened}
+                  transitionDuration={minPathCollapseAnimationDuration}
+                >
+                  {showMinCarousel && (
+                    <ShortestPathCarousel
+                      matchup={matchup}
+                      web={web}
+                      minPaths={minPaths}
+                    />
+                  )}
+                </Collapse>
+              </>
+            )}
 
             {loadingGlobalScore ? (
               <Loader color={green} size="sm" />
