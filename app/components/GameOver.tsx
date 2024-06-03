@@ -155,8 +155,8 @@ const GameOver = ({
   const [
     minPathOpened,
     { open: openMinPath, close: closeMinPath, toggle: toggleMinPath },
-  ] = useDisclosure(!won);
-  const [showMinCarousel, setShowMinCarousel] = useState<boolean>(!won);
+  ] = useDisclosure(false);
+  const [showMinCarousel, setShowMinCarousel] = useState<boolean>(false);
   const [pathOpened, { open: openPath, close: closePath, toggle: togglePath }] =
     useDisclosure(false);
 
@@ -180,6 +180,14 @@ const GameOver = ({
       }, minPathCollapseAnimationDuration);
     }
   }, [minPathOpened]);
+
+  useEffect(() => {
+    if (!won) {
+      openMinPath();
+      setShowMinCarousel(true);
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [won]);
 
   const numMinPaths = 5;
 
