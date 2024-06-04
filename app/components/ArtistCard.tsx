@@ -69,7 +69,9 @@ const ArtistCard = ({
     undefined
   );
 
-  const fallbackSrc = `https://ui-avatars.com/api/?background=${gray9.slice(1)}&color=${white.slice(1)}&name=${encodeURIComponent(
+  const fallbackSrc = `https://ui-avatars.com/api/?background=${gray9.slice(
+    1
+  )}&color=${white.slice(1)}&name=${encodeURIComponent(
     artist.name.replace(/[^A-Z0-9]/gi, "")
   )}`;
 
@@ -97,7 +99,7 @@ const ArtistCard = ({
   };
 
   const onKeyUp = (event: React.KeyboardEvent<HTMLButtonElement>) => {
-    if (event.key === 'Enter') {
+    if (event.key === "Enter") {
       if (isHoldingKey && !isPlaying) {
         clickFunction();
       }
@@ -237,7 +239,9 @@ const ArtistCard = ({
       }
     );
   };
-  const clickFunction = clickable ? clickArtistHandler : () => audioRef.current?.pause()
+  const clickFunction = clickable
+    ? clickArtistHandler
+    : () => audioRef.current?.pause();
 
   return (
     <motion.button
@@ -338,7 +342,7 @@ const ArtistCard = ({
           <Text
             c={
               path.includes(artist.name) && artist.name !== end
-                ? {light_gray: gray5}
+                ? { light_gray: gray5 }
                 : white
             }
             fw={700}

@@ -1,6 +1,6 @@
 import { Embla, Carousel, useAnimationOffsetEffect } from "@mantine/carousel";
 import { Center } from "@mantine/core";
-import React, { useState } from "react";
+import React, { use, useCallback, useEffect, useState } from "react";
 import { white } from "../colors";
 import { Artist, phoneMaxWidth } from "./Game";
 import ScrollablePath from "./ScrollablePath";
@@ -19,6 +19,23 @@ const ShortestPathCarousel = ({
   minPaths,
 }: ShortestPathCarouselProps) => {
   const [embla, setEmbla] = useState<Embla | null>(null);
+  const [atBeginning, setAtBeginning] = useState(true);
+  const [atEnd, setAtEnd] = useState(false);
+
+  const handleScroll = useCallback(() => {
+    if (embla) {
+      setAtBeginning(!embla.canScrollPrev());
+      setAtEnd(!embla.canScrollNext());
+    }
+  }, [embla]);
+
+  useEffect(() => {
+    if (embla) {
+      embla.on('scroll', handleScroll);
+      handleScroll();
+    }
+  }, [embla, handleScroll]);
+
 
   // because its in an animated container, need this to fix offset issue
   useAnimationOffsetEffect(embla, minPathCollapseAnimationDuration);
@@ -31,15 +48,16 @@ const ShortestPathCarousel = ({
       w={window.innerWidth > phoneMaxWidth ? 600 : window.innerWidth - 10}
       getEmblaApi={setEmbla}
       controlSize={23}
-      nextControlIcon={<IconChevronRight color={white} />}
-      previousControlIcon={<IconChevronLeft color={white} />}
+      nextControlIcon={!atEnd && <IconChevronRight color={white} />}
+      nextControlProps={{ disabled: atEnd }}
+      previousControlIcon={!atBeginning && <IconChevronLeft color={white} />}
+      previousControlProps={{ disabled: atBeginning }}
       styles={{
         root: { paddingBottom: "10px" },
         indicator: { backgroundColor: white, width: "8px", height: "8px" },
         indicators: { bottom: "-10px" },
         control: { backgroundColor: "transparent", border: "none" },
       }}
-      loop
     >
       {minPaths.map((minPath, index) => (
         <Carousel.Slide key={index}>

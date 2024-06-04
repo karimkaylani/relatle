@@ -189,7 +189,7 @@ const GameOver = ({
     if (won) {
       closeMinPath();
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [won]);
 
   const numMinPaths = 5;
@@ -249,12 +249,12 @@ const GameOver = ({
   const handleResize = () => setHeight(ref.current?.clientHeight ?? 86);
 
   const shortestPathButtonText =
-    (guesses === minPathLength ? "Other " : "") +
+    (won && guesses === minPathLength ? "Other " : "") +
     "Shortest Path" +
     (minPaths.length > 1 ? "s" : "") +
-    " (" +
-    minPathLength +
-    " guesses)";
+    (!won || guesses !== minPathLength
+      ? " (" + minPathLength + " guesses)"
+      : "");
 
   useEffect(() => {
     handleResize();
