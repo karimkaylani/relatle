@@ -16,6 +16,8 @@ import {
   Popover,
   Loader,
   Center,
+  Affix,
+  Transition,
 } from "@mantine/core";
 import {
   useDisclosure,
@@ -256,13 +258,19 @@ const Game = (props: GameProps) => {
       duration: 500,
       offset: -10,
     });
-  const containerRef = useRef<HTMLDivElement>(null);
+  const matchupContainerRef = useRef<HTMLDivElement>(null);
   const { ref: affixRef, entry: entryAffix } = useIntersection({
-    root: containerRef.current,
+    root: matchupContainerRef.current,
     threshold: 0,
   });
 
   const matchupRef = useMergedRef(scrollViewRef, affixRef);
+
+  const logoContainerRef = useRef<HTMLDivElement>(null);
+  const { ref: logoRef, entry: entryLogo } = useIntersection({
+    root: logoContainerRef.current,
+    threshold: 0.5,
+  });
 
   const [scope, animate] = useAnimate();
   // To prevent user from clicking on multiple artists at once
@@ -454,7 +462,7 @@ const Game = (props: GameProps) => {
       }
       let new_matchup_id = getTodaysMatchup(matchups)[1];
       if (new_matchup_id !== matchupID) {
-        window.location.href = window.location.pathname
+        window.location.href = window.location.pathname;
       }
     }, 1000);
 
@@ -818,7 +826,7 @@ const Game = (props: GameProps) => {
           <ArchiveButton showText={width > maxCustomTextWidth} />
         </Group>
         <Link href={is_custom ? "/" : ""}>
-          <Stack gap="0px">
+          <Stack gap="0px" ref={logoRef}>
             <Logo />
             {is_custom && (
               <Text p="0px" c={white} ta="center">
@@ -1048,6 +1056,26 @@ const Game = (props: GameProps) => {
         newFeatureModalOpened={newFeatureModalOpened}
         newFeatureModalHandlers={newFeatureModalHandlers}
       />
+      {width > 1150 && (
+        <Affix position={{ bottom: 20, right: 20 }}>
+          <Transition
+            mounted={entryLogo !== null && !entryLogo?.isIntersecting}
+            transition="slide-left"
+            duration={200}
+            timingFunction="ease"
+          >
+            {(styles) => (
+              <div style={styles}>
+                <MantineImage
+                  w={150}
+                  src="images/logo.png"
+                  alt="Relatle Logo"
+                ></MantineImage>
+              </div>
+            )}
+          </Transition>
+        </Affix>
+      )}
     </MainContainer>
   );
 };
