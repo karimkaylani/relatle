@@ -269,7 +269,7 @@ const Game = (props: GameProps) => {
   const logoContainerRef = useRef<HTMLDivElement>(null);
   const { ref: logoRef, entry: entryLogo } = useIntersection({
     root: logoContainerRef.current,
-    threshold: 0.5,
+    threshold: 0.8,
   });
 
   const [scope, animate] = useAnimate();
