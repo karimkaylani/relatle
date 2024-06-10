@@ -280,7 +280,7 @@ const GameOver = ({
         >
           <Drawer.Title style={{ width: "100%" }}>
             <Text ta="center" c={white} size="xl" fw={700}>
-              {won ? "You Won!" : "Game Over"}
+              {`You ${won ? "won" : "lost"} ${is_custom ? "this" :  "today's"} relatle${won ? "!" : " :("}`}
             </Text>
           </Drawer.Title>
           <Drawer.CloseButton />
