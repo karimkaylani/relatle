@@ -252,16 +252,25 @@ const Game = (props: GameProps) => {
   // For new feature modal pop-up
   const latestFeatureId = 3;
 
+  // For affix-status
   const searchParams = useSearchParams();
   const { scrollIntoView, targetRef: scrollViewRef } =
     useScrollIntoView<HTMLDivElement>({
       duration: 500,
       offset: -10,
     });
+  // For logo pop-up
   const matchupContainerRef = useRef<HTMLDivElement>(null);
   const { ref: affixRef, entry: entryAffix } = useIntersection({
     root: matchupContainerRef.current,
     threshold: 0,
+  });
+
+  // For determining if should scroll (can see all artists)
+  const artistGridContainerRef = useRef<HTMLDivElement>(null);
+  const { ref: artistGridRef, entry: entryArtistGrid } = useIntersection({
+    root: artistGridContainerRef.current,
+    threshold: 1,
   });
 
   const matchupRef = useMergedRef(scrollViewRef, affixRef);
@@ -273,6 +282,8 @@ const Game = (props: GameProps) => {
   });
 
   const [scope, animate] = useAnimate();
+
+  const gridRef = useMergedRef(scope, artistGridRef);
   // To prevent user from clicking on multiple artists at once
   // or reseting while executing artist click animation
   const [artistClicked, setArtistClicked] = useState(false);
@@ -500,7 +511,7 @@ const Game = (props: GameProps) => {
   }
 
   const scrollToTop = () => {
-    if (!entryAffix?.isIntersecting) {
+    if (!entryAffix?.isIntersecting && !entryArtistGrid?.isIntersecting) {
       scrollIntoView();
     }
   };
@@ -958,7 +969,7 @@ const Game = (props: GameProps) => {
           setPlayingArtist,
         }}
       >
-        <SimpleGrid ref={scope} cols={{ base: 2, xs: 3, sm: 4, md: 4, lg: 4 }}>
+        <SimpleGrid ref={gridRef} cols={{ base: 2, xs: 3, sm: 4, md: 4, lg: 4 }}>
           {currArtist.related.map((artist_name: string) => (
             <ArtistCard
               key={web[artist_name].id}

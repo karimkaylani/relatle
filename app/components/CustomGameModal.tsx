@@ -359,6 +359,10 @@ const CustomGameModal = (props: CustomGameModalProps) => {
     );
   };
 
+  const isCurrentMatchupEasy = () => {
+    return (web[startArtist]?.related.includes(endArtist));
+  }
+
   const isCurrentMatchupRecommended = () => {
     return endArtist !== "" && recommendedEndArtists.includes(endArtist);
   };
@@ -495,7 +499,7 @@ const CustomGameModal = (props: CustomGameModalProps) => {
               input: {
                 color: white,
                 fontSize: "16px",
-                outline: isCurrentMatchupDifficult()
+                outline: isCurrentMatchupDifficult()  || isCurrentMatchupEasy()
                   ? `2px solid ${yellow}`
                   : isCurrentMatchupRecommended()
                   ? `2px solid ${green}`
@@ -561,9 +565,9 @@ const CustomGameModal = (props: CustomGameModalProps) => {
             }
           />
 
-          {isCurrentMatchupDifficult() ? (
+          {isCurrentMatchupDifficult() || isCurrentMatchupEasy() ? (
             <Text pl="5" pb="14" ta="left" fw={700} c={yellow} size="md">
-              Warning, this matchup may be difficult!
+              {isCurrentMatchupDifficult() ? "Warning, this matchup may be difficult!" :  "This matchup is really easy!"}
             </Text>
           ) : isCurrentMatchupRecommended() ? (
             <Text pl="5" pb="14" ta="left" fw={700} c={green} size="md">
