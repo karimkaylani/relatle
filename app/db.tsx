@@ -18,7 +18,7 @@ export const getStats = async (matchup: string[], shortestPath: number): Promise
     return null;
   }
   const { average_score, num_games, perfect_game_rate, win_rate, won_guesses } = data[0];
-  if (!num_games || num_games < 3 || !average_score || !perfect_game_rate || !win_rate) {
+  if (num_games !== null || num_games < 3 || average_score !== null || perfect_game_rate !== null || win_rate !== null) {
     return null;
   }
   const binSize = 5;
