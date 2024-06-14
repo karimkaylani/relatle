@@ -31427,10 +31427,10 @@
             "TV Girl",
             "Car Seat Headrest",
             "Faye Webster",
+            "Jordana",
             "Crystal Castles",
             "PinkPantheress",
-            "Montell Fish",
-            "beabadoobee"
+            "Montell Fish"
         ]
     },
     "Novo Amor": {
@@ -32570,6 +32570,7 @@
             "Vansire",
             "Surf Curse",
             "Duster",
+            "Jordana",
             "EKKSTACY",
             "Cafun\u00e9",
             "Matt Maltese",
@@ -32709,6 +32710,7 @@
             "salvia palth",
             "Wisp",
             "Alex G",
+            "Jordana",
             "Current Joys",
             "Eyedress"
         ]
@@ -32747,10 +32749,10 @@
             "Alex G",
             "Yot Club",
             "The Drums",
+            "Jordana",
             "Cuco",
             "Matt Maltese",
-            "Suki Waterhouse",
-            "Men I Trust"
+            "Suki Waterhouse"
         ]
     },
     "The Last Dinner Party": {
@@ -32804,13 +32806,13 @@
             "Alex G",
             "Current Joys",
             "Slowdive",
+            "Jordana",
             "Yot Club",
             "Men I Trust",
             "Crystal Castles",
             "Faye Webster",
             "Eyedress",
-            "Deftones",
-            "Mac DeMarco"
+            "Deftones"
         ]
     },
     "EKKSTACY": {
@@ -33898,6 +33900,23 @@
             "glaive",
             "Quadeca",
             "brakence"
+        ]
+    },
+    "Jordana": {
+        "name": "Jordana",
+        "id": "5Bw9kFNhy019e4IBCJZlzw",
+        "image": "https://i.scdn.co/image/ab6761610000e5eb47914004e25323f559c96560",
+        "top_song_name": "Better in the Dark",
+        "top_song_id": "3SeDS5sSoWnwAZvVgkdKzf",
+        "top_song_preview_url": "https://p.scdn.co/mp3-preview/2352773456c782fb870eaa59f8828b351317afa7?cid=741dea8d6f154f6393dc60eacb26fc71",
+        "top_song_art": "https://i.scdn.co/image/ab67616d0000b273ebf1802f3aedc62b8f6339d3",
+        "related": [
+            "sign crushes motorist",
+            "Faye Webster",
+            "Yot Club",
+            "Current Joys",
+            "Alex G",
+            "Duster"
         ]
     }
 }
