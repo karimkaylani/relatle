@@ -103,6 +103,7 @@ interface SaveProps {
 export const phoneMaxWidth = 768;
 export const maxCustomTextWidth = 680;
 export const maxButtonGrowWidth = 370;
+export const watermarkWidth = 1150;
 export const feedBackForm =
   "https://docs.google.com/forms/d/e/1FAIpQLSeMEW3eGqVXheqidY43q9yMVK2QCi-AEJV3JGTuPK4LX9U9eA/viewform?usp=sf_link";
 
@@ -1067,7 +1068,7 @@ const Game = (props: GameProps) => {
         newFeatureModalOpened={newFeatureModalOpened}
         newFeatureModalHandlers={newFeatureModalHandlers}
       />
-      {width > 1150 && (
+      {width > watermarkWidth && (
         <Affix position={{ bottom: 20, right: 20 }}>
           <Transition
             mounted={entryLogo !== null && !entryLogo?.isIntersecting}

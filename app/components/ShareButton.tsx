@@ -3,6 +3,7 @@ import { IconCopy, IconShare2 } from "@tabler/icons-react";
 import React from "react";
 import RelatleButton from "./RelatleButton";
 import { white } from "../colors";
+import { phoneMaxWidth, watermarkWidth } from "./Game";
 
 export interface ShareButtonProps {
   shareText: string;
@@ -20,17 +21,23 @@ const ShareButton = ({
   shareText,
   buttonText,
   color,
-  size='md',
-  copy=false,
+  size = "md",
+  copy = false,
 }: ShareButtonProps) => {
-  if (!copy && navigator.share && navigator.canShare && navigator.canShare({ text: shareText })) {
+  if (
+    !copy &&
+    window.innerWidth < phoneMaxWidth &&
+    navigator.share &&
+    navigator.canShare &&
+    navigator.canShare({ text: shareText })
+  ) {
     return (
       <RelatleButton
         disabled={disabled}
         text={`Share ${buttonText}`}
         color={color}
         onClick={() => navigator.share({ text: shareText })}
-        icon={<IconShare2 color={!disabled ? color : undefined}/>}
+        icon={<IconShare2 color={!disabled ? color : undefined} />}
         size={size}
       />
     );
@@ -44,9 +51,9 @@ const ShareButton = ({
           text={copied ? `Copied ${buttonText}!` : `Copy ${buttonText}`}
           color={color}
           onClick={copy}
-          icon={<IconCopy color={!disabled ? color : undefined}/>}
+          icon={<IconCopy color={!disabled ? color : undefined} />}
           size={size}
-      />
+        />
       )}
     </CopyButton>
   );
