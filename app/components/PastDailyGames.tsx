@@ -99,6 +99,7 @@ const PastDailyGames = ({ web, matchups: localMatchups }: PastDailyGamesProps) =
                 web[matchup[0]] &&
                 web[matchup[1]] && (
                   <DailyGameGameCard
+                    web={web}
                     start={web[matchup[0]]}
                     end={web[matchup[1]]}
                     matchupID={

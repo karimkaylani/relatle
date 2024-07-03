@@ -293,6 +293,7 @@ const GameOver = ({
             styles={{ root: { marginBottom: height + 15 } }}
           >
             <Matchup
+              web={web}
               start={web[start]}
               end={web[end]}
               small={window.innerWidth > phoneMaxWidth ? false : true}

@@ -24,12 +24,13 @@ import { white, yellow, red, green } from "../colors";
 export interface HowToPlayProps {
   start: Artist;
   end: Artist;
+  web: { [key: string]: Artist };
   opened: boolean;
   handlers: any;
 }
 
 const HowToPlay = (props: HowToPlayProps) => {
-  const { start, end, opened, handlers } = props;
+  const { start, end, web, opened, handlers } = props;
   const { open, close } = handlers;
   return (
     <Group justify="flex-end">
@@ -63,7 +64,7 @@ const HowToPlay = (props: HowToPlayProps) => {
             </Card>
             <Text fw={300}>Identify the <Text fw={500} c={white} span>artist matchup</Text>:</Text>
           </Group>
-          <Matchup start={start} end={end} small={true} />
+          <Matchup start={start} end={end} small={true} web={web} />
 
           <Group wrap="nowrap" justify="flex-start" align="flex-start">
             <Card shadow="sm" radius="md" padding="5px" w={68} h={33}>

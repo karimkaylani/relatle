@@ -100,6 +100,117 @@ export function getValidPaths(
   return paths;
 }
 
+const repeatingArtistInAllPaths = (
+  paths: string[][],
+  start: string,
+  ignoreFirstClick: boolean
+): boolean => {
+  if (ignoreFirstClick) {
+    paths = paths.map((path) => path.slice(1));
+  }
+  let all_artists_in_paths = new Set(paths.flat());
+  for (const artist of all_artists_in_paths) {
+    if (
+      paths.filter((path) => path.slice(0, -1).includes(artist)).length ===
+      paths.length
+    ) {
+      return true;
+    }
+  }
+  return false;
+};
+
+const atLeastTwoPathsIfNumFirstClicked = (
+  paths: string[][],
+  amount: number
+): boolean => {
+  const startingArtists = new Set(paths.map((x) => x[0]));
+  if (startingArtists.size === amount) {
+    for (const artist of startingArtists) {
+      if (paths.filter((path) => path[0] === artist).length < amount) {
+        return false;
+      }
+    }
+  }
+  return true;
+};
+
+const targetArtistRelatedBothDirections = (
+  web: { [key: string]: Artist },
+  end: string,
+  percentage: number
+): boolean => {
+  return (
+    web[end].related.filter(
+      (artist) =>
+        web[end].related.includes(artist) && web[artist].related.includes(end)
+    ).length /
+      web[end].related.length >=
+    percentage
+  );
+};
+
+export const isMatchupDifficult = (
+  web: { [key: string]: Artist },
+  startArtist: string,
+  endArtist: string
+): boolean => {
+  if (
+    startArtist === "" ||
+    endArtist === "" ||
+    !Object.keys(web).includes(startArtist)
+  ) {
+    return false;
+  }
+  const validPaths = getValidPaths(
+    web,
+    startArtist,
+    endArtist,
+    maxDegOfSepWarning
+  );
+  return (
+    (validPaths.length < maxNumPathsForWarning &&
+      getValidPaths(web, startArtist, endArtist, minDegOfSepRecommended)
+        .length <= 0) ||
+    repeatingArtistInAllPaths(validPaths, startArtist, true)
+  );
+};
+
+export const isRecommendedMatchup = (
+  web: { [key: string]: Artist },
+  start: string,
+  end: string
+): boolean => {
+  const closeEndArtists = Object.keys(
+    getNumPathsEndArtists(web, start, minDegOfSepRecommended)
+  );
+  const endArtistsWithMaxDegOfSep = getNumPathsEndArtists(
+    web,
+    start,
+    maxDegOfSepRecommended
+  );
+  /* Conditions:
+      1. Must have at least minNumPathsForRecommended paths
+      2. Must have at most maxNumPathsForRecommended paths
+      3. Must not be a close end artist (path length within minDegOfSepRecommended)
+      4. There isn't any single artist that appears in all paths
+      5. If there are only 2 first clicked artists, then must be at least 2 paths for each
+      6. Target artist must be related in both directions to at 30% of their related artists
+      */
+  return (
+    endArtistsWithMaxDegOfSep[end].length >= minNumPathsForRecommended &&
+    endArtistsWithMaxDegOfSep[end].length <= maxNumPathsForRecommended &&
+    !closeEndArtists.includes(end) &&
+    !repeatingArtistInAllPaths(
+      endArtistsWithMaxDegOfSep[end],
+      start,
+      web[start].related.length === 1
+    ) &&
+    atLeastTwoPathsIfNumFirstClicked(endArtistsWithMaxDegOfSep[end], 2) &&
+    targetArtistRelatedBothDirections(web, end, 0.3)
+  );
+};
+
 const getConnectedNodes = (
   graph: { [key: string]: Artist },
   start: string
@@ -155,100 +266,9 @@ const CustomGameModal = (props: CustomGameModalProps) => {
     }
   };
 
-  const repeatingArtistInAllPaths = (
-    paths: string[][],
-    start: string,
-    ignoreFirstClick: boolean
-  ): boolean => {
-    if (ignoreFirstClick) {
-      paths = paths.map((path) => path.slice(1));
-    }
-    let all_artists_in_paths = new Set(paths.flat());
-    for (const artist of all_artists_in_paths) {
-      if (
-        paths.filter((path) => path.slice(0, -1).includes(artist)).length ===
-        paths.length
-      ) {
-        return true;
-      }
-    }
-    return false;
-  };
-
-  const atLeastTwoPathsIfNumFirstClicked = (
-    paths: string[][],
-    amount: number
-  ): boolean => {
-    const startingArtists = new Set(paths.map((x) => x[0]));
-    if (startingArtists.size === amount) {
-      for (const artist of startingArtists) {
-        if (paths.filter((path) => path[0] === artist).length < amount) {
-          return false;
-        }
-      }
-    }
-    return true;
-  };
-
-  const targetArtistRelatedBothDirections = (
-    end: string,
-    percentage: number
-  ): boolean => {
-    return (
-      web[end].related.filter(
-        (artist) =>
-          web[end].related.includes(artist) && web[artist].related.includes(end)
-      ).length /
-        web[end].related.length >=
-      percentage
-    );
-  };
-
-  const isRecommendedMatchup = (
-    start: string,
-    end: string,
-    closeEndArtists: string[],
-    endArtistsWithMaxDegOfSep: { [key: string]: string[][] }
-  ): boolean => {
-    /* Conditions:
-        1. Must have at least minNumPathsForRecommended paths
-        2. Must have at most maxNumPathsForRecommended paths
-        3. Must not be a close end artist (path length within minDegOfSepRecommended)
-        4. There isn't any single artist that appears in all paths
-        5. If there are only 2 first clicked artists, then must be at least 2 paths for each
-        6. Target artist must be related in both directions to at 30% of their related artists
-        */
-    return (
-      endArtistsWithMaxDegOfSep[end].length >= minNumPathsForRecommended &&
-      endArtistsWithMaxDegOfSep[end].length <= maxNumPathsForRecommended &&
-      !closeEndArtists.includes(end) &&
-      !repeatingArtistInAllPaths(
-        endArtistsWithMaxDegOfSep[end],
-        start,
-        web[start].related.length === 1
-      ) &&
-      atLeastTwoPathsIfNumFirstClicked(endArtistsWithMaxDegOfSep[end], 2) &&
-      targetArtistRelatedBothDirections(end, 0.3)
-    );
-  };
-
   const getRecommendedArtists = (start: string) => {
-    const closeEndArtists = Object.keys(
-      getNumPathsEndArtists(web, start, minDegOfSepRecommended)
-    );
-    const endArtistsWithMaxDegOfSep = getNumPathsEndArtists(
-      web,
-      start,
-      maxDegOfSepRecommended
-    );
-    let recommendedEndArtists = Object.keys(endArtistsWithMaxDegOfSep).filter(
-      (artist) =>
-        isRecommendedMatchup(
-          start,
-          artist,
-          closeEndArtists,
-          endArtistsWithMaxDegOfSep
-        )
+    let recommendedEndArtists = Object.keys(matchupsFound).filter((artist) =>
+      isRecommendedMatchup(web, start, artist)
     );
 
     // For daily matchup curating: don't want to reuse target artists
@@ -343,25 +363,12 @@ const CustomGameModal = (props: CustomGameModalProps) => {
     ) {
       return false;
     }
-    const validPaths = getValidPaths(
-      web,
-      startArtist,
-      endArtist,
-      maxDegOfSepWarning
-    );
-    return (
-      (artistsList.includes(startArtist) &&
-        matchupsFound.includes(endArtist) &&
-        validPaths.length < maxNumPathsForWarning &&
-        getValidPaths(web, startArtist, endArtist, minDegOfSepRecommended)
-          .length <= 0) ||
-      repeatingArtistInAllPaths(validPaths, startArtist, true)
-    );
+    return isMatchupDifficult(web, startArtist, endArtist);
   };
 
   const isCurrentMatchupEasy = () => {
-    return (web[startArtist]?.related.includes(endArtist));
-  }
+    return web[startArtist]?.related.includes(endArtist);
+  };
 
   const isCurrentMatchupRecommended = () => {
     return endArtist !== "" && recommendedEndArtists.includes(endArtist);
@@ -499,11 +506,12 @@ const CustomGameModal = (props: CustomGameModalProps) => {
               input: {
                 color: white,
                 fontSize: "16px",
-                outline: isCurrentMatchupDifficult()  || isCurrentMatchupEasy()
-                  ? `2px solid ${yellow}`
-                  : isCurrentMatchupRecommended()
-                  ? `2px solid ${green}`
-                  : "",
+                outline:
+                  isCurrentMatchupDifficult() || isCurrentMatchupEasy()
+                    ? `2px solid ${yellow}`
+                    : isCurrentMatchupRecommended()
+                    ? `2px solid ${green}`
+                    : "",
               },
               groupLabel: {
                 color: green,
@@ -523,7 +531,7 @@ const CustomGameModal = (props: CustomGameModalProps) => {
                 <ArtistInfo
                   artist={web[endArtist]}
                   small={true}
-                  is_green={true}
+                  border={isCurrentMatchupDifficult() ? yellow : isCurrentMatchupRecommended() ? green : undefined}
                   show_name={false}
                 />
               )
@@ -567,7 +575,9 @@ const CustomGameModal = (props: CustomGameModalProps) => {
 
           {isCurrentMatchupDifficult() || isCurrentMatchupEasy() ? (
             <Text pl="5" pb="14" ta="left" fw={700} c={yellow} size="md">
-              {isCurrentMatchupDifficult() ? "Warning, this matchup may be difficult!" :  "This matchup is really easy!"}
+              {isCurrentMatchupDifficult()
+                ? "Warning, this matchup may be difficult!"
+                : "This matchup is really easy!"}
             </Text>
           ) : isCurrentMatchupRecommended() ? (
             <Text pl="5" pb="14" ta="left" fw={700} c={green} size="md">

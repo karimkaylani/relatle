@@ -171,6 +171,7 @@ const TopCustomGames = (props: TopCustomGamesProps) => {
                       key={index}
                       start={web[game.matchup[0]]}
                       end={web[game.matchup[1]]}
+                      web={web}
                       plays={game.numGames}
                       avg_score={game.averageScore}
                       win_rate={game.winRate}

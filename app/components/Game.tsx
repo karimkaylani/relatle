@@ -884,6 +884,7 @@ const Game = (props: GameProps) => {
         >
           <Matchup
             ref={matchupRef}
+            web={web}
             start={web[start]}
             end={web[end]}
             small={width <= phoneMaxWidth}
@@ -1058,6 +1059,7 @@ const Game = (props: GameProps) => {
           <HowToPlay
             start={web[start]}
             end={web[end]}
+            web={web}
             opened={htpModalOpened}
             handlers={htpModalHandlers}
           />

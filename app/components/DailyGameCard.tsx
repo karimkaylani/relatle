@@ -12,10 +12,11 @@ export interface DailyGameCardProps {
   end: Artist;
   date: string;
   matchupID: number;
+  web: { [key: string]: Artist };
 }
 
 const DailyGameGameCard = (props: DailyGameCardProps) => {
-  const { start, end, date, matchupID } = props;
+  const { start, end, web, date, matchupID } = props;
   const url = generateCustomGameURL(start.name, end.name);
   const maxWidth = 500;
   return (
@@ -46,6 +47,7 @@ const DailyGameGameCard = (props: DailyGameCardProps) => {
               end={end}
               small={window.innerWidth < phoneMaxWidth}
               center={false}
+              web={web}
             />
           </Stack>
         </Card>

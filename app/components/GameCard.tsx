@@ -10,6 +10,7 @@ import Link from "next/link";
 export interface GameCardProps {
   start: Artist;
   end: Artist;
+  web: { [key: string]: Artist };
   plays: number;
   avg_score: number;
   win_rate: number;
@@ -17,7 +18,7 @@ export interface GameCardProps {
 }
 
 const GameCard = (props: GameCardProps) => {
-  const { start, end, plays, avg_score, win_rate, index } = props;
+  const { start, end, web, plays, avg_score, win_rate, index } = props;
   const url = generateCustomGameURL(start.name, end.name);
   const maxWidth = 500;
   return (
@@ -45,6 +46,7 @@ const GameCard = (props: GameCardProps) => {
               <Matchup
                 start={start}
                 end={end}
+                web={web}
                 small={window.innerWidth < phoneMaxWidth}
                 center={false}
               />

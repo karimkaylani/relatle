@@ -7,7 +7,7 @@ import PlayButton from "./PlayButton";
 export interface ArtistInfoProps {
   artist: Artist;
   small: boolean;
-  is_green?: boolean;
+  border?: string;
   show_name?: boolean;
   preview?: boolean;
 }
@@ -15,7 +15,7 @@ export interface ArtistInfoProps {
 const ArtistInfo = ({
   artist,
   small,
-  is_green = false,
+  border = undefined,
   show_name = true,
   preview = false,
 }: ArtistInfoProps) => {
@@ -27,9 +27,9 @@ const ArtistInfo = ({
           src={artist.image}
           alt={artist.name}
           styles={
-            is_green
+            border
               ? {
-                  image: { border: `2.5px solid ${green}`, borderRadius: "100%" },
+                  image: { border: `2.5px solid ${border}`, borderRadius: "100%" },
                 }
               : {}
           }
@@ -37,7 +37,7 @@ const ArtistInfo = ({
         {show_name && (
           <Text
             ta="center"
-            c={is_green ? green : white}
+            c={border ? border : white}
             size={small ? "12.5px" : "lg"}
             fw={700}
           >
