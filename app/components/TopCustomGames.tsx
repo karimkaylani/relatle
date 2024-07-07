@@ -70,7 +70,7 @@ const TopCustomGames = (props: TopCustomGamesProps) => {
   const [customModalOpened, customModalHandlers] = useDisclosure(false);
   const { open } = customModalHandlers;
 
-  const loadAmount = 25;
+  const loadAmount = 10;
   const totalAmount = 150;
   useEffect(() => {
     setMounted(true);

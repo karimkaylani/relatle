@@ -1,5 +1,5 @@
 import { Group } from "@mantine/core";
-import React from "react";
+import React, { useEffect } from "react";
 import ArtistInfo from "./ArtistInfo";
 import { Artist } from "./Game";
 import Arrow from "./Arrow";
@@ -17,20 +17,27 @@ export interface MatchupProps {
 }
 
 const Matchup = React.forwardRef<HTMLDivElement, MatchupProps>((props, ref) => {
-  const { web, start, end, small, showPreviews = false, center=true } = props;
+  const { web, start, end, small, showPreviews = false, center = true } = props;
+  const [border, setBorder] = React.useState<string | undefined>(undefined);
 
-  let border = undefined;
-  if (isMatchupDifficult(web, start.name, end.name)) {
-    border = yellow;
-  } else if (isMatchupDifficult(web, end.name, start.name)) {
-    border = green
-  }
+  useEffect(() => {
+    if (isMatchupDifficult(web, start.name, end.name)) {
+      setBorder(yellow);
+    } else if (isMatchupDifficult(web, end.name, start.name)) {
+      setBorder(green);
+    }
+  }, [start, end, web]);
 
   return (
-    <Group ref={ref} gap="xs" justify={center ? 'center' : undefined}>
+    <Group ref={ref} gap="xs" justify={center ? "center" : undefined}>
       <ArtistInfo artist={start} small={small} preview={showPreviews} />
       <Arrow small={small} />
-      <ArtistInfo artist={end} small={small} border={border} preview={showPreviews}/>
+      <ArtistInfo
+        artist={end}
+        small={small}
+        border={border}
+        preview={showPreviews}
+      />
     </Group>
   );
 });
