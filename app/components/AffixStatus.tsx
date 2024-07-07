@@ -93,7 +93,7 @@ const AffixStatus = (props: AffixStatusProps) => {
                 <Group align="center" justify="center" gap="xs" wrap="nowrap">
                   <ArtistInfo artist={currArtist} small={true} />
                   <Arrow small={true} />
-                  <ArtistInfo artist={endArtist} small={true} is_green={true} />
+                  <ArtistInfo artist={endArtist} small={true} border={green} />
                 </Group>
                 <Text>
                   {guesses} | {resets}

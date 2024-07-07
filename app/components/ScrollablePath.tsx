@@ -3,7 +3,7 @@ import React, { Fragment } from "react";
 import { Artist } from "./Game";
 import ArtistInfo from "./ArtistInfo";
 import Arrow from "./Arrow";
-import { yellow, red, white } from "../colors";
+import { yellow, red, white, green } from "../colors";
 
 export interface ScrollablePathProps {
   matchup: string[];
@@ -41,7 +41,7 @@ const ScrollablePath = (props: ScrollablePathProps) => {
             ) : (
               <ArtistInfo
                 artist={web[artist_name]}
-                is_green={artist_name === end}
+                border={artist_name === end ? green : undefined}
                 small={true}
               />
             )}

@@ -2,6 +2,7 @@ import React from "react";
 import { Artist, phoneMaxWidth } from "./Game";
 import { Group, Stack, Text } from "@mantine/core";
 import ArtistInfo from "./ArtistInfo";
+import { green } from "../colors";
 
 export interface RelatedArtistsTitleProps {
   artist: Artist;
@@ -38,7 +39,7 @@ const RelatedArtistsTitle = React.forwardRef<
       <ArtistInfo
         artist={artist}
         small={small}
-        is_green={artist.name === endArtist.name}
+        border={artist.name === endArtist.name ? green : undefined}
       />
       <Text size={small ? "md" : "lg"}>related artists</Text>
     </Group>
