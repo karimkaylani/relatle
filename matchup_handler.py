@@ -15,7 +15,7 @@ def verify_matchups(web):
     with open("public/data/matchups.json", "r") as outfile:
         matchups = json.load(outfile)
     # padding for removed matchups that have already occurred
-    num_days = 72
+    num_days = 78
     seen = set()
     for matchup in matchups:
         num_days += 1
@@ -72,11 +72,11 @@ def is_good_matchup(m, matchup):
             if len(list(filter(lambda x: x[0] == artist, valid_paths))) < 2:
                 return False
     # Target artist has at 30% of artists that related in both directions
-    if len(list(filter(lambda x: end in m[x]['related'], m[end]['related'])))/len(m[end]['related']) < 0.30:
+    if len(list(filter(lambda x: end in m[x]['related'], m[end]['related'])))/len(m[end]['related']) <= 0.4:
         return False
     return True
 
-def get_valid_paths(graph, start, end, max_steps):
+def get_valid_paths(graph, start, end, max_steps=float('inf')):
     # BFS path finding within <= max_steps deg of sep
     visited = set()
     queue = deque()

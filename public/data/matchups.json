@@ -148,10 +148,6 @@
     "Plain White T's"
   ],
   [
-    "Mitski",
-    "Harry Styles"
-  ],
-  [
     "Foo Fighters",
     "MGMT"
   ],
@@ -224,10 +220,6 @@
     "Charli XCX"
   ],
   [
-    "Melanie Martinez",
-    "21 Savage"
-  ],
-  [
     "Natasha Bedingfield",
     "Clairo"
   ],
@@ -266,10 +258,6 @@
   [
     "Tame Impala",
     "Olivia Rodrigo"
-  ],
-  [
-    "Taylor Swift",
-    "Childish Gambino"
   ],
   [
     "Bj\u00f6rk",
@@ -444,10 +432,6 @@
     "Ms. Lauryn Hill"
   ],
   [
-    "T-Pain",
-    "Led Zeppelin"
-  ],
-  [
     "Big Time Rush",
     "Flo Rida"
   ],
@@ -490,10 +474,6 @@
   [
     "Doja Cat",
     "Hayley Williams"
-  ],
-  [
-    "Tyler Childers",
-    "Fetty Wap"
   ],
   [
     "XXXTENTACION",
@@ -550,10 +530,6 @@
   [
     "Dolly Parton",
     "Camila Cabello"
-  ],
-  [
-    "JPEGMAFIA",
-    "Glass Animals"
   ],
   [
     "Lil Peep",
@@ -631,5 +607,69 @@
   [
     "The Monkees",
     "Kelly Clarkson"
-  ]  
+  ],
+  [
+    "Patti Smith",
+    "Timbaland"
+  ],
+  [
+    "Fall Out Boy",
+    "Spice Girls"
+  ],
+  [
+    "Ed Sheeran",
+    "blink-182"
+  ],
+  [
+    "Coldplay",
+    "Whitney Houston"
+  ],
+  [
+    "Billie Eilish",
+    "Pitbull"
+  ],
+  [
+    "Olivia Rodrigo",
+    "ABBA"
+  ],
+  [
+    "Radiohead",
+    "2Pac"
+  ],
+  [
+    "Bruno Mars",
+    "Janelle Monáe"
+  ],
+  [
+    "Gorillaz",
+    "Joni Mitchell"
+  ],
+  [
+    "LMFAO",
+    "Megan Thee Stallion"
+  ],
+  [
+    "Dua Lipa",
+    "Stevie Wonder"
+  ],
+  [
+    "Nirvana",
+    "Pharrell Williams"
+  ],
+  [
+    "Queen",
+    "Fergie"
+  ],
+  [
+    "Tenacious D",
+    "No Doubt"
+  ],
+  [
+    "J. Cole",
+    "Cher"
+  ],
+  [
+    "Eminem",
+    "Guns N' Roses"
+  ]
 ]
