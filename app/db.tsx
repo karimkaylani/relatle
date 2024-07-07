@@ -1,4 +1,5 @@
-'use client'
+'use server'
+
 import { createClient } from "@/utils/supabase/client";
 
 export interface Stats {

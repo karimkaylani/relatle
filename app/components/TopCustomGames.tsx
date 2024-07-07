@@ -29,6 +29,7 @@ import MainContainer from "./MainContainer";
 
 export interface TopCustomGamesProps {
   web: { [key: string]: Artist };
+  top_games: CustomGame[];
 }
 
 export enum SortParameter {
@@ -54,13 +55,19 @@ export const CardContainerStyles = {
   paddingRight: '15px',
 }
 
+export const totalAmount = 150;
+export const loadAmount = 25;
+
 
 const TopCustomGames = (props: TopCustomGamesProps) => {
-  const { web } = props;
-  const [topGames, setTopGames] = React.useState<CustomGame[]>([]);
-  const [leaderboard, setLeaderboard] = React.useState<CustomGame[]>([]);
+  const { web, top_games } = props;
+
+  const [topGames, setTopGames] = React.useState<CustomGame[]>(top_games);
+  let currLeaderboard = top_games.slice(0, loadAmount);
+  const [leaderboard, setLeaderboard] = React.useState<CustomGame[]>(currLeaderboard);
   const [mounted, setMounted] = React.useState(false);
   const [loading, setLoading] = React.useState(true);
+
 
   const [sortParameter, setSortParameter] = React.useState<SortParameter>(
     SortParameter.numGames
@@ -70,8 +77,6 @@ const TopCustomGames = (props: TopCustomGamesProps) => {
   const [customModalOpened, customModalHandlers] = useDisclosure(false);
   const { open } = customModalHandlers;
 
-  const loadAmount = 25;
-  const totalAmount = 150;
   useEffect(() => {
     setMounted(true);
     getLeaderboard(totalAmount, 1).then((leaderboard) => {
