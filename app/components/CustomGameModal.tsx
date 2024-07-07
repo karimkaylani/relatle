@@ -199,7 +199,7 @@ const CustomGameModal = (props: CustomGameModalProps) => {
         (artist) =>
           web[end].related.includes(artist) && web[artist].related.includes(end)
       ).length /
-        web[end].related.length >=
+        web[end].related.length >
       percentage
     );
   };
@@ -228,7 +228,7 @@ const CustomGameModal = (props: CustomGameModalProps) => {
         web[start].related.length === 1
       ) &&
       atLeastTwoPathsIfNumFirstClicked(endArtistsWithMaxDegOfSep[end], 2) &&
-      targetArtistRelatedBothDirections(end, 0.3)
+      targetArtistRelatedBothDirections(end, 0.4)
     );
   };
 
