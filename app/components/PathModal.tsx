@@ -41,7 +41,7 @@ const PathModal = (props: PathModalProps) => {
         }}
     >
         <Stack align='center'>
-            <Matchup start={web[matchup[0]]} end={web[matchup[1]]} small={true} />
+            <Matchup start={web[matchup[0]]} end={web[matchup[1]]} small={true} web={web} />
             <Scoreboard guesses={guesses} resets={resets} />
             <ScrollablePath matchup={matchup} web={web} path={path} />
         </Stack>
