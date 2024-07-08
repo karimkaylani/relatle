@@ -4,8 +4,11 @@ import ArtistInfo from "./ArtistInfo";
 import { Artist } from "./Game";
 import Arrow from "./Arrow";
 import PlayButton from "./PlayButton";
-import { isMatchupDifficult, isRecommendedSingleMatchup } from "./CustomGameModal";
-import { green, yellow } from "../colors";
+import {
+  isMatchupDifficult,
+  isRecommendedSingleMatchup,
+} from "./CustomGameModal";
+import { green, white, yellow } from "../colors";
 
 export interface MatchupProps {
   web: { [key: string]: Artist };
@@ -25,6 +28,8 @@ const Matchup = React.forwardRef<HTMLDivElement, MatchupProps>((props, ref) => {
       setBorder(yellow);
     } else if (isRecommendedSingleMatchup(web, start.name, end.name)) {
       setBorder(green);
+    } else {
+      setBorder(white);
     }
   }, [start, end, web]);
 
