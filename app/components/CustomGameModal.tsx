@@ -176,7 +176,7 @@ export const isMatchupDifficult = (
   );
 };
 
-export const isRecommendedMatchup = (
+export const isRecommendedSingleMatchup = (
   web: { [key: string]: Artist },
   start: string,
   end: string
@@ -189,6 +189,17 @@ export const isRecommendedMatchup = (
     start,
     maxDegOfSepRecommended
   );
+  
+  return isRecommendedMatchup(web, start, end, closeEndArtists, endArtistsWithMaxDegOfSep);
+};
+
+const isRecommendedMatchup = (
+  web: { [key: string]: Artist },
+  start: string,
+  end: string,
+  closeEndArtists: string[],
+  endArtistsWithMaxDegOfSep: { [key: string]: string[][] }
+): boolean => {
   /* Conditions:
       1. Must have at least minNumPathsForRecommended paths
       2. Must have at most maxNumPathsForRecommended paths
@@ -198,6 +209,7 @@ export const isRecommendedMatchup = (
       6. Target artist must be related in both directions to at 30% of their related artists
       */
   return (
+    end in endArtistsWithMaxDegOfSep &&
     endArtistsWithMaxDegOfSep[end].length >= minNumPathsForRecommended &&
     endArtistsWithMaxDegOfSep[end].length <= maxNumPathsForRecommended &&
     !closeEndArtists.includes(end) &&
@@ -267,9 +279,20 @@ const CustomGameModal = (props: CustomGameModalProps) => {
   };
 
   const getRecommendedArtists = (start: string) => {
-    let recommendedEndArtists = Object.keys(matchupsFound).filter((artist) =>
-      isRecommendedMatchup(web, start, artist)
+    const closeEndArtists = Object.keys(
+      getNumPathsEndArtists(web, start, minDegOfSepRecommended)
     );
+    const endArtistsWithMaxDegOfSep = getNumPathsEndArtists(
+      web,
+      start,
+      maxDegOfSepRecommended
+    ); 
+
+    let allEndArtists = getConnectedNodes(web, start);
+    let recommendedEndArtists = allEndArtists.filter((artist) => 
+      isRecommendedMatchup(web, start, artist, closeEndArtists, endArtistsWithMaxDegOfSep)
+    );
+
 
     // For daily matchup curating: don't want to reuse target artists
     if (searchParams.get("curating") && matchups !== null) {
