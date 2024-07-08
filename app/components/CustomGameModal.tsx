@@ -20,7 +20,7 @@ import ArtistInfo from "./ArtistInfo";
 import { useSearchParams } from "next/navigation";
 import IconHoverButton from "./IconHoverButton";
 import CustomIcon from "./CustomIcon";
-import { white, yellow, green, dk_green } from "../colors";
+import { white, yellow, green, dk_green, red, light_green, difficult_color, easy_color, recommended_color } from "../colors";
 import RelatleButton from "./RelatleButton";
 
 interface CustomGameModalProps {
@@ -189,8 +189,14 @@ export const isRecommendedSingleMatchup = (
     start,
     maxDegOfSepRecommended
   );
-  
-  return isRecommendedMatchup(web, start, end, closeEndArtists, endArtistsWithMaxDegOfSep);
+
+  return isRecommendedMatchup(
+    web,
+    start,
+    end,
+    closeEndArtists,
+    endArtistsWithMaxDegOfSep
+  );
 };
 
 const isRecommendedMatchup = (
@@ -221,6 +227,14 @@ const isRecommendedMatchup = (
     atLeastTwoPathsIfNumFirstClicked(endArtistsWithMaxDegOfSep[end], 2) &&
     targetArtistRelatedBothDirections(web, end, 0.4)
   );
+};
+
+export const isEasyMatchup = (
+  web: { [key: string]: Artist },
+  start: string,
+  end: string
+): boolean => {
+  return web[start]?.related.includes(end);
 };
 
 const getConnectedNodes = (
@@ -286,13 +300,18 @@ const CustomGameModal = (props: CustomGameModalProps) => {
       web,
       start,
       maxDegOfSepRecommended
-    ); 
-
-    let allEndArtists = getConnectedNodes(web, start);
-    let recommendedEndArtists = allEndArtists.filter((artist) => 
-      isRecommendedMatchup(web, start, artist, closeEndArtists, endArtistsWithMaxDegOfSep)
     );
 
+    let allEndArtists = getConnectedNodes(web, start);
+    let recommendedEndArtists = allEndArtists.filter((artist) =>
+      isRecommendedMatchup(
+        web,
+        start,
+        artist,
+        closeEndArtists,
+        endArtistsWithMaxDegOfSep
+      )
+    );
 
     // For daily matchup curating: don't want to reuse target artists
     if (searchParams.get("curating") && matchups !== null) {
@@ -390,7 +409,7 @@ const CustomGameModal = (props: CustomGameModalProps) => {
   };
 
   const isCurrentMatchupEasy = () => {
-    return web[startArtist]?.related.includes(endArtist);
+    return isEasyMatchup(web, startArtist, endArtist);
   };
 
   const isCurrentMatchupRecommended = () => {
@@ -529,12 +548,13 @@ const CustomGameModal = (props: CustomGameModalProps) => {
               input: {
                 color: white,
                 fontSize: "16px",
-                outline:
-                  isCurrentMatchupDifficult() || isCurrentMatchupEasy()
-                    ? `2px solid ${yellow}`
-                    : isCurrentMatchupRecommended()
-                    ? `2px solid ${green}`
-                    : "",
+                outline: isCurrentMatchupDifficult()
+                  ? `2px solid ${difficult_color}`
+                  : isCurrentMatchupEasy()
+                  ? `2px solid ${easy_color}`
+                  : isCurrentMatchupRecommended()
+                  ? `2px solid ${recommended_color}`
+                  : "",
               },
               groupLabel: {
                 color: green,
@@ -554,7 +574,15 @@ const CustomGameModal = (props: CustomGameModalProps) => {
                 <ArtistInfo
                   artist={web[endArtist]}
                   small={true}
-                  border={isCurrentMatchupDifficult() ? yellow : isCurrentMatchupRecommended() ? green : undefined}
+                  border={
+                    isCurrentMatchupDifficult()
+                      ? difficult_color
+                      : isCurrentMatchupEasy()
+                      ? easy_color
+                      : isCurrentMatchupRecommended()
+                      ? recommended_color
+                      : undefined
+                  }
                   show_name={false}
                 />
               )
@@ -596,14 +624,16 @@ const CustomGameModal = (props: CustomGameModalProps) => {
             }
           />
 
-          {isCurrentMatchupDifficult() || isCurrentMatchupEasy() ? (
-            <Text pl="5" pb="14" ta="left" fw={700} c={yellow} size="md">
-              {isCurrentMatchupDifficult()
-                ? "Warning, this matchup may be difficult!"
-                : "This matchup is really easy!"}
+          {isCurrentMatchupDifficult() ? (
+            <Text pl="5" pb="14" ta="left" fw={700} c={difficult_color} size="md">
+              {"Warning, this matchup may be difficult!"}
+            </Text>
+          ) : isCurrentMatchupEasy() ? (
+            <Text pl="5" pb="14" ta="left" fw={700} c={easy_color} size="md">
+              {"This matchup is really easy!"}
             </Text>
           ) : isCurrentMatchupRecommended() ? (
-            <Text pl="5" pb="14" ta="left" fw={700} c={green} size="md">
+            <Text pl="5" pb="14" ta="left" fw={700} c={recommended_color} size="md">
               This is a recommended matchup!
             </Text>
           ) : (

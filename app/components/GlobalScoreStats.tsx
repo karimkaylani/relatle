@@ -11,14 +11,20 @@ export interface GlobalScoreStatsProps {
   shortestPath: number;
 }
 
-export const Stat = (props: { label: string; value: string }) => {
+export interface StatProps {
+  label: string;
+  value: string;
+  color?: string;
+}
+
+export const Stat = ({ label, value, color = white }: StatProps) => {
   return (
     <Group justify="space-between">
       <Text ta="center" size="sm">
-        {props.label}
+        {label}
       </Text>
-      <Text ta="center" c={white} fw={700} size="sm">
-        {props.value}
+      <Text ta="center" c={color} fw={700} size="sm">
+        {value}
       </Text>
     </Group>
   );
@@ -28,7 +34,7 @@ const GlobalScoreStats = (props: GlobalScoreStatsProps) => {
   const { guesses, stats, won, shortestPath } = props;
   return (
     <Stack align="center" justify="center">
-       <Text fw={700} ta="center" size="sm" c={white}>
+      <Text fw={700} ta="center" size="sm" c={white}>
         {"Global Score Distribution"}
       </Text>
       <ScoreHistogram bins={stats.bins} guesses={guesses} won={won} />
