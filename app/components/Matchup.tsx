@@ -4,7 +4,7 @@ import ArtistInfo from "./ArtistInfo";
 import { Artist } from "./Game";
 import Arrow from "./Arrow";
 import PlayButton from "./PlayButton";
-import { isMatchupDifficult } from "./CustomGameModal";
+import { isMatchupDifficult, isRecommendedSingleMatchup } from "./CustomGameModal";
 import { green, yellow } from "../colors";
 
 export interface MatchupProps {
@@ -23,7 +23,7 @@ const Matchup = React.forwardRef<HTMLDivElement, MatchupProps>((props, ref) => {
   useEffect(() => {
     if (isMatchupDifficult(web, start.name, end.name)) {
       setBorder(yellow);
-    } else if (isMatchupDifficult(web, end.name, start.name)) {
+    } else if (isRecommendedSingleMatchup(web, start.name, end.name)) {
       setBorder(green);
     }
   }, [start, end, web]);
