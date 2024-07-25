@@ -173,7 +173,7 @@ const addScoreToDB = async (
 /* to preserve correct matchupID -> matchup mapping, since some matchups were deleted
       as they are no longer recommended matchups
       If deleting a matchup that has already passed: enumerate this by 1 */
-export const matchupIndexPadding = 78;
+export const matchupIndexPadding = 81;
 
 // Launch of relatle, matchupID is # of days (matchups) since 11/29/2023
 export const startingDate = new Date(2023, 10, 29);
