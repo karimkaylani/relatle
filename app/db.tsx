@@ -89,3 +89,23 @@ export const getLeaderboard = async(amount: number, start_pos: number): Promise<
   });
   return res;
 }
+
+export const getLeaderboardStatic = async(): Promise<CustomGame[] | null> => {
+  const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/data/leaderboard.json`, {
+    cache: "no-cache",
+  })
+  if (!response.ok) {
+    console.error("Failed to fetch matchups.json");
+    return null;
+  }
+  const data = await response.json();
+  let res = data.map((row: any) => {
+    return {
+      matchup: JSON.parse(row.matchup),
+      numGames: row.num_plays,
+      averageScore: parseFloat(row.average_guesses),
+      winRate: parseFloat(row.win_percentage),
+    };
+  });
+  return res
+}
