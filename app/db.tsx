@@ -95,7 +95,7 @@ export const getLeaderboardStatic = async(): Promise<CustomGame[] | null> => {
     cache: "no-cache",
   })
   if (!response.ok) {
-    console.error("Failed to fetch matchups.json");
+    console.error("Failed to fetch leaderboard.json");
     return null;
   }
   const data = await response.json();
