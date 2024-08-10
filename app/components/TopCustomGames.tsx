@@ -71,7 +71,7 @@ const TopCustomGames = (props: TopCustomGamesProps) => {
   const { open } = customModalHandlers;
 
   const loadAmount = 25;
-  const totalAmount = 150;
+  const totalAmount = 100;
   useEffect(() => {
     setMounted(true);
     getLeaderboardStatic().then((leaderboard) => {
