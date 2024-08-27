@@ -1,787 +1,213 @@
 [
-  [
-    "Shawn Mendes",
-    "Mumford & Sons"
-  ],
-  [
-    "Owl City",
-    "The Strokes"
-  ],
-  [
-    "Radiohead",
-    "Charli XCX"
-  ],
-  [
-    "Lizzo",
-    "Demi Lovato"
-  ],
-  [
-    "Twenty One Pilots",
-    "Soulja Boy"
-  ],
-  [
-    "fun.",
-    "Bullet For My Valentine"
-  ],
-  [
-    "Cardi B",
-    "2 Chainz"
-  ],
-  [
-    "One Direction",
-    "Gwen Stefani"
-  ],
-  [
-    "Evanescence",
-    "will.i.am"
-  ],
-  [
-    "Madonna",
-    "Zedd"
-  ],
-  [
-    "Billie Eilish",
-    "WALK THE MOON"
-  ],
-  [
-    "Ice Spice",
-    "Conan Gray"
-  ],
-  [
-    "blackbear",
-    "Tyler, The Creator"
-  ],
-  [
-    "Foster The People",
-    "Phoebe Bridgers"
-  ],
-  [
-    "Halsey",
-    "Simple Plan"
-  ],
-  [
-    "Sabrina Carpenter",
-    "Lil Yachty"
-  ],
-  [
-    "DNCE",
-    "Spice Girls"
-  ],
-  [
-    "Shawn Mendes",
-    "Bon Iver"
-  ],
-  [
-    "Glass Animals",
-    "Taio Cruz"
-  ],
-  [
-    "Sia",
-    "Ty Dolla $ign"
-  ],
-  [
-    "My Chemical Romance",
-    "Natasha Bedingfield"
-  ],
-  [
-    "P!nk",
-    "ZAYN"
-  ],
-  [
-    "Imagine Dragons",
-    "Carly Rae Jepsen"
-  ],
-  [
-    "Halsey",
-    "Neon Trees"
-  ],
-  [
-    "Travis Scott",
-    "Sean Kingston"
-  ],
-  [
-    "Two Door Cinema Club",
-    "Ellie Goulding"
-  ],
-  [
-    "Cardi B",
-    "Beach House"
-  ],
-  [
-    "5 Seconds of Summer",
-    "Baby Keem"
-  ],
-  [
-    "Pentatonix",
-    "Black Eyed Peas"
-  ],
-  [
-    "Olivia Rodrigo",
-    "Quavo"
-  ],
-  [
-    "The 1975",
-    "Megan Thee Stallion"
-  ],
-  [
-    "The Cranberries",
-    "Owl City"
-  ],
-  [
-    "Mark Ronson",
-    "Liam Payne"
-  ],
-  [
-    "Lizzo",
-    "DNCE"
-  ],
-  [
-    "Megan Thee Stallion",
-    "Ava Max"
-  ],
-  [
-    "Florence + The Machine",
-    "LMFAO"
-  ],
-  [
-    "Metallica",
-    "Plain White T's"
-  ],
-  [
-    "Foo Fighters",
-    "MGMT"
-  ],
-  [
-    "Ice Spice",
-    "Grimes"
-  ],
-  [
-    "David Bowie",
-    "Vampire Weekend"
-  ],
-  [
-    "Vampire Weekend",
-    "PinkPantheress"
-  ],
-  [
-    "Katy Perry",
-    "Lewis Capaldi"
-  ],
-  [
-    "Charli XCX",
-    "One Direction"
-  ],
-  [
-    "C\u00e9line Dion",
-    "Flo Rida"
-  ],
-  [
-    "Ed Sheeran",
-    "Lorde"
-  ],
-  [
-    "Hozier",
-    "Megan Thee Stallion"
-  ],
-  [
-    "The Weeknd",
-    "Kesha"
-  ],
-  [
-    "Shawn Mendes",
-    "Britney Spears"
-  ],
-  [
-    "Lana Del Rey",
-    "Bhad Bhabie"
-  ],
-  [
-    "Whitney Houston",
-    "Sean Kingston"
-  ],
-  [
-    "Twenty One Pilots",
-    "Selena Gomez"
-  ],
-  [
-    "Glass Animals",
-    "Christina Aguilera"
-  ],
-  [
-    "Cardi B",
-    "MGMT"
-  ],
-  [
-    "Lana Del Rey",
-    "One Direction"
-  ],
-  [
-    "Coldplay",
-    "Charli XCX"
-  ],
-  [
-    "Natasha Bedingfield",
-    "Clairo"
-  ],
-  [
-    "Jennifer Lopez",
-    "Bon Iver"
-  ],
-  [
-    "The 1975",
-    "Camila Cabello"
-  ],
-  [
-    "Daft Punk",
-    "Noah Kahan"
-  ],
-  [
-    "Travis Scott",
-    "will.i.am"
-  ],
-  [
-    "Lady Gaga",
-    "Mitski"
-  ],
-  [
-    "Post Malone",
-    "Black Eyed Peas"
-  ],
-  [
-    "Justin Bieber",
-    "The Strokes"
-  ],
-  [
-    "The Strokes",
-    "Carly Rae Jepsen"
-  ],
-  [
-    "Tame Impala",
-    "Olivia Rodrigo"
-  ],
-  [
-    "Bj\u00f6rk",
-    "Hozier"
-  ],
-  [
-    "Arctic Monkeys",
-    "Christina Aguilera"
-  ],
-  [
-    "Mariah Carey",
-    "Sean Kingston"
-  ],
-  [
-    "SZA",
-    "Charli XCX"
-  ],
-  [
-    "Owl City",
-    "Megan Thee Stallion"
-  ],
-  [
-    "Maroon 5",
-    "Phoebe Bridgers"
-  ],
-  [
-    "Mitski",
-    "Jonas Brothers"
-  ],
-  [
-    "Imagine Dragons",
-    "Spice Girls"
-  ],
-  [
-    "beabadoobee",
-    "Gucci Mane"
-  ],
-  [
-    "Taylor Swift",
-    "Bon Iver"
-  ],
-  [
-    "Drake",
-    "Iggy Azalea"
-  ],
-  [
-    "Ed Sheeran",
-    "Frank Ocean"
-  ],
-  [
-    "Kendrick Lamar",
-    "Lorde"
-  ],
-  [
-    "Justin Timberlake",
-    "Rage Against The Machine"
-  ],
-  [
-    "Radiohead",
-    "Fergie"
-  ],
-  [
-    "Fred again..",
-    "Clairo"
-  ],
-  [
-    "USHER",
-    "The All-American Rejects"
-  ],
-  [
-    "Demi Lovato",
-    "LMFAO"
-  ],
-  [
-    "Bobby Shmurda",
-    "Ice Spice"
-  ],
-  [
-    "Ariana Grande",
-    "Zedd"
-  ],
-  [
-    "Justin Bieber",
-    "The 1975"
-  ],
-  [
-    "Billie Eilish",
-    "Destiny's Child"
-  ],
-  [
-    "Prince",
-    "Tyler, The Creator"
-  ],
-  [
-    "Eminem",
-    "Ellie Goulding"
-  ],
-  [
-    "Adele",
-    "blink-182"
-  ],
-  [
-    "The Beatles",
-    "Christina Aguilera"
-  ],
-  [
-    "Post Malone",
-    "The Strokes"
-  ],
-  [
-    "Nicki Minaj",
-    "One Direction"
-  ],
-  [
-    "Rihanna",
-    "Mitski"
-  ],
-  [
-    "Juice WRLD",
-    "Gwen Stefani"
-  ],
-  [
-    "The Lonely Island",
-    "Dr. Dre"
-  ],
-  [
-    "Green Day",
-    "*NSYNC"
-  ],
-  [
-    "Macklemore",
-    "Meghan Trainor"
-  ],
-  [
-    "Bee Gees",
-    "Pitbull"
-  ],
-  [
-    "Jason Derulo",
-    "Olivia Rodrigo"
-  ],
-  [
-    "2Pac",
-    "Mariah Carey"
-  ],
-  [
-    "Gorillaz",
-    "Train"
-  ],
-  [
-    "Car Seat Headrest",
-    "Pusha T"
-  ],
-  [
-    "Solange",
-    "Passion Pit"
-  ],
-  [
-    "Coldplay",
-    "Daft Punk"
-  ],
-  [
-    "Elliott Smith",
-    "Soulja Boy"
-  ],
-  [
-    "ODESZA",
-    "Paramore"
-  ],
-  [
-    "Lil Xan",
-    "Ms. Lauryn Hill"
-  ],
-  [
-    "Big Time Rush",
-    "Flo Rida"
-  ],
-  [
-    "Jimi Hendrix",
-    "Madonna"
-  ],
-  [
-    "FINNEAS",
-    "Metro Boomin"
-  ],
-  [
-    "Talking Heads",
-    "Black Eyed Peas"
-  ],
-  [
-    "bbno$",
-    "OneRepublic"
-  ],
-  [
-    "Slayer",
-    "Kesha"
-  ],
-  [
-    "Modern Baseball",
-    "Sabrina Carpenter"
-  ],
-  [
-    "Shania Twain",
-    "Skrillex"
-  ],
-  [
-    "Slash",
-    "Britney Spears"
-  ],
-  [
-    "Bruno Mars",
-    "Playboi Carti"
-  ],
-  [
-    "Doja Cat",
-    "Hayley Williams"
-  ],
-  [
-    "XXXTENTACION",
-    "Zendaya"
-  ],
-  [
-    "Arctic Monkeys",
-    "My Chemical Romance"
-  ],
-  [
-    "DJ Khaled",
-    "Kacey Musgraves"
-  ],
-  [
-    "CeeLo Green",
-    "Young the Giant"
-  ],
-  [
-    "KISS",
-    "Louis Armstrong"
-  ],
-  [
-    "TV Girl",
-    "Lil Xan"
-  ],
-  [
-    "Death Cab for Cutie",
-    "LL COOL J"
-  ],
-  [
-    "Bo Burnham",
-    "Nelly Furtado"
-  ],
-  [
-    "Selena Gomez",
-    "BROCKHAMPTON"
-  ],
-  [
-    "Tame Impala",
-    "Paul McCartney"
-  ],
-  [
-    "Mac Miller",
-    "Tyla"
-  ],
-  [
-    "The Velvet Underground",
-    "Foster The People"
-  ],
-  [
-    "Still Woozy",
-    "One Direction"
-  ],
-  [
-    "Dolly Parton",
-    "Camila Cabello"
-  ],
-  [
-    "Lil Peep",
-    "Fifth Harmony"
-  ],
-  [
-    "X Ambassadors",
-    "deadmau5"
-  ],
-  [
-    "Joni Mitchell",
-    "Steve Lacy"
-  ],
-
-  [
-    "Jordin Sparks",
-    "The Strokes"
-  ],
-  [
-    "Frank Sinatra",
-    "Charli XCX"
-  ],
-  [
-    "TLC",
-    "Hozier"
-  ],
-  [
-    "Two Door Cinema Club",
-    "Backstreet Boys"
-  ],
-  [
-    "Yeat",
-    "Clairo"
-  ],
-  [
-    "DJ Khaled",
-    "George Michael"
-  ],
-  [
-    "Wiz Khalifa",
-    "Lorde"
-  ],
-  [
-    "Death Grips",
-    "Nicki Minaj"
-  ],
-  [
-    "Smash Mouth",
-    "The Jackson 5"
-  ],
-  [
-    "Akon",
-    "Carly Rae Jepsen"
-  ],
-  [
-    "Maroon 5",
-    "Sexyy Red"
-  ],
-  [
-    "Post Malone",
-    "Pixies"
-  ],
-  [
-    "The Monkees",
-    "Kelly Clarkson"
-  ],
-  [
-    "Patti Smith",
-    "Timbaland"
-  ],
-  [
-    "Fall Out Boy",
-    "Spice Girls"
-  ],
-  [
-    "Ed Sheeran",
-    "blink-182"
-  ],
-  [
-    "Coldplay",
-    "Whitney Houston"
-  ],
-  [
-    "Billie Eilish",
-    "Pitbull"
-  ],
-  [
-    "Olivia Rodrigo",
-    "ABBA"
-  ],
-  [
-    "Radiohead",
-    "2Pac"
-  ],
-  [
-    "Bruno Mars",
-    "Janelle Monáe"
-  ],
-  [
-    "Gorillaz",
-    "Joni Mitchell"
-  ],
-  [
-    "LMFAO",
-    "Megan Thee Stallion"
-  ],
-  [
-    "Dua Lipa",
-    "Stevie Wonder"
-  ],
-  [
-    "Nirvana",
-    "Pharrell Williams"
-  ],
-  [
-    "Queen",
-    "Fergie"
-  ],
-  [
-    "Tenacious D",
-    "No Doubt"
-  ],
-  [
-    "J. Cole",
-    "Cher"
-  ],
-  [
-    "Eminem",
-    "Guns N' Roses"
-  ],
-  [
-    "Michael Bubl\u00e9",
-    "Zedd"
-  ],
-  [
-    "Grimes",
-    "N.W.A."
-  ],
-  [
-    "Sabrina Carpenter",
-    "Rage Against The Machine"
-  ],
-  [
-    "2Pac",
-    "Gym Class Heroes"
-  ],
-  [
-    "Kendrick Lamar",
-    "Flume"
-  ],
-  [
-    "Vampire Weekend",
-    "Earl Sweatshirt"
-  ],
-  [
-    "Steve Lacy",
-    "Sam Smith"
-  ],
-  [
-    "Mac DeMarco",
-    "Doja Cat"
-  ],
-  [
-    "Katy Perry",
-    "Pearl Jam"
-  ],
-  [
-    "Gwen Stefani",
-    "Rick Ross"
-  ],
-  [
-    "New Order",
-    "Ja Rule"
-  ],
-  [
-    "The Police",
-    "Frank Sinatra"
-  ],
-  [
-    "Nickelback",
-    "Soulja Boy"
-  ],
-  [
-    "Daft Punk",
-    "Daughtry"
-  ],
-  [
-    "Lizzo",
-    "The Cranberries"
-  ],
-  [
-    "Linkin Park",
-    "Troye Sivan"
-  ],
-  [
-    "Twenty One Pilots",
-    "Dolly Parton"
-  ],
-  [
-    "Adele",
-    "Ludacris"
-  ],
-  [
-    "Fetty Wap",
-    "Selena Gomez"
-  ],
-  [
-    "Florence + The Machine",
-    "The Smiths"
-  ],
-  [
-    "The Chainsmokers",
-    "Cardi B"
-  ],
-  [
-    "Silk Sonic",
-    "Bob Dylan"
-  ],
-  [
-    "Elvis Presley",
-    "Chappell Roan"
-  ],
-  [
-    "Darius Rucker",
-    "Britney Spears"
-  ],
-  [
-    "Bring Me The Horizon",
-    "Niall Horan"
-  ],
-  [
-    "Jennifer Lopez",
-    "Run\u2013D.M.C."
-  ],
-  [
-    "Ed Sheeran",
-    "Phoebe Bridgers"
-  ],
-  [
-    "Frank Ocean",
-    "will.i.am"
-  ],
-  [
-    "Harry Styles",
-    "Sum 41"
-  ],
-  [
-    "Bridgit Mendler",
-    "Backstreet Boys"
-  ],
-  [
-    "Tenacious D",
-    "Ms. Lauryn Hill"
-  ]
+  ["Shawn Mendes", "Mumford & Sons"],
+  ["Owl City", "The Strokes"],
+  ["Radiohead", "Charli XCX"],
+  ["Lizzo", "Demi Lovato"],
+  ["Twenty One Pilots", "Soulja Boy"],
+  ["fun.", "Bullet For My Valentine"],
+  ["Cardi B", "2 Chainz"],
+  ["One Direction", "Gwen Stefani"],
+  ["Evanescence", "will.i.am"],
+  ["Madonna", "Zedd"],
+  ["Billie Eilish", "WALK THE MOON"],
+  ["Ice Spice", "Conan Gray"],
+  ["blackbear", "Tyler, The Creator"],
+  ["Foster The People", "Phoebe Bridgers"],
+  ["Halsey", "Simple Plan"],
+  ["Sabrina Carpenter", "Lil Yachty"],
+  ["DNCE", "Spice Girls"],
+  ["Shawn Mendes", "Bon Iver"],
+  ["Glass Animals", "Taio Cruz"],
+  ["Sia", "Ty Dolla $ign"],
+  ["My Chemical Romance", "Natasha Bedingfield"],
+  ["P!nk", "ZAYN"],
+  ["Imagine Dragons", "Carly Rae Jepsen"],
+  ["Halsey", "Neon Trees"],
+  ["Travis Scott", "Sean Kingston"],
+  ["Two Door Cinema Club", "Ellie Goulding"],
+  ["Cardi B", "Beach House"],
+  ["5 Seconds of Summer", "Baby Keem"],
+  ["Pentatonix", "Black Eyed Peas"],
+  ["Olivia Rodrigo", "Quavo"],
+  ["The 1975", "Megan Thee Stallion"],
+  ["The Cranberries", "Owl City"],
+  ["Mark Ronson", "Liam Payne"],
+  ["Lizzo", "DNCE"],
+  ["Megan Thee Stallion", "Ava Max"],
+  ["Florence + The Machine", "LMFAO"],
+  ["Metallica", "Plain White T's"],
+  ["Foo Fighters", "MGMT"],
+  ["Ice Spice", "Grimes"],
+  ["David Bowie", "Vampire Weekend"],
+  ["Vampire Weekend", "PinkPantheress"],
+  ["Katy Perry", "Lewis Capaldi"],
+  ["Charli XCX", "One Direction"],
+  ["C\u00e9line Dion", "Flo Rida"],
+  ["Ed Sheeran", "Lorde"],
+  ["Hozier", "Megan Thee Stallion"],
+  ["The Weeknd", "Kesha"],
+  ["Shawn Mendes", "Britney Spears"],
+  ["Lana Del Rey", "Bhad Bhabie"],
+  ["Whitney Houston", "Sean Kingston"],
+  ["Twenty One Pilots", "Selena Gomez"],
+  ["Glass Animals", "Christina Aguilera"],
+  ["Cardi B", "MGMT"],
+  ["Lana Del Rey", "One Direction"],
+  ["Coldplay", "Charli XCX"],
+  ["Natasha Bedingfield", "Clairo"],
+  ["Jennifer Lopez", "Bon Iver"],
+  ["The 1975", "Camila Cabello"],
+  ["Daft Punk", "Noah Kahan"],
+  ["Travis Scott", "will.i.am"],
+  ["Lady Gaga", "Mitski"],
+  ["Post Malone", "Black Eyed Peas"],
+  ["Justin Bieber", "The Strokes"],
+  ["The Strokes", "Carly Rae Jepsen"],
+  ["Tame Impala", "Olivia Rodrigo"],
+  ["Bj\u00f6rk", "Hozier"],
+  ["Arctic Monkeys", "Christina Aguilera"],
+  ["Mariah Carey", "Sean Kingston"],
+  ["SZA", "Charli XCX"],
+  ["Owl City", "Megan Thee Stallion"],
+  ["Maroon 5", "Phoebe Bridgers"],
+  ["Mitski", "Jonas Brothers"],
+  ["Imagine Dragons", "Spice Girls"],
+  ["beabadoobee", "Gucci Mane"],
+  ["Taylor Swift", "Bon Iver"],
+  ["Drake", "Iggy Azalea"],
+  ["Ed Sheeran", "Frank Ocean"],
+  ["Kendrick Lamar", "Lorde"],
+  ["Justin Timberlake", "Rage Against The Machine"],
+  ["Radiohead", "Fergie"],
+  ["Fred again..", "Clairo"],
+  ["USHER", "The All-American Rejects"],
+  ["Demi Lovato", "LMFAO"],
+  ["Bobby Shmurda", "Ice Spice"],
+  ["Ariana Grande", "Zedd"],
+  ["Justin Bieber", "The 1975"],
+  ["Billie Eilish", "Destiny's Child"],
+  ["Prince", "Tyler, The Creator"],
+  ["Eminem", "Ellie Goulding"],
+  ["Adele", "blink-182"],
+  ["The Beatles", "Christina Aguilera"],
+  ["Post Malone", "The Strokes"],
+  ["Nicki Minaj", "One Direction"],
+  ["Rihanna", "Mitski"],
+  ["Juice WRLD", "Gwen Stefani"],
+  ["The Lonely Island", "Dr. Dre"],
+  ["Green Day", "*NSYNC"],
+  ["Macklemore", "Meghan Trainor"],
+  ["Bee Gees", "Pitbull"],
+  ["Jason Derulo", "Olivia Rodrigo"],
+  ["2Pac", "Mariah Carey"],
+  ["Gorillaz", "Train"],
+  ["Car Seat Headrest", "Pusha T"],
+  ["Solange", "Passion Pit"],
+  ["Coldplay", "Daft Punk"],
+  ["Elliott Smith", "Soulja Boy"],
+  ["ODESZA", "Paramore"],
+  ["Lil Xan", "Ms. Lauryn Hill"],
+  ["Big Time Rush", "Flo Rida"],
+  ["Jimi Hendrix", "Madonna"],
+  ["FINNEAS", "Metro Boomin"],
+  ["Talking Heads", "Black Eyed Peas"],
+  ["bbno$", "OneRepublic"],
+  ["Slayer", "Kesha"],
+  ["Modern Baseball", "Sabrina Carpenter"],
+  ["Shania Twain", "Skrillex"],
+  ["Slash", "Britney Spears"],
+  ["Bruno Mars", "Playboi Carti"],
+  ["Doja Cat", "Hayley Williams"],
+  ["XXXTENTACION", "Zendaya"],
+  ["Arctic Monkeys", "My Chemical Romance"],
+  ["DJ Khaled", "Kacey Musgraves"],
+  ["CeeLo Green", "Young the Giant"],
+  ["KISS", "Louis Armstrong"],
+  ["TV Girl", "Lil Xan"],
+  ["Death Cab for Cutie", "LL COOL J"],
+  ["Bo Burnham", "Nelly Furtado"],
+  ["Selena Gomez", "BROCKHAMPTON"],
+  ["Tame Impala", "Paul McCartney"],
+  ["Mac Miller", "Tyla"],
+  ["The Velvet Underground", "Foster The People"],
+  ["Still Woozy", "One Direction"],
+  ["Dolly Parton", "Camila Cabello"],
+  ["Lil Peep", "Fifth Harmony"],
+  ["X Ambassadors", "deadmau5"],
+  ["Joni Mitchell", "Steve Lacy"],
+  ["Jordin Sparks", "The Strokes"],
+  ["Frank Sinatra", "Charli XCX"],
+  ["TLC", "Hozier"],
+  ["Two Door Cinema Club", "Backstreet Boys"],
+  ["Yeat", "Clairo"],
+  ["DJ Khaled", "George Michael"],
+  ["Wiz Khalifa", "Lorde"],
+  ["Death Grips", "Nicki Minaj"],
+  ["Smash Mouth", "The Jackson 5"],
+  ["Akon", "Carly Rae Jepsen"],
+  ["Maroon 5", "Sexyy Red"],
+  ["Post Malone", "Pixies"],
+  ["The Monkees", "Kelly Clarkson"],
+  ["Patti Smith", "Timbaland"],
+  ["Fall Out Boy", "Spice Girls"],
+  ["Ed Sheeran", "blink-182"],
+  ["Coldplay", "Whitney Houston"],
+  ["Billie Eilish", "Pitbull"],
+  ["Olivia Rodrigo", "ABBA"],
+  ["Radiohead", "2Pac"],
+  ["Bruno Mars", "Janelle Monáe"],
+  ["Gorillaz", "Joni Mitchell"],
+  ["LMFAO", "Megan Thee Stallion"],
+  ["Dua Lipa", "Stevie Wonder"],
+  ["Nirvana", "Pharrell Williams"],
+  ["Queen", "Fergie"],
+  ["Tenacious D", "No Doubt"],
+  ["J. Cole", "Cher"],
+  ["Eminem", "Guns N' Roses"],
+  ["Michael Bubl\u00e9", "Zedd"],
+  ["Grimes", "N.W.A."],
+  ["Sabrina Carpenter", "Rage Against The Machine"],
+  ["2Pac", "Gym Class Heroes"],
+  ["Kendrick Lamar", "Flume"],
+  ["Vampire Weekend", "Earl Sweatshirt"],
+  ["Steve Lacy", "Sam Smith"],
+  ["Mac DeMarco", "Doja Cat"],
+  ["Katy Perry", "Pearl Jam"],
+  ["Gwen Stefani", "Rick Ross"],
+  ["New Order", "Ja Rule"],
+  ["The Police", "Frank Sinatra"],
+  ["Nickelback", "Soulja Boy"],
+  ["Daft Punk", "Daughtry"],
+  ["Lizzo", "The Cranberries"],
+  ["Linkin Park", "Troye Sivan"],
+  ["Twenty One Pilots", "Dolly Parton"],
+  ["Adele", "Ludacris"],
+  ["Fetty Wap", "Selena Gomez"],
+  ["Florence + The Machine", "The Smiths"],
+  ["The Chainsmokers", "Cardi B"],
+  ["Silk Sonic", "Bob Dylan"],
+  ["Elvis Presley", "Chappell Roan"],
+  ["Darius Rucker", "Britney Spears"],
+  ["Bring Me The Horizon", "Niall Horan"],
+  ["Jennifer Lopez", "Run\u2013D.M.C."],
+  ["Ed Sheeran", "Phoebe Bridgers"],
+  ["Frank Ocean", "will.i.am"],
+  ["Harry Styles", "Sum 41"],
+  ["Bridgit Mendler", "Backstreet Boys"],
+  ["Tenacious D", "Ms. Lauryn Hill"],
+  ["Frank Sinatra", "Baby Keem"],
+  ["Noah Kahan", "My Chemical Romance"],
+  ["The Weeknd", "Prince"],
+  ["Bruno Mars", "Busta Rhymes"],
+  ["Ray Charles", "Charli XCX"],
+  ["Starship", "Ozzy Osbourne"],
+  ["21 Savage", "Jennifer Hudson"],
+  ["Soulja Boy", "Camila Cabello"],
+  ["Billie Eilish", "Stevie Wonder"],
+  ["A Tribe Called Quest", "Owl City"],
+  ["Tenacious D", "Tracy Chapman"],
+  ["Backstreet Boys", "LMFAO"],
+  ["Will Smith", "Marvin Gaye"],
+  ["Halsey", "The Strokes"],
+  ["Black Sabbath", "Mary J. Blige"]
 ]
