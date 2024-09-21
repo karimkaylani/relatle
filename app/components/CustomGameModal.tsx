@@ -598,9 +598,7 @@ const CustomGameModal = (props: CustomGameModalProps) => {
             onClick={() =>
               window.open(
                 generateCustomGameURL(startArtist, endArtist),
-                window.matchMedia("(display-mode: standalone)").matches
-                  ? "_self"
-                  : "_blank"
+                "_self"
               )
             }
             disabled={invalidMatchup}

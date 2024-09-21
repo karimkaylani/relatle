@@ -21,11 +21,7 @@ const DailyGameGameCard = (props: DailyGameCardProps) => {
   return (
     <Link
       href={url}
-      target={
-        window.matchMedia("(display-mode: standalone)").matches
-          ? "_self"
-          : "_blank"
-      }
+      target="_self"
       prefetch={false}
       tabIndex={-1}
     >
