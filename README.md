@@ -1,7 +1,7 @@
 <a href="https://relatle.io/"><img src="https://github.com/karimkaylani/relatle/assets/19757304/de331539-ced5-4881-bf65-588562eca5b4" alt="logo" width="300"/></a>
 
 ## <a href="https://relatle.io/">relatle.io</a>: A daily game where you connect two musicians together using their related artists
-### Over 500,000 games played and over 100,000 players from around the world!
+### Over 1,000,000 games played from over 200,000 players from all around the world!
 
 #### <a href="https://www.reddit.com/r/relatle/">Subreddit</a>
 #### <a href="https://www.youtube.com/watch?v=ssWh7CR42fs">The HIVEMIND guys playing the game!</a>
