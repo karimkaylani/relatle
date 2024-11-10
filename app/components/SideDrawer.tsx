@@ -21,6 +21,7 @@ import { white } from "../colors";
 import TopGamesButton from "./TopGamesButton";
 import ArchiveButton from "./ArchiveButton";
 import { feedBackForm, maxCustomTextWidth } from "./Game";
+import AddToHomeScreen from "./AddToHomeScreen";
 
 export interface SideDrawerProps {
   opened: boolean;
@@ -138,6 +139,7 @@ const SideDrawer = (props: SideDrawerProps) => {
             icon={<IconHelpCircle size={24} color="white" />}
             text="How to Play"
           />
+          <AddToHomeScreen />
           <CoffeeButton />
           <IconHoverButton
             onTap={() => {
