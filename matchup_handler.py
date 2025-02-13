@@ -9,7 +9,26 @@ def main():
     web = {}
     with open("public/data/web.json", "r") as outfile:
         web = json.load(outfile)
+    
     verify_matchups(web)
+    # generate_daily_matchups(web, 100, with_replacement=True)
+
+def generate_daily_matchups(web, amount, with_replacement=False, num_buffer=30):
+    matchups = []
+    with open("public/data/matchups.json", "r") as outfile:
+        matchups = json.load(outfile)
+
+    artists_pool = set()
+    for matchup in matchups[:len(matchups)-num_buffer]:
+        artists_pool.add(matchup[0])
+        artists_pool.add(matchup[1])
+
+    for matchup in matchups[-num_buffer:]:
+        if matchup[1] in artists_pool:
+            artists_pool.remove(matchup[1])
+    res = generate_matchups(web, amount, list(artists_pool), with_replacement=True)
+    for matchup in res:
+        print(json.dumps(list(matchup)))
 
 def verify_matchups(web):
     with open("public/data/matchups.json", "r") as outfile:
