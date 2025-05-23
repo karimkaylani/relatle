@@ -1,393 +1,393 @@
 ﻿[
   {
     "matchup": "[\"Taylor Swift\",\"Baby Keem\"]",
-    "num_plays": 12624,
-    "average_guesses": "18.0398107649736678",
-    "win_percentage": "88.7436628643852978"
+    "num_plays": 13416,
+    "average_guesses": "17.9806413601548691",
+    "win_percentage": "88.5584376863446631"
   },
   {
     "matchup": "[\"Future\",\"Phoebe Bridgers\"]",
-    "num_plays": 7796,
-    "average_guesses": "21.7943620661561023",
-    "win_percentage": "78.7198563365828630"
+    "num_plays": 7992,
+    "average_guesses": "21.7007137192704203",
+    "win_percentage": "78.8913913913913914"
   },
   {
     "matchup": "[\"Skrillex\",\"Bob Dylan\"]",
-    "num_plays": 6793,
-    "average_guesses": "34.2055267702936097",
-    "win_percentage": "76.7113204769615781"
-  },
-  {
-    "matchup": "[\"Drake\",\"Weezer\"]",
-    "num_plays": 5793,
-    "average_guesses": "24.8778817621547592",
-    "win_percentage": "75.6257552218194373"
+    "num_plays": 6956,
+    "average_guesses": "33.8499345916651093",
+    "win_percentage": "76.9263944795859689"
   },
   {
     "matchup": "[\"Taylor Swift\",\"Kanye West\"]",
-    "num_plays": 5767,
-    "average_guesses": "47.3988603988603989",
-    "win_percentage": "30.4317669498872898"
+    "num_plays": 6298,
+    "average_guesses": "47.1317621853240493",
+    "win_percentage": "29.6443315338202604"
   },
   {
-    "matchup": "[\"Michael Jackson\",\"Papa Roach\"]",
-    "num_plays": 5297,
-    "average_guesses": "21.7217084984588287",
-    "win_percentage": "85.7466490466301680"
+    "matchup": "[\"Drake\",\"Weezer\"]",
+    "num_plays": 6037,
+    "average_guesses": "24.7373383030037273",
+    "win_percentage": "75.5507702501242339"
   },
   {
     "matchup": "[\"Drake\",\"Kendrick Lamar\"]",
-    "num_plays": 4886,
-    "average_guesses": "1.5147058823529412",
-    "win_percentage": "98.8129349160867786"
+    "num_plays": 5488,
+    "average_guesses": "1.5074654377880184",
+    "win_percentage": "98.8520408163265306"
+  },
+  {
+    "matchup": "[\"Michael Jackson\",\"Papa Roach\"]",
+    "num_plays": 5363,
+    "average_guesses": "21.6219035202086050",
+    "win_percentage": "85.8101808689166511"
   },
   {
     "matchup": "[\"Kesha\",\"A Tribe Called Quest\"]",
-    "num_plays": 4636,
-    "average_guesses": "17.3888317035512095",
-    "win_percentage": "83.8222605694564280"
+    "num_plays": 4725,
+    "average_guesses": "17.2209360845495722",
+    "win_percentage": "84.1058201058201058"
   },
   {
     "matchup": "[\"Dua Lipa\",\"Lil Xan\"]",
-    "num_plays": 4520,
-    "average_guesses": "26.8702028843803471",
-    "win_percentage": "90.5088495575221239"
+    "num_plays": 4603,
+    "average_guesses": "26.8198414604852270",
+    "win_percentage": "90.4410167282207256"
   },
   {
     "matchup": "[\"Bo Burnham\",\"City Girls\"]",
-    "num_plays": 4030,
-    "average_guesses": "12.6235421752101980",
-    "win_percentage": "91.4888337468982630"
+    "num_plays": 4064,
+    "average_guesses": "12.6012913640032284",
+    "win_percentage": "91.4616141732283465"
   },
   {
     "matchup": "[\"Eminem\",\"Falling In Reverse\"]",
-    "num_plays": 3757,
-    "average_guesses": "14.5539938292766541",
-    "win_percentage": "77.6417354272025552"
+    "num_plays": 3797,
+    "average_guesses": "14.5248899424314257",
+    "win_percentage": "77.7719252041085067"
   },
   {
     "matchup": "[\"The Beatles\",\"Kanye West\"]",
-    "num_plays": 3354,
-    "average_guesses": "63.4464431725265740",
-    "win_percentage": "36.4639236732259988"
-  },
-  {
-    "matchup": "[\"Nicki Minaj\",\"One Direction\"]",
-    "num_plays": 2853,
-    "average_guesses": "13.2019417475728155",
-    "win_percentage": "90.2558710129688048"
+    "num_plays": 3587,
+    "average_guesses": "63.7336956521739130",
+    "win_percentage": "35.9074435461388347"
   },
   {
     "matchup": "[\"Prince\",\"Tyler, The Creator\"]",
-    "num_plays": 2815,
-    "average_guesses": "35.4170359428852782",
-    "win_percentage": "72.1492007104795737"
+    "num_plays": 2966,
+    "average_guesses": "35.4974117647058824",
+    "win_percentage": "71.6453135536075523"
+  },
+  {
+    "matchup": "[\"Nicki Minaj\",\"One Direction\"]",
+    "num_plays": 2929,
+    "average_guesses": "13.1779628928436198",
+    "win_percentage": "90.1672925913280983"
   },
   {
     "matchup": "[\"Frank Sinatra\",\"Charli XCX\"]",
-    "num_plays": 2528,
-    "average_guesses": "12.8026811897779640",
-    "win_percentage": "94.4224683544303797"
+    "num_plays": 2607,
+    "average_guesses": "12.9060975609756098",
+    "win_percentage": "94.3613348676639816"
   },
   {
     "matchup": "[\"Jason Derulo\",\"Olivia Rodrigo\"]",
-    "num_plays": 2357,
-    "average_guesses": "17.3634624581539933",
-    "win_percentage": "88.7144675434874841"
-  },
-  {
-    "matchup": "[\"Travis Scott\",\"The Kid LAROI\"]",
-    "num_plays": 2106,
-    "average_guesses": "11.5123456790123457",
-    "win_percentage": "84.6153846153846154"
+    "num_plays": 2398,
+    "average_guesses": "17.3463529411764706",
+    "win_percentage": "88.6155129274395329"
   },
   {
     "matchup": "[\"Bruno Mars\",\"Playboi Carti\"]",
-    "num_plays": 2065,
-    "average_guesses": "17.9452840020844190",
-    "win_percentage": "92.9297820823244552"
+    "num_plays": 2293,
+    "average_guesses": "17.7975575387505871",
+    "win_percentage": "92.8477976450065416"
   },
   {
-    "matchup": "[\"Rihanna\",\"Mitski\"]",
-    "num_plays": 2056,
-    "average_guesses": "17.8671747414262384",
-    "win_percentage": "89.3482490272373541"
+    "matchup": "[\"Travis Scott\",\"The Kid LAROI\"]",
+    "num_plays": 2195,
+    "average_guesses": "11.5250134480903712",
+    "win_percentage": "84.6924829157175399"
   },
   {
     "matchup": "[\"Arctic Monkeys\",\"My Chemical Romance\"]",
-    "num_plays": 2034,
-    "average_guesses": "21.3625377643504532",
-    "win_percentage": "81.3667649950835792"
+    "num_plays": 2097,
+    "average_guesses": "21.2527859237536657",
+    "win_percentage": "81.3066285169289461"
+  },
+  {
+    "matchup": "[\"Rihanna\",\"Mitski\"]",
+    "num_plays": 2087,
+    "average_guesses": "17.8433476394849785",
+    "win_percentage": "89.3148059415428845"
   },
   {
     "matchup": "[\"Coldplay\",\"Daft Punk\"]",
-    "num_plays": 2013,
-    "average_guesses": "13.8576732673267327",
-    "win_percentage": "80.2781917536015897"
+    "num_plays": 2045,
+    "average_guesses": "13.7864963503649635",
+    "win_percentage": "80.3911980440097800"
   },
   {
     "matchup": "[\"The Lonely Island\",\"Dr. Dre\"]",
-    "num_plays": 1712,
-    "average_guesses": "14.1394201110425663",
-    "win_percentage": "94.6845794392523364"
+    "num_plays": 1740,
+    "average_guesses": "14.1699147381242387",
+    "win_percentage": "94.3678160919540230"
   },
   {
     "matchup": "[\"Ed Sheeran\",\"Frank Ocean\"]",
-    "num_plays": 1611,
-    "average_guesses": "18.1759755164498852",
-    "win_percentage": "81.1297330850403476"
-  },
-  {
-    "matchup": "[\"2Pac\",\"Mariah Carey\"]",
-    "num_plays": 1596,
-    "average_guesses": "13.7310061601642710",
-    "win_percentage": "91.5413533834586466"
-  },
-  {
-    "matchup": "[\"Modern Baseball\",\"Sabrina Carpenter\"]",
-    "num_plays": 1582,
-    "average_guesses": "13.0034176349965824",
-    "win_percentage": "92.4778761061946903"
-  },
-  {
-    "matchup": "[\"Adele\",\"blink-182\"]",
-    "num_plays": 1499,
-    "average_guesses": "12.4353542731921110",
-    "win_percentage": "91.3275517011340894"
+    "num_plays": 1740,
+    "average_guesses": "17.9546099290780142",
+    "win_percentage": "81.0344827586206897"
   },
   {
     "matchup": "[\"Taylor Swift\",\"Olivia Rodrigo\"]",
-    "num_plays": 1448,
-    "average_guesses": "1.4638888888888889",
-    "win_percentage": "99.4475138121546961"
+    "num_plays": 1641,
+    "average_guesses": "1.4206981016533987",
+    "win_percentage": "99.5124923826934796"
+  },
+  {
+    "matchup": "[\"Modern Baseball\",\"Sabrina Carpenter\"]",
+    "num_plays": 1629,
+    "average_guesses": "12.9920477137176938",
+    "win_percentage": "92.6335174953959484"
+  },
+  {
+    "matchup": "[\"2Pac\",\"Mariah Carey\"]",
+    "num_plays": 1628,
+    "average_guesses": "13.7797979797979798",
+    "win_percentage": "91.2162162162162162"
+  },
+  {
+    "matchup": "[\"Adele\",\"blink-182\"]",
+    "num_plays": 1522,
+    "average_guesses": "12.4524495677233429",
+    "win_percentage": "91.1957950065703022"
   },
   {
     "matchup": "[\"Car Seat Headrest\",\"Pusha T\"]",
-    "num_plays": 1435,
-    "average_guesses": "13.1952104499274311",
-    "win_percentage": "96.0278745644599303"
+    "num_plays": 1459,
+    "average_guesses": "13.2433975731620271",
+    "win_percentage": "96.0246744345442084"
   },
   {
     "matchup": "[\"Death Grips\",\"Nicki Minaj\"]",
-    "num_plays": 1406,
-    "average_guesses": "22.8604444444444444",
-    "win_percentage": "80.0142247510668563"
-  },
-  {
-    "matchup": "[\"Post Malone\",\"The Strokes\"]",
-    "num_plays": 1283,
-    "average_guesses": "19.3225806451612903",
-    "win_percentage": "86.9836321122369447"
+    "num_plays": 1442,
+    "average_guesses": "22.9141370338248049",
+    "win_percentage": "79.9583911234396671"
   },
   {
     "matchup": "[\"Billie Eilish\",\"Destiny's Child\"]",
-    "num_plays": 1267,
-    "average_guesses": "8.6310204081632653",
-    "win_percentage": "96.6850828729281768"
+    "num_plays": 1295,
+    "average_guesses": "8.6877502001601281",
+    "win_percentage": "96.4478764478764479"
   },
   {
-    "matchup": "[\"T-Pain\",\"Led Zeppelin\"]",
-    "num_plays": 1224,
-    "average_guesses": "29.8428709990300679",
-    "win_percentage": "84.2320261437908497"
-  },
-  {
-    "matchup": "[\"Kendrick Lamar\",\"Lorde\"]",
-    "num_plays": 1217,
-    "average_guesses": "17.2673076923076923",
-    "win_percentage": "85.4560394412489729"
+    "matchup": "[\"Post Malone\",\"The Strokes\"]",
+    "num_plays": 1287,
+    "average_guesses": "19.2883928571428571",
+    "win_percentage": "87.0240870240870241"
   },
   {
     "matchup": "[\"Radiohead\",\"2Pac\"]",
-    "num_plays": 1206,
-    "average_guesses": "16.0517711171662125",
-    "win_percentage": "91.2935323383084577"
+    "num_plays": 1269,
+    "average_guesses": "16.0917030567685590",
+    "win_percentage": "90.2285263987391647"
   },
   {
-    "matchup": "[\"Chappell Roan\",\"Harry Styles\"]",
-    "num_plays": 1176,
-    "average_guesses": "12.2640075973409307",
-    "win_percentage": "89.5408163265306122"
+    "matchup": "[\"T-Pain\",\"Led Zeppelin\"]",
+    "num_plays": 1248,
+    "average_guesses": "29.7735490009514748",
+    "win_percentage": "84.2147435897435897"
   },
   {
-    "matchup": "[\"Bee Gees\",\"Pitbull\"]",
-    "num_plays": 1169,
-    "average_guesses": "17.1707779886148008",
-    "win_percentage": "90.1625320786997434"
+    "matchup": "[\"Kendrick Lamar\",\"Lorde\"]",
+    "num_plays": 1243,
+    "average_guesses": "17.3103773584905660",
+    "win_percentage": "85.2775543041029767"
   },
   {
     "matchup": "[\"Adele\",\"21 Savage\"]",
-    "num_plays": 1146,
-    "average_guesses": "24.0735294117647059",
-    "win_percentage": "83.0715532286212914"
+    "num_plays": 1213,
+    "average_guesses": "23.6702862783810464",
+    "win_percentage": "83.5119538334707337"
   },
   {
-    "matchup": "[\"Green Day\",\"*NSYNC\"]",
-    "num_plays": 1101,
-    "average_guesses": "19.2092760180995475",
-    "win_percentage": "80.2906448683015441"
+    "matchup": "[\"Chappell Roan\",\"Harry Styles\"]",
+    "num_plays": 1210,
+    "average_guesses": "12.1852534562211982",
+    "win_percentage": "89.6694214876033058"
   },
   {
-    "matchup": "[\"FINNEAS\",\"Metro Boomin\"]",
-    "num_plays": 1083,
-    "average_guesses": "20.2245108135942327",
-    "win_percentage": "89.6583564173591874"
+    "matchup": "[\"Bee Gees\",\"Pitbull\"]",
+    "num_plays": 1174,
+    "average_guesses": "17.2162417374881964",
+    "win_percentage": "90.2044293015332198"
   },
   {
     "matchup": "[\"Taylor Swift\",\"Kendrick Lamar\"]",
-    "num_plays": 1078,
-    "average_guesses": "27.2935323383084577",
-    "win_percentage": "55.9369202226345083"
+    "num_plays": 1164,
+    "average_guesses": "27.1671779141104294",
+    "win_percentage": "56.0137457044673540"
   },
   {
-    "matchup": "[\"Doja Cat\",\"Hayley Williams\"]",
-    "num_plays": 1072,
-    "average_guesses": "16.1408751334044824",
-    "win_percentage": "87.4067164179104478"
+    "matchup": "[\"FINNEAS\",\"Metro Boomin\"]",
+    "num_plays": 1112,
+    "average_guesses": "20.1013039117352056",
+    "win_percentage": "89.6582733812949640"
   },
   {
-    "matchup": "[\"Tame Impala\",\"Paul McCartney\"]",
-    "num_plays": 1045,
-    "average_guesses": "12.4432989690721649",
-    "win_percentage": "92.8229665071770335"
+    "matchup": "[\"Green Day\",\"*NSYNC\"]",
+    "num_plays": 1107,
+    "average_guesses": "19.2035995500562430",
+    "win_percentage": "80.3071364046973803"
   },
   {
     "matchup": "[\"Drake\",\"Nirvana\"]",
-    "num_plays": 1026,
-    "average_guesses": "39.3009708737864078",
-    "win_percentage": "60.2339181286549708"
+    "num_plays": 1081,
+    "average_guesses": "39.1630769230769231",
+    "win_percentage": "60.1295097132284921"
+  },
+  {
+    "matchup": "[\"Doja Cat\",\"Hayley Williams\"]",
+    "num_plays": 1075,
+    "average_guesses": "16.1437699680511182",
+    "win_percentage": "87.3488372093023256"
+  },
+  {
+    "matchup": "[\"Tame Impala\",\"Paul McCartney\"]",
+    "num_plays": 1056,
+    "average_guesses": "12.5081632653061224",
+    "win_percentage": "92.8030303030303030"
   },
   {
     "matchup": "[\"Macklemore\",\"Meghan Trainor\"]",
-    "num_plays": 1024,
-    "average_guesses": "16.6404371584699454",
-    "win_percentage": "89.3554687500000000"
+    "num_plays": 1031,
+    "average_guesses": "16.6232356134636265",
+    "win_percentage": "89.3307468477206596"
   },
   {
     "matchup": "[\"Elliott Smith\",\"Soulja Boy\"]",
-    "num_plays": 1018,
-    "average_guesses": "18.7647058823529412",
-    "win_percentage": "90.1768172888015717"
+    "num_plays": 1028,
+    "average_guesses": "18.7613390928725702",
+    "win_percentage": "90.0778210116731518"
   },
   {
     "matchup": "[\"Yeat\",\"Clairo\"]",
-    "num_plays": 1000,
-    "average_guesses": "14.6910480349344978",
-    "win_percentage": "91.6000000000000000"
-  },
-  {
-    "matchup": "[\"Slash\",\"Britney Spears\"]",
-    "num_plays": 967,
-    "average_guesses": "16.6775956284153005",
-    "win_percentage": "94.6225439503619442"
+    "num_plays": 1028,
+    "average_guesses": "14.7948990435706695",
+    "win_percentage": "91.5369649805447471"
   },
   {
     "matchup": "[\"Maroon 5\",\"Sexyy Red\"]",
-    "num_plays": 962,
-    "average_guesses": "13.5581127733026467",
-    "win_percentage": "90.3326403326403326"
+    "num_plays": 993,
+    "average_guesses": "13.4435754189944134",
+    "win_percentage": "90.1309164149043303"
+  },
+  {
+    "matchup": "[\"Slash\",\"Britney Spears\"]",
+    "num_plays": 970,
+    "average_guesses": "16.6623093681917211",
+    "win_percentage": "94.6391752577319588"
   },
   {
     "matchup": "[\"Big Time Rush\",\"Flo Rida\"]",
-    "num_plays": 925,
-    "average_guesses": "10.8199541284403670",
-    "win_percentage": "94.2702702702702703"
+    "num_plays": 934,
+    "average_guesses": "10.7965909090909091",
+    "win_percentage": "94.2184154175588865"
   },
   {
     "matchup": "[\"Talking Heads\",\"Black Eyed Peas\"]",
-    "num_plays": 921,
-    "average_guesses": "20.0364077669902913",
-    "win_percentage": "89.4679695982627579"
-  },
-  {
-    "matchup": "[\"Lil Xan\",\"Ms. Lauryn Hill\"]",
-    "num_plays": 877,
-    "average_guesses": "15.6988984088127295",
-    "win_percentage": "93.1584948688711517"
-  },
-  {
-    "matchup": "[\"Jimi Hendrix\",\"Madonna\"]",
-    "num_plays": 865,
-    "average_guesses": "15.2930817610062893",
-    "win_percentage": "91.9075144508670520"
-  },
-  {
-    "matchup": "[\"Billie Eilish\",\"Pitbull\"]",
-    "num_plays": 861,
-    "average_guesses": "12.0935064935064935",
-    "win_percentage": "89.4308943089430894"
-  },
-  {
-    "matchup": "[\"Slayer\",\"Kesha\"]",
-    "num_plays": 855,
-    "average_guesses": "18.1469489414694894",
-    "win_percentage": "93.9181286549707602"
-  },
-  {
-    "matchup": "[\"Bring Me The Horizon\",\"Lady Gaga\"]",
-    "num_plays": 852,
-    "average_guesses": "39.8248337028824834",
-    "win_percentage": "52.9342723004694836"
-  },
-  {
-    "matchup": "[\"Juice WRLD\",\"Gwen Stefani\"]",
-    "num_plays": 841,
-    "average_guesses": "20.9491758241758242",
-    "win_percentage": "86.5636147443519620"
-  },
-  {
-    "matchup": "[\"Kanye West\",\"Taylor Swift\"]",
-    "num_plays": 812,
-    "average_guesses": "25.9152000000000000",
-    "win_percentage": "76.9704433497536946"
+    "num_plays": 928,
+    "average_guesses": "20.0012048192771084",
+    "win_percentage": "89.4396551724137931"
   },
   {
     "matchup": "[\"Drake\",\"Kanye West\"]",
-    "num_plays": 809,
-    "average_guesses": "1.4345616264294790",
-    "win_percentage": "97.2805933250927070"
+    "num_plays": 902,
+    "average_guesses": "1.4653014789533561",
+    "win_percentage": "97.4501108647450111"
   },
   {
-    "matchup": "[\"Gorillaz\",\"Train\"]",
-    "num_plays": 789,
-    "average_guesses": "15.3197586726998492",
-    "win_percentage": "84.0304182509505703"
+    "matchup": "[\"Lil Xan\",\"Ms. Lauryn Hill\"]",
+    "num_plays": 889,
+    "average_guesses": "15.6824242424242424",
+    "win_percentage": "92.8008998875140607"
   },
   {
-    "matchup": "[\"The Beatles\",\"Christina Aguilera\"]",
-    "num_plays": 786,
-    "average_guesses": "14.9959183673469388",
-    "win_percentage": "93.5114503816793893"
+    "matchup": "[\"Bring Me The Horizon\",\"Lady Gaga\"]",
+    "num_plays": 881,
+    "average_guesses": "39.1638297872340426",
+    "win_percentage": "53.3484676503972758"
   },
   {
-    "matchup": "[\"Justin Timberlake\",\"Rage Against The Machine\"]",
-    "num_plays": 784,
-    "average_guesses": "13.8366197183098592",
-    "win_percentage": "90.5612244897959184"
+    "matchup": "[\"Kanye West\",\"Taylor Swift\"]",
+    "num_plays": 875,
+    "average_guesses": "25.9353383458646617",
+    "win_percentage": "76.0000000000000000"
   },
   {
-    "matchup": "[\"Shania Twain\",\"Skrillex\"]",
-    "num_plays": 781,
-    "average_guesses": "33.4325259515570934",
-    "win_percentage": "74.0076824583866837"
+    "matchup": "[\"Billie Eilish\",\"Pitbull\"]",
+    "num_plays": 873,
+    "average_guesses": "12.0771208226221080",
+    "win_percentage": "89.1179839633447881"
+  },
+  {
+    "matchup": "[\"Jimi Hendrix\",\"Madonna\"]",
+    "num_plays": 872,
+    "average_guesses": "15.2771535580524345",
+    "win_percentage": "91.8577981651376147"
+  },
+  {
+    "matchup": "[\"Slayer\",\"Kesha\"]",
+    "num_plays": 863,
+    "average_guesses": "18.1545117428924598",
+    "win_percentage": "93.7427578215527231"
+  },
+  {
+    "matchup": "[\"Juice WRLD\",\"Gwen Stefani\"]",
+    "num_plays": 854,
+    "average_guesses": "20.9120433017591340",
+    "win_percentage": "86.5339578454332553"
   },
   {
     "matchup": "[\"XXXTENTACION\",\"Zendaya\"]",
-    "num_plays": 778,
-    "average_guesses": "30.6141215106732348",
-    "win_percentage": "78.2776349614395887"
+    "num_plays": 799,
+    "average_guesses": "30.4870967741935484",
+    "win_percentage": "77.5969962453066333"
   },
   {
-    "matchup": "[\"bbno$\",\"OneRepublic\"]",
-    "num_plays": 728,
-    "average_guesses": "26.8011363636363636",
-    "win_percentage": "72.5274725274725275"
+    "matchup": "[\"The Beatles\",\"Christina Aguilera\"]",
+    "num_plays": 792,
+    "average_guesses": "14.9878542510121457",
+    "win_percentage": "93.5606060606060606"
+  },
+  {
+    "matchup": "[\"Gorillaz\",\"Train\"]",
+    "num_plays": 792,
+    "average_guesses": "15.3293233082706767",
+    "win_percentage": "83.9646464646464646"
+  },
+  {
+    "matchup": "[\"Justin Timberlake\",\"Rage Against The Machine\"]",
+    "num_plays": 791,
+    "average_guesses": "13.8324022346368715",
+    "win_percentage": "90.5183312262958281"
+  },
+  {
+    "matchup": "[\"Shania Twain\",\"Skrillex\"]",
+    "num_plays": 784,
+    "average_guesses": "33.3993115318416523",
+    "win_percentage": "74.1071428571428571"
   },
   {
     "matchup": "[\"Elvis Presley\",\"Chappell Roan\"]",
-    "num_plays": 727,
-    "average_guesses": "18.1178247734138973",
-    "win_percentage": "91.0591471801925722"
+    "num_plays": 742,
+    "average_guesses": "18.1137370753323486",
+    "win_percentage": "91.2398921832884097"
+  },
+  {
+    "matchup": "[\"bbno$\",\"OneRepublic\"]",
+    "num_plays": 739,
+    "average_guesses": "26.7448405253283302",
+    "win_percentage": "72.1244925575101488"
   },
   {
     "matchup": "[\"Smash Mouth\",\"The Jackson 5\"]",
@@ -397,206 +397,206 @@
   },
   {
     "matchup": "[\"Sabrina Carpenter\",\"Rage Against The Machine\"]",
-    "num_plays": 709,
-    "average_guesses": "17.9230769230769231",
-    "win_percentage": "86.1777150916784203"
+    "num_plays": 721,
+    "average_guesses": "17.9582664526484751",
+    "win_percentage": "86.4077669902912621"
   },
   {
     "matchup": "[\"Wiz Khalifa\",\"Lorde\"]",
-    "num_plays": 703,
-    "average_guesses": "21.6682926829268293",
-    "win_percentage": "87.4822190611664296"
-  },
-  {
-    "matchup": "[\"Selena Gomez\",\"BROCKHAMPTON\"]",
-    "num_plays": 696,
-    "average_guesses": "16.7520391517128874",
-    "win_percentage": "88.0747126436781609"
+    "num_plays": 709,
+    "average_guesses": "21.6365105008077544",
+    "win_percentage": "87.3060648801128350"
   },
   {
     "matchup": "[\"Bobby Shmurda\",\"Ice Spice\"]",
-    "num_plays": 693,
-    "average_guesses": "17.6548821548821549",
-    "win_percentage": "85.7142857142857143"
+    "num_plays": 706,
+    "average_guesses": "17.5655058043117745",
+    "win_percentage": "85.4107648725212465"
   },
   {
-    "matchup": "[\"Olivia Rodrigo\",\"ABBA\"]",
-    "num_plays": 691,
-    "average_guesses": "23.2942345924453280",
-    "win_percentage": "72.7930535455861071"
-  },
-  {
-    "matchup": "[\"Dolly Parton\",\"Camila Cabello\"]",
-    "num_plays": 673,
-    "average_guesses": "18.5126050420168067",
-    "win_percentage": "88.4101040118870728"
+    "matchup": "[\"Selena Gomez\",\"BROCKHAMPTON\"]",
+    "num_plays": 703,
+    "average_guesses": "16.6854838709677419",
+    "win_percentage": "88.1934566145092461"
   },
   {
     "matchup": "[\"Kendrick Lamar\",\"Chappell Roan\"]",
-    "num_plays": 670,
-    "average_guesses": "11.8645669291338583",
-    "win_percentage": "94.7761194029850746"
+    "num_plays": 700,
+    "average_guesses": "11.8721461187214612",
+    "win_percentage": "93.8571428571428571"
   },
   {
-    "matchup": "[\"Ed Sheeran\",\"blink-182\"]",
-    "num_plays": 665,
-    "average_guesses": "11.8119935170178282",
-    "win_percentage": "92.7819548872180451"
+    "matchup": "[\"Olivia Rodrigo\",\"ABBA\"]",
+    "num_plays": 698,
+    "average_guesses": "23.2642998027613412",
+    "win_percentage": "72.6361031518624642"
   },
   {
-    "matchup": "[\"KISS\",\"Louis Armstrong\"]",
-    "num_plays": 659,
-    "average_guesses": "20.9822064056939502",
-    "win_percentage": "85.2807283763277693"
-  },
-  {
-    "matchup": "[\"Radiohead\",\"Fergie\"]",
-    "num_plays": 653,
-    "average_guesses": "11.9950738916256158",
-    "win_percentage": "93.2618683001531394"
-  },
-  {
-    "matchup": "[\"Eminem\",\"Ellie Goulding\"]",
-    "num_plays": 646,
-    "average_guesses": "17.9168141592920354",
-    "win_percentage": "87.4613003095975232"
-  },
-  {
-    "matchup": "[\"Akon\",\"Carly Rae Jepsen\"]",
-    "num_plays": 641,
-    "average_guesses": "10.8667763157894737",
-    "win_percentage": "94.8517940717628705"
+    "matchup": "[\"Dolly Parton\",\"Camila Cabello\"]",
+    "num_plays": 678,
+    "average_guesses": "18.5116666666666667",
+    "win_percentage": "88.4955752212389381"
   },
   {
     "matchup": "[\"Frank Sinatra\",\"Frank Ocean\"]",
-    "num_plays": 636,
-    "average_guesses": "31.4931237721021611",
-    "win_percentage": "80.0314465408805031"
+    "num_plays": 671,
+    "average_guesses": "31.3258426966292135",
+    "win_percentage": "79.5827123695976155"
+  },
+  {
+    "matchup": "[\"Ed Sheeran\",\"blink-182\"]",
+    "num_plays": 671,
+    "average_guesses": "11.8972712680577849",
+    "win_percentage": "92.8464977645305514"
+  },
+  {
+    "matchup": "[\"KISS\",\"Louis Armstrong\"]",
+    "num_plays": 664,
+    "average_guesses": "21.0476190476190476",
+    "win_percentage": "85.3915662650602410"
+  },
+  {
+    "matchup": "[\"Radiohead\",\"Fergie\"]",
+    "num_plays": 655,
+    "average_guesses": "12.1031096563011457",
+    "win_percentage": "93.2824427480916031"
+  },
+  {
+    "matchup": "[\"Eminem\",\"Ellie Goulding\"]",
+    "num_plays": 651,
+    "average_guesses": "17.8894736842105263",
+    "win_percentage": "87.5576036866359447"
+  },
+  {
+    "matchup": "[\"Akon\",\"Carly Rae Jepsen\"]",
+    "num_plays": 643,
+    "average_guesses": "10.8555008210180624",
+    "win_percentage": "94.7122861586314152"
   },
   {
     "matchup": "[\"TV Girl\",\"Lil Xan\"]",
-    "num_plays": 632,
-    "average_guesses": "12.9117147707979626",
-    "win_percentage": "93.1962025316455696"
+    "num_plays": 640,
+    "average_guesses": "12.8823529411764706",
+    "win_percentage": "92.9687500000000000"
   },
   {
     "matchup": "[\"Eminem\",\"Guns N' Roses\"]",
-    "num_plays": 626,
-    "average_guesses": "22.1485943775100402",
-    "win_percentage": "79.5527156549520767"
+    "num_plays": 637,
+    "average_guesses": "22.0729783037475345",
+    "win_percentage": "79.5918367346938776"
   },
   {
     "matchup": "[\"Mac Miller\",\"Tyla\"]",
-    "num_plays": 615,
-    "average_guesses": "13.0019047619047619",
-    "win_percentage": "85.3658536585365854"
+    "num_plays": 628,
+    "average_guesses": "13.0580524344569288",
+    "win_percentage": "85.0318471337579618"
   },
   {
     "matchup": "[\"Nirvana\",\"Pharrell Williams\"]",
-    "num_plays": 612,
-    "average_guesses": "22.2520000000000000",
-    "win_percentage": "81.6993464052287582"
+    "num_plays": 621,
+    "average_guesses": "22.2988047808764940",
+    "win_percentage": "80.8373590982286634"
   },
   {
     "matchup": "[\"Ray Charles\",\"Charli XCX\"]",
-    "num_plays": 605,
-    "average_guesses": "13.7758620689655172",
-    "win_percentage": "95.8677685950413223"
-  },
-  {
-    "matchup": "[\"Owl City\",\"Megan Thee Stallion\"]",
-    "num_plays": 597,
-    "average_guesses": "13.0772058823529412",
-    "win_percentage": "91.1222780569514238"
+    "num_plays": 611,
+    "average_guesses": "13.7832764505119454",
+    "win_percentage": "95.9083469721767594"
   },
   {
     "matchup": "[\"LMFAO\",\"Megan Thee Stallion\"]",
-    "num_plays": 596,
-    "average_guesses": "12.3041894353369763",
-    "win_percentage": "92.1140939597315436"
-  },
-  {
-    "matchup": "[\"ODESZA\",\"Paramore\"]",
-    "num_plays": 592,
-    "average_guesses": "24.3320312500000000",
-    "win_percentage": "86.4864864864864865"
-  },
-  {
-    "matchup": "[\"Bo Burnham\",\"Nelly Furtado\"]",
-    "num_plays": 591,
-    "average_guesses": "10.4128113879003559",
-    "win_percentage": "95.0930626057529611"
+    "num_plays": 601,
+    "average_guesses": "12.2851985559566787",
+    "win_percentage": "92.1797004991680532"
   },
   {
     "matchup": "[\"Mac DeMarco\",\"Doja Cat\"]",
-    "num_plays": 591,
-    "average_guesses": "13.2781954887218045",
-    "win_percentage": "90.0169204737732657"
+    "num_plays": 600,
+    "average_guesses": "13.2218114602587800",
+    "win_percentage": "90.1666666666666667"
+  },
+  {
+    "matchup": "[\"Owl City\",\"Megan Thee Stallion\"]",
+    "num_plays": 598,
+    "average_guesses": "13.0623853211009174",
+    "win_percentage": "91.1371237458193980"
+  },
+  {
+    "matchup": "[\"Bo Burnham\",\"Nelly Furtado\"]",
+    "num_plays": 596,
+    "average_guesses": "10.4017699115044248",
+    "win_percentage": "94.7986577181208054"
+  },
+  {
+    "matchup": "[\"ODESZA\",\"Paramore\"]",
+    "num_plays": 594,
+    "average_guesses": "24.2665369649805447",
+    "win_percentage": "86.5319865319865320"
   },
   {
     "matchup": "[\"Justin Bieber\",\"The 1975\"]",
-    "num_plays": 587,
-    "average_guesses": "17.5407098121085595",
-    "win_percentage": "81.6013628620102215"
-  },
-  {
-    "matchup": "[\"Post Malone\",\"Pixies\"]",
-    "num_plays": 585,
-    "average_guesses": "18.3497164461247637",
-    "win_percentage": "90.4273504273504274"
-  },
-  {
-    "matchup": "[\"Fall Out Boy\",\"Spice Girls\"]",
-    "num_plays": 582,
-    "average_guesses": "14.0836431226765799",
-    "win_percentage": "92.4398625429553265"
+    "num_plays": 590,
+    "average_guesses": "17.4605809128630705",
+    "win_percentage": "81.6949152542372881"
   },
   {
     "matchup": "[\"SZA\",\"Charli XCX\"]",
-    "num_plays": 562,
-    "average_guesses": "10.4502923976608187",
-    "win_percentage": "91.2811387900355872"
+    "num_plays": 588,
+    "average_guesses": "10.6928838951310861",
+    "win_percentage": "90.8163265306122449"
+  },
+  {
+    "matchup": "[\"Post Malone\",\"Pixies\"]",
+    "num_plays": 587,
+    "average_guesses": "18.3295668549905838",
+    "win_percentage": "90.4599659284497445"
+  },
+  {
+    "matchup": "[\"Fall Out Boy\",\"Spice Girls\"]",
+    "num_plays": 586,
+    "average_guesses": "14.1918819188191882",
+    "win_percentage": "92.4914675767918089"
   },
   {
     "matchup": "[\"Frank Sinatra\",\"Baby Keem\"]",
-    "num_plays": 554,
-    "average_guesses": "28.3739837398373984",
-    "win_percentage": "88.8086642599277978"
-  },
-  {
-    "matchup": "[\"Drake\",\"The Beatles\"]",
-    "num_plays": 548,
-    "average_guesses": "28.2712643678160920",
-    "win_percentage": "79.3795620437956204"
-  },
-  {
-    "matchup": "[\"Drake\",\"Björk\"]",
-    "num_plays": 539,
-    "average_guesses": "15.1271551724137931",
-    "win_percentage": "86.0853432282003711"
-  },
-  {
-    "matchup": "[\"Kings of Leon\",\"Playboi Carti\"]",
-    "num_plays": 538,
-    "average_guesses": "24.6198347107438017",
-    "win_percentage": "89.9628252788104089"
-  },
-  {
-    "matchup": "[\"Imagine Dragons\",\"Spice Girls\"]",
-    "num_plays": 535,
-    "average_guesses": "7.8336557059961315",
-    "win_percentage": "96.6355140186915888"
+    "num_plays": 567,
+    "average_guesses": "28.2242063492063492",
+    "win_percentage": "88.8888888888888889"
   },
   {
     "matchup": "[\"Cardi B\",\"Wu-Tang Clan\"]",
-    "num_plays": 533,
-    "average_guesses": "12.2721893491124260",
-    "win_percentage": "95.1219512195121951"
+    "num_plays": 565,
+    "average_guesses": "12.1747211895910781",
+    "win_percentage": "95.2212389380530973"
+  },
+  {
+    "matchup": "[\"Drake\",\"The Beatles\"]",
+    "num_plays": 556,
+    "average_guesses": "28.2176870748299320",
+    "win_percentage": "79.3165467625899281"
+  },
+  {
+    "matchup": "[\"Imagine Dragons\",\"Spice Girls\"]",
+    "num_plays": 553,
+    "average_guesses": "7.8333333333333333",
+    "win_percentage": "96.5641952983725136"
+  },
+  {
+    "matchup": "[\"Kings of Leon\",\"Playboi Carti\"]",
+    "num_plays": 551,
+    "average_guesses": "24.6639676113360324",
+    "win_percentage": "89.6551724137931034"
   },
   {
     "matchup": "[\"Grimes\",\"N.W.A.\"]",
-    "num_plays": 530,
-    "average_guesses": "11.1796875000000000",
-    "win_percentage": "96.6037735849056604"
+    "num_plays": 551,
+    "average_guesses": "11.1077504725897921",
+    "win_percentage": "96.0072595281306715"
+  },
+  {
+    "matchup": "[\"Drake\",\"Björk\"]",
+    "num_plays": 550,
+    "average_guesses": "15.0485232067510549",
+    "win_percentage": "86.1818181818181818"
   }
 ]
