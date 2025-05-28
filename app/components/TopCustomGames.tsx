@@ -1,6 +1,6 @@
 "use client";
 import React, { Suspense, useEffect } from "react";
-import { CustomGame, getLeaderboard, getLeaderboardStatic } from "../db";
+import { CustomGame, getLeaderboard } from "../db";
 import { Artist, maxCustomTextWidth, phoneMaxWidth } from "./Game";
 import {
   Stack,
@@ -74,7 +74,7 @@ const TopCustomGames = (props: TopCustomGamesProps) => {
   const totalAmount = 100;
   useEffect(() => {
     setMounted(true);
-    getLeaderboardStatic().then((leaderboard) => {
+    getLeaderboard().then((leaderboard) => {
       if (leaderboard) {
         setTopGames(leaderboard);
         let currLeaderboard = leaderboard.slice(0, loadAmount);

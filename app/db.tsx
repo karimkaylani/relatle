@@ -72,12 +72,16 @@ export interface CustomGame {
   winRate: number;
 }
 
-export const getLeaderboard = async(amount: number, start_pos: number): Promise<CustomGame[] | null> => {
+export const getLeaderboard = async(): Promise<CustomGame[] | null> => {
   const supabase = createClient();
-  let { data, error } = await supabase.rpc("get_leaderboard", { amount: amount, start_position: start_pos});
+  let { data, error } = await supabase.from("leaderboard").select("*").order("num_plays", { ascending: false });
   if (error) {
     console.error(error);
     return null;
+  }
+  if (!data || data.length === 0) {
+    console.error("No data found in leaderboard");
+    return [];
   }
   let res = data.map((row: any) => {
     return {
@@ -88,24 +92,4 @@ export const getLeaderboard = async(amount: number, start_pos: number): Promise<
     };
   });
   return res;
-}
-
-export const getLeaderboardStatic = async(): Promise<CustomGame[] | null> => {
-  const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/data/leaderboard.json`, {
-    cache: "no-cache",
-  })
-  if (!response.ok) {
-    console.error("Failed to fetch leaderboard.json");
-    return null;
-  }
-  const data = await response.json();
-  let res = data.map((row: any) => {
-    return {
-      matchup: JSON.parse(row.matchup),
-      numGames: row.num_plays,
-      averageScore: parseFloat(row.average_guesses),
-      winRate: parseFloat(row.win_percentage),
-    };
-  });
-  return res
 }
