@@ -9,9 +9,9 @@ def main():
     web = {}
     with open("public/data/web.json", "r") as outfile:
         web = json.load(outfile)
-    
-    verify_matchups(web)
+        
     # generate_daily_matchups(web, 100, with_replacement=True)
+    verify_matchups(web)
 
 def generate_daily_matchups(web, amount, with_replacement=False, num_buffer=30):
     matchups = []
