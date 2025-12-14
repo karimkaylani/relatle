@@ -10,23 +10,33 @@ def main():
     with open("public/data/web.json", "r") as outfile:
         web = json.load(outfile)
         
-    # generate_daily_matchups(web, 100, with_replacement=True)
+    # generate_daily_matchups(web, 100, use_all_artists=False, with_replacement=True)
     verify_matchups(web)
 
-def generate_daily_matchups(web, amount, with_replacement=False, num_buffer=30):
+def generate_daily_matchups(web, amount, use_all_artists=False, with_replacement=False, num_buffer=30):
     matchups = []
     with open("public/data/matchups.json", "r") as outfile:
         matchups = json.load(outfile)
 
-    artists_pool = set()
-    for matchup in matchups[:len(matchups)-num_buffer]:
-        artists_pool.add(matchup[0])
-        artists_pool.add(matchup[1])
+    if use_all_artists:
+        # Use all artists from web.json
+        artists_pool = list(web.keys())
+        print(f"Using all artists from web.json: {len(artists_pool)} artists")
+    else:
+        # Use artists from previous matchups (original behavior)
+        artists_pool = set()
+        for matchup in matchups[:len(matchups)-num_buffer]:
+            artists_pool.add(matchup[0])
+            artists_pool.add(matchup[1])
 
-    for matchup in matchups[-num_buffer:]:
-        if matchup[1] in artists_pool:
-            artists_pool.remove(matchup[1])
-    res = generate_matchups(web, amount, list(artists_pool), with_replacement=True)
+        for matchup in matchups[-num_buffer:]:
+            if matchup[1] in artists_pool:
+                artists_pool.remove(matchup[1])
+        
+        artists_pool = list(artists_pool)
+        print(f"Using artists from previous matchups: {len(artists_pool)} artists")
+    
+    res = generate_matchups(web, amount, artists_pool, with_replacement=True)
     for matchup in res:
         print(json.dumps(list(matchup)))
 
