@@ -10,7 +10,7 @@ def main():
     with open("public/data/web.json", "r") as outfile:
         web = json.load(outfile)
         
-    # generate_daily_matchups(web, 100, use_all_artists=False, with_replacement=True)
+    # generate_daily_matchups(web, 100, use_all_artists=True, with_replacement=False)
     verify_matchups(web)
 
 def generate_daily_matchups(web, amount, use_all_artists=False, with_replacement=False, num_buffer=30):
